@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-10-23T23:19:01.041689+00:00",
+  "branch": "phase-2-execution-noise",
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "exit_code": 0,
+    "passed": 66,
+    "failed": 0,
+    "skipped": 0,
+    "duration_s": 101.69
+  },
+  "source_digest": "481463b26241814fb6c0b38c876e70c05709478399493748285bef5a0f6cde97",
+  "experiments": [
+    {
+      "sigma": 0,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "runs": 6,
+      "matched_pairs": 3,
+      "status": "complete"
+    },
+    {
+      "sigma": 0.3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "runs": 6,
+      "matched_pairs": 3,
+      "status": "complete"
+    }
+  ],
+  "legacy_reference_files_modified": false,
+  "sigma_zero_phase1_comparisons": {
+    "runs": 6,
+    "exact_original_rider_columns": true,
+    "exact_standard_evaluation_cells": true
+  },
+  "uncompleted_bookings_in_final_12_runs": 0,
+  "artifact_sha256": {
+    "README.md": "33edd7fd948b2e325ebb983c47be313aa344a0c4431916f6b485c5fa1d3e5a1b",
+    "pytest.txt": "8a402eec80eef8db9f2b49a0bceab52573ac48eb68043e54fc8ee3b7cea1a35e",
+    "run_checks.json": "3c3bedfd9854435d031742c847f22e4d21c65b5abd1e5ad91f8740ed9a7dd688",
+    "sigma-0/configs/baseline.csv": "87bde53a4ca7d8cd836976d0e1045d2270ebf2548b4fc5835a3c35cec81baf1a",
+    "sigma-0/configs/candidate.csv": "3c8199cd106cf53804c39239a943d1a42a88bc253746ba03f2d640ba5c979c42",
+    "sigma-0/configs/constants.csv": "a7fe14b8d0e33a49765894e174015ce8471ef424d0c6d92f5212c5defcd1eee9",
+    "sigma-0/driver_distribution.csv": "cb2cda7b4220214dae217345b092f437746fc6e4fd0678e6c5195a940108ce5a",
+    "sigma-0/manifest.json": "2ce9130645ed086841ce23238ac89b963260b6f0061be4f935e76ce79517c279",
+    "sigma-0/paired_comparison.csv": "9cd48b3af6bad7b8771abb24d6da4bd753ab6bb279c7860594f846d150064070",
+    "sigma-0/per_driver.csv": "b2560234ad1a0a8bab91527df01edf4beb467705767ba031b81f0109e90f5539",
+    "sigma-0/seed_summary.csv": "6e486c0dcd248c50bf5bc9e8e4ac6d1a3fd39e1f3263b51503b63bccff1349e5",
+    "sigma-0.3/configs/baseline.csv": "87bde53a4ca7d8cd836976d0e1045d2270ebf2548b4fc5835a3c35cec81baf1a",
+    "sigma-0.3/configs/candidate.csv": "3c8199cd106cf53804c39239a943d1a42a88bc253746ba03f2d640ba5c979c42",
+    "sigma-0.3/configs/constants.csv": "a7fe14b8d0e33a49765894e174015ce8471ef424d0c6d92f5212c5defcd1eee9",
+    "sigma-0.3/driver_distribution.csv": "c1f6555a1bb8093de084304e5b257e232f1849c2a672f30390bed0ccb217c489",
+    "sigma-0.3/manifest.json": "786091b4e19a8c0d2682d95138b0c46b91db3e6dcda0b27c5ac94cca655977c8",
+    "sigma-0.3/paired_comparison.csv": "4ce933bae0f87156d85ddb7be7071465e6012c8e8f7a88cfb16050517f7dbb31",
+    "sigma-0.3/per_driver.csv": "5058c04f72c68352ead70314552eeb5be85507c094a56b5249cf0dc88d783608",
+    "sigma-0.3/seed_summary.csv": "85e2741a972c68a27e4aae2eb7d56b804b0afcd3403206292300fb0052162110",
+    "sigma-0.3.log": "572407a061bd357e859797b18af93b3ba2e3a417bd09ff5c540a01c5db066546",
+    "sigma-0.log": "92b6778c411e249b1f69647b1e46f0f47325e94fbc982d4c4190a184a01551dd"
+  }
+}

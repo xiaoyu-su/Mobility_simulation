@@ -1009,7 +1009,7 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
                 else: 
                     h = 0
                 rids_to_build_with_hierarchy.append((rid, h))
-        np.random.shuffle(rids_to_build_with_hierarchy)
+        (np.random if self.rng is None else self.rng).shuffle(rids_to_build_with_hierarchy)
         rids_to_build_with_hierarchy = sorted(rids_to_build_with_hierarchy, key = lambda x:x[1], reverse = True)
         LOG.debug(f" ... build tree for vid {vid} with assigned key {assigned_key} and locked {self.v2r_locked.get(vid, {})} for rids {rids_to_build_with_hierarchy}")
         # assigned tree
@@ -1549,6 +1549,8 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
                         env.start()
 
                     m = gurobi.Model(model_name, env = env)
+                    if self.solver_seed is not None:
+                        m.setParam("Seed", self.solver_seed)
                     #m.Params.seed = 1992
                     grb_available = True
 

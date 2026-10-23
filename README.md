@@ -1,5 +1,14 @@
 # 🚖 FleetPy – Open-Source Fleet Simulation Framework  
 
+This is the [xiaoyu-su/Mobility_simulation](https://github.com/xiaoyu-su/Mobility_simulation)
+fork of [TUM-VT/FleetPy](https://github.com/TUM-VT/FleetPy). Phase 0 adds upstream
+regression references and baseline bug fixes; [Phase 1](docs/PHASE_1.md) adds
+opt-in independent random streams and audited paired policy evaluation.
+[Phase 2](docs/PHASE_2.md) adds accepted pickup/dropoff promises and optional
+mean-one travel-time noise during vehicle execution, with unchanged defaults.
+See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
+and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
+
 [![GitHub stars](https://img.shields.io/github/stars/TUM-VT/FleetPy?style=social)](https://github.com/TUM-VT/FleetPy)  
 FleetPy is an open-source **fleet simulation framework** for modeling and controlling vehicle fleets in **ride-sharing, autonomous mobility, and on-demand transport** applications.  
 

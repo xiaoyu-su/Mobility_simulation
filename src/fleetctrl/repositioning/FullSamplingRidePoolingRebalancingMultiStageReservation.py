@@ -28,7 +28,8 @@ if TYPE_CHECKING:
     from src.routing.road.NetworkBase import NetworkBase
 
 OPT_TIME_LIMIT = 120
-WRITE_SOL = True
+# Optional optimizer artifacts are disabled for normal runs.
+WRITE_SOL = False
 WRITE_PROBLEM = False
 SMALL_VALUE = 10
 LARGE_VALUE = 10**6

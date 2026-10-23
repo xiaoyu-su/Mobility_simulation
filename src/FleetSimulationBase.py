@@ -24,6 +24,8 @@ import numpy as np
 from src.misc.init_modules import load_fleet_control_module, load_routing_engine, load_broker_module, load_pt_control_module
 from src.demand.demand import Demand, SlaveDemand
 from src.simulation.Vehicles import SimulationVehicle
+from src.misc.seeding import component_rng, stream_mode, canonical_digest, file_digest, STREAM_SCHEME
+from src.misc.execution import validate_execution_settings
 if tp.TYPE_CHECKING:
     from src.fleetctrl.FleetControlBase import FleetControlBase
     from src.routing.road.NetworkBase import NetworkBase
@@ -54,7 +56,7 @@ INPUT_PARAMETERS_FleetSimulationBase = {
     ],
     "input_parameters_optional": [
         G_SIM_TIME_STEP, G_NR_CH_OPERATORS, G_SIM_REALTIME_PLOT_FLAG, "log_level", G_SIM_ROUTE_OUT_FLAG, G_SIM_REPLAY_FLAG, G_INIT_STATE_SCENARIO,
-        G_ZONE_SYSTEM_NAME, G_INFRA_NAME
+        G_ZONE_SYSTEM_NAME, G_INFRA_NAME, "random_stream_mode", "network_tt_noise_sigma", "record_promised_times"
     ],
     "mandatory_modules": [
         G_SIM_ENV, G_NETWORK_TYPE, G_RQ_TYP1, G_OP_MODULE
@@ -169,6 +171,10 @@ class FleetSimulationBase:
         self.skip_output = True if scenario_parameters.get(G_SKIP_OUTPUT, 0) > 0 else False
 
         # take care of random seeds at beginning of simulations
+        self.random_stream_mode = stream_mode(self.scenario_parameters)
+        validate_execution_settings(self.scenario_parameters)
+        if self.random_stream_mode == "independent" and self.scenario_parameters.get("n_cpu_per_sim", 1) != 1:
+            raise ValueError("Independent random streams currently require n_cpu_per_sim=1")
         random.seed(self.scenario_parameters[G_RANDOM_SEED])
         np.random.seed(self.scenario_parameters[G_RANDOM_SEED])
 
@@ -276,7 +282,8 @@ class FleetSimulationBase:
         # load initial state depending on init_blocking attribute
         # HINT: it is important that this is done at the end of initialization!
         LOG.info("Creating or loading initial vehicle states...")
-        np.random.seed(self.scenario_parameters[G_RANDOM_SEED])
+        if self.random_stream_mode == "legacy":
+            np.random.seed(self.scenario_parameters[G_RANDOM_SEED])
         self.load_initial_state()
         LOG.info(f"Initialization of scenario {self.scenario_name} successful.")
 
@@ -285,6 +292,22 @@ class FleetSimulationBase:
         # broker
         self.broker: 'BrokerBase' = None
         self._load_broker_module()
+
+        if self.random_stream_mode == "independent" and not self.skip_output:
+            initial_states = [
+                [int(op), int(vid), str(vehicle.pos), float(vehicle.soc), str(vehicle.veh_type)]
+                for (op, vid), vehicle in sorted(self.sim_vehicles.items())
+            ]
+            audit = {"scheme": STREAM_SCHEME, "mode": self.random_stream_mode,
+                     "master_seed": int(self.scenario_parameters[G_RANDOM_SEED]),
+                     "demand": self.demand.input_fingerprints,
+                     "network_input_sha256": {
+                         name: file_digest(os.path.join(self.dir_names[G_DIR_NETWORK], "base", name))
+                         for name in ("nodes.csv", "edges.csv")},
+                     "initial_vehicle_count": len(initial_states),
+                     "initial_vehicle_state_sha256": canonical_digest(initial_states)}
+            with open(os.path.join(self.dir_names[G_DIR_OUTPUT], "random_streams.json"), "w") as output:
+                json.dump(audit, output, indent=2, allow_nan=False)
         
     def _clear_output_dir(self):
         """ Empties the output directory if it already exists, otherwise creates it. """
@@ -392,7 +415,7 @@ class FleetSimulationBase:
                         tmp_veh_obj = SimulationVehicle(op_id, vid, load_vehicle_attributes(veh_type),
                                                         self.routing_engine, self.demand.rq_db,
                                                         self.op_output[op_id], route_output_flag,
-                                                        replay_flag)
+                                                        replay_flag, scenario_parameters=self.scenario_parameters)
                         list_vehicles.append(tmp_veh_obj)
                         self.sim_vehicles[(op_id, vid)] = tmp_veh_obj
                         vid += 1
@@ -413,7 +436,7 @@ class FleetSimulationBase:
                     tmp_veh_obj = SimulationVehicle(op_id, vid, load_vehicle_attributes(veh_type),
                                                         self.routing_engine, self.demand.rq_db,
                                                         self.op_output[op_id], route_output_flag,
-                                                        replay_flag)
+                                                        replay_flag, scenario_parameters=self.scenario_parameters)
                     list_vehicles.append(tmp_veh_obj)
                     veh_type_list.append([op_id, vid, veh_type])
                     self.sim_vehicles[(op_id, vid)] = tmp_veh_obj
@@ -433,7 +456,7 @@ class FleetSimulationBase:
                     tmp_veh_obj = SimulationVehicle(op_id, vid, load_vehicle_attributes(veh_type),
                                                         self.routing_engine, self.demand.rq_db,
                                                         self.op_output[op_id], route_output_flag,
-                                                        replay_flag)
+                                                        replay_flag, scenario_parameters=self.scenario_parameters)
                     list_vehicles.append(tmp_veh_obj)
                     veh_type_list.append([op_id, vid, veh_type])
                     self.sim_vehicles[(op_id, vid)] = tmp_veh_obj
@@ -448,7 +471,7 @@ class FleetSimulationBase:
                     tmp_veh_obj = SimulationVehicle(op_id, vid, load_vehicle_attributes(veh_type),
                                                         self.routing_engine, self.demand.rq_db,
                                                         self.op_output[op_id], route_output_flag,
-                                                        replay_flag)
+                                                        replay_flag, scenario_parameters=self.scenario_parameters)
                     list_vehicles.append(tmp_veh_obj)
                     veh_type_list.append([op_id, vid, veh_type])
                     self.sim_vehicles[(op_id, vid)] = tmp_veh_obj
@@ -584,7 +607,9 @@ class FleetSimulationBase:
                 if veh_obj.pos is None:
                     op_fleetctrl = self.operators[veh_obj.op_id]
                     init_dist = op_init_distributions[veh_obj.op_id]
-                    r = np.random.random()
+                    rng = component_rng(self.scenario_parameters, f"vehicle_initialization/{veh_obj.op_id}/{veh_obj.vid}")
+                    generator = np.random if rng is None else rng
+                    r = generator.random()
                     s = 0.0
                     init_node = None
                     for n, prob in init_dist.items():
@@ -598,7 +623,7 @@ class FleetSimulationBase:
                     init_state_info = {}
                     init_state_info[G_V_INIT_NODE] = init_node# np.random.choice(init_node)
                     init_state_info[G_V_INIT_TIME] = self.scenario_parameters[G_SIM_START_TIME]
-                    init_state_info[G_V_INIT_SOC] = 0.5 * (1 + np.random.random())
+                    init_state_info[G_V_INIT_SOC] = 0.5 * (1 + generator.random())
                     veh_obj.set_initial_state(op_fleetctrl, self.routing_engine, init_state_info,
                                                 self.scenario_parameters[G_SIM_START_TIME], self.init_blocking)
 
@@ -741,6 +766,7 @@ class FleetSimulationBase:
         elif chosen_operator == -1:
             self._user_leaves_system(rid, sim_time)
         else:
+            rq_obj.capture_service_promise(chosen_operator)
             amode_confirmed_rids = self.broker.inform_user_booking(rid, rq_obj, sim_time, chosen_operator)
             for rid, rq_obj in amode_confirmed_rids:
                 self.demand.waiting_rq[rid] = rq_obj

@@ -1,0 +1,83 @@
+# Improvement log
+
+## Phase 0 — baseline hygiene
+
+- Recorded independent upstream references at commit
+  `c813728b6d188df8dd7fd5d3d36dcb0a55c898a2` for three complete example
+  simulations: insertion, immediate insertion with batch optimization, and
+  batch assignment. Each executes 100 requests and picks up 93.
+- Added exact comparisons of all evaluation cells and per-rider output cells,
+  plus a provenance manifest and an explicit reference-capture tool.
+- Reproduced five failing unit cases before fixing batch retry/rejection and
+  aggregated forecast handling.
+- Replaced obsolete `delRequest` with `delete_request`, resolved the current
+  request before second-attempt rejection, and corrected `groubpy`.
+- Disabled default debug solver dumps in both multistage sampling
+  repositioning variants.
+- Added test dependency pins and pytest discovery limited to `tests/`.
+
+Validation and reproduction instructions are in `UPSTREAM_COMPARISON.md`.
+At the Phase 0 milestone, later phases were not yet implemented.
+
+## Phase 1 — independent streams and paired evaluation
+
+- **What changed:** opt-in stable named random streams for demand, parcels,
+  per-request choices, per-vehicle initialization, and the Alonso-Mora batch
+  optimizer and solver. Existing scenarios remain in legacy mode.
+- **Why:** demand and optimizer constructors previously reset shared global
+  randomness, allowing policy-dependent draw order to contaminate comparisons.
+- **Benefit:** isolated exogenous draws and verifiable matched starting inputs,
+  while the three approved legacy examples retain exact recorded outputs.
+- **Evaluation tools:** complete multi-seed policy runs, per-driver time and
+  fare/cost proxies, distribution/inequality summaries, paired confidence
+  intervals and t/Wilcoxon tests. Seeds, not individual drivers, are replicates.
+- **Traceability:** retained configurations, commands, exit codes, logs, loaded
+  input/initial-fleet hashes, dependency versions, working-source hashes, and
+  report hashes. Incomplete or mismatched experiments fail explicitly.
+- **Accounting improvement found end to end:** FleetPy drains pending work
+  after the nominal horizon. Include its exact legs and fares, expose per-driver
+  tail exposure, and avoid discarding revenue or omitting its associated work.
+- **Final verification:** 41 tests passed, including baseline regressions,
+  named-stream checks, hand-computed metrics/inference, and complete paired CLI
+  experiments. A separate six-simulation, three-seed demonstration also passed
+  all pairing checks. Final evidence is archived in `docs/validation/phase1/`
+  and recorded step by step in `docs/WORK_LOG.md`.
+- **Limits:** single-worker baseline matching workflows first; fare-minus-cost
+  is a proxy rather than actual driver pay. No driver acceptance, ETA noise,
+  windowed execution, or AV policy is introduced in this phase.
+
+Usage and metric definitions: `docs/PHASE_1.md`. Step-by-step evidence:
+`docs/WORK_LOG.md`.
+
+## Phase 2 — promised service and execution uncertainty
+
+- **What changed:** optional `network_tt_noise_sigma` draws a mean-one
+  lognormal multiplier per executed driving leg from a private per-vehicle
+  stream. Planning/offer estimates retain existing routing times. Arrival and
+  replay timestamps use actual wall time; stationary durations are unscaled.
+- **Why:** deterministic execution hides service uncertainty, and later offer
+  updates cannot reliably reconstruct what a rider originally accepted.
+- **Benefit:** frozen selected-operator pickup/dropoff promises and signed
+  actual-minus-promised errors expose bias and dispersion. Per-leg multiplier
+  records make execution reviewable. Existing keep-feasible behavior retains
+  delayed commitments without globally relaxing new-request constraints.
+- **Compatibility:** both features default off. Zero noise consumes no
+  execution draws. Optional `record_promised_times` adds diagnostics alone;
+  original rider/evaluation values retain exact upstream compatibility.
+- **Evaluation:** common CLI overrides apply to both paired policies and are
+  retained in manifests/configs. Reports include observed and missing error
+  counts, mean, population SD, MAE, quantiles, and late fraction.
+- **Verification:** **66 tests passed in 101.69s**. Includes the three original
+  regressions, all three controllers at sigma 0 and 0.6, delayed committed
+  service, and repeatable noisy paired experiments. Separate final runs at
+  sigma 0/0.3, seeds 0/1/2, completed all 12 simulations and six pairing audits;
+  every booked rider finished. All six sigma-0 runs exactly match the saved
+  Phase 1 original rider columns and standard evaluation cells.
+- **Limits:** verified single-worker example road trips; PT promise semantics
+  and external traffic-simulator noise are rejected. Noise is an explicit
+  modeling assumption, not an empirically calibrated travel-time-error fit.
+  No driver acceptance or new dispatch/repositioning policy is introduced.
+
+Usage, semantics, and limits: `docs/PHASE_2.md`. Actual final evidence:
+`docs/validation/phase2/`. Changes, reasons, benefits, and development checkpoints:
+`docs/WORK_LOG.md`.

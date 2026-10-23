@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-10-23T14:41:00.972222-07:00",
+  "phase": 1,
+  "branch": "phase-1-paired-evaluation",
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 41,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 45.67,
+    "console_output": ".........................................                                [100%]\n41 passed in 45.67s"
+  },
+  "paired_demo": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "completed_simulations": 6,
+    "validated_input_pairs": 3,
+    "artifact_directory": "/workspace/.setup/phase1/verified-comparison",
+    "source_digest": "f8fff51ae1d55aed7f4b780e908f981cb9a43aa6381f2ca183e42780fcf8b9a2",
+    "selected_metrics": {
+      "completed_requests": {
+        "baseline_mean": 93.0,
+        "candidate_mean": 93.0,
+        "mean_difference": 0.0,
+        "ci95_low": -2.4841377117195456,
+        "ci95_high": 2.4841377117195456,
+        "paired_t_pvalue": 1.0,
+        "wilcoxon_pvalue": 1.0
+      },
+      "rider_wait_mean_s": {
+        "baseline_mean": 150.80995445016947,
+        "candidate_mean": 141.34720890105265,
+        "mean_difference": -9.462745549116809,
+        "ci95_low": -16.16189439656236,
+        "ci95_high": -2.763596701671256,
+        "paired_t_pvalue": 0.0260207126518718,
+        "wilcoxon_pvalue": 0.25
+      },
+      "gross_fare_revenue_cent.gini": {
+        "baseline_mean": 0.0543893185682074,
+        "candidate_mean": 0.06550587754414,
+        "mean_difference": 0.0111165589759325,
+        "ci95_low": -0.0772511930703284,
+        "ci95_high": 0.0994843110221936,
+        "paired_t_pvalue": 0.6425514716846249,
+        "wilcoxon_pvalue": 1.0
+      }
+    }
+  },
+  "scope": "single-worker baseline matching; fare-minus-vehicle-cost earnings proxies; no later-phase driver/AV policies",
+  "archive_sha256": {
+    "manifest.json": "0d2ab2bbd5829d9f33a93b4f885ce81866d32cad721b7255120089c4ff52aeb4",
+    "per_driver.csv": "b2560234ad1a0a8bab91527df01edf4beb467705767ba031b81f0109e90f5539",
+    "driver_distribution.csv": "cb2cda7b4220214dae217345b092f437746fc6e4fd0678e6c5195a940108ce5a",
+    "seed_summary.csv": "28dad6c11a5d265b2d3b8b93a5363efaac9d5829c5080ca586dfbc260bd2f478",
+    "paired_comparison.csv": "49362df0e707682c28a0e6fcbb8ade943fdcd74d0498d665116599651e7cb40b"
+  }
+}

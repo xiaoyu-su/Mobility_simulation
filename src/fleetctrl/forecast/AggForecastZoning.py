@@ -99,8 +99,8 @@ class AggForecastZoneSystem(ForecastZoneSystemBase):
             raise AssertionError("Invalid forecast column chosen!")
         #
         if aggregation_level is not None:
-            tmp_forecast_df = self.forecast_df.reset_index().groubpy([G_ZONE_FC_T,
-                                                                      aggregation_level]).aggregate({col: sum})
+            tmp_forecast_df = self.forecast_df.reset_index().groupby(
+                [G_ZONE_FC_T, aggregation_level]).aggregate({col: "sum"})
         else:
             tmp_forecast_df = self.forecast_df
         #

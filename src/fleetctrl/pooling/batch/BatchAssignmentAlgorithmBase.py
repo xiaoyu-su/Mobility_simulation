@@ -10,6 +10,7 @@ from src.simulation.Legs import VehicleRouteLeg
 from src.simulation.Vehicles import SimulationVehicle
 from src.routing.road.NetworkBase import NetworkBase
 from src.misc.globals import *
+from src.misc.seeding import component_rng, derive_rng
 LOG = logging.getLogger(__name__)
 
 """ The idea is to have a fixed necessary set of functions for all BatchAssignmentAlgorithms
@@ -173,7 +174,14 @@ class BatchAssignmentAlgorithmBase(metaclass=ABCMeta):
         self.optimisation_cores = optimisation_cores
         self.operator_attributes = operator_attributes
 
-        np.random.seed(seed)
+        parameters = dict(getattr(fleetcontrol, "scenario_parameters", operator_attributes), random_seed=seed)
+        stream_name = f"batch_optimizer/{self.fo_id}"
+        self.rng = component_rng(parameters, stream_name)
+        self.solver_seed = None
+        if self.rng is None:
+            np.random.seed(seed)
+        else:
+            self.solver_seed = int(derive_rng(seed, stream_name + "/solver").integers(2_000_000_000))
 
         self.active_requests : Dict[Any, PlanRequest] = {}           # rid -> request-Object
         self.veh_objs : Dict[int, SimulationVehicleStruct] = {}

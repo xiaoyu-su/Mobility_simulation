@@ -88,6 +88,7 @@ class FleetControlBase(metaclass=ABCMeta):
         :type list_pub_charging_infra: list of PublicChargingInfrastructureOperator
         """
         self.n_cpu = scenario_parameters["n_cpu_per_sim"]
+        self.scenario_parameters = scenario_parameters
         self.solver: str = operator_attributes.get(G_RA_SOLVER, "Gurobi")
         self.log_gurobi : bool = scenario_parameters.get(G_LOG_GUROBI, False)
         self.op_id = op_id

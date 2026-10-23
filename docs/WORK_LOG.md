@@ -238,3 +238,146 @@ proxies, not observed driver compensation. No later phase was implemented.
 Validated scope remains single-worker road-trip matching on the example data.
 Phase 2 does not establish a calibrated noise level, improve the matching
 objective, or implement driver acceptance. Phase 3 is the next planned stage.
+
+## Phase 3: logistic driver acceptance and GitHub publication (2026-10-23)
+
+### Step 1: inspect the plan and preserve the previous milestone
+
+- Re-read the Phase 3 text in the uploaded plan image. Scope: logistic
+  acceptance from pickup ETA/direct-trip distance, bounded declines/retries,
+  optional probability-weighted assignment reward, driver classes, and logs.
+  Multi-driver fallback/future-value matching remain separate later phases.
+- Confirmed GitHub push permission on `xiaoyu-su/Mobility_simulation` and
+  fetched `origin/main` (still the original upstream commit).
+- Committed all completed Phase 0–2 work as `85bb47a`, then created local
+  branch `phase-3-driver-acceptance`. This preserves a reviewable prior milestone
+  and includes it in the eventual fork update.
+- Starting validated checkpoint was **66 passed in 101.69s**, as archived in
+  Phase 2. No existing source/user changes were discarded.
+
+### Step 2: implement the driver-side boundary
+
+- Added an off-by-default logistic model with explicit coefficients, minute/km
+  units, stable sigmoid, per-vehicle driver classes, per-request/vehicle random
+  streams, bounded retries, and final-decision caching.
+- A matching round offers to its selected driver. `max_declines` is the number
+  of retries after the first attempt (0 means one attempt); retries are
+  instantaneous reoffers to that same driver. Exhaustion rejects the request.
+  This does not walk other drivers or charge response latency; those require
+  the later multi-offer model. Decision logs expose every attempt.
+- Gate insertion proposals before a rider offer/booking. For batch assignment,
+  remove terminally declined requests through the optimizer's removal API
+  before vehicle plans execute; preserve committed/onboard riders.
+- Snapshot the round's solver results before processing declined requests.
+  The first implementation marked stripped batch plans external; the complete
+  noisy batch check found that this deletes the internal trip tree, while the
+  subsequent database clear removes its temporary fallback. See correction below.
+- Optional objective weighting replaces only uncommitted assignment reward
+  `R` by `p × R`. Operating costs and committed-rider rewards are unchanged.
+  The supported objective exposes its reward explicitly; other objectives fail
+  clearly when weighting is requested. The p=1 path retains base arithmetic.
+- Log decisions and a class/units/seed/provenance audit. No numerical default
+  is represented as empirical calibration. The screenshot's fare-per-USD
+  coefficient is not reused as a trip-km coefficient.
+- First unit checkpoint: **73 passed in 0.89s**, covering both new model checks
+  and all prior unit cases. Full simulation checks follow below.
+
+### Step 3: full simulation checkpoint and correction
+
+- Ran all three controllers in always-accept, always-decline, and weighted
+  logistic-plus-noise modes: **8 passed, 1 failed in 28.06s**.
+- All three p=1 runs reproduce every original rider/evaluation cell exactly,
+  including with optional objective weighting enabled. All three p=0 cases
+  account for 100 requests, serve none, and log bounded terminal declines.
+- Noisy logistic insertion and immediate/batch cases passed. The logistic
+  batch case exposed `KeyError` in Alonso-Mora's next-round committed-trip
+  reconstruction: the newly stripped plan had been marked external, deleting
+  internal entries that must survive `clear_databases()`.
+- Corrected the integration to retain the internally registered lower-trip
+  plan returned by `get_vehicle_plan_without_rid()` and assign it through the
+  internal path. This keeps committed-rider trip entries available next round;
+  it does not alter the optimizer's global behavior when acceptance is off.
+- The next focused run exposed a second lifecycle detail: the removal API
+  returns its stored best plan directly, while normal solution retrieval
+  returns a copy. A live controller status update could therefore consume a
+  stop before the optimizer replayed that same event. Added a copy at this
+  boundary, and a focused isolation test that mutates the live reduced plan
+  while verifying the stored committed plan remains unchanged.
+- The corrected complete noisy weighted/logistic batch case passed in **3.80s**.
+- Corrected model checks, all nine acceptance simulations, and the three
+  original reference regressions passed together: **35 passed in 43.26s**.
+
+### Step 4: exercise standalone YAML scenarios and paired acceptance
+
+- Added paired CLI cases for identical weighted-acceptance policies and
+  disabled-versus-heterogeneous-class policies under common sigma 0.3.
+- Their first run failed before simulation: upstream `ScenarioConfig.read_yaml`
+  passed the parsed list into a constructor that expects a file path. This is
+  the first workflow here to use actual YAML scenario files (the earlier
+  override check used a YAML constant mapping).
+- Corrected YAML scenario loading to build a list of `ConstantConfig` mappings,
+  preserving nested classes and existing constant/scenario merge behavior.
+  Added checks for nested coefficients and invalid YAML container shapes.
+- Preserved the original failure at
+  `/workspace/.setup/phase3-paired-checkpoint.log`. This necessary parser fix
+  lets the documented class scenarios run through the actual command-line path.
+- Corrected parser/model checks and both paired experiments passed together:
+  **29 passed in 25.22s**, with one warning from an existing regex escape literal.
+- Added a two-seed heterogeneous-class batch experiment to the integration
+  suite and checks that a terminal driver decline cannot reopen either of the
+  controller's waiting-window retry queues. These specifically exercise the
+  integration boundaries found during full runs.
+
+### Step 5: final audited experiments and retained raw evidence
+
+- Ran two separate three-seed experiments at common sigma 0.3, seeds 0/1/2:
+  original insertion versus weighted logistic acceptance with one attempt, and
+  original batch assignment versus weighted heterogeneous-class acceptance
+  with one retry. All **12 simulations completed**, and all **six paired
+  demand/network/initial-fleet audits matched**.
+- Every accepted/booked rider completed in all runs. Candidate acceptance logs
+  exactly identify completed requests; terminally declined requests never serve.
+- Insertion: mean completed requests **89.67 → 44.67**, mean driver declines
+  **54.33**. This example uses deliberately illustrative coefficients and no
+  retries; its outcome is not a calibrated prediction or a policy improvement.
+- Batch classes: mean completed requests **91.00 → 76.33**, mean attempts
+  **133.33**, mean declines **57.00**, mean terminal declines **16.00**.
+  Attempts/declines include repeated offers, so they are not unique-rider counts.
+- Retained all principal raw CSV/JSON outputs, rider/vehicle records, acceptance
+  decisions, class audits, configs, console/simulation logs, reports, source
+  manifests, and per-run output hashes under `docs/validation/phase3/`.
+  Original run directories are `/workspace/.setup/phase3/verified-insertion`
+  and `/workspace/.setup/phase3/verified-batch-classes`.
+- Both experiments used the same unchanged working-source digest. The broader
+  final suite is running; its actual outcome is recorded below before publication.
+
+### Step 6: complete verification and prepare publication
+
+- Final command: `.venv/bin/python -m pytest -q` → **107 passed**, **0 failed**,
+  **0 skipped**, in **177.57s**. All earlier compatibility cases remain in the
+  suite, including the three independent upstream references.
+- Verified that both final experiment source digests equal the tested working
+  source: `a899aa49e06c7f4fe31d9714c2a4336a04704151f05acc63cb34f3190a2254b9`.
+  No Python source changed during these tests/experiments. Original baseline
+  reference files are unchanged. Corrected a documentation EOF blank line, and
+  `git diff --check` passes before commit.
+- Archived final test output and all run/checkpoint evidence. Added the two
+  previously ignored Phase 2 console logs explicitly so their existing
+  validation-record hashes also resolve in the published repository.
+- Updated README, project summary, improvement log, and Phase 3 documentation
+  with configuration, explicit assumptions/units, retry semantics, commands,
+  limitations, and measured outcomes.
+
+| Change | Reason | Benefit and evidence |
+| --- | --- | --- |
+| Off-by-default logistic driver decisions | Previously all driver assignments were treated as accepted | p=0 serves none; p=1 exactly reproduces all three baseline examples |
+| Isolated request/vehicle streams and fixed driver classes | Unrelated draws and ordering should not alter driver decisions | Unit isolation and identical-policy separate-process runs pass |
+| Bounded retries, caching, and terminal rejection logs | Avoid unlimited offers and hidden redecisions | Per-attempt records; retry and waiting-window regression cases pass |
+| Preserve operator commitments | Fresh decisions must not abandon booked/onboard riders | Committed-rider unit checks and every booking completed in 12 final runs |
+| Probability-weighted assignment reward | Model expected willingness without scaling operating cost | Analytic reward/cost check, no scoring draws, exact p=1 runs |
+| Correctly register/copy reduced batch plans | Declines exposed optimizer tree/plan ownership assumptions | Noisy batch and heterogeneous-class multi-seed experiments pass |
+| Repair YAML scenario loading | Nested driver classes could not run through the actual CLI | Real class scenarios, merge and malformed-container checks pass |
+| Complete decision/raw-output/source/input evidence | Published behavior must be reviewable | Full records and validation hashes committed alongside the implementation |
+- Preserved initial full-check output at
+  `/workspace/.setup/phase3-acceptance-checkpoint.log`; the noisy batch case is
+  retained as an end-to-end regression for this lifecycle issue.

@@ -1,0 +1,81 @@
+........F                                                                [100%]
+=================================== FAILURES ===================================
+_ test_acceptance_executes_only_accepted_rides_and_preserves_committed_plans[logistic-batch] _
+
+example = 'batch', mode = 'logistic'
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-15/test_acceptance_executes_only_8')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize("example", ["insertion", "immediate_batch", "batch"])
+    @pytest.mark.parametrize("mode", ["always", "never", "logistic"])
+    def test_acceptance_executes_only_accepted_rides_and_preserves_committed_plans(example, mode, tmp_path):
+        output = tmp_path / "run"
+        config = {"op_driver_acceptance": "logistic", "op_driver_acceptance_max_declines": 1}
+        if mode == "logistic":
+            config.update(op_driver_acceptance_intercept=0, op_driver_acceptance_beta_eta=-.15,
+                          op_driver_acceptance_beta_value=.1, op_driver_acceptance_weight_objective=True)
+        else:
+            config.update(op_driver_acceptance_probability=1 if mode == "always" else 0,
+                          op_driver_acceptance_weight_objective=mode == "always")
+        config_path = tmp_path / "acceptance.yaml"
+        config_path.write_text(yaml.safe_dump(config))
+        command = [sys.executable, str(RUNNER), example, "--source-root", str(ROOT),
+                   "--output", str(output), "--driver-acceptance-config", str(config_path)]
+        if mode == "logistic":
+            command.extend(["--network-tt-noise-sigma", "0.3"])
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=180,
+                                env=dict(os.environ, PYTHONHASHSEED="0", OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1"))
+>       assert result.returncode == 0, result.stdout + "\n" + result.stderr
+E       AssertionError: --------------------------------------------------------------------------------
+E         Simulation of scenario example_pool_sc_1
+E         Only minimum output to console -> see log-file
+E         Scenario example_pool_sc_1
+E         Operator 0 control strategy: RidePoolingBatchAssignmentFleetcontrol
+E         	 control function: {'func_key': 'distance_and_user_times_with_walk', 'vot': 0.45}
+E         Operator 0 additional strategies:
+E         	 RV Heuristics: {}
+E         	 Stop-Insert Heuristics: {}
+E         	 Charging: None
+E         	 On-Street Parking: True
+E         	 Repositioning: None
+E         	 Dynamic Pricing: None
+E         	 Dynamic Fleet Sizing: None
+E         
+E         Broker: No broker type specified, using default BrokerBasic
+E         
+E         
+E         abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!
+E         Traceback (most recent call last):
+E           File "/workspace/Mobility_simulation/tests/regression/run_example.py", line 74, in <module>
+E             main()
+E           File "/workspace/Mobility_simulation/tests/regression/run_example.py", line 67, in main
+E             run_single_simulation(parameters)
+E           File "/workspace/Mobility_simulation/run_scenarios.py", line 26, in run_single_simulation
+E             SF.run()
+E           File "/workspace/Mobility_simulation/src/FleetSimulationBase.py", line 819, in run
+E             self.step(sim_time)
+E           File "/workspace/Mobility_simulation/src/BatchOfferSimulation.py", line 92, in step
+E             op_obj.time_trigger(sim_time)
+E           File "/workspace/Mobility_simulation/src/fleetctrl/FleetControlBase.py", line 578, in time_trigger
+E             self._call_time_trigger_request_batch(simulation_time)
+E           File "/workspace/Mobility_simulation/src/fleetctrl/RidePoolingBatchAssignmentFleetcontrol.py", line 131, in _call_time_trigger_request_batch
+E             super()._call_time_trigger_request_batch(simulation_time)
+E           File "/workspace/Mobility_simulation/src/fleetctrl/RidePoolingBatchOptimizationFleetControlBase.py", line 357, in _call_time_trigger_request_batch
+E             self.RPBO_Module.compute_new_vehicle_assignments(self.sim_time, self.vid_finished_VRLs, build_from_scratch=False,
+E           File "/workspace/Mobility_simulation/src/fleetctrl/pooling/batch/AlonsoMora/AlonsoMoraAssignment.py", line 243, in compute_new_vehicle_assignments
+E             self._computeV2RBdatabase()
+E           File "/workspace/Mobility_simulation/src/fleetctrl/pooling/batch/AlonsoMora/AlonsoMoraAssignment.py", line 941, in _computeV2RBdatabase
+E             self._updateVehicleDataBase(vid)
+E           File "/workspace/Mobility_simulation/src/fleetctrl/pooling/batch/AlonsoMora/AlonsoMoraAssignment.py", line 1355, in _updateVehicleDataBase
+E             self._createNecessaryV2RBsBeforeBuildPhase(vid)
+E           File "/workspace/Mobility_simulation/src/fleetctrl/pooling/batch/AlonsoMora/AlonsoMoraAssignment.py", line 1418, in _createNecessaryV2RBsBeforeBuildPhase
+E             assigned_plan = self.external_assignments[vid][1]
+E         KeyError: 3
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '/workspace/Mobility_simulation/tests/regres... 1418, in _createNecessaryV2RBsBeforeBuildPhase\n    assigned_plan = self.external_assignments[vid][1]\nKeyError: 3\n').returncode
+
+tests/integration/test_acceptance_examples.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/integration/test_acceptance_examples.py::test_acceptance_executes_only_accepted_rides_and_preserves_committed_plans[logistic-batch]
+1 failed, 8 passed in 28.06s

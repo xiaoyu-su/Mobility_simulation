@@ -81,3 +81,41 @@ Usage and metric definitions: `docs/PHASE_1.md`. Step-by-step evidence:
 Usage, semantics, and limits: `docs/PHASE_2.md`. Actual final evidence:
 `docs/validation/phase2/`. Changes, reasons, benefits, and development checkpoints:
 `docs/WORK_LOG.md`.
+
+## Phase 3 — configurable driver acceptance
+
+- **What changed:** off-by-default logistic acceptance based on planned pickup
+  minutes and direct-trip kilometers, fixed-probability sanity checks, named
+  driver classes, bounded same-driver retries, and decision/class audits.
+- **Why:** the original operators assume every driver carries out each new
+  assignment. Driver-side declines need a separate decision boundary before
+  rider booking and vehicle execution.
+- **Benefit:** declined requests cannot execute; committed riders remain
+  protected; independent per-request/vehicle draws preserve input pairing and
+  repeatability. The always-accept path reproduces baseline results exactly.
+- **Matching:** optional probability weighting changes only the uncommitted
+  assignment reward in the baseline distance/user-time objective. Costs and
+  committed-rider rewards retain their original values. Future fallback value
+  and ranked multi-driver offers remain later phases.
+- **Integration corrections found end to end:** copied internally reduced
+  Alonso-Mora plans preserve optimizer/live-state independence; terminal driver
+  declines cannot reopen waiting-window retries. Fixed an existing YAML scenario
+  loader constructor mismatch so nested driver-class scenarios run through the
+  real CLI.
+- **Traceability:** explicit units, supplied coefficients/classes, stream/seed
+  metadata, every acceptance/decline attempt, terminal rejection counts, and
+  paired seed reports. Included coefficients/shares are illustrative; a
+  literature fare-per-USD slope is not relabeled as a distance-per-km slope.
+- **Scope:** the three single-worker baseline road-trip controllers. Retries
+  immediately reoffer to the same selected driver and assume zero response
+  latency. PT/external traffic/multiprocessing and empirical calibration are
+  outside this implementation.
+- **Final verification:** **107 tests passed in 177.57s**. Two separate
+  three-seed experiments completed all 12 simulations, matched all six input
+  audits, and completed every accepted booking. The complete raw records,
+  decisions, source/config/output hashes, and reports are retained in
+  `docs/validation/phase3/`.
+
+Usage and assumptions: `docs/PHASE_3.md`. Full checkpoints, corrections, final
+verification, and GitHub publication are recorded in `docs/WORK_LOG.md`;
+final machine-readable evidence is archived in `docs/validation/phase3/`.

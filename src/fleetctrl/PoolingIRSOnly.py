@@ -57,6 +57,8 @@ class PoolingInsertionHeuristicOnly(FleetControlBase):
         self.rid_to_assigned_vid = {} # rid -> vid
         self.pos_veh_dict = {}  # pos -> list_veh
         self.vr_ctrl_f = return_pooling_objective_function(operator_attributes[G_OP_VR_CTRL_F])
+        if self.driver_acceptance is not None:
+            self.vr_ctrl_f = self.driver_acceptance.wrap_objective(self.vr_ctrl_f)
         self.sim_time = scenario_parameters[G_SIM_START_TIME]
         # others # TODO # standardize IRS assignment memory?
         self.tmp_assignment = {}  # rid -> VehiclePlan
@@ -276,6 +278,10 @@ class PoolingInsertionHeuristicOnly(FleetControlBase):
         :rtype: TravellerOffer
         """
         if assigned_vehicle_plan is not None:
+            if self.driver_acceptance is not None and not self.driver_acceptance.accept(
+                    assigned_vehicle_plan.vid, prq, assigned_vehicle_plan, simulation_time):
+                self.tmp_assignment.pop(prq.get_rid_struct(), None)
+                return self._create_rejection(prq, simulation_time, reason=REJECTION_REASON.DRIVER_DECLINED)
             pu_time, do_time = assigned_vehicle_plan.pax_info.get(prq.get_rid_struct())
             # offer = {G_OFFER_WAIT: pu_time - simulation_time, G_OFFER_DRIVE: do_time - pu_time,
             #          G_OFFER_FARE: int(prq.init_direct_td * self.dist_fare + self.base_fare)}

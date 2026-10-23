@@ -64,3 +64,17 @@ def test_second_attempt_rejects_its_own_request(controller, has_new_request):
     expected.append(call(retried_request, 60, reason=REJECTION_REASON.NO_VEHICLE_AVAILABLE))
     assert controller._create_rejection.call_args_list == expected
     assert controller.unassigned_requests_2 == {}
+
+
+@pytest.mark.parametrize("retry_queue", [1, 2])
+def test_terminal_driver_decline_does_not_reopen_a_waiting_window_retry(controller, retry_queue):
+    request = object()
+    controller.max_wait_time_2 = 600
+    controller._driver_declined_requests = {42}
+    controller.rq_dict = {42: request}
+    setattr(controller, f"unassigned_requests_{retry_queue}", {42: 1})
+    controller._call_time_trigger_request_batch(60)
+    controller._create_rejection.assert_called_once_with(request, 60, reason=REJECTION_REASON.DRIVER_DECLINED)
+    controller.RPBO_Module.delete_request.assert_not_called()
+    controller.RPBO_Module.add_new_request.assert_not_called()
+    assert controller.unassigned_requests_1 == {} and controller.unassigned_requests_2 == {}

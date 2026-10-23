@@ -23,6 +23,8 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--network-tt-noise-sigma", type=float)
     parser.add_argument("--record-promised-times", action="store_true")
+    parser.add_argument("--driver-acceptance-config", type=Path,
+                        help="YAML mapping containing only op_driver_acceptance settings")
     args = parser.parse_args()
     root = args.source_root.resolve()
     output = args.output.resolve()
@@ -57,6 +59,11 @@ def main():
         parameters["network_tt_noise_sigma"] = args.network_tt_noise_sigma
     if args.record_promised_times:
         parameters["record_promised_times"] = True
+    if args.driver_acceptance_config is not None:
+        settings = ConstantConfig(str(args.driver_acceptance_config))
+        if any(not key.startswith("op_driver_acceptance") for key in settings):
+            raise ValueError("Driver acceptance overrides may contain only op_driver_acceptance settings")
+        parameters.update(settings)
     run_single_simulation(parameters)
     for filename in ("standard_eval.csv", "1_user-stats.csv", "final_state.csv"):
         if not (output / filename).is_file():

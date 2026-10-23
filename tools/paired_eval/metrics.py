@@ -162,6 +162,33 @@ def seed_summary(result_directory, drivers, distribution):
             summary[f"{row.metric}.{statistic}"] = float(getattr(row, statistic))
     if "promised_pickup_time" in users.columns:
         summary.update(promise_error_summary(users))
+    summary.update(driver_acceptance_summary(result_directory))
+    return summary
+
+
+def driver_acceptance_summary(result_directory):
+    paths = sorted(Path(result_directory).glob("driver_acceptance_op_*.csv"))
+    summary = {"driver_offer_attempts": 0.0, "driver_acceptances": 0.0,
+               "driver_declines": 0.0, "driver_terminal_declines": 0.0, "driver_offered_requests": 0.0}
+    if not paths:
+        return summary
+    decisions = pd.concat([pd.read_csv(path) for path in paths], ignore_index=True)
+    if decisions.empty:
+        return summary
+    if (decisions.duplicated(["operator_id", "request_id", "attempt"]).any()
+            or not pd.api.types.is_bool_dtype(decisions.accepted)
+            or not pd.api.types.is_bool_dtype(decisions.terminal_decline)
+            or not decisions.accepted.isin([True, False]).all()
+            or not decisions.terminal_decline.isin([True, False]).all()
+            or not np.isfinite(decisions.probability).all()
+            or not decisions.probability.between(0, 1).all()
+            or (decisions.accepted & decisions.terminal_decline).any()):
+        raise ValueError("Malformed driver-acceptance decision log")
+    summary.update(driver_offer_attempts=float(len(decisions)),
+                   driver_acceptances=float(decisions.accepted.sum()),
+                   driver_declines=float((~decisions.accepted).sum()),
+                   driver_terminal_declines=float(decisions.terminal_decline.sum()),
+                   driver_offered_requests=float(len(decisions.drop_duplicates(["operator_id", "request_id"]))))
     return summary
 
 

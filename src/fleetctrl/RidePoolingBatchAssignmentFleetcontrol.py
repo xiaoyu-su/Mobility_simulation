@@ -137,6 +137,9 @@ class RidePoolingBatchAssignmentFleetcontrol(RidePoolingBatchOptimizationFleetCo
             for rid in self.unassigned_requests_1.keys():
                 assigned_vid = self.rid_to_assigned_vid.get(rid, None)
                 prq = self.rq_dict[rid]
+                if rid in getattr(self, "_driver_declined_requests", set()):
+                    self._create_rejection(prq, simulation_time, reason=REJECTION_REASON.DRIVER_DECLINED)
+                    continue
                 if assigned_vid is None:
                     if self.max_wait_time_2 is not None and self.max_wait_time_2 > 0:    # retry with new waiting time constraint (no offer returned)
                         new_unassigned_requests_2[rid] = 1
@@ -153,6 +156,9 @@ class RidePoolingBatchAssignmentFleetcontrol(RidePoolingBatchOptimizationFleetCo
             for rid in self.unassigned_requests_2.keys():   # check second try rids
                 assigned_vid = self.rid_to_assigned_vid.get(rid, None)
                 prq = self.rq_dict[rid]
+                if rid in getattr(self, "_driver_declined_requests", set()):
+                    self._create_rejection(prq, simulation_time, reason=REJECTION_REASON.DRIVER_DECLINED)
+                    continue
                 if assigned_vid is None:    # decline
                     self._create_rejection(prq, simulation_time, reason=REJECTION_REASON.NO_VEHICLE_AVAILABLE)
                 else:

@@ -378,6 +378,19 @@ objective, or implement driver acceptance. Phase 3 is the next planned stage.
 | Correctly register/copy reduced batch plans | Declines exposed optimizer tree/plan ownership assumptions | Noisy batch and heterogeneous-class multi-seed experiments pass |
 | Repair YAML scenario loading | Nested driver classes could not run through the actual CLI | Real class scenarios, merge and malformed-container checks pass |
 | Complete decision/raw-output/source/input evidence | Published behavior must be reviewable | Full records and validation hashes committed alongside the implementation |
+
+### Step 7: publish the completed work to GitHub
+
+- User explicitly requested GitHub publication. Pushed branch
+  `phase-3-driver-acceptance` to `xiaoyu-su/Mobility_simulation`.
+- Published foundation commit `85bb47a` (Phases 0–2) and implementation/evidence
+  commit `7d2caa4f1140a6fb0ad20db14273c6e7dc4238a8` (Phase 3).
+- Opened [pull request #1](https://github.com/xiaoyu-su/Mobility_simulation/pull/1),
+  targeting `main`. GitHub verified its open state, correct head/base branches,
+  implementation commit, and mergeable status.
+- This final publication record is a documentation-only follow-up commit.
+  The tested Python-source digest remains unchanged; the **107 passing tests**
+  and archived experiment checks apply to the published implementation.
 - Preserved initial full-check output at
   `/workspace/.setup/phase3-acceptance-checkpoint.log`; the noisy batch case is
   retained as an end-to-end regression for this lifecycle issue.

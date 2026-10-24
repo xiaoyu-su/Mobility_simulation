@@ -1,0 +1,1 @@
+/workspace/Mobility_simulation/.venv/bin/python -m pytest -q --junitxml=/workspace/.setup/phase5b/final-suite/junit.xml --basetemp=/workspace/.setup/phase5b/final-suite/simulation-runs

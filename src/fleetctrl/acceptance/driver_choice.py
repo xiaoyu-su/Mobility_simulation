@@ -80,7 +80,7 @@ class DriverChoice:
             with self.path.open("a", newline="") as stream:
                 csv.DictWriter(stream, fieldnames=self.columns).writerows(rows)
 
-    def accept_single(self, vehicle_id, request, plan, simulation_time):
+    def accept_single(self, vehicle_id, request, plan, simulation_time, *, final_candidate=None):
         if request.status >= G_PRQS_ACC_OFFER:
             return True
         rid = request.get_rid_struct()
@@ -90,7 +90,10 @@ class DriverChoice:
         if rid in self.owners and self.owners[rid] != vehicle_id:
             raise ValueError("Request already accepted by another driver")
         probability = self.acceptance.probability(vehicle_id, request, plan, simulation_time)
-        accepted = self.acceptance._accept_legacy(vehicle_id, request, plan, simulation_time)
+        if final_candidate is None:
+            accepted = self.acceptance._accept_legacy(vehicle_id, request, plan, simulation_time)
+        else:
+            accepted = self.acceptance._accept_ranked_candidate(vehicle_id, request, plan, simulation_time, final_candidate)
         offer = ChoiceOffer(rid, vehicle_id, probability)
         choice = MenuChoice(vehicle_id, (offer,), (probability,), 1 - probability,
                             offer if accepted else None, None)
@@ -160,4 +163,7 @@ class DriverChoice:
                  "singleton": "delegates Phase 3 draws/retries; no additional draw",
                  "scope": "solver-selected new-request menus; no candidate expansion or alternative-driver rerouting",
                  "counters": self.counters}
+        if getattr(self.acceptance, "ranked_fallback", None) is not None:
+            audit["singleton"] = "one decision per ranked candidate driver; delegates existing request/driver draws"
+            audit["scope"] = "ranked insertion singleton episodes; stop at first accepted driver"
         self.audit_path.write_text(json.dumps(audit, indent=2, allow_nan=False) + "\n")

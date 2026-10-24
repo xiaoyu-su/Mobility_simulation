@@ -776,3 +776,125 @@ and will be committed locally before the actual push attempt is recorded.
   driver coefficients, no demonstrated service gain, and unit coverage for
   generic overlapping-driver conflicts because live solver menus are disjoint.
   No later phase is being marked implemented by this audit.
+
+## Phase 5b — ranked insertion fallback (2026-10-23)
+
+### Step 1: scope, implementation, and first complete run
+
+- Re-read the uploaded dispatch plan. This phase walks insertion candidates
+  cheapest-first and stops at the first willing driver. Alonso-Mora graph-edge
+  prohibition/rematching remains Phase 5c. Created `phase-5b-ranked-insertion`
+  from the fully published Phase 5/audit branch; preserved the clean source and
+  required Xiaoyu Su Git identity.
+- Added opt-in `op_driver_acceptance_ranked_fallback` for both immediate
+  insertion controllers. Freeze the existing feasible, heuristic-filtered
+  candidate list, retain the cheapest plan per driver, and preserve original
+  stable cost ties. Declined plans are never assigned; the normal booking path
+  executes only the first accepted plan.
+- Require a single decision per distinct driver (`max_declines=0`). Reuse
+  existing per-request/driver streams and optional singleton choice ownership;
+  do not let the legacy global retry budget suppress later drivers. Only an
+  exhausted candidate list makes the last refusal a terminal request decline.
+- Added candidate-order, probability, decision, and exhaustion records plus
+  final counters. Reservation requests, delayed traveler models, and pure batch
+  rematching are outside this phase and are explicitly rejected when enabled.
+  The disabled path retains the original stable minimum and decision logic.
+- First checkpoint: existing unit suite **133 passed in 4.72s**. First complete
+  insertion run with sigma 0.3 processed all 100 requests, completed **73**,
+  and recorded **26 fallback acceptances** out of 159 driver offers. Accepted
+  requests exactly matched completed rides; no terminally declined request
+  served. This smoke used the baseline's legacy initialization; the later
+  paired comparisons use independent named streams and a different starting
+  fleet. This is a functionality check, not a controlled service-gain claim.
+- Evidence: `/workspace/.setup/phase5b/initial-unit.txt`, `smoke-insertion.txt`,
+  and `smoke-insertion/`. Added focused ordering, draw/cache, boundary, and
+  complete-controller integration checks before final paired experiments.
+
+### Step 2: focused complete-controller and replay verification
+
+- Focused ordering/draw checks plus complete simulations: **25 passed in
+  102.43s**. Both insertion controllers complete always-accept, always-decline,
+  logistic/noisy, and future-value/noisy runs. Probability-one output tables
+  match the same first-driver controls exactly; explicit false matches omission
+  for all three baseline controllers.
+- Added independent-process paired replay for both insertion controllers and
+  the future-value combination, plus live driver-class runs with choice off and
+  logit singleton adaptation. Corrected the enabled choice-audit description
+  to identify ranked singleton episodes; disabled audit content is unchanged.
+- Replay/classes/scope checkpoint: **10 passed, 22 deselected in 94.69s**.
+  Deselection was deliberate for this focused command; all cases remain in the
+  final full-suite gate. No simulation or test failure occurred at these
+  checkpoints. Reserved Phase 5c remains rejected explicitly.
+- Added an otherwise identical single-attempt immediate/batch control scenario
+  for fair comparison. Freeze Python source before the final full suite and
+  three seed-0/1/2 comparisons: insertion, immediate/batch, and insertion with
+  future value. Preserve commands, actual results, source/input/output hashes,
+  and complete raw records before publication.
+
+### Step 3: controlled comparisons on stable source
+
+- All three final seed-0/1/2 experiments completed: **18 simulations** and
+  **nine matched input pairs**, sigma 0.3. Independently compared the saved
+  baseline/candidate settings: only the scenario name and ranked-fallback flag
+  differ. Both arms have the same single-attempt allowance, classes,
+  objective/choice configuration, demand, network, and starting fleet per seed.
+- Mean completed trips: insertion **44.67 → 70.33**, immediate/batch
+  **49.67 → 71.67**, future-value insertion **42.67 → 69.67**. Candidate seed
+  completions are **69/69/73**, **70/70/75**, and **68/70/71**, respectively.
+- Mean wait among served riders changes **118.61s → 149.66s**,
+  **113.46s → 107.07s**, and **107.85s → 153.28s**, respectively. These
+  conditional means involve different served riders; extra completions do not
+  imply every rider waits less. Driver-offer means increase from **99.00 →
+  157.67**, **98.33 → 176.00**, and **98.00 → 158.00**.
+- Every accepted request in all 18 runs completed; no terminally declined
+  request served. These are measured gains in the small illustrative examples,
+  not a calibrated marketplace or city-scale result. Preserve the unfavorable
+  waiting-time changes alongside the service gains. Complete logs/configs/raw
+  outputs remain under `/workspace/.setup/phase5b/final-comparisons/` while the
+  full regression/integration suite continues on the same frozen Python source.
+- Independently matched **six historical control runs** against saved Phase 5
+  insertion and Phase 4 future-value artifacts: **24 rider/evaluation/decision/
+  choice-or-score tables** are exactly unchanged. This checks compatibility
+  with already recorded history, in addition to new explicit-false comparisons.
+  All 18 final runs also pass chronological vehicle/driver accounting.
+
+### Step 4: final complete suite, output audit, and publication preparation
+
+- Final complete command: `.venv/bin/python -m pytest -q`, with retained JUnit
+  and unique temporary output paths as recorded in `command.txt`.
+  Result: **213 passed, 0 failed, 0 skipped in 818.86s**. The 64 regression/
+  integration cases execute **126** complete simulations, alongside 149 unit
+  cases. Together with the 18 controlled comparisons, **144 final-source
+  simulation runs** completed successfully.
+- Independently audited all 144 outputs for 100 unique demand records, final
+  state, completed pickups/bookings, absence of terminally declined riders in
+  served output, valid evaluation, and chronological driver accounting. Active
+  fallback runs additionally verify unique request/driver offers, consecutive
+  ranks, ordered candidate costs, one winner, stop-on-acceptance, exhaustion-
+  only terminal refusal, counter totals, and agreement of both decision logs.
+  Zero-service boundary evaluations are handled explicitly as in the prior
+  cross-phase audit.
+- Source digest stayed exactly
+  `7dc26b80c54bc239a727b4da04762dc66c4d48caaf901746c7ced12b47d641a1`
+  across the full suite and every final experiment. All approved upstream
+  input/config hashes remain unchanged. The original Phase 0 CSVs were not
+  modified. `git diff --check` passes.
+- A provenance probe was initially invoked with system Python, which lacks
+  `tqdm`; reran it successfully with the repository `.venv/bin/python`.
+  Simulations and pytest used the correct virtual environment throughout;
+  no dependency or simulation-code change was needed for that tooling error.
+- Archived exact commands, console/JUnit evidence, source/input/output hashes,
+  per-run audits, all comparison reports, checkpoint logs, and compressed raw
+  records under `docs/validation/phase5b/`. Read back and hash-verified all
+  **2,165** regular archived files, including the separately labeled earlier
+  smoke. Full-source runs exclude that checkpoint from their count.
+- Updated phase documentation and the project/change summaries with actual
+  benefits and waiting-time tradeoffs. The feature remains opt-in and the
+  next optimizer forbidding/rematching work remains Phase 5c. Prepare the
+  implementation/evidence commit with Xiaoyu Su as both author and committer,
+  then verify the pushed branch tip independently.
+- Staged whitespace preflight flagged an extra final blank line in the original
+  smoke console output. Preserve the raw log bytes and their recorded hash;
+  apply the staged whitespace gate to source/docs/data while excluding the
+  generated phase console `.txt` files. This is an evidence-formatting issue,
+  not a simulation or test failure.

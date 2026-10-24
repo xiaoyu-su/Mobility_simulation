@@ -15,6 +15,7 @@ from src.misc.globals import G_PRQS_ACC_OFFER, G_SKIP_OUTPUT
 from src.misc.seeding import derive_rng, STREAM_SCHEME
 from src.fleetctrl.acceptance.future_value import FutureValue, enabled as future_enabled, ENABLED, TOP_K
 from src.fleetctrl.acceptance.driver_choice import DriverChoice, choice_mode, PARAMETER as CHOICE_PARAMETER
+from src.fleetctrl.acceptance.ranked_insertion import RankedInsertionFallback, enabled as ranked_enabled, PARAMETER as RANKED_PARAMETER
 
 
 PREFIX = "op_driver_acceptance"
@@ -22,6 +23,7 @@ PARAMETERS = [PREFIX, *[f"{PREFIX}_{suffix}" for suffix in
               ("intercept", "beta_eta", "beta_value", "probability", "max_declines", "classes", "weight_objective",
                "future_value", "future_value_top_k")]]
 PARAMETERS.append(CHOICE_PARAMETER)
+PARAMETERS.append(RANKED_PARAMETER)
 SUPPORTED_CONTROLLERS = {"PoolingIRSOnly", "PoolingIRSAssignmentBatchOptimization", "RidePoolingBatchAssignmentFleetcontrol"}
 
 
@@ -142,6 +144,14 @@ class DriverAcceptance:
             (directory / f"driver_acceptance_op_{operator_id}.json").write_text(json.dumps(audit, indent=2) + "\n")
         mode = choice_mode(attributes)
         self.choice = DriverChoice(self, mode, scenario, output_directory) if mode != "off" else None
+        self.ranked_fallback = (RankedInsertionFallback(self, attributes, scenario, output_directory)
+                                if ranked_enabled(attributes) else None)
+        if self.ranked_fallback is not None and self.path is not None:
+            audit_path = self.path.with_suffix(".json")
+            audit = json.loads(audit_path.read_text())
+            audit["ranked_fallback"] = {"enabled": True, "max_attempts_scope": "one per retained distinct driver",
+                                       "terminal_decline": "request exhausted, not an intermediate driver refusal"}
+            audit_path.write_text(json.dumps(audit, indent=2) + "\n")
 
     def probability(self, vehicle_id, request, plan, simulation_time):
         if self.override is not None:
@@ -161,10 +171,47 @@ class DriverAcceptance:
         if self.choice is not None:
             self.choice.begin_round()
 
-    def accept(self, vehicle_id, request, plan, simulation_time):
+    def accept(self, vehicle_id, request, plan, simulation_time, *, final_candidate=None):
         if self.choice is not None:
+            if final_candidate is not None:
+                return self.choice.accept_single(vehicle_id, request, plan, simulation_time, final_candidate=final_candidate)
             return self.choice.accept_single(vehicle_id, request, plan, simulation_time)
+        if final_candidate is not None:
+            return self._accept_ranked_candidate(vehicle_id, request, plan, simulation_time, final_candidate)
         return self._accept_legacy(vehicle_id, request, plan, simulation_time)
+
+    def _accept_ranked_candidate(self, vehicle_id, request, plan, simulation_time, final_candidate):
+        if self.ranked_fallback is None:
+            raise ValueError("Ranked driver decisions require ranked fallback enabled")
+        if request.status >= G_PRQS_ACC_OFFER:
+            return True
+        rid = request.get_rid_struct()
+        key = rid, vehicle_id
+        if key in self.outcomes:
+            return self.outcomes[key]
+        if self.future_value is not None:
+            self.future_value.record_selected(vehicle_id, request, plan, simulation_time)
+        probability = self.probability(vehicle_id, request, plan, simulation_time)
+        draw = None
+        if probability in (0, 1):
+            accepted = probability == 1
+        else:
+            if key not in self.draws:
+                self.draws[key] = derive_rng(self.seed, f"driver_acceptance/{self.operator_id}/{vehicle_id}/{rid}")
+            draw = float(self.draws[key].random())
+            accepted = draw < probability
+        previous_declines = self.declines.get(rid, 0)
+        count = previous_declines + (not accepted)
+        if not accepted:
+            self.declines[rid] = count
+        if self.path is not None:
+            values = [simulation_time, self.operator_id, vehicle_id, rid, self.vehicle_classes[vehicle_id],
+                      previous_declines + 1, max(0, plan.pax_info[rid][0] - simulation_time),
+                      request.init_direct_td, probability, draw, accepted, count, not accepted and final_candidate]
+            with self.path.open("a", newline="") as stream:
+                csv.DictWriter(stream, fieldnames=self.columns).writerow(dict(zip(self.columns, values)))
+        self.outcomes[key] = accepted
+        return accepted
 
     def _accept_legacy(self, vehicle_id, request, plan, simulation_time):
         # Never allow a fresh stochastic decision to abandon an accepted or
@@ -258,6 +305,8 @@ class DriverAcceptance:
 def create_driver_acceptance(attributes, scenario, operator_id, vehicles, output_directory):
     mode = attributes.get(PREFIX)
     if mode in (None, "off", False):
+        if ranked_enabled(attributes):
+            raise ValueError(f"{RANKED_PARAMETER} requires {PREFIX}=logistic")
         if choice_mode(attributes) != "off":
             raise ValueError(f"{CHOICE_PARAMETER} requires {PREFIX}=logistic")
         if future_enabled(attributes):

@@ -191,3 +191,40 @@ results remain exact; actual batch menus complete 53.00 trips on average versus
 54.67 for the control, so no service improvement is claimed. Every accepted
 booking completes. Ranked insertion fallback (5b) and optimizer rerouting (5c)
 remain separate subsequent phases.
+
+## Phase 5b: ranked insertion fallback
+
+- **Problem:** after the best insertion driver declines, the immediate
+  controllers reject the request even when another retained driver has a
+  feasible plan.
+- **Change:** opt-in `op_driver_acceptance_ranked_fallback` freezes feasible
+  insertion candidates, orders by existing delta objective with stable ties,
+  retains each driver's cheapest plan, and offers once per driver until the
+  first acceptance. Only that plan reaches normal booking/execution. Both
+  immediate insertion controllers support the feature; optimizer edge
+  prohibition/rematching is reserved for Phase 5c.
+- **Decision integrity:** reuse isolated request/driver draws, avoid same-driver
+  retries, cache winners/outcomes, preserve choice ownership and booked riders,
+  and mark only exhausted requests terminal. Disabled and probability-one paths
+  retain exact existing rider/evaluation/decision tables in complete runs.
+- **Records:** candidate lists/costs/ranks, probabilities, decisions, exhausted
+  lists, actual successful fallback, source/config/output hashes, and complete
+  raw simulations are preserved. Output suppression and final audit flushing
+  continue to work.
+- **Measured benefit and tradeoff:** three controlled seed-0/1/2 comparisons
+  complete 18 simulations and nine matching-input audits. Mean completed trips
+  increase **44.67 → 70.33** for insertion, **49.67 → 71.67** for immediate/batch,
+  and **42.67 → 69.67** with future value. Mean served-rider waits rise in the
+  first/third cases and fall in the second; all accepted bookings finish.
+- **Limits:** bundled single-worker examples and illustrative coefficients;
+  retained heuristic-filtered candidates, instantaneous offers, one decision
+  per driver (`max_declines=0`), and BasicRequest immediate decisions. Results
+  do not establish calibration, city-scale benefits, or Phase 5c support.
+
+Usage and assumptions: `docs/PHASE_5B.md`. Step/checkpoint/final verification
+record: `docs/WORK_LOG.md`. Final evidence: `docs/validation/phase5b/`.
+
+Final gate: **213 tests passed**, zero failures/skips, in 818.86s. The suite
+completed 126 simulations; the controlled comparisons add 18 for **144**
+final-source runs. All outputs were audited, all accepted bookings finished,
+and six historical controls matched 24 saved tables exactly.

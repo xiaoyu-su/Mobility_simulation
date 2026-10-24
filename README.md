@@ -12,6 +12,8 @@ retries, driver classes, and probability-weighted matching rewards.
 pickup-ETA ranking and cached fallback estimates.
 [Phase 5](docs/PHASE_5.md) adds optional driver menus, an outside choice,
 deterministic conflict resolution, and exact single-item compatibility.
+[Phase 5b](docs/PHASE_5B.md) adds optional ranked insertion fallback: offer to
+distinct feasible drivers in cost order and execute the first accepted plan.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

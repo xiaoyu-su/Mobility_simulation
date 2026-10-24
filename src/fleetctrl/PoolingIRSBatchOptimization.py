@@ -4,6 +4,7 @@ import time
 from src.fleetctrl.planning.PlanRequest import PlanRequest
 from src.fleetctrl.RidePoolingBatchOptimizationFleetControlBase import RidePoolingBatchOptimizationFleetControlBase
 from src.fleetctrl.pooling.immediate.insertion import insertion_with_heuristics
+from src.fleetctrl.acceptance.ranked_insertion import select_insertion_candidate
 
 from src.misc.globals import *
 
@@ -98,6 +99,8 @@ class PoolingIRSAssignmentBatchOptimization(RidePoolingBatchOptimizationFleetCon
 
         o_pos, t_pu_earliest, t_pu_latest = prq.get_o_stop_info()
         if t_pu_earliest - sim_time > self.opt_horizon:
+            if self.driver_acceptance is not None and self.driver_acceptance.ranked_fallback is not None:
+                raise ValueError("Ranked insertion fallback currently supports immediate requests, not reservations")
             self.reservation_module.add_reservation_request(prq, sim_time)
             offer = self.reservation_module.return_immediate_reservation_offer(prq.get_rid_struct(), sim_time)
             LOG.debug(f"reservation offer for rid {rid_struct} : {offer}")
@@ -108,8 +111,9 @@ class PoolingIRSAssignmentBatchOptimization(RidePoolingBatchOptimizationFleetCon
             if self.driver_acceptance is not None:
                 self.driver_acceptance.begin_matching_round(sim_time, self.routing_engine)
             list_tuples = insertion_with_heuristics(sim_time, prq, self, force_feasible_assignment=True)
-            if len(list_tuples) > 0:
-                (vid, vehplan, delta_cfv) = min(list_tuples, key=lambda x:x[2])
+            selected = select_insertion_candidate(self.driver_acceptance, list_tuples, prq, sim_time)
+            if selected is not None:
+                (vid, vehplan, delta_cfv) = selected
                 LOG.debug(f"before insertion: {vid} | {self.veh_plans[vid]}")
                 LOG.debug(f"after insertion: {vid} | {vehplan}")
                 self.tmp_assignment[rid_struct] = vehplan
@@ -117,7 +121,8 @@ class PoolingIRSAssignmentBatchOptimization(RidePoolingBatchOptimizationFleetCon
                 LOG.debug(f"new offer for rid {rid_struct} : {offer}")
             else:
                 LOG.debug(f"rejection for rid {rid_struct}")
-                self._create_rejection(prq, sim_time, reason=REJECTION_REASON.NO_VEHICLE_AVAILABLE)
+                reason = REJECTION_REASON.DRIVER_DECLINED if list_tuples else REJECTION_REASON.NO_VEHICLE_AVAILABLE
+                self._create_rejection(prq, sim_time, reason=reason)
                 
         if self.repo and not prq.get_reservation_flag():
             self.repo.register_user_request(prq, sim_time)

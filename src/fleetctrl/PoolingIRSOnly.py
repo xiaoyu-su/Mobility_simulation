@@ -130,6 +130,8 @@ class PoolingInsertionHeuristicOnly(FleetControlBase):
             offer = self.reservation_module.return_immediate_reservation_offer(prq.get_rid_struct(), sim_time, excluded_vid=excluded_vid)
             LOG.debug(f"reservation offer for rid {rid_struct} : {offer}")
         else:
+            if self.driver_acceptance is not None:
+                self.driver_acceptance.begin_matching_round(sim_time, self.routing_engine)
             list_tuples = insertion_with_heuristics(sim_time, prq, self, force_feasible_assignment=True, excluded_vid=excluded_vid)
             if len(list_tuples) > 0:
                 (vid, vehplan, delta_cfv) = min(list_tuples, key=lambda x:x[2])

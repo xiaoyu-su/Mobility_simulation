@@ -852,6 +852,8 @@ class FleetControlBase(metaclass=ABCMeta):
     def record_dynamic_fleetcontrol_output(self, force=False):
         """ this method is used to store the current entries of self.dyn_output_dict in the
         file 3-{self.op_id}_op-dyn_atts.csv """
+        if force and self.driver_acceptance is not None and self.driver_acceptance.future_value is not None:
+            self.driver_acceptance.future_value.write_audit()
         current_buffer_size = len(self.dyn_output_dict.keys())
         if current_buffer_size > 0:
             if force or current_buffer_size > BUFFER_SIZE:

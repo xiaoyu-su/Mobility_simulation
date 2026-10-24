@@ -13,11 +13,13 @@ from pathlib import Path
 
 from src.misc.globals import G_PRQS_ACC_OFFER, G_SKIP_OUTPUT
 from src.misc.seeding import derive_rng, STREAM_SCHEME
+from src.fleetctrl.acceptance.future_value import FutureValue, enabled as future_enabled, ENABLED, TOP_K
 
 
 PREFIX = "op_driver_acceptance"
 PARAMETERS = [PREFIX, *[f"{PREFIX}_{suffix}" for suffix in
-              ("intercept", "beta_eta", "beta_value", "probability", "max_declines", "classes", "weight_objective")]]
+              ("intercept", "beta_eta", "beta_value", "probability", "max_declines", "classes", "weight_objective",
+               "future_value", "future_value_top_k")]]
 SUPPORTED_CONTROLLERS = {"PoolingIRSOnly", "PoolingIRSAssignmentBatchOptimization", "RidePoolingBatchAssignmentFleetcontrol"}
 
 
@@ -69,6 +71,9 @@ class DriverAcceptance:
         self.weight_objective = attributes.get(f"{PREFIX}_weight_objective", False)
         if self.weight_objective not in (True, False, 0, 1):
             raise ValueError(f"{PREFIX}_weight_objective must be boolean or 0/1")
+        use_future_value = future_enabled(attributes)
+        if use_future_value and not self.weight_objective:
+            raise ValueError(f"{ENABLED} requires {PREFIX}_weight_objective=True")
         raw_classes = attributes.get(f"{PREFIX}_classes")
         if raw_classes is None:
             raw_classes = {"default": {"share": 1, **{key: attributes.get(f"{PREFIX}_{key}")
@@ -104,6 +109,9 @@ class DriverAcceptance:
         self.outcomes = {}  # (rid, vid) -> final accepted/declined; never redraw a booked assignment
         self.draws = {}  # isolated per-request/vehicle decision streams
         self.declines = {}
+        self.future_value = (FutureValue(self, vehicles, attributes.get(TOP_K, 5),
+                                        None if scenario.get(G_SKIP_OUTPUT, 0) else output_directory)
+                             if use_future_value else None)
         self.path = None
         if not scenario.get(G_SKIP_OUTPUT, 0):
             directory = Path(output_directory)
@@ -129,7 +137,16 @@ class DriverAcceptance:
             return self.override
         pickup = plan.pax_info[request.get_rid_struct()][0]
         eta = max(0, pickup - simulation_time)
+        return self.probability_at_eta(vehicle_id, request, eta)
+
+    def probability_at_eta(self, vehicle_id, request, eta):
+        if self.override is not None:
+            return self.override
         return self.classes[self.vehicle_classes[vehicle_id]].probability(eta, request.init_direct_td)
+
+    def begin_matching_round(self, simulation_time, routing_engine):
+        if self.future_value is not None:
+            self.future_value.begin_round(simulation_time, routing_engine)
 
     def accept(self, vehicle_id, request, plan, simulation_time):
         # Never allow a fresh stochastic decision to abandon an accepted or
@@ -140,6 +157,8 @@ class DriverAcceptance:
         key = (rid, vehicle_id)
         if key in self.outcomes:
             return self.outcomes[key]
+        if self.future_value is not None:
+            self.future_value.record_selected(vehicle_id, request, plan, simulation_time)
         probability = self.probability(vehicle_id, request, plan, simulation_time)
         eta = max(0, plan.pax_info[rid][0] - simulation_time)
         remaining = max(0, self.max_declines + 1 - self.declines.get(rid, 0))
@@ -182,7 +201,11 @@ class DriverAcceptance:
             for rid in plan.pax_info:
                 request = requests[rid]
                 if request.status < G_PRQS_ACC_OFFER:
-                    penalty += 1 - self.probability(vehicle.vid, request, plan, simulation_time)
+                    probability = self.probability(vehicle.vid, request, plan, simulation_time)
+                    if self.future_value is not None:
+                        probability = self.future_value.estimate(probability, vehicle.vid, request,
+                                                                 simulation_time, routing_engine).served_value
+                    penalty += 1 - probability
             # Preserve the original arithmetic in the p=1 sanity check.
             return base_value if penalty == 0 else base_value + reward * penalty
         return weighted
@@ -191,6 +214,8 @@ class DriverAcceptance:
 def create_driver_acceptance(attributes, scenario, operator_id, vehicles, output_directory):
     mode = attributes.get(PREFIX)
     if mode in (None, "off"):
+        if future_enabled(attributes):
+            raise ValueError(f"{ENABLED} requires {PREFIX}=logistic")
         return None
     if mode != "logistic":
         raise ValueError(f"{PREFIX} must be off or logistic")

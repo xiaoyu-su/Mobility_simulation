@@ -394,3 +394,145 @@ objective, or implement driver acceptance. Phase 3 is the next planned stage.
 - Preserved initial full-check output at
   `/workspace/.setup/phase3-acceptance-checkpoint.log`; the noisy batch case is
   retained as an end-to-end regression for this lifecycle issue.
+
+## Phase 4: future-value matching (2026-10-24)
+
+### Step 1: establish scope, identity, and the starting checkpoint
+
+- Started branch `phase-4-future-value` from corrected-author Phase 3 commit
+  `1c45ddf438baba02a30477ca93ae335e5ddbe58b`. Author and committer identity is
+  saved locally as Xiaoyu Su, using GitHub's verified noreply address for
+  `xiaoyu-su`. The earlier Lina identity was corrected for all three project
+  commits; historical run manifests retain their original captured source
+  provenance, while file-content hashes remain unchanged by that correction.
+- Starting verification: unit cases plus the three original exact upstream
+  examples → **85 passed in 13.47s**. PR #1 remains open against `main`;
+  Phase 4 is kept on its own branch for a focused follow-up review.
+- Implement the plan's score `p + (1 - p) × fallback`, with fallback the
+  conditional probability that at least one of the top-k other drivers accepts.
+  This estimates matching value and does not implement multi-driver dispatch.
+
+### Step 2: implement a bounded, deterministic fallback estimate
+
+- Added an opt-in scorer separate from actual driver acceptance. Existing
+  probability-weighted rewards remain unchanged when it is disabled.
+- Rank candidates exactly by direct road-network pickup ETA and vehicle ID,
+  considering earliest/latest pickup, positioned/active vehicles, and sufficient
+  total passenger capacity. Exclude the selected driver; count colocated
+  drivers separately. Busy-driver route/capacity interactions remain an
+  explicitly optimistic reachability proxy, not a feasible insertion guarantee.
+- Freeze the live fleet once per matching round. Reuse cached nearest k+1
+  candidates for every selected-driver exclusion, with one route query per
+  unique position. Refresh snapshots/cache at each insertion/batch round,
+  including successive requests at the same clock time. Deadline, origin,
+  request size, and direct distance are included in the relevant cache keys.
+- Use one-to-one routing queries rather than relying on an early-stopped
+  multi-origin search for partial-edge vehicles; use the full exact candidate
+  set before bounded top-k selection, with no geographic prefilter.
+- Added stable chained probability arithmetic, p=1/k=0/p=0 fast paths,
+  selected-proposal value records, and final settings/counter audits. Scoring
+  never samples driver decisions or consumes demand/vehicle-execution streams.
+- Hook the scorer into both insertion controllers and Alonso-Mora matching;
+  costs, committed-rider rewards, acceptance probabilities, and offer/retry
+  execution retain Phase 3 behavior.
+
+### Step 3: targeted formula, compatibility, and complete-simulation checks
+
+- First checkpoint: **50 passed in 12.78s**, covering new analytical/reference
+  cases, Phase 3 model checks, and all three unchanged upstream references.
+- Independent full-scan tests compare every selected-driver exclusion at
+  k=0/1/3/20, including unreachable/late/inactive/undersized vehicles, ties,
+  colocated drivers, and earliest pickup times. Tests verify same-clock snapshot
+  refresh, request deadline cache keys, stable tiny probabilities, and no
+  acceptance draws during scoring.
+- Full-simulation checkpoint: **9 passed in 41.39s**. For each of the three
+  controllers: p=1 reproduces every upstream rider/evaluation value, k=0
+  reproduces the corresponding Phase 3 run and driver decisions exactly,
+  and noisy logistic future-value matching finishes every accepted booking.
+  Selected score records satisfy the formula; alternatives exclude the chosen
+  driver; zero-fallback/p=1 paths make no routing queries.
+- Added real-network partial-edge/colocated-driver comparisons, disabled-output
+  checks, and paired CLI cases for identical policies and Phase 3 versus Phase
+  4 on insertion and heterogeneous-class batch matching. Results follow below.
+
+### Step 4: verify real-network exactness, reproducibility, and optimization
+
+- Real-network partial-edge/colocation checks, output-suppression checks, and
+  three paired CLI cases passed: **29 passed in 43.01s**. Identical future-value
+  policies reproduce rider, evaluation, acceptance, selected-score, and counter
+  audit records across separate processes. Phase 3/4 comparisons keep exogenous
+  demand/network/initial-state audits matched.
+- Added `tools/benchmark_future_value.py`, comparing an independent full-scan/
+  sort implementation against the cached exact scorer on actual example roads.
+  It checks score agreement, records source/network/workload hashes, route-call
+  counts, and descriptive wall times using separate fresh network caches.
+  Benchmark and final full-suite results are recorded below.
+
+### Step 5: final matched experiments and measured results
+
+- Compared Phase 3 probability weighting against Phase 4 future value at seeds
+  0/1/2, sigma 0.3, using identical illustrative coefficients/retry settings
+  within each comparison. All **12 simulations finished**, and all **six
+  demand/network/initial-state audits matched**. Every accepted booking finished.
+- Insertion mean completed requests: **44.67 → 42.67**. Heterogeneous-class
+  batch mean completed requests: **76.33 → 71.67**. Neither experiment improved
+  completion. Mean wait among served riders fell, but this conditional metric
+  cannot offset the reduction in served requests or establish policy superiority.
+- This is an important limit: matching value includes an optimistic fallback
+  proxy, while actual alternative offers are a later phase. The change is a
+  tested opt-in modeling capability, not a demonstrated dispatch improvement.
+- Independently compared the six Phase 3 control runs against the archived
+  Phase 3 final candidates: all rider, standard-evaluation, and driver-decision
+  tables match exactly. Disabled future value preserves that prior milestone.
+- Benchmark: **1,920** repeated score evaluations on the actual example network,
+  32 vehicles, 12 requests, five repetitions, k=5. Maximum difference from the
+  independent full-scan reference: **1.11e-16**. Routing calls **59,520 → 348**;
+  measured score-evaluation wall time **93.374s → 1.464s** (63.80× on this run).
+- Timing is descriptive only. The random road workload includes disconnected
+  routes; the existing routing engine recalculates infinite paths in repeated
+  full scans, affecting this measured ratio. It is not a city-scale or full
+  simulation speedup claim. Independent query counts and mathematical agreement
+  provide the primary optimization evidence.
+
+### Step 6: final verification and commit preparation
+
+- Final command: `.venv/bin/python -m pytest -q` → **145 passed**, **0 failed**,
+  **0 skipped**, in **260.74s**. This includes every prior phase's cases,
+  all three default/upstream references, Phase 3 always-accept/decline behavior,
+  and the new future-value analytical, cache, road-network, complete-example,
+  and paired-process checks.
+- Both final paired experiments and the benchmark match the tested Python
+  source digest: `965dd7abf2874d11ba39ca183328fb866377d1b3a88c858d5868febe9a81477a`.
+  No Python source changed during these runs. Approved baseline reference
+  files remain unchanged, and `git diff --check` passes.
+- Archived full rider/vehicle/decision/selected-score records, counter audits,
+  configurations, source/input/output hashes, logs, reports, benchmark JSON,
+  compressed complete benchmark console output, and checkpoint/final test logs
+  under `docs/validation/phase4/`.
+- Reconfirmed repository Git identity before committing: **Xiaoyu Su**, email
+  `209944670+xiaoyu-su@users.noreply.github.com`, for author and committer.
+
+| Change | Why | Benefit and evidence |
+| --- | --- | --- |
+| Optional fallback-value reward | Immediate acceptance weighting omits alternative-driver opportunities | Formula/cost checks pass; actual outcomes recorded without claiming service improvement |
+| Exact top-k of other road-ETA candidates | A geographic filter or selected-driver inclusion would change the intended estimate | Independent full scans, ties/colocation, exclusions, and real partial-edge tests agree |
+| Round-scoped shortlist/probability caches | Repeated plan scoring should not reroute the whole fleet | Reference agreement within 1.11e-16; benchmark calls 59,520 to 348 |
+| Explicit snapshot refresh and request keys | Time, network, availability, or deadline changes can invalidate cached values | Same-clock refresh and geometry/window cases pass |
+| Separate deterministic scoring from actual acceptance | An optimistic value must not become an inflated acceptance draw | Selected proposal can still decline at its original p; no offers sent to alternatives |
+| Disabled/k=0/p=1 compatibility | Preserve previously validated behavior | Three-controller exact checks and six saved Phase 3 control comparisons pass |
+| Selected-score/counter audits and complete artifacts | Modeling assumptions and performance claims need reviewable evidence | Formula inputs, alternatives, counters, raw outcomes, and all hashes archived |
+
+No actual multi-driver fallback, repositioning policy, city calibration, or
+guaranteed service improvement is introduced. Those remain separate work.
+
+### Step 7: commit and publish as Xiaoyu Su
+
+- Committed implementation, documentation, tests, benchmark, and complete
+  evidence as `3900e84fe6bd2bce61a8ee51e396f7184bde8b7c`.
+- Pushed `phase-4-future-value` and opened
+  [PR #2](https://github.com/xiaoyu-su/Mobility_simulation/pull/2), based on
+  `phase-3-driver-acceptance` for a focused Phase 4 review while PR #1 remains open.
+- GitHub verified both author and committer as **Xiaoyu Su**, linked to
+  **xiaoyu-su**. No upstream/contributor identities were changed.
+- This publication record is a documentation-only follow-up. The tested source
+  digest and all archived experiment/benchmark artifact hashes remain unchanged.

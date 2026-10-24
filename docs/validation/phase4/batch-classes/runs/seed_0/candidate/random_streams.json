@@ -1,0 +1,18 @@
+{
+  "scheme": "sha256-name/SeedSequence/PCG64-v1",
+  "mode": "independent",
+  "master_seed": 0,
+  "demand": {
+    "demand": {
+      "count": 100,
+      "loaded_sha256": "160b892bce78b2e527462f0fef98f08e56c1db730738103ccff2a048f0bfa8e6",
+      "source_sha256": "cfa54849f045435e026a6029849d61b2b5b624548a47ae0ac989e5ea2727e6d9"
+    }
+  },
+  "network_input_sha256": {
+    "nodes.csv": "39ed432c7f437247b5f4d943834dadddd26e2314f2489328f81333093ab6d899",
+    "edges.csv": "057637a1f5f0affc0f4eaa0e4a60acaf0bb9ecdcfdf3c4f8bfb6b8fac08e5485"
+  },
+  "initial_vehicle_count": 5,
+  "initial_vehicle_state_sha256": "a6d29259e26353111ebe9824761b5bc3b259c5820f10144e25b76c85b6a30411"
+}

@@ -119,3 +119,38 @@ Usage, semantics, and limits: `docs/PHASE_2.md`. Actual final evidence:
 Usage and assumptions: `docs/PHASE_3.md`. Full checkpoints, corrections, final
 verification, and GitHub publication are recorded in `docs/WORK_LOG.md`;
 final machine-readable evidence is archived in `docs/validation/phase3/`.
+
+## Phase 4 — future-value matching
+
+- **What changed:** opt-in assignment value `p + (1 - p) × fallback`, with
+  fallback the probability that at least one top-k alternative driver accepts.
+  Only uncommitted request rewards change; costs, actual acceptance, retries,
+  and booked-rider commitments retain Phase 3 behavior.
+- **Why:** immediate probability weighting omits the possibility that another
+  nearby driver would accept. The new score exposes that modeling assumption
+  for controlled comparisons, without implementing actual fallback dispatch.
+- **Selection and optimization:** exact road-network ETA ranking, deterministic
+  ties, selected-driver exclusion, colocated-driver handling, and round-scoped
+  caches. One full ranking retains k+1 candidates for every driver exclusion;
+  repeated plan scoring reuses routes and probabilities without random draws.
+- **Traceability:** selected-proposal probabilities, alternative IDs/ETAs,
+  served values, settings/limitation audits, and query/cache counters. Formula,
+  cache boundaries, partial-edge routing, and full-scan agreement are verified.
+- **Measured results:** three-seed insertion completion **44.67 → 42.67** and
+  batch completion **76.33 → 71.67**. Neither example improves service; the
+  optimistic score does not execute its alternative offers. The feature stays
+  off by default, and these outcomes are retained without replacing them with
+  the screenshots' results or treating illustrative coefficients as calibration.
+- **Optimization evidence:** an actual-road score microbenchmark reduces
+  routing calls **59,520 → 348**, with maximum full-scan score difference
+  **1.11e-16**. Measured time **93.374s → 1.464s** is descriptive and affected
+  by disconnected-route handling; it is not a full-simulation speedup claim.
+
+Configuration, assumptions, and commands: `docs/PHASE_4.md`. Complete stepwise
+checks, final verification, author identity, and publication: `docs/WORK_LOG.md`.
+Raw experiments and benchmark evidence: `docs/validation/phase4/`.
+
+Final verification: **145 tests passed in 260.74s**. Both final three-seed
+experiments and the benchmark match the tested source digest; all accepted
+bookings completed, and six Phase 3 control runs match their saved original
+rider/evaluation/decision tables exactly.

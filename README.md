@@ -8,6 +8,8 @@ opt-in independent random streams and audited paired policy evaluation.
 mean-one travel-time noise during vehicle execution, with unchanged defaults.
 [Phase 3](docs/PHASE_3.md) adds optional logistic driver acceptance, bounded
 retries, driver classes, and probability-weighted matching rewards.
+[Phase 4](docs/PHASE_4.md) adds optional future-value matching with exact
+pickup-ETA ranking and cached fallback estimates.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

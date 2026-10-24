@@ -1043,3 +1043,17 @@ and will be committed locally before the actual push attempt is recorded.
   generated checkpoint `.txt` logs from the source whitespace gate, as in
   Phase 5b. Prepare the implementation/evidence commit as Xiaoyu Su and verify
   its published branch tip independently.
+
+### Step 6: committed and published Phase 5c
+
+- Implementation/evidence commit:
+  `a7bab5eb8abb82ce6664b3b7278a4836856d3a17`. Both Git author and committer
+  are **Xiaoyu Su**, `209944670+xiaoyu-su@users.noreply.github.com`.
+- Native `git push -u origin phase-5c-forbid-rematch` succeeded; independent
+  `git ls-remote` confirmed that exact commit on the fork. The local branch
+  tracks origin and was clean after publication.
+- Rechecked the committed Python fingerprint and all principal artifact hashes
+  against the actual tested evidence. This publication-status follow-up changes
+  documentation only; simulation code remains the verified source.
+- Published branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-5c-forbid-rematch

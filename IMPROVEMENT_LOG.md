@@ -267,3 +267,42 @@ Final gate: **240 passed**, zero failures/skips, in 1039.69s; **151** complete
 suite simulations plus **18** controlled runs give **169** final-source runs.
 All accepted bookings finish and all outputs are audited. Historical checks
 match six controls/24 tables and 22 Phase 5b ranked runs/115 tables exactly.
+
+## Phase 6: windowed parallel evaluation
+
+- **Problem:** rerunning the full history for every policy/time window is
+  expensive. Comparing arbitrary time slices can double-count requests or
+  falsely treat riders still in progress as rejected.
+- **Change:** opt-in `tools/windowed_eval/` captures each seed's complete
+  baseline at window starts, then launches bounded fresh workers for baseline
+  and candidate interventions from the same state. Closure-aware snapshots
+  retain live routes, noisy legs, plans, optimizer caches, driver decisions,
+  commitments and RNG state. No new serialization dependency is needed.
+- **Benefit:** reuse the lead-in and run independent windows concurrently while
+  preserving state. Every baseline window must exactly match the corresponding
+  observation of the full baseline. Ordinary simulation and paired evaluation
+  remain unchanged.
+- **Accounting:** disjoint request-time cohorts, strict observation horizons,
+  explicit unfinished states, actual-driver completed gross-fare credit, and
+  paired statistics across seeds within each window avoid misleading attribution
+  and inflated sample counts. Local interventions start baseline histories;
+  they do not represent a continuous full-day candidate trajectory.
+- **Integrity:** interpreter/dependency/source/payload/prefix checks, isolated
+  outputs, immutable-baseline checks, actual-model flags, per-worker logs,
+  timeouts and cancellation retain successful and failed execution evidence.
+- **Scope:** same-controller acceptance/choice/reward/dispatch interventions for
+  the three baseline controllers, BasicRequest, two Python road routers and
+  single-worker Gurobi. Incompatible controller/fleet/search changes are rejected.
+
+Usage/assumptions: `docs/PHASE_6.md`. Step, correction and verification record:
+`docs/WORK_LOG.md`. Final tests, measured timings, cohort outcomes and raw evidence:
+`docs/validation/phase6/`.
+
+Final gate: **270 passed**, zero failures/skips, in 1243.77s. Independent audits
+cover **182 full simulations +144 bounded restored windows**; all accepted
+full-run bookings finish. All 151 corresponding historical simulations match
+849 saved tables exactly. One → two workers measures **1.78–2.00×** faster
+window execution and **1.43–1.61×** faster total execution including baseline/
+snapshot overhead. Conditional waits increase in the measured dispatch
+interventions; window censoring remains explicit. These are local baseline-
+history comparisons and descriptive small-example timings.

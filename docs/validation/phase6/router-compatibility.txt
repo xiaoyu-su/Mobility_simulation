@@ -1,0 +1,2 @@
+Seed 7: full baseline complete, 2 snapshots captured
+Completed 4 window runs; full-baseline reference checks passed. Reports: /workspace/.setup/phase6/final-benchmarks/router-compatibility

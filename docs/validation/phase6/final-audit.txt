@@ -1,0 +1,27 @@
+{
+  "recorded_at_utc": "2026-10-24T21:36:59.575497+00:00",
+  "phase": "6",
+  "branch": "phase-6-windowed-evaluation",
+  "source_digest": "c417e89db72c1dc66ccd110047494f332635f04074601d965918d4e92dbb9249",
+  "suite_full_simulations": 163,
+  "suite_restored_windows": 32,
+  "additional_full_simulations": 19,
+  "additional_restored_windows": 112,
+  "measured_benchmark_full_simulations": 18,
+  "measured_benchmark_restored_windows": 108,
+  "basic_router_disabled_policy_full_simulations": 1,
+  "basic_router_disabled_policy_restored_windows": 4,
+  "total_full_simulations": 182,
+  "total_restored_windows": 144,
+  "original_python_and_dependency_files_unchanged": 208,
+  "original_input_hashes_unchanged": 9,
+  "historical_full_runs_exact": 151,
+  "historical_output_tables_exact": 849,
+  "full_baseline_accounting_and_accepted_completion_checked": true,
+  "window_censoring_explicit": true,
+  "timing_scope": "One measured serial/parallel run per configuration on this environment while regression/compatibility work also ran; descriptive timings, not a guaranteed speedup.",
+  "inference_scope": "Independent seeds within a window; candidate windows start baseline histories; no full-day candidate trajectory claim."
+}
+ranked 1.9967160076343708 1.6060586053350774
+rematch 1.9362368878498908 1.6049902653266213
+menus 1.780393141916556 1.4251660759612432

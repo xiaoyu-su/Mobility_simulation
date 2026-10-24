@@ -1,0 +1,8 @@
+....................                                                     [100%]
+=============================== warnings summary ===============================
+tests/unit/test_windowed_state.py::test_empty_cohort_has_explicit_zero_counts_and_undefined_conditional_means
+  /workspace/Mobility_simulation/tools/windowed_eval/metrics.py:64: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    return result.fillna({'completed_cohort_trips':0,'completed_cohort_gross_fare_cent':0})
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 1 warning in 1.63s

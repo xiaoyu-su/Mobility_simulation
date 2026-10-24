@@ -1,0 +1,17 @@
+Final full suite (after logging correction), repository /workspace/Mobility_simulation:
+.venv/bin/python -m pytest -q --junitxml=/workspace/.setup/phase6/final-suite/junit.xml --basetemp=/workspace/.setup/phase6/final-suite/simulation-runs
+
+Fixed-seed serial/parallel experiments:
+.venv/bin/python /workspace/.setup/phase6/run-benchmarks.py
+Exact per-experiment command arrays and explicit environments are retained in benchmark_records.tar.gz.
+
+Plain Python router / acceptance absent / zero noise / zero cooldown:
+PYTHONHASHSEED=0 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -m tools.windowed_eval --constant-config /workspace/.setup/phase6/router-inputs/constant_config_ir.csv --baseline-scenarios studies/example_study/scenarios/example_ir_only.csv --candidate-scenarios studies/example_study/scenarios/example_ir_only.csv --seeds 7 --window-seconds 3600 --cooldown-seconds 0 --network-tt-noise-sigma 0 --workers 2 --output /workspace/.setup/phase6/final-benchmarks/router-compatibility
+Derived constant config changes network_type from NetworkBasicWithStore to NetworkBasic; archived in the experiment's configs directory. Original input hashes remain unchanged.
+
+Independent final audit and archive verification:
+.venv/bin/python /workspace/.setup/phase6/audit-results.py
+.venv/bin/python /workspace/.setup/phase6/archive-evidence.py
+Recording scripts are retained inside benchmark_records.tar.gz, not added to the tested Python source tree after its freeze.
+
+Checkpoint commands and fixes are recorded in docs/WORK_LOG.md. Interrupted and failed experiments are preserved separately and excluded from final-source success counts.

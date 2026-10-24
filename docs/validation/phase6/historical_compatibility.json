@@ -1,0 +1,1606 @@
+[
+  {
+    "directory": "test_acceptance_executes_only_0/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_1/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_2/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_3/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_4/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_5/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_6/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_7/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_acceptance_executes_only_8/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_actual_batch_menus_execut0/menu",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_actual_batch_menus_execut1/menu",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments0/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments0/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments0/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments0/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments1/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments1/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments1/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments1/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments2/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments2/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments2/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_choice_paired_experiments2/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_0/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_1/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_2/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_3/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_4/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_example_records_5/run",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen0/experiment/runs/seed_3/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen0/experiment/runs/seed_3/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen0/experiment/runs/seed_9/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen0/experiment/runs/seed_9/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen1/experiment/runs/seed_3/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen1/experiment/runs/seed_3/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen1/experiment/runs/seed_9/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen1/experiment/runs/seed_9/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen2/experiment/runs/seed_3/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen2/experiment/runs/seed_3/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen2/experiment/runs/seed_9/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen2/experiment/runs/seed_9/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen3/experiment/runs/seed_3/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen3/experiment/runs/seed_3/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen3/experiment/runs/seed_9/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_paired_experimen3/experiment/runs/seed_9/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion0/control",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion0/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion1/control",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion1/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion2/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion3/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion4/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion5/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion6/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_complete_ranked_insertion7/ranked",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_example_matches_upstream_0/results",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_example_matches_upstream_1/results",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_example_matches_upstream_2/results",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch0/off",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch0/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch1/off",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch1/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch2/off",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_disabled_rematch2/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly0/disabled",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly0/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly1/disabled",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly1/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly2/disabled",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_explicit_false_is_exactly2/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa0/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa1/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa2/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa3/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa3/phase3",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa4/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa4/phase3",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa5/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa5/phase3",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa6/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa7/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_complete_exa8/future",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_0/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_0/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_0/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_0/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_1/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_1/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_1/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_1/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_2/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_2/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_2/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_future_value_paired_runs_2/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n0/control",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n0/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n1/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n2/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n3/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n4/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_batch_rematching_n5/rematch",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays0/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays0/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays0/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays0/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays1/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays1/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays1/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays1/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays2/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays2/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays2/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_native_rematching_replays2/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "future_value_op_0.csv",
+      "forbid_rematch_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_0/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_0/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_0/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_0/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_1/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_1/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_1/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_1/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_2/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_2/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_2/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv"
+    ]
+  },
+  {
+    "directory": "test_paired_acceptance_audits_2/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_driver_classes_wit0/classes",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_driver_classes_wit1/classes",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_11/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_11/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_5/baseline",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_5/candidate",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod0/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod0/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod1/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod1/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod2/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod2/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod3/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod3/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod4/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod4/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod5/choice",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "directory": "test_singleton_full_run_reprod5/plain",
+    "exact_tables": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "2-0_op-stats.csv",
+      "final_state.csv",
+      "driver_acceptance_op_0.csv"
+    ]
+  }
+]

@@ -1057,3 +1057,185 @@ and will be committed locally before the actual push attempt is recorded.
   documentation only; simulation code remains the verified source.
 - Published branch:
   https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-5c-forbid-rematch
+
+## Phase 6: windowed parallel evaluation (2026-10-24)
+
+### Step 1: confirm the plan and preserve prior work
+
+- Started `phase-6-windowed-evaluation` at published Phase 5c record
+  `168aba897217279d7ad48f076351a24a374babc6`. Repository was clean; Git identity
+  remains Xiaoyu Su. Read the actual Phase 6 handwritten plan in IMG_3326:
+  full baseline/boundary snapshots, in-place policy swaps, independent parallel
+  windows, and request-cohort/censor-horizon accounting. Its 36/36 and 4× notes
+  are examples, not claimed measurements. Later-city/AV work remains separate.
+- Added only opt-in `tools/windowed_eval/` and focused tests. Ordinary simulation
+  controllers, data, saved repository selection, prior features and approved
+  baseline references are untouched. Useful scope is same-controller policy
+  intervention: fleet/controller/search changes are rejected before execution.
+
+### Step 2: implement live snapshots and fix graph serialization
+
+- Capture the complete simulator, every loaded request reference, booking and
+  rejection times, named/legacy RNG state, live vehicle/noise state and optimizer
+  caches. Save flushed output prefixes and exact source/dependency/hash records.
+  New workers restore state, isolate all paths, replace policy models/objectives
+  without replaying execution or dropping commitments, and retain baseline
+  history separately from changed-policy decision logs.
+- A first live 600-second insertion snapshot failed with RecursionError:
+  generic pickle traversed the cyclic road graph. A second flattening attempt
+  still recursed because Edge.edge_index contains Node objects, not node IDs.
+  Preserve ordered adjacency, node search markers and shared edge identities
+  explicitly, including reconstruction of edge_index from restored nodes.
+  The third live ranked+future/noise probe serialized the 7,617-node world,
+  restored routing aliases and successfully advanced the next simulation tick.
+  No global recursion-limit increase is used. Probe folders are retained under
+  `/workspace/.setup/phase6/probe-*`.
+- Initial real experiments: `smoke-ranked` (driver-choice → ranked insertion,
+  sigma 0) and `smoke-rematch` (batch control → native rematch, sigma .3),
+  seed 0, 3,600-second windows +300-second cooldown, two workers. Each executes
+  one full baseline and four restored windows, reaches two concurrent workers,
+  validates actual policy flags and exact baseline cohort/full-run references.
+  These precede final source and are excluded from final-source run counts.
+
+### Step 3: cohorts, worker failures and independent replay checks
+
+- Assign each request once by request time and report events strictly before
+  the fixed cutoff. Preserve explicit accepted/picked-up/unresolved censoring;
+  do not label unfinished observation as terminal rejection. Attribute completed
+  cohort gross fare to the actual driver, including zero-service roster rows;
+  avoid speculative proration of operating costs. Compare seeds within each
+  window rather than treating dependent windows as extra seeds.
+- A bounded pool launches fresh single-simulation subprocesses, with per-task
+  timeout, logs, commands, status and cancellation. Source/payload/prefix/version
+  guards and post-job immutable-baseline checks prevent mixed-source or shared
+  output results. Refuse overwrites and unsupported replacements before work.
+- First focused unit gate: 20 passed in 1.63s. Corrected a pandas empty-credit
+  fill warning by explicitly converting numeric credit columns. Added full
+  integration coverage for two insertion controllers, batch rematch with actual
+  menus, future-value swaps on cached optimizer state, ordinary-baseline exact
+  equality and serial/parallel exact replay. Capture all checkpoint results.
+
+### Step 4: freeze source and run final gates
+
+- Focused command: `.venv/bin/python -m pytest tests/unit/test_windowed_state.py
+  tests/unit/test_windowed_pool.py tests/integration/test_windowed_eval.py -q
+  --junitxml=/workspace/.setup/phase6/checkpoint-junit.xml
+  --basetemp=/workspace/.setup/phase6/checkpoint-tests`; **24 passed in 212.20s**.
+  The four real integration cases each complete two full baselines, eight
+  restored windows and one independent ordinary full run. Ordinary rider,
+  evaluation, acceptance, vehicle-activity and final-state tables match exactly;
+  serial/parallel cohort, credit, physical-state and activity tables match.
+- Extended output rebinding to the simulator's stored user/network/PT path
+  attributes; record actual runtime settings and verify exhaustive cohort
+  coverage. Added five pre-unpickle integrity failures: Python, source,
+  dependency, payload and prefix mismatches. **5 passed in .64s**.
+- Froze all Python and dependency source files; save `final-suite/source.json`.
+  Complete command: `.venv/bin/python -m pytest -q
+  --junitxml=/workspace/.setup/phase6/final-suite/junit.xml
+  --basetemp=/workspace/.setup/phase6/final-suite/simulation-runs`, console at
+  `final-suite/pytest.txt`. Do not commit or edit Python while runs are active.
+- Launch six final window experiments with seeds 0/1/2, sigma .3, 2,400-second
+  windows, 300-second cooldown, one versus two workers: ranked insertion,
+  native rematch, and rematch with actual menus. Each compares policies differing
+  only by scenario name and the respective dispatch flag. Exact commands/env
+  and fresh-process logs are retained in `final-benchmarks/`; runner invocation:
+  `.venv/bin/python /workspace/.setup/phase6/run-benchmarks.py`.
+- These timings run while the full regression suite is also active. Report
+  actual task and total wall times, baseline/snapshot overhead and output
+  equivalence; they are descriptive of this environment, not guaranteed speedups.
+
+### Step 5: diagnose and correct a multi-seed logging failure
+
+- The initial three-seed rematch benchmark completed all 18 worker processes
+  but **failed** the immutable-baseline check: seed 0/1 `00_simulation.log`
+  gained an initialization warning. PIDs in those lines identify the parent
+  baseline process, not a restored worker. Batch simulation logs a warning
+  before its base initializer installs the next seed's handler; the preceding
+  seed's handler was still active. Single-seed integration checks could not
+  reveal this cross-seed output contamination.
+- Stopped the concurrently running full suite before editing source, preserving
+  its incomplete console/output/source record as `checkpoint-interrupted-suite/`.
+  Preserve the two completed initial ranked experiments and the failed rematch
+  experiment as `checkpoint-logging-benchmarks/`. They are excluded from final
+  source counts. Original absolute paths in their metadata predate relocation.
+- In the new window tool's `build`, close/rebind prior handlers to the current
+  baseline console before constructing the next simulation. The normal engine
+  then installs its own file handler as usual. Keep the strict immutable-output
+  gate; the correction addresses the cause rather than weakening the check.
+- A dedicated unit test reproduces a pre-initializer warning and verifies that
+  it reaches the current console without appending to the previous baseline.
+  Together with snapshot guard cases: **6 passed in .69s**, retained as
+  `corrected-logging.txt`. Restarted the entire suite and all six benchmark
+  experiments on a newly frozen source. No prior run is reused as final evidence.
+
+### Step 6: corrected experiments and compatibility boundary
+
+- All six measured experiments complete: **18 full baselines, 108 restored
+  windows, 54 reference-checked snapshot pairs**. Confirmed that within each
+  comparison only scenario name and ranked/rematch flag differ. Serial and
+  parallel summary/statistics reports agree exactly for all three cases.
+- One → two worker window times: ranked **60.74s → 30.42s (2.00×)**,
+  rematch **71.23s → 36.79s (1.94×)**, menus **69.50s → 39.04s (1.78×)**.
+  Total times including baseline/capture: **79.50s → 49.50s**, **97.35s →
+  60.65s**, **93.91s → 65.89s**. Actual total ratios **1.43–1.61×**.
+  Earlier pre-correction timings are separate checkpoint evidence.
+- Completion by the fixed horizon improves in every local intervention window;
+  conditional observed-pickup waiting means increase in all nine case/windows.
+  Menu window 1 also increases mean censored requests from .67 to 1.33. Preserve
+  these tradeoffs and do not sum baseline-history interventions into a full-day
+  candidate claim. Full per-window/seed results remain in saved reports.
+- Added an independent real boundary run using a derived external constant
+  config with **NetworkBasic**, acceptance absent, baseline=candidate, sigma 0,
+  cooldown 0, seed 7 and two workers. It completes **one full baseline + four
+  windows** with exact reference checks. The original nine inputs are untouched.
+  Command is in its manifest; output `final-benchmarks/router-compatibility/`
+  and console `router-compatibility.txt`. Final counts distinguish this
+  compatibility run from the six measured policy comparisons.
+- While the full suite continues, independently compared the first **64**
+  completed historical case outputs against Phase 5c: all **339** checked
+  rider/evaluation/physical/decision tables match exactly. Extend this to every
+  corresponding complete run once the suite finishes.
+
+### Step 7: complete suite, all-output audit and immutable evidence
+
+- Complete gate: **270 passed, 0 failed, 0 skipped in 1243.77s**. Its **80**
+  regression/integration cases execute **163 full simulations +32 restored
+  windows**; **190** unit cases cover graph/closure/RNG preservation, invalid
+  inputs, boundary censoring, real subprocess failure/timeout/cancellation,
+  corruption guards and the multi-seed logging correction.
+- With 18 measured full baselines/108 windows and one additional router full
+  baseline/four windows: **182 complete full simulations +144 bounded restored
+  windows**. All 72 window pairs match full-baseline reference cohorts and use
+  identical per-pair snapshot identities. Audit output chronology, completed
+  cohort fares, actual policy flags, cutoff statuses and complete unique cohort
+  coverage. All accepted full-run bookings finish; censored windows remain
+  explicitly bounded observations rather than falsely completed simulations.
+- Independent historical comparison: **151 full runs, 849 output tables exact**.
+  All **208** pre-existing Python/dependency files and all **nine** original
+  input/configuration hashes remain unchanged; the approved upstream example
+  baseline regressions pass. New functionality is isolated to the opt-in tool.
+- Frozen source fingerprint:
+  `c417e89db72c1dc66ccd110047494f332635f04074601d965918d4e92dbb9249`.
+  The complete suite, all benchmarks, router check and window workers retain
+  that exact fingerprint and the development parent HEAD. No Python changed
+  while final validation ran. Later documentation/publication does not alter
+  tested source bytes.
+- The first standalone output-audit script mistakenly required the independent
+  `random_streams.json` file, selecting only 107 full runs and excluding 75 valid
+  legacy-mode controls. Preserved its count assertion; corrected only the
+  external recorder to audit all final-state/evaluation outputs and validate
+  stream records where applicable. Corrected audit passes all 182 runs and
+  144 windows. No simulation/tool code or scenario changed and no final run
+  was repeated for this recorder-only correction.
+- Preserve source/commands/JUnit/consoles, raw full simulations, snapshots,
+  prefixes, states, decision/cohort/credit reports, fixed-seed experiments,
+  historical comparisons, failed/interrupted checkpoints, and original
+  file hashes in `docs/validation/phase6/`. Read back every archived regular
+  file and match its hash to the source bytes before publication.
+- Archive verification completed for **10,820 regular files**: final suite
+  **3,833**, final benchmarks/recorders **4,057**, and preserved checkpoints
+  **2,930**. All read-back hashes match original bytes. Preserve raw console
+  `.txt` endings and exclude those generated logs from the source whitespace
+  check, as in preceding phases. Stage the tested implementation and complete
+  evidence, commit with Xiaoyu Su as both author/committer, then verify the
+  fork's branch tip after native Git push.

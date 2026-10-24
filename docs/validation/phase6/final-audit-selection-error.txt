@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/.setup/phase6/audit-results.py", line 132, in <module>
+    assert len(full)==182,(len(full),len(windows))
+AssertionError: (107, 144)

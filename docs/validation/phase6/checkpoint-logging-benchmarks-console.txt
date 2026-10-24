@@ -1,0 +1,9 @@
+Starting ranked-workers-1
+Completed ranked-workers-1
+Starting ranked-workers-2
+Completed ranked-workers-2
+Starting rematch-workers-1
+Traceback (most recent call last):
+  File "/workspace/.setup/phase6/run-benchmarks.py", line 27, in <module>
+    if result.returncode:raise RuntimeError(f'{label} failed: see log')
+RuntimeError: rematch-workers-1 failed: see log

@@ -154,3 +154,40 @@ Final verification: **145 tests passed in 260.74s**. Both final three-seed
 experiments and the benchmark match the tested source digest; all accepted
 bookings completed, and six Phase 3 control runs match their saved original
 rider/evaluation/decision tables exactly.
+
+## Phase 5 — driver choice and conflict resolution
+
+- **What changed:** off-by-default logit choice among request items and an
+  outside option; deterministic greedy conflict winners; exact single-item
+  compatibility; solver-selected batch menus; full choice/probability audits.
+- **Why:** Phase 3 models isolated accept/decline decisions. Menu choice needs
+  a normalized outside option, one selected item per driver episode, and an
+  explicit rule when drivers compete for the same request.
+- **Compatibility:** singleton mode delegates existing request/vehicle random
+  draws, outcomes, and retries. The default creates no choice files/draws.
+  Actual menus require a single categorical episode and leave booked riders
+  outside the menu. Existing plan-removal/copying logic executes only winners.
+- **Conflict guarantees:** independent overlap tests enforce unique driver
+  and request winners, protected bookings, stable ties, and order invariance.
+  Live solver menus already have disjoint request ownership; invalid duplicate
+  solver assignments fail before execution. Cross-episode ownership also
+  protects uncommitted requests from double acceptance.
+- **Traceability:** record base and conditional probabilities, outside mass,
+  categorical intervals/draw, selected/accepted distinction, rejection reason,
+  delegation, stream scheme, and episode counters. Multi-item acceptance rows
+  contain no fabricated independent Bernoulli draw.
+- **Limits:** validated BasicRequest baseline controllers with one worker.
+  Menus choose at most one new request and use original proposal ETAs. This is
+  not calibrated driver behavior or demonstrated service improvement. Ranked
+  insertion fallback (5b) and optimizer forbid/rematch (5c) remain later phases.
+
+Usage and assumptions: `docs/PHASE_5.md`. Complete corrections, verification,
+results, author identity, and publication: `docs/WORK_LOG.md`. Raw evidence:
+`docs/validation/phase5/`.
+
+Final verification: **181 tests passed in 364.62s**. Two final three-seed
+experiments completed 12 simulations and six matched input audits. Singleton
+results remain exact; actual batch menus complete 53.00 trips on average versus
+54.67 for the control, so no service improvement is claimed. Every accepted
+booking completes. Ranked insertion fallback (5b) and optimizer rerouting (5c)
+remain separate subsequent phases.

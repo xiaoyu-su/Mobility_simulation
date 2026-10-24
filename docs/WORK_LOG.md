@@ -536,3 +536,149 @@ guaranteed service improvement is introduced. Those remain separate work.
   **xiaoyu-su**. No upstream/contributor identities were changed.
 - This publication record is a documentation-only follow-up. The tested source
   digest and all archived experiment/benchmark artifact hashes remain unchanged.
+
+## Phase 5: driver choice and conflict resolution (2026-10-23, America/Los_Angeles)
+
+### Step 1: preserve scope, baseline, and author identity
+
+- Re-read the uploaded Phase 5/5b/5c plan. This phase implements logit driver
+  choice plus greedy conflict resolution and single-item compatibility. Ranked
+  insertion fallback (5b) and Alonso-Mora forbid/rematch (5c) remain separate.
+- Started `phase-5-driver-choice` from `c15ce34`, preserving Phase 4 and its
+  documented non-improvement results. Starting unit/reference checkpoint:
+  **111 passed in 14.80s**. Reconfirmed saved author/committer: **Xiaoyu Su**,
+  verified GitHub identity `xiaoyu-su`.
+
+### Step 2: implement choice, conflict resolution, and safe integration
+
+- Added stable multinomial logit choice over request items and an outside
+  option. Utilities are `log(p)-log(1-p)` from Phase 3's per-offer probability;
+  outside utility is zero. Single-item probabilities retain exact Bernoulli
+  arithmetic. Probability-one ties are uniform; impossible items have zero mass.
+- Added deterministic greedy conflict resolution, ordered by supplied priority,
+  conditional choice probability, driver ID, and request ID. A request and a
+  driver can win at most once in an episode; protected commitments are excluded.
+- Added disabled-by-default `op_driver_choice_model`: `singleton` delegates
+  exact Phase 3 draws/retries and preserves pooled-plan behavior; `logit` builds
+  menus from solver-selected new requests and permits one new choice per driver.
+  Actual menus require zero retries to avoid silently inventing sequential menu
+  dynamics. Insertion still has one selected proposal in Phase 5.
+- Batch menus resolve before plans execute. Resolved outcomes are cached; the
+  existing reduced-plan path removes declined/unselected items without another
+  Bernoulli draw. Committed/onboard riders never enter a new menu.
+- Added detailed per-item choice logs, probability intervals, outside choices,
+  legacy-delegation flags, settings/stream audits, and final counters. Existing
+  acceptance logs retain their schema; categorical outcomes record conditional
+  item probability and no fabricated Bernoulli draw.
+- Existing unit suite after integration: **108 passed in 2.56s**. First new
+  choice run: **20 passed, 1 failed in 0.29s**; disabled output exposed that CSV
+  field names were initialized only when writing. Moved field-name setup outside
+  the output branch so output suppression remains functional.
+- Corrected focused choice tests: **21 passed in 0.25s**. Added cross-episode
+  ownership protection so the same uncommitted request cannot be accepted by
+  two drivers; later committed-plan reassignment remains allowed.
+
+### Step 3: complete simulations and boundary checks
+
+- Choice unit cases plus complete examples: **30 passed in 55.50s**. For each
+  baseline controller, singleton mode exactly reproduces the original rider,
+  evaluation, and driver-decision tables under p=1 and stochastic acceptance
+  with retries. No choice outputs appear when disabled.
+- Actual logit batch menus exercised multi-item episodes both with and without
+  Phase 4 future-value scoring. Every accepted booking completed; each episode
+  accepted at most one new request, with valid categorical probability totals
+  and recorded draw intervals. Existing commitments stayed outside the menus.
+- Added a numerical
+  tail check for multiple certain items followed by impossible items, ensuring
+  logged probability intervals agree with the sampler at the largest valid draw.
+- Added separate-process paired cases for Phase 3 versus singleton, identical
+  logit menu policies, and Phase 4 versus singleton with future value. Results
+  are recorded below before commit/publication.
+
+### Step 4: paired integration correction
+
+- First paired checkpoint: **25 passed, 1 failed in 24.34s**. The actual menu
+  case failed at startup because a newly added scope assertion required
+  `user_max_decision_time=0`.
+- Diagnosis: the existing batch constant config uses 60 seconds to await an
+  offer, while `BasicRequest` chooses immediately when it receives that offer.
+  Treating this wait window as delayed choice was incorrect. Replaced the
+  assertion with explicit `BasicRequest` scope; retained all original scenario
+  timings and both arms' exogenous inputs.
+- Added choice-specific probability/draw interpretation to the acceptance
+  audit only when choice is enabled, avoiding ambiguity for categorical rows
+  while leaving default-off audit content unchanged.
+- Corrected focused/model/paired checkpoint: **26 passed in 38.03s**. Separate
+  processes reproduce actual menu choices and counters; singleton controls
+  reproduce Phase 3 results and Phase 4 selected scores exactly.
+
+### Step 5: final verification and controlled experiments
+
+- Started the complete prior/new test suite with stable Python source, plus
+  two final three-seed experiments at sigma 0.3: Phase 3 versus singleton, and
+  single-attempt batch acceptance versus actual batch menus. Matching seeds,
+  network, demand, fleet, coefficients, and retry allowance are retained in each
+  pair. Actual outcomes and final test evidence are recorded below.
+- Both final experiments completed **12 simulations** and **six matched input
+  audits**. Every accepted booking completed; no terminally rejected item served.
+- Singleton comparison: mean completed requests **44.67 → 44.67**; mean driver
+  attempts **99.00 → 99.00** and item declines **54.33 → 54.33**. Rider,
+  evaluation, and decision tables agree exactly in every seed.
+- Actual menus: mean completed requests **54.67 → 53.00**, mean wait among
+  served riders **125.02s → 136.30s**. No service improvement is demonstrated.
+  Seeds 0/1/2 exercised **3/3/4** multi-item episodes respectively, with
+  **54/53/52** completed/accepted riders and no abandoned bookings.
+- Live solver solutions have unique request ownership, so cross-driver conflict
+  rejections are correctly zero in these runs. Explicit competing-driver
+  overlap/protection/tie cases exercise the generic greedy resolver separately.
+  Offered-item rejection totals are not independent-driver refusal counts.
+
+### Step 6: final configuration round-trip correction
+
+- Initial complete suite: **179 passed**. Final input-format inspection found
+  that the existing YAML 1.1/CSV decoder converts bare `off` to boolean `False`;
+  explicit disabled choice/acceptance modes were rejected even though omission
+  worked. This was an actual configuration-path gap, not an execution failure.
+- Normalize decoded false to disabled in both mode checks. Enabled mode logic,
+  probability calculations, and random streams are unchanged. Added real YAML
+  and CSV round-trip cases, including acceptance enabled with choice disabled.
+- Preserve the original full-suite log and first final experiments. Re-run the
+  complete suite and final paired experiments from the corrected stable source;
+  only those final records are used for publication.
+- Corrected choice/round-trip checkpoint: **25 passed in 0.29s**. Repeated
+  final runs completed all 12 simulations and six input audits. Every original
+  valid-mode rider/evaluation/decision table is unchanged by the decoder fix.
+  All six singleton/control tables also match the saved pre-Phase-5 controls.
+- Final raw artifacts come from `/workspace/.setup/phase5/verified-v2-singleton`
+  and `/workspace/.setup/phase5/verified-v2-batch-menus`. The first experiments
+  remain separately preserved under `verified-singleton` and `verified-batch-menus`.
+
+### Step 7: final verification and commit preparation
+
+- Final corrected command: `.venv/bin/python -m pytest -q` → **181 passed**,
+  **0 failed**, **0 skipped**, in **364.62s**. The earlier complete run remains
+  recorded as **179 passed in 351.49s** before the explicit-off correction.
+- Final experiments match the tested source digest:
+  `95fee8e047878e397512fdd1a95a4d18daa2e9c0aa798346167ecfbb50452c01`.
+  No Python source changed during the corrected full suite or final experiments.
+  Approved upstream baseline files are unchanged; `git diff --check` passes.
+- Archived final tests, complete raw records, choices, configurations, class/input
+  audits, source/output hashes, reports, and development checkpoints under
+  `docs/validation/phase5/`.
+- Verified local Git author/committer configuration remains **Xiaoyu Su**,
+  `209944670+xiaoyu-su@users.noreply.github.com`.
+
+| Change | Reason | Benefit and evidence |
+| --- | --- | --- |
+| Logit menu with explicit outside option | Independent Bernoulli offers do not express driver choice among items | Analytical odds/probability totals, boundaries, deterministic menu sampling pass |
+| Greedy request/driver conflict resolution | Overlapping driver selections must not double-serve a request | Explicit overlap, priority/tie, permutation, protection, and ownership checks pass |
+| Exact singleton delegation | A one-item menu must retain the validated existing behavior | All-controller retries and saved Phase 3/4 paired tables match exactly |
+| Pre-execution cached menu outcomes | Categorical choices must not be redrawn as Bernoulli acceptances | Actual multi-item batches execute only winners and finish all bookings |
+| Commitment and episode ownership guards | Choice must not abandon existing riders or accept an uncommitted request twice | Unit protection and complete-run accepted/completed invariants pass |
+| Probability intervals, reasons, and audit counters | Rejected menu items and outside choices need distinct interpretation | Full per-item records and deterministic process replay retained |
+| Correct configuration semantics | A wait window is not delayed choice, and bare off decodes to false | Original batch timing preserved; real YAML/CSV round trips pass |
+| Complete measured evidence | Modeling functionality does not establish a service improvement | All final outcomes retained, including lower batch completions and increased mean wait |
+
+GitHub API authentication failed during publication preflight (HTTP 401).
+Alternate stored CLI credentials are unavailable. The tested work is completed
+and will be committed locally before the actual push attempt is recorded.

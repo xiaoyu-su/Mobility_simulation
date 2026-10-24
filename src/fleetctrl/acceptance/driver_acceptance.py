@@ -14,12 +14,14 @@ from pathlib import Path
 from src.misc.globals import G_PRQS_ACC_OFFER, G_SKIP_OUTPUT
 from src.misc.seeding import derive_rng, STREAM_SCHEME
 from src.fleetctrl.acceptance.future_value import FutureValue, enabled as future_enabled, ENABLED, TOP_K
+from src.fleetctrl.acceptance.driver_choice import DriverChoice, choice_mode, PARAMETER as CHOICE_PARAMETER
 
 
 PREFIX = "op_driver_acceptance"
 PARAMETERS = [PREFIX, *[f"{PREFIX}_{suffix}" for suffix in
               ("intercept", "beta_eta", "beta_value", "probability", "max_declines", "classes", "weight_objective",
                "future_value", "future_value_top_k")]]
+PARAMETERS.append(CHOICE_PARAMETER)
 SUPPORTED_CONTROLLERS = {"PoolingIRSOnly", "PoolingIRSAssignmentBatchOptimization", "RidePoolingBatchAssignmentFleetcontrol"}
 
 
@@ -130,7 +132,16 @@ class DriverAcceptance:
                      "vehicle_classes": self.vehicle_classes, "probability_override": self.override,
                      "max_declines": int(self.max_declines), "max_attempts": int(self.max_declines + 1),
                      "weight_objective": bool(self.weight_objective), "coefficient_status": "user-supplied, not calibrated"}
+            declared_choice = choice_mode(attributes)
+            if declared_choice != "off":
+                audit["driver_choice"] = {
+                    "mode": declared_choice,
+                    "audit_file": f"driver_choice_op_{operator_id}.json",
+                    "probability_column": "base one-offer probability for delegated singletons; conditional item probability for actual menus",
+                    "draw_column": "legacy Bernoulli draws for singletons; missing for categorical outcomes, whose draw is in the choice log"}
             (directory / f"driver_acceptance_op_{operator_id}.json").write_text(json.dumps(audit, indent=2) + "\n")
+        mode = choice_mode(attributes)
+        self.choice = DriverChoice(self, mode, scenario, output_directory) if mode != "off" else None
 
     def probability(self, vehicle_id, request, plan, simulation_time):
         if self.override is not None:
@@ -147,8 +158,15 @@ class DriverAcceptance:
     def begin_matching_round(self, simulation_time, routing_engine):
         if self.future_value is not None:
             self.future_value.begin_round(simulation_time, routing_engine)
+        if self.choice is not None:
+            self.choice.begin_round()
 
     def accept(self, vehicle_id, request, plan, simulation_time):
+        if self.choice is not None:
+            return self.choice.accept_single(vehicle_id, request, plan, simulation_time)
+        return self._accept_legacy(vehicle_id, request, plan, simulation_time)
+
+    def _accept_legacy(self, vehicle_id, request, plan, simulation_time):
         # Never allow a fresh stochastic decision to abandon an accepted or
         # onboard rider. This also covers later vehicle/plan reassignment.
         if request.status >= G_PRQS_ACC_OFFER:
@@ -188,6 +206,32 @@ class DriverAcceptance:
         self.outcomes[key] = False
         return False
 
+    def record_menu_outcome(self, vehicle_id, request, plan, simulation_time, accepted, probability):
+        """Record a resolved menu decision, without another Bernoulli draw.
+
+        The choice log owns its categorical draw/interval. The legacy-format
+        decision log records the conditional item probability and no fake draw.
+        """
+        rid = request.get_rid_struct()
+        key = rid, vehicle_id
+        if request.status >= G_PRQS_ACC_OFFER or key in self.outcomes:
+            raise ValueError("Cannot replace a committed or previously recorded driver decision")
+        if self.max_declines != 0:
+            raise ValueError("Menu outcomes require a single choice episode without retries")
+        if self.future_value is not None:
+            self.future_value.record_selected(vehicle_id, request, plan, simulation_time)
+        self.outcomes[key] = bool(accepted)
+        count = self.declines.get(rid, 0)
+        if not accepted:
+            count += 1
+            self.declines[rid] = count
+        if self.path is not None:
+            eta = max(0, plan.pax_info[rid][0] - simulation_time)
+            values = [simulation_time, self.operator_id, vehicle_id, rid, self.vehicle_classes[vehicle_id],
+                      1, eta, request.init_direct_td, probability, None, bool(accepted), count, not accepted]
+            with self.path.open("a", newline="") as stream:
+                csv.DictWriter(stream, fieldnames=self.columns).writerow(dict(zip(self.columns, values)))
+
     def wrap_objective(self, base_function):
         if not self.weight_objective:
             return base_function
@@ -213,7 +257,9 @@ class DriverAcceptance:
 
 def create_driver_acceptance(attributes, scenario, operator_id, vehicles, output_directory):
     mode = attributes.get(PREFIX)
-    if mode in (None, "off"):
+    if mode in (None, "off", False):
+        if choice_mode(attributes) != "off":
+            raise ValueError(f"{CHOICE_PARAMETER} requires {PREFIX}=logistic")
         if future_enabled(attributes):
             raise ValueError(f"{ENABLED} requires {PREFIX}=logistic")
         return None

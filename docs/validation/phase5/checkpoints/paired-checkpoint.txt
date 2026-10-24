@@ -1,0 +1,44 @@
+........................F.                                               [100%]
+=================================== FAILURES ===================================
+_ test_choice_paired_experiments_are_reproducible_and_preserve_singleton_controls[constant_config_pool.csv-example_batch_driver_choice.yaml-example_batch_driver_choice.yaml-True] _
+
+constant = 'constant_config_pool.csv'
+baseline = 'example_batch_driver_choice.yaml'
+candidate = 'example_batch_driver_choice.yaml', equal = True
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-32/test_choice_paired_experiments1')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize("constant,baseline,candidate,equal", [
+        ("constant_config_ir.csv", "example_ir_driver_acceptance.yaml", "example_ir_driver_choice.yaml", True),
+        ("constant_config_pool.csv", "example_batch_driver_choice.yaml", "example_batch_driver_choice.yaml", True),
+        ("constant_config_ir.csv", "example_ir_future_value.yaml", "example_ir_future_value_choice.yaml", True),
+    ])
+    def test_choice_paired_experiments_are_reproducible_and_preserve_singleton_controls(constant, baseline, candidate, equal, tmp_path):
+        output = tmp_path / "experiment"
+        command = [sys.executable, "-m", "tools.paired_eval", "--constant-config", str(SCENARIOS / constant),
+                   "--baseline-scenarios", str(SCENARIOS / baseline), "--candidate-scenarios", str(SCENARIOS / candidate),
+                   "--network-tt-noise-sigma", ".3", "--seeds", "5", "11", "--output", str(output)]
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=240,
+                                env=dict(os.environ, OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1"))
+>       assert result.returncode == 0, result.stdout + "\n" + result.stderr
+E       AssertionError: 
+E         Traceback (most recent call last):
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+E             return _run_code(code, main_globals, None,
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+E             exec(code, run_globals)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 196, in <module>
+E             main()
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 192, in main
+E             run_experiment(args)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 141, in run_experiment
+E             raise RuntimeError(f"Simulation failed; see {log}")
+E         RuntimeError: Simulation failed; see /tmp/pytest-of-agent/pytest-32/test_choice_paired_experiments1/experiment/runs/seed_5/baseline.log
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.paired_eval', '--constant-confi...tion failed; see /tmp/pytest-of-agent/pytest-32/test_choice_paired_experiments1/experiment/runs/seed_5/baseline.log\n').returncode
+
+tests/integration/test_driver_choice_paired.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED tests/integration/test_driver_choice_paired.py::test_choice_paired_experiments_are_reproducible_and_preserve_singleton_controls[constant_config_pool.csv-example_batch_driver_choice.yaml-example_batch_driver_choice.yaml-True]
+1 failed, 25 passed in 24.34s

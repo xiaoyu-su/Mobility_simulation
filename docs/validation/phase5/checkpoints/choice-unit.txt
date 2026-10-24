@@ -1,0 +1,54 @@
+....................F                                                    [100%]
+=================================== FAILURES ===================================
+__________________ test_configuration_and_output_suppression ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-29/test_configuration_and_output_0')
+
+    def test_configuration_and_output_suppression(tmp_path):
+        with pytest.raises(ValueError, match="requires op_driver_acceptance"):
+            create_driver_acceptance({"op_driver_choice_model": "logit"}, {}, 0, [], tmp_path)
+        with pytest.raises(ValueError, match="must be off"):
+            model(tmp_path, "invalid")
+        with pytest.raises(ValueError, match="max_declines=0"):
+            model(tmp_path, "logit", op_driver_acceptance_max_declines=1)
+        directory = tmp_path / "suppressed"
+        obj = DriverAcceptance({"op_driver_acceptance_probability": 1, "op_driver_choice_model": "singleton"},
+                               {"random_seed": 17, "skip_file_writing": 1}, 0, [SimpleNamespace(vid=0)], directory)
+>       assert obj.accept(0, request(), SimpleNamespace(pax_info={7: [200, 300]}), 100)
+
+tests/unit/test_driver_choice.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/fleetctrl/acceptance/driver_acceptance.py:159: in accept
+    return self.choice.accept_single(vehicle_id, request, plan, simulation_time)
+src/fleetctrl/acceptance/driver_choice.py:90: in accept_single
+    self._write(choice, winners, {} if accepted else {key: "outside"}, simulation_time, legacy=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.fleetctrl.acceptance.driver_choice.DriverChoice object at 0x7f952db19870>
+choice = MenuChoice(vehicle_id=0, offers=(ChoiceOffer(request_id=7, vehicle_id=0, probability=1.0, priority=0.0),), probabiliti...de_probability=0.0, selected=ChoiceOffer(request_id=7, vehicle_id=0, probability=1.0, priority=0.0), uniform_draw=None)
+accepted = {(7, 0)}, reasons = {}, simulation_time = 100, legacy = True
+
+    def _write(self, choice, accepted, reasons, simulation_time, legacy=False):
+        self.counters["episodes"] += 1
+        self.counters["offered_items"] += len(choice.offers)
+        self.counters["singleton_episodes" if len(choice.offers) == 1 else "multi_item_episodes"] += 1
+        self.counters["outside_choices"] += choice.selected is None
+        rows = []
+        cumulative = 0.0
+        for offer, probability in zip(choice.offers, choice.probabilities):
+            key = (offer.request_id, offer.vehicle_id)
+            won = key in accepted
+            self.counters["accepted_items"] += won
+            self.counters["conflict_rejections"] += reasons.get(key) == "request_conflict"
+            values = [simulation_time, self.round, self.counters["episodes"], self.acceptance.operator_id,
+                      offer.vehicle_id, offer.request_id, len(choice.offers), offer.probability, probability,
+                      choice.outside_probability, cumulative, cumulative + probability, choice.uniform_draw, choice.selected == offer,
+                      won, reasons.get(key, "accepted" if won else "other_item_chosen"), legacy]
+            cumulative += probability
+>           rows.append(dict(zip(self.columns, values)))
+E           AttributeError: 'DriverChoice' object has no attribute 'columns'
+
+src/fleetctrl/acceptance/driver_choice.py:71: AttributeError
+=========================== short test summary info ============================
+FAILED tests/unit/test_driver_choice.py::test_configuration_and_output_suppression
+1 failed, 20 passed in 0.29s

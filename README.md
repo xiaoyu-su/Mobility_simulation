@@ -10,6 +10,8 @@ mean-one travel-time noise during vehicle execution, with unchanged defaults.
 retries, driver classes, and probability-weighted matching rewards.
 [Phase 4](docs/PHASE_4.md) adds optional future-value matching with exact
 pickup-ETA ranking and cached fallback estimates.
+[Phase 5](docs/PHASE_5.md) adds optional driver menus, an outside choice,
+deterministic conflict resolution, and exact single-item compatibility.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

@@ -421,6 +421,9 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         solutions = None
         if self.driver_acceptance is not None:
             solutions = {vid: self.RPBO_Module.get_optimisation_solution(vid) for vid in range(len(self.sim_vehicles))}
+            choice = getattr(self.driver_acceptance, "choice", None)
+            if choice is not None:
+                choice.prepare_batch(solutions, self.rq_dict, self.sim_time)
         for vid, veh_obj in enumerate(self.sim_vehicles):
             assigned_plan = (self.RPBO_Module.get_optimisation_solution(vid) if solutions is None else solutions[vid])
             if self.driver_acceptance is not None and assigned_plan is not None:

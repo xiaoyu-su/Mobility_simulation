@@ -1,0 +1,13 @@
+# Phase 3 single-offer compatibility; illustrative coefficients, not calibrated.
+- scenario_name: example_ir_driver_choice
+  op_module: PoolingIRSOnly
+  rq_file: example_100.csv
+  op_fleet_composition:
+    default_vehtype: 5
+  op_driver_acceptance: logistic
+  op_driver_acceptance_intercept: 0.0
+  op_driver_acceptance_beta_eta: -0.15
+  op_driver_acceptance_beta_value: 0.1
+  op_driver_acceptance_max_declines: 0
+  op_driver_acceptance_weight_objective: true
+  op_driver_choice_model: singleton

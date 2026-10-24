@@ -1,0 +1,21 @@
+{
+  "mode": "singleton",
+  "master_seed": 0,
+  "scheme": "sha256-name/SeedSequence/PCG64-v1",
+  "stream": "driver_choice/{operator_id}/{vehicle_id}/{round}/{canonical_menu_digest}",
+  "utility": "log(p)-log(1-p); outside utility 0",
+  "certainty_rule": "uniform over probability-one items; zero outside",
+  "conflict_priority": "lower supplied priority, higher choice probability, vehicle ID, request ID",
+  "singleton": "delegates Phase 3 draws/retries; no additional draw",
+  "scope": "solver-selected new-request menus; no candidate expansion or alternative-driver rerouting",
+  "counters": {
+    "rounds": 100,
+    "episodes": 99,
+    "singleton_episodes": 99,
+    "multi_item_episodes": 0,
+    "outside_choices": 62,
+    "conflict_rejections": 0,
+    "offered_items": 99,
+    "accepted_items": 37
+  }
+}

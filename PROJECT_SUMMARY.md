@@ -10,6 +10,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 2: service uncertainty | Frozen accepted pickup/dropoff promises, optional per-leg execution noise, signed error reporting, delayed-commitment checks | `docs/PHASE_2.md` |
 | 3: driver acceptance | Opt-in logistic decisions, bounded selected-driver retries, driver classes, probability-weighted assignment reward, decision audits | `docs/PHASE_3.md` |
 | 4: future-value matching | Opt-in fallback-value rewards, exact road-ETA top-k candidates, round-scoped caching, selected-score/counter audits | `docs/PHASE_4.md` |
+| 5: driver choice | Opt-in logit menus/outside option, greedy conflict resolution, committed-request protection, single-item compatibility, choice audits | `docs/PHASE_5.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -20,8 +21,9 @@ not establish a new matching policy's superiority or model observed driver wages
 Phase 2 separates quoted service times from uncertain executed driving times.
 Phase 3 adds configurable driver acceptance while preserving committed riders.
 Phase 4 estimates alternative-driver fallback in the matching reward.
-Multi-driver offers, AV dispatch, cross-city calibration, and windowed
-evaluation remain later phases.
+Phase 5 adds the choice/conflict layer and solver-selected driver menus.
+Ranked insertion fallback (5b), optimizer forbid/rematch (5c), AV dispatch,
+cross-city calibration, and windowed evaluation remain later phases.
 
 - [Change history](IMPROVEMENT_LOG.md)
 - [Step-by-step work and verification record](docs/WORK_LOG.md)
@@ -29,3 +31,4 @@ evaluation remain later phases.
 - [Phase 2 execution model, timing records, and validation](docs/PHASE_2.md)
 - [Phase 3 acceptance model, coefficients, retry assumptions, and validation](docs/PHASE_3.md)
 - [Phase 4 fallback estimate, candidate definition, caching, and validation](docs/PHASE_4.md)
+- [Phase 5 menu probabilities, compatibility modes, conflict policy, and validation](docs/PHASE_5.md)

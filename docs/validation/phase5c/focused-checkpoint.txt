@@ -1,0 +1,51 @@
+................F......                                                  [100%]
+=================================== FAILURES ===================================
+_ test_native_batch_rematching_never_reoffers_declined_edges_or_loses_bookings[never] _
+
+mode = 'never'
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-5/test_native_batch_rematching_n1')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize('mode',['always','never','singleton','menus','future'])
+    def test_native_batch_rematching_never_reoffers_declined_edges_or_loses_bookings(mode,tmp_path):
+        settings=dict(op_driver_acceptance='logistic',op_driver_acceptance_max_declines=0,
+                      op_driver_acceptance_weight_objective=True,op_driver_acceptance_forbid_rematch=True)
+        if mode in ['always','never']:settings['op_driver_acceptance_probability']=1 if mode=='always' else 0
+        else:settings.update(op_driver_acceptance_intercept=0,op_driver_acceptance_beta_eta=-.15,op_driver_acceptance_beta_value=.1)
+        if mode=='singleton':settings['op_driver_choice_model']='singleton'
+        if mode=='menus':settings['op_driver_choice_model']='logit'
+        if mode=='future':settings.update(op_driver_acceptance_future_value=True,op_driver_acceptance_future_value_top_k=3)
+>       output=tmp_path/'rematch';users=run(settings,output)
+
+tests/integration/test_forbid_rematch_examples.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration/test_forbid_rematch_examples.py:27: in run
+    assert set(decisions[decisions.accepted].request_id)==set(users[users.dropoff_time.notna()].request_id)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Empty DataFrame
+Columns: []
+Index: [], name = 'request_id'
+
+    @final
+    def __getattr__(self, name: str):
+        """
+        After regular attribute access, try looking up the name
+        This allows simpler access to columns for interactive use.
+        """
+        # Note: obj.x will always call obj.__getattribute__('x') prior to
+        # calling obj.__getattr__('x').
+        if (
+            name not in self._internal_names_set
+            and name not in self._metadata
+            and name not in self._accessors
+            and self._info_axis._can_hold_identifiers_and_holds_name(name)
+        ):
+            return self[name]
+>       return object.__getattribute__(self, name)
+E       AttributeError: 'DataFrame' object has no attribute 'request_id'
+
+.venv/lib/python3.10/site-packages/pandas/core/generic.py:6299: AttributeError
+=========================== short test summary info ============================
+FAILED tests/integration/test_forbid_rematch_examples.py::test_native_batch_rematching_never_reoffers_declined_edges_or_loses_bookings[never]
+1 failed, 22 passed in 80.22s (0:01:20)

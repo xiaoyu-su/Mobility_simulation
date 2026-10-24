@@ -12,6 +12,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 4: future-value matching | Opt-in fallback-value rewards, exact road-ETA top-k candidates, round-scoped caching, selected-score/counter audits | `docs/PHASE_4.md` |
 | 5: driver choice | Opt-in logit menus/outside option, greedy conflict resolution, committed-request protection, single-item compatibility, choice audits | `docs/PHASE_5.md` |
 | 5b: ranked insertion fallback | Opt-in cheapest-first feasible driver offers, one decision per driver, cached first acceptance, terminal-exhaustion/candidate audits | `docs/PHASE_5B.md` |
+| 5c: native optimizer rematching | Opt-in declined-edge/trip pruning, same-tick Gurobi re-solves, accepted-pair protection, logit round capacity, genuine-attempt terminal audits | `docs/PHASE_5C.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -24,7 +25,8 @@ Phase 3 adds configurable driver acceptance while preserving committed riders.
 Phase 4 estimates alternative-driver fallback in the matching reward.
 Phase 5 adds the choice/conflict layer and solver-selected driver menus.
 Phase 5b dispatches declined insertion requests to later feasible drivers.
-Optimizer forbid/rematch (5c), AV dispatch,
+Phase 5c lets the native batch optimizer find another driver after refusals.
+AV dispatch,
 cross-city calibration, and windowed evaluation remain later phases.
 
 - [Change history](IMPROVEMENT_LOG.md)
@@ -35,3 +37,4 @@ cross-city calibration, and windowed evaluation remain later phases.
 - [Phase 4 fallback estimate, candidate definition, caching, and validation](docs/PHASE_4.md)
 - [Phase 5 menu probabilities, compatibility modes, conflict policy, and validation](docs/PHASE_5.md)
 - [Phase 5b ranked insertion, per-driver decisions, exhaustion, and validation](docs/PHASE_5B.md)
+- [Phase 5c native graph constraints, rematching, accepted-pair protection, and validation](docs/PHASE_5C.md)

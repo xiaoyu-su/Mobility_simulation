@@ -228,3 +228,42 @@ Final gate: **213 tests passed**, zero failures/skips, in 818.86s. The suite
 completed 126 simulations; the controlled comparisons add 18 for **144**
 final-source runs. All outputs were audited, all accepted bookings finished,
 and six historical controls matched 24 saved tables exactly.
+
+## Phase 5c: native Alonso-Mora forbid/rematch
+
+- **Problem:** removing a declined request from the chosen batch plan alone
+  does not let the optimizer find another driver. Injecting manual alternatives
+  risks corrupting its cached trip/assignment state.
+- **Change:** opt-in `op_driver_acceptance_forbid_rematch` removes negative
+  request/driver edges and their cached trips, then re-solves the retained
+  native Gurobi assignment problem at the same simulation time. Exclusions
+  persist through graph rebuilds and clear when the request is deleted.
+- **Protection:** temporary constraints preserve new accepted request/driver
+  pairs. Existing commitments remain mandatory. Actual logit menus keep the
+  one-new-acceptance-per-driver limit across all solve passes. No vehicle-state
+  replay, new rider wait window, or manually injected fallback tour is needed.
+- **Audit integrity:** use one cached decision per pair and buffer genuine
+  attempt rows until the solve settles. Only the last real refusal for a
+  request still unassigned becomes terminal; recovered riders have no false
+  terminal flag. New logs record passes, decisions, removals, and counters.
+- **Measured benefit and tradeoff:** three matched seed-0/1/2 comparisons at
+  sigma 0.3 complete 18 runs. Mean completed trips increase **54.67 → 77.33**
+  for standard batch, **53.00 → 78.67** with menus, and **52.67 → 76.67**
+  with future value. Conditional waits increase in all three comparisons.
+  Every accepted booking finishes; these are illustrative small-example results.
+- **Checks:** actual native-solver graph/constraint tests, complete probability
+  boundaries and feature combinations, exact disabled-path comparisons, fresh-
+  process replay, and six exact historical controls cover the new path and
+  compatibility. Detailed final-suite evidence is retained with the phase.
+- **Limits:** single-worker Gurobi, BasicRequest batch simulation, retained
+  heuristic-filtered feasible graph and frozen costs, instantaneous driver
+  decisions, and illustrative class coefficients. No calibration or city-scale
+  benefit is established by these runs.
+
+Usage/assumptions: `docs/PHASE_5C.md`. Complete change/failure/fix/result record:
+`docs/WORK_LOG.md`. Final raw evidence: `docs/validation/phase5c/`.
+
+Final gate: **240 passed**, zero failures/skips, in 1039.69s; **151** complete
+suite simulations plus **18** controlled runs give **169** final-source runs.
+All accepted bookings finish and all outputs are audited. Historical checks
+match six controls/24 tables and 22 Phase 5b ranked runs/115 tables exactly.

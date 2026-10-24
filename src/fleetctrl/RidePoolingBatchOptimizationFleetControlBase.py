@@ -421,6 +421,8 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         solutions = None
         if self.driver_acceptance is not None:
             solutions = {vid: self.RPBO_Module.get_optimisation_solution(vid) for vid in range(len(self.sim_vehicles))}
+            if getattr(self.driver_acceptance, "forbid_rematch", None) is not None:
+                solutions = self.driver_acceptance.forbid_rematch.resolve(self, solutions)
             choice = getattr(self.driver_acceptance, "choice", None)
             if choice is not None:
                 choice.prepare_batch(solutions, self.rq_dict, self.sim_time)

@@ -1,0 +1,30 @@
+abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!
+--------------------------------------------------------------------------------
+Simulation of scenario example_pool_sc_1
+Only minimum output to console -> see log-file
+Traceback (most recent call last):
+  File "/workspace/Mobility_simulation/tests/regression/run_example.py", line 74, in <module>
+    main()
+  File "/workspace/Mobility_simulation/tests/regression/run_example.py", line 67, in main
+    run_single_simulation(parameters)
+  File "/workspace/Mobility_simulation/run_scenarios.py", line 19, in run_single_simulation
+    SF = load_simulation_environment(scenario_parameters)
+  File "/workspace/Mobility_simulation/src/misc/init_modules.py", line 252, in load_simulation_environment
+    return sim_env_class(scenario_parameters)
+  File "/workspace/Mobility_simulation/src/FleetSimulationBase.py", line 275, in __init__
+    self._load_fleetctr_vehicles()
+  File "/workspace/Mobility_simulation/src/FleetSimulationBase.py", line 423, in _load_fleetctr_vehicles
+    self.operators.append(OpClass(op_id, operator_attributes, list_vehicles, self.routing_engine, self.zones,
+  File "/workspace/Mobility_simulation/src/fleetctrl/RidePoolingBatchAssignmentFleetcontrol.py", line 54, in __init__
+    super().__init__(op_id, operator_attributes, list_vehicles, routing_engine, zone_system, scenario_parameters,
+  File "/workspace/Mobility_simulation/src/fleetctrl/RidePoolingBatchOptimizationFleetControlBase.py", line 92, in __init__
+    super().__init__(op_id, operator_attributes, list_vehicles, routing_engine, zone_system, scenario_parameters,
+  File "/workspace/Mobility_simulation/src/fleetctrl/FleetControlBase.py", line 113, in __init__
+    self.driver_acceptance = create_driver_acceptance(operator_attributes, scenario_parameters, op_id,
+  File "/workspace/Mobility_simulation/src/fleetctrl/acceptance/driver_acceptance.py", line 347, in create_driver_acceptance
+    return DriverAcceptance(attributes, scenario, operator_id, vehicles, output_directory)
+  File "/workspace/Mobility_simulation/src/fleetctrl/acceptance/driver_acceptance.py", line 151, in __init__
+    self.forbid_rematch = (ForbidRematch(self, attributes, scenario, output_directory)
+  File "/workspace/Mobility_simulation/src/fleetctrl/acceptance/forbid_rematch.py", line 27, in __init__
+    raise ValueError("Forbid/rematch currently requires single-worker AlonsoMora with Gurobi")
+ValueError: Forbid/rematch currently requires single-worker AlonsoMora with Gurobi

@@ -166,4 +166,8 @@ class DriverChoice:
         if getattr(self.acceptance, "ranked_fallback", None) is not None:
             audit["singleton"] = "one decision per ranked candidate driver; delegates existing request/driver draws"
             audit["scope"] = "ranked insertion singleton episodes; stop at first accepted driver"
+        if getattr(self.acceptance, "forbid_rematch", None) is not None:
+            audit["scope"] = "native optimizer edge forbidding and same-tick re-solves"
+            audit["singleton"] = "one cached decision per request/driver pair; no repeated same-driver offer"
+            audit["logit_round_capacity"] = "at most one new accepted request per driver over all solver passes"
         self.audit_path.write_text(json.dumps(audit, indent=2, allow_nan=False) + "\n")

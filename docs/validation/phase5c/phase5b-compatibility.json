@@ -1,0 +1,271 @@
+[
+  {
+    "current_directory": "test_complete_ranked_insertion0/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion0/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion1/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion1/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion2/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion2/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion3/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion3/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion4/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion4/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion5/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion5/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion6/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion6/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_complete_ranked_insertion7/ranked",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_complete_ranked_insertion7/ranked",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_driver_classes_wit0/classes",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_driver_classes_wit0/classes",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_driver_classes_wit1/classes",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_driver_classes_wit1/classes",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_11/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl0/experiment/runs/seed_11/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_11/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl0/experiment/runs/seed_11/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_5/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl0/experiment/runs/seed_5/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl0/experiment/runs/seed_5/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl0/experiment/runs/seed_5/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_11/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl1/experiment/runs/seed_11/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_11/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl1/experiment/runs/seed_11/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_5/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl1/experiment/runs/seed_5/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl1/experiment/runs/seed_5/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl1/experiment/runs/seed_5/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_11/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl2/experiment/runs/seed_11/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_11/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl2/experiment/runs/seed_11/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_5/baseline",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl2/experiment/runs/seed_5/baseline",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  },
+  {
+    "current_directory": "test_ranked_runs_replay_exactl2/experiment/runs/seed_5/candidate",
+    "reference_archive": "docs/validation/phase5b/simulation_records.tar.gz",
+    "reference_directory": "suite/test_ranked_runs_replay_exactl2/experiment/runs/seed_5/candidate",
+    "exact_files": [
+      "1_user-stats.csv",
+      "standard_eval.csv",
+      "driver_acceptance_op_0.csv",
+      "ranked_insertion_op_0.csv",
+      "driver_choice_op_0.csv",
+      "future_value_op_0.csv"
+    ]
+  }
+]

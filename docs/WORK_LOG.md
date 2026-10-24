@@ -912,3 +912,134 @@ and will be committed locally before the actual push attempt is recorded.
   changes documentation only; the verified simulation source is unchanged.
 - Published branch:
   https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-5b-ranked-insertion
+
+## Phase 5c — Alonso-Mora forbid/rematch (2026-10-24)
+
+### Step 1: native graph constraints and first complete simulation
+
+- Continue the uploaded plan on `phase-5c-forbid-rematch`, based on the fully
+  published Phase 5b branch. The change is opt-in and scoped to the pure
+  single-worker Alonso-Mora/Gurobi batch controller with BasicRequest.
+- Add `op_driver_acceptance_forbid_rematch`. Remove declined request/driver
+  edges from both RV directions and every cached trip containing that edge.
+  Retain exclusions across graph rebuilds until request deletion. Re-solve the
+  existing native ILP at the same simulation time, without injecting plans,
+  rebuilding vehicle state, replaying finished legs, or extending rider patience.
+- Temporarily require every new accepted request to remain with its accepting
+  driver during subsequent solves. Existing commitments retain their normal
+  protection. With actual logit menus, exclude additional new items from a
+  driver after its first acceptance in that round, preserving the one-new-item
+  limit across all passes.
+- Reuse one cached request/driver decision, with `max_declines=0`. Buffer genuine
+  attempt rows until the solve sequence settles; only the last actual refusal
+  for a still-unassigned request becomes terminal. Do not add fabricated offers
+  or mark refusals terminal before another driver can accept.
+- First existing-unit checkpoint: **148 passed, 1 failed** because an older
+  controller test double lacked the new optional field. Use a guarded feature
+  lookup. The first smoke also exposed an overly strict solver check: honor
+  the existing implicit Gurobi default. Corrected existing-unit checkpoint:
+  **149 passed in 5.38s**.
+- Corrected complete noisy/class-based batch smoke: all **100** requests
+  recorded, **78** completed, **25** accepted after an earlier refusal, **62**
+  native solver re-solves, and **149** unique offered request/driver pairs.
+  Accepted riders all finished; terminally declined riders were not served;
+  driver accounting validates. This uses legacy initialization and demonstrates
+  functionality, not a matched service-gain estimate.
+- Evidence: `/workspace/.setup/phase5c/initial-unit.txt`, `corrected-unit.txt`,
+  `smoke-batch.txt`, `smoke-batch-v2.txt`, and `smoke-batch-v2/`.
+
+### Step 2: focused native-solver and complete-run checks
+
+- Added actual small Gurobi graph tests for both-direction edge/trip pruning,
+  idempotence and persistence, committed-request protection, accepted-pair
+  constraints, and the logit round capacity. Coordinator tests cover recovery,
+  genuine-attempt terminal labeling, cached draws, finite progress, fail-closed
+  accepted-request loss, and output suppression.
+- Added complete batch simulations for probability boundaries, singleton
+  choice, actual menus, noise/future value, and explicit-disabled compatibility
+  for all three baseline controllers.
+- First new focused checkpoint: **22 passed, 1 failed in 80.22s**. The zero-
+  probability test retained reward weighting, so the optimizer correctly made
+  no offers; the test incorrectly treated the header-only decision table as a
+  populated boolean frame. Preserve that valid no-offer boundary separately,
+  use boolean-safe empty-table indexing, and disable weighting in the distinct
+  always-refuse scenario so it exercises actual driver decisions/rematching.
+  No dispatch implementation change was needed for this test correction.
+- Complete corrected checks and fresh-process replay precede final source
+  freezing, the full suite, and matched seed comparisons. All earlier failed
+  checkpoints are preserved rather than overwritten.
+
+### Step 3: corrected focused checks and source freeze
+
+- Corrected native-graph/controller checkpoint: **24 passed in 80.57s**.
+  Always-refuse and correctly-empty weighted-zero-service cases both complete.
+  Probability-one outputs match the first-driver control exactly; actual menu
+  and future-value runs complete and preserve all bookings; explicit false
+  matches omission on all three baseline controllers.
+- Fresh-process paired replay: **3 passed in 99.77s**, covering standard,
+  actual-menu, and future-value scenarios at seeds 5 and 11. Rider/evaluation/
+  decision/rematch tables and counters repeat exactly; conditional menu and
+  future-score records also match. Input pairs are audited by the CLI.
+- Freeze Python source before the complete suite and three final seed-0/1/2
+  control comparisons at sigma 0.3. Controls differ only by scenario name and
+  the rematch flag; single-attempt allowance, classes, objectives, and optional
+  menu/future settings remain matched. Preserve all outputs and unfavorable
+  tradeoffs before committing/pushing as Xiaoyu Su.
+
+### Step 4: matched measured outcomes and historical controls
+
+- All three final comparisons completed **18 simulations** and **nine matched
+  input pairs**, seeds 0/1/2, sigma 0.3. Saved configuration comparison confirms
+  that only the scenario name and rematch flag differ within each pair.
+- Mean completed trips: standard batch **54.67 → 77.33**, actual logit menus
+  **53.00 → 78.67**, future-value batch **52.67 → 76.67**. Candidate seed
+  completions: **75/75/82**, **80/78/78**, and **75/74/81**, respectively.
+- Mean served-rider waits increase **125.02s → 151.18s**, **136.30s →
+  157.00s**, and **107.79s → 149.83s**. Mean genuine offer counts increase
+  **99.00 → 143.67**, **98.00 → 141.67**, and **98.67 → 146.33**. Retain
+  these unfavorable waiting/offer-count changes alongside increased service.
+  Conditional means compare different served populations; this is a small
+  illustrative comparison, not calibration or a general marketplace claim.
+- Every accepted booking in all 18 runs completed; terminally declined riders
+  were not served, per-pair decisions are unique, driver accounting validates,
+  and actual-menu drivers accept at most one new request per matching round.
+- Independently matched **six** control runs against saved Phase 5 standard/
+  menu artifacts: **24** rider/evaluation/decision/activity-or-choice tables
+  are exactly unchanged. The full suite continues on the same frozen source;
+  detailed records remain at `/workspace/.setup/phase5c/final-comparisons/`.
+
+### Step 5: complete gate, output audit, and prior-phase compatibility
+
+- Final complete suite: **240 passed, 0 failed, 0 skipped in 1039.69s**.
+  Its 76 regression/integration cases execute **151** complete simulations;
+  164 unit cases include actual native Gurobi constraints. With 18 controlled
+  comparisons, **169 final-source simulation runs** complete successfully.
+- Independently audited all 169 outputs: all 100 demand records are unique,
+  every picked-up/accepted rider finishes, terminally declined riders are not
+  served, evaluation is valid for the service boundary, and chronological
+  driver/vehicle accounting validates.
+- Active rematch audits additionally verify one decision per request/driver,
+  consecutive genuine attempts, one terminal flag only for an offered request
+  still unassigned, agreement of decision/event logs, recovered/forbidden/
+  accepted/terminal counts, solver re-solve pass counts, and actual logit's
+  one-new-acceptance-per-driver limit over all passes in a round.
+- Independently matched **22** current ranked-dispatch runs against the archived
+  Phase 5b suite: **115** rider/evaluation/acceptance/ranked/choice-or-future
+  tables agree exactly. Together with the six prior controls/24 tables, this
+  checks existing behavior against history, not just same-version replay.
+- Final source digest is
+  `ecd18b9476dcd7bbd56ba17def85723e502bfa26d05b74c00e31f9d7499e3b23`.
+  The full suite and every final comparison retain that exact fingerprint.
+  All nine original input/configuration hashes and approved baseline CSVs are
+  unchanged. No Python implementation changed during final validation.
+- Archived final tests, original source/config/input/output fingerprints,
+  per-run audits, raw reports/decisions/plans/stats/logs, historical comparisons,
+  and preserved failure/correction checkpoints under `docs/validation/phase5c/`.
+  Read back and hash-verified all **2,544** regular archived files. The separate
+  first corrected smoke and failed initialization are excluded from final-run
+  counts.
+- Updated project and phase/change documentation with actual service gains and
+  increased conditional waits. Keep raw console bytes unchanged; exclude
+  generated checkpoint `.txt` logs from the source whitespace gate, as in
+  Phase 5b. Prepare the implementation/evidence commit as Xiaoyu Su and verify
+  its published branch tip independently.

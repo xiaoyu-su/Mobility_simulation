@@ -14,6 +14,8 @@ pickup-ETA ranking and cached fallback estimates.
 deterministic conflict resolution, and exact single-item compatibility.
 [Phase 5b](docs/PHASE_5B.md) adds optional ranked insertion fallback: offer to
 distinct feasible drivers in cost order and execute the first accepted plan.
+[Phase 5c](docs/PHASE_5C.md) adds optional Alonso-Mora rematching by forbidding
+declined request/driver edges and re-solving the retained native assignment graph.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

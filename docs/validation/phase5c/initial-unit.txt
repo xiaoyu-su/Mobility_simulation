@@ -1,0 +1,49 @@
+...........................F............................................ [ 48%]
+........................................................................ [ 96%]
+.....                                                                    [100%]
+=================================== FAILURES ===================================
+__ test_live_reduced_plan_cannot_mutate_the_optimizers_stored_committed_plan ___
+
+    def test_live_reduced_plan_cannot_mutate_the_optimizers_stored_committed_plan():
+        from copy import deepcopy
+        from unittest.mock import Mock
+        from src.fleetctrl.RidePoolingBatchOptimizationFleetControlBase import RidePoolingBatchOptimizationFleetControlBase
+    
+        class Plan:
+            def __init__(self, rids):
+                self.pax_info = {rid: [100, 200] for rid in rids}
+                self.stops = list(rids)
+            def copy(self):
+                return deepcopy(self)
+    
+        proposed, stored_lower = Plan([7, 8]), Plan([8])
+        controller = SimpleNamespace(sim_time=0, sim_vehicles=[SimpleNamespace(vid=0)],
+            rq_dict={7: request(7), 8: request(8, G_PRQS_ACC_OFFER)},
+            rid_to_assigned_vid={8: 0}, _driver_declined_requests=set(), veh_plans={0: Plan([8])},
+            driver_acceptance=SimpleNamespace(accept=lambda vid, rq, plan, now: rq.get_rid_struct() != 7),
+            RPBO_Module=SimpleNamespace(get_optimisation_solution=lambda vid: proposed,
+                                       get_vehicle_plan_without_rid=lambda *args: stored_lower),
+            assign_vehicle_plan=Mock())
+>       RidePoolingBatchOptimizationFleetControlBase._set_new_assignments(controller)
+
+tests/unit/test_driver_acceptance.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = namespace(sim_time=0, sim_vehicles=[namespace(vid=0)], rq_dict={7: namespace(get_rid_struct=<function request.<locals>...ptimizers_stored_committed_plan.<locals>.<lambda> at 0x7f431e12ea70>), assign_vehicle_plan=<Mock id='139926244175600'>)
+
+    def _set_new_assignments(self):
+        """ this function sets the new assignments computed in the alonso-mora-module
+        """
+        LOG.debug("global opt sols:")
+        # Keep a stable view of this round's selected plans while requests are
+        # stripped through the optimizer's own lower-trip-plan API.
+        solutions = None
+        if self.driver_acceptance is not None:
+            solutions = {vid: self.RPBO_Module.get_optimisation_solution(vid) for vid in range(len(self.sim_vehicles))}
+>           if self.driver_acceptance.forbid_rematch is not None:
+E           AttributeError: 'types.SimpleNamespace' object has no attribute 'forbid_rematch'
+
+src/fleetctrl/RidePoolingBatchOptimizationFleetControlBase.py:424: AttributeError
+=========================== short test summary info ============================
+FAILED tests/unit/test_driver_acceptance.py::test_live_reduced_plan_cannot_mutate_the_optimizers_stored_committed_plan
+1 failed, 148 passed in 4.96s

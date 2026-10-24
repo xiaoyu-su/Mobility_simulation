@@ -119,6 +119,9 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
         self.current_assignments : Dict[Any, int] = {}       # vid -> rtv_key
         self.init_sol = {}
         self.optimisation_solutions : Dict[int, tuple] = {}    # vid -> rtv_key computed when solving optimisation problem
+        self.driver_forbidden_edges = {}  # request -> declined vehicle IDs, retained across graph rebuilds
+        self._driver_required_pairs = {}
+        self._driver_single_request = False
         self.active_requests : Dict[int, PlanRequest] = {}           # rid -> request-Object
         #
         self.new_requests : Dict[Any, 1] = {}  # rid -> 1
@@ -219,6 +222,7 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
         
         # LOG.info("computeRV")
         self._computeRV()
+        self._prune_driver_forbidden_edges()
         t_rv = time.time()
         LOG.debug(f"new RV cons {self.r2v}")
         #self._computeRR()
@@ -482,6 +486,7 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
     def delete_request(self, rid : Any):
         """ this function deletes a request from all databases
         :param rid: plan_request_id """
+        self.driver_forbidden_edges.pop(rid, None)
         for rtv_key in list(self.rtv_r.get(rid, {}).keys()):
             self._delRtvKey(rtv_key)
         for vid in self.r2v.get(rid, {}):
@@ -834,6 +839,8 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
                     rid_org = rids_to_compute_to_rq[rid].get_o_stop_info()[0]
                     tt = travel_infos[(veh_pos, rid_org)][0]
                     vid_dict[vid] = tt
+            if self.driver_forbidden_edges.get(rid):
+                vid_dict = {vid: tt for vid, tt in vid_dict.items() if vid not in self.driver_forbidden_edges[rid]}
             if self.fleetcontrol is not None:    # possible TODO for parallelization#
                 # new structure for heuristics
                 # ----------------------------
@@ -1506,6 +1513,43 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
 
 
     #=========OPTIMISATION=====================
+    def forbid_request_vehicle(self, rid, vid):
+        if self.active_requests[rid].status >= G_PRQS_ACC_OFFER:
+            raise ValueError("Cannot forbid a committed request/driver assignment")
+        forbidden = self.driver_forbidden_edges.setdefault(rid, set())
+        if vid in forbidden:
+            return None
+        forbidden.add(vid)
+        return self._prune_driver_forbidden_edges()
+
+    def _prune_driver_forbidden_edges(self):
+        removed = 0
+        for rid, vehicles in self.driver_forbidden_edges.items():
+            for vid in vehicles:
+                self.r2v.get(rid, {}).pop(vid, None)
+                self.v2r.get(vid, {}).pop(rid, None)
+            for key in list(self.rtv_r.get(rid, {})):
+                if getVidFromRTVKey(key) in vehicles:
+                    if self.current_assignments.get(getVidFromRTVKey(key)) == key:
+                        raise RuntimeError("Forbidden edge would remove a currently executed assignment")
+                    self._delRtvKey(key)
+                    removed += 1
+        return removed
+
+    def reoptimise_after_driver_declines(self, required, single_request=False):
+        if self.solver != "Gurobi" or self.alonso_mora_parallelization_manager is not None:
+            raise ValueError("Driver rematching requires single-worker Gurobi")
+        self._driver_required_pairs = dict(required)
+        self._driver_single_request = bool(single_request)
+        self._prune_driver_forbidden_edges()
+        # Keep the current vehicle snapshot and retained feasible trip graph.
+        # Calling compute_new_vehicle_assignments here would replay finished legs.
+        self._runOptimisation()
+
+    def clear_driver_acceptance_constraints(self):
+        self._driver_required_pairs = {}
+        self._driver_single_request = False
+
     def _runOptimisation(self):
         if self.solver == "Gurobi":
             self._runOptimisation_Gurobi()
@@ -1568,6 +1612,12 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
                         rtv_cost = self.rtv_costs[rtv_key]
                         vid = getVidFromRTVKey(rtv_key)
                         rids = getRidsFromRTVKey(rtv_key)
+                        if self.driver_forbidden_edges and any(vid in self.driver_forbidden_edges.get(rid, ()) for rid in rids):
+                            continue
+                        if self._driver_single_request and vid in self._driver_required_pairs.values():
+                            if any(self.active_requests[rid].status < G_PRQS_ACC_OFFER and
+                                   self._driver_required_pairs.get(rid) != vid for rid in rids):
+                                continue
                         cfv = rtv_cost
 
                         if cfv == float('inf') or np.isnan(cfv):
@@ -1631,11 +1681,16 @@ class AlonsoMoraAssignment(BatchAssignmentAlgorithmBase):
                         for rtv in assigned_rids[rid]:
                             expr.add(variables[rtv], 1)
                         m.addConstr(expr == 1, "c_a_{}".format(rid))
+                    for rid, vid in self._driver_required_pairs.items():
+                        keys = [key for key in self.rtv_r.get(rid, {}) if key in variables and getVidFromRTVKey(key) == vid]
+                        if not keys:
+                            raise RuntimeError("No retained feasible trip preserves an accepted request/driver pair")
+                        m.addConstr(gurobi.quicksum(variables[key] for key in keys) == 1, f"driver_accepted_{rid}_{vid}")
                     # set initial solution   # TODO set initial solution?
                     for vid, rtv_key in self.current_assignments.items():
                         if rtv_key is None:
                             continue
-                        if not self.rtv_obj.get(rtv_key):
+                        if not self.rtv_obj.get(rtv_key) or rtv_key not in variables:
                             LOG.warning("current assignment {} not found for setting initial solution".format(rtv_key))
                         else:
                             variables[rtv_key].start = 1

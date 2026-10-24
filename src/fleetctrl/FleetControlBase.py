@@ -858,6 +858,8 @@ class FleetControlBase(metaclass=ABCMeta):
             self.driver_acceptance.choice.write_audit()
         if force and self.driver_acceptance is not None and self.driver_acceptance.ranked_fallback is not None:
             self.driver_acceptance.ranked_fallback.write_audit()
+        if force and self.driver_acceptance is not None and self.driver_acceptance.forbid_rematch is not None:
+            self.driver_acceptance.forbid_rematch.write_audit()
         current_buffer_size = len(self.dyn_output_dict.keys())
         if current_buffer_size > 0:
             if force or current_buffer_size > BUFFER_SIZE:

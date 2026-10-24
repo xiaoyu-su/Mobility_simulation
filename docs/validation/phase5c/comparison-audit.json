@@ -1,0 +1,234 @@
+{
+  "runs": [
+    {
+      "experiment": "standard",
+      "seed": 0,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 54,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "standard",
+      "seed": 0,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 75,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "standard",
+      "seed": 1,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 56,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "standard",
+      "seed": 1,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 75,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "standard",
+      "seed": 2,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 54,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "standard",
+      "seed": 2,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 82,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 0,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 54,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 0,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 80,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 1,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 53,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 1,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 78,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 2,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 52,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "menus",
+      "seed": 2,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 78,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 0,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 52,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 0,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 75,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 1,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 58,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 1,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 74,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 2,
+      "arm": "baseline",
+      "requests": 100,
+      "completed": 48,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    },
+    {
+      "experiment": "future-value",
+      "seed": 2,
+      "arm": "candidate",
+      "requests": 100,
+      "completed": 81,
+      "accepted_equals_completed": true,
+      "vehicle_accounting_validated": true
+    }
+  ],
+  "historical_controls": [
+    {
+      "experiment": "standard",
+      "seed": 0,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_0/baseline",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "2-0_op-stats.csv"
+      ]
+    },
+    {
+      "experiment": "standard",
+      "seed": 1,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_1/baseline",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "2-0_op-stats.csv"
+      ]
+    },
+    {
+      "experiment": "standard",
+      "seed": 2,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_2/baseline",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "2-0_op-stats.csv"
+      ]
+    },
+    {
+      "experiment": "menus",
+      "seed": 0,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_0/candidate",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "driver_choice_op_0.csv"
+      ]
+    },
+    {
+      "experiment": "menus",
+      "seed": 1,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_1/candidate",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "driver_choice_op_0.csv"
+      ]
+    },
+    {
+      "experiment": "menus",
+      "seed": 2,
+      "reference": "docs/validation/phase5/batch-menus/runs/seed_2/candidate",
+      "exact_files": [
+        "1_user-stats.csv",
+        "standard_eval.csv",
+        "driver_acceptance_op_0.csv",
+        "driver_choice_op_0.csv"
+      ]
+    }
+  ]
+}

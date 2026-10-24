@@ -16,6 +16,7 @@ from src.misc.seeding import derive_rng, STREAM_SCHEME
 from src.fleetctrl.acceptance.future_value import FutureValue, enabled as future_enabled, ENABLED, TOP_K
 from src.fleetctrl.acceptance.driver_choice import DriverChoice, choice_mode, PARAMETER as CHOICE_PARAMETER
 from src.fleetctrl.acceptance.ranked_insertion import RankedInsertionFallback, enabled as ranked_enabled, PARAMETER as RANKED_PARAMETER
+from src.fleetctrl.acceptance.forbid_rematch import ForbidRematch, enabled as rematch_enabled, PARAMETER as REMATCH_PARAMETER
 
 
 PREFIX = "op_driver_acceptance"
@@ -24,6 +25,7 @@ PARAMETERS = [PREFIX, *[f"{PREFIX}_{suffix}" for suffix in
                "future_value", "future_value_top_k")]]
 PARAMETERS.append(CHOICE_PARAMETER)
 PARAMETERS.append(RANKED_PARAMETER)
+PARAMETERS.append(REMATCH_PARAMETER)
 SUPPORTED_CONTROLLERS = {"PoolingIRSOnly", "PoolingIRSAssignmentBatchOptimization", "RidePoolingBatchAssignmentFleetcontrol"}
 
 
@@ -146,6 +148,14 @@ class DriverAcceptance:
         self.choice = DriverChoice(self, mode, scenario, output_directory) if mode != "off" else None
         self.ranked_fallback = (RankedInsertionFallback(self, attributes, scenario, output_directory)
                                 if ranked_enabled(attributes) else None)
+        self.forbid_rematch = (ForbidRematch(self, attributes, scenario, output_directory)
+                              if rematch_enabled(attributes) else None)
+        if self.forbid_rematch is not None and self.path is not None:
+            audit_path = self.path.with_suffix(".json")
+            audit = json.loads(audit_path.read_text())
+            audit["forbid_rematch"] = {"enabled": True, "max_attempts_scope": "one per request/driver pair",
+                                       "terminal_decline": "last genuine refusal if final optimizer solution leaves request unassigned"}
+            audit_path.write_text(json.dumps(audit, indent=2) + "\n")
         if self.ranked_fallback is not None and self.path is not None:
             audit_path = self.path.with_suffix(".json")
             audit = json.loads(audit_path.read_text())
@@ -181,7 +191,7 @@ class DriverAcceptance:
         return self._accept_legacy(vehicle_id, request, plan, simulation_time)
 
     def _accept_ranked_candidate(self, vehicle_id, request, plan, simulation_time, final_candidate):
-        if self.ranked_fallback is None:
+        if self.ranked_fallback is None and self.forbid_rematch is None:
             raise ValueError("Ranked driver decisions require ranked fallback enabled")
         if request.status >= G_PRQS_ACC_OFFER:
             return True
@@ -208,12 +218,18 @@ class DriverAcceptance:
             values = [simulation_time, self.operator_id, vehicle_id, rid, self.vehicle_classes[vehicle_id],
                       previous_declines + 1, max(0, plan.pax_info[rid][0] - simulation_time),
                       request.init_direct_td, probability, draw, accepted, count, not accepted and final_candidate]
-            with self.path.open("a", newline="") as stream:
-                csv.DictWriter(stream, fieldnames=self.columns).writerow(dict(zip(self.columns, values)))
+            record = dict(zip(self.columns, values))
+            if self.forbid_rematch is not None:
+                self.forbid_rematch.record_attempt(record)
+            else:
+                with self.path.open("a", newline="") as stream:
+                    csv.DictWriter(stream, fieldnames=self.columns).writerow(record)
         self.outcomes[key] = accepted
         return accepted
 
     def _accept_legacy(self, vehicle_id, request, plan, simulation_time):
+        if self.forbid_rematch is not None:
+            return self._accept_ranked_candidate(vehicle_id, request, plan, simulation_time, False)
         # Never allow a fresh stochastic decision to abandon an accepted or
         # onboard rider. This also covers later vehicle/plan reassignment.
         if request.status >= G_PRQS_ACC_OFFER:
@@ -274,10 +290,16 @@ class DriverAcceptance:
             self.declines[rid] = count
         if self.path is not None:
             eta = max(0, plan.pax_info[rid][0] - simulation_time)
+            attempt = (count if not accepted else count + 1) if self.forbid_rematch is not None else 1
             values = [simulation_time, self.operator_id, vehicle_id, rid, self.vehicle_classes[vehicle_id],
-                      1, eta, request.init_direct_td, probability, None, bool(accepted), count, not accepted]
-            with self.path.open("a", newline="") as stream:
-                csv.DictWriter(stream, fieldnames=self.columns).writerow(dict(zip(self.columns, values)))
+                      attempt, eta, request.init_direct_td, probability, None, bool(accepted), count,
+                      not accepted and self.forbid_rematch is None]
+            record = dict(zip(self.columns, values))
+            if self.forbid_rematch is not None:
+                self.forbid_rematch.record_attempt(record)
+            else:
+                with self.path.open("a", newline="") as stream:
+                    csv.DictWriter(stream, fieldnames=self.columns).writerow(record)
 
     def wrap_objective(self, base_function):
         if not self.weight_objective:
@@ -305,6 +327,8 @@ class DriverAcceptance:
 def create_driver_acceptance(attributes, scenario, operator_id, vehicles, output_directory):
     mode = attributes.get(PREFIX)
     if mode in (None, "off", False):
+        if rematch_enabled(attributes):
+            raise ValueError(f"{REMATCH_PARAMETER} requires {PREFIX}=logistic")
         if ranked_enabled(attributes):
             raise ValueError(f"{RANKED_PARAMETER} requires {PREFIX}=logistic")
         if choice_mode(attributes) != "off":

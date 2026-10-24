@@ -15,6 +15,7 @@ pd.options.mode.chained_assignment = None
 # -----------
 from src.misc.distributions import draw_from_distribution_dict
 from src.misc.init_modules import load_request_module
+from src.misc.seeding import component_rng, demand_fingerprint
 if tp.TYPE_CHECKING:
     from src.demand.TravelerModels import RequestBase
 
@@ -34,7 +35,7 @@ BUFFER_SIZE = 10
 # functions
 # ---------
 def create_traveler(rq_row, rq_node_type_distr, zone_definition, routing_engine, simulation_time_step,
-                    scenario_parameters):
+                    scenario_parameters, rng=None):
     if None in rq_node_type_distr.keys():
         distribution = rq_node_type_distr[None]
     else:
@@ -51,7 +52,7 @@ def create_traveler(rq_row, rq_node_type_distr, zone_definition, routing_engine,
     if not distribution:
         raise IOError(f"Could not find fitting request-type for traveler {rq_row}")
     if len(distribution.keys()) >= 1:
-        TravelerClass = draw_from_distribution_dict(distribution)
+        TravelerClass = draw_from_distribution_dict(distribution, rng=rng)
     else:
         raise AssertionError(f"Empty distribution of Traveler classes for rq-row {rq_row}")
     return TravelerClass(rq_row, routing_engine, simulation_time_step, scenario_parameters)
@@ -61,6 +62,7 @@ def create_traveler(rq_row, rq_node_type_distr, zone_definition, routing_engine,
 class Demand:
     def __init__(self, scenario_parameters, output_f, routing_engine: 'NetworkBasic'=None, zone_system=None):
         self.scenario_parameters = scenario_parameters
+        self.input_fingerprints = {}
         # prepare output
         self.output_f = output_f
         self.user_stat_buffer = []  # list of dictionaries
@@ -77,7 +79,10 @@ class Demand:
 
     def load_demand_file(self, start_time, end_time, rq_file_dir, rq_file_name, np_random_seed, rq_type=None,
                          rq_type_distr={}, rq_od_zone_distr={}, simulation_time_step=1):
-        np.random.seed(int(1712 * np_random_seed))
+        rng = component_rng(dict(self.scenario_parameters, random_seed=np_random_seed), "demand")
+        if rng is None:
+            np.random.seed(int(1712 * np_random_seed))
+        loaded_requests = []
         # classification of requests
         rq_node_type_distr = {}
         if rq_type:
@@ -117,12 +122,15 @@ class Demand:
             # TODO: note, iterrows() does not preserve dtype, so strange things happen if demand file contains mixed types. Possibly rethink how this works.
             for _, rq_row in rq_time_df.iterrows():
                 rq_obj = create_traveler(rq_row, rq_node_type_distr, self.zone_definition, self.routing_engine,
-                                         simulation_time_step, self.scenario_parameters)
+                                         simulation_time_step, self.scenario_parameters, rng=rng)
+                loaded_requests.append(rq_obj)
                 new_rq_dict[rq_obj.rid] = rq_obj
             if rq_time in self.future_requests:
                 self.future_requests[rq_time].update(new_rq_dict)
             else:
                 self.future_requests[rq_time] = new_rq_dict
+        if rng is not None:
+            self.input_fingerprints["demand"] = demand_fingerprint(loaded_requests, abs_req_f)
         LOG.info(f"init(): {number_rq_0 - number_rq_1}/{number_rq_0}"
                  f" requests removed ({G_RQ_TIME} not in simulation time)")
         LOG.info(f"init(): {number_rq_1 - number_rq}/{number_rq_1}"
@@ -131,7 +139,10 @@ class Demand:
 
     def load_parcel_demand_file(self, start_time, end_time, parcel_rq_file_dir, parcel_rq_file_name, np_random_seed, parcel_rq_type=None,
                          parcel_rq_type_distr={}, parcel_rq_od_zone_distr={}, simulation_time_step=1):
-        np.random.seed(int(1712 * np_random_seed))
+        rng = component_rng(dict(self.scenario_parameters, random_seed=np_random_seed), "parcels")
+        if rng is None:
+            np.random.seed(int(1712 * np_random_seed))
+        loaded_requests = []
         # classification of requests
         rq_node_type_distr = {}
         if parcel_rq_type:
@@ -169,12 +180,15 @@ class Demand:
             # TODO: note, iterrows() does not preserve dtype, so strange things happen if demand file contains mixed types. Possibly rethink how this works.
             for _, rq_row in rq_time_df.iterrows():
                 rq_obj = create_traveler(rq_row, rq_node_type_distr, self.zone_definition, self.routing_engine,
-                                         simulation_time_step, self.scenario_parameters)
+                                         simulation_time_step, self.scenario_parameters, rng=rng)
+                loaded_requests.append(rq_obj)
                 new_rq_dict[rq_obj.rid] = rq_obj
             if rq_time in self.future_requests:
                 self.future_requests[rq_time].update(new_rq_dict)
             else:
                 self.future_requests[rq_time] = new_rq_dict
+        if rng is not None:
+            self.input_fingerprints["parcels"] = demand_fingerprint(loaded_requests, abs_req_f)
         LOG.info(f"init(): {number_rq_0 - number_rq}/{number_rq_0}"
                  f" requests removed ({G_RQ_TIME} not in simulation time)")
         # LOG.debug(f"self.future_requests = {self.future_requests}")

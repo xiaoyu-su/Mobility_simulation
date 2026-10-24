@@ -1,0 +1,48 @@
+{
+  "source": "https://github.com/TUM-VT/FleetPy",
+  "upstream_commit": "c813728b6d188df8dd7fd5d3d36dcb0a55c898a2",
+  "capture_method": "git archive of the unmodified upstream commit; the same isolated-output runner used by regression tests",
+  "python": "3.10.22",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "pyyaml": "6.0.2",
+    "gurobipy": "12.0.1"
+  },
+  "runtime": {
+    "PYTHONHASHSEED": "0",
+    "n_cpu_per_sim": 1,
+    "evaluate": 1,
+    "log_level": "warning",
+    "show_progress_bar": false,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "examples": {
+    "insertion": [
+      "constant_config_ir.csv",
+      "example_ir_only.csv"
+    ],
+    "immediate_batch": [
+      "constant_config_ir.csv",
+      "example_ir_batch.csv"
+    ],
+    "batch": [
+      "constant_config_pool.csv",
+      "example_pool.csv"
+    ]
+  },
+  "input_sha256": {
+    "data/demand/example_demand/matched/example_network/example_100.csv": "cfa54849f045435e026a6029849d61b2b5b624548a47ae0ac989e5ea2727e6d9",
+    "data/networks/example_network/base/edges.csv": "057637a1f5f0affc0f4eaa0e4a60acaf0bb9ecdcfdf3c4f8bfb6b8fac08e5485",
+    "data/networks/example_network/base/nodes.csv": "39ed432c7f437247b5f4d943834dadddd26e2314f2489328f81333093ab6d899",
+    "data/vehicles/default_vehtype.csv": "147e94b4fe3c88e1591630189a9b8b81c17361059704e9f0d8c51fca7f608032",
+    "studies/example_study/scenarios/constant_config_ir.csv": "a7fe14b8d0e33a49765894e174015ce8471ef424d0c6d92f5212c5defcd1eee9",
+    "studies/example_study/scenarios/constant_config_pool.csv": "54abb828fb57d63fdf504859766efedefe57b0ffb835d7533991f5476bced2f6",
+    "studies/example_study/scenarios/example_ir_batch.csv": "3c8199cd106cf53804c39239a943d1a42a88bc253746ba03f2d640ba5c979c42",
+    "studies/example_study/scenarios/example_ir_only.csv": "87bde53a4ca7d8cd836976d0e1045d2270ebf2548b4fc5835a3c35cec81baf1a",
+    "studies/example_study/scenarios/example_pool.csv": "7ff1787f045d1d25e7cd7e90924cbe75e2debdc734c8d65bb0a9903161ee2f99"
+  }
+}

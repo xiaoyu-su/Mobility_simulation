@@ -97,6 +97,8 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         # additional control scenario input parameters
         # define vr-assignment control objective function
         self.vr_ctrl_f = return_pooling_objective_function(operator_attributes[G_OP_VR_CTRL_F])
+        if self.driver_acceptance is not None:
+            self.vr_ctrl_f = self.driver_acceptance.wrap_objective(self.vr_ctrl_f)
 
         self.Parallelization_Manager = None
         n_cores = scenario_parameters[G_SLAVE_CPU]
@@ -412,8 +414,25 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         """ this function sets the new assignments computed in the alonso-mora-module
         """
         LOG.debug("global opt sols:")
+        # Keep a stable view of this round's selected plans while requests are
+        # stripped through the optimizer's own lower-trip-plan API.
+        solutions = None
+        if self.driver_acceptance is not None:
+            solutions = {vid: self.RPBO_Module.get_optimisation_solution(vid) for vid in range(len(self.sim_vehicles))}
         for vid, veh_obj in enumerate(self.sim_vehicles):
-            assigned_plan = self.RPBO_Module.get_optimisation_solution(vid)
+            assigned_plan = (self.RPBO_Module.get_optimisation_solution(vid) if solutions is None else solutions[vid])
+            if self.driver_acceptance is not None and assigned_plan is not None:
+                for rid in sorted(assigned_plan.pax_info, key=str):
+                    if not self.driver_acceptance.accept(vid, self.rq_dict[rid], assigned_plan, self.sim_time):
+                        lower_plan = self.RPBO_Module.get_vehicle_plan_without_rid(veh_obj, assigned_plan, rid, self.sim_time)
+                        if lower_plan is None:
+                            raise RuntimeError("Could not remove a driver-declined request from its proposed plan")
+                        # Like get_optimisation_solution(), copy the optimizer's
+                        # stored plan. Live status updates must not mutate it
+                        # before the optimizer replays the same finished legs.
+                        assigned_plan = lower_plan.copy()
+                        self._driver_declined_requests.add(rid)
+                        self.rid_to_assigned_vid.pop(rid, None)
             LOG.debug("vid: {} {}".format(vid, assigned_plan))
             rids = get_assigned_rids_from_vehplan(assigned_plan)
             if len(rids) == 0 and len(get_assigned_rids_from_vehplan(self.veh_plans[vid])) == 0:
@@ -422,6 +441,9 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
                 continue
             if assigned_plan is not None:
                 #LOG.debug(f"assigning new plan for vid {vid} : {assigned_plan}")
+                # The removal API constructs/registers an internal lower trip.
+                # Marking it external would delete its tree, then clear_databases
+                # would erase the temporary external fallback before next round.
                 self.assign_vehicle_plan(veh_obj, assigned_plan, self.sim_time, add_arg=True)
             else:
                 #LOG.debug(f"removing assignment from {vid}")
@@ -518,6 +540,10 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         :rtype: TravellerOffer
         """
         if assigned_vehicle_plan is not None:
+            if self.driver_acceptance is not None and not self.driver_acceptance.accept(
+                    assigned_vehicle_plan.vid, prq, assigned_vehicle_plan, simulation_time):
+                self.tmp_assignment.pop(prq.get_rid_struct(), None)
+                return self._create_rejection(prq, simulation_time, reason=REJECTION_REASON.DRIVER_DECLINED)
             pu_time, do_time = assigned_vehicle_plan.pax_info.get(prq.get_rid_struct())
             offer = TravellerOffer(prq.get_rid_struct(), self.op_id, pu_time - prq.rq_time, do_time - pu_time,
                                    self._compute_fare(simulation_time, prq, assigned_vehicle_plan), 

@@ -1,0 +1,4 @@
+seed 0: both simulations complete; demand, network, and initial state match
+seed 1: both simulations complete; demand, network, and initial state match
+seed 2: both simulations complete; demand, network, and initial state match
+Reports and full run records: /workspace/.setup/phase3/verified-batch-classes

@@ -54,7 +54,8 @@ class SoDRequest(BasicRequest):
 
             LOG.debug(f"Basic request: {self.rid} ; walking distance: {total_walking_dist} | prob {prob_accept:2f}")
             # decide if to accept the offer
-            if np.random.rand() < prob_accept:
+            draw = np.random.rand() if self._rng is None else self._rng.random()
+            if draw < prob_accept:
                 LOG.debug(f"Basic request: {self.rid} ; accepted offer {opts[0]}")
                 return opts[0]
             else:

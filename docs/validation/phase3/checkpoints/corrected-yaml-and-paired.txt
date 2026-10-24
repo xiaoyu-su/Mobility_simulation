@@ -1,0 +1,8 @@
+.............................                                            [100%]
+=============================== warnings summary ===============================
+tests/unit/test_driver_acceptance.py::test_yaml_scenarios_load_nested_class_parameters_and_merge_constants
+  /workspace/Mobility_simulation/src/misc/config.py:15: DeprecationWarning: invalid escape sequence '\d'
+    CAPTURE_RE = re.compile("\d+:\d+")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+29 passed, 1 warning in 25.22s

@@ -188,7 +188,11 @@ class ScenarioConfig(list):
         """
         with open(file_path) as f:
             cfg = yaml.load(f, Loader=yaml.Loader)
-        return cls(cfg)
+        if not isinstance(cfg, list) or any(not isinstance(row, dict) for row in cfg):
+            raise ValueError("Scenario YAML must contain a list of parameter mappings")
+        configurations = cls()
+        configurations.extend(ConstantConfig(row) for row in cfg)
+        return configurations
 
 
 if __name__ == "__main__":

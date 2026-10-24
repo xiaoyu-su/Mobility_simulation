@@ -587,7 +587,9 @@ def return_pooling_objective_function(vr_control_func_dict:dict)->Callable[[int,
         raise IOError(f"Did not find valid request assignment control objective string."
                       f" Please check the input parameter {G_OP_VR_CTRL_F}!") 
 
-    return control_f   
+    if func_key == "distance_and_user_times_with_walk":
+        control_f.assignment_reward_per_request = float(assignment_reward_per_rq)
+    return control_f
 
     def embedded_control_f(simulation_time:float, veh_obj:SimulationVehicle, veh_plan:VehiclePlan, rq_dict:Dict[Any,PlanRequest], routing_engine:NetworkBase)->float:
         """This function is the embedded objective function which is returned to the calling function.

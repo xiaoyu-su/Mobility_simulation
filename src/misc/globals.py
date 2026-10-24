@@ -629,6 +629,7 @@ class REJECTION_REASON(Enum):
     OUT_OF_SERVICE_TIME = (2, "out_of_service_time")
     INVALID_RQ = (3, "invalid_request")
     TRAVEL_DISTANCE = (4, "invalid_travel_distance")
+    DRIVER_DECLINED = (5, "driver_declined")
 
     @DynamicClassAttribute
     def value(self):

@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def draw_from_distribution_dict(distribution):
+def draw_from_distribution_dict(distribution, rng=None):
     """
     This function draws a key from a set of keys, which are distributed according to the respective dictionary values.
     :param distribution: dictionary: key > probability of key
@@ -15,5 +15,6 @@ def draw_from_distribution_dict(distribution):
             return k
         choices.append(k)
         probabilities.append(v/normalize)
-    return np.random.choice(choices, p=probabilities)
+    generator = np.random if rng is None else rng
+    return generator.choice(choices, p=probabilities)
 

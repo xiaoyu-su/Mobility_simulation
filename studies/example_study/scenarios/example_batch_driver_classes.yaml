@@ -1,0 +1,21 @@
+# Illustrative assumptions, not calibrated driver parameters.
+- scenario_name: example_batch_driver_classes
+  op_module: RidePoolingBatchAssignmentFleetcontrol
+  op_rp_batch_optimizer: AlonsoMora
+  rq_file: example_100.csv
+  op_fleet_composition:
+    default_vehtype: 5
+  op_driver_acceptance: logistic
+  op_driver_acceptance_max_declines: 1
+  op_driver_acceptance_weight_objective: true
+  op_driver_acceptance_classes:
+    full_time:
+      share: 0.4
+      intercept: 0.5
+      beta_eta: -0.1
+      beta_value: 0.1
+    part_time:
+      share: 0.6
+      intercept: 0.0
+      beta_eta: -0.2
+      beta_value: 0.15

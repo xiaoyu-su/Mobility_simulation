@@ -1,0 +1,23 @@
+abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!
+--------------------------------------------------------------------------------
+Simulation of scenario example_pool_sc_1
+Only minimum output to console -> see log-file
+Scenario example_pool_sc_1
+Operator 0 control strategy: RidePoolingBatchAssignmentFleetcontrol
+	 control function: {'func_key': 'distance_and_user_times_with_walk', 'vot': 0.45}
+Operator 0 additional strategies:
+	 RV Heuristics: {}
+	 Stop-Insert Heuristics: {}
+	 Charging: None
+	 On-Street Parking: True
+	 Repositioning: None
+	 Dynamic Pricing: None
+	 Dynamic Fleet Sizing: None
+
+Broker: No broker type specified, using default BrokerBasic
+
+Scenario example_pool_sc_1 finished:
+      initialization : 0:00:00 h
+          simulation : 0:00:04 h
+          evaluation : 0:00:00 h
+

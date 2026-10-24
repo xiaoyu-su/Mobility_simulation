@@ -1,0 +1,37 @@
+{
+  "scheme": "sha256-name/SeedSequence/PCG64-v1",
+  "master_seed": 0,
+  "operator_id": 0,
+  "decision_stream": "driver_acceptance/{operator_id}/{vehicle_id}/{request_id}",
+  "class_stream": "driver_class/{operator_id}/{vehicle_id}",
+  "units": {
+    "beta_eta": "per minute",
+    "beta_value": "per direct-trip kilometer"
+  },
+  "classes": {
+    "full_time": {
+      "share": 0.4,
+      "intercept": 0.5,
+      "beta_eta": -0.1,
+      "beta_value": 0.1
+    },
+    "part_time": {
+      "share": 0.6,
+      "intercept": 0.0,
+      "beta_eta": -0.2,
+      "beta_value": 0.15
+    }
+  },
+  "vehicle_classes": {
+    "0": "full_time",
+    "1": "full_time",
+    "2": "full_time",
+    "3": "part_time",
+    "4": "full_time"
+  },
+  "probability_override": null,
+  "max_declines": 1,
+  "max_attempts": 2,
+  "weight_objective": true,
+  "coefficient_status": "user-supplied, not calibrated"
+}

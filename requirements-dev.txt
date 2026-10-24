@@ -1,0 +1,4 @@
+# Install after the runtime dependencies listed in environment.yml.
+pytest==8.4.2
+# The bundled optimizer regression scenarios fit the restricted license.
+gurobipy==12.0.1

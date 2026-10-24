@@ -3,6 +3,7 @@
 # -----------------------------
 from __future__ import annotations
 import logging
+import math
 import pandas as pd
 import typing as tp
 
@@ -11,6 +12,8 @@ import typing as tp
 from src.misc.globals import *
 from src.simulation.Legs import VehicleRouteLeg
 from src.simulation.StationaryProcess import ChargingProcess
+from src.misc.execution import travel_time_noise_sigma
+from src.misc.seeding import derive_rng
 
 if tp.TYPE_CHECKING:
     from src.demand.TravelerModels import RequestBase
@@ -25,7 +28,7 @@ LOG = logging.getLogger(__name__)
 class SimulationVehicle:
     def __init__(self, operator_id : int, vehicle_id : int, veh_attributes_dict : dict, 
                  routing_engine : NetworkBase, rq_db : tp.Dict[tp.Any, RequestBase], op_output : str,
-                 record_route_flag : bool, replay_flag : bool):
+                 record_route_flag : bool, replay_flag : bool, scenario_parameters=None):
         """
         Initialization of vehicle in the simulation environment.
         :param operator_id: id of fleet operator the vehicle belongs to
@@ -37,6 +40,7 @@ class SimulationVehicle:
         :param op_output: output for VRL records
         :param record_route_flag: generates path output if true
         :param replay_flag: generates extra output for replay visualization
+        :param scenario_parameters: optional execution-noise settings and master seed
         """
         self.op_id = operator_id
         self.vid = vehicle_id
@@ -45,6 +49,13 @@ class SimulationVehicle:
         self.op_output = op_output
         self.record_route_flag = record_route_flag
         self.replay_flag = replay_flag
+        parameters = scenario_parameters if scenario_parameters is not None else {}
+        self.tt_noise_sigma = travel_time_noise_sigma(parameters)
+        # A private stream even in legacy mode: enabling execution noise must
+        # never consume demand, traveler, initialization, or optimizer draws.
+        self._execution_rng = (derive_rng(parameters[G_RANDOM_SEED], f"execution/{operator_id}/{vehicle_id}")
+                               if self.tt_noise_sigma > 0 else None)
+        self.cl_tt_multiplier = 1.0
         ## vehicle attributes
         self.veh_type = veh_attributes_dict[G_VTYPE_NAME]
         self.max_pax = int(veh_attributes_dict[G_VTYPE_MAX_PAX])
@@ -83,6 +94,7 @@ class SimulationVehicle:
     def reset_current_leg(self):
         # current info
         self.status = VRL_STATES.IDLE
+        self.cl_tt_multiplier = 1.0
         # add distance to cumulative distance
         self.cumulative_distance += self.cl_driven_distance
 
@@ -197,6 +209,11 @@ class SimulationVehicle:
             ca.started = True
             self.status = ca.status
             if self.pos != ca.destination_pos:
+                if self._execution_rng is not None:
+                    sigma = self.tt_noise_sigma
+                    self.cl_tt_multiplier = float(self._execution_rng.lognormal(-sigma * sigma / 2, sigma))
+                    if not math.isfinite(self.cl_tt_multiplier) or self.cl_tt_multiplier <= 0:
+                        raise ValueError("network_tt_noise_sigma produced an unrepresentable travel-time multiplier")
                 if ca.route and self.pos[0] == ca.route[0]:
                     self.cl_remaining_route = ca.route
                 else:
@@ -275,6 +292,8 @@ class SimulationVehicle:
             record_dict[G_VR_LOCKED] = ca.locked
             record_dict[G_VR_LEG_START_TIME] = self.cl_start_time
             record_dict[G_VR_LEG_END_TIME] = simulation_time
+            if self.tt_noise_sigma > 0:
+                record_dict["travel_time_multiplier"] = self.cl_tt_multiplier
             if self.cl_start_pos is None:
                 LOG.warning(f"ending a leg that has not been started before! {self.vid} {self.status.display_name} {self.cl_start_time}")
                 if len(ca.rq_dict.get(1, [])) != 0 or len(ca.rq_dict.get(-1, [])) != 0:
@@ -549,11 +568,22 @@ class SimulationVehicle:
         :param remaining_step_time: remaining time of the current update step
         :param update_start_time: time when update step started
         :return: arrival in time step (-1 if still moving at end of update step, time of arrival at end of route otherwise"""        
+        # Advance the route in planning-time seconds, then translate absolute
+        # router timestamps back to wall time. Keep the exact legacy arithmetic
+        # when noise is disabled; stationary service durations are unscaled.
+        movement_budget = remaining_step_time
+        if self._execution_rng is not None:
+            movement_budget = remaining_step_time / self.cl_tt_multiplier
         (new_pos, driven_distance, arrival_in_time_step, passed_nodes, passed_node_times) = \
-            self.routing_engine.move_along_route(self.cl_remaining_route, self.pos, remaining_step_time, target_position=self.assigned_route[0].destination_pos,
+            self.routing_engine.move_along_route(self.cl_remaining_route, self.pos, movement_budget, target_position=self.assigned_route[0].destination_pos,
                                                     sim_vid_id=(self.op_id, self.vid),
                                                     new_sim_time=c_time,
                                                     record_node_times=self.replay_flag)
+        if self._execution_rng is not None:
+            if arrival_in_time_step != -1:
+                arrival_in_time_step = min(c_time + remaining_step_time,
+                                          c_time + (arrival_in_time_step - c_time) * self.cl_tt_multiplier)
+            passed_node_times = [c_time + (time - c_time) * self.cl_tt_multiplier for time in passed_node_times]
         if logging.DEBUG >= LOG.getEffectiveLevel():
             LOG.debug(f"veh {self.vid} move {self.pos} -> {new_pos} driven {driven_distance} m in {remaining_step_time} s to {arrival_in_time_step} passed nodes {passed_nodes}")
         last_node = self.pos[0]

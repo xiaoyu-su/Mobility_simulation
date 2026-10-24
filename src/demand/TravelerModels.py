@@ -24,6 +24,8 @@ if tp.TYPE_CHECKING:
 # global variables
 # ----------------
 from src.misc.globals import *
+from src.misc.seeding import component_rng
+from src.misc.execution import promised_times_enabled
 
 
 LOG = logging.getLogger(__name__)
@@ -76,6 +78,11 @@ class RequestBase(metaclass=ABCMeta):
         # store miscellaneous custom values from demand file
         for param, value in rq_row.drop([G_RQ_TIME, G_RQ_ID, G_RQ_ORIGIN, G_RQ_DESTINATION]).items():
             setattr(self, str(param), value)
+        self._rng = component_rng(scenario_parameters, f"traveler/{self.type}/{self.rid}")
+        self._record_promised_times = promised_times_enabled(scenario_parameters)
+        self._promise_operator_id = None
+        self._promised_pickup_time = None
+        self._promised_dropoff_time = None
         # offer: operator_id > offer class entity
         self.offer = {}
         # decision/output
@@ -175,7 +182,32 @@ class RequestBase(metaclass=ABCMeta):
         record_dict[G_RQ_DO] = self.do_time
         record_dict[G_RQ_FARE] = self.fare
         record_dict[G_RQ_MODAL_STATE] = self.modal_state
+        if self._record_promised_times:
+            record_dict["promise_operator_id"] = self._promise_operator_id
+            record_dict["promised_pickup_time"] = self._promised_pickup_time
+            record_dict["promised_dropoff_time"] = self._promised_dropoff_time
+            record_dict["pickup_error_s"] = (self.pu_time - self._promised_pickup_time
+                                            if self.pu_time is not None and self._promised_pickup_time is not None else None)
+            record_dict["dropoff_error_s"] = (self.do_time - self._promised_dropoff_time
+                                             if self.do_time is not None and self._promised_dropoff_time is not None else None)
         return self._add_record(record_dict)
+
+    def capture_service_promise(self, operator_id):
+        """Freeze the accepted offer, before booking callbacks can revise it.
+
+        Wait is measured from request time, not from offer/booking time.
+        Unselected offers and subsequent updates never replace this snapshot.
+        """
+        if not self._record_promised_times or self._promise_operator_id is not None or operator_id < 0:
+            return
+        offer = self.offer.get(operator_id)
+        if offer is None or offer.service_declined():
+            return
+        self._promise_operator_id = operator_id
+        self._promised_pickup_time = self.rq_time + offer[G_OFFER_WAIT]
+        drive_time = offer.get(G_OFFER_DRIVE)
+        if drive_time is not None:
+            self._promised_dropoff_time = self._promised_pickup_time + drive_time
 
     def receive_offer(self, operator_id, operator_offer, simulation_time, sc_parameters=None): # TODO remove sc_parameters here
         """ this function is used when a traveller recieves an offer from an operator
@@ -206,6 +238,8 @@ class RequestBase(metaclass=ABCMeta):
         self.offer = {}
 
     def user_boards_vehicle(self, simulation_time, op_id, vid, pu_pos, t_access):
+        if self._record_promised_times and self._promise_operator_id is not None and op_id != self._promise_operator_id:
+            raise ValueError("Serving operator differs from the frozen service promise")
         self.pu_time = simulation_time
         self.service_opid = op_id
         self.service_vid = vid
@@ -521,7 +555,7 @@ class WaitingTimeSensitiveLinearDeclineRequest(RequestBase):
             else:
                 acc_prob = (self.max_wt_2 - wt) / (
                             self.max_wt_2 - self.max_wt_1)
-                r = np.random.random()
+                r = (np.random if self._rng is None else self._rng).random()
                 LOG.debug(f" -> random prob {acc_prob}")
                 if r < acc_prob:
                     LOG.debug(f" -> accept")
@@ -637,7 +671,7 @@ class UserDecisionRequest(RequestBase):
                     selected_offer = offer
                     selected_op = op_id
                 elif tt == best_overall_tt:
-                    r = np.random.randint(2)
+                    r = np.random.randint(2) if self._rng is None else self._rng.integers(2)
                     if r == 0:
                         best_overall_tt = tt
                         selected_offer = offer
@@ -681,7 +715,7 @@ class UserUtilityRequest(RequestBase):
                     highest_utility = utility
                     selected_op = op_id
                 elif utility == highest_utility:
-                    if np.random.randint(2) == 0:
+                    if (np.random.randint(2) if self._rng is None else self._rng.integers(2)) == 0:
                         selected_op = op_id
         if selected_op is not None:
             chosen_offer = self.offer[selected_op]
@@ -711,7 +745,7 @@ class MasterRandomChoiceRequest(RequestBase):
         list_options = [i for i, off in self.offer.items() if not off.service_declined()]
         if -1 not in list_options:
             list_options.append(-1)
-        choice = np.random.choice(list_options)
+        choice = (np.random if self._rng is None else self._rng).choice(list_options)
         self.fare = self.offer[choice].get(G_OFFER_FARE, 0)
         LOG.debug(f"{self.get_rid_struct()} chooses offer {choice} from options {list_options} | offers {offer_str(self.offer)}")
         return choice

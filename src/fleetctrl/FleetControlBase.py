@@ -29,6 +29,7 @@ from src.demand.TravelerModels import RequestBase
 from src.misc.init_modules import load_repositioning_strategy, load_charging_strategy, \
     load_dynamic_fleet_sizing_strategy, load_dynamic_pricing_strategy, load_reservation_strategy
 from src.fleetctrl.pooling.GeneralPoolingFunctions import get_assigned_rids_from_vehplan
+from src.fleetctrl.acceptance.driver_acceptance import create_driver_acceptance, PARAMETERS as ACCEPTANCE_PARAMETERS
 if TYPE_CHECKING:
     from src.routing.road.NetworkBase import NetworkBase
     from src.simulation.Vehicles import SimulationVehicle
@@ -51,7 +52,7 @@ INPUT_PARAMETERS_FleetControlBase = {
     "input_parameters_mandatory": [G_OP_VR_CTRL_F, G_OP_FLEET],
     "input_parameters_optional": [
         G_RA_SOLVER, G_RA_OPT_HOR, G_OP_MIN_WT, G_OP_MIN_WT, G_OP_MAX_WT, G_OP_MAX_DTF, G_OP_ADD_CDT, G_OP_MIN_DTW,
-        G_OP_CONST_BT, G_OP_ADD_BT, G_OP_INIT_VEH_DIST
+        G_OP_CONST_BT, G_OP_ADD_BT, G_OP_INIT_VEH_DIST, *ACCEPTANCE_PARAMETERS
         ],
     "mandatory_modules": [],
     "optional_modules": [G_RA_RES_MOD, G_OP_CH_M, G_OP_REPO_M, G_OP_DYN_P_M, G_OP_DYN_FS_M, G_RA_FC_TYPE]
@@ -88,6 +89,7 @@ class FleetControlBase(metaclass=ABCMeta):
         :type list_pub_charging_infra: list of PublicChargingInfrastructureOperator
         """
         self.n_cpu = scenario_parameters["n_cpu_per_sim"]
+        self.scenario_parameters = scenario_parameters
         self.solver: str = operator_attributes.get(G_RA_SOLVER, "Gurobi")
         self.log_gurobi : bool = scenario_parameters.get(G_LOG_GUROBI, False)
         self.op_id = op_id
@@ -108,6 +110,9 @@ class FleetControlBase(metaclass=ABCMeta):
         #
         self.sim_vehicles: List[SimulationVehicle] = list_vehicles
         self.nr_vehicles = len(self.sim_vehicles)
+        self.driver_acceptance = create_driver_acceptance(operator_attributes, scenario_parameters, op_id,
+                                                          list_vehicles, dir_names[G_DIR_OUTPUT])
+        self._driver_declined_requests = set()
         sim_start_time = scenario_parameters[G_SIM_START_TIME]
         self.sim_time = sim_start_time
 

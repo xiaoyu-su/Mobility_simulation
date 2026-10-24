@@ -1,0 +1,103 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_paired_acceptance_audits_repeatability_and_report_pipeline[example_ir_driver_acceptance.yaml-example_ir_driver_acceptance.yaml] _
+
+baseline = 'example_ir_driver_acceptance.yaml'
+candidate = 'example_ir_driver_acceptance.yaml'
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-19/test_paired_acceptance_audits_0')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize("baseline,candidate", [
+        ("example_ir_driver_acceptance.yaml", "example_ir_driver_acceptance.yaml"),
+        ("example_ir_only.csv", "example_ir_driver_classes.yaml"),
+    ])
+    def test_paired_acceptance_audits_repeatability_and_report_pipeline(baseline, candidate, tmp_path):
+        output = tmp_path / "experiment"
+        command = [sys.executable, "-m", "tools.paired_eval",
+                   "--constant-config", str(SCENARIOS / "constant_config_ir.csv"),
+                   "--baseline-scenarios", str(SCENARIOS / baseline),
+                   "--candidate-scenarios", str(SCENARIOS / candidate),
+                   "--network-tt-noise-sigma", ".3", "--seeds", "5", "11", "--output", str(output)]
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=240,
+                                env=dict(os.environ, OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1"))
+>       assert result.returncode == 0, result.stdout + "\n" + result.stderr
+E       AssertionError: 
+E         Traceback (most recent call last):
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+E             return _run_code(code, main_globals, None,
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+E             exec(code, run_globals)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 196, in <module>
+E             main()
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 192, in main
+E             run_experiment(args)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 76, in run_experiment
+E             parameters = {arm: load_parameters(constants, path) for arm, path in originals.items()}
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 76, in <dictcomp>
+E             parameters = {arm: load_parameters(constants, path) for arm, path in originals.items()}
+E           File "/workspace/Mobility_simulation/tools/paired_eval/worker.py", line 17, in load_parameters
+E             scenarios = ScenarioConfig(str(scenarios))
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 161, in __init__
+E             self += self.read_yaml(file_path)
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 191, in read_yaml
+E             return cls(cfg)
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 158, in __init__
+E             if file_path.endswith(".csv"):
+E         AttributeError: 'list' object has no attribute 'endswith'
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.paired_eval', '--constant-confi...158, in __init__\n    if file_path.endswith(".csv"):\nAttributeError: \'list\' object has no attribute \'endswith\'\n').returncode
+
+tests/integration/test_acceptance_paired.py:29: AssertionError
+_ test_paired_acceptance_audits_repeatability_and_report_pipeline[example_ir_only.csv-example_ir_driver_classes.yaml] _
+
+baseline = 'example_ir_only.csv', candidate = 'example_ir_driver_classes.yaml'
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-19/test_paired_acceptance_audits_1')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize("baseline,candidate", [
+        ("example_ir_driver_acceptance.yaml", "example_ir_driver_acceptance.yaml"),
+        ("example_ir_only.csv", "example_ir_driver_classes.yaml"),
+    ])
+    def test_paired_acceptance_audits_repeatability_and_report_pipeline(baseline, candidate, tmp_path):
+        output = tmp_path / "experiment"
+        command = [sys.executable, "-m", "tools.paired_eval",
+                   "--constant-config", str(SCENARIOS / "constant_config_ir.csv"),
+                   "--baseline-scenarios", str(SCENARIOS / baseline),
+                   "--candidate-scenarios", str(SCENARIOS / candidate),
+                   "--network-tt-noise-sigma", ".3", "--seeds", "5", "11", "--output", str(output)]
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=240,
+                                env=dict(os.environ, OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1"))
+>       assert result.returncode == 0, result.stdout + "\n" + result.stderr
+E       AssertionError: 
+E         Traceback (most recent call last):
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+E             return _run_code(code, main_globals, None,
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+E             exec(code, run_globals)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 196, in <module>
+E             main()
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 192, in main
+E             run_experiment(args)
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 76, in run_experiment
+E             parameters = {arm: load_parameters(constants, path) for arm, path in originals.items()}
+E           File "/workspace/Mobility_simulation/tools/paired_eval/__main__.py", line 76, in <dictcomp>
+E             parameters = {arm: load_parameters(constants, path) for arm, path in originals.items()}
+E           File "/workspace/Mobility_simulation/tools/paired_eval/worker.py", line 17, in load_parameters
+E             scenarios = ScenarioConfig(str(scenarios))
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 161, in __init__
+E             self += self.read_yaml(file_path)
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 191, in read_yaml
+E             return cls(cfg)
+E           File "/workspace/Mobility_simulation/src/misc/config.py", line 158, in __init__
+E             if file_path.endswith(".csv"):
+E         AttributeError: 'list' object has no attribute 'endswith'
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.paired_eval', '--constant-confi...158, in __init__\n    if file_path.endswith(".csv"):\nAttributeError: \'list\' object has no attribute \'endswith\'\n').returncode
+
+tests/integration/test_acceptance_paired.py:29: AssertionError
+=========================== short test summary info ============================
+FAILED tests/integration/test_acceptance_paired.py::test_paired_acceptance_audits_repeatability_and_report_pipeline[example_ir_driver_acceptance.yaml-example_ir_driver_acceptance.yaml]
+FAILED tests/integration/test_acceptance_paired.py::test_paired_acceptance_audits_repeatability_and_report_pipeline[example_ir_only.csv-example_ir_driver_classes.yaml]
+2 failed in 1.07s

@@ -699,3 +699,38 @@ and will be committed locally before the actual push attempt is recorded.
   and the **181 passing tests** are committed locally. This final blocked-
   publication record is a documentation-only follow-up; tested source content
   and archived artifact hashes remain unchanged.
+
+### Step 9: authentication diagnosis and successful publication
+
+- Earlier HTTPS Git and public API probes received **401** through the
+  platform proxy, including requests with no explicit Authorization header.
+  The platform injects scoped GitHub authentication; a `GH_TOKEN` binding can
+  be a proxy placeholder. Calling that variable an invalid raw token was an
+  unsupported diagnosis. Neither expiry nor revocation was established.
+- After the latest configuration was published, fresh probes returned **200**
+  for the selected repository's Git read and push discovery endpoints, and for
+  upstream public Git reads. The workspace has no configured Git credential
+  helper or URL rewrite. Native Git now works with platform authentication;
+  no personal token or successful local CLI login was needed.
+- The GitHub API has a separate current failure: HTTPS CONNECT to
+  `api.github.com` returns **403 Forbidden**. The latest saved restricted
+  network policy has no custom API domain rule; the earlier configuration
+  included that rule. API/CLI failure therefore does not establish that Git
+  push is still broken. No network policy or repository selection was changed
+  during this diagnosis.
+- `GIT_TERMINAL_PROMPT=0 git push -u origin phase-5-driver-choice` succeeded.
+  Independent `git ls-remote` verification confirmed remote tip
+  `83646a05fdf5dbf59b80c04c802d9a07d4c2dff3`, including implementation
+  `c2f37d4965e25fe9cee043171429e1280ffd3951` and the original failure record.
+  Both commits retain **Xiaoyu Su** as author and committer. No Phase 5 PR was
+  created because API access remains blocked.
+- Before suggesting any runtime refresh, created a complete Git metadata
+  backup outside the checkout, including shallow-history boundaries, and
+  restored it into an independent temporary directory. Verified the exact
+  Phase 5 HEAD and a clean restored working tree. This protects unpublished
+  history independently of environment snapshot behavior.
+- This follow-up records the successful publication and corrects the earlier
+  authentication explanation. Python source and archived experiment artifacts
+  are unchanged; the existing **181 passing tests** remain the code validation.
+  The precise backend reason for the earlier credential rejection cannot be
+  established from the workspace.

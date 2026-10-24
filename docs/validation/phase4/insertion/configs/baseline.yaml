@@ -1,0 +1,12 @@
+# Illustrative assumptions only; coefficients are not an empirical fit.
+- scenario_name: example_driver_acceptance
+  op_module: PoolingIRSOnly
+  rq_file: example_100.csv
+  op_fleet_composition:
+    default_vehtype: 5
+  op_driver_acceptance: logistic
+  op_driver_acceptance_intercept: 0.0
+  op_driver_acceptance_beta_eta: -0.15  # per pickup minute
+  op_driver_acceptance_beta_value: 0.1  # per direct-trip km, not per USD
+  op_driver_acceptance_max_declines: 0  # one attempt, no retry
+  op_driver_acceptance_weight_objective: true

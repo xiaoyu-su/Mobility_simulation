@@ -353,6 +353,8 @@ class RidePoolingBatchOptimizationFleetControlBase(FleetControlBase):
         t0 = time.perf_counter()
         self.sim_time = simulation_time
         if self.sim_time % self.optimisation_time_step == 0:
+            if self.driver_acceptance is not None:
+                self.driver_acceptance.begin_matching_round(self.sim_time, self.routing_engine)
             # LOG.info(f"time for new optimisation at {simulation_time}")
             self.RPBO_Module.compute_new_vehicle_assignments(self.sim_time, self.vid_finished_VRLs, build_from_scratch=False,
                                                         new_travel_times=self.new_travel_times_loaded)

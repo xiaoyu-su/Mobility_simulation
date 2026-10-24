@@ -105,6 +105,8 @@ class PoolingIRSAssignmentBatchOptimization(RidePoolingBatchOptimizationFleetCon
             self.RPBO_Module.add_new_request(rid_struct, prq, consider_for_global_optimisation=False)
         else:
             self.RPBO_Module.add_new_request(rid_struct, prq)
+            if self.driver_acceptance is not None:
+                self.driver_acceptance.begin_matching_round(sim_time, self.routing_engine)
             list_tuples = insertion_with_heuristics(sim_time, prq, self, force_feasible_assignment=True)
             if len(list_tuples) > 0:
                 (vid, vehplan, delta_cfv) = min(list_tuples, key=lambda x:x[2])

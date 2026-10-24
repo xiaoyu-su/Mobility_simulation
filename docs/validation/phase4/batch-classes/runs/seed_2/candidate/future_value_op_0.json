@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "top_k": 3,
+  "formula": "p + (1 - p) * (1 - product(1 - alternative_p))",
+  "ranking": "direct road-network pickup ETA, then vehicle ID",
+  "eligibility": "positioned, not out_of_service, sufficient total passenger capacity, reachable by latest pickup",
+  "scope": "frozen matching-round reachability proxy; no pooled-tour feasibility guarantee or actual fallback dispatch",
+  "probabilities": "one offer per driver, conditionally independent; current retry policy unchanged",
+  "selected_records": "one row per first selected-driver decision, before acceptance sampling",
+  "counters": {
+    "rounds": 120,
+    "weight_evaluations": 579,
+    "candidate_queries": 95,
+    "candidate_cache_hits": 290,
+    "fallback_cache_hits": 194,
+    "routing_queries": 464
+  }
+}

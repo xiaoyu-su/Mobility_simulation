@@ -682,3 +682,20 @@ guaranteed service improvement is introduced. Those remain separate work.
 GitHub API authentication failed during publication preflight (HTTP 401).
 Alternate stored CLI credentials are unavailable. The tested work is completed
 and will be committed locally before the actual push attempt is recorded.
+
+### Step 8: commit complete; GitHub publication blocked by authentication
+
+- Implementation/evidence commit: `c2f37d4965e25fe9cee043171429e1280ffd3951`,
+  branch `phase-5-driver-choice`. Verified both author and committer are
+  **Xiaoyu Su**, using the saved `xiaoyu-su` GitHub noreply identity.
+- Attempted the authorized push using GitHub CLI's credential helper, with
+  terminal prompting disabled. GitHub rejected it: `Invalid username or token`
+  and `Authentication failed`; command exited **128**.
+- The environment token also receives GitHub API **401 Bad credentials**, and
+  no alternative stored CLI credentials are configured. No new Phase 5 remote
+  branch or pull request was created. GitHub authentication must be refreshed
+  before publication can continue; no user token was requested or exposed.
+- All code, source/input/output checks, raw experiments, complete evidence,
+  and the **181 passing tests** are committed locally. This final blocked-
+  publication record is a documentation-only follow-up; tested source content
+  and archived artifact hashes remain unchanged.

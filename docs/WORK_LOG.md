@@ -1239,3 +1239,24 @@ and will be committed locally before the actual push attempt is recorded.
   check, as in preceding phases. Stage the tested implementation and complete
   evidence, commit with Xiaoyu Su as both author/committer, then verify the
   fork's branch tip after native Git push.
+
+### Step 8: commit and verify GitHub publication
+
+- Implementation/evidence commit:
+  `6e9a67364f5837ccbcac83c05aae1c7cb31c238c`. Git author **and** committer
+  verified as **Xiaoyu Su**, `209944670+xiaoyu-su@users.noreply.github.com`.
+  Explicit author/committer environment variables were used for this commit.
+- Native `git push -u origin phase-6-windowed-evaluation` succeeded.
+  Independent `git ls-remote origin refs/heads/phase-6-windowed-evaluation`
+  returned the exact implementation commit. The local branch tracks origin
+  and was clean after publication.
+- GitHub accepted all three evidence archives. It emitted its non-blocking
+  recommendation about the 55.42 MiB benchmark archive exceeding 50 MiB;
+  the push completed successfully and no evidence was omitted.
+- Recomputed the committed Python fingerprint and checked every recorded
+  principal artifact hash: they still match the final suite and experiments.
+  This follow-up records publication in documentation only; tested Python and
+  raw evidence remain unchanged. Publish this record under the same identity
+  and verify the final branch tip and clean working tree.
+- Published branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-6-windowed-evaluation

@@ -108,3 +108,9 @@ Window CLI commands, model limits, cutoff semantics and interpretation are in
 [PHASE_6.md](../../PHASE_6.md). Pickles are trusted local full-state artifacts
 for the recorded source/interpreter/dependency versions; rerun baselines for a
 new environment. Original absolute paths document this cloud execution.
+
+Implementation/evidence commit: `6e9a67364f5837ccbcac83c05aae1c7cb31c238c`,
+published as Xiaoyu Su on
+[phase-6-windowed-evaluation](https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-6-windowed-evaluation).
+Native push succeeded and an independent remote lookup confirmed that commit;
+the publication record follows in a documentation-only commit.

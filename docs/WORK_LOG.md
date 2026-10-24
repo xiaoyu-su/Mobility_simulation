@@ -524,3 +524,15 @@ objective, or implement driver acceptance. Phase 3 is the next planned stage.
 
 No actual multi-driver fallback, repositioning policy, city calibration, or
 guaranteed service improvement is introduced. Those remain separate work.
+
+### Step 7: commit and publish as Xiaoyu Su
+
+- Committed implementation, documentation, tests, benchmark, and complete
+  evidence as `3900e84fe6bd2bce61a8ee51e396f7184bde8b7c`.
+- Pushed `phase-4-future-value` and opened
+  [PR #2](https://github.com/xiaoyu-su/Mobility_simulation/pull/2), based on
+  `phase-3-driver-acceptance` for a focused Phase 4 review while PR #1 remains open.
+- GitHub verified both author and committer as **Xiaoyu Su**, linked to
+  **xiaoyu-su**. No upstream/contributor identities were changed.
+- This publication record is a documentation-only follow-up. The tested source
+  digest and all archived experiment/benchmark artifact hashes remain unchanged.

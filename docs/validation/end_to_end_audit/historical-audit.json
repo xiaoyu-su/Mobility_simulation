@@ -1,0 +1,62 @@
+{
+  "recorded_at_utc": "2026-10-24T04:23:43.540078+00:00",
+  "phase0": {
+    "independent_upstream_reference_examples": [
+      "insertion",
+      "immediate_batch",
+      "batch"
+    ],
+    "requests_per_example": 100,
+    "completed_per_example": 93,
+    "initial_tests_passed": 8
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "final_tests_passed": 41,
+      "recorded_final_experiment_runs": 6,
+      "experiment_exit_codes_all_zero": true,
+      "archive_hashes_verified": 5,
+      "archive_integrity_issues": [],
+      "validation_record": "docs/validation/phase1/validation.json"
+    },
+    {
+      "phase": 2,
+      "final_tests_passed": 66,
+      "recorded_final_experiment_runs": 12,
+      "experiment_exit_codes_all_zero": true,
+      "archive_hashes_verified": 21,
+      "archive_integrity_issues": [],
+      "validation_record": "docs/validation/phase2/validation.json"
+    },
+    {
+      "phase": 3,
+      "final_tests_passed": 107,
+      "recorded_final_experiment_runs": 12,
+      "experiment_exit_codes_all_zero": true,
+      "archive_hashes_verified": 169,
+      "archive_integrity_issues": [],
+      "validation_record": "docs/validation/phase3/validation.json"
+    },
+    {
+      "phase": 4,
+      "final_tests_passed": 145,
+      "recorded_final_experiment_runs": 12,
+      "experiment_exit_codes_all_zero": true,
+      "archive_hashes_verified": 195,
+      "archive_integrity_issues": [],
+      "validation_record": "docs/validation/phase4/validation.json"
+    },
+    {
+      "phase": 5,
+      "final_tests_passed": 181,
+      "recorded_final_experiment_runs": 12,
+      "experiment_exit_codes_all_zero": true,
+      "archive_hashes_verified": 197,
+      "archive_integrity_issues": [],
+      "validation_record": "docs/validation/phase5/validation.json"
+    }
+  ],
+  "total_archive_hashes_verified": 587,
+  "historical_runs_note": "Counts are final phase experiments, additional complete simulations also ran inside the recorded test suites."
+}

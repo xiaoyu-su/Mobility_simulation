@@ -734,3 +734,45 @@ and will be committed locally before the actual push attempt is recorded.
   are unchanged; the existing **181 passing tests** remain the code validation.
   The precise backend reason for the earlier credential rejection cannot be
   established from the workspace.
+
+## Cross-phase end-to-end audit and ongoing validation gate (2026-10-23)
+
+- User requirement: check every simulation change end to end and retain the
+  complete record. Audited every completed Phase 0–5 rather than relying on
+  unit-test totals or source screenshots. All phases have successful complete
+  simulation evidence: three independent baseline references, six final Phase 1
+  runs, and twelve final runs in each of Phases 2–5, plus their integration suites.
+- Verified all **587** files covered by the Phase 1–5 archive hash maps and all
+  **nine** approved upstream input/configuration hashes. Confirmed Phase 1's
+  six raw simulation outputs remain present at their recorded experiment path.
+- Reran `.venv/bin/python -m pytest -q` with JUnit output and a unique retained
+  temporary root. Result: **181 passed, 0 failed, 0 skipped in 616.97s**.
+  The 48 regression/integration cases executed **96 complete simulations**;
+  133 additional cases exercise individual invariants and boundary conditions.
+  Thirteen paired experiments validated **26 matched input pairs**.
+- Separately audited all 96 outputs: each contains all 100 unique demand
+  records and final state, all picked-up riders finish, accepted-request sets
+  equal completed-request sets where acceptance is active, terminally declined
+  riders are not served, and chronological activity/driver accounting validates.
+  Feature settings and choice/future counters are retained per run. The full
+  suite includes actual menus with noise and future value enabled together.
+- The post-suite output audit initially required every evaluation table to be
+  nonempty. The three intentional always-decline cases correctly have no
+  served operator and therefore no operator metric rows in the upstream
+  evaluator. Corrected this audit assumption, while retaining full zero-service
+  demand/decision/accounting checks. Simulation source and tests were unchanged;
+  the correction is recorded in `audit-checkpoint.txt`.
+- Added root `AGENTS.md` so future work must run a complete affected scenario
+  after each simulation behavior/configuration change, check enabled features
+  and combinations through real outputs, preserve evidence and stable source,
+  and pass the full suite before completing a phase. Retained the required
+  **Xiaoyu Su** author/committer identity in those instructions.
+- Archived the audit, exact command, console/JUnit results, historical check,
+  all per-run checks/hashes, and compressed raw records under
+  `docs/validation/end_to_end_audit/`. Read back and hash-verified all **1,311**
+  archived regular files. Python source matches the existing Phase 5 digest;
+  no implementation, scenario, dependency, or approved baseline changed.
+- Limits remain explicit: bundled small single-worker scenarios, illustrative
+  driver coefficients, no demonstrated service gain, and unit coverage for
+  generic overlapping-driver conflicts because live solver menus are disjoint.
+  No later phase is being marked implemented by this audit.

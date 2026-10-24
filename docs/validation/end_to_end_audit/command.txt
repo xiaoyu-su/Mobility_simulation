@@ -1,0 +1,1 @@
+/workspace/Mobility_simulation/.venv/bin/python -m pytest -q --junitxml=/workspace/.setup/phase-e2e-audit-_x247l61/junit.xml --basetemp=/workspace/.setup/phase-e2e-audit-_x247l61/simulation-runs

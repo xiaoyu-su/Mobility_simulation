@@ -898,3 +898,17 @@ and will be committed locally before the actual push attempt is recorded.
   apply the staged whitespace gate to source/docs/data while excluding the
   generated phase console `.txt` files. This is an evidence-formatting issue,
   not a simulation or test failure.
+
+### Step 5: committed and published
+
+- Implementation/evidence commit:
+  `06e2fb8edcc684c6fdc04b22699ecbe745b5bd12`. Both author and committer are
+  **Xiaoyu Su**, `209944670+xiaoyu-su@users.noreply.github.com`.
+- Native `git push -u origin phase-5b-ranked-insertion` succeeded. An independent
+  `git ls-remote` confirmed that exact commit on the fork's branch. The branch
+  tracks its origin counterpart; the working tree was clean after publication.
+- Rechecked the committed Python digest and every principal archived artifact
+  hash against the actual tested evidence. This publication-status follow-up
+  changes documentation only; the verified simulation source is unchanged.
+- Published branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-5b-ranked-insertion

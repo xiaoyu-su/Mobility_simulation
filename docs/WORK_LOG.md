@@ -1629,3 +1629,19 @@ and will be committed locally before the actual push attempt is recorded.
   in prior phases. `git diff HEAD^ HEAD --check -- .
   ':!docs/validation/phase7-real/calibration_diagnostics.svg'` then passes with
   empty output. The scientific source, simulations and figure are unchanged.
+
+### Verified investigation publication
+
+- Evidence/report commit:
+  `cfba80aa86bf6557eb785cdbd35287ac0d7ba5ad`. Git confirms both author and
+  committer are **Xiaoyu Su**, `209944670+xiaoyu-su@users.noreply.github.com`.
+- `git push -u origin phase-7-manhattan-validation` succeeded. Independent
+  `git ls-remote origin refs/heads/phase-7-manhattan-validation` returned that
+  exact commit; the working tree was clean. Production source still has digest
+  `d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da`,
+  and the scientific archive retains its verified SHA256.
+- Branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-7-manhattan-validation
+- This follow-up records publication only. It changes no source, input,
+  simulation output or calibration status. Publish under the same explicit
+  Xiaoyu Su identity and verify the final remote tip and clean working tree.

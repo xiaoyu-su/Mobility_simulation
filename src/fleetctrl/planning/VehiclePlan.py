@@ -949,6 +949,18 @@ class VehiclePlan:
                     is_feasible = False
                     infeasible_index = i
 
+                requests = getattr(veh_obj, 'planning_requests', None)
+                if requests is not None:
+                    if len(c_pax) > 1 and any(not requests[rid].pooling_allowed for rid in c_pax):
+                        is_feasible = False
+                        infeasible_index = i
+                    if not pstop.is_locked():
+                        durations = [requests[rid].pickup_service_time for rid in pstop.get_list_boarding_rids()]
+                        durations += [requests[rid].dropoff_service_time for rid in pstop.get_list_alighting_rids()]
+                        if durations and all(d is not None for d in durations):
+                            pstop.set_duration_and_earliest_end_time(
+                                duration=max(durations) + veh_obj.request_service_add_time * (len(durations) - 1))
+
                 c_time = pstop.get_departure_time(c_time)
                 pstop.set_planned_arrival_and_departure_time(last_c_time, c_time)
 

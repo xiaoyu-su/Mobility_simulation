@@ -1,0 +1,26 @@
+[
+  {
+    "case": "centroid_floor",
+    "arm": "no_repo",
+    "source_private_requests": 2268,
+    "private_requests_pooled": 1206
+  },
+  {
+    "case": "centroid_floor",
+    "arm": "repo",
+    "source_private_requests": 2268,
+    "private_requests_pooled": 916
+  },
+  {
+    "case": "road_exact",
+    "arm": "no_repo",
+    "source_private_requests": 2268,
+    "private_requests_pooled": 1014
+  },
+  {
+    "case": "road_exact",
+    "arm": "repo",
+    "source_private_requests": 2268,
+    "private_requests_pooled": 738
+  }
+]

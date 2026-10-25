@@ -1,0 +1,11 @@
+{
+  "source_files_exactly_match_frozen_snapshot": 236,
+  "code_digest": "e4736dcf5bc0829f654b12ea6025c1a7065e45920c6190cf19dfdd7c002570a2",
+  "all_real_policy_manifests_complete": true,
+  "all_22_runs_independently_checked": true,
+  "real_archive_sha256_verified": "fa34cd1d41040439c0818b1e311881cd0d40bc7e8acd642091381309d6d93da7",
+  "real_parts_sha256_verified": 9,
+  "regression_archive_sha256_verified": "687d5d5f75cb146af20ea7c73c63d4a9d500ff9471dc06bfeb66fc3e75ba474b",
+  "all_upload_parts_under_100mb": true,
+  "original_member_bytes_verified_during_packaging": true
+}

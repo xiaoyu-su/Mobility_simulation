@@ -1,5 +1,10 @@
 # Real Manhattan investigation
 
+**Historical investigation record:** the production fixes described below are
+implemented in the [production follow-up](PHASE_7_COMPLETION.md), which records
+the current regression and real-data validation gates. The original source,
+inputs, results and failed runs on this page remain unchanged as evidence.
+
 The data is available. The simulator is not yet demonstrated to reproduce the
 real market. Successful fixture runs and a completed data pipeline did not
 establish real-data calibration. This investigation preserves those earlier

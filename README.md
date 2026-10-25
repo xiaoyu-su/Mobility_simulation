@@ -20,9 +20,11 @@ declined request/driver edges and re-solving the retained native assignment grap
 same-controller policy windows, with request-time cohorts and explicit censoring.
 [Phase 7](docs/PHASE_7.md) adds a local TLC CSV/Parquet market pipeline,
 training-only forecasts/travel fitting and optional HiGHS repositioning.
-The public Manhattan data is now available. Real end-to-end experiments exposed
-calibration and accounting assumptions under [active investigation](docs/REAL_MANHATTAN_INVESTIGATION.md);
-fixture success does not establish real-city calibration.
+The public Manhattan data is available. The [production corrections and validation](docs/PHASE_7_COMPLETION.md)
+fix causal timing, pooling consent, physical service durations and booking
+completion, with 327 passing tests and full-demand real-data comparisons.
+Remaining calibration errors and limits of the public observations are reported
+alongside the improvements.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

@@ -9,6 +9,7 @@ import pandas as pd
 from src.misc.seeding import file_digest
 
 REQUIRED = ['hvfhs_license_num','pickup_datetime','dropoff_datetime','PULocationID','DOLocationID']
+OPTIONAL = ['request_datetime','on_scene_datetime','shared_request_flag','shared_match_flag']
 
 
 def chunks(path,size):
@@ -19,7 +20,7 @@ def chunks(path,size):
         names = source.schema.names
         missing = set(REQUIRED)-set(names)
         if missing:raise ValueError(f'Missing high-volume trip columns: {sorted(missing)}')
-        columns = REQUIRED+(['request_datetime'] if 'request_datetime' in names else [])
+        columns = REQUIRED+[column for column in OPTIONAL if column in names]
         for batch in source.iter_batches(batch_size=size,columns=columns):yield batch.to_pandas()
     else:
         for batch in pd.read_csv(path,chunksize=size):
@@ -33,7 +34,7 @@ def stable_fraction(seed,identity):
     return int.from_bytes(digest[:8],'big')/2**64
 
 
-def read_records(paths,dates,zones,seed,fraction,proxy_seconds=None,chunk_size=100000):
+def read_records(paths,dates,zones,seed,fraction,proxy_seconds=None,chunk_size=100000,include_intrazonal=False):
     """Retain source-row identity; identical zone/time tuples can be distinct rides."""
     if not 0 < fraction <= 1:raise ValueError('Sample fraction must lie in (0,1]')
     if proxy_seconds is not None and (not pd.notna(proxy_seconds) or not 0 <= proxy_seconds <= 86400):
@@ -65,7 +66,7 @@ def read_records(paths,dates,zones,seed,fraction,proxy_seconds=None,chunk_size=1
                          & (batch.request_datetime <= batch.pickup_datetime) & (batch.dropoff_datetime > batch.pickup_datetime)
                          & ((batch.dropoff_datetime-batch.pickup_datetime).dt.total_seconds() <= 86400)),
                         ('invalid_zone',batch.PULocationID.isin(zones)&batch.DOLocationID.isin(zones)),
-                        ('intrazonal_unrepresented',batch.PULocationID.ne(batch.DOLocationID)),
+                        ('intrazonal_unrepresented',batch.PULocationID.ne(batch.DOLocationID) | include_intrazonal),
                         ('invalid_license',batch.hvfhs_license_num.notna()),
                         ('other_date',batch.request_datetime.dt.strftime('%Y-%m-%d').isin(dates)),
                         ('not_sampled',batch.trip_id.map(lambda i:stable_fraction(seed,i)<fraction))]
@@ -78,7 +79,15 @@ def read_records(paths,dates,zones,seed,fraction,proxy_seconds=None,chunk_size=1
                 for field,column in [('request_s','request_datetime'),('pickup_s','pickup_datetime'),('dropoff_s','dropoff_datetime')]:
                     kept[field]=(kept[column]-midnight).dt.total_seconds()
                 kept['observed_wait_s']=(kept.pickup_s-kept.request_s).where(kept.request_observed)
-                output.append(kept[['trip_id','service_date','PULocationID','DOLocationID','request_s','pickup_s','dropoff_s','request_observed','observed_wait_s']])
+                arrival=pd.to_datetime(kept.get('on_scene_datetime',pd.Series(pd.NaT,index=kept.index)),errors='coerce',format='mixed')
+                valid=observed & arrival.ge(kept.request_datetime) & arrival.le(kept.pickup_datetime)
+                kept['observed_arrival_wait_s']=(arrival-kept.request_datetime).dt.total_seconds().where(valid)
+                kept['observed_curb_s']=(kept.pickup_datetime-arrival).dt.total_seconds().where(valid)
+                for source,destination in [('shared_request_flag','pooling_requested'),('shared_match_flag','shared_matched')]:
+                    values=kept.get(source,pd.Series(index=kept.index,dtype=object))
+                    kept[destination]=values.map({'Y':1,'N':0})
+                output.append(kept[['trip_id','service_date','PULocationID','DOLocationID','request_s','pickup_s','dropoff_s','request_observed','observed_wait_s',
+                                    'observed_arrival_wait_s','observed_curb_s','pooling_requested','shared_matched']])
         if file_digest(path)!=digest:raise ValueError('Source trip input changed while it was being read')
     if not output:raise ValueError('No valid sampled trips remain for the selected dates/zones')
     result=pd.concat(output,ignore_index=True).sort_values('trip_id').reset_index(drop=True)

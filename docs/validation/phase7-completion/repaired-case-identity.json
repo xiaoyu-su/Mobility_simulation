@@ -1,0 +1,46 @@
+[
+  {
+    "case": "clock_1s",
+    "repaired_request_id": 2665,
+    "original_accepted_assignments_unchanged": true,
+    "original_completed_trip_times_and_fares_unchanged": true,
+    "pre_horizon_activity_records": 10585,
+    "pre_horizon_physical_columns_identical": true,
+    "trajectory_numeric_identity": true,
+    "trajectory_format_note": "Explicit numeric service durations can render integral times as .0; parsed event values match exactly",
+    "all_booked_complete": true,
+    "tail": {
+      "status": "complete",
+      "maximum_tail_seconds": 86400,
+      "last_processed_time": 54095,
+      "elapsed_after_horizon_s": 18095,
+      "steps": 18096,
+      "remaining_tasks": 0,
+      "onboard_request_ids": [],
+      "idle_vehicle_updates_skipped": true,
+      "driving_time_step": 1
+    }
+  },
+  {
+    "case": "uniform_clock_1s_train_curb",
+    "repaired_request_id": 1510,
+    "original_accepted_assignments_unchanged": true,
+    "original_completed_trip_times_and_fares_unchanged": true,
+    "pre_horizon_activity_records": 13709,
+    "pre_horizon_physical_columns_identical": true,
+    "trajectory_numeric_identity": true,
+    "trajectory_format_note": "Explicit numeric service durations can render integral times as .0; parsed event values match exactly",
+    "all_booked_complete": true,
+    "tail": {
+      "status": "complete",
+      "maximum_tail_seconds": 86400,
+      "last_processed_time": 55954,
+      "elapsed_after_horizon_s": 19954,
+      "steps": 19955,
+      "remaining_tasks": 0,
+      "onboard_request_ids": [],
+      "idle_vehicle_updates_skipped": true,
+      "driving_time_step": 1
+    }
+  }
+]

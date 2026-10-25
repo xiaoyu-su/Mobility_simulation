@@ -35,6 +35,13 @@ if TYPE_CHECKING:
 # ----------------
 LOG = logging.getLogger(__name__)
 
+
+def infrastructure_node_id(value):
+    """Accept integral CSV scalars without silently truncating invalid positions."""
+    if pd.isna(value) or not np.isfinite(float(value)) or float(value) < 0 or int(value) != float(value):
+        raise ValueError(f'Infrastructure node_index must be a nonnegative integer: {value!r}')
+    return int(value)
+
 MAX_CHARGING_SEARCH = 100   # TODO # in globals?
 LARGE_INT = 100000000
 
@@ -522,7 +529,7 @@ class PublicChargingInfrastructureOperator:
         stations = []
         for _, row in stations_df.iterrows():
             station_id = row[G_INFRA_CS_ID]
-            node_index = row[G_NODE_ID]
+            node_index = infrastructure_node_id(row[G_NODE_ID])
             cunit_dict = decode_config_str(row[G_INFRA_CU_DEF])
             if cunit_dict is None:
                 cunit_dict = {}
@@ -660,7 +667,7 @@ class OperatorChargingAndDepotInfrastructure(PublicChargingInfrastructureOperato
         stations = []
         for _, row in stations_df.iterrows():
             station_id = row[G_INFRA_CS_ID]
-            node_index = row[G_NODE_ID]
+            node_index = infrastructure_node_id(row[G_NODE_ID])
             cunit_dict = decode_config_str(row[G_INFRA_CU_DEF])
             number_parking_spots = row[G_INFRA_MAX_PARK]
             if cunit_dict is None:

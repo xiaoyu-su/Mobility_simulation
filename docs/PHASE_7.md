@@ -8,13 +8,15 @@ bundle; the repository's original data and scenarios are unchanged.
 Vehicle physics/cost specifications are copied into and verified with that
 bundle, so later edits to a shared vehicle file cannot change a policy pair.
 
-**The public data is now downloaded and verified, and real Manhattan runs are
-under investigation. Calibration is not established.** Publishing the cloud
+**The public data is downloaded and verified. Production corrections and
+full-demand validation are delivered; numerical calibration remains incomplete.** Publishing the cloud
 network allowlist resolved the earlier CONNECT 403 responses. The November
 2019 TLC records and TUM road/zone bundle are available locally. Initial real
 runs exposed timing, spatial, initialization and measurement problems that
-fixture success did not identify. See [the real-data investigation](REAL_MANHATTAN_INVESTIGATION.md)
-for controlled experiments, failed runs and remaining limitations. The plan's
+fixture success did not identify. See [the production completion report](PHASE_7_COMPLETION.md)
+for fixes, all 22 new real policy runs and residual calibration errors, and
+[the preserved investigation](REAL_MANHATTAN_INVESTIGATION.md) for the earlier
+controlled experiments and failures. The plan's
 real-city figures are not results reproduced by this implementation.
 
 ## Prepare actual data
@@ -44,28 +46,32 @@ uses SciPy's bundled HiGHS and needs no commercial license. Pure batch matching
 still uses its existing Gurobi solver; choose insertion for large inputs when
 using a restricted Gurobi license.
 
-Example with local files and an explicit 180-second request-time assumption:
+Example with the verified public files, actual request times, two-hour warm-up,
+source pooling consent and training-only pickup service fitting:
 
 ```bash
 .venv/bin/python -m tools.synthetic_market build \
   --trips /workspace/market_inputs/fhvhv_tripdata_2019-11.parquet \
-  --network /workspace/market_inputs/Manhattan_2019_corrected \
+  --network /workspace/market_inputs/fleetpy_manhattan/FleetPy_Manhattan/networks/Manhattan_2019_corrected \
   --network-type NetworkTTMatrix \
-  --zone-map /workspace/market_inputs/Manhattan_Taxi_Zones/node_zone_info.csv \
+  --zone-map /workspace/market_inputs/manhattan_tlc_node_zone_info.csv \
+  --zone-polygons /workspace/market_inputs/fleetpy_manhattan/FleetPy_Manhattan/zones/Manhattan_Taxi_Zones/polygon_definition.geojson \
+  --zone-polygons-crs EPSG:32618 \
   --data-kind tlc_public --target-date 2019-11-26 \
   --training-dates 2019-11-05 2019-11-12 2019-11-19 \
   --start-seconds 25200 --end-seconds 36000 --sample-fraction .1 \
-  --request-time-proxy-seconds 180 --patience-extra-seconds 300 \
-  --seed 0 --output /workspace/market_inputs/manhattan_seed0
+  --warmup-seconds 7200 --time-step 1 --pickup-service training_curb \
+  --patience-extra-seconds 300 --max-route-candidates 30 \
+  --seed 0 --output /workspace/market_inputs/my_manhattan_seed0
 
 .venv/bin/python -m tools.synthetic_market run \
-  --bundle /workspace/market_inputs/manhattan_seed0 \
-  --seeds 0 1 2 --output /workspace/market_results/manhattan_seed0
+  --bundle /workspace/market_inputs/my_manhattan_seed0 \
+  --seeds 0 1 2 --timeout 3600 --output /workspace/market_results/my_manhattan_seed0
 ```
 
-Paths above describe required local inputs, not files supplied with the fork.
-Remove the proxy argument when actual request timestamps are available. A
-proxy is required only when the source schema lacks `request_datetime`.
+The large public source files are local workspace inputs, not binaries in Git.
+A request-time proxy is required only when the schema lacks `request_datetime`;
+use `--request-time-proxy-seconds` explicitly for that case.
 Do not label assumed requests/waits as observed. `--data-kind fixture` is
 required for synthetic test inputs; use `tlc_public` only for genuine sourced
 records. Source hashes and row identity retain the provenance of either kind.
@@ -78,19 +84,28 @@ records. Source hashes and row identity retain the provenance of either kind.
   identifiers, other dates and sampling exclusions, plus time-window exclusions.
   Repeated identical zone/time tuples may be distinct trips; row identity is
   retained. Supplying the same source bytes twice is rejected.
-- Parse local New York wall-clock timestamps explicitly. Select by request time
-  in `[start,end)`, quantize to the configured simulation grid, and assign
-  centroids from the provided network map. Intrazonal trips are excluded and
-  counted because a single centroid does not identify within-zone movement.
+- Parse local New York wall-clock timestamps explicitly. Select the evaluation
+  request cohort in `[start,end)`. Admit each request at the next grid boundary,
+  preserve its source clock and extend the simulation if needed to retain the
+  last original request. Warm-up requests have separate IDs. Road endpoints and
+  initial positions use stable source-row/role hashes within mapped node pools;
+  optional polygons constrain the pools with explicit CRS handling. Use
+  `--spatial-mapping centroid` for the old spatial control. Intrazonal requests
+  remain excluded unless `--include-intrazonal` is specified with road nodes;
+  those requests require distinct eligible origin/destination nodes.
 - Sampling uses source-byte/row/seed hashes. Higher fractions contain lower
   fractions' source trips and changing batch size does not change membership.
   Generated FleetPy numeric IDs index each selected bundle; rebuilding with
   another fraction is a different demand scenario, not a matched policy arm.
 - Forecast and travel training dates must be distinct, strictly earlier than
   the held-out day, and match its weekday. Source-row samples and full training
-  cohorts are retained. Target records never enter fitting or forecasts.
-- Fit log ride-duration/base-road-ETA ratios. A global log standard deviation
-  controls existing mean-one leg execution noise; per-bin log means determine
+  cohorts are retained. Same-service-day historical context before the
+  simulation start supplies carry-in and arrivals; travel fitting uses its
+  separate training window. Target records never enter fitting or forecasts.
+- Fit log ride-duration/imputed-road-ETA ratios, preferring known unshared
+  training trips and reporting an explicit fallback when unavailable.
+  Within-bin residual standard deviation controls mean-one execution noise;
+  per-bin log means determine
   factors `exp(mean_log_ratio + sigma²/2)`, falling back to the global mean
   below three training pairs. This is an empirical proxy: boarding, stops,
   network coarsening and routing error are not separately identified.
@@ -98,15 +113,26 @@ records. Source hashes and row identity retain the provenance of either kind.
   occupied intervals across bins for a modeled fleet profile, divided by an
   explicit utilization assumption (default .58). This estimates workload-based
   supply; trip files do not identify online driver counts or idle exposure.
-- Static fleet size defaults to the maximum modeled profile, with an explicit
+- Static fleet size defaults to the measured-window maximum modeled profile,
+  independent of warm-up length, with an explicit
   `--fleet-size` override. `--dynamic-fleet` activates the profile through
   existing TimeBasedFS, using generated centroid depots with sufficient parking
   and no charging. Those depot locations are model assumptions. Planned shift
   changes may wait for a driver to finish an accepted booking.
-- Patience is actual observed waiting time as a lower bound plus an assumed
-  extra allowance (default 300 seconds). With proxy requests, no observed lower
-  bound is available and only the explicit allowance applies. The generated
-  `latest_start_time` is verified against every loaded BasicRequest object.
+- Default patience uses a historical observed-wait quantile (default .95) plus
+  assumed slack (default 300s). It is a proxy for patience, not observed
+  cancellation behavior. Held-out waits do not enter these deadlines.
+  `--patience-model observed_replay` explicitly retains the earlier
+  retrospective experiment. Deadlines remain on the original source clock and
+  are verified against every loaded request.
+- `--pooling-policy source` enforces known shared-request consent; all/none
+  controls are available and missing flags are counted. Pickup service may use
+  a historical curb median (`--pickup-service training_curb`) while drop-off
+  service stays independently specified (default 30s). These request constraints
+  apply in planning and execution under all three supported controllers.
+- `--max-route-candidates` configures the existing immediate-search route
+  bound. This bounds origin positions, which may contain multiple vehicles;
+  it is an explicit heuristic, not a guarantee of globally exhaustive search.
 - Optional `--driver-model classes` uses existing illustrative Phase 3 values
   and an explicit full-time share (default .42). `--future-value` enables the
   already implemented reward proxy. These coefficients are not estimated from
@@ -145,6 +171,13 @@ and completion of every broker-confirmed booking. Driver and vehicle accounting
 then checks chronology, costs and fares. Existing independent randomness is
 required; optimizer parallelism remains one worker.
 
+The market worker opts into a strict completion tail (default bound 24 hours,
+configurable through `--completion-tail-max-seconds`). It keeps the driving
+grid, drains assignments and audits remaining tasks/passengers, skipping idle
+tail updates. Exhaustion raises. The last fitted traffic factor remains in
+force beyond the available profile; tail costs are model quantities, not
+observations. Scenarios without the option retain the original tail behavior.
+
 TimeBasedFS may log an initially parked leg beginning one tick before the
 configured horizon. The market runner explicitly enables left truncation for
 that stationary, empty, zero-distance/toll inactivity only. Its raw log stays
@@ -164,8 +197,15 @@ omit failed requests and fleet online exposure. The supplied rides are not the
 universe of attempted marketplace demand. Conditional simulated service means
 may describe a different subset from the full source cohort.
 
+Primary arrival/departure comparisons use the same served IDs with the
+corresponding observed event, show coverage and reject early service/private
+pooling. Warm-up requests are excluded from the evaluation cohort. Legacy
+grid/ride summaries remain separately labeled; see the precise semantics and
+matched ride-time validation in [the production follow-up](PHASE_7_COMPLETION.md).
+
 All bundle files, source/dependencies and reports are fingerprinted. Existing
 destinations are refused. Changing tested source requires rebuilding the bundle.
 Failed builds/runs preserve status/logs and never produce a complete manifest.
-See `docs/validation/phase7/` and `docs/WORK_LOG.md` for actual checks, failures,
-fixes, fixture outcomes and the outstanding real-data validation.
+See `docs/validation/phase7/` for the original fixtures, the
+[historical investigation](REAL_MANHATTAN_INVESTIGATION.md), and
+[production corrections](PHASE_7_COMPLETION.md) for current gates and limits.

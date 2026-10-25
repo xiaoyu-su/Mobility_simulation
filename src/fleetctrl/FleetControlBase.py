@@ -52,7 +52,7 @@ INPUT_PARAMETERS_FleetControlBase = {
     "input_parameters_mandatory": [G_OP_VR_CTRL_F, G_OP_FLEET],
     "input_parameters_optional": [
         G_RA_SOLVER, G_RA_OPT_HOR, G_OP_MIN_WT, G_OP_MIN_WT, G_OP_MAX_WT, G_OP_MAX_DTF, G_OP_ADD_CDT, G_OP_MIN_DTW,
-        G_OP_CONST_BT, G_OP_ADD_BT, G_OP_INIT_VEH_DIST, *ACCEPTANCE_PARAMETERS
+        G_OP_CONST_BT, G_OP_ADD_BT, G_OP_INIT_VEH_DIST, 'op_request_constraints', *ACCEPTANCE_PARAMETERS
         ],
     "mandatory_modules": [],
     "optional_modules": [G_RA_RES_MOD, G_OP_CH_M, G_OP_REPO_M, G_OP_DYN_P_M, G_OP_DYN_FS_M, G_RA_FC_TYPE]
@@ -149,6 +149,12 @@ class FleetControlBase(metaclass=ABCMeta):
         self.reservation_module : ReservationBase = res_class(self, operator_attributes, dir_names, solver=self.solver)
         self._init_dynamic_fleetcontrol_output_key(G_FCTRL_CT_RES)
         self.rq_dict : Dict[Any, PlanRequest] = {}  # rid_struct -> PlanRequest
+        if operator_attributes.get('op_request_constraints', False):
+            if scenario_parameters.get('n_cpu_per_sim', 1) != 1:
+                raise ValueError('Request-specific pooling/service constraints require n_cpu_per_sim=1')
+            for vehicle in self.sim_vehicles:
+                vehicle.planning_requests = self.rq_dict
+                vehicle.request_service_add_time = operator_attributes.get(G_OP_ADD_BT, 0)
         self.begin_approach_buffer_time = operator_attributes.get(G_RA_RES_APP_BUF_TIME, 0)
 
         # required fleet control parameters -> create error if invalid entries

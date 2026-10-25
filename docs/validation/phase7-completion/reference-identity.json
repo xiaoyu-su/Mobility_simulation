@@ -1,0 +1,32 @@
+[
+  {
+    "file": "1_user-stats.csv",
+    "reference": "0221b161a93eb19f943ddd20e555cbbca1f55e63145fda3d6def8e53b1d34160",
+    "current": "0221b161a93eb19f943ddd20e555cbbca1f55e63145fda3d6def8e53b1d34160",
+    "identical": true
+  },
+  {
+    "file": "2-0_op-stats.csv",
+    "reference": "5418fd97312ca71ed3e5e0de451663210b897d3a45ea02dfbeee14752925fe37",
+    "current": "5418fd97312ca71ed3e5e0de451663210b897d3a45ea02dfbeee14752925fe37",
+    "identical": true
+  },
+  {
+    "file": "final_state.csv",
+    "reference": "b0333da0ff44e7ec2c836ced2223d130ffa5fe2d773abf42dbeb61a556cb6bc2",
+    "current": "b0333da0ff44e7ec2c836ced2223d130ffa5fe2d773abf42dbeb61a556cb6bc2",
+    "identical": true
+  },
+  {
+    "file": "standard_eval.csv",
+    "reference": "4bd850330f5d9abdb61447ba8bff4658364c22c7acc6eeec325b619024130158",
+    "current": "4bd850330f5d9abdb61447ba8bff4658364c22c7acc6eeec325b619024130158",
+    "identical": true
+  },
+  {
+    "file": "2_vehicle_types.csv",
+    "reference": "68533a384fb225edbc2b845c8366d5cbe913917ba87d78a440747b4c337f4b53",
+    "current": "68533a384fb225edbc2b845c8366d5cbe913917ba87d78a440747b4c337f4b53",
+    "identical": true
+  }
+]

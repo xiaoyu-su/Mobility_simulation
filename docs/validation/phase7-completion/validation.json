@@ -1,0 +1,32 @@
+{
+  "source_digest": "e4736dcf5bc0829f654b12ea6025c1a7065e45920c6190cf19dfdd7c002570a2",
+  "source_files": 236,
+  "pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "327",
+    "time": "1946.088",
+    "timestamp": "2026-10-25T19:10:03.947035+00:00",
+    "hostname": "48c69016c736"
+  },
+  "regression_full_simulations": 201,
+  "restored_windows": 32,
+  "real_policy_runs": 22,
+  "real_policy_pairs": 11,
+  "repaired_original_failures": 2,
+  "legacy_tum_control_byte_identical_files": 5,
+  "original_tum_repositioning": "size-limited Gurobi license prevents original solver run; failures preserved",
+  "all_real_policy_runs_independently_verified": true,
+  "all_accepted_bookings_complete": true,
+  "early_pickup_violations": 0,
+  "private_pooling_violations": 0,
+  "physical_service_minima_respected": true,
+  "public_matrices_omitted_with_restore_hashes": true,
+  "all_archived_bytes_verified": true,
+  "real_archive_sha256": "fa34cd1d41040439c0818b1e311881cd0d40bc7e8acd642091381309d6d93da7",
+  "real_archive_files": 862,
+  "fully_identified_real_market": false,
+  "scope": "Engineering validation and conditional completed-trip replay; online exposure, unserved demand and true driver coefficients remain unobserved"
+}

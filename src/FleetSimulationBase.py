@@ -56,7 +56,7 @@ INPUT_PARAMETERS_FleetSimulationBase = {
     ],
     "input_parameters_optional": [
         G_SIM_TIME_STEP, G_NR_CH_OPERATORS, G_SIM_REALTIME_PLOT_FLAG, "log_level", G_SIM_ROUTE_OUT_FLAG, G_SIM_REPLAY_FLAG, G_INIT_STATE_SCENARIO,
-        G_ZONE_SYSTEM_NAME, G_INFRA_NAME, "random_stream_mode", "network_tt_noise_sigma", "record_promised_times"
+        G_ZONE_SYSTEM_NAME, G_INFRA_NAME, "random_stream_mode", "network_tt_noise_sigma", "record_promised_times", "completion_tail_max_seconds"
     ],
     "mandatory_modules": [
         G_SIM_ENV, G_NETWORK_TYPE, G_RQ_TYP1, G_OP_MODULE
@@ -647,6 +647,9 @@ class FleetSimulationBase:
         This method simulates the remaining assignments at the end of the simulation in order to get them recorded
         properly. This is necessary for a consistent evaluation.
         """
+        if 'completion_tail_max_seconds' in self.scenario_parameters:
+            from src.simulation.completion_tail import completion_tail
+            return completion_tail(self)
         c_time = self.end_time# - self.time_step
         LOG.info("record_remaining_assignments()")
         remaining_tasks = -1
@@ -700,7 +703,7 @@ class FleetSimulationBase:
                 LOG.debug(f"\t ... just wrote {current_buffer_size} entries from buffer to stats of operator {op_id}.")
             self.operators[op_id].record_dynamic_fleetcontrol_output(force=force)
 
-    def update_sim_state_fleets(self, last_time, next_time, force_update_plan=False):
+    def update_sim_state_fleets(self, last_time, next_time, force_update_plan=False, only_active=False):
         """
         This method updates the simulation vehicles, records, ends and starts tasks and returns some data that
         will be used for additional state updates (fleet control information, demand, network, ...)
@@ -710,7 +713,10 @@ class FleetSimulationBase:
         """
         LOG.debug(f"updating MoD state from {last_time} to {next_time}")
         #for opid_vid_tuple, veh_obj in self.sim_vehicles.items():
-        for opid_vid_tuple, veh_obj in sorted(self.sim_vehicles.items(), key=lambda x:self.vehicle_update_order[x[0]]):
+        vehicles = self.sim_vehicles.items()
+        if only_active:
+            vehicles = [(key,veh) for key,veh in vehicles if veh.assigned_route or veh.start_next_leg_first or veh.pax]
+        for opid_vid_tuple, veh_obj in sorted(vehicles, key=lambda x:self.vehicle_update_order[x[0]]):
             op_id, vid = opid_vid_tuple
             boarding_requests, alighting_requests, passed_VRL, dict_start_alighting =\
                 veh_obj.update_veh_state(last_time, next_time)

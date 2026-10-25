@@ -14,7 +14,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 5b: ranked insertion fallback | Opt-in cheapest-first feasible driver offers, one decision per driver, cached first acceptance, terminal-exhaustion/candidate audits | `docs/PHASE_5B.md` |
 | 5c: native optimizer rematching | Opt-in declined-edge/trip pruning, same-tick Gurobi re-solves, accepted-pair protection, logit round capacity, genuine-attempt terminal audits | `docs/PHASE_5C.md` |
 | 6: windowed parallel evaluation | Full baseline snapshots, same-controller interventions, bounded isolated workers, disjoint request cohorts and explicit horizon censoring | `docs/PHASE_6.md` |
-| 7: market-data pipeline | Fixture validation delivered; public Manhattan inputs now verified, real runs expose timing/spatial/event-definition issues; calibration remains incomplete | `docs/PHASE_7.md`, `docs/REAL_MANHATTAN_INVESTIGATION.md` |
+| 7: market-data pipeline | Verified public Manhattan inputs, causal requests, source pooling consent, fitted pickup service, physical completion and event-aligned reports; 327 passing tests and full-demand comparisons; residual calibration errors reported | `docs/PHASE_7.md`, `docs/PHASE_7_COMPLETION.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -32,10 +32,13 @@ Phase 6 compares local policy interventions from identical baseline histories
 without repeating every lead-in. AV dispatch and cross-city calibration remain
 later phases.
 Phase 7 prepares reproducible market inputs and adds license-free repositioning;
-the public TLC/Zenodo inputs are now available and verified. Controlled real
-runs investigate early admission, centroid locations, carry-in, pooling and
-arrival-versus-pickup definitions. Calibration remains incomplete; see the
-[real-data evidence](docs/REAL_MANHATTAN_INVESTIGATION.md).
+the public TLC/Zenodo inputs are available and verified. Production corrections
+enforce source-clock timing, source pooling consent, physical pickup/drop-off
+service and complete bookings, and add spatial/warm-up controls with matched
+event reporting. Full-demand validation measures the remaining calibration
+errors; public completed trips do not identify online supply or unserved demand.
+See the [completion evidence](docs/PHASE_7_COMPLETION.md) and preserved
+[earlier investigation](docs/REAL_MANHATTAN_INVESTIGATION.md).
 
 - [Change history](IMPROVEMENT_LOG.md)
 - [Step-by-step work and verification record](docs/WORK_LOG.md)
@@ -48,3 +51,4 @@ arrival-versus-pickup definitions. Calibration remains incomplete; see the
 - [Phase 5c native graph constraints, rematching, accepted-pair protection, and validation](docs/PHASE_5C.md)
 - [Phase 6 snapshots, window cohorts, parallel workers, and interpretation](docs/PHASE_6.md)
 - [Phase 7 market inputs, HiGHS repositioning, calibration limits and data requirements](docs/PHASE_7.md)
+- [Phase 7 production corrections, full-demand results and remaining limits](docs/PHASE_7_COMPLETION.md)

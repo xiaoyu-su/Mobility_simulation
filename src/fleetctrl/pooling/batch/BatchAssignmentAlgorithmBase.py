@@ -24,6 +24,9 @@ class SimulationVehicleStruct():
                  routing_engine : NetworkBase, empty_init = False, add_assigned_route = True):
         self.op_id = simulation_vehicle.op_id
         self.vid = simulation_vehicle.vid
+        if hasattr(simulation_vehicle, 'planning_requests'):
+            self.planning_requests = simulation_vehicle.planning_requests
+            self.request_service_add_time = simulation_vehicle.request_service_add_time
 
         self.status = simulation_vehicle.status
         self.pos = simulation_vehicle.pos

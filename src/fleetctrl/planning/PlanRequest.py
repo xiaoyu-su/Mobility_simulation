@@ -48,6 +48,16 @@ class PlanRequest:
         else:
             self.sub_rid_struct = self.rid
         self.rq_time = rq.rq_time
+        self.pooling_allowed = getattr(rq, 'pooling_allowed', True)
+        if self.pooling_allowed not in (True, False, 0, 1):
+            raise ValueError('pooling_allowed must be 0 or 1')
+        self.pickup_service_time = getattr(rq, 'pickup_service_time', None)
+        self.dropoff_service_time = getattr(rq, 'dropoff_service_time', None)
+        for duration in (self.pickup_service_time, self.dropoff_service_time):
+            if duration is not None and (not pd.notna(duration) or not 0 <= duration < LARGE_INT):
+                raise ValueError('Request service durations must be finite and nonnegative')
+        if self.pickup_service_time is not None:
+            boarding_time = self.pickup_service_time
         #
         if pickup_pos is None:
             self.o_pos = rq.o_pos

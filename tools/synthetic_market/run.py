@@ -14,27 +14,7 @@ from tools.paired_eval.metrics import per_driver_metrics,distribution_metrics,se
 from tools.paired_eval.statistics import paired_statistics
 from tools.synthetic_market.build import json_write
 from tools.synthetic_market.worker import verify_bundle
-
-
-def calibration_report(bundle,users,drivers):
-    observed=pd.read_csv(bundle/'observed_cohort.csv')
-    if not users.request_id.is_unique or not observed.request_id.is_unique:
-        raise ValueError('Duplicate user/cohort row would multiply calibration report joins')
-    if set(users.request_id)!=set(observed.request_id):raise ValueError('Calibration cohort and simulation request IDs differ')
-    joined=users.merge(observed,on='request_id',suffixes=('_sim','_observed'),validate='one_to_one')
-    served=joined.pickup_time.notna();complete=joined.dropoff_time.notna()
-    simulated_wait=(joined.loc[served,'pickup_time']-joined.loc[served,'rq_time'])
-    available=joined.observed_wait_s.notna()
-    def median(series):return float(series.median()) if len(series.dropna()) else None
-    return dict(requests=len(joined),completed=int(complete.sum()),completion_rate=float(complete.mean()),
-        simulated_pickup_wait_median_s=median(simulated_wait),
-        observed_pickup_wait_median_s=median(joined.observed_wait_s),observed_wait_count=int(available.sum()),
-        simulated_ride_median_s=median(joined.loc[complete,'dropoff_time']-joined.loc[complete,'pickup_time']),
-        observed_ride_median_s=median(joined.dropoff_s-joined.pickup_s),
-        simulated_utilization=float(drivers.occupied_time_s.sum()/drivers.online_time_s.sum()),
-        observed_completion_rate=None,observed_utilization=None,
-        unavailable_reason='Trip records omit unserved requests and fleet online exposure; proxy request times do not identify observed waits',
-        comparison_population='All sampled held-out recorded trips; simulated wait/ride means are conditional on simulated service')
+from tools.synthetic_market.report import calibration_report
 
 
 def experiment(args):
@@ -73,8 +53,11 @@ def experiment(args):
                 legs=pd.read_csv(run/'2-0_op-stats.csv') if (run/'2-0_op-stats.csv').exists() else pd.DataFrame(columns=['status','driven_distance'])
                 summary['reposition_distance_m']=float(legs.loc[legs.status.eq('reposition'),'driven_distance'].sum())
                 summary['out_of_service_legs']=float(legs.status.eq('out_of_service').sum())
+                users=pd.read_csv(run/'1_user-stats.csv');report=calibration_report(bundle,users,drivers,run)
+                # Completion/wait summaries refer to the evaluation cohort, costs to the full physical run.
+                summary.update(completed_requests=report['completed'],completion_rate=report['completion_rate'],
+                               pickup_wait_median_s=report['simulated_arrival_wait_median_s'])
                 summaries.extend(dict(seed=seed,arm=arm,metric=k,value=v) for k,v in summary.items())
-                users=pd.read_csv(run/'1_user-stats.csv');report=calibration_report(bundle,users,drivers)
                 manifest['reports'].append(dict(seed=seed,arm=arm,**report))
                 if arm=='repo':
                     audit=json.loads((run/'repositioning_op_0.json').read_text())

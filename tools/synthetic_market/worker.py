@@ -13,6 +13,7 @@ from src.misc.seeding import file_digest
 from tools.paired_eval.__main__ import source_record
 from tools.windowed_eval.runtime import attach_events
 from tools.synthetic_market.build import market_dependencies
+from tools.synthetic_market.report import request_ids,activity_frame
 
 
 def verify_bundle(bundle):
@@ -73,9 +74,24 @@ def main():
         raise RuntimeError('Market simulation did not complete picked-up bookings')
     if set(events['accepted'])!=set(users.loc[users.dropoff_time.notna(),'request_id']):
         raise RuntimeError('Market simulation did not complete every accepted booking')
+    observed=pd.read_csv(bundle/'observed_cohort.csv').set_index('request_id')
+    indexed=users.set_index('request_id')
+    if (indexed.pickup_time-observed.request_s).lt(-1e-7).any():raise RuntimeError('Pickup before source request')
+    legs=activity_frame(output)
+    pooled=set()
+    for row in legs[legs.status.eq('route')&legs.occupancy.ge(2)].itertuples():pooled.update(request_ids(row.rq_on_board))
+    private=set(demand.index[demand.pooling_allowed.eq(0)])
+    if private&pooled:raise RuntimeError('Private requests were pooled')
+    for _,group in legs.groupby('vehicle_id'):
+        group=group.sort_values(['start_time','end_time'])
+        if (group.end_time<group.start_time-1e-7).any() or (group.start_time.to_numpy()[1:]<group.end_time.to_numpy()[:-1]-1e-7).any():
+            raise RuntimeError('Nonchronological market vehicle activity')
+    tail=json.loads((output/'completion_tail.json').read_text())
+    if tail['status']!='complete':raise RuntimeError('Incomplete physical tail')
     (output/'market_input_contract.json').write_text(json.dumps(dict(requests=len(requests),patience_loaded_for_all=True,
         booked_requests=len(events['accepted']),completed_requests=int(users.dropoff_time.notna().sum()),
-        all_booked_requests_completed=True),indent=2)+'\n')
+        all_booked_requests_completed=True,early_pickups=0,private_requests=len(private),
+        private_pooling_violations=0,chronological_activity=True,physical_tail_complete=True),indent=2)+'\n')
     verify_bundle(bundle)
 
 

@@ -1645,3 +1645,185 @@ and will be committed locally before the actual push attempt is recorded.
 - This follow-up records publication only. It changes no source, input,
   simulation output or calibration status. Publish under the same explicit
   Xiaoyu Su identity and verify the final remote tip and clean working tree.
+
+## Phase 7 production corrections requested after investigation
+
+- The user explicitly requested finishing the missing work. Created
+  `phase-7-production-fixes` from published `a3b67f6`, preserving the complete
+  earlier investigation and raw public sources.
+- Implemented causal admission with horizon-safe cohort retention, full-history
+  supply context, warm-up with separate evaluation IDs, deterministic optional
+  polygon-constrained road positions and intrazonal support, source pooling
+  consent, separate pickup/drop-off service, training-only patience, geometry-
+  consistent unshared travel fitting and within-bin residual noise.
+- Added opt-in shared request constraints at plan feasibility and batch vehicle
+  structures. Legacy controllers without the option keep their existing path.
+  Infrastructure loaders now validate/cast integral road-node IDs. An opt-in
+  strict completion tail preserves the driving grid and update order, skips
+  idle tail work and writes an audit; exhaustion raises rather than claiming a
+  completed booking. Legacy tail handling remains available when unspecified.
+- Replaced ambiguous market reporting with matched event/cohort diagnostics;
+  raw-clock early pickup, physical booking completion, chronological activity
+  and private-request pooling violations are hard failures. Whole-horizon costs
+  and evaluation-window utilization have explicit domains.
+- Initial command: `.venv/bin/python -m pytest -q
+  tests/unit/test_market_corrections.py tests/unit/test_market_inputs.py
+  tests/unit/test_market_guards.py
+  --junitxml=/workspace/.setup/phase7-fixes/initial-unit.xml`:
+  **34 passed in 1.14s**. New tests exercise real CSV float promotion, causal
+  last-boundary admission, stable intrazonal imputation, source event coverage,
+  noise detrending, private-request overlap/handoff, pickup/drop-off dwell, and
+  long-trip completion versus explicit tail exhaustion.
+- Froze checkpoint source
+  `53a469d879446d12704f7cf48e4b76f33599ed6641a597305f9e0d4d70ddec1b`
+  (236 files), then launched complete market integration checks including all
+  three controllers. Logs/JUnit/raw outputs are under
+  `/workspace/.setup/phase7-fixes/checkpoint-*`. No source edits are made while
+  these complete simulations run. Final results will follow this checkpoint.
+- Checkpoint integration results: **38 passed, three failed in 402.96s**.
+  All three enhanced controller checks detected pickup dwell still executing as
+  30s instead of fitted 20s. The first implementation set an unused `duration`
+  attribute; FleetPy uses `direct_duration` through its public setter. Corrected
+  the implementation to use `set_duration_and_earliest_end_time`, and corrected
+  the unit check to assert the public duration and actual planned timing.
+  Preserved the failed checkpoint source/logs/outputs. Rerunning all enhanced
+  controller cases plus the focused unit/guard checks on the corrected source.
+- Attempted the original TUM 24-hour `ex1_IH` scenario with the provided 2018
+  demand, hourly road factors and original Alonso-Mora repositioning. It reaches
+  the repositioning solver and fails at 25,200s with **Gurobi model too large
+  for the size-limited license**. Preserve this concrete external limit; do not
+  present a changed solver/policy as an exact reproduction of published results.
+- Corrected focused gate: **37 passed in 18.96s**, including actual physical
+  pickup/drop-off durations for all three matching controllers and dynamic
+  matrix-router depots with blank charging fields. Snapshot of all 236
+  corrected source/dependency files is preserved under `final-source/`.
+  Frozen final source:
+  `e4736dcf5bc0829f654b12ea6025c1a7065e45920c6190cf19dfdd7c002570a2`.
+- The first full-suite invocation used a nested pytest `--basetemp` whose
+  parent directory did not yet exist. Pytest reported **131 passed, 196 setup
+  errors in 8.51s**, all due to that missing temporary parent. Preserved the
+  invocation/log/JUnit and created the parent before restarting the entire
+  suite in `full-final/`. No source change was involved.
+- Started corrected production CLI builds directly from verified public
+  Parquet: November 26 and November 19 (earlier training dates only), seeds
+  0/1/2; full demand, one-hour warm-up and changing-fleet checks follow in the
+  same runner. Every source cohort, configuration, command and output is
+  fingerprinted. `run_real_cases.py` records stage exit codes and elapsed time;
+  complete runs use new output directories under `production_fixes/`.
+- Final regression gate: **327 passed in 1946.09s**, zero failures, errors or
+  skips. `audit_suite.py` independently checks **201 complete simulation
+  outputs** and **32 restored windows**. The source remained frozen at
+  `e4736dcf5bc0829f654b12ea6025c1a7065e45920c6190cf19dfdd7c002570a2`.
+- Rebuilt the exact two former failed-case inputs with explicit legacy
+  all-pooling/service assumptions and the new strict completion bound, rather
+  than refitting geometry/travel/supply. Both now finish every original
+  accepted request, including 2665 and 1510. `verify_repaired_cases.py` confirms
+  original assignments and completed-trip times/fares are unchanged, and
+  **10,585 / 13,709** pre-horizon activity rows are numerically identical.
+  Trajectory integer-versus-float text formatting can differ; parsed node/time
+  events are exactly identical. Final tails contain zero tasks/onboard riders.
+- Full-day TUM control validation: reference source exported from `fd2a76e`
+  and corrected code both complete the actual 21,400-request, 24-hour IH
+  dataset with repositioning explicitly disabled. Five files are byte-identical:
+  users, vehicle activity, final state, standard evaluation and vehicle types.
+  The first comparison harness expected a random-stream audit absent in legacy
+  mode; preserved that harness error and corrected the comparison to actual
+  available output files. This is not an exact original-repositioning-policy
+  reproduction. The original Gurobi repositioning case is separately attempted
+  on the reference, checkpoint and final corrected sources and remains blocked
+  by the restricted commercial license.
+- Independent consent audit of the previous published real benchmark finds
+  **738 private riders pooled** in the prior road/exact-second repositioning
+  arm (916 in the earlier centroid/floor arm). Completed corrected real-data
+  arms have **zero private-pooling violations**. Source shared-request flags
+  define consent; source shared-match flags are reported separately as outcomes.
+- Finished **all 22 new real policy simulations /11 complete pairs**. There
+  are no pending new real policy arms: November 26 10% (seeds 0/1/2), November
+  19 10% with intrazonal demand (0/1/2), full November 26 demand (0/1), one-hour
+  warm-up (0) and changing fleets (0/1). Each case executes full no-reposition
+  and HiGHS-repositioning runs. Main `run_real_cases.py` and separate
+  `run_full_seed1.py` stage records have zero build/run return codes. Frozen
+  code/dependencies and Git base stayed unchanged through all physical runs.
+- Exact reproducible build/run argument arrays, stage runtime and source/input
+  fingerprints are in `.setup/phase7-fixes/real/*/execution.json` in the real
+  archive. All builds stream the original public Parquet, use the 4,411-node
+  matrix network/63 mapped zones, explicit EPSG:32618 polygon constraints,
+  source sampling/imputation seed 0, source pooling consent, training-only
+  pickup service and native immediate-search bound 30 origin positions. That
+  bound can include multiple vehicles and is not exhaustive global matching.
+  All real runs use insertion matching; other controllers and driver-choice
+  combinations have complete fixture validation rather than real-data
+  coefficient calibration.
+- The principal held-out November 26 cohort is 07:00–10:00, trained only on
+  earlier Tuesdays November 5/12/19. Two-hour warm-up begins at 05:00. The
+  second held-out day, November 19, trains only on November 5/12 and includes
+  134 intrazonal evaluation bookings. The one-hour warm-up keeps the same
+  3,150 November 26 evaluation IDs. The source file's raw-row identities are
+  retained throughout; road points are deterministic imputations, not GPS.
+- Full-demand seeds receive **32,192 evaluation +7,315 warm-up requests** and
+  modeled fleet 7,932. All 19 hashed bundle files are identical across the two
+  seed-specific bundles; simulation seeds alone differ. Causal grid is 60s,
+  fitted pickup service 94s, separate drop-off 30s, training patience 717+300s.
+  Sampled static cases use a 1s grid; changing-fleet checks use 60s. These
+  resolution/density differences are disclosed, not presented as one-factor
+  calibration comparisons.
+- Full-demand seed 0: no repositioning **26,172/32,192 completed**, repositioning
+  **31,842/32,192** (+5,670). Matched arrival-median error **92.907→23.956s**;
+  matched pickup-median error **22.237→40.140s**. Seed 1: **26,278→31,865**
+  (+5,587); arrival error **96.324→24.433s**, pickup error **22.292→39.184s**.
+  The pickup median error worsens even though pickup Wasserstein distance falls
+  from **101–104s to 35–36s** and arrival distance from **195–197s to 52–53s**.
+  Repositioning is not claimed to improve every measure. Every accepted booking
+  finishes; unserved source requests remain in full accounting and are not
+  counted as completed.
+- Among riders served in both full-demand arms, mean individual arrival wait
+  changes by **−128.439s /−124.131s** (seeds 0/1). Still **9,820 /9,782 riders
+  wait longer**. Whole-run reposition distance is **43,505.7 /42,281.0 km**,
+  and illustrative model net change is **+$4,195.22 /+$4,253.76**. These include
+  warm-up and the fulfillment tail, not just three evaluation hours, and are
+  not observed NYC wages. Two November 19 sampled seeds instead have lower
+  modeled net earnings; every pair's cost and common-rider effects are retained.
+- Sampled three-seed repositioning pickup-median errors average **3.957s** on
+  November 26 and **9.539s** on November 19; arrival errors remain **55.737s /
+  64.709s**. Full-demand modeled pooling is about **12.9%**, compared with
+  **21.7%** source shared matches on the same served population. A near-matched
+  sampled pickup median does not establish full-city arrival/ride/pooling fit.
+- Final independent commands: `.venv/bin/python
+  /workspace/.setup/phase7-fixes/analyze_results.py`, then
+  `provider_diagnostics.py`, then `final_report.py` from the same directory.
+  All exit successfully. Independent checks report **22 runs, no pending
+  cases**, unique/full accounting, all accepted bookings physically complete,
+  chronological legs, capacity, physical pickup/drop-off minima, actual
+  reposition orders and zero early/private-pooling violations. Event metrics
+  use raw request clocks and matched observed IDs. Exact-row provider joins
+  cover 35,845 distinct evaluation source identities; 66 provider/arm diagnostics
+  disclose selective arrival reporting and heterogeneous pickup fit. They are
+  diagnostics only, never inputs to held-out tuning.
+- Reproduction of the final full test gate uses `.venv/bin/python -m pytest
+  -q`, with `--basetemp=/workspace/.setup/phase7-fixes/full-final/runs` and
+  `--junitxml=/workspace/.setup/phase7-fixes/full-final/junit.xml`; final stdout
+  is `full-final.txt`. The earlier missing-parent setup failure and the three
+  genuine service-duration failures remain preserved with their fixes.
+- Packaging commands: `.venv/bin/python
+  /workspace/.setup/phase7-fixes/package_suite.py` and `package_real.py`.
+  Regression archive contains **6,429 original files**, 39,566,931 bytes,
+  SHA256 `687d5d5f75cb146af20ea7c73c63d4a9d500ff9471dc06bfeb66fc3e75ba474b`.
+  Every member is read back and verified against its original SHA256. Real
+  archive retains complete inputs/cohorts/outputs/audits/commands/failures and
+  comparison source, splitting upload parts below GitHub's file-size limit as
+  needed. Repeated public 155MB matrices and original large public downloads
+  stay outside Git with exact restoration URLs/paths/hashes; private input
+  manifests remain unchanged. Original scientific logs/SVG/XML bytes are
+  preserved; source/document whitespace checks exclude raw generated artifacts.
+- Complete readable tables, per-seed CSVs, checks and inspected standalone PNG/
+  PDF figures are indexed in `docs/validation/phase7-completion/README.md`.
+  `docs/PHASE_7_COMPLETION.md` separates finished engineering work from residual
+  numerical calibration, public-data identification limits and the original
+  TUM solver-license constraint. README/project/improvement summaries now link
+  to this evidence; the earlier investigation and its archive remain unchanged.
+- Real archive packaging completed: **862 original files**, **281,523,022
+  bytes**, logical SHA256
+  `fa34cd1d41040439c0818b1e311881cd0d40bc7e8acd642091381309d6d93da7`.
+  Nine ordered upload parts are at most 32 MiB each. Every member and every
+  concatenated part byte was verified. `validation.json` records all final
+  gates and explicitly sets `fully_identified_real_market=false`.

@@ -365,3 +365,30 @@ outcomes. The real-data follow-up below does not change those historical results
 - **Record:** [full investigation](docs/REAL_MANHATTAN_INVESTIGATION.md), including
   exact cohorts, all configurations, actual runs, failures, source hashes,
   matched event definitions and outstanding work.
+
+## Phase 7 production corrections
+
+- **Problem:** the real-data investigation exposed early admission, missing
+  source pooling consent, pickup/drop-off service coupling, truncated noisy
+  bookings and comparisons between different event definitions.
+- **Change:** causal grid admission with horizon retention, training-only
+  patience, historical carry-in, separate warm-up IDs, deterministic road-node
+  imputation with polygon constraints, source consent in plan feasibility,
+  separate physical service durations, bounded audited completion and matched
+  event/cohort reports. Existing operators keep their opt-in defaults.
+- **Benefit:** requests cannot be served before their source clock; private
+  riders remain exclusive; accepted bookings finish physically; wait comparisons
+  disclose the event and observed coverage. Repaired original failed cases
+  preserve original assignments and completed trip times/fares.
+- **Validation:** 327 tests pass, with independent checks of 201 complete
+  simulations and 32 restored windows. Real multi-seed, second-date, warm-up,
+  changing-fleet and full-demand comparisons retain both improvements and
+  residual errors. The TUM 24-hour control matches five files byte for byte;
+  original commercial-solver repositioning remains license-limited.
+- **Limits:** remaining real calibration errors are measured, not declared
+  solved. Online fleet exposure, unserved demand and true driver coefficients
+  are unavailable in these public completed-trip records. Financial outcomes
+  are illustrative whole-run model values, not observed NYC driver wages.
+- **Record:** [production corrections and results](docs/PHASE_7_COMPLETION.md),
+  [step-by-step log](docs/WORK_LOG.md) and
+  [complete validation records](docs/validation/phase7-completion/).

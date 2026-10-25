@@ -130,3 +130,54 @@ def test_market_bundle_runs_complete_matched_sims_and_reports(controller,observe
             for table in ['1_user-stats.csv','2-0_op-stats.csv','standard_eval.csv']:
                 suffix=Path('runs')/f'seed_{seed}'/arm/table
                 pd.testing.assert_frame_equal(pd.read_csv(output/suffix),pd.read_csv(replay/suffix),check_exact=True)
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('controller',[
+    'PoolingIRSOnly','PoolingIRSAssignmentBatchOptimization','RidePoolingBatchAssignmentFleetcontrol'])
+def test_corrected_market_clock_warmup_private_pooling_and_separate_service_times(controller,tmp_path):
+    trips,zones,network=fixture(tmp_path/'source',matrix=True)
+    data=pd.read_parquet(trips)
+    data['shared_request_flag']=['N' if i%3==0 else 'Y' for i in range(len(data))]
+    data['shared_match_flag']='N'
+    data['on_scene_datetime']=data.pickup_datetime-pd.Timedelta(seconds=20)
+    # Target event values are deliberately different: only historical curb data may fit service time.
+    target=data.request_datetime.dt.strftime('%Y-%m-%d').eq('2019-11-26')
+    data.loc[target,'on_scene_datetime']=data.loc[target,'request_datetime']+pd.Timedelta(seconds=1)
+    extra=[]
+    for day in ['2019-11-05','2019-11-12','2019-11-19','2019-11-26']:
+        for seconds in [25190,32399]:
+            row=data.iloc[0].copy();request=pd.Timestamp(day)+pd.Timedelta(seconds=seconds)
+            row['request_datetime']=request;row['pickup_datetime']=request+pd.Timedelta(seconds=60)
+            row['on_scene_datetime']=request+pd.Timedelta(seconds=40);row['dropoff_datetime']=request+pd.Timedelta(seconds=180)
+            extra.append(row)
+    data=pd.concat([data,pd.DataFrame(extra)],ignore_index=True);data.to_parquet(trips,index=False)
+    bundle=tmp_path/'bundle';output=tmp_path/'run'
+    command(['build','--trips',str(trips),'--zone-map',str(zones),'--network',str(network),
+        '--network-type','NetworkTTMatrix','--data-kind','fixture','--sample-fraction','1',
+        '--fleet-size','12','--end-seconds','32400','--warmup-seconds','900',
+        '--pickup-service','training_curb','--dynamic-fleet','--controller',controller,
+        '--driver-model','classes','--future-value','--output',str(bundle)],tmp_path/'build.txt')
+    metadata=json.loads((bundle/'manifest.json').read_text())
+    assert metadata['evaluation_count']==101 and metadata['warmup_count']==1
+    assert metadata['simulation_end']==32460 and metadata['pickup_service_seconds']==20
+    assert metadata['dropoff_service_seconds']==30
+    observed=pd.read_csv(bundle/'observed_cohort.csv').set_index('request_id')
+    demand=pd.read_csv(bundle/'demand/requests.csv').set_index('request_id')
+    assert (demand.rq_time>=observed.request_s).all()
+    assert demand.rq_time.max()==32400
+    assert demand.pooling_allowed.eq(0).any()
+    command(['run','--bundle',str(bundle),'--output',str(output),'--seeds','0'],tmp_path/'run.txt')
+    report=json.loads((output/'calibration_report.json').read_text())
+    assert len(report['runs'])==2
+    for row in report['runs']:
+        assert row['requests']==101 and row['simulation_requests']==102
+        assert row['early_pickup_count']==row['pooling_eligibility_violations']==0
+        run=output/'runs/seed_0'/row['arm']
+        assert json.loads((run/'completion_tail.json').read_text())['status']=='complete'
+        assert json.loads((run/'market_input_contract.json').read_text())['all_booked_requests_completed']
+        legs=pd.read_csv(run/'2-0_op-stats.csv')
+        pickup=legs[legs.rq_boarding.notna()&legs.rq_alighting.isna()]
+        if len(pickup):assert np.allclose(pickup.end_time-pickup.start_time,20)
+        dropoff=legs[legs.rq_alighting.notna()&legs.rq_boarding.isna()]
+        if len(dropoff):assert np.allclose(dropoff.end_time-dropoff.start_time,30)

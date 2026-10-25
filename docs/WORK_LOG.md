@@ -1461,3 +1461,20 @@ and will be committed locally before the actual push attempt is recorded.
   hashes; exclude `checkpoint-junit.xml` and `corrected-junit.xml` along with
   raw console `.txt` files from the source/document whitespace gate. All
   implementation, ordinary documentation and other evidence pass that gate.
+
+### Step 7: verified GitHub publication
+
+- Implementation/evidence commit:
+  `f98f2469a56d0ee83d14d694259c54bc736a07dc`. Explicit author/committer
+  environment variables and Git inspection verify **Xiaoyu Su**,
+  `209944670+xiaoyu-su@users.noreply.github.com`, for both identities.
+- Native `git push -u origin phase-7-market-data-pipeline` succeeded.
+  Independent `git ls-remote origin refs/heads/phase-7-market-data-pipeline`
+  returned that exact implementation commit. The branch tracks origin and
+  was clean after publication. All final code and principal artifact hashes
+  still match tested bytes after committing.
+- This follow-up records publication only. It does not change Python, raw
+  evidence or the explicit real-data-blocked status. Publish the documentation
+  under the same Xiaoyu Su identity, then verify final remote tip/clean tree.
+- Published branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-7-market-data-pipeline

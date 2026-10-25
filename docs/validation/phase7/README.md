@@ -113,3 +113,10 @@ original empirical numbers are not copied into validation results. Enable
 network access for `d37ci6vzurychx.cloudfront.net`, `zenodo.org` and `doi.org`,
 or provide those local source files, then execute the documented build/run
 commands. Inspect the actual source schema before using observed wait metrics.
+
+Implementation/evidence commit: `f98f2469a56d0ee83d14d694259c54bc736a07dc`,
+published as Xiaoyu Su on
+[phase-7-market-data-pipeline](https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-7-market-data-pipeline).
+Native push and independent remote-tip verification succeeded. A documentation
+follow-up records publication without changing validated implementation bytes
+or claiming the outstanding real Manhattan experiments have run.

@@ -1,0 +1,10 @@
+{
+  "canonical_attempted_runs": 27,
+  "canonical_successful_runs": 24,
+  "canonical_failed_runs": 3,
+  "complete_validated_pairs": 11,
+  "observer_replays": 1,
+  "observer_replay_status": "same booked-completion failure, five key files byte-identical",
+  "archive_bytes": 51639272,
+  "archived_files": 976
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "isolated forensic continuation, not a canonical successful simulation or calibration result",
+  "trace_sha256": "46428f359dadd9e204bbff307cc0141adccb7a257681856e0f14b995600d38ad",
+  "request_id": 2665,
+  "vehicle_id": 356,
+  "cutoff_seconds": 50400,
+  "execution_multiplier": 3.493786101140815,
+  "cutoff_position": [
+    2542,
+    3052,
+    0.16376750775881413
+  ],
+  "arrival_seconds": 50912.6288814982,
+  "arrival_after_cutoff_s": 512.6288814982036,
+  "boarding_end_seconds": 50942.6288814982,
+  "vehicle_reached_original_destination": true,
+  "production_code_changed": false,
+  "conclusion": "Finite four-hour post-run drain cutoff truncates this long stochastic leg; the vehicle was still progressing."
+}

@@ -1,0 +1,300 @@
+{
+  "cases": [
+    {
+      "case": "manhattan_10pct_seed0",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/manhattan_10pct_seed0/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/manhattan_10pct_seed0/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "clock_1s",
+      "status": "failed",
+      "error": "RuntimeError: Market simulation failed: /workspace/market_results/ablations/clock_1s/runs/seed_0/repo.txt",
+      "validated_pairs": 0,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/clock_1s/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "failed",
+          "returncode": 1,
+          "output": "/workspace/market_results/ablations/clock_1s/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_ceil_60s",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_ceil_60s/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_ceil_60s/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_ceil_60s_train_curb",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_ceil_60s_train_curb/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_ceil_60s_train_curb/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_clock_1s",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_1s/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_1s/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_clock_1s_train_curb",
+      "status": "failed",
+      "error": "RuntimeError: Market simulation failed: /workspace/market_results/ablations/uniform_clock_1s_train_curb/runs/seed_0/repo.txt",
+      "validated_pairs": 0,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_1s_train_curb/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "failed",
+          "returncode": 1,
+          "output": "/workspace/market_results/ablations/uniform_clock_1s_train_curb/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_clock_warmup_1h",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_1h/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_1h/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_clock_warmup_2h",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_2h/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_2h/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_clock_warmup_2h_dynamic",
+      "status": "failed",
+      "error": "RuntimeError: Market simulation failed: /workspace/market_results/ablations/uniform_clock_warmup_2h_dynamic/runs/seed_0/no_repo.txt",
+      "validated_pairs": 0,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "failed",
+          "returncode": 1,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_2h_dynamic/runs/seed_0/no_repo"
+        }
+      ],
+      "unrun_arms": [
+        "repo"
+      ]
+    },
+    {
+      "case": "uniform_clock_warmup_2h_dynamic_typed",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_2h_dynamic_typed/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_clock_warmup_2h_dynamic_typed/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_requests",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_requests/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_requests/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_requests_initial",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_requests_initial/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_requests_initial/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_single",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_single/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_single/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    },
+    {
+      "case": "uniform_single_clock_1s",
+      "status": "complete",
+      "error": null,
+      "validated_pairs": 1,
+      "runs": [
+        {
+          "arm": "no_repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_single_clock_1s/runs/seed_0/no_repo"
+        },
+        {
+          "arm": "repo",
+          "status": "complete",
+          "returncode": 0,
+          "output": "/workspace/market_results/ablations/uniform_single_clock_1s/runs/seed_0/repo"
+        }
+      ],
+      "unrun_arms": []
+    }
+  ],
+  "canonical_attempted_runs": 27,
+  "canonical_successful_runs": 24,
+  "canonical_failed_runs": 3,
+  "complete_validated_pairs": 11,
+  "observer_replays": 1,
+  "observer_replay_status": "same booked-completion failure, five key files byte-identical"
+}

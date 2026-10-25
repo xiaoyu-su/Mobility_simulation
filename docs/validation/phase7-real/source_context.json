@@ -1,0 +1,74 @@
+{
+  "training": {
+    "population": "three earlier Tuesdays",
+    "peak_requests": 10914,
+    "valid_on_scene": 6906,
+    "on_scene_coverage": 0.6327652556349642,
+    "source_wait_median_all": 273.0,
+    "source_arrival_median_available": 125.0,
+    "source_curb_median_available": 94.0,
+    "source_total_wait_median_available": 234.0,
+    "shared_request_share": 0.26965365585486534,
+    "shared_match_share": 0.20194245922668133,
+    "company_counts": {
+      "HV0003": 6924,
+      "HV0005": 1944,
+      "HV0004": 1935,
+      "HV0002": 111
+    },
+    "company_on_scene_counts": {
+      "HV0003": 6905,
+      "HV0004": 1
+    }
+  },
+  "held_out": {
+    "population": "November 26",
+    "peak_requests": 3150,
+    "valid_on_scene": 1867,
+    "on_scene_coverage": 0.5926984126984127,
+    "source_wait_median_all": 265.0,
+    "source_arrival_median_available": 114.0,
+    "source_curb_median_available": 102.0,
+    "source_total_wait_median_available": 230.0,
+    "shared_request_share": 0.28,
+    "shared_match_share": 0.2034920634920635,
+    "company_counts": {
+      "HV0003": 1873,
+      "HV0005": 702,
+      "HV0004": 575
+    },
+    "company_on_scene_counts": {
+      "HV0003": 1866,
+      "HV0004": 1
+    }
+  },
+  "carry_in": [
+    {
+      "time": 18000,
+      "ongoing_recorded_rides_per_training_day": 22.0
+    },
+    {
+      "time": 21600,
+      "ongoing_recorded_rides_per_training_day": 46.666666666666664
+    },
+    {
+      "time": 25200,
+      "ongoing_recorded_rides_per_training_day": 156.33333333333334
+    }
+  ],
+  "travel_noise": {
+    "global_log_ratio_sigma": 0.4861619381786034,
+    "within_bin_residual_sigma": 0.47207144424149716,
+    "note": "Diagnostic only: all ablations retain baseline factors/sigma; zone imputation and pooling affect identifiability."
+  },
+  "limitations": [
+    "Completed recorded interzonal trips only, not attempted/cancelled requests",
+    "63 supplied zones; intrazonal trips deliberately excluded by the original centroid builder",
+    "10% source-row sample; one held-out holiday-week Tuesday and seed 0",
+    "Fleet 775 derives from assumed utilization 0.58, not observed online drivers",
+    "No observed within-zone coordinates; uniform road-node placement is an imputation",
+    "Source shared_match is not equivalent to simulated concurrent occupancy; all requests currently pool-eligible",
+    "Per-request patience uses held-out observed wait plus 300s: retrospective replay, not prospective prediction",
+    "Original experimental all-request calibration reports include warm-up; independent diagnostics select fixed 07:00\u201310:00 cohort"
+  ]
+}

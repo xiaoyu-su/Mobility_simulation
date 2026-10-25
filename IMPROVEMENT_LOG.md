@@ -327,11 +327,10 @@ history comparisons and descriptive small-example timings.
   all three supported routers, driver classes, execution noise, future value,
   changing fleets, repositioning and exact replay. Full source and regression
   evidence accompany final results.
-- **Outstanding real data:** TLC/NYC Open Data/Zenodo downloads are blocked by
-  the cloud proxy and no local Manhattan sources were supplied. Real November
-  2019 calibration and large-scale city results remain unrun. No fixture result
-  is presented as a real NYC measurement; the supplied plan's numbers are not
-  claimed as reproduced.
+- **At initial delivery:** public downloads were blocked by the cloud proxy.
+  The follow-up below records verified public sources and real experiments.
+  Real calibration remains incomplete. No fixture result is presented as a
+  real NYC measurement; the plan's numbers are not claimed as reproduced.
 
 Commands/assumptions: `docs/PHASE_7.md`. Complete correction/verification record:
 `docs/WORK_LOG.md`. Final source, fixtures, data-access diagnostics, raw runs,
@@ -345,5 +344,24 @@ and 128 window tables exactly. All accepted full-run bookings finish.
 The 24 additional fixture comparisons retain actual tradeoffs: empty driving
 increases, waits decrease, completion is unchanged in two configurations and
 slightly higher in two, and modeled net earnings fall in two. These are fixture
-outcomes; real Manhattan calibration and city-scale findings remain unrun due
-to missing inputs and blocked public-data hosts.
+outcomes. The real-data follow-up below does not change those historical results.
+
+## Real Manhattan investigation after Phase 7 delivery
+
+- **Change and purpose:** resolve public host access, verify actual trip/road/
+  zone inputs, then test why real waiting times differ. Preserve simulator code
+  and original inputs while deriving separate hashed experimental bundles.
+- **Measured defects:** flooring request time produces early pickups; centroid
+  co-location produces instant service; the training window omits carry-in;
+  reports compare arrival with passenger pickup; pooling and curb assumptions
+  differ from the observed cohort. A rare noisy trip also exceeds the finite
+  four-hour tail and fails the booked-completion guard.
+- **Benefit and limits:** causal admission eliminates early pickups in tested
+  alternatives; spatial/event corrections improve parts of the wait comparison.
+  Training-only curb sensitivity improves total-wait fit but reduces completion
+  and worsens arrival fit. These trade-offs remain visible. This is an input/
+  measurement investigation, not a completed calibration or production default
+  change.
+- **Record:** [full investigation](docs/REAL_MANHATTAN_INVESTIGATION.md), including
+  exact cohorts, all configurations, actual runs, failures, source hashes,
+  matched event definitions and outstanding work.

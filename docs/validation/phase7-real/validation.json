@@ -1,0 +1,22 @@
+{
+  "canonical_attempted_runs": 27,
+  "canonical_successful_runs": 24,
+  "canonical_failed_runs": 3,
+  "complete_validated_pairs": 11,
+  "observer_replays": 1,
+  "observer_replay_status": "same booked-completion failure, five key files byte-identical",
+  "source_digest": "d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da",
+  "simulation_git_head": "fd2a76e5c596944b5a1da177eb65ad3757a222b1",
+  "production_source_changed": false,
+  "full_suite": "Not rerun for data/documentation-only investigation; previous 310-test gate uses identical source digest, see ../phase7/",
+  "all_successful_runs_independently_checked": true,
+  "canonical_failures_preserved": true,
+  "completed_runs_with_early_pickups": 8,
+  "complete_simulation_does_not_mean_valid_clock_or_calibration": true,
+  "code_default_early_admission_unfixed": true,
+  "calibration_complete": false,
+  "artifact_archive_sha256": "309861418b9818b3c913d361dcc8cac5d74dfa5ad4d8b51d7eaf96c94f5244dd",
+  "archived_file_count": 976,
+  "all_archived_bytes_verified": true,
+  "final_source_unchanged": true
+}

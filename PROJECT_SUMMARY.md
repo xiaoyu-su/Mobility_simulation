@@ -14,7 +14,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 5b: ranked insertion fallback | Opt-in cheapest-first feasible driver offers, one decision per driver, cached first acceptance, terminal-exhaustion/candidate audits | `docs/PHASE_5B.md` |
 | 5c: native optimizer rematching | Opt-in declined-edge/trip pruning, same-tick Gurobi re-solves, accepted-pair protection, logit round capacity, genuine-attempt terminal audits | `docs/PHASE_5C.md` |
 | 6: windowed parallel evaluation | Full baseline snapshots, same-controller interventions, bounded isolated workers, disjoint request cohorts and explicit horizon censoring | `docs/PHASE_6.md` |
-| 7: market-data pipeline | TLC CSV/Parquet preparation, held-out travel/forecast fitting, explicit supply/patience assumptions, HiGHS repositioning and calibration reports; fixture validation delivered, real Manhattan run awaiting data access | `docs/PHASE_7.md` |
+| 7: market-data pipeline | Fixture validation delivered; public Manhattan inputs now verified, real runs expose timing/spatial/event-definition issues; calibration remains incomplete | `docs/PHASE_7.md`, `docs/REAL_MANHATTAN_INVESTIGATION.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -32,8 +32,10 @@ Phase 6 compares local policy interventions from identical baseline histories
 without repeating every lead-in. AV dispatch and cross-city calibration remain
 later phases.
 Phase 7 prepares reproducible market inputs and adds license-free repositioning;
-real Manhattan calibration remains blocked by unavailable TLC/Zenodo inputs.
-Fixture validation is explicitly separate from real-city findings.
+the public TLC/Zenodo inputs are now available and verified. Controlled real
+runs investigate early admission, centroid locations, carry-in, pooling and
+arrival-versus-pickup definitions. Calibration remains incomplete; see the
+[real-data evidence](docs/REAL_MANHATTAN_INVESTIGATION.md).
 
 - [Change history](IMPROVEMENT_LOG.md)
 - [Step-by-step work and verification record](docs/WORK_LOG.md)

@@ -1478,3 +1478,154 @@ and will be committed locally before the actual push attempt is recorded.
   under the same Xiaoyu Su identity, then verify final remote tip/clean tree.
 - Published branch:
   https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-7-market-data-pipeline
+
+## Phase 7 follow-up: real data access and controlled investigation
+
+### Data readiness and baseline
+
+- Published network egress configuration resolved the public TLC/Zenodo download
+  block. Downloaded the 21,635,568-row November 2019 source, official lookup and
+  TUM Manhattan archive; checked SHA256, published archive MD5 and extracted
+  files. Data manifests are retained. Joined TUM internal zone IDs to 63 official
+  TLC zones and resolved projected polygon coordinates against network CRS.
+- Built `/workspace/market_inputs/manhattan_10pct_seed0` with the unchanged market
+  CLI: TLC public data, corrected TUM matrix network, adapted zone map,
+  `--sample-fraction .1 --seed 0`. Training November 5/12/19, held-out November
+  26, 07:00–10:00, 3,150 target requests, 775 modeled vehicles. Ran both policies
+  end to end. Initial-grid median waits were 47.28/0 seconds versus 265 seconds
+  observed. This exposed a calibration gap; successful execution does not close
+  Phase 7.
+
+### Controlled diagnosis (in progress)
+
+- Kept all 232 source/dependency files and Git HEAD frozen. Digest remains
+  `d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da`.
+  Created separate, hashed input bundles and preserved their ancestry. The
+  baseline and all earlier evidence are unchanged.
+- Found source-clock early pickups (1,411/2,031), centroid instant-service
+  artifacts, missing training carry-in, all-request pooling and arrival-versus-
+  boarding event mismatch. See `REAL_MANHATTAN_INVESTIGATION.md` for definitions,
+  exact populations and limitations. These are measured defects/assumptions,
+  not explanations inferred only from aggregate performance.
+- Run commands use `python -m tools.synthetic_market run --bundle <variant>
+  --seeds 0 --timeout 3600 --output <fresh-output>` with fixed Python/BLAS seeds.
+  Outside-repository preparation, runner and analysis scripts retain exact
+  commands and provenance without changing frozen simulation source.
+- Completed spatial ablations improve the apparent wait discrepancy but still
+  admit requests early. Exact-second inputs are under test. The centroid
+  exact-second/repositioning run failed booked completion for request 2665;
+  preserved raw logs, manifest and outputs, and launched an observer-only replay
+  to inspect the stuck vehicle. Do not count that run as successful.
+- Planned evidence includes every tested case, failed outcomes, matched-cohort
+  wait distributions, arrival coverage, ride/pooling regressions, source and
+  input/output hashes, and all booking/activity integrity checks. No production
+  source fix or completed real-data calibration is claimed at this checkpoint.
+
+### Failure diagnosis and additional controlled checks
+
+- Observer-only replay reproduces five key output files byte for byte for the
+  failed centroid/exact-second repositioning case. Vehicle 356 is still moving
+  with request 2665 at the four-hour tail cutoff; execution multiplier is
+  3.493786. Isolated continuation of that recorded state using the existing
+  movement code reaches its original destination 512.63s after the cutoff.
+  Preserve the failure and observer trace separately; continuation is forensic
+  evidence, not a successful policy run. The first isolated calculation needed
+  network-factor initialization corrected before its final 512.63s result;
+  retain both console logs and use the corrected result.
+- Two-hour dynamic initialization exposed a matrix-router type error. Blank
+  depot charging-unit values promote numeric `iterrows` values to float. A
+  separate bundle explicitly encodes zero sockets (`0:0`) while preserving depot
+  IDs, locations, parking and empty physical socket lists. Verified the row node
+  IDs are integers before rerunning both policies; source remains unchanged.
+- Added training-only curb sensitivity: 30 to 94 seconds, median of 6,906 valid
+  earlier-Tuesday peak arrival records. Both minute-ceiling and exact-second
+  alternatives are tested. The minute-grid case improves total-wait error with
+  repositioning to 8.28s but reduces completions to 3,128 and worsens arrival
+  error versus the same 30-second-board candidate. Do not present this as an
+  unconditional improvement or calibrate against the held-out target.
+- Checked the stop-duration implementation: the existing constant boarding
+  parameter also controls drop-off dwell. The 94s cases are therefore generic
+  dwell sensitivities, not a separately fitted pickup-curb model. The exact-
+  second 94s repositioning arm fails booked completion for request 1510/vehicle
+  727 and logs the finite-tail cutoff. Preserve its successful individual
+  no-repositioning arm, but exclude the failed pair from policy conclusions.
+
+### Final real-data outcomes and evidence
+
+- Finished all 14 configurations (original plus 13 input/config variants).
+  **27 canonical attempts: 24 full booked-completion successes, three failures,
+  11 complete input-validated pairs.** The original failed dynamic setup's
+  repositioning arm was not launched. A separate observer replay reproduces
+  one failed run; it is not an additional successful simulation. Failed cases
+  remain `clock_1s/repo`, `uniform_clock_1s_train_curb/repo`, and the original
+  dynamic setup's first arm. The typed-depot replacement completes both arms.
+- Independently checked all 24 completed outputs for unique/full demand,
+  completed accepted bookings, no service for unserved users, chronological
+  activity, route capacity and actual boarding-event timing. Successful
+  repositioning arms contain real orders/physical repositioning legs, with
+  distinct assigned vehicles within each round. Eight completed floor-clock
+  outputs still violate source-clock causality; preserve these failed validity
+  checks. The other 16 completed outputs have zero early pickups.
+- In the repositioning arm, original centroid/floor → uniform road nodes with
+  exact-second clock changes early pickups **2,031 → 0**, matched arrival-median
+  absolute error **128.00 → 11.41s**, and arrival-distribution Wasserstein
+  distance **109.83 → 18.64s**. Completions regress **3,147 → 3,138** and
+  post-boarding ride-median error regresses **100.79 → 130.04s**. This is a
+  benchmark correction/sensitivity, not proof of the imputed real geography.
+- Within the valid exact-second road-node pair, repositioning completes
+  **3,059 → 3,138** (+79, +2.51 percentage points). Among the same 3,054
+  common-served trips, marginal wait medians are **149.46 → 124.74s**, but
+  median individual wait change is **0**; 1,457 improve, 1,164 worsen and
+  433 are unchanged (mean change −40.04s). Repositioning adds **2,663.29km**
+  of reposition driving and modeled fleet net falls **58,142.83 cents**.
+  Costs/fares are illustrative and include recorded fulfillment tails.
+- Warm-up alters results rather than uniformly improving fit. No-repositioning
+  median source-clock wait: cold **149.85s**, one-hour **177.74s**, two-hour
+  **203.76s**; repositioning: **127.06 / 134.51 / 135.00s**. The two-hour
+  dynamic-supply case gives **215.44 / 169.15s**. Supply remains an assumption,
+  not observed online exposure. All values use exactly the original 3,150
+  evaluation source IDs; warm-up demand is additional simulation context.
+- Exact final diagnostics commands, run from the repository:
+
+  ```bash
+  .venv/bin/python /workspace/.setup/phase7-investigation/analyze.py
+  PYTHONPATH=/workspace/Mobility_simulation .venv/bin/python /workspace/.setup/phase7-investigation/context_diagnostics.py
+  .venv/bin/python /workspace/.setup/phase7-investigation/policy_effects.py
+  .venv/bin/python /workspace/.setup/phase7-investigation/make_table.py
+  MPLCONFIGDIR=/workspace/.setup/phase7-investigation/mpl .venv/bin/python /workspace/.setup/phase7-investigation/plot_results.py
+  PYTHONPATH=/workspace/Mobility_simulation .venv/bin/python /workspace/.setup/phase7-investigation/archive_evidence.py
+  ```
+
+- Preserved raw public-data download/extraction provenance, source-row context
+  caches, every private input derivation/config, full raw runs including
+  failures, exact commands/logs, observer traces, diagnostics, policy trade-offs
+  and frozen source in `docs/validation/phase7-real/`. The readable report is
+  `docs/REAL_MANHATTAN_INVESTIGATION.md`; README/project/improvement summaries now
+  reflect available data and incomplete calibration. TUM data attribution and
+  CC BY 4.0 metadata accompany the derived network/zone inputs.
+- Production Python and Git HEAD remained unchanged throughout simulation.
+  All 232 source/dependency hashes still match the earlier 310-test gate.
+  The full suite was **not rerun** for this data/documentation-only investigation.
+  No new phase completion is claimed. Production floor admission/reporting,
+  integer depot handling, completion-aware tails and model identifiability
+  still need correction/validation; additional seeds/dates, full demand and
+  TUM city-level parity remain unrun.
+- Archive verification reads back and checks **976 regular files** byte for
+  byte. Final `evidence.tar.xz`: **51,639,272 bytes**, SHA256
+  `309861418b9818b3c913d361dcc8cac5d74dfa5ad4d8b51d7eaf96c94f5244dd`.
+  The intermediate verified gzip package is preserved outside Git under
+  `/workspace/.setup/phase7-evidence-checkpoint.tar.gz`; the XZ package saves
+  space without changing archived raw records. Standalone JSON parsing,
+  report/source fingerprints, archive SHA and source/document whitespace
+  checks pass with the generated SVG exception below. New local documentation/evidence links resolve; the upstream
+  README's existing `(link)` placeholder is unchanged.
+- Publish the investigation/evidence on `phase-7-manhattan-validation` with
+  explicit **Xiaoyu Su** author and committer identity. This publication records
+  the investigation and outstanding fixes; it does not declare Phase 7 complete.
+- The first staged whole-artifact whitespace check flags Matplotlib's generated
+  SVG path-data trailing spaces. Preserve its original bytes (matching the
+  verified scientific archive) and exclude that specific generated SVG from
+  the source/document whitespace gate, as with original raw console artifacts
+  in prior phases. `git diff HEAD^ HEAD --check -- .
+  ':!docs/validation/phase7-real/calibration_diagnostics.svg'` then passes with
+  empty output. The scientific source, simulations and figure are unchanged.

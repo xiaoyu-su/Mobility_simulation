@@ -1,0 +1,32 @@
+[
+  {
+    "file": "1_user-stats.csv",
+    "original": "6f5b33cb8692584396c30357ee4fedb94d7a82d6595ddb91427a19fc2d26f1f3",
+    "observer": "6f5b33cb8692584396c30357ee4fedb94d7a82d6595ddb91427a19fc2d26f1f3",
+    "exact": true
+  },
+  {
+    "file": "2-0_op-stats.csv",
+    "original": "6bc754a23debfdaa9ddc061a9a23ca08f4a5ab1f633a84a5a91eba9027ff0b83",
+    "observer": "6bc754a23debfdaa9ddc061a9a23ca08f4a5ab1f633a84a5a91eba9027ff0b83",
+    "exact": true
+  },
+  {
+    "file": "final_state.csv",
+    "original": "1b75ef34b03ecda1960b28e10bd02303f4e887a3cd887cdbaa618fbbf5aa5494",
+    "observer": "1b75ef34b03ecda1960b28e10bd02303f4e887a3cd887cdbaa618fbbf5aa5494",
+    "exact": true
+  },
+  {
+    "file": "standard_eval.csv",
+    "original": "7623f833f08be3e5b2a9232a731fb5e6984eae15845facd08a208fb19f27e5f2",
+    "observer": "7623f833f08be3e5b2a9232a731fb5e6984eae15845facd08a208fb19f27e5f2",
+    "exact": true
+  },
+  {
+    "file": "random_streams.json",
+    "original": "492034ae27b3afaf5bc29949540b876ec94bd3b2434f99c2940bb16386417189",
+    "observer": "492034ae27b3afaf5bc29949540b876ec94bd3b2434f99c2940bb16386417189",
+    "exact": true
+  }
+]

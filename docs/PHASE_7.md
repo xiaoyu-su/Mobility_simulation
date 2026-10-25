@@ -8,10 +8,13 @@ bundle; the repository's original data and scenarios are unchanged.
 Vehicle physics/cost specifications are copied into and verified with that
 bundle, so later edits to a shared vehicle file cannot change a policy pair.
 
-**Implemented and checked with explicit fixtures. Real Manhattan calibration
-remains blocked by unavailable source files.** The TLC, NYC Open Data and
-Zenodo endpoints currently return CONNECT 403 through this cloud proxy, and
-the repository contains only case-study templates, not their data. The plan's
+**The public data is now downloaded and verified, and real Manhattan runs are
+under investigation. Calibration is not established.** Publishing the cloud
+network allowlist resolved the earlier CONNECT 403 responses. The November
+2019 TLC records and TUM road/zone bundle are available locally. Initial real
+runs exposed timing, spatial, initialization and measurement problems that
+fixture success did not identify. See [the real-data investigation](REAL_MANHATTAN_INVESTIGATION.md)
+for controlled experiments, failed runs and remaining limitations. The plan's
 real-city figures are not results reproduced by this implementation.
 
 ## Prepare actual data

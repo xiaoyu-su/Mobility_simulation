@@ -1827,3 +1827,17 @@ and will be committed locally before the actual push attempt is recorded.
   Nine ordered upload parts are at most 32 MiB each. Every member and every
   concatenated part byte was verified. `validation.json` records all final
   gates and explicitly sets `fully_identified_real_market=false`.
+- Final publication gate verifies all 236 working source/dependency files equal
+  the tested snapshot, all nine real archive part hashes and concatenation,
+  the regression archive hash, six completed real manifests/11 validated pairs,
+  and all new report/summary links. The first broad README link scan also
+  matched an unchanged upstream `[CONTRIBUTING.md](link)` placeholder; scoped
+  the scan to the new project summary and reports. No simulation source change
+  was required. The previous `phase7-real` scientific evidence is unchanged.
+- Published implementation commit **`6a7f22f26623decb7381aa9f685df589c2a22325`**
+  to GitHub branch **`phase-7-production-fixes`** using native HTTPS Git.
+  Both author and committer are **Xiaoyu Su**. `git ls-remote` exactly matched
+  local HEAD, and the working tree was clean before adding this publication
+  record. Verified at **2026-10-25 13:43 Pacific**; machine-readable receipt is
+  `docs/validation/phase7-completion/publication.json`. This final follow-up
+  only records publication and links; the tested source digest is unchanged.

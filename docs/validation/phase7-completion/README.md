@@ -8,6 +8,8 @@ are preserved unchanged.
 ## Records
 
 - `validation.json`: final gates, scope and explicit unresolved limits.
+- `prepublication.json`: final source/part/archive hash verification;
+  `publication.json`: verified GitHub implementation commit and authorship.
 - `junit.xml`, `full-suite.txt`, `suite-integrity.json`: 327 passing tests,
   201 complete simulation outputs and 32 restored windows independently audited.
 - `source_record.json`: all 236 frozen Python/dependency file hashes, package

@@ -1,0 +1,6 @@
+Resolved 1 package in 245ms
+Downloading pyarrow (40.1MiB)
+ Downloaded pyarrow
+Prepared 1 package in 927ms
+Installed 1 package in 12ms
+ + pyarrow==19.0.1

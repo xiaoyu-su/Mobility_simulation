@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/.setup/phase7/run-final-cases.py", line 12, in <module>
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/workspace/Mobility_simulation/tests/integration/test_market_pipeline.py", line 14, in <module>
+    from src.misc.init_modules import load_routing_engine
+ModuleNotFoundError: No module named 'src'

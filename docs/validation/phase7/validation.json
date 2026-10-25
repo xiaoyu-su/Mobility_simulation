@@ -1,0 +1,438 @@
+{
+  "recorded_at_utc": "2026-10-25T00:50:03.952999+00:00",
+  "phase": "7",
+  "branch": "phase-7-market-data-pipeline",
+  "status": "implementation_validated_real_data_run_blocked",
+  "real_data_status": "missing local TLC/Manhattan inputs; public endpoints blocked by cloud proxy CONNECT 403",
+  "unrun": [
+    "Actual November 2019 Manhattan 10% and full-scale runs",
+    "Real-data patience/supply/calibration sensitivity",
+    "TUM Manhattan city compatibility comparison"
+  ],
+  "source_digest": "d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da",
+  "tests": {
+    "passed": 310,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 1506.813,
+    "case_counts": {
+      "tests.integration.test_acceptance_examples": 9,
+      "tests.integration.test_acceptance_paired": 3,
+      "tests.integration.test_driver_choice_examples": 8,
+      "tests.integration.test_driver_choice_paired": 3,
+      "tests.integration.test_execution_examples": 6,
+      "tests.integration.test_forbid_rematch_examples": 9,
+      "tests.integration.test_forbid_rematch_paired": 3,
+      "tests.integration.test_future_value_examples": 9,
+      "tests.integration.test_future_value_paired": 3,
+      "tests.integration.test_market_pipeline": 4,
+      "tests.integration.test_paired_cli": 4,
+      "tests.integration.test_ranked_insertion_examples": 13,
+      "tests.integration.test_ranked_insertion_paired": 3,
+      "tests.integration.test_windowed_eval": 4,
+      "tests.regression.test_example_baselines": 3,
+      "tests.unit.test_aggregate_forecast": 2,
+      "tests.unit.test_batch_request_lifecycle": 5,
+      "tests.unit.test_driver_acceptance": 27,
+      "tests.unit.test_driver_choice": 25,
+      "tests.unit.test_execution_noise": 17,
+      "tests.unit.test_forbid_rematch": 15,
+      "tests.unit.test_future_value": 26,
+      "tests.unit.test_highs_repositioning": 8,
+      "tests.unit.test_market_accounting": 8,
+      "tests.unit.test_market_guards": 8,
+      "tests.unit.test_market_inputs": 12,
+      "tests.unit.test_paired_evaluation": 20,
+      "tests.unit.test_ranked_insertion": 16,
+      "tests.unit.test_seeding": 11,
+      "tests.unit.test_windowed_logging": 1,
+      "tests.unit.test_windowed_pool": 15,
+      "tests.unit.test_windowed_snapshot_guards": 5,
+      "tests.unit.test_windowed_state": 5
+    }
+  },
+  "suite_full_simulations": 195,
+  "additional_fixture_simulations": 24,
+  "total_full_simulations": 219,
+  "restored_windows": 32,
+  "market_pipeline_full_simulations": 56,
+  "historical_full_runs_exact": 163,
+  "historical_full_tables_exact": 921,
+  "historical_window_tables_exact": 128,
+  "private_vehicle_isolation_cases_exact": 24,
+  "original_input_hashes_unchanged": 9,
+  "changed_preexisting_source_files": [
+    "environment.yml",
+    "src/misc/init_modules.py",
+    "tools/paired_eval/metrics.py"
+  ],
+  "remaining_preexisting_source_files_unchanged": 217,
+  "source_trip_kind": "fixture",
+  "outcomes": [
+    {
+      "case": "insertion",
+      "data_kind": "fixture",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "completed_requests": {
+          "baseline_mean": 100.0,
+          "candidate_mean": 100.0,
+          "mean_difference": 0.0
+        },
+        "rider_wait_mean_s": {
+          "baseline_mean": 2.1703453634617107,
+          "candidate_mean": 0.7627495109704129,
+          "mean_difference": -1.4075958524912977
+        },
+        "reposition_distance_m": {
+          "baseline_mean": 0.0,
+          "candidate_mean": 7214.34116717248,
+          "mean_difference": 7214.34116717248
+        },
+        "fleet_modeled_net_earnings_cent": {
+          "baseline_mean": 10462.44097497471,
+          "candidate_mean": 10282.082445795397,
+          "mean_difference": -180.35852917931277
+        }
+      }
+    },
+    {
+      "case": "immediate-future-proxy",
+      "data_kind": "fixture",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "completed_requests": {
+          "baseline_mean": 54.333333333333336,
+          "candidate_mean": 55.333333333333336,
+          "mean_difference": 1.0
+        },
+        "rider_wait_mean_s": {
+          "baseline_mean": 33.78452740602265,
+          "candidate_mean": 6.233122940950409,
+          "mean_difference": -27.55140446507224
+        },
+        "reposition_distance_m": {
+          "baseline_mean": 0.0,
+          "candidate_mean": 18684.017207859088,
+          "mean_difference": 18684.017207859088
+        },
+        "fleet_modeled_net_earnings_cent": {
+          "baseline_mean": 4148.5450342452095,
+          "candidate_mean": 4348.250333166923,
+          "mean_difference": 199.70529892171348
+        }
+      }
+    },
+    {
+      "case": "batch-classes",
+      "data_kind": "fixture",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "completed_requests": {
+          "baseline_mean": 63.333333333333336,
+          "candidate_mean": 64.0,
+          "mean_difference": 0.6666666666666666
+        },
+        "rider_wait_mean_s": {
+          "baseline_mean": 39.47833800040007,
+          "candidate_mean": 16.99971414308703,
+          "mean_difference": -22.47862385731304
+        },
+        "reposition_distance_m": {
+          "baseline_mean": 0.0,
+          "candidate_mean": 14754.186400610468,
+          "mean_difference": 14754.186400610468
+        },
+        "fleet_modeled_net_earnings_cent": {
+          "baseline_mean": 5245.490370276696,
+          "candidate_mean": 5363.240202641461,
+          "mean_difference": 117.7498323647651
+        }
+      }
+    },
+    {
+      "case": "dynamic-fleet",
+      "data_kind": "fixture",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "completed_requests": {
+          "baseline_mean": 99.0,
+          "candidate_mean": 99.0,
+          "mean_difference": 0.0
+        },
+        "rider_wait_mean_s": {
+          "baseline_mean": 47.48753622527138,
+          "candidate_mean": 34.28552706052704,
+          "mean_difference": -13.202009164744332
+        },
+        "reposition_distance_m": {
+          "baseline_mean": 0.0,
+          "candidate_mean": 1131.98801406985,
+          "mean_difference": 1131.98801406985
+        },
+        "fleet_modeled_net_earnings_cent": {
+          "baseline_mean": 10279.029510206614,
+          "candidate_mean": 10190.220615296746,
+          "mean_difference": -88.80889490986556
+        }
+      }
+    }
+  ],
+  "experiments": [
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple0/experiment",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        5,
+        4
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple0/replay",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        5,
+        4
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple1/experiment",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        11,
+        10
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple1/replay",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        11,
+        10
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple2/experiment",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        9,
+        12
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple2/replay",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        9,
+        12
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple3/experiment",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        1,
+        2
+      ]
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple3/replay",
+      "runs": 4,
+      "pairs": 2,
+      "reposition_orders": [
+        1,
+        2
+      ]
+    },
+    {
+      "directory": "final-cases/batch-classes/experiment",
+      "runs": 6,
+      "pairs": 3,
+      "reposition_orders": [
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "directory": "final-cases/dynamic-fleet/experiment",
+      "runs": 6,
+      "pairs": 3,
+      "reposition_orders": [
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "directory": "final-cases/immediate-future-proxy/experiment",
+      "runs": 6,
+      "pairs": 3,
+      "reposition_orders": [
+        10,
+        14,
+        12
+      ]
+    },
+    {
+      "directory": "final-cases/insertion/experiment",
+      "runs": 6,
+      "pairs": 3,
+      "reposition_orders": [
+        5,
+        6,
+        4
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple0/bundle",
+      "network_type": "NetworkBasicWithStore",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple1/bundle",
+      "network_type": "NetworkBasic",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": false,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple2/bundle",
+      "network_type": "NetworkTTMatrix",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-suite/simulation-runs/test_market_bundle_runs_comple3/bundle",
+      "network_type": "NetworkBasicWithStore",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-cases/batch-classes/bundle",
+      "network_type": "NetworkTTMatrix",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-cases/dynamic-fleet/bundle",
+      "network_type": "NetworkBasicWithStore",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-cases/immediate-future-proxy/bundle",
+      "network_type": "NetworkBasic",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": false,
+      "all_bundle_hashes_verified": true
+    },
+    {
+      "directory": "final-cases/insertion/bundle",
+      "network_type": "NetworkBasicWithStore",
+      "target_count": 100,
+      "training_count": 300,
+      "travel_noise_sigma": 0.1596359985850286,
+      "observed_wait_available": true,
+      "all_bundle_hashes_verified": true
+    }
+  ],
+  "scope": "Three baseline controllers and three routers; complete labeled fixtures, paired inputs, booked completion, physical/accounting contracts. No real NYC finding is claimed.",
+  "archives": {
+    "simulation_records.tar.gz": {
+      "size_bytes": 36196510,
+      "regular_files": 5017,
+      "sha256": "9944c4bd526a4d9c5c8b3ca62cd58d3f53a7b21fa93fbd2c4dee22aa22635d75"
+    },
+    "checkpoint_records.tar.gz": {
+      "size_bytes": 18090605,
+      "regular_files": 3377,
+      "sha256": "547025307377733cfb651474e182a7181c0a241b87950b582e4cd2c2f8c15499"
+    }
+  },
+  "artifact_sha256": {
+    "archive_index.json": "7409813586de53a96b6e7a47f13cf5d31464ed374ab585f56b57a81c75e636a1",
+    "batch-classes-calibration_report.json": "e076a5b10d21cb8652f70447947fe4b83c7c4a52aae0cf1a302b0617cbff1706",
+    "batch-classes-paired_comparison.csv": "e9bdd24979d398aafa6e7cca715c2debccdaa954b8ce313328c8a1af1bebe9f2",
+    "batch-classes-seed_summary.csv": "d9833c795f1248238fdf1f457ec5a1ce177bdae552a40294c9f566ec67e97fc5",
+    "checkpoint-junit.xml": "f3907297125455df13bcf7610876ad71dbaf5c0c4afc095da46e4a62850e4663",
+    "checkpoint-shared-vehicle-cases-console.txt": "52cfcf8e7f9e588337c98e49e9f9a158257d106f558b19fb24cbad4890d5824d",
+    "checkpoint.txt": "87df21378dd2c986a2b991a5222a784f5e4b048fb00a840dc7885882195bfd37",
+    "checkpoint_records.tar.gz": "547025307377733cfb651474e182a7181c0a241b87950b582e4cd2c2f8c15499",
+    "command.txt": "7124f853629fda0cd141db1f0c94fcb3d3bf8ea1fc1bd8369dd033ed87f9b17f",
+    "corrected-junit.xml": "bbde5dca0a855a19452d826c7500902c03d407f6d952638f3821bb6a83db9a15",
+    "corrected.txt": "e351586386595b4599d6527fa5631a96bcd4cc44772ee7419a9a2e9340a97051",
+    "data-access.json": "0acd3192bcda437541db9a3390efcb196e49765c09782e7f6a9021f3d351160d",
+    "dynamic-fleet-calibration_report.json": "093bce0e8e55d717890ca1d19e7ce30113746e030591c442e49af74ecbd8fbf4",
+    "dynamic-fleet-paired_comparison.csv": "32168566e3bf00f395fae4715385b2852802eb31e6bda521fe8f64988aaa867a",
+    "dynamic-fleet-seed_summary.csv": "08d27542ffeb465a540a5dbeafdb59d2f0f63ad967f7dcd4a5bacee1ddf0a9b3",
+    "final-audit.txt": "0f06ea37bb0923655b59ac2e1ca7e8ed0bc74ad2bd4c4b0a791cb3ecc3daa086",
+    "final-focused-junit.xml": "6b5a806b6aaf2a41003403f3412c3a2568a72ebd6d56fc4e9609476ca81b018c",
+    "final-focused.txt": "3e2d15920e8069e422813a490945163f837dcf78cedfe6ba547d67ae3760d1fd",
+    "guards.txt": "1ae086205dae6664d4e5e1efa89078436e756c9b332bb922da2a4f5689040873",
+    "historical_compatibility.json": "004913ced3993b7c1fac678f4ec9e5f5f66f865c660bb2900d57df8ed11199cc",
+    "immediate-future-proxy-calibration_report.json": "2852e9289028cc74e574718a22dfefece07d3e1f668bccc67acdda7d67258ca1",
+    "immediate-future-proxy-paired_comparison.csv": "aad41f822d3370851cdf88fe1ca352b095028a8472f605973944d507728231de",
+    "immediate-future-proxy-seed_summary.csv": "b92484c8eb27894e82e9a7721b4e3733084b7c02db497d2d33a6b799881c0a20",
+    "initial-final-case-recorder.txt": "98c0e30afb4f546c29be1963cd679f6f532b2de31788baf743dc604892ecab5c",
+    "initial-unit.txt": "1a252fb5877b2e79ccde9e0aa25d2a97ad2d7670bf32b4e7b160bf79cc32bc23",
+    "insertion-calibration_report.json": "51dba1f1edc5294e2db4b2ad6584a0b8729f90adb188ec25b0812a9e5643bafa",
+    "insertion-paired_comparison.csv": "ac288e8def6e9b9fffc94a481b14b16fbc227554584689a5daab8584d444ffab",
+    "insertion-seed_summary.csv": "82b304b32dd7711d84387ace020656ae13d9caa5076b4c59683570601b5c9d19",
+    "install-pyarrow-corrected.txt": "ffa8b15b851da8d9a711ef7b1478d559c762513570657afd39f72aa7b715b3cd",
+    "install-pyarrow.txt": "b64ea10530a298d1d04048e84ebee9cf09ebdd35846f7d20e186e65713e32588",
+    "junit.xml": "88ca9d8ff234e0263fa28a32ca92b62b9fe665b12033e9d5d0f674f20307cf62",
+    "pytest.txt": "5d968829c932b4744fc4efd1a8a6bc4bc3b86f5f6d22ad95c88ea265fab43fa4",
+    "run_checks.json": "6552aa08f6398bcac64200210fe20d0181ff9cc8c5b920dbe28ce0dc65974d93",
+    "second-corrected-junit.xml": "bcbeec0d6b9b78af2d731a8118a86c94252e57a6d3cd8cfd3e978303ca1d677e",
+    "second-corrected.txt": "ec1b17116b99fa6fdb591e3f63a645f091363b2f86be87e0363aa7da3559c009",
+    "simulation_records.tar.gz": "9944c4bd526a4d9c5c8b3ca62cd58d3f53a7b21fa93fbd2c4dee22aa22635d75",
+    "source.json": "fcd041fffcc4c2fc895d271c756def0269922f0fef7b5f87427241e7350c0fbe",
+    "vehicle_isolation_compatibility.json": "0cc9686d0c1aff0888133a235cea2ec12ecfb15648bed772c3cc3df82e2463c4"
+  }
+}

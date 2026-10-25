@@ -1,0 +1,9 @@
+............                                                             [100%]
+=============================== warnings summary ===============================
+tests/unit/test_market_accounting.py::test_boundary_option_does_not_hide_moving_loaded_or_invalid_records[end_pos-2]
+  /workspace/Mobility_simulation/tests/unit/test_market_accounting.py:34: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '2' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+    path=inactive_output/'2-0_op-stats.csv';rows=pd.read_csv(path);rows.loc[0,field]=value;rows.to_csv(path,index=False)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--- generated xml file: /workspace/.setup/phase7/second-corrected-junit.xml ----
+12 passed, 1 warning in 161.09s (0:02:41)

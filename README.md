@@ -18,6 +18,10 @@ distinct feasible drivers in cost order and execute the first accepted plan.
 declined request/driver edges and re-solving the retained native assignment graph.
 [Phase 6](docs/PHASE_6.md) adds full-state baseline snapshots and parallel
 same-controller policy windows, with request-time cohorts and explicit censoring.
+[Phase 7](docs/PHASE_7.md) adds a local TLC CSV/Parquet market pipeline,
+training-only forecasts/travel fitting and optional HiGHS repositioning.
+Its end-to-end checks use labeled fixtures; real Manhattan calibration awaits
+access to the public trip/network data.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

@@ -17,7 +17,13 @@ METRICS = ["idle_time_s", "driving_time_s", "occupied_time_s", "online_time_s",
            "modeled_net_earnings_cent", "earnings_per_online_hour_cent"]
 
 
-def per_driver_metrics(result_directory):
+def per_driver_metrics(result_directory, clip_initial_inactivity=False):
+    """Account recorded activity; optionally left-truncate initial parked time.
+
+    TimeBasedFS can start an initial inactive leg one grid tick before start.
+    Only stationary, empty, toll-free out-of-service time may be truncated;
+    moving or overlapping records remain invalid. Raw output is never changed.
+    """
     root = Path(result_directory)
     config = json.loads((root / "00_config.json").read_text())
     parameters = config["scenario_parameters"]
@@ -84,12 +90,18 @@ def per_driver_metrics(result_directory):
             values = [leg.start_time, leg.end_time, leg.driven_distance, leg.occupancy, leg.toll]
             if not np.isfinite(np.asarray(values, dtype=float)).all():
                 raise ValueError("Nonfinite vehicle activity")
-            if (leg.start_time < start - 1e-6 or
-                    leg.end_time < leg.start_time or leg.start_time < previous_end - 1e-6):
+            leg_start = leg.start_time
+            if (clip_initial_inactivity and leg_start < start and leg.end_time >= start
+                    and leg.status == "out_of_service" and leg.driven_distance == 0
+                    and leg.occupancy == 0 and leg.toll == 0
+                    and getattr(leg, "start_pos", None) == getattr(leg, "end_pos", None)):
+                leg_start = start
+            if (leg_start < start - 1e-6 or
+                    leg.end_time < leg_start or leg_start < previous_end - 1e-6):
                 raise ValueError("Overlapping vehicle activity or activity before simulation start")
             if leg.driven_distance < 0 or leg.occupancy < 0:
                 raise ValueError("Negative distance or occupancy")
-            duration = leg.end_time - leg.start_time
+            duration = leg.end_time - leg_start
             previous_end = max(previous_end, leg.end_time)
             totals["logged"] += duration
             totals["idle"] += duration if leg.status == "idle" else 0

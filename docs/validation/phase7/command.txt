@@ -1,0 +1,16 @@
+Final complete suite (after vehicle-input isolation), repository /workspace/Mobility_simulation:
+.venv/bin/python -m pytest -q --junitxml=/workspace/.setup/phase7/final-suite/junit.xml --basetemp=/workspace/.setup/phase7/final-suite/simulation-runs
+
+Additional complete fixture comparisons, four configurations, seeds 0/1/2, 07:00-10:00:
+.venv/bin/python /workspace/.setup/phase7/run-final-cases.py
+Per-case command arrays and explicit environments are in the raw archive.
+
+Independent complete output/historical/source audit:
+.venv/bin/python /workspace/.setup/phase7/audit-results.py
+
+Archive and read-back byte verification:
+.venv/bin/python /workspace/.setup/phase7/archive-evidence.py
+
+Recording scripts live outside the tested repository Python tree and are retained in simulation_records.tar.gz. Python source remained unchanged throughout the final suite/comparisons. Original absolute temporary paths are provenance.
+
+Actual TLC/Manhattan calibration was not run: public download hosts fail at this cloud proxy with CONNECT 403 and no local inputs were supplied. See data-access.json and docs/PHASE_7.md for required inputs and exact build/run commands. Every market run in this evidence is explicitly labeled fixture validation.

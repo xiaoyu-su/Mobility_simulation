@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-10-25T00:02:30.904272+00:00",
+  "checks": [
+    {
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2019-11.parquet",
+      "available": false,
+      "error_type": "ProxyError",
+      "reason": "HTTPSConnectionPool(host='d37ci6vzurychx.cloudfront.net', port=443): Max retries exceeded with url: /trip-data/fhvhv_tripdata_2019-11.parquet (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+    },
+    {
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "available": false,
+      "error_type": "ProxyError",
+      "reason": "HTTPSConnectionPool(host='d37ci6vzurychx.cloudfront.net', port=443): Max retries exceeded with url: /misc/taxi_zone_lookup.csv (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+    },
+    {
+      "url": "https://zenodo.org/api/records/15187906",
+      "available": false,
+      "error_type": "ProxyError",
+      "reason": "HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/15187906 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+    },
+    {
+      "url": "https://data.cityofnewyork.us/resource/bc6b-sq4u.json?$limit=1",
+      "available": false,
+      "error_type": "ProxyError",
+      "reason": "HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Max retries exceeded with url: /resource/bc6b-sq4u.json?$limit=1 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+    }
+  ]
+}

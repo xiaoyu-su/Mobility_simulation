@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-10-25T00:50:03.952999+00:00",
+  "phase": "7",
+  "branch": "phase-7-market-data-pipeline",
+  "status": "implementation_validated_real_data_run_blocked",
+  "real_data_status": "missing local TLC/Manhattan inputs; public endpoints blocked by cloud proxy CONNECT 403",
+  "unrun": [
+    "Actual November 2019 Manhattan 10% and full-scale runs",
+    "Real-data patience/supply/calibration sensitivity",
+    "TUM Manhattan city compatibility comparison"
+  ],
+  "source_digest": "d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da",
+  "suite_full_simulations": 195,
+  "additional_fixture_simulations": 24,
+  "total_full_simulations": 219,
+  "restored_windows": 32,
+  "market_pipeline_full_simulations": 56,
+  "historical_full_runs_exact": 163,
+  "historical_full_tables_exact": 921,
+  "historical_window_tables_exact": 128,
+  "private_vehicle_isolation_cases_exact": 24,
+  "original_input_hashes_unchanged": 9,
+  "changed_preexisting_source_files": [
+    "environment.yml",
+    "src/misc/init_modules.py",
+    "tools/paired_eval/metrics.py"
+  ],
+  "remaining_preexisting_source_files_unchanged": 217,
+  "source_trip_kind": "fixture",
+  "scope": "Three baseline controllers and three routers; complete labeled fixtures, paired inputs, booked completion, physical/accounting contracts. No real NYC finding is claimed."
+}

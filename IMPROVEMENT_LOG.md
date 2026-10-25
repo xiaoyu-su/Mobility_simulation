@@ -306,3 +306,44 @@ window execution and **1.43–1.61×** faster total execution including baseline
 snapshot overhead. Conditional waits increase in the measured dispatch
 interventions; window censoring remains explicit. These are local baseline-
 history comparisons and descriptive small-example timings.
+
+## Phase 7: market-data preparation and HiGHS repositioning
+
+- **Problem:** city experiments need reproducible source-to-demand conversion,
+  independent training/held-out evaluation, explicit supply/patience assumptions
+  and a repositioning optimizer that fits beyond a restricted commercial license.
+- **Change:** add chunked TLC CSV/Parquet preparation, deterministic sampling,
+  auditable filters, mapped road centroids, training-only travel/noise fitting,
+  historical forecasts, workload-based supply profiles and optional existing
+  TimeBasedFS. Private hashed bundles include vehicle specifications and costs.
+- **Repositioning:** opt-in PavoneFCHiGHS uses SciPy MILP, integer-safe excess
+  targets, idle-capacity/conservation checks, isolated vehicle draws and native
+  plan assignment. Existing strategies and default simulation behavior remain.
+- **Reporting integrity:** verify actual loaded patience and complete bookings;
+  compare matched inputs across complete policy runs; reject duplicate joins;
+  keep raw parked-leg records while explicitly bounding initial inactivity for
+  accounting. Unknown observed waits/completion/utilization remain unavailable.
+- **Scope:** complete fixture checks exercise all three matching controllers,
+  all three supported routers, driver classes, execution noise, future value,
+  changing fleets, repositioning and exact replay. Full source and regression
+  evidence accompany final results.
+- **Outstanding real data:** TLC/NYC Open Data/Zenodo downloads are blocked by
+  the cloud proxy and no local Manhattan sources were supplied. Real November
+  2019 calibration and large-scale city results remain unrun. No fixture result
+  is presented as a real NYC measurement; the supplied plan's numbers are not
+  claimed as reproduced.
+
+Commands/assumptions: `docs/PHASE_7.md`. Complete correction/verification record:
+`docs/WORK_LOG.md`. Final source, fixtures, data-access diagnostics, raw runs,
+reports and regression comparisons: `docs/validation/phase7/`.
+
+Final gate: **310 tests passed**, zero failures/skips, in 1506.82s. Independent
+audits cover **219 complete simulations +32 restored windows**, including 56
+new market-pipeline full runs. Historical checks match 163 full runs/921 tables
+and 128 window tables exactly. All accepted full-run bookings finish.
+
+The 24 additional fixture comparisons retain actual tradeoffs: empty driving
+increases, waits decrease, completion is unchanged in two configurations and
+slightly higher in two, and modeled net earnings fall in two. These are fixture
+outcomes; real Manhattan calibration and city-scale findings remain unrun due
+to missing inputs and blocked public-data hosts.

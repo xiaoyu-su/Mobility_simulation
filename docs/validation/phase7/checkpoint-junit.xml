@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="24" time="83.288" timestamp="2026-10-24T23:59:31.259609+00:00" hostname="acf9acfa6be2"><testcase classname="tests.unit.test_market_inputs" name="test_csv_and_parquet_read_actual_schemas_without_loading_entire_file" time="0.061" /><testcase classname="tests.unit.test_market_inputs" name="test_sampling_is_nested_and_invariant_to_chunk_size" time="0.053" /><testcase classname="tests.unit.test_market_inputs" name="test_missing_request_time_requires_explicit_proxy_and_cannot_create_observed_wait" time="0.011" /><testcase classname="tests.unit.test_market_inputs" name="test_invalid_rows_are_disjointly_counted_and_identical_valid_rides_keep_source_identity" time="0.020" /><testcase classname="tests.unit.test_market_inputs" name="test_training_split_rejects_leakage_and_wrong_weekdays[2019-11-26-days0]" time="0.000" /><testcase classname="tests.unit.test_market_inputs" name="test_training_split_rejects_leakage_and_wrong_weekdays[2019-11-26-days1]" time="0.000" /><testcase classname="tests.unit.test_market_inputs" name="test_training_split_rejects_leakage_and_wrong_weekdays[2019-11-26-days2]" time="0.000" /><testcase classname="tests.unit.test_market_inputs" name="test_training_split_rejects_leakage_and_wrong_weekdays[2019-11-26-days3]" time="0.000" /><testcase classname="tests.unit.test_market_inputs" name="test_training_split_rejects_leakage_and_wrong_weekdays[2019-11-26-days4]" time="0.000" /><testcase classname="tests.unit.test_market_inputs" name="test_forecasts_average_training_days_and_supply_integrates_partial_intervals" time="0.003" /><testcase classname="tests.unit.test_market_inputs" name="test_factor_and_mean_one_noise_fit_known_log_ratios" time="0.003" /><testcase classname="tests.unit.test_market_inputs" name="test_calibration_merge_rejects_even_fully_duplicated_user_rows" time="0.002" /><testcase classname="tests.unit.test_highs_repositioning" name="test_unique_minimum_cost_flow_and_idle_limits" time="0.003" /><testcase classname="tests.unit.test_highs_repositioning" name="test_fractional_forecast_excess_cannot_generate_infeasible_uniform_integer_targets" time="0.001" /><testcase classname="tests.unit.test_highs_repositioning" name="test_transport_problem_above_restricted_gurobi_variable_limit_needs_no_commercial_solver" time="0.023" /><testcase classname="tests.unit.test_highs_repositioning" name="test_invalid_supply_is_rejected[excess0-idle0]" time="0.000" /><testcase classname="tests.unit.test_highs_repositioning" name="test_invalid_supply_is_rejected[excess1-idle1]" time="0.000" /><testcase classname="tests.unit.test_highs_repositioning" name="test_invalid_supply_is_rejected[excess2-idle2]" time="0.000" /><testcase classname="tests.unit.test_highs_repositioning" name="test_invalid_supply_is_rejected[excess3-idle3]" time="0.000" /><testcase classname="tests.unit.test_highs_repositioning" name="test_empty_single_zone_and_zero_idle_do_not_invent_vehicle_moves" time="0.000" /><testcase classname="tests.integration.test_market_pipeline" name="test_market_bundle_runs_complete_matched_sims_and_reports[PoolingIRSOnly-True-features0]" time="37.950" /><testcase classname="tests.integration.test_market_pipeline" name="test_market_bundle_runs_complete_matched_sims_and_reports[PoolingIRSAssignmentBatchOptimization-False-features1]" time="1.695"><failure message="assert (99 == 100)">controller = 'PoolingIRSAssignmentBatchOptimization', observed = False
+features = ['--driver-model', 'classes', '--future-value']
+tmp_path = PosixPath('/workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple1')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize('controller,observed,features',[
+        ('PoolingIRSOnly',True,[]),
+        ('PoolingIRSAssignmentBatchOptimization',False,['--driver-model','classes','--future-value']),
+        ('RidePoolingBatchAssignmentFleetcontrol',True,['--driver-model','classes']),
+        ('PoolingIRSOnly',True,['--dynamic-fleet']),
+    ])
+    def test_market_bundle_runs_complete_matched_sims_and_reports(controller,observed,features,tmp_path):
+        trips,zones=fixture(tmp_path/'source',observed)
+        bundle=tmp_path/'bundle'
+        build=['build','--trips',str(trips),'--zone-map',str(zones),'--network',str(ROOT/'data/networks/example_network'),
+               '--data-kind','fixture','--sample-fraction','1','--fleet-size','9','--end-seconds','32400',
+               '--controller',controller,'--output',str(bundle),*features]
+        if not observed:build.extend(['--request-time-proxy-seconds','120'])
+        command(build,tmp_path/'build.txt')
+        metadata=json.loads((bundle/'manifest.json').read_text())
+        assert metadata['status']=='complete' and metadata['data_kind']=='fixture'
+&gt;       assert metadata['target_count']==100 and metadata['training_count']==300
+E       assert (99 == 100)
+
+tests/integration/test_market_pipeline.py:70: AssertionError</failure></testcase><testcase classname="tests.integration.test_market_pipeline" name="test_market_bundle_runs_complete_matched_sims_and_reports[RidePoolingBatchAssignmentFleetcontrol-True-features2]" time="38.847" /><testcase classname="tests.integration.test_market_pipeline" name="test_market_bundle_runs_complete_matched_sims_and_reports[PoolingIRSOnly-True-features3]" time="3.854"><failure message="AssertionError: Traceback (most recent call last):&#10;    File &quot;/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main&#10;      return _run_code(code, main_globals, None,&#10;    File &quot;/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py&quot;, line 86, in _run_code&#10;      exec(code, run_globals)&#10;    File &quot;/workspace/Mobility_simulation/tools/synthetic_market/__main__.py&quot;, line 45, in &lt;module&gt;&#10;      if __name__=='__main__':main()&#10;    File &quot;/workspace/Mobility_simulation/tools/synthetic_market/__main__.py&quot;, line 42, in main&#10;      else:experiment(args)&#10;    File &quot;/workspace/Mobility_simulation/tools/synthetic_market/run.py&quot;, line 67, in experiment&#10;      if result.returncode:raise RuntimeError(f'Market simulation failed: {log}')&#10;  RuntimeError: Market simulation failed: /workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/experiment/runs/seed_5/no_repo.txt&#10;  &#10;assert 1 == 0&#10; +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.synthetic_market', 'run', '--bu...kspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/experiment', '--seeds', '5', '11'], returncode=1).returncode">controller = 'PoolingIRSOnly', observed = True, features = ['--dynamic-fleet']
+tmp_path = PosixPath('/workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize('controller,observed,features',[
+        ('PoolingIRSOnly',True,[]),
+        ('PoolingIRSAssignmentBatchOptimization',False,['--driver-model','classes','--future-value']),
+        ('RidePoolingBatchAssignmentFleetcontrol',True,['--driver-model','classes']),
+        ('PoolingIRSOnly',True,['--dynamic-fleet']),
+    ])
+    def test_market_bundle_runs_complete_matched_sims_and_reports(controller,observed,features,tmp_path):
+        trips,zones=fixture(tmp_path/'source',observed)
+        bundle=tmp_path/'bundle'
+        build=['build','--trips',str(trips),'--zone-map',str(zones),'--network',str(ROOT/'data/networks/example_network'),
+               '--data-kind','fixture','--sample-fraction','1','--fleet-size','9','--end-seconds','32400',
+               '--controller',controller,'--output',str(bundle),*features]
+        if not observed:build.extend(['--request-time-proxy-seconds','120'])
+        command(build,tmp_path/'build.txt')
+        metadata=json.loads((bundle/'manifest.json').read_text())
+        assert metadata['status']=='complete' and metadata['data_kind']=='fixture'
+        assert metadata['target_count']==100 and metadata['training_count']==300
+        assert metadata['observed_wait_available']==observed and metadata['travel_noise_sigma']&gt;0
+        assert set(pd.read_csv(bundle/'training_cohort.csv').service_date)==set(metadata['training_dates'])
+        assert not pd.read_csv(bundle/'training_cohort.csv').service_date.eq(metadata['target_date']).any()
+        output=tmp_path/'experiment'
+&gt;       command(['run','--bundle',str(bundle),'--output',str(output),'--seeds','5','11'],tmp_path/'run.txt')
+
+tests/integration/test_market_pipeline.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arguments = ['run', '--bundle', '/workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/bundle', '--output', '/workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/experiment', '--seeds', ...]
+log = PosixPath('/workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/run.txt')
+
+    def command(arguments,log):
+        with log.open('w') as stream:
+            result=subprocess.run([sys.executable,'-m','tools.synthetic_market',*arguments],cwd=ROOT,
+                stdout=stream,stderr=subprocess.STDOUT,timeout=300,
+                env=dict(os.environ,PYTHONHASHSEED='0',OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1'))
+&gt;       assert result.returncode==0,log.read_text()
+E       AssertionError: Traceback (most recent call last):
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+E             return _run_code(code, main_globals, None,
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+E             exec(code, run_globals)
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/__main__.py", line 45, in &lt;module&gt;
+E             if __name__=='__main__':main()
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/__main__.py", line 42, in main
+E             else:experiment(args)
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/run.py", line 67, in experiment
+E             if result.returncode:raise RuntimeError(f'Market simulation failed: {log}')
+E         RuntimeError: Market simulation failed: /workspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/experiment/runs/seed_5/no_repo.txt
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.synthetic_market', 'run', '--bu...kspace/.setup/phase7/checkpoint-tests/test_market_bundle_runs_comple3/experiment', '--seeds', '5', '11'], returncode=1).returncode
+
+tests/integration/test_market_pipeline.py:50: AssertionError</failure></testcase></testsuite></testsuites>

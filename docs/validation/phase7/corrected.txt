@@ -1,0 +1,66 @@
+.......................F                                                 [100%]
+=================================== FAILURES ===================================
+_ test_market_bundle_runs_complete_matched_sims_and_reports[PoolingIRSOnly-True-features3] _
+
+controller = 'PoolingIRSOnly', observed = True, features = ['--dynamic-fleet']
+tmp_path = PosixPath('/workspace/.setup/phase7/corrected-tests/test_market_bundle_runs_comple3')
+
+    @pytest.mark.integration
+    @pytest.mark.parametrize('controller,observed,features',[
+        ('PoolingIRSOnly',True,[]),
+        ('PoolingIRSAssignmentBatchOptimization',False,['--driver-model','classes','--future-value']),
+        ('RidePoolingBatchAssignmentFleetcontrol',True,['--driver-model','classes']),
+        ('PoolingIRSOnly',True,['--dynamic-fleet']),
+    ])
+    def test_market_bundle_runs_complete_matched_sims_and_reports(controller,observed,features,tmp_path):
+        trips,zones=fixture(tmp_path/'source',observed)
+        bundle=tmp_path/'bundle'
+        build=['build','--trips',str(trips),'--zone-map',str(zones),'--network',str(ROOT/'data/networks/example_network'),
+               '--data-kind','fixture','--sample-fraction','1','--fleet-size','9','--end-seconds','32400',
+               '--controller',controller,'--output',str(bundle),*features]
+        if not observed:build.extend(['--request-time-proxy-seconds','60'])
+        command(build,tmp_path/'build.txt')
+        metadata=json.loads((bundle/'manifest.json').read_text())
+        assert metadata['status']=='complete' and metadata['data_kind']=='fixture'
+        assert metadata['target_count']==100 and metadata['training_count']==300
+        assert metadata['observed_wait_available']==observed and metadata['travel_noise_sigma']>0
+        assert set(pd.read_csv(bundle/'training_cohort.csv').service_date)==set(metadata['training_dates'])
+        assert not pd.read_csv(bundle/'training_cohort.csv').service_date.eq(metadata['target_date']).any()
+        output=tmp_path/'experiment'
+>       command(['run','--bundle',str(bundle),'--output',str(output),'--seeds','5','11'],tmp_path/'run.txt')
+
+tests/integration/test_market_pipeline.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arguments = ['run', '--bundle', '/workspace/.setup/phase7/corrected-tests/test_market_bundle_runs_comple3/bundle', '--output', '/workspace/.setup/phase7/corrected-tests/test_market_bundle_runs_comple3/experiment', '--seeds', ...]
+log = PosixPath('/workspace/.setup/phase7/corrected-tests/test_market_bundle_runs_comple3/run.txt')
+
+    def command(arguments,log):
+        with log.open('w') as stream:
+            result=subprocess.run([sys.executable,'-m','tools.synthetic_market',*arguments],cwd=ROOT,
+                stdout=stream,stderr=subprocess.STDOUT,timeout=300,
+                env=dict(os.environ,PYTHONHASHSEED='0',OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1'))
+>       assert result.returncode==0,log.read_text()
+E       AssertionError: Traceback (most recent call last):
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+E             return _run_code(code, main_globals, None,
+E           File "/workspace/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+E             exec(code, run_globals)
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/__main__.py", line 45, in <module>
+E             if __name__=='__main__':main()
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/__main__.py", line 42, in main
+E             else:experiment(args)
+E           File "/workspace/Mobility_simulation/tools/synthetic_market/run.py", line 69, in experiment
+E             drivers=per_driver_metrics(run);drivers_all.append(drivers.assign(seed=seed,arm=arm))
+E           File "/workspace/Mobility_simulation/tools/paired_eval/metrics.py", line 89, in per_driver_metrics
+E             raise ValueError("Overlapping vehicle activity or activity before simulation start")
+E         ValueError: Overlapping vehicle activity or activity before simulation start
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/workspace/Mobility_simulation/.venv/bin/python', '-m', 'tools.synthetic_market', 'run', '--bu...rkspace/.setup/phase7/corrected-tests/test_market_bundle_runs_comple3/experiment', '--seeds', '5', '11'], returncode=1).returncode
+
+tests/integration/test_market_pipeline.py:50: AssertionError
+------- generated xml file: /workspace/.setup/phase7/corrected-junit.xml -------
+=========================== short test summary info ============================
+FAILED tests/integration/test_market_pipeline.py::test_market_bundle_runs_complete_matched_sims_and_reports[PoolingIRSOnly-True-features3]
+1 failed, 23 passed in 124.48s (0:02:04)

@@ -1260,3 +1260,204 @@ and will be committed locally before the actual push attempt is recorded.
   and verify the final branch tip and clean working tree.
 - Published branch:
   https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-6-windowed-evaluation
+
+## Phase 7: market-data and calibration pipeline (2026-10-24, client date)
+
+### Step 1: confirm the next section and verify data availability
+
+- Started `phase-7-market-data-pipeline` from published Phase 6 record
+  `c65f4509171fcdc44ae41c4c240c4a0cc7c48d29`; working tree was clean.
+  Re-read IMG_3327/3328: the next section is the real-data Manhattan case study,
+  before mixed AV fleets and cross-city comparisons. Its numerical outcomes
+  describe the supplied reference plan, not measurements reproduced here.
+- The repository contains Manhattan scenario templates but no Manhattan network,
+  taxi-zone mapping or high-volume trip records. Actual requests to TLC's
+  November 2019 Parquet and taxi-zone lookup endpoints, the official NYC page,
+  Socrata and Zenodo fail at the cloud proxy with CONNECT 403. Public GitHub
+  documentation is reachable; no matching local trip/network copy was found.
+  Saved a fresh diagnostic in `/workspace/.setup/phase7/data-access.json` and
+  asked asynchronously for an existing workspace path or accessible input link.
+- Continue all implementable work: a reproducible local-input pipeline and real
+  complete simulation checks with explicitly marked fixtures on the bundled
+  road network. Real Manhattan calibration, the plan's reported real-city
+  outcomes and large-scale/three-hour public-data experiments remain unrun
+  until those sources are available. Never label fixtures as observed NYC data.
+
+### Step 2: implement data preparation and a license-free repositioning strategy
+
+- Add `tools/synthetic_market/`: chunked CSV/Parquet input with explicit source
+  hashes/row identities, deterministic nested sampling, date/zone/time filters,
+  disjoint rejection counts, held-out target day and strictly earlier matching
+  weekdays for forecast/travel fitting. Required high-volume schema includes
+  `hvfhs_license_num`; arbitrary FHV data is not silently relabeled HVFHV.
+- Require an explicit request-time proxy when the source has no
+  `request_datetime`. Proxy waits remain unavailable in observed-wait reports.
+  Exclude/count intrazonal trips that a single centroid cannot represent.
+  The supplied zone map, original network and every generated input are hashed.
+- Fit travel factors/log-noise from training ride-duration/road-ETA ratios with
+  mean-one execution-noise arithmetic; record the coarsening/non-driving
+  limitations. Build historical departure/arrival forecasts, training workload
+  fleet/profile estimates under an explicit utilization assumption, initial
+  positions, optional depot/TimeBasedFS inputs and illustrative driver classes.
+  Demand writes actual `latest_start_time` attributes read by BasicRequest:
+  observed wait lower bound plus explicit additional patience, or additional
+  patience alone when request time is assumed. Patience is not claimed observed.
+- Add opt-in **PavoneFCHiGHS**, registered separately from existing strategies.
+  It uses SciPy MILP, floors fractional available excess before deriving integer
+  uniform targets, checks vehicle conservation, selects vehicles from a private
+  named RNG and uses native assignment APIs. Existing Pavone/Gurobi behavior
+  and default scenarios are unchanged. Per-round forecast/flow/vehicle/objective
+  audits demonstrate actual use and retain unfavorable repositioning outcomes.
+- Install/pin PyArrow 19.0.1 for Parquet (`environment.yml`). Initial `uv pip`
+  failed on a read-only `/home/agent/.cache/uv`; corrected with task-local
+  `UV_CACHE_DIR=/workspace/.setup/phase7/uv-cache`. Preserve both install logs;
+  no home-directory or permission change was needed.
+
+### Step 3: timely checks and early corrections
+
+- First unit gate: **20 passed in 1.15s**. Covers real CSV/Parquet parsing,
+  chunk-invariant nested sampling, absent timestamps/proxies, exclusive filter
+  counts, duplicate source rejection, target/future-date leakage, fractional
+  interval forecasts, known travel-factor fits, duplicate-report merge guards,
+  exact integer transport, invalid/empty supply, and **2,070** real HiGHS MILP
+  variables (above the restricted commercial solver limit).
+- First combined gate: **22 passed, 2 failed in 83.29s**. Insertion and native
+  batch cases complete paired full simulations/replays with real repositioning.
+  One fixture's 120-second proxy correctly moved its first request before the
+  request-time cohort start: target count became 99. Correct the fixture to an
+  explicit 60-second proxy; do not admit an out-of-window request to satisfy a
+  hard-coded count. Add separate window-exclusion counts to the manifest.
+- Dynamic fleet initialization failed because the generated config used
+  `infra_depot_file`, whereas FleetPy loads operator depots from `op_depot_file`.
+  Correct the generated operator setting and retain the failed child traceback.
+  Parse mixed valid/invalid timestamp strings explicitly to remove pandas'
+  inference warning. No original simulation behavior was altered for these
+  corrections. Rerun all four affected end-to-end combinations on the corrected
+  source before the full regression gate.
+
+### Step 4: boundary accounting, loaded contracts and all-router replay
+
+- Corrected depot initialization exposed a separate accounting boundary:
+  TimeBasedFS's initial parked legs begin one tick before simulation start.
+  The original strict accounting rejects those pre-horizon records. Preserve
+  the raw activity and add explicit `clip_initial_inactivity=False` to driver
+  accounting; only the market runner with TimeBasedFS enables it. It truncates
+  stationary, empty, zero-distance/toll inactivity to the accounting start.
+  Moving, loaded, toll-bearing, displaced and overlapping records still fail.
+- Added hand-checked online/idle exposure, unchanged-raw-byte and invalid-record
+  tests. Corrected dynamic-fleet scenarios and exact replay now pass. The
+  intermediate gate is **12 passed in 161.09s**, with one test-data dtype
+  warning corrected by writing a numeric position value.
+- Every market worker now verifies that all loaded BasicRequest IDs and actual
+  `latest_start_time` values match generated inputs, then checks all
+  broker-confirmed bookings finish after the ordinary complete simulation.
+  `market_input_contract.json` records the verified counts. Real vehicle logs
+  must show execution-noise multipliers and actual repositioning where expected.
+- Expanded the four end-to-end cases to cover NetworkBasicWithStore,
+  NetworkBasic and NetworkTTMatrix. The matrix test uses an explicitly labeled
+  three-node fixture derived from example-road OD travel costs; it is not a
+  Manhattan network. Preserve every full run, source input, bundle and replay.
+- Focused gate: **32 passed in 286.33s**. Command:
+  `.venv/bin/python -m pytest tests/unit/test_market_inputs.py
+  tests/unit/test_highs_repositioning.py tests/unit/test_market_accounting.py
+  tests/integration/test_market_pipeline.py -q
+  --junitxml=/workspace/.setup/phase7/final-focused-junit.xml
+  --basetemp=/workspace/.setup/phase7/final-focused-tests`.
+- Add source-file mutation detection, exact dependency versions, private bundle
+  path/hash validation and preexisting-output preservation. Eight additional
+  guard cases pass in .69s (`tests/unit/test_market_guards.py`). Parent/worker
+  code and data fingerprints remain fixed throughout an experiment.
+
+### Step 5: complete input isolation and final frozen-source gates
+
+- The first final comparison recorder, located outside the repository, lacked
+  the repository on Python's import path and stopped before any simulation.
+  Preserve `initial-final-case-recorder.txt`; correct only that recorder with
+  an explicit root path. Its scripts are provenance, not part of the tested
+  application source.
+- Initial final-source comparisons completed all four configurations, but input
+  review found vehicle specifications still referenced the shared repository
+  file. Preserve those 24 completed runs as
+  `checkpoint-shared-vehicle-cases/`, excluded from final counts. Stop the
+  concurrently running suite before changing Python and preserve its partial
+  outputs/source/console as `checkpoint-interrupted-suite/`.
+- Copy the original vehicle specification bytes into the private bundle, verify
+  source/copy hashes and use that directory for both simulator and financial
+  accounting. The bundle now protects network, demand, forecasts, supply,
+  depots, vehicle physics/costs and policy parameters together. An end-to-end
+  assertion checks the actual loaded vehicle directory. No vehicle numbers or
+  source specification contents change.
+- Freeze source again and restart the complete command:
+  `.venv/bin/python -m pytest -q
+  --junitxml=/workspace/.setup/phase7/final-suite/junit.xml
+  --basetemp=/workspace/.setup/phase7/final-suite/simulation-runs`, with source
+  record and console retained there. Do not edit Python or commit until all
+  simulations and comparisons finish.
+- Restart four additional fixture cases at seeds 0/1/2 over **07:00–10:00**:
+  insertion; immediate/batch with proxy times, classes and future value;
+  native batch with classes and a matrix router; and a changing active fleet.
+  Each case compares only repositioning off versus HiGHS. All exact commands,
+  environments, original inputs and bundles are retained in `final-cases/`.
+  Invocation: `.venv/bin/python /workspace/.setup/phase7/run-final-cases.py`.
+  These are functional fixture comparisons, not actual NYC calibration.
+
+### Step 6: complete final gate and independent output checks
+
+- Complete suite: **310 passed, 0 failed, 0 skipped in 1506.82s**. Its **84**
+  regression/integration cases execute **195 complete simulations +32 bounded
+  restored windows**; **226** unit cases include native HiGHS, actual input
+  corruption/mutation, accounting boundaries and existing native solver tests.
+- With **24** additional three-seed fixture comparisons: **219 full simulation
+  runs +32 restored windows**, including **56** full market-pipeline runs. Every
+  full run retains all 100 unique requests. Accepted bookings finish, terminally
+  declined riders are not served, and chronological vehicle/driver accounting
+  validates with the explicit initial-inactivity option only where configured.
+- All eight final market bundles verify original/source/copied hashes, exact
+  dependency/source versions, 300 independent historical training trips and
+  100 held-out trips. Every paired experiment matches demand, network and
+  initial fleet fingerprints. Loaded patience/booked-completion contracts and
+  actual noise/repositioning/optional-model traces demonstrate feature use.
+- Independent historical comparison: **163 full runs, 921 exact output tables**
+  plus **128** exact cohort/credit/physical/activity window tables. The vehicle
+  isolation correction additionally preserves exact physical/evaluation/
+  decision tables in all **24** prior fixture comparison runs. No original
+  dataset/configuration or approved baseline was changed: all nine input hashes
+  still match. Apart from the registry, optional accounting boundary and
+  environment dependency declaration, all 217 pre-existing source files match.
+- Final frozen source digest:
+  `d0dd474cef8aae0ccbd1f5c94008788b02648efb523a167c3bbe11c1722f84da`.
+  Full suite, comparisons and workers retain this fingerprint. Original
+  source/commands/JUnit, independent per-run hashes, source cohorts, bundles,
+  original logs and outcomes are saved in `docs/validation/phase7/`.
+- Actual three-hour fixture means (control → repositioning): insertion
+  completion **100 → 100**, wait **2.17s → .76s**, extra empty driving
+  **7.21 km**, modeled fleet net **10462.44 → 10282.08 cents**;
+  immediate/future/proxy completion **54.33 → 55.33**, wait **33.78s →
+  6.23s**, extra empty **18.68 km**; native batch/classes completion **63.33 →
+  64**, wait **39.48s → 17s**, extra empty **14.75 km**; changing-fleet
+  completion **99 → 99**, wait **47.49s → 34.29s**, extra empty **1.13 km**,
+  modeled fleet net **10279.03 → 10190.22 cents**. Preserve the unfavorable
+  driving/net changes. These are illustrative fixtures, not observed NYC
+  earnings or calibrated real-city policy gains.
+- Revisited the user's public-data question: yes, the datasets are public.
+  Verified TUM's reachable GitHub release contains software archives, while the
+  datasets are separate Zenodo/TLC downloads blocked at the proxy. Investigated
+  an accessible GitHub HVFHV analysis repository; it supplies documentation,
+  not the required raw files. Explain the concrete network-domain requirement,
+  rather than suggesting credentials or treating public data as private.
+- **Unrun:** real November 2019 Manhattan 10%/full-scale calibration, real-data
+  patience/supply sensitivity, and TUM city-level parity comparisons. Public
+  host access or supplied local trip/network/zone files is still required.
+  Keep this limitation explicit in the project summary, phase docs and final
+  validation status; do not reuse the plan's historical numbers as evidence.
+- Byte verification completes for **8,394 regular archived files**: **5,017**
+  final-suite/comparison/recorder files and **3,377** checkpoint files. Every
+  archived byte sequence hashes identically to its original. A separate
+  chosen-operator check also confirms no booked-but-unfinished request in any
+  of the 219 full outputs. Preserve raw `.txt` console bytes and exclude those
+  generated logs from the whitespace gate, as in prior phases.
+- The staged whitespace check also identified trailing spaces inside the raw
+  failed-checkpoint JUnit traceback text. Preserve those original XML bytes and
+  hashes; exclude `checkpoint-junit.xml` and `corrected-junit.xml` along with
+  raw console `.txt` files from the source/document whitespace gate. All
+  implementation, ordinary documentation and other evidence pass that gate.

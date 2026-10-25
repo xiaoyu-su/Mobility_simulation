@@ -1,0 +1,12 @@
+insertion build
+insertion run
+insertion complete
+immediate-future-proxy build
+immediate-future-proxy run
+immediate-future-proxy complete
+batch-classes build
+batch-classes run
+batch-classes complete
+dynamic-fleet build
+dynamic-fleet run
+dynamic-fleet complete

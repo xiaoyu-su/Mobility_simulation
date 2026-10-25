@@ -1,0 +1,9 @@
+....................                                                     [100%]
+=============================== warnings summary ===============================
+tests/unit/test_market_inputs.py::test_invalid_rows_are_disjointly_counted_and_identical_valid_rides_keep_source_identity
+tests/unit/test_market_inputs.py::test_invalid_rows_are_disjointly_counted_and_identical_valid_rides_keep_source_identity
+  /workspace/Mobility_simulation/tools/synthetic_market/records.py:52: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+    batch[column]=pd.to_datetime(batch[column],errors='coerce')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 2 warnings in 1.15s

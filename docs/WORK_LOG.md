@@ -2003,3 +2003,22 @@ and will be committed locally before the actual push attempt is recorded.
   are outside this phase's supported profile. Previous human-only menu and
   window features retain exact historical outputs. The AV experiment runner
   uses complete physical runs rather than unsupported in-place AV policy swaps.
+
+### Step 5: publish and verify GitHub
+
+- Final prepublication gate verifies all **242** source/dependency files match
+  the tested snapshot, report/summary links resolve, all four part hashes and
+  the logical archive SHA256 match, and each part is below 100 MB. Source/doc
+  whitespace gate passes, excluding preserved raw generated logs/XML/SVG.
+  Earlier Phase 7 evidence and approved Phase 0 baseline CSVs are unchanged.
+- Committed implementation/evidence as
+  **`369ed70e2d1af9e3b5d0252ac2a43e4904bf626f`**. Both author and committer are
+  **Xiaoyu Su**, `209944670+xiaoyu-su@users.noreply.github.com`.
+  Native `git push -u origin phase-8-mixed-av-fleet` succeeded.
+- Independent `git ls-remote` exactly matches that implementation commit; the
+  working tree was clean before adding the publication receipt. Verified at
+  **2026-10-25 20:23 Pacific /2026-10-26 03:23 UTC**. Receipt is
+  `docs/validation/phase8/publication.json`. This follow-up records publication
+  and links only; tested source/inputs/results remain unchanged.
+- Published branch:
+  https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-8-mixed-av-fleet

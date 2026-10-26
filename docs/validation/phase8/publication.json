@@ -1,0 +1,12 @@
+{
+  "implementation_commit": "369ed70e2d1af9e3b5d0252ac2a43e4904bf626f",
+  "verified_remote_commit": "369ed70e2d1af9e3b5d0252ac2a43e4904bf626f",
+  "branch": "phase-8-mixed-av-fleet",
+  "author": "Xiaoyu Su",
+  "committer": "Xiaoyu Su",
+  "verified_utc": "2026-10-26T03:23:30.516290+00:00",
+  "verified_pacific": "2026-10-25T20:23:30.516501-07:00",
+  "code_digest": "890505b3db913cbab61c12c3c79b29659de0e296bec1c4dce9499ea7d4f4aeee",
+  "clean_tree_before_publication_record": true,
+  "native_https_push_succeeded": true
+}

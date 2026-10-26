@@ -15,6 +15,8 @@ cross-city experiments. The screenshot's numbers are not imported as results.
 - `source_record.json`: the exact 242-file frozen source/dependency snapshot,
   base Git commit and hashes. The recorded base predates publication; the
   code digest identifies the tested working source.
+- `prepublication.json`, `publication.json`: final source/archive/link checks
+  and independently verified GitHub implementation commit and authorship.
 - `seed_results.csv`, `configuration_summary.csv`, `paired_comparison.csv`:
   complete per-seed outcomes, ranges and matched-seed statistical comparisons.
 - `common_rider_effects.csv`: effects on the same riders served in both arms,

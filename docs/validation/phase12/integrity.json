@@ -1,0 +1,172 @@
+{
+  "simulation_source_digest": "649db5e784a7838c98a31d23e21048be09fa4697e2fd5931b25d5897df110a28",
+  "physical_runs": 72,
+  "unique_seed_conditions": 63,
+  "within_study_background_comparisons": 54,
+  "fresh_process_replay_records": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "threshold_240_repo",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "threshold_240_repo",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "threshold_240_repo",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json",
+        "city_repositioning_contract.json"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/workspace/market_results/phase12_priority/main",
+      "manifest_sha256": "fe32c0485157ac11efbb22c6f5e24ae5030bc517dd26e368f88f32f66d224503"
+    },
+    {
+      "path": "/workspace/market_results/phase12_priority/supply",
+      "manifest_sha256": "c4b116ded29769d76130ab4860a7fe918267dcda7fbc6096f7354fe1fde94f47"
+    },
+    {
+      "path": "/workspace/market_results/phase12_priority/pilot",
+      "manifest_sha256": "a1d36601cf64cf022f8d57e7c2a54f3cad9c6c640d5c865ce2663cf6ff7dfa81"
+    }
+  ],
+  "all_raw_output_hashes_verified": true,
+  "all_complete_bookings": true,
+  "rule_violations": 0
+}

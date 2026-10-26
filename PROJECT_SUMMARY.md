@@ -17,10 +17,9 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 7: market-data pipeline | Verified public Manhattan inputs, causal requests, source pooling consent, fitted pickup service, physical completion and event-aligned reports; 327 passing tests and full-demand comparisons; residual calibration errors reported | `docs/PHASE_7.md`, `docs/PHASE_7_COMPLETION.md` |
 | 8: mixed human/AV product | Loaded AV vehicle types, geofenced/opt-in service, rider-second preference, human-operation separation, idle diagnostics and historical-demand AV repositioning; 339 passing tests, 18 sampled real policy runs and exact historical compatibility retain benefits and costs | `docs/PHASE_8.md` |
 | 9: cautious AV policy experiments | Consistent planned/executed vehicle-type travel times, ETA-threshold dispatch with accepted-product protection, moving-empty retargeting, isolated forecast noise and bounded joint demand accounting; 370 passing tests, 56 real physical runs, six-seed dispatch comparisons and a full-demand pair | `docs/PHASE_9.md`, `docs/AV_DATA.md` |
-
 | 10: cross-city AV comparison | Native Munich/Chicago/Manhattan inputs, matched all-human/AV initialization and search, bounded CPU workers, audited policy/load comparisons; 389 passing tests, 66 physical runs /60 unique conditions; mixed policy transfer | `docs/PHASE_10.md` |
-
 | 11: native fidelity validation | Fresh upstream archive and isolated imports, original city profiles, four-table exact comparison, repeatability and clean published-source reproduction; 403 tests /269 regression simulations /15 native runs; validation improvement, unchanged policies | `docs/PHASE_11.md` |
+| 12: cross-city AV repositioning | Strictly separate reference OD weights, empty AV movement contracts, opt-in pre-booking service priority, paired off/on/supply experiments; 424 tests, 306 regression simulations, 72 real runs /63 conditions; gains and adverse outcomes retained | `docs/PHASE_12.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -90,3 +89,12 @@ the same outputs. Both sides use explicit matched no-repositioning/native-router
 no-timeout adaptations; these checks do not establish universal upstream parity
 or a new policy gain. See [Phase11](docs/PHASE_11.md) and
 [measured results](docs/validation/phase11/RESULTS.md).
+
+
+Phase 12 positions idle AVs using separate-reference eligible OD weights and
+clears cancellable empty goals before passenger ETA/cost evaluation. The real
+pilot detects eight occupied repositioning legs; the corrected policy records
+zero, with all accepted bookings complete. Locked work and legacy defaults remain
+preserved. Main/supply experiments retain paired three-seed completion, waits,
+human allocation, absolute empty driving and actual passenger durations.
+See [Phase12](docs/PHASE_12.md) and [complete results](docs/validation/phase12/RESULTS.md).

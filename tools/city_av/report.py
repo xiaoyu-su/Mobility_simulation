@@ -10,6 +10,7 @@ from src.fleetctrl.av_product import opt_in
 from src.misc.seeding import file_digest, canonical_digest
 from tools.synthetic_market.build import json_write
 from tools.synthetic_market.report import request_ids
+from tools.city_av.reposition import inspect_repositioning
 
 
 def capacity_audit(legs, users, capacities):
@@ -54,8 +55,10 @@ def city_report(bundle, output):
         raise RuntimeError('City booking contract failed')
     if tail['status']!='complete' or tail['remaining_tasks'] or tail['onboard_request_ids']:raise RuntimeError('City tail remains active')
     config=json.loads((output/'00_config.json').read_text())['scenario_parameters']
-    if config.get('op_repo_method') or config.get('op_driver_acceptance') not in (None,False,'off') or config.get('op_av_repositioning',False):
-        raise RuntimeError('City core comparison unexpectedly enables acceptance/repositioning')
+    if config.get('op_repo_method') or config.get('op_driver_acceptance') not in (None,False,'off'):
+        raise RuntimeError('City comparison unexpectedly enables human acceptance/repositioning')
+    if config.get('op_av_repositioning',False) and 'av_repositioning_reference' not in meta:
+        raise RuntimeError('City AV repositioning lacks a declared independent reference')
     roster=pd.read_csv(output/'2_vehicle_types.csv');ids=set(roster.loc[roster.vehicle_type.eq('av_vehtype'),'vehicle_id'])
     if len(roster)!=meta['fleet_size']:raise RuntimeError('City fleet size changed')
     search=json.loads((output/'city_search_contract.json').read_text())
@@ -83,7 +86,9 @@ def city_report(bundle, output):
     limits={t:float(pd.read_csv(bundle/'vehicles'/f'{t}.csv',header=None,index_col=0).iloc[:,0]['maximum_passengers']) for t in roster.vehicle_type.unique()}
     capacities={row.vehicle_id:limits[row.vehicle_type] for row in roster.itertuples()}
     exchange_unions=capacity_audit(legs,users,capacities)
-    if legs.status.isin(['out_of_service','reposition']).any():raise RuntimeError('City core unexpectedly executes shifts/repositioning')
+    if legs.status.eq('out_of_service').any():raise RuntimeError('City comparison unexpectedly executes shifts')
+    if legs.status.eq('reposition').any() and 'av_repositioning_reference' not in meta:
+        raise RuntimeError('City core unexpectedly executes repositioning')
     for _,group in legs.groupby('vehicle_id'):
         group=group.sort_values(['start_time','end_time'])
         if np.any(group.start_time.to_numpy()[1:]<group.end_time.to_numpy()[:-1]-1e-7):raise RuntimeError('Overlapping city vehicle legs')
@@ -154,4 +159,6 @@ def city_report(bundle, output):
         gaps=selected.idle_av_minus_winner_eta_s.dropna()
         record['human_won_while_idle_av_closer']=int(gaps.lt(0).sum())
         record['human_won_eligible_with_idle_av']=len(gaps)
+    if 'av_repositioning_reference' in meta:
+        record.update(inspect_repositioning(bundle,meta,config,product,legs,output,ids))
     json_write(output/'city_report.json',record);return record

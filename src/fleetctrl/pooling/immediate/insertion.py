@@ -13,6 +13,13 @@ from typing import Callable, List, Dict, Any, Tuple
 import logging
 LOG = logging.getLogger(__name__)
 
+
+def _service_base_plan(vehicle, plan, time, routing_engine):
+    product=getattr(vehicle,'av_product',None)
+    if product is not None and getattr(product,'service_priority',False):
+        return product.service_insertion_plan(vehicle,plan,time,routing_engine)
+    return plan
+
                     
 def simple_insert(routing_engine : NetworkBase, sim_time : int, veh_obj : SimulationVehicle, orig_veh_plan : VehiclePlan, 
                   new_prq_obj : PlanRequest, std_bt : int, add_bt : int,
@@ -37,6 +44,7 @@ def simple_insert(routing_engine : NetworkBase, sim_time : int, veh_obj : Simula
     if veh_obj.status == VRL_STATES.OUT_OF_SERVICE:
         return
 
+    orig_veh_plan = _service_base_plan(veh_obj,orig_veh_plan,sim_time,routing_engine)
     number_stops = len(orig_veh_plan.list_plan_stops)
     # add o_stop
     o_prq_feasible = True   # once max wait time of new_prq_obj is reached, no insertion at later index will be feasible
@@ -357,6 +365,7 @@ def single_insertion(veh_obj_list : List[SimulationVehicle], current_vid_to_vehp
         veh_obj = veh_obj_dict[vid]
         veh_plan_to_insert = current_vid_to_vehplan_assignments.get(vid, None)
         if veh_plan_to_insert is not None:
+            veh_plan_to_insert = _service_base_plan(veh_obj,veh_plan_to_insert,sim_time,routing_engine)
             skip_first_position_insertion_here = skip_first_position_insertion
             if len(veh_plan_to_insert.list_plan_stops) == 0:
                 skip_first_position_insertion_here = False
@@ -622,6 +631,7 @@ def insert_prq_in_selected_veh_list(selected_veh_obj_list : List[SimulationVehic
     insertion_return_list = []
     for veh_obj in selected_veh_obj_list:
         veh_plan = vid_to_vehplan_assignments[veh_obj.vid]
+        veh_plan = _service_base_plan(veh_obj,veh_plan,sim_time,routing_engine)
         current_vehplan_utility = veh_plan.get_utility()
         if current_vehplan_utility is None:
             current_vehplan_utility = obj_function(sim_time, veh_obj, veh_plan, rq_dict, routing_engine)

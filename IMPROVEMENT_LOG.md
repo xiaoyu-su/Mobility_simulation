@@ -538,3 +538,39 @@ outcomes. The real-data follow-up below does not change those historical results
   [results](docs/validation/phase11/RESULTS.md),
   [complete evidence](docs/validation/phase11/README.md),
   [work log](docs/WORK_LOG.md).
+
+
+## Phase12: separate-reference AV demand repositioning across cities
+
+- **Problem:** cross-city dispatch experiments left idle AV location fixed.
+  A real Chicago pilot also exposes unlocked rebalancing waypoints surviving
+  between passenger pickup/dropoff:8 moving occupied reposition legs /18.986561km.
+- **Change:** optional strict reference OD exports/weights, matched AV demand
+  repositioning on/off, actual command-to-movement auditing, and opt-in service
+  priority that removes only cancellable AV targets from copied plans before
+  feasibility, ETA and utility evaluation. Hard locks/live plans are retained.
+  Existing profiles keep their previous behavior. No actual output is relabeled
+  to hide the pilot gap.
+- **Verified benefit:** corrected Chicago pilot occupied repositioning legs8→0,
+  actual service-preemption auditing, all accepted bookings physically complete,
+  private riders protected, and targeted legacy/priority counterexamples.
+  Both controllers/native C++ and combinations with acceptance, future value,
+  shifts, retargeting, joint planning and forecast noise pass complete checks.
+- **Validation:**424 tests,306 full regression simulations,32 restored windows
+  and 72 real runs pass. All 269 historical full cases retain
+  1596 byte-identical checked tables;128 window tables retain exact
+  values. All 26 comparable historical real controls retain
+  214 critical file comparisons. Failed tests, real pilot
+  evidence, lock-copy correction and result-collector bookkeeping are preserved.
+- **Measured policy effects:** three seeds, main fleets50/100/775 and a
+  doubled-supply sensitivity;63 unique conditions plus nine exact replays.
+  Completion/allocation/wait/empty-distance effects vary across seeds and
+  regimes. Keep gains and adverse outcomes together; empty-distance fraction
+  and occupied utilization alone do not establish service improvements.
+- **Scope:** stationary relative OD weights, sparse native night reference,
+  historical Manhattan context, assumed opt-in/speed/patience/fleet and different
+  source years/generation. No calibrated future-volume, geography-only causal,
+  field AV throughput or universal gain claim.
+- **Record:**[phase guide](docs/PHASE_12.md),
+  [full results](docs/validation/phase12/RESULTS.md),
+  [evidence](docs/validation/phase12/README.md),[work log](docs/WORK_LOG.md).

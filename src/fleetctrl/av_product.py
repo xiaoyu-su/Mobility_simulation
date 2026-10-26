@@ -18,7 +18,8 @@ from src.misc.vehicle_timing import planned_time
 PARAMETERS = ['op_av_vehicle_types', 'op_av_zones', 'op_av_opt_in_share',
               'op_av_preference_s', 'op_av_repositioning', 'op_av_repositioning_timestep',
               'op_av_eta_threshold_s','op_av_retarget','op_av_forecast_sigma',
-              'op_av_joint_repositioning','op_av_eligible_forecast_f','op_av_separate_search']
+              'op_av_joint_repositioning','op_av_eligible_forecast_f','op_av_separate_search',
+              'op_av_service_priority']
 
 
 def opt_in(request_id, operator_id, share):
@@ -96,6 +97,11 @@ class AVProduct:
             raise ValueError('op_av_repositioning must be boolean')
         if not self.repositioning and (self.retarget or self.joint or self.forecast_sigma):
             raise ValueError('AV repositioning follow-ups require AV repositioning enabled')
+        self.service_priority=attributes.get('op_av_service_priority',False)
+        if self.service_priority not in (True,False,0,1):raise ValueError('AV service priority must be boolean')
+        if self.service_priority and (not self.repositioning or attributes.get('op_module') not in {'PoolingIRSOnly','PoolingIRSAssignmentBatchOptimization'}):
+            raise ValueError('AV service priority requires repositioning and an immediate insertion controller')
+        self.service_preemptions=[]
         self.timestep = attributes.get('op_av_repositioning_timestep', attributes.get('op_temporal_resolution', 900))
         self.forecast_resolution=attributes.get('op_temporal_resolution',900)
         if isinstance(self.timestep, bool) or not isinstance(self.timestep, int) or self.timestep <= 0 or self.timestep % scenario['time_step']:
@@ -151,6 +157,7 @@ class AVProduct:
                           geofence='both trip endpoints; routes may cross other zones',assumption_status='scenario assumptions, not observed AV adoption',**provenance)
         if self.threshold is not None:self.audit['eta_threshold_seconds']=self.threshold
         if self.separate_search:self.audit['candidate_search_scope']='Separate human/AV nearest-position budgets; identical across policy-grid arms'
+        if self.service_priority:self.audit['service_priority']='Cancellable empty AV targets are removed before passenger insertion/ETA/utility evaluation; locked work is retained'
         if self.retarget or self.joint or self.forecast_sigma:
             self.audit.update(retarget_repositioning=bool(self.retarget),joint_repositioning=bool(self.joint),forecast_sigma=self.forecast_sigma,
                               forecast_error_scheme='mean-one lognormal; independent av_forecast/operator/time/zone streams')
@@ -220,6 +227,9 @@ class AVProduct:
                 and opt_in(request.get_rid(), self.operator_id, self.share))
 
     def allows_plan(self, vehicle, plan):
+        if getattr(self,'service_priority',False) and vehicle.is_av:
+            passenger_work=any(s.get_list_boarding_rids() or s.get_list_alighting_rids() for s in plan.list_plan_stops)
+            if passenger_work and any(self.cancellable_target(s) for s in plan.list_plan_stops):return False
         if self.threshold is not None:
             for stop in plan.list_plan_stops:
                 for rid in stop.get_list_boarding_rids():
@@ -228,6 +238,28 @@ class AVProduct:
         if not vehicle.is_av:
             return True
         return all(self.eligible(self.requests[rid]) for stop in plan.list_plan_stops for rid in stop.get_list_boarding_rids())
+
+    @staticmethod
+    def cancellable_target(stop):
+        return (stop.get_state()==G_PLANSTOP_STATES.REPO_TARGET and not stop.is_locked()
+                and not stop.is_locked_end() and not stop.is_infeasible_locked()
+                and not stop.get_list_boarding_rids() and not stop.get_list_alighting_rids()
+                and not stop.get_charging_power())
+
+    def service_insertion_plan(self, vehicle, plan, time, routing_engine):
+        """Copy away only soft rebalancing goals before an actual service is evaluated."""
+        if not getattr(self,'service_priority',False) or not vehicle.is_av or not any(self.cancellable_target(s) for s in plan.list_plan_stops):
+            return plan
+        result=plan.copy()
+        retained=[]
+        for original,copied in zip(plan.list_plan_stops,result.list_plan_stops):
+            if not self.cancellable_target(original):
+                copied.set_infeasible_locked(original.is_infeasible_locked())
+                retained.append(copied)
+        result.list_plan_stops=retained
+        result.set_utility(None)
+        result.update_tt_and_check_plan(vehicle,time,routing_engine,keep_feasible=True)
+        return result
 
     def initial_distribution(self, distribution):
         filtered = {n: p for n, p in distribution.items() if n in self.nodes and p > 0}
@@ -245,6 +277,11 @@ class AVProduct:
     def record_assignment(self, vehicle, plan, time):
         if not self.allows_plan(vehicle, plan):
             raise RuntimeError('Assignment violates the AV product dispatch, opt-in or endpoint contract')
+        if getattr(self,'service_priority',False) and vehicle.is_av and any(s.get_list_boarding_rids() or s.get_list_alighting_rids() for s in plan.list_plan_stops):
+            old=self.fleetctrl.veh_plans.get(vehicle.vid)
+            targets=[int(s.get_pos()[0]) for s in old.list_plan_stops if self.cancellable_target(s)] if old else []
+            if targets:self.service_preemptions.append(dict(time=time,vehicle_id=vehicle.vid,removed_target_nodes=targets,
+                                                          service_request_ids=sorted(str(rid) for rid in plan.pax_info)))
         for rid, times in plan.pax_info.items():
             request = self.requests[rid]
             if rid in self.diagnosed or request.status < G_PRQS_ACC_OFFER:
@@ -309,6 +346,7 @@ class AVProduct:
             data={**self.audit,'initial_nodes':self.initial_nodes,'dispatch_records':len(self.diagnosed),'repositioning_rounds':self.rounds}
             if self.threshold is not None:data['threshold_decisions']=self.threshold_decisions
             if self.joint:data['human_coverage_rounds']=self.coverage_rounds
+            if getattr(self,'service_priority',False):data['service_preemptions']=self.service_preemptions
             (self.output/f'av_product_op_{self.operator_id}.json').write_text(json.dumps(data,indent=2,allow_nan=False)+'\n')
 
 

@@ -2901,3 +2901,321 @@ and will be committed locally before the actual push attempt is recorded.
   evidence hashes. A documentation-only receipt commit is pushed next; final
   remote equality, identity and clean checkout are checked after that push.
   No tokens are printed/changed and no saved repository selection is modified.
+
+
+## Phase 12: cross-city demand-based AV repositioning
+
+### Step 1: identify the documented follow-up and preserve the published base
+
+- Continue published Phase11 receipt `6623109ce1f60ad73314184c4c7ef8abc233823b`
+  on `phase-12-cross-city-av-repositioning`; initial checkout clean, author and
+  committer remain Xiaoyu Su. The source plan's final limitations and Phase11
+  guide explicitly identify per-city demand-based AV repositioning as follow-up.
+- Scope: use a strictly separate AV-eligible origin/destination reference to
+  position idle AVs in Munich/Chicago/Manhattan; compare identical threshold0/240
+  fleets with AV repositioning off/on, fixed speed/search/geometry/SOC/opt-in.
+  Human acceptance/repositioning, retargeting, noise and joint planning stay off.
+  Measure actual trips, waits, utilization, retained-human productivity and
+  absolute empty driving, preserving favorable and adverse effects.
+- Forecast method is prespecified: stationary spatial weights from native
+  pre-warmup reference or prior Manhattan Tuesdays, filtering both endpoints
+  through the existing fence. Relative counts allocate AV target shares; they
+  are not calibrated future demand volumes. Sparse native references and
+  temporal transfer remain limitations. No evaluation/warm-up trip enters
+  construction. Source/map/initial placement and source consent remain intact.
+- Workspace space was insufficient for indefinite cache duplication. Removed
+  only the redundant1,552,353,280-byte published-source Git tar already omitted
+  from the Phase11 Git evidence with exact pinned restoration metadata. Its
+  size/SHA and prior actual Git-stream reconstruction are verified, and the
+  pinned commit exists. `reclaimed-reproducible-cache.json` preserves the action
+  and exact restoration command. All physical records and source edits remain.
+
+### Step 2: optional causal reference inputs and physical repositioning checks
+
+- Added `tools/city_av/reposition.py`: approved-reference dates/clock and unique
+  IDs, mapped endpoints, explicit eligible OD counts and source hashes; relative
+  weights for every fence zone/time interval; complete reference evidence.
+  No eligible reference fails closed. A new explicit build flag opts in;
+  existing bundles/parameters/reports retain the old default shape.
+- Extended city runner to enable the existing AV demand repositioner only with
+  the declared separate-reference bundle. All-human controls and old no-repo
+  bundles retain their previous behavior. No core matching/movement/reposition
+  algorithm changes. Both immediate insertion controllers and C++ routing are
+  exercised in complete feature-on runs, alongside defaults.
+- New physical contract verifies loaded forecast bytes, callback grid, actual
+  reference weights/target allocation, unique AV-only fenced centroid commands
+  and empty actual repositioning legs. Every real leg traces to a prior
+  command; target arrivals and interrupted legs are distinguished. A command
+  alone is not physical feature exercise. Existing full unique demand, accepted
+  completion, service, privacy, capacity, chronology and product checks remain.
+- Reporter adds matched off/on paired-seed and common-served-rider comparisons,
+  actual repositioning distance/time/arrivals/interruption statistics and
+  standalone scientific PNG/PDF changes. Existing no-feature report fields
+  remain unchanged. Five tracked configurations declare all assumptions.
+
+### Step 3: first focused failure, fix and complete rerun
+
+- First focused checkpoint:22 pass/8 fail in17.70s, before worker startup. The
+  capability preflight accesses an AV-only field after the all-human control
+  is inserted; missing `av_repositioning` raises KeyError. No physical
+  simulation launched. Preserve exact source/logs/JUnit in `checkpoint`.
+- Fix only the preflight boundary: all-human's missing AV lever defaults to
+  off. Add the explicit private-rider/earlier-date Manhattan-style full case,
+  alongside invalid future/unapproved dates, absent eligible OD, unknown
+  methods, target/warmup perturbation invariance, immutable reference inputs
+  and unsupported missing-reference preflight rejection.
+- Corrected focus command: `.venv/bin/python -m pytest -q
+  tests/unit/test_city_av_repositioning.py
+  tests/integration/test_city_av_repositioning_examples.py
+  tests/unit/test_city_av.py tests/integration/test_city_av_examples.py
+  --basetemp=/workspace/.setup/phase12/corrected/runs
+  --junitxml=/workspace/.setup/phase12/corrected/junit.xml`. **31 tests pass**
+  in103.59s, covering50 complete physical runs (27 new +23 previous city
+  checks), including both insertion controllers/Python+C++ routing, real
+  empty AV movement with physically correct type speed, private consent,
+  exact off/on replays and disabled/default compatibility.
+- Source freezes at261 Python/dependency files, digest
+  `a1a49b82e8c4cdd5027017c4decdaa596020cfb60424e5da83e14193ff1ecdb3`.
+  Both successful/failed source maps and all five configuration snapshots are
+  preserved. No Python/config edits while final physical studies run.
+- Prespecified real design: main3 cities×3 seeds(0,1,2)×5 arms(all-human;
+  threshold0/240 crossed with AV repositioning off/on)=45 physical runs.
+  Double-fleet sensitivity2 cities×3 seeds×3 arms(all-human;threshold240
+  off/on)=18. Nine seed0 pilot records repeat main conditions exactly and
+  are excluded from independent means. Total72 physical/63 unique conditions
+  plus9 replays. Main/supply keep source cohorts/fleet assumptions from Phase10;
+  controls on seeds0/1 can additionally be compared against earlier raw runs.
+  Run9 real pilots and inspect actual contracts before main/full experiments.
+
+
+### Step 4: real pilot exposes a soft-waypoint passenger-service gap
+
+- `.venv/bin/python /workspace/.setup/phase12/prepare_pilot.py >
+  /workspace/.setup/phase12/prepare-pilot-console.txt 2>&1` builds all5 real
+  bundles successfully under frozen a1a49 source. Separate eligible reference
+  counts are23 Munich/651 Chicago/15951 Manhattan. Nine pilot cases are planned.
+- Pilot reporting fails on Chicago threshold240+repo: **8 actually moving
+  repositioning legs carry passengers over18.986561km**. All are real AV IDs;
+  raw chronology shows pickup, travel to an old empty target, then service
+  continuation. Preserve all raw outputs, manifest statuses, source and exact
+  diagnostic rows in `occupied-reposition-diagnostic.json`.
+- Four pilot cases report complete; Munich repo is uncollected after peer
+  failure, Chicago repo fails physical policy audit, and3 Manhattan cases
+  are unrun. Six workers physically finish, but this is not a successful
+  nine-case study. No main/supply/full-suite run launches at this point.
+- Diagnosis: shared insertion can retain an unlocked empty repositioning
+  waypoint between passenger pickup/dropoff. The reporter correctly rejects
+  occupied repositioning; do not relax it or relabel output to hide the gap.
+
+### Step 5: opt-in service priority, locked-work preservation and feature combinations
+
+- Add `op_av_service_priority`, off by default and scoped to the two immediate
+  insertion controllers with AV repositioning. Both ordinary insertion and
+  fallback cost/ETA evaluation remove only cancellable AV goals from a copy
+  before scoring. Shared insertion also covers native batch vehicle copies.
+  Live plans/caches stay unchanged during proposals; accepted tours replace
+  soft goals, and actual committed preemptions are audited. Existing profiles
+  without the flag retain previous behavior and output fields. City repo-on
+  workers enable the flag; no-repo/human controls receive no override.
+- Expanded first priority gate:75 pass/3 fail in177.21s;77 physical runs
+  finish. One lock test catches that an existing plan-copy method drops the
+  infeasible-lock marker, causing the first cleanup implementation to remove
+  that stop. Fix by deciding removal against original stops and restoring
+  infeasible-lock flags on retained copies. Add explicit lock-state assertion.
+- Two targeted contrast fixtures also fail their legacy-reproduction assertion:
+  all real workers succeed, but the synthetic waypoint is too far from the
+  direct route for the legacy optimizer to retain it with a rider. Tighten
+  only the synthetic geometry to an almost-collinear waypoint, reproducing
+  the exact bug in IRSOnly. Batch can already discard some soft targets later;
+  both controllers still require priority before booking and correct physics.
+  No real data, forecast or outcome target is tuned. Preserve the failed
+  priority source/JUnit/raw outputs.
+- Final expanded gate command includes the two city test files, previous
+  city checks, `test_av_product.py`, `test_av_round2.py`, and
+  `test_av_round2_examples.py`, using `priority-v2/runs` and JUnit output.
+  **78 tests /77 complete physical simulations pass in178.79s**. Covers
+  explicit/end/infeasible locks, unchanged legacy/human plans, old occupied
+  waypoint contrast, both insertion controllers, C++ routing, private riders,
+  human acceptance/future value/shifts and joint/noisy/retargeted repositioning,
+  along with exact replay.
+- Final source freezes at261 Python/dependency files, digest
+  `649db5e784a7838c98a31d23e21048be09fa4697e2fd5931b25d5897df110a28`.
+  Rebuild all5 input bundles into fresh `phase12_priority` directories rather
+  than changing source labels on old bundles. Verified identical large matrices
+  share storage between the immutable failed/corrected snapshots; every path,
+  byte/hash and original raw run is preserved and sharing is recorded.
+- Rerun9 real pilots using `prepare_priority_pilot.py`; final studies and the
+  full suite wait for actual successful output inspection. No Python or
+  configuration edits while these source-guarded simulations run.
+
+
+### Step 6: corrected native pilot passes and prespecified final studies start
+
+- Corrected pilot completes all9 cases successfully. Every repo-on case
+  physically moves empty AVs only, consumes the verified reference, clears
+  all accepted bookings and passes all product/privacy/service/capacity checks.
+  Actual service-preemption counts are9 Munich,22 Chicago,44 Manhattan.
+  Chicago occupied reposition legs change from8 in the preserved old pilot
+  to0 under service priority. Do not equate the old18.99km label total with
+  an independently identified avoided-driving distance.
+- Seed0 threshold240 off→on: Munich completion544→552, AV trips27→21;
+  Chicago554→560, AV25→43; Manhattan2437→2486, AV131→175. Preserve the
+  adverse Munich AV-allocation direction. These are pilot values, not final
+  three-seed means or a universal policy benefit.
+- External pilot result collector initially raises duplicate-city TypeError
+  because city already exists in the per-run report. Preserve its original
+  helper and error record; fix only dictionary construction. Real pilot
+  simulations/reports were already complete. No root Python/input/raw output
+  changes. Corrected collector verifies all9 plus all6 seed0 historical
+  off/human controls byte for byte across physical/initialization/audit files.
+- Final real command launcher: .venv/bin/python
+  /workspace/.setup/phase12/run_final_studies.py >
+  /workspace/.setup/phase12/final-studies-console.txt 2>&1.
+  Main45 uses2 pinned workers onCPUs0/1; supply18 uses1 onCPU2. Both use
+  seeds0,1,2 and immutable priority input bundles. Exact child commands,
+  environments, statuses, output hashes and timings are retained.
+- Full gate starts: taskset -c 3-4 .venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase12/full/runs
+  --junitxml=/workspace/.setup/phase12/full/junit.xml >
+  /workspace/.setup/phase12/full/tests.txt 2>&1.
+  Expected424 tests,306 complete regression simulations and32 restored
+  windows; these remain pending until actual completion/audit. No source/
+  configuration/HEAD changes while paired studies or this suite run.
+- Current GitHub push authentication is separately checked by a native
+  dry run; no remote branch/ref is created by that check. Actual tested
+  implementation/evidence publication follows only after final gates pass.
+
+
+### Step 7: independently verify all real outcomes and retain measured tradeoffs
+
+- Main45, supply18 and pilot9 all finish successfully under frozen649db5
+  source. Commands: `.venv/bin/python /workspace/.setup/phase12/analyze_real.py`,
+  `historical_real_controls.py` and `service_duration_analysis.py` (same external
+  helper directory). Capture their exact source/console outputs in the archive.
+- First independent reference readback fails because public Munich IDs are
+  float-valued CSV fields (`22.0`) while the builder validates/canonicalizes
+  them as integers (`22`). Preserve the first audit helper and traceback.
+  Validate finite integer-valued original fields before canonicalizing IDs in
+  the independent reader; no source/input/raw simulation output changes or
+  requirement is relaxed. Every exported identity, reference time, mapped OD,
+  endpoint flag, prior-date boundary, stationary weight and apportioned fleet
+  target then matches its independent reconstruction in all72 runs.
+- Full raw readback verifies unique whole-demand identities, causal grid and
+  patience, all promised bookings picked up/dropped off, zero tail tasks,
+  chronological activity, moving/pre-post capacity, explicitly retained
+  stationary exchange unions, physical service minima, private rider consent,
+  AV fence/opt-in/product, native runtime hashes, actual placement/SOC and
+  matched search/random backgrounds. All72 runs have zero rule violations.
+- All27 repo-on physical cases actually move empty AVs; zero occupied repo
+  legs. Their587 committed service-preemption events are independently traced
+  to real served requests and previously commanded target nodes. These counts
+  include the nine-pilot replay study; they are physical record totals, not an
+  independent-sample count. There are63 unique conditions, nine exact fresh-
+  process replay records and54 matched-background comparisons. All26 comparable
+  historical off/human controls retain214 critical files byte for byte.
+- Threshold240 OFF→ON three-seed means (completion; AV trips; occupied AV %;
+  eligible served wait seconds; whole-fleet empty kilometers):
+
+  | City/fleet | Completed | AV trips | Occupied % | Wait s | Empty km |
+  | --- | --- | --- | --- | --- | --- |
+  | Munich50 | 556.00→551.67 | 25.67→21.00 | 39.53→36.90 | 302.44→309.73 | 1033.37→1102.90 |
+  | Chicago100 | 547.00→549.33 | 29.33→40.33 | 53.87→59.09 | 311.52→320.53 | 727.31→1252.75 |
+  | Manhattan775 | 2441.00→2482.33 | 134.00→175.67 | 20.40→27.01 | 257.34→245.70 | 1438.85→1908.51 |
+  | Munich100 | 1050.33→1052.33 | 46.67→52.33 | 33.08→36.93 | 303.80→299.78 | 1780.24→1944.97 |
+  | Chicago200 | 1208.67→1296.00 | 60.67→107.67 | 48.79→57.07 | 284.79→276.86 | 1218.47→2283.14 |
+
+- Preserve threshold0 results, every seed, paired uncertainty, identical-served-
+  rider wait changes, human allocation and actual passenger duration. Chicago100
+  threshold240 completion changes by+6/+26/−25 across seeds; Munich100 by
+  +43/0/−37. These are conditional mixed effects, with more empty driving in
+  every regime. The safety/accounting correction is a verified improvement;
+  repositioning is not uniformly a service improvement or a field calibration.
+- Visually inspect the12-panel scientific figure: readable city/fleet/threshold
+  labels, explicit ON-minus-OFF and paired-seed-range whiskers, negative outcomes
+  and absolute empty-driving costs intact. Save inspected-image SHA and checks.
+  Source/configuration/HEAD remain unchanged while the full suite continues.
+- Additional report command: `.venv/bin/python
+  /workspace/.setup/phase12/interpretation.py`. At threshold240 the mean of
+  same-served eligible riders' per-seed wait changes is+21.01s Munich50,
+  +1.15s Chicago100,−15.85s Manhattan775,+2.84s Munich100 and−11.38s Chicago200.
+  Munich100's served-only aggregate wait falls4.02s while these same riders'
+  wait rises2.84s. The report explicitly retains this compositional difference,
+  per-seed common-served counts and the conditioning limit; it does not turn a
+  changing served sample into a claim that all riders benefit.
+
+
+### Step 8: full regression and independent historical gates pass
+
+- Full command from Step6 exits0: **424 passed in2449.99s (40m49s)**,
+  zero failures/errors/skips. Exact JUnit time2449.986s, start2026-10-26
+  19:17:25 UTC, pinnedCPUs3/4 and completion observation are retained in
+  `full/execution.json`. Source/configuration/HEAD remain frozen throughout.
+- `.venv/bin/python /workspace/.setup/phase12/audit_suite.py >
+  /workspace/.setup/phase12/suite-audit-console.txt 2>&1` independently checks
+  **306 full physical simulations and32 restored windows**. Full request IDs
+  are unique; every picked-up request is dropped off, chronological vehicle
+  rows are valid, and all available accepted-promise records complete.
+  Original upstream outputs without promise fields remain explicitly marked
+  unavailable, not inferred. Exclude exactly10 known negative comparison CSV
+  fixtures, which have no physical scenario configuration. Archived source
+  tables without a physical final/user record are not counted as runs.
+- All **269 previous full regression cases retain1596 checked tables byte for
+  byte**. All32 previous windows retain128 exact table values. Comparisons
+  cover the primary physical outputs and applicable acceptance, choice, future
+  value, ranked/rematching, AV dispatch/product and repositioning audits.
+  The inherited baseline/reference files and all previous evidence remain
+  unchanged. New source is opt-in and preserves old defaults in actual output.
+- External audit is strengthened to check available accepted promises as well
+  as pickup/dropoff pairing; retain the initial audit helper. Four earlier
+  focused checkpoints are reconciled to their JUnit/source/raw-folder counts
+  in `checkpoint_integrity.json`, including all recorded failures/corrections.
+- Final gates therefore establish424 passing tests,306 complete regression
+  simulations,32 restored windows,72 real policy runs/63 unique conditions,
+  nine exact replay records,54 matched-background checks and26 historical
+  real controls/214 byte-identical critical comparisons. No simulation code
+  or configuration changes follow; remaining work is documentation/evidence
+  packaging, final readback, commit and GitHub publication.
+
+
+### Step 9: complete evidence archive and final review documents
+
+- Package 18809 records as414161120 bytes in
+  13 upload parts; every archived member hash and every part byte
+  passes readback. Logical SHA-256:e5faeb681807eefb0dca4dbc73535f4c5d92245daeb0fbbb105171d744041904.
+- Complete failed/corrected source/test/raw histories, both real input versions,
+  old Manhattan parent, all final/failed physical studies, independent audits,
+  commands, configurations, scientific figures and runtime dependencies are
+  retained. Only byte-proved canonical public matrices and caches/symlink
+  aliases are omitted with explicit reconstruction metadata.
+- Finalize phase guide, README, project summary, improvement log and evidence
+  restoration guide with measured three-seed outcomes, lower/worse effects,
+  intended/verified benefits, actual service-priority fix and empirical limits.
+  Markdown changes do not alter tested source/configuration or raw records.
+- Documentation-only finalizer first stops before writing because a spacing
+  cleanup changed its expected draft paragraph (`and77` versus `and 77`).
+  Correct the text match in the external helper; save exact corrected helper
+  as `documentation_finalizer.py.txt` and the failure/correction description
+  alongside published evidence. The first helper remains in the sealed archive.
+  Final docs receive spacing/table rendering cleanup. No Python/dependency,
+  experiment configuration, simulation output or sealed archive bytes change.
+
+
+### Step 10: final publication gates pass
+
+- `.venv/bin/python /workspace/.setup/phase12/prepublish.py >
+  /workspace/.setup/phase12-prepublish-console.txt 2>&1` exits0. It rechecks
+  all261 frozen source hashes, all5 configuration snapshots, all5 verified
+  input bundles/native runtime, all72 final raw output hashes and final study
+  manifests. The63 unique conditions, nine exact replays,54 matched backgrounds,
+  306 full regressions/32 windows,269 old full cases and26 historical real
+  controls match the independently audited counts.
+- All13 archive upload parts and logical archive SHA are verified again:
+  `e5faeb681807eefb0dca4dbc73535f4c5d92245daeb0fbbb105171d744041904`.
+  There are18809 member records in414161120 bytes. All16 omitted public-matrix
+  paths have exact size/SHA-verified canonical restoration data. Scientific
+  PNG/PDF copies match the inspected analysis, and all local report links exist.
+- Historical evidence, regression baselines and approved reference files are
+  unchanged against parent6623109. Whitespace checks cover Python/Markdown/JSON;
+  raw CSV/TXT/XML bytes are retained unchanged. All changes are ready for a
+  Xiaoyu Su implementation/evidence commit and native GitHub push. A publication
+  receipt binds the tested source to the actual remote-verified commit afterward.

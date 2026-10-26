@@ -1,0 +1,26 @@
+[
+  {
+    "name": "threshold_0",
+    "eta_threshold_seconds": 0,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off"
+  },
+  {
+    "name": "threshold_0_repo",
+    "eta_threshold_seconds": 0,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "demand"
+  },
+  {
+    "name": "threshold_240",
+    "eta_threshold_seconds": 240,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off"
+  },
+  {
+    "name": "threshold_240_repo",
+    "eta_threshold_seconds": 240,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "demand"
+  }
+]

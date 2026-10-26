@@ -40,14 +40,16 @@ def experiment(args):
     policy_hash=file_digest(args.policies)
     policies=policy_profiles(SimpleNamespace(policy_grid=args.policies))
     for p in policies:
-        if p['av_repositioning']!='off' or any(k in p for k in ['opt_in_share','retarget','forecast_noise_sigma','joint_repositioning','repositioning_timestep']):
-            raise ValueError('City core grid varies only threshold, preference and type factor; repositioning stays off')
+        if any(k in p for k in ['opt_in_share','retarget','forecast_noise_sigma','joint_repositioning','repositioning_timestep']):
+            raise ValueError('City comparisons hold opt-in, retargeting, noise, joint planning and callback cadence fixed')
         if p['name']=='all_human':raise ValueError('all_human is reserved for the matched fleet control')
     policies=[dict(name='all_human',all_human=True),*policies]
     bundles={}
     for path in args.bundles:
         path=path.resolve();meta=verify_bundle(path)
         if meta.get('shared_initialization')!='city-av-placement-v1':raise ValueError('Not a city shared-placement bundle')
+        if any(p.get('av_repositioning','off')=='demand' for p in policies) and 'av_repositioning_reference' not in meta:
+            raise ValueError('City AV repositioning needs a separately verified reference-forecast bundle')
         if meta['city'] in bundles:raise ValueError('Duplicate city in experiment')
         bundles[meta['city']]=(path,meta)
     output.mkdir(parents=True)
@@ -70,7 +72,8 @@ def experiment(args):
                          '--seed',str(seed),'--policy','no_repo','--city-shared-placement']
                 if policy.get('all_human'):command.append('--all-human')
                 else:
-                    command.extend(['--av-separate-search','on','--av-repositioning','off','--av-preference-seconds',str(policy['preference_seconds'])])
+                    command.extend(['--av-separate-search','on','--av-repositioning',policy['av_repositioning'],'--av-preference-seconds',str(policy['preference_seconds'])])
+                    if policy['av_repositioning']=='demand':command.extend(['--av-service-priority','on'])
                     for key,flag in [('eta_threshold_seconds','--av-eta-threshold-seconds'),('travel_time_factor','--av-travel-time-factor')]:
                         if key in policy:command.extend([flag,'off' if policy[key] is None else str(policy[key])])
                 entry=dict(city=city,seed=seed,arm=name,output=str(folder),log=str(folder.with_suffix('.txt')),command=command,

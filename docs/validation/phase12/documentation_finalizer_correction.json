@@ -1,0 +1,8 @@
+{
+  "failed_helper": "Archived .setup/phase12/finalize_docs.py",
+  "failed_stage": "Assertion matching draft PHASE_12 paragraph before any writes",
+  "reason": "Spacing cleanup changed the expected old text from and77 to and 77, while the draft retained and77",
+  "correction": "Match the actual original draft text; final replacement still uses readable spacing",
+  "corrected_helper": "documentation_finalizer.py.txt",
+  "simulation_source_config_and_raw_records_unchanged": true
+}

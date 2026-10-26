@@ -1,0 +1,207 @@
+from pathlib import Path
+import json,re
+import pandas as pd
+
+R=Path('/workspace/Mobility_simulation');D=R/'docs/validation/phase12'
+v=json.loads((D/'validation.json').read_text());a=json.loads((D/'archive_index.json').read_text())
+assert v['pytest']['tests']=='424' and v['real_policy_runs']==72
+summary=pd.read_csv(D/'configuration_summary.csv').set_index(['city','fleet_size','arm'])
+def number(x,scale=1):return '—' if pd.isna(x) else f'{x*scale:.2f}'
+lines=['\n## Final measured results\n\n',
+ '| City | Fleet | Threshold240 OFF→ON completion | AV trips | AV occupied % | Eligible served wait s | Fleet empty km |\n',
+ '| --- | --- | --- | --- | --- | --- | --- |\n']
+for city,fleet in [('munich',50),('chicago',100),('manhattan',775),('munich',100),('chicago',200)]:
+ x=summary.loc[city,fleet,'threshold_240'];y=summary.loc[city,fleet,'threshold_240_repo']
+ pairs=[]
+ for metric,scale in [('completed',1),('av_completed',1),('av_utilization',100),('eligible_wait_mean_s',1),('fleet_empty_distance_km',1)]:
+  pairs.append(number(x[metric+'_mean'],scale)+'→'+number(y[metric+'_mean'],scale))
+ lines.append(f'| {city} | {fleet} | '+' | '.join(pairs)+' |\n')
+results=''.join(lines)+'''
+These are means over three initialization seeds for each fixed source cohort.
+Paired uncertainty and identical-served-rider comparisons are retained separately.
+Opposite seed/city directions and additional empty driving are part of the result.
+Higher utilization does not by itself establish better service, and fixed-fleet
+replacement does not add capacity. The screenshot's historical figures remain
+reference claims, not fitted acceptance targets.
+
+[Full results](validation/phase12/RESULTS.md) retain every condition, paired
+contrasts, actual passenger durations, preemption/physical-movement evidence,
+gains and adverse outcomes. [Evidence and restoration](validation/phase12/README.md)
+includes failed/corrected checkpoints and immutable source/input/output records.
+'''
+p=R/'docs/PHASE_12.md';s=p.read_text();old='''Final expanded focused validation passes **78 tests and77 complete physical
+simulations**. Real-city pilots and the final regression/studies are not yet
+complete at this checkpoint. Final measured outcomes and complete evidence will
+replace this paragraph before publication.'''
+new=f'''Final expanded focused validation passes **78 tests and 77 complete physical
+simulations**. The full suite passes **424 tests** in **{float(v['pytest']['time']):.2f}s**,
+covering **306 complete regression simulations and 32 restored windows**.
+All **72 real policy runs** pass (63 unique conditions plus nine exact replays).
+All 269 historical complete regression cases preserve
+**{v['historical_byte_identical_tables']} checked tables byte for byte**;128 window tables retain exact
+values. All 26 matched historical real-control conditions preserve
+**{v['historical_real_byte_identical_files']} critical file comparisons**.'''
+assert old in s;s=s.replace(old,new)+results;p.write_text(s)
+p=R/'README.md';s=p.read_text();s=s.replace('See [PROJECT_SUMMARY.md]','''[Phase 12](docs/PHASE_12.md) adds separate-reference AV demand repositioning
+across three cities and opt-in passenger service priority over soft empty targets.
+**424 tests and 72 real policy runs** pass; [measured results](docs/validation/phase12/RESULTS.md)
+retain completion, waits, utilization and empty-driving tradeoffs.
+See [PROJECT_SUMMARY.md]''',1);p.write_text(s)
+p=R/'PROJECT_SUMMARY.md';s=p.read_text();s=s.replace('\nDefaults retain upstream','\n| 12: cross-city AV repositioning | Strictly separate reference OD weights, empty AV movement contracts, opt-in pre-booking service priority, paired off/on/supply experiments;424 tests,306 regression simulations,72 real runs /63 conditions; gains and adverse outcomes retained | `docs/PHASE_12.md` |\n\nDefaults retain upstream',1)
+s+='''
+
+Phase12 positions idle AVs using separate-reference eligible OD weights and
+clears cancellable empty goals before passenger ETA/cost evaluation. The real
+pilot detects eight occupied repositioning legs; the corrected policy records
+zero, with all accepted bookings complete. Locked work and legacy defaults remain
+preserved. Main/supply experiments retain paired three-seed completion, waits,
+human allocation, absolute empty driving and actual passenger durations.
+See [Phase12](docs/PHASE_12.md) and [complete results](docs/validation/phase12/RESULTS.md).
+''';s=re.sub(r'(\|[^\n]*\|)\n\n(?=\| [0-9]+:)',r'\1\n',s);p.write_text(s)
+p=R/'IMPROVEMENT_LOG.md';s=p.read_text();s+=f'''
+
+## Phase12: separate-reference AV demand repositioning across cities
+
+- **Problem:** cross-city dispatch experiments left idle AV location fixed.
+  A real Chicago pilot also exposes unlocked rebalancing waypoints surviving
+  between passenger pickup/dropoff:8 moving occupied reposition legs /18.986561km.
+- **Change:** optional strict reference OD exports/weights, matched AV demand
+  repositioning on/off, actual command-to-movement auditing, and opt-in service
+  priority that removes only cancellable AV targets from copied plans before
+  feasibility, ETA and utility evaluation. Hard locks/live plans are retained.
+  Existing profiles keep their previous behavior. No actual output is relabeled
+  to hide the pilot gap.
+- **Verified benefit:** corrected Chicago pilot occupied repositioning legs8→0,
+  actual service-preemption auditing, all accepted bookings physically complete,
+  private riders protected, and targeted legacy/priority counterexamples.
+  Both controllers/native C++ and combinations with acceptance, future value,
+  shifts, retargeting, joint planning and forecast noise pass complete checks.
+- **Validation:**424 tests,306 full regression simulations,32 restored windows
+  and 72 real runs pass. All 269 historical full cases retain
+  {v['historical_byte_identical_tables']} byte-identical checked tables;128 window tables retain exact
+  values. All 26 comparable historical real controls retain
+  {v['historical_real_byte_identical_files']} critical file comparisons. Failed tests, real pilot
+  evidence, lock-copy correction and result-collector bookkeeping are preserved.
+- **Measured policy effects:** three seeds, main fleets50/100/775 and a
+  doubled-supply sensitivity;63 unique conditions plus nine exact replays.
+  Completion/allocation/wait/empty-distance effects vary across seeds and
+  regimes. Keep gains and adverse outcomes together; empty-distance fraction
+  and occupied utilization alone do not establish service improvements.
+- **Scope:** stationary relative OD weights, sparse native night reference,
+  historical Manhattan context, assumed opt-in/speed/patience/fleet and different
+  source years/generation. No calibrated future-volume, geography-only causal,
+  field AV throughput or universal gain claim.
+- **Record:**[phase guide](docs/PHASE_12.md),
+  [full results](docs/validation/phase12/RESULTS.md),
+  [evidence](docs/validation/phase12/README.md),[work log](docs/WORK_LOG.md).
+''';p.write_text(s)
+(D/'README.md').write_text(f'''# Phase12 validation evidence
+
+All final gates pass:424 tests,306 complete regression simulations,32 restored
+windows and 72 real policy runs. There are63 unique conditions and nine exact
+fresh-process replay records. All 269 old full cases retain
+{v['historical_byte_identical_tables']} checked tables byte for byte, with 128 exact window tables.
+All 26 old real off/human conditions retain{v['historical_real_byte_identical_files']} critical file comparisons.
+
+Read [the phase guide](../../PHASE_12.md), [full results](RESULTS.md) and
+[complete work log](../../WORK_LOG.md). New repo-on runs require actual empty
+AV movement and passenger service priority; earlier legacy profiles retain their
+recorded behavior. Conditional policy gains and adverse effects are both retained.
+
+Frozen261-file Python/dependency digest:
+`{v['code_digest']}`. `source_record.json` lists every file hash. Manifests retain
+the dirty-candidate Git parent; publication checks bind those exact tested bytes
+to a committed and remote-verified implementation.
+
+## Review records
+
+- `validation.json`, `full-suite.txt`, `junit.xml`, `suite-integrity.json`:
+  final counts, independent physical demand/completion/chronology/window audit.
+- `historical-identity.json`, `historical_real_identity.json`:
+  all 269 old full simulations,32 windows and26 old real-control comparisons.
+- `main_manifest.json`, `supply_manifest.json`, `pilot_manifest.json`:
+  exact commands, seeds, CPU/thread settings, input/source/output hashes,
+  statuses and54 matched background comparisons.
+- `independent_checks.json`, `integrity.json`: all72 raw physical/source/input/
+  native-runtime readbacks,63 unique conditions and nine exact replay records.
+- `occupied-reposition-diagnostic.json`, `pilot-validation.json`: the failed
+  Chicago8-leg/18.99km waypoint case and corrected nine-pilot actual movement,
+  private/booking checks, committed preemptions and critical control identity.
+- `seed_results.csv`, `configuration_summary.csv`, `paired_effects.csv`,
+  `common_rider_effects.csv`: every seed/policy, favorable/adverse changes,
+  conditional uncertainty and actual identical-served-rider wait changes.
+- `passenger_duration_seed_results.csv`, `passenger_duration_summary.csv`:
+  actual completed evaluation-cohort pickup-to-dropoff duration, distinct from
+  occupied vehicle time clipped to evaluation.
+- `av_repositioning_comparison.png` / `.pdf`: scientific paired off/on changes
+  with seed-range whiskers. `city_policy_curves.png` / `.pdf` retain off controls.
+- `runtime_environment.json`: interpreter/package/platform versions; exact
+  native binary and its C++/Cython source dependencies are archived.
+- `archive_index.json`: every archive member/upload-part size/SHA and explicit
+  canonical public-matrix omissions with exact restoration paths.
+- `prepublication_checks.json`, `publication.json`: final review gates and
+  verified remote implementation/source/author identity.
+
+## Restore complete raw records
+
+Concatenate the {len(a['parts'])} parts in numeric order and verify the logical archive:
+
+```bash
+cat records.tar.gz.0* > records.tar.gz
+sha256sum records.tar.gz
+mkdir restored
+tar -tzf records.tar.gz
+tar -xzf records.tar.gz -C restored
+```
+
+Expected SHA-256:`{a['sha256']}`. All names are relative workspace paths.
+All member bytes and every upload part pass readback. Raw CSV/TXT/XML bytes
+remain unchanged. Archives include all failed/corrected focused source snapshots,
+JUnit, raw physical outputs, real failed and corrected studies, input builds,
+reference exports/forecasts, source/input/output hashes, commands, independent
+audits, report scripts, figures, runtime binaries/sources and used public inputs.
+Intentional legacy contrast cases are retained and are not asserted to satisfy
+the new opt-in service-priority rule.
+
+Large public matrices are omitted only after exact size/SHA comparison with
+canonical files. For every `omitted_public_matrices` row, restore its
+`restore_from` file to `path` and verify size/SHA. Chicago base matrices come
+from FleetPy Chicago ZIP/Zenodo15189440; Manhattan from FleetPy Manhattan
+ZIP/Zenodo15187906. Munich is Zenodo15195726 and supplies no partial preprocessed
+tables. All used nonidentical/private/small matrices remain included. Original
+large public ZIPs/TLC source remain external with URLs, published checksums,
+SHA-256 and extraction provenance in archived records. TUM source README files
+and CC BY4.0 attribution to Roman Engelhardt/Florian Dandl are preserved.
+
+The immutable old Manhattan dataset is included to rebuild new comparison
+inputs without source retagging. Identical immutable failed/corrected input
+matrices may share local storage; each logical path/content/hash is retained.
+A redundant Phase11 published-source tar cache was removed only after byte and
+actual Git-stream reconstruction proof; the action/exact pinned restore command
+is recorded, while all original physical records remain preserved.
+
+Restore under the recorded workspace layout and use the source/configuration/
+runtime/dependency versions. Rebuilding the native extension changes its binary
+hash and requires a new explicitly recorded validation. No unverified input,
+modified source or incomplete study may enter a pooled result. The native night
+reference and stationary temporal transfer are benchmark assumptions, not field
+demand-volume calibration or adoption evidence.
+''')
+with (R/'docs/WORK_LOG.md').open('a') as f:f.write(f'''
+
+### Step 9: complete evidence archive and final review documents
+
+- Package {a['archived_file_count']} records as{a['size_bytes']} bytes in
+  {len(a['parts'])} upload parts; every archived member hash and every part byte
+  passes readback. Logical SHA-256:{a['sha256']}.
+- Complete failed/corrected source/test/raw histories, both real input versions,
+  old Manhattan parent, all final/failed physical studies, independent audits,
+  commands, configurations, scientific figures and runtime dependencies are
+  retained. Only byte-proved canonical public matrices and caches/symlink
+  aliases are omitted with explicit reconstruction metadata.
+- Finalize phase guide, README, project summary, improvement log and evidence
+  restoration guide with measured three-seed outcomes, lower/worse effects,
+  intended/verified benefits, actual service-priority fix and empirical limits.
+  Markdown changes do not alter tested source/configuration or raw records.
+''')
+print('Final Phase12 documentation written.')

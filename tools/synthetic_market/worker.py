@@ -50,6 +50,7 @@ def main():
     parser.add_argument('--av-joint-repositioning',choices=['off','on'])
     parser.add_argument('--av-repositioning-timestep',type=int)
     parser.add_argument('--av-separate-search',choices=['off','on'])
+    parser.add_argument('--av-service-priority',choices=['off','on'])
     parser.add_argument('--city-shared-placement',action='store_true')
     parser.add_argument('--all-human',action='store_true')
     args=parser.parse_args();bundle=args.bundle.resolve();output=args.output.resolve()
@@ -77,6 +78,7 @@ def main():
         if args.av_joint_repositioning is not None:parameters['op_av_joint_repositioning']=args.av_joint_repositioning=='on'
         if args.av_repositioning_timestep is not None:parameters['op_av_repositioning_timestep']=args.av_repositioning_timestep
         if args.av_separate_search is not None:parameters['op_av_separate_search']=args.av_separate_search=='on'
+        if args.av_service_priority is not None:parameters['op_av_service_priority']=args.av_service_priority=='on'
     if args.all_human:
         if av_overrides:raise ValueError('Human-only control cannot have AV policy overrides')
         for key in list(parameters):

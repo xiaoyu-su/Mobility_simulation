@@ -16,6 +16,7 @@ from tools.paired_eval.__main__ import ROOT, source_record
 from tools.paired_eval.worker import load_parameters
 from tools.synthetic_market.build import json_write, market_dependencies
 from tools.synthetic_market.spatial import causal_requests
+from tools.city_av.reposition import MODE, FORECAST, reference_weights, write_reference
 
 
 ROUTERS = {'NetworkBasicWithStore','NetworkBasicWithStoreCpp',
@@ -100,6 +101,8 @@ def build(config_path, data_root, output, fleet_multiplier=1):
     config_path,data_root,output=Path(config_path).resolve(),Path(data_root).resolve(),Path(output).resolve()
     if output.exists():raise ValueError('Refusing to overwrite city bundle')
     c=json.loads(config_path.read_text())
+    forecast_mode=c.get('av_repositioning_forecast')
+    if forecast_mode not in (None,MODE):raise ValueError('Unknown city AV repositioning forecast')
     if c.get('schema_version')!=1 or not re.fullmatch(r'[a-z][a-z0-9_-]*',c.get('city','')):
         raise ValueError('Invalid city configuration identity/version')
     start,end,warm=c['evaluation_start'],c['evaluation_end'],c['warmup_start'];dt=c.get('time_step',60)
@@ -175,6 +178,9 @@ def build(config_path, data_root, output, fleet_multiplier=1):
     if parent and selected!=parent['av_product']['fence_zones']:raise ValueError('Parent historical fence no longer reproduces')
     if initial.node_index.duplicated().any() or not set(initial.node_index)<=set(mapping.node_index) or not np.isfinite(initial.probability).all() or initial.probability.le(0).any() or not np.isclose(initial.probability.sum(),1):
         raise ValueError('Invalid reference-derived initial distribution')
+    prepared_reference=reference_weights(reference,c,mapping,selected,parent) if forecast_mode else None
+    reference_source=data_root/'training_context.csv' if parent else request_source
+    reference_source_hash=file_digest(reference_source) if forecast_mode else None
     output.mkdir(parents=True)
     manifest=dict(status='building',data_kind='fleetpy_city_benchmark',city=c['city'],source=source,
         dependencies=market_dependencies(),config_sha256=file_digest(config_path),config=c,
@@ -217,6 +223,10 @@ def build(config_path, data_root, output, fleet_multiplier=1):
         if n!=1:raise ValueError('Missing vehicle type label')
         (output/'vehicles/av_vehtype.csv').write_bytes(av.rstrip(b'\r\n')+f'\ntravel_time_factor,{factor}\n'.encode())
         (output/'forecasts/900').mkdir(parents=True);(output/'fleetctrl').mkdir();(output/'infra').mkdir()
+        if prepared_reference:
+            manifest['av_repositioning_reference']=write_reference(output,prepared_reference,selected,warm,
+                max(end,int(requests.rq_time.max())+dt),reference_source)
+            manifest['assumptions']['av_repositioning']='Policy-grid option; off by default; separate-reference stationary OD weights'
         p=load_parameters(ROOT/'studies/example_study/scenarios/constant_config_ir.csv',ROOT/'studies/example_study/scenarios/example_ir_only.csv')
         p.update(study_name='city_av',scenario_name=c['city'],network_name='city_network',demand_name='city',rq_file='requests.csv',
             network_type=router,nw_dynamic_f=dynamics,random_seed=0,random_stream_mode='independent',start_time=warm,
@@ -227,12 +237,15 @@ def build(config_path, data_root, output, fleet_multiplier=1):
             completion_tail_max_seconds=86400,op_zone_system='city_zones',op_temporal_resolution=900,
             op_av_vehicle_types=[['av_vehtype']],op_av_zones=[selected],op_av_opt_in_share=optin,
             op_av_preference_s=0,op_av_repositioning=False,op_av_repositioning_timestep=900)
+        if prepared_reference:p['op_forecast_f']=FORECAST
         json_write(output/'parameters.json',p)
         if source_record()['code_digest']!=source['code_digest']:raise RuntimeError('Source changed during city build')
         if file_digest(config_path)!=manifest['config_sha256'] or file_digest(request_source)!=manifest['request_source_sha256'] or file_digest(mapping_path)!=manifest['zone_source_sha256']:
             raise RuntimeError('City source data changed during build')
         for name,h in manifest['network_sha256'].items():
             if file_digest(network/name)!=h:raise RuntimeError('City network source changed during build')
+        if forecast_mode and file_digest(reference_source)!=reference_source_hash:
+            raise RuntimeError('City repositioning reference changed during build')
         manifest.update(status='complete',output_sha256={str(p.relative_to(output)):file_digest(p) for p in output.rglob('*') if p.is_file() and p.name!='manifest.json'})
         json_write(output/'manifest.json',manifest);return manifest
     except BaseException as error:

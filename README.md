@@ -42,6 +42,10 @@ Validation passes **389 tests and66 real-city runs** (60 unique conditions), wit
 and fresh-process/clean-archive repeatability. **403 tests**, **269 regression
 simulations** and **15 native physical runs** pass, with exact original-output
 comparisons and [complete evidence](docs/validation/phase11/README.md).
+[Phase 12](docs/PHASE_12.md) adds separate-reference AV demand repositioning
+across three cities and opt-in passenger service priority over soft empty targets.
+**424 tests and 72 real policy runs** pass; [measured results](docs/validation/phase12/RESULTS.md)
+retain completion, waits, utilization and empty-driving tradeoffs.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

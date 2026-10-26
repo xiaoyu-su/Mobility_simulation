@@ -471,3 +471,39 @@ outcomes. The real-data follow-up below does not change those historical results
 - **Record:** [Phase 9 implementation and experiment design](docs/PHASE_9.md),
   [data and assumptions](docs/AV_DATA.md), [step-by-step log](docs/WORK_LOG.md)
   and [complete validation evidence](docs/validation/phase9/).
+
+
+## Phase 10: cross-city AV policy comparison, Round 3
+
+- **Problem:** city-specific pipelines and unmatched vehicle placement/search
+  confound transfer of the AV policy findings. Native map ambiguities and raw
+  boarding unions also need explicit interpretation before trusting results.
+- **Change:** generic native-data builder/runner/reporter, immutable parent
+  adaptation, audited Munich map tie rule, hashed C++ runtime, common physical
+  all-human/AV placement and benchmark-only shadow search groups. Capacity
+  checks use moving and pre/post-stop occupancy with actual vehicle limits.
+  Isolated pinned workers and source/input/output guards support reproducibility.
+- **Benefit verified:** full unique demand, completed accepted bookings,
+  chronology, actual capacities, service durations, consent, fence, product,
+  speed factors and common placement pass in all66 real physical runs. Six
+  fresh-process repeats match critical files byte for byte;60 conditions remain
+  independent of those repeats. All53 within-study background checks pass.
+- **Regression:**389 tests pass in2129.86s, covering257 complete physical
+  simulations and32 restored windows. All234 historical physical cases retain
+ 1171 byte-identical checked tables;128 window tables retain exact values.
+  Failed candidates and their corrections are preserved, not counted as passes.
+- **Measured transfer and costs:** threshold0→240 raises main AV utilization
+ 33.64→52.80% Chicago100 and13.12→20.00% Manhattan775; Munich50 stays
+ 38.75→38.66%. Completion changes+16.5/+6/+7.5; Manhattan eligible wait
+  rises62.72s. Against all-human controls, completion is+19.5/−30/−29.5.
+  With doubled fleets, threshold completion changes−14 Chicago200/−12 Munich100.
+  Chicago200 AV trips fall79.5→56 despite higher occupied utilization and longer
+  completed passenger trips. Gains and regressions are both retained.
+- **Scope:** two seeds, fixed replacement fleets, assumed adoption/speed/service
+  settings, unequal/sparse references and native source-generation differences.
+  These demo/load settings do not reproduce the screenshot's numerical regimes;
+  there is no universal policy gain, daily AV claim or geography-only causality.
+- **Record:** [implementation and assumptions](docs/PHASE_10.md),
+  [complete results](docs/validation/phase10/RESULTS.md),
+  [evidence and restoration](docs/validation/phase10/README.md),
+  [step-by-step record](docs/WORK_LOG.md).

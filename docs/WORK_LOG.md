@@ -2361,3 +2361,322 @@ and will be committed locally before the actual push attempt is recorded.
   receipt commit; remote equality and checkout cleanliness are checked again
   after that receipt push before reporting the phase complete. No token was
   printed or changed and no saved repository selection was modified.
+
+## Phase 10: cross-city AV policy transfer (2026-10-26, UTC)
+
+### Step 1: recover the next planned round and preserve the published base
+
+- Created `phase-10-cross-city-av-comparison` from published Phase 9 receipt
+  `c8a85ffb659f1a6958b69a302fdf1a8c8aeafe01`, with a clean checkout. Preserve
+  every earlier record and use Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com
+  as both author and committer.
+- Re-read IMG_3329: Round 3 asks whether Manhattan policy findings transfer to
+  Munich and Chicago. Implement a generic city bundle/runner/reporter, a
+  reference-derived dense-zone fence, city load configurations and thread-pinned
+  comparisons. Human acceptance and repositioning stay off. The screenshot's
+  numerical results are reference claims, not targets or reproduced evidence.
+- Both public Zenodo records are accessible: Munich15195726 and Chicago15189440.
+  Downloaded 144,829,706-byte `FleetPy_Munich.zip` and344,440,784-byte
+  `FleetPy_Chicago.zip`, checked published MD5s
+  `cf70c1631a8faad46ba4e2f2d7d7f71a` and
+  `ab03f64c88dc4f1dba4f84e286e7e520`, computed SHA-256s and safely extracted
+  246/305 files. Record URLs, metadata, checksums and file inventories under
+  `/workspace/market_inputs/cross_city/`; execution log is
+  `.setup/phase10/downloads.txt`. Authors Roman Engelhardt/Florian Dandl,
+  CC BY4.0; original source README bytes remain unchanged.
+- Important provenance: Munich `d_10` is **1%** of PV trips, generated from an
+  AIMSUN traffic simulation; it is not a10% observed taxi sample. Chicago's
+  `sample_10` is a10% TNC completed-trip sample for June7,2022, on the provided
+  2023 OSM network. Neither supplies actual AV opt-in or online fleet exposure.
+
+### Step 2: implement immutable city inputs and fair counterfactual controls
+
+- `tools.city_av build/run/report` handles native node-matched requests, city
+  zone maps, provided network dynamics and the existing verified Manhattan
+  dataset. Parent input hashes/source identity are checked before rebuilding
+  the Manhattan comparison; the parent bundle is never retagged or changed.
+- Native fence/initial placement use only00:00–05:00 pickups, before05:00–07:00
+  warm-up and07:00–10:00 evaluation. Manhattan retains earlier-Tuesday training
+  references. Evaluation pickups cannot choose the fence. Missing native
+  centroid flags are supplied using actual mapped access nodes; unmapped rows
+  are counted explicitly. Original request IDs remain stable; causal admission
+  uses ceiling to the60-second grid.
+- Prespecified fleets: Munich50, Chicago100 (supplied upstream examples),
+  Manhattan775 (existing training-workload proxy). Additional supply cases double
+  total fleet at fixed10% AV share. Opt-in.3 and cautious travel time1.25 are
+  assumptions. All benchmark arms use480s patience,30s pickup/drop-off service,
+  no execution noise, no human acceptance, and no human/AV repositioning.
+  Native ride-pooling is an explicit benchmark assumption; Manhattan's original
+  source pooling consent remains enforced. This is not a new empirical calibration
+  or a direct numerical comparison with differently configured Phase 9 results.
+- All-human and AV replacement arms share actual initial position/SOC for each
+  vehicle ID, with designated AV slots fenced in both arms. Actual simulator
+  initialization hashes are reconstructed independently from the recorded
+  placement plus actual roster. All-human slots remain unrestricted humans.
+- Found a design confound before real experiments: a conventional all-human
+  control would search one candidate pool, while AV arms search two. Added a
+  benchmark-only shadow-slot partition with the same per-group position budget;
+  it adds no AV cost/consent restrictions to humans. Ordinary matching is
+  unchanged when the marker is absent. Both immediate insertion controllers
+  are exercised with a one-position budget to test the actual partition.
+- City workers reuse the existing physical booking/consent/tail guards. Added
+  explicit city-only shared-placement/all-human flags, per-run full output
+  hashes, actual boarding/alighting and service-duration checks, type-factor
+  checks, fixed retained-human productivity and absolute empty-distance totals.
+  Native C++ binary/source hashes are additional dependencies, not implicit
+  untracked runtime assumptions. Private input/runtime tampering fails closed.
+- The bounded runner caps BLAS/OMP/MKL at one thread and reuses available CPU
+  slots via `taskset`. It launches at most the declared1–4 isolated workers;
+  unlaunched jobs after a failure are labeled unrun. No real matching decision
+  depends on a wall-clock optimization timeout in the IRSOnly comparison.
+- Pooled reports retain every city/fleet/seed/policy, separate duplicate exact
+  replays from independent conditions, compute paired conditional intervals,
+  compare identical served rider IDs, and plot city curves with seed ranges.
+  Source/data/load differences prevent a geography-only causal interpretation.
+
+### Step 3: timely focused checks, failure and correction
+
+- Initial frozen source `fa5558ad039bf75ff7be0a5a56870cab0b2092b30a4c92a0ed9f5347f1c22623`
+  (253 files) stops during pytest collection: unit/integration files shared a
+  basename. **1 collection error in0.96s; no simulations executed.** Renamed
+  integration file to `test_city_av_examples.py`; retain original JUnit/log/source
+  under `.setup/phase10/checkpoint/`.
+- Corrected source `0844ab8377002d9c840660c4e858ebcc14579ccb95f04ff9ba1fe91ee777c095`
+  (253 files) passes **12 tests in22.47s**, including **16 complete physical
+  simulations**, actual Python/C++ route timing, exact human/AV replay and
+  nonmutating Manhattan fixture adaptation. Evidence: `corrected/`.
+- Added pooled reporting, actual initialization-audit reconstruction and the
+  shadow search-budget control. Source
+  `d7535c20af2beeb0cc9ba570e3f700f07f742d1f13692987835953ddb6a8bdcd`
+  (254 files) passes **14 tests in40.05s /23 complete physical simulations**.
+  Both immediate insertion controllers and Python/C++ routers pass. Modified
+  report bytes are rejected, source-reference isolation passes, and input/runtime
+  corruption fails before a result can be counted.
+- Exact gate command: `.venv/bin/python -m pytest -q tests/unit/test_city_av.py
+  tests/integration/test_city_av_examples.py
+  --basetemp=/workspace/.setup/phase10/corrected-v2/runs
+  --junitxml=/workspace/.setup/phase10/corrected-v2/junit.xml`, stdout/stderr at
+  `corrected-v2/tests.txt`. Matching source snapshots and config files accompany
+  all three checkpoints. Python/configuration remains frozen during physical runs.
+
+### Step 4: real city builds and pilots (in progress at this checkpoint)
+
+- `.venv/bin/python -u /workspace/.setup/phase10/prepare_pilots.py`, stdout/stderr
+  at `pilots-console.txt`, builds five new immutable bundles under
+  `/workspace/market_inputs/phase10/{munich,chicago,manhattan,munich_supply2x,chicago_supply2x}`.
+  It then runs human-only and threshold240 pilots in all three cities, seed0,
+  three pinned workers. Per-stage argument vectors, return codes, runtimes and
+  logs are saved under `.setup/phase10/real/`.
+- Prespecified main grid: two seeds0/1 ×three cities ×eight arms =48 physical
+  runs: matched all-human; cost control; preference300; thresholds0/120/240/480;
+  equal-speed threshold240. Supply sensitivity: two seeds ×two cities ×three
+  arms (all-human /threshold0 /threshold240) =12 further runs at double fleet.
+  Six seed0 pilots are replay checks against main conditions, not independent
+  replicas: total66 physical runs /60 distinct conditions if all pass unchanged.
+- No final success or policy improvement is claimed while these real cases or
+  the required full regression gate remain unfinished. All failures, adverse
+  outcomes and limits will remain in the published record.
+
+### Step 5: real-input failures, explicit mapping and capacity semantics
+
+- The first real build attempt on source `d7535c...` completes Chicago,
+  Chicago2x and Manhattan inputs, but rejects both Munich builds before any
+  pilot starts: its original map has **18 nodes with two memberships each**,
+  all in overlapping zones28/29. Original30288 rows cover30270 unique nodes.
+  It would be incorrect to silently accept a nonunique AV fence map.
+- Add optional `zone_overlap_policy=lowest_zone_id` only in the Munich config.
+  Default remains error for ambiguous maps. Record all original and chosen
+  memberships, exact source-map hash and counts of retained/evaluation requests
+  touching those nodes. This is an explicit deterministic benchmark convention,
+  not a claim about the true administrative boundary. The original map is
+  unchanged. New unit test proves default rejection and audited opt-in behavior.
+- Source `985dc2bc330a341d56f2cfa65a4f35311a88f980962a890d23ebe6a6c924b03d`
+  (254 files) passes **15 tests in40.27s /23 complete fixture simulations**.
+  Five fresh real bundles under `market_inputs/phase10_final/` then build.
+- The next real pilot group fails its reporting check after **54.4s**, before
+  three later jobs launch. Chicago's all-human raw log contains one boarding
+  row with occupancy5 in a four-seat vehicle; moving loads remain≤4. Investigation
+  of the source and raw IDs shows a **4→4 passenger exchange**: FleetPy adds
+  the incoming rider at stop start and removes the departing rider at stop end,
+  so the raw stationary log is their five-ID union. This is an event-recording
+  convention, not five seated riders travelling. Do not silently discard the row.
+- Correct the city audit to check actual roster capacities, every moving load,
+  pre-exchange load (union minus incoming), post-exchange load (union minus
+  outgoing), passenger ID/occupancy consistency and exchange membership. Explicitly
+  count stationary unions. Unit cases still reject five moving, five before,
+  or five after an exchange. The underlying simulator and its raw output are
+  unchanged. `capacity_diagnostic.json` preserves the vehicle46 event at
+  35072.506623–35102.506623s, incoming201621/outgoing201488, and the independently
+  verified0 moving violations/1 valid union. Past failed raw records stay intact.
+- The failed pilot manifest labels three jobs uncollected after failure and
+  three jobs unrun; it is not counted as a successful six-run experiment.
+  Preserve `real_final/`, `phase10_final/` inputs/results and their frozen source.
+- New source
+  `95a9203fb932370c5edc9332070e8eb4ca0ab5621d7a28b5adf119b517214956`
+  (254 files) is now frozen for the corrected focused gate and fresh validated
+  pilots. Exact command uses the same two test modules, with paths under
+  `corrected-v4/{runs,junit.xml,tests.txt}`. Fresh inputs/results use
+  `market_inputs/phase10_validated/` and `market_results/phase10_validated/`;
+  `prepare_validated_pilots.py` and `real_validated/` retain exact commands.
+
+### Step 6: final focused gate and successful real pilots
+
+- Source `95a920...` produces **17 passed /2 failed in41.18s**: the negative
+  capacity fixtures used literal empty strings, while the actual CSV parser
+  represents empty request fields as missing values. Both failures stop in the
+  ID parser before reaching the expected capacity assertion. All23 physical
+  fixture simulations finish; fresh real pilots do not start because the shell
+  uses `set -e`. Preserve the failed JUnit/log/source under `corrected-v4/`.
+- Correct the two negative fixtures to use missing values. The capacity audit
+  and simulation behavior are unchanged. Frozen source
+  `c8885e74c9661a558177ac56c908e11c403006ebafcb1ae536c7f0c59333caa7`
+  (254 files) passes **19 tests in39.04s /23 complete physical simulations**.
+  Evidence: `corrected-v5/`, including the actual source/config snapshots.
+- Five fresh validated bundles build in approximately1.4s Munich,3.9s Chicago,
+  2.1s Manhattan,1.4s Munich2x and4.1s Chicago2x. All six real seed0 human/AV
+  pilots complete in **90.0s**, with complete accepted bookings, consistent
+  actual initial states, pre/post/moving capacity, source consent, AV product,
+  chronology, service duration and timing checks.
+- Pilot evaluation completion (all-human →threshold240): Munich **586→544**,
+  Chicago **529→554**, Manhattan **2464→2437**. AV trips are27/25/131.
+  These are preliminary single-seed replacement outcomes, not universal gains.
+  Neither fleet settings nor policies are retuned to the screenshot or these
+  held-out results. The six pilots become exact replay checks against main runs.
+- Actual final inputs: Munich **1892 evaluation +631 warm-up**, fence30 zones,
+  50 vehicles5AV; Chicago **2051 +639**, fence234 zones,100 vehicles10AV;
+  Manhattan **3150 +751**, fence19 zones,775 vehicles78AV. Native reference
+  sizes are **88 /981** earlier rows; Manhattan has **63441** prior-training
+  context rows. These differences are disclosed, especially Munich's sparse
+  reference. Munich excludes54 unmapped rows from the full provided source;
+  only **one evaluation request** touches a resolved duplicate-map node.
+
+### Step 7: full regression and prespecified main/supply studies running
+
+- With Python/configuration and Git parent held fixed, launch
+  `.venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase10/full/runs
+  --junitxml=/workspace/.setup/phase10/full/junit.xml`, stdout/stderr at
+  `full/tests.txt`. This is the required complete gate, not only city tests.
+- In parallel run `.venv/bin/python -u
+  /workspace/.setup/phase10/run_final_studies.py`, stdout/stderr at
+  `final-studies-console.txt`. Main uses two pinned CPUs/workers; supply uses
+  one separate pinned CPU/worker. Exact CPU masks, commands, statuses, runtimes
+  and per-case records remain under `real_validated/` and the final manifests.
+  Outputs use `market_results/phase10_validated/{main,supply,pilot}`.
+- Main48 and supply12 runs plus the six successful pilot/replay records are
+  still being finalized. Do not count incomplete cases or declare the phase
+  complete until all required gates and independent audits pass. No source
+  changes are made while those simulations run.
+
+### Step 8: all real studies complete and independent audit passes
+
+- All **66 final physical runs** complete: main48 in **947.7s**, supply12 in
+  **693.9s**, pilot6 in **90.0s**. All study return codes are0, with no source
+  change. There are **60 distinct city/fleet/seed/policy conditions**; the six
+  pilot cases are fresh-process repeats, not extra independent replicas.
+- `.venv/bin/python /workspace/.setup/phase10/analyze_real.py >
+  /workspace/.setup/phase10/analysis.txt 2>&1` independently checks all66 raw
+  outputs, all5 private bundles and runtime hashes. All full unique demand,
+  promise/boarding/alighting IDs, accepted completion, causal grid/deadlines,
+  chronology, actual roster capacities, pre/post exchanges, private consent,
+  AV fence/opt-in/product, actual type factors, common initialization and search
+  budgets pass. Final tails have no remaining tasks/onboard riders.
+- Generic pooled reporter verifies all raw output hashes, **53 within-study
+  background comparisons** and **6 exact replay records**: three all-human
+  controls each match6 critical physical/audit files; three threshold240 cases
+  each match8. It excludes duplicate conditions from seed means. Scientific
+  PNG/PDF is visually inspected; labels/units/fleet legends and two-seed range
+  whiskers are legible. Analysis includes environment/package versions and a
+  byte-exact native C++ binary/source runtime snapshot for reproduction.
+- The analysis prints a nonfatal font-cache warning; the generated figure is
+  readable and verified. No simulation/raw output is changed. The full pytest
+  gate remains running at this checkpoint; all real runs passing does not
+  substitute for that separate required gate.
+
+### Step 9: measured policy transfer, adverse outcomes and load limits
+
+- Main threshold0→240 mean AV occupied utilization: Chicago100 **33.64→52.80%**,
+  Manhattan775 **13.12→20.00%**, Munich50 **38.75→38.66%**. Munich is essentially
+  unchanged; there is no universal utilization-gain claim. Actual AV trip means
+  are **24→28 /84.5→133 /25→25**, respectively.
+- Main evaluation completion: Chicago **523.5→540.0**, Manhattan **2438→2444**,
+  Munich **552.5→560.0**. Eligible served mean wait changes **307.60→307.61s**,
+  **199.81→262.53s**, **305.00→301.96s**, respectively. These fixed two-seed
+  mean effects do not establish a population benefit; paired intervals and
+  common-served rider identities are retained separately.
+- Against the matched all-human control, threshold240 main completion changes
+  **+19.5 Chicago /−30 Manhattan /−29.5 Munich**. This is replacement of a
+  fixed-size fleet with slower/constrained AV slots, not additional capacity.
+  Do not describe AVs as universally adding completed trips.
+- The doubled-fleet regimes change the threshold effect: Chicago200 completion
+  **1195.5→1181.5** and eligible wait **271.92→287.78s**; Munich100 completion
+  **1063.5→1051.5**, wait **270.28→301.71s**. Chicago200 AV trips fall
+  **79.5→56** even as occupied utilization rises **42.75→48.26%**. Higher
+  occupied time is not automatically more trips or better rider service.
+- Supplementary `.venv/bin/python
+  /workspace/.setup/phase10/service_duration_analysis.py >
+  /workspace/.setup/phase10/service-duration-analysis.txt` derives actual
+  completed passenger pickup-to-dropoff durations from unchanged raw outputs.
+  Chicago200 mean AV duration rises **1264.33→1970.18s** across thresholds;
+  Chicago100 **1570.96→1998.81s**. Passenger-time statistics, occupied vehicle
+  time, warm-up carry-in and evaluation clipping have distinct domains, so
+  these co-movements do not isolate one causal mechanism. CSVs retain all
+  seed/product mean/median/q95/duration totals and both favorable/adverse changes.
+- Fleet configuration matters much more to completion here: all-human means
+  **589.5→1108.5 Munich** and **520.5→1295.5 Chicago** between main/double-fleet
+  regimes. Across fleet sizes the designated-slot IDs and their starting layout
+  also change; this is a configured load sensitivity, not an identical-background
+  policy pair or a causal capacity estimate. Within each regime geometry and
+  search are rigorously matched. The strongly scarce demo-fleet cases do not
+  reproduce the screenshot's near-saturated/balanced numerical regimes.
+- An unqualified adjective about detour bounds was removed from the derived
+  passenger-duration explanation after checking the source: the existing40
+  parameter denotes a percentage. The original analysis stdout and all numbers
+  remain unchanged; `presentation_corrections.json` records this prose correction.
+
+
+### Step 10: final full regression and historical compatibility
+
+- `.venv/bin/python -m pytest -q --basetemp=/workspace/.setup/phase10/full/runs
+  --junitxml=/workspace/.setup/phase10/full/junit.xml` passes **389 tests** in
+  **2129.86s**, with **0 failures/errors/skips**. Source/configuration stayed
+  frozen throughout all final real and regression runs.
+- `.venv/bin/python /workspace/.setup/phase10/audit_suite.py` independently
+  inspects **257 complete physical simulations +32 restored windows**. Unique
+  demand, complete pickups/dropoffs, final state, chronology and explicit window
+  censoring pass. All **201 historical non-AV cases /930 checked tables** are
+  byte-identical, with **128 exact restored-window tables**.
+- `.venv/bin/python /workspace/.setup/phase10/audit_av_history.py` verifies all
+  **33 historical AV cases /241 checked tables** byte for byte, including the
+  prior accepted-product/future-value combinations. Thus every234 old physical
+  regression case remains unchanged across1171 checked tables.
+- `.venv/bin/python /workspace/.setup/phase10/finalize_docs.py` updates phase,
+  project and improvement records with actual counts and measured adverse
+  outcomes. Markdown-only finalization does not alter tested code/configuration.
+
+
+### Step 11: package and verify the complete reviewable record
+
+- `.venv/bin/python /workspace/.setup/phase10/package_final.py >
+  /workspace/.setup/phase10-package.txt 2>&1` archives **13064
+  files**, preserving all failed/corrected focused gates, all full-suite physical
+  records/windows, attempted and successful real studies, exact frozen source,
+  runtime binary/sources, immutable parent input, public used inputs, build and
+  analysis scripts, commands, logs, figures and checksums.
+- Logical archive is **250483623 bytes**, split into **8
+  upload parts** below GitHub's individual-file limit. Every member hash and
+  every upload-part byte is verified by readback. SHA-256:
+  `3b529a9cf8bedaeb83394035b17dc51238e39ae925c5f62abe6219dcbce9ac6d`. Large byte-identical public matrices alone are omitted with
+  explicit canonical restoration paths, sizes and hashes; unknown/private and
+  small fixture matrices remain included. Original ZIP download provenance and
+  README attribution remain in the record.
+- `.venv/bin/python /workspace/.setup/phase10/prepublish.py >
+  /workspace/.setup/phase10-prepublication.txt 2>&1` passes: frozen254-file
+  source equals the tested snapshot, all6 tracked configuration files match,
+  every native runtime/input and all66 final raw-output hashes agree, all
+  archive-part/logical hashes and canonical restore files agree, inspected plot
+  matches, review links resolve, and historical evidence remains unchanged.
+- README, project summary, improvement log, phase guide, complete RESULTS and
+  evidence restoration guide are updated with actual benefits, adverse outcomes
+  and remaining empirical/load limitations. No root simulation code or scenario
+  configuration changes after the final validation freeze.

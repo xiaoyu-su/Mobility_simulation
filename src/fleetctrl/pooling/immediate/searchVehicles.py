@@ -40,7 +40,14 @@ def veh_search_for_immediate_request(sim_time, prq, fleetctrl, list_excluded_vid
                      for pos, vids in locations.items()}
         locations = {pos: vids for pos, vids in locations.items() if vids}
     search_sets=[locations]
-    if product is not None and (product.threshold is not None or product.separate_search) and product.eligible(prq):
+    shadow_ids=getattr(fleetctrl,'city_shadow_av_ids',None)
+    if product is None and shadow_ids is not None:
+        # Benchmark all-human counterfactual: retain the AV arm's slot-group
+        # search budgets without adding AV eligibility/cost rules to humans.
+        search_sets=[{pos:[vid for vid in vids if (vid in shadow_ids)==kind]
+                      for pos,vids in locations.items()} for kind in [False,True]]
+        search_sets=[{pos:vids for pos,vids in group.items() if vids} for group in search_sets]
+    elif product is not None and (product.threshold is not None or product.separate_search) and product.eligible(prq):
         search_sets=[{pos:[vid for vid in vids if fleetctrl.sim_vehicles[vid].is_av==kind]
                       for pos,vids in locations.items()} for kind in [False,True]]
         search_sets=[{pos:vids for pos,vids in group.items() if vids} for group in search_sets]

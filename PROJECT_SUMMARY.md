@@ -18,6 +18,8 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 8: mixed human/AV product | Loaded AV vehicle types, geofenced/opt-in service, rider-second preference, human-operation separation, idle diagnostics and historical-demand AV repositioning; 339 passing tests, 18 sampled real policy runs and exact historical compatibility retain benefits and costs | `docs/PHASE_8.md` |
 | 9: cautious AV policy experiments | Consistent planned/executed vehicle-type travel times, ETA-threshold dispatch with accepted-product protection, moving-empty retargeting, isolated forecast noise and bounded joint demand accounting; 370 passing tests, 56 real physical runs, six-seed dispatch comparisons and a full-demand pair | `docs/PHASE_9.md`, `docs/AV_DATA.md` |
 
+| 10: cross-city AV comparison | Native Munich/Chicago/Manhattan inputs, matched all-human/AV initialization and search, bounded CPU workers, audited policy/load comparisons; 389 passing tests, 66 physical runs /60 unique conditions; mixed policy transfer | `docs/PHASE_10.md` |
+
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
 The approved Phase 0 CSV references are unchanged.
@@ -31,7 +33,7 @@ Phase 5 adds the choice/conflict layer and solver-selected driver menus.
 Phase 5b dispatches declined insertion requests to later feasible drivers.
 Phase 5c lets the native batch optimizer find another driver after refusals.
 Phase 6 compares local policy interventions from identical baseline histories
-without repeating every lead-in. Cross-city comparisons remain a later phase.
+without repeating every lead-in. Phase 10 supplies the cross-city benchmark.
 Phase 7 prepares reproducible market inputs and adds license-free repositioning;
 the public TLC/Zenodo inputs are available and verified. Production corrections
 enforce source-clock timing, source pooling consent, physical pickup/drop-off
@@ -66,3 +68,13 @@ the opt-in, speed and supply assumptions do not establish field AV benefits.
 - [Phase 8 mixed-fleet rules, complete policy experiments and tradeoffs](docs/PHASE_8.md)
 - [Phase 9 cautious AV timing, threshold dispatch and repositioning experiments](docs/PHASE_9.md)
 - [Observed AV study inputs, scenario assumptions and benchmark boundaries](docs/AV_DATA.md)
+
+
+Phase 10 validates the same policy levers against three native city datasets.
+All234 historical physical cases retain1171 byte-identical checked tables;
+32 restored windows retain128 exact tables. Chicago and Manhattan AV utilization
+increase under threshold240 versus0 in the main fleets, while Munich is stable.
+Higher utilization can coincide with fewer trips and longer passenger journeys;
+completion gains reverse under the doubled-fleet sensitivity. These conditional
+benchmark results do not establish field AV benefits or a geography-only effect.
+See [Phase 10](docs/PHASE_10.md) and [complete results](docs/validation/phase10/RESULTS.md).

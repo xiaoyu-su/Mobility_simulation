@@ -10,7 +10,7 @@ from src.FleetSimulationBase import FleetSimulationBase
 from src.misc.init_modules import load_simulation_environment
 from src.misc.globals import G_DIR_NETWORK,G_DIR_DEMAND,G_DIR_FCTRL,G_DIR_ZONES,G_DIR_FC,G_DIR_INFRA,G_DIR_OUTPUT,G_DIR_VEH
 from src.misc.seeding import file_digest
-from tools.paired_eval.__main__ import source_record
+from tools.paired_eval.__main__ import source_record, ROOT
 from tools.windowed_eval.runtime import attach_events
 from tools.synthetic_market.build import market_dependencies
 from tools.synthetic_market.report import request_ids,activity_frame
@@ -23,6 +23,10 @@ def verify_bundle(bundle):
         raise ValueError('Market bundle source changed; rebuild from the recorded inputs')
     if market_dependencies()!=manifest['dependencies']:
         raise ValueError('Market bundle dependency versions changed; rebuild inputs')
+    for name,digest in manifest.get('runtime_files_sha256',{}).items():
+        path=(ROOT/name).resolve()
+        if not path.is_relative_to(ROOT) or file_digest(path)!=digest:
+            raise ValueError(f'City routing runtime changed: {name}; rebuild inputs')
     for name,digest in manifest['output_sha256'].items():
         path=(bundle/name).resolve()
         if not path.is_relative_to(bundle.resolve()):raise ValueError('Market input path escapes its bundle')
@@ -46,9 +50,15 @@ def main():
     parser.add_argument('--av-joint-repositioning',choices=['off','on'])
     parser.add_argument('--av-repositioning-timestep',type=int)
     parser.add_argument('--av-separate-search',choices=['off','on'])
+    parser.add_argument('--city-shared-placement',action='store_true')
+    parser.add_argument('--all-human',action='store_true')
     args=parser.parse_args();bundle=args.bundle.resolve();output=args.output.resolve()
     if output.exists():raise ValueError('Refusing to overwrite market simulation output')
     manifest=verify_bundle(bundle)
+    if (args.city_shared_placement or args.all_human) and manifest.get('shared_initialization')!='city-av-placement-v1':
+        raise ValueError('City controls require a declared shared-placement bundle')
+    if args.all_human and not args.city_shared_placement:
+        raise ValueError('Human control requires matching city initial placement')
     parameters=json.loads((bundle/'parameters.json').read_text())
     parameters.update(random_seed=args.seed,scenario_name=f'market_{args.policy}_{args.seed}',
         evaluate=1,keep_old=False,show_progress_bar=False,log_level='warning',bugfix=False)
@@ -67,7 +77,13 @@ def main():
         if args.av_joint_repositioning is not None:parameters['op_av_joint_repositioning']=args.av_joint_repositioning=='on'
         if args.av_repositioning_timestep is not None:parameters['op_av_repositioning_timestep']=args.av_repositioning_timestep
         if args.av_separate_search is not None:parameters['op_av_separate_search']=args.av_separate_search=='on'
+    if args.all_human:
+        if av_overrides:raise ValueError('Human-only control cannot have AV policy overrides')
+        for key in list(parameters):
+            if key.startswith('op_av_') or key=='vehicle_travel_time_factors':parameters.pop(key)
+        parameters['op_fleet_composition']={'default_vehtype':manifest['fleet_size']}
     original=FleetSimulationBase.get_directory_dict
+    original_initialization=FleetSimulationBase.load_initial_state
     def private_inputs(parameters,operators):
         result=original(parameters,operators)
         result.update({G_DIR_NETWORK:str(bundle/'network'),G_DIR_DEMAND:str(bundle/'demand'),
@@ -78,6 +94,9 @@ def main():
                         G_DIR_FC:str(bundle/'forecasts'/str(parameters['op_temporal_resolution']))}
         return result
     FleetSimulationBase.get_directory_dict=staticmethod(private_inputs)
+    if args.city_shared_placement:
+        from tools.city_av.initialization import initialize_shared
+        FleetSimulationBase.load_initial_state=lambda simulation:initialize_shared(simulation,bundle,manifest)
     try:
         sim=load_simulation_environment(parameters)
         demand=pd.read_csv(bundle/'demand/requests.csv').set_index('request_id')
@@ -88,7 +107,9 @@ def main():
                 raise RuntimeError('Market patience was dropped by the traveler loader')
         events=attach_events(sim)
         sim.run()
-    finally:FleetSimulationBase.get_directory_dict=staticmethod(original)
+    finally:
+        FleetSimulationBase.get_directory_dict=staticmethod(original)
+        FleetSimulationBase.load_initial_state=original_initialization
     for name in ['final_state.csv','standard_eval.csv','1_user-stats.csv','random_streams.json']:
         if not (output/name).is_file():raise RuntimeError(f'Missing complete simulation output: {name}')
     users=pd.read_csv(output/'1_user-stats.csv')

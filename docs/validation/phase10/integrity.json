@@ -1,0 +1,115 @@
+{
+  "simulation_source_digest": "c8885e74c9661a558177ac56c908e11c403006ebafcb1ae536c7f0c59333caa7",
+  "physical_runs": 66,
+  "unique_seed_conditions": 60,
+  "within_study_background_comparisons": 53,
+  "fresh_process_replay_records": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "all_human",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "threshold_240",
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "initial_placement.csv",
+        "city_report.json",
+        "random_streams.json",
+        "city_search_contract.json",
+        "av_dispatch_op_0.csv",
+        "av_product_op_0.json"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/workspace/market_results/phase10_validated/main",
+      "manifest_sha256": "4da7be617e5c20b60be91ecfda76502fe8d783ec6d7753951d0077b18ec14de8"
+    },
+    {
+      "path": "/workspace/market_results/phase10_validated/supply",
+      "manifest_sha256": "d8edaabc8af2598619b39ada51fa903a91d9b5d5e1274cccde81ad7b9f92ca15"
+    },
+    {
+      "path": "/workspace/market_results/phase10_validated/pilot",
+      "manifest_sha256": "1601dc171c617ad07b594a6b73dbffe7a481c6fe0a17b73edc05688b97cc08be"
+    }
+  ],
+  "all_raw_output_hashes_verified": true,
+  "all_complete_bookings": true,
+  "rule_violations": 0
+}

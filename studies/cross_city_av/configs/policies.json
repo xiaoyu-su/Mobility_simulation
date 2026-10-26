@@ -1,0 +1,9 @@
+[
+  {"name":"cost_control","eta_threshold_seconds":null,"preference_seconds":0,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"preference_300","eta_threshold_seconds":null,"preference_seconds":300,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"threshold_0","eta_threshold_seconds":0,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"threshold_120","eta_threshold_seconds":120,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"threshold_240","eta_threshold_seconds":240,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"threshold_480","eta_threshold_seconds":480,"travel_time_factor":1.25,"av_repositioning":"off"},
+  {"name":"equal_speed_240","eta_threshold_seconds":240,"travel_time_factor":1,"av_repositioning":"off"}
+]

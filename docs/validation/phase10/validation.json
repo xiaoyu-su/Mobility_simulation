@@ -1,0 +1,33 @@
+{
+  "code_digest": "c8885e74c9661a558177ac56c908e11c403006ebafcb1ae536c7f0c59333caa7",
+  "source_files": 254,
+  "pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "389",
+    "time": "2129.849",
+    "timestamp": "2026-10-26T07:47:44.457702+00:00",
+    "hostname": "48c69016c736"
+  },
+  "regression_full_simulations": 257,
+  "restored_windows": 32,
+  "historical_non_av_runs": 201,
+  "historical_non_av_byte_identical_tables": 930,
+  "historical_av_runs": 33,
+  "historical_av_byte_identical_tables": 241,
+  "historical_exact_window_tables": 128,
+  "real_policy_runs": 66,
+  "unique_conditions": 60,
+  "fresh_process_replay_records": 6,
+  "within_study_matched_background_checks": 53,
+  "all_accepted_bookings_physically_complete": true,
+  "real_rule_violations": 0,
+  "capacity_convention": "Moving load and pre/post exchange fit actual capacity; raw stationary union counts retained",
+  "all_archive_member_and_part_bytes_verified": true,
+  "archive_sha256": "3b529a9cf8bedaeb83394035b17dc51238e39ae925c5f62abe6219dcbce9ac6d",
+  "archived_files": 13064,
+  "claim": "Conditional two-seed benchmark policy transfer; no screenshot replication, field calibration, geography-only causality, daily-trip or universal improvement claim",
+  "source_plan_scope": "IMG_3329 AV product Round 3: cross-city policy comparison"
+}

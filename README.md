@@ -34,6 +34,10 @@ accepted-product protection, moving-empty retargeting, forecast-error sensitivit
 and joint human/AV repositioning. Validation passes 370 tests and 56 real-data
 physical runs, including six-seed dispatch comparisons and a full-demand pair; [AV_DATA.md](docs/AV_DATA.md)
 separates observed inputs from adoption and speed assumptions.
+[Phase 10](docs/PHASE_10.md) adds source-verified Munich/Chicago/Manhattan
+policy comparisons with shared physical initialization and matched search budgets.
+Validation passes **389 tests and66 real-city runs** (60 unique conditions), with
+[measured gains and regressions](docs/validation/phase10/RESULTS.md) recorded together.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

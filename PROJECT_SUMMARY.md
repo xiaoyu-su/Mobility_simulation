@@ -15,6 +15,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 5c: native optimizer rematching | Opt-in declined-edge/trip pruning, same-tick Gurobi re-solves, accepted-pair protection, logit round capacity, genuine-attempt terminal audits | `docs/PHASE_5C.md` |
 | 6: windowed parallel evaluation | Full baseline snapshots, same-controller interventions, bounded isolated workers, disjoint request cohorts and explicit horizon censoring | `docs/PHASE_6.md` |
 | 7: market-data pipeline | Verified public Manhattan inputs, causal requests, source pooling consent, fitted pickup service, physical completion and event-aligned reports; 327 passing tests and full-demand comparisons; residual calibration errors reported | `docs/PHASE_7.md`, `docs/PHASE_7_COMPLETION.md` |
+| 8: mixed human/AV product | Loaded AV vehicle types, geofenced/opt-in service, rider-second preference, human-operation separation, idle diagnostics and historical-demand AV repositioning; 339 passing tests, 18 sampled real policy runs and exact historical compatibility retain benefits and costs | `docs/PHASE_8.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -29,8 +30,8 @@ Phase 5 adds the choice/conflict layer and solver-selected driver menus.
 Phase 5b dispatches declined insertion requests to later feasible drivers.
 Phase 5c lets the native batch optimizer find another driver after refusals.
 Phase 6 compares local policy interventions from identical baseline histories
-without repeating every lead-in. AV dispatch and cross-city calibration remain
-later phases.
+without repeating every lead-in. AV speed/threshold dispatch and cross-city
+comparisons remain later phases.
 Phase 7 prepares reproducible market inputs and adds license-free repositioning;
 the public TLC/Zenodo inputs are available and verified. Production corrections
 enforce source-clock timing, source pooling consent, physical pickup/drop-off
@@ -39,6 +40,11 @@ event reporting. Full-demand validation measures the remaining calibration
 errors; public completed trips do not identify online supply or unserved demand.
 See the [completion evidence](docs/PHASE_7_COMPLETION.md) and preserved
 [earlier investigation](docs/REAL_MANHATTAN_INVESTIGATION.md).
+Phase 8 separates AVs from human shift/acceptance/repositioning rules and
+compares allocation policies with a fixed total fleet. In the sampled Manhattan
+experiment, stronger AV preference plus AV repositioning increases AV trip share
+and utilization while reducing human trips and increasing empty driving. These
+are conditional model effects, with synthetic adoption and service-area assumptions.
 
 - [Change history](IMPROVEMENT_LOG.md)
 - [Step-by-step work and verification record](docs/WORK_LOG.md)
@@ -52,3 +58,4 @@ See the [completion evidence](docs/PHASE_7_COMPLETION.md) and preserved
 - [Phase 6 snapshots, window cohorts, parallel workers, and interpretation](docs/PHASE_6.md)
 - [Phase 7 market inputs, HiGHS repositioning, calibration limits and data requirements](docs/PHASE_7.md)
 - [Phase 7 production corrections, full-demand results and remaining limits](docs/PHASE_7_COMPLETION.md)
+- [Phase 8 mixed-fleet rules, complete policy experiments and tradeoffs](docs/PHASE_8.md)

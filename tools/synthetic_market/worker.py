@@ -36,6 +36,8 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--seed',type=int,required=True)
     parser.add_argument('--policy',choices=['no_repo','repo'],required=True)
+    parser.add_argument('--av-preference-seconds',type=float)
+    parser.add_argument('--av-repositioning',choices=['off','demand'])
     args=parser.parse_args();bundle=args.bundle.resolve();output=args.output.resolve()
     if output.exists():raise ValueError('Refusing to overwrite market simulation output')
     manifest=verify_bundle(bundle)
@@ -43,6 +45,10 @@ def main():
     parameters.update(random_seed=args.seed,scenario_name=f'market_{args.policy}_{args.seed}',
         evaluate=1,keep_old=False,show_progress_bar=False,log_level='warning',bugfix=False)
     if args.policy=='repo':parameters['op_repo_method']='PavoneFCHiGHS'
+    if args.av_preference_seconds is not None or args.av_repositioning is not None:
+        if not parameters.get('op_av_vehicle_types'):raise ValueError('AV policy overrides require an AV input bundle')
+        if args.av_preference_seconds is not None:parameters['op_av_preference_s']=args.av_preference_seconds
+        if args.av_repositioning is not None:parameters['op_av_repositioning']=args.av_repositioning=='demand'
     original=FleetSimulationBase.get_directory_dict
     def private_inputs(parameters,operators):
         result=original(parameters,operators)
@@ -92,6 +98,9 @@ def main():
         booked_requests=len(events['accepted']),completed_requests=int(users.dropoff_time.notna().sum()),
         all_booked_requests_completed=True,early_pickups=0,private_requests=len(private),
         private_pooling_violations=0,chronological_activity=True,physical_tail_complete=True),indent=2)+'\n')
+    if parameters.get('op_av_vehicle_types'):
+        from tools.synthetic_market.av_report import av_report
+        av_report(bundle,output)
     verify_bundle(bundle)
 
 

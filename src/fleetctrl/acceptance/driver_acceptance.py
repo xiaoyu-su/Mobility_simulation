@@ -101,7 +101,11 @@ class DriverAcceptance:
         if not math.isclose(sum(group.share for group in self.classes.values()), 1, abs_tol=1e-9, rel_tol=0):
             raise ValueError("Driver class shares must sum to one")
         self.vehicle_classes = {}
+        self.av_ids = {v.vid for v in vehicles if getattr(v, 'is_av', False)}
         for vehicle in vehicles:
+            if vehicle.vid in self.av_ids:
+                self.vehicle_classes[vehicle.vid] = 'av'
+                continue
             draw = (derive_rng(self.seed, f"driver_class/{operator_id}/{vehicle.vid}").random()
                     if len(self.classes) > 1 else 0)
             cumulative = 0
@@ -136,6 +140,8 @@ class DriverAcceptance:
                      "vehicle_classes": self.vehicle_classes, "probability_override": self.override,
                      "max_declines": int(self.max_declines), "max_attempts": int(self.max_declines + 1),
                      "weight_objective": bool(self.weight_objective), "coefficient_status": "user-supplied, not calibrated"}
+            if self.av_ids:
+                audit['av_vehicle_ids'] = sorted(self.av_ids)
             declared_choice = choice_mode(attributes)
             if declared_choice != "off":
                 audit["driver_choice"] = {
@@ -164,6 +170,8 @@ class DriverAcceptance:
             audit_path.write_text(json.dumps(audit, indent=2) + "\n")
 
     def probability(self, vehicle_id, request, plan, simulation_time):
+        if vehicle_id in self.av_ids:
+            return 1.0
         if self.override is not None:
             return self.override
         pickup = plan.pax_info[request.get_rid_struct()][0]
@@ -171,6 +179,8 @@ class DriverAcceptance:
         return self.probability_at_eta(vehicle_id, request, eta)
 
     def probability_at_eta(self, vehicle_id, request, eta):
+        if vehicle_id in self.av_ids:
+            return 1.0
         if self.override is not None:
             return self.override
         return self.classes[self.vehicle_classes[vehicle_id]].probability(eta, request.init_direct_td)

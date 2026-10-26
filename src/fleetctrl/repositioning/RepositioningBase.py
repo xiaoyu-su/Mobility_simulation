@@ -162,6 +162,8 @@ class RepositioningBase(ABC):
             zone_dict[zone_id] = [0, [], []]
         for vid, current_veh_plan in self.fleetctrl.veh_plans.items():
             veh_obj = self.fleetctrl.sim_vehicles[vid]
+            if getattr(veh_obj, 'is_av', False):
+                continue
             # 1) idle vehicles
             if not current_veh_plan.list_plan_stops:
                 zone_id = self.zone_system.get_zone_from_pos(veh_obj.pos)

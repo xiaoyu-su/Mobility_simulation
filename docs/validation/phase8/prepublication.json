@@ -1,0 +1,11 @@
+{
+  "code_digest": "890505b3db913cbab61c12c3c79b29659de0e296bec1c4dce9499ea7d4f4aeee",
+  "all_source_files_match_tested_snapshot": 242,
+  "source_and_summary_links_resolve": true,
+  "archive_parts_sha256_verified": 4,
+  "archive_concat_sha256_verified": "8ae8c913e6f7db1872e2157f4b5b22448d9de174471c6508f242dd80dadecf9d",
+  "all_parts_under_100mb": true,
+  "full_suite_passed": 339,
+  "real_policy_runs": 18,
+  "working_source_unchanged_after_validation": true
+}

@@ -1,0 +1,29 @@
+{
+  "code_digest": "890505b3db913cbab61c12c3c79b29659de0e296bec1c4dce9499ea7d4f4aeee",
+  "source_files": 242,
+  "pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "339",
+    "time": "1874.701",
+    "timestamp": "2026-10-26T02:47:25.776209+00:00",
+    "hostname": "48c69016c736"
+  },
+  "regression_full_simulations": 217,
+  "restored_windows": 32,
+  "historical_full_runs": 201,
+  "historical_exact_tables": 930,
+  "historical_byte_identical_tables": 930,
+  "historical_exact_window_tables": 128,
+  "real_policy_runs": 18,
+  "matched_background_comparisons": 15,
+  "real_rule_violations": 0,
+  "all_accepted_real_bookings_complete": true,
+  "all_archived_bytes_verified": true,
+  "archive_sha256": "8ae8c913e6f7db1872e2157f4b5b22448d9de174471c6508f242dd80dadecf9d",
+  "archived_files": 7383,
+  "claim": "Conditional mixed-fleet model policy effects; no claim of field identification, full-demand AV or cross-city validation",
+  "source_plan_scope": "IMG_3328, AV product Round 1; speed/threshold and cross-city work are later rounds"
+}

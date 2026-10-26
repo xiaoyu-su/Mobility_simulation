@@ -93,6 +93,10 @@ def build(args):
     if not 0 <= args.seed < 2**32:raise ValueError('Seed outside 0..2**32-1')
     if args.fleet_size is not None and args.fleet_size < 1:raise ValueError('Fleet size must be positive')
     if args.max_route_candidates is not None and args.max_route_candidates<1:raise ValueError('Route candidate limit must be positive')
+    av_share=getattr(args,'av_share',0)
+    if not math.isfinite(av_share) or not 0<=av_share<=1:raise ValueError('AV share must be in [0,1]')
+    if av_share and (not 0<args.av_fence_share<=1 or not 0<=args.av_opt_in_share<=1 or not math.isfinite(args.av_preference_seconds) or abs(args.av_preference_seconds)>3600):
+        raise ValueError('Invalid AV fence, opt-in or preference')
     if args.future_value and args.driver_model=='off':raise ValueError('Future value requires a driver model')
     if args.patience_extra_seconds < 0 or args.request_time_proxy_seconds is not None and args.request_time_proxy_seconds < 0:
         raise ValueError('Patience/proxy seconds must be nonnegative')
@@ -251,6 +255,28 @@ def build(args):
         if args.future_value:
             if args.driver_model=='off':raise ValueError('Future value requires a driver model')
             parameters.update(op_driver_acceptance_future_value=True,op_driver_acceptance_future_value_top_k=3)
+        if av_share:
+            av_count=max(1,int(round(fleet*av_share)))
+            human_count=fleet-av_count
+            if args.av_zones is not None:
+                av_zones=sorted(set(args.av_zones))
+                if len(av_zones)!=len(args.av_zones) or not set(av_zones)<=set(centroids):raise ValueError('AV fence zones must be unique mapped zone IDs')
+            else:
+                counts=context.PULocationID.value_counts().to_dict()
+                av_zones=sorted(sorted(centroids,key=lambda z:(-counts.get(z,0),z))[:max(1,math.ceil(len(centroids)*args.av_fence_share))])
+            av_path=output/'vehicles/av_vehtype.csv'
+            av_bytes,changed=re.subn(rb'(?m)^(vtype_name_full,)[^\r\n]+',lambda m:m[1]+b'av_vehtype',vehicle_path.read_bytes(),count=1)
+            if changed!=1:raise ValueError('Vehicle specification lacks vtype_name_full')
+            av_path.write_bytes(av_bytes)
+            composition={'default_vehtype':human_count,'av_vehtype':av_count}
+            parameters.update(op_fleet_composition={k:v for k,v in composition.items() if v},
+                op_av_vehicle_types=[['av_vehtype']],op_av_zones=[av_zones],
+                op_av_opt_in_share=args.av_opt_in_share,op_av_preference_s=args.av_preference_seconds,
+                op_av_repositioning=args.av_repositioning,op_av_repositioning_timestep=resolution)
+            manifest['av_product']=dict(requested_share=av_share,av_count=av_count,human_count=human_count,
+                fence_zones=av_zones,fence_selection='explicit zones' if args.av_zones is not None else 'densest training-day pickup zones',
+                opt_in_share=args.av_opt_in_share,preference_seconds=args.av_preference_seconds,repositioning=args.av_repositioning,
+                interpretation='Fixed total fleet; AVs replace human vehicles. Adoption, fence and fleet split are scenario assumptions.')
         json_write(output/'parameters.json',parameters)
         if file_digest(args.zone_map)!=manifest['zone_map_sha256'] or any(file_digest(network/name)!=digest for name,digest in manifest['network_sha256'].items()):
             raise RuntimeError('Source network/zone inputs changed during market build')

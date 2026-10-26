@@ -33,12 +33,18 @@ def veh_search_for_immediate_request(sim_time, prq, fleetctrl, list_excluded_vid
     max_routes = fleetctrl.rv_heuristics.get(G_RH_I_NWS)
 
     # backwards Dijkstra
-    rv_routing = fleetctrl.routing_engine.return_travel_costs_Xto1(fleetctrl.pos_veh_dict.keys(), prq_o_stop_pos,
+    locations = fleetctrl.pos_veh_dict
+    product = getattr(fleetctrl, 'av_product', None)
+    if product is not None and not product.eligible(prq):
+        locations = {pos: [vid for vid in vids if not fleetctrl.sim_vehicles[vid].is_av]
+                     for pos, vids in locations.items()}
+        locations = {pos: vids for pos, vids in locations.items() if vids}
+    rv_routing = fleetctrl.routing_engine.return_travel_costs_Xto1(locations.keys(), prq_o_stop_pos,
                                                                    max_routes=max_routes, max_cost_value=sr)
     rv_vehicles = []
     rv_results_dict = {}
     for vid_pos, cfv,tt,dis in rv_routing:
-        for vid in fleetctrl.pos_veh_dict[vid_pos]:
+        for vid in locations[vid_pos]:
             rv_vehicles.append(fleetctrl.sim_vehicles[vid])
             rv_results_dict[(prq_o_stop_pos, vid_pos)] = (cfv, tt, dis)
     return rv_vehicles, rv_results_dict

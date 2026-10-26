@@ -95,18 +95,19 @@ class TimeBasedFS(DynamicFleetSizingBase):
         for depot_id, depot in self.op_charge_depot_infra.depot_by_id.items():
             depot_distribution[depot_id] = depot.free_parking_spots
         last_number_active = None
+        human_vehicles = [v for v in self.fleetctrl.sim_vehicles if not getattr(v, 'is_av', False)]
+        human_count = len(human_vehicles)
         def share_to_act_veh(row):
-            return min( max(int(np.round(row[G_ACT_VEH_SHARE] * self.fleetctrl.nr_vehicles)), 0), self.fleetctrl.nr_vehicles)
+            return min(max(int(np.round(row[G_ACT_VEH_SHARE] * human_count)), 0), human_count)
         df["number_active_vehicles"] = df.apply(share_to_act_veh, axis=1)
         LOG.debug("act veh df: {}".format(df))
         for sim_time, number_active in df["number_active_vehicles"].items():
             if last_number_active is None:
                 # initial inactive vehicles have to be set here; the chosen vehicles will start in the depot
                 # -> will not be overwritten by FleetSimulation.set_initial_state() as veh_obj.pos is not None
-                number_inactive = self.fleetctrl.nr_vehicles - number_active
+                number_inactive = human_count - number_active
                 LOG.debug("init inactive vehicles: {}".format(number_inactive))
-                for vid in range(number_inactive):
-                    veh_obj = self.fleetctrl.sim_vehicles[vid]
+                for veh_obj in human_vehicles[:number_inactive]:
                     drawn_depot_id = draw_from_distribution_dict(depot_distribution)
                     drawn_depot = self.op_charge_depot_infra.depot_by_id[drawn_depot_id]
                     veh_obj.status = 0

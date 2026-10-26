@@ -392,3 +392,38 @@ outcomes. The real-data follow-up below does not change those historical results
 - **Record:** [production corrections and results](docs/PHASE_7_COMPLETION.md),
   [step-by-step log](docs/WORK_LOG.md) and
   [complete validation records](docs/validation/phase7-completion/).
+
+## Phase 8: mixed human/AV product, Round 1
+
+- **Problem:** a shared matching platform needs explicit rules for a distinct AV
+  product, rather than treating AVs as human drivers with a different label.
+  Allocation incentives can otherwise violate service areas or silently change
+  supply, shifts and rider consent.
+- **Change:** opt-in loaded AV types, both-endpoint geofence, deterministic
+  nested rider opt-in, rider-second matching preference, probability-one AV
+  acceptance, fenced initial placement, human shift/reposition exclusion,
+  committed-dispatch proximity diagnostics and historical-demand Hungarian
+  AV repositioning. Shared plan feasibility enforces constraints under insertion
+  and native batch matching; actual executed service is independently checked.
+- **Benefit measured:** in 18 matched-seed sampled Manhattan runs, +300s
+  preference plus AV demand repositioning raises AV served share **3.28%→9.70%**
+  and productive utilization **13.9%→40.6%** relative to preference 0/repo off.
+  All accepted bookings finish and AV rule violations are zero. Total fleet
+  stays fixed: 78 AVs and 697 humans.
+- **Tradeoffs:** total mean completion rises only **3,133.7→3,144.0 of 3,150**;
+  human trips/online hour fall **6.33%** and whole-run empty AV repositioning
+  averages **827.1 km**. Preference alone worsens completion and eligible-rider
+  wait. Repositioning alone offers a better eligible-rider wait than the combined
+  high-preference policy. Lower idle time may mean more empty driving.
+- **Validation:** the focused gate passes 12 tests/16 full physical simulations,
+  including all three controllers, actual type/config loaders, human acceptance,
+  future value, private consent, physical service, dynamic human shifts and
+  exact replay. The final full suite passes **339 tests** in 1874.71s, with
+  independent checks of **217 full simulations +32 restored windows**.
+  **201** historical full runs match **930 byte-identical tables**, and restored
+  windows match **128 exact tables**. All 18 real runs pass independent checks.
+- **Scope:** 10% public demand, three simulation seeds, 60s grid, explicit
+  unobserved adoption/fence/supply assumptions; no field-benefit, full-demand AV
+  or cross-city claim. Cautious speeds and threshold dispatch are later rounds.
+- **Record:** [Phase 8 guide and results](docs/PHASE_8.md),
+  [step-by-step log](docs/WORK_LOG.md), [complete evidence](docs/validation/phase8/).

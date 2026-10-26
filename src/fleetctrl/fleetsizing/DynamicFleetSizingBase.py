@@ -71,6 +71,8 @@ class DynamicFleetSizingBase(ABC):
         :param depot: optional parameter to choose a depot to pick a vehicle from
         :return: Depot, PlanStop or None, None if no free depot can be found
         """
+        if getattr(veh_obj, 'is_av', False):
+            raise ValueError('AVs cannot be deactivated through human shifts')
         if depot is not None and depot.free_parking_spots > 0:
             next_free_depot = depot
         else:
@@ -188,6 +190,8 @@ class DynamicFleetSizingBase(ABC):
         list_other = []         # list of other veh_obj that are not considered inactive yet
         LOG.info("to deactivate: {}".format(number_deactivate))
         for veh_obj in list_veh_obj:
+            if getattr(veh_obj, 'is_av', False):
+                continue
             # stop if enough vehicles are chosen
             if number_deactivate == 0:
                 break

@@ -1841,3 +1841,165 @@ and will be committed locally before the actual push attempt is recorded.
   record. Verified at **2026-10-25 13:43 Pacific**; machine-readable receipt is
   `docs/validation/phase7-completion/publication.json`. This final follow-up
   only records publication and links; the tested source digest is unchanged.
+
+## Phase 8: mixed human/AV product (2026-10-25, Pacific)
+
+### Step 1: recover the next planned section and preserve the published base
+
+- Started clean branch `phase-8-mixed-av-fleet` from published
+  `e7b32ca21f4e2d0ff6129005f14e31f5b489f84c`. Both Git identities remain Xiaoyu
+  Su. Re-read the actual IMG_3328/3329 source images: next is AV-product Round
+  1, before speed/threshold dispatch and cross-city work. The screenshots'
+  numerical outcomes are reference claims, not results measured by this fork.
+- Scope: separate loaded AV type, both-endpoint fence, deterministic nested
+  rider opt-in, rider-second preference, AV acceptance/initial placement,
+  exclusion from human shifts/repositioning, idle diagnostics and independent
+  historical-demand AV repositioning. Fixed total fleet avoids attributing
+  extra supply to a dispatch preference. Existing public data is ready.
+
+### Step 2: implement and check real loaders and complete simulations
+
+- Added opt-in `src/fleetctrl/av_product.py` and plan-feasibility/assignment
+  checks shared by insertion and native batch matching. Batch vehicle copies
+  retain the same product constraints. Immediate search filters ineligible AV
+  positions before its route-position limit. Objective preference uses the
+  existing rider-time value, preserving units and credits on incumbent riders.
+- AVs use probability one, a separate audit class and no human class draw;
+  their initial distribution is conditioned on the fence. TimeBasedFS applies
+  active shares only to humans, and human repositioning ignores AV supply.
+  AV repositioning uses largest-remainder forecast targets, busy final-zone
+  offsets and Hungarian idle-to-target assignment, retaining active tours.
+- Extended the private market builder with explicit AV assumptions and a
+  separately named, actually loaded AV vehicle file. Added `tools/av_eval/`
+  for immutable matched-seed preference/repositioning sweeps and actual-output
+  reports. Workers reject executed fence/opt-in, shift, human-repositioning or
+  selected-AV refusal violations. Existing booking/clock/pooling/tail guards
+  remain active. Diagnostics and online/cohort/whole-run domains are labeled.
+- First checkpoint source
+  `1233628d2b285a903cc9feddc46fa1f14054485055915d65040b2b8198755434`:
+  pytest stopped with one collection error because new unit/integration files
+  had the same basename. No simulations ran. Renamed the integration file;
+  preserved the source/JUnit/log rather than counting this as a passed check.
+- Next source `8b4847c1a2fee43eab28521d74fc10f0e25d9f67fe38eb582a8b1f5c0aafc776`:
+  **7 passed, 4 failed in 39.74s**. All 16 physical simulations completed;
+  four test assertions mistakenly compared a set of loaded type names to a
+  string. Corrected the assertion to a singleton set. Also strengthened mixed
+  fixtures with source private flags and historical pickup-only service fit,
+  moved commitment diagnostics after timing refresh, retained legacy audit
+  bytes when no AVs exist and guarded nonbaseline initial-state hooks.
+- Corrected focused gate: **12 passed in 39.56s**, including 16 complete
+  physical simulations, all three controllers, human acceptance/classes,
+  execution noise, future value, private consent, separate physical service,
+  changing human fleets, zero-opt-in boundaries and byte-exact replay. The
+  actual roster/configuration loaders confirm distinct `av_vehtype` vehicles.
+- Froze all **242** source/dependency files at
+  `890505b3db913cbab61c12c3c79b29659de0e296bec1c4dce9499ea7d4f4aeee`.
+  Snapshots and every failed/corrected log/JUnit/raw run are under
+  `/workspace/.setup/phase8/{checkpoint,focused,corrected}`. No repository
+  Python/dependency edits or Git HEAD changes occur during final experiments.
+
+### Step 3: run final regression and public Manhattan experiments
+
+- Full regression command: `.venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase8/full/runs
+  --junitxml=/workspace/.setup/phase8/full/junit.xml`, stdout/stderr in
+  `full/tests.txt`. Results will be recorded after completion and independent
+  output checks; this entry does not claim a passed gate in advance.
+- Public-data runner: `.venv/bin/python -u
+  /workspace/.setup/phase8/run_real.py`, preserving exact argument arrays,
+  return codes and elapsed times in `real/execution.json`. It builds directly
+  from the verified public Parquet/network/zones, using explicit EPSG:32618,
+  10% source sampling/imputation seed 0, two-hour warm-up, a causal 60s grid,
+  training-only curb/patience/travel/supply and source pooling consent.
+- The planned factorial comparison is preferences **−300/0/+300s**, AV
+  repositioning **off/demand**, simulation seeds **0/1/2**: 18 complete runs,
+  with fixed 10% AV share, 50% assumed opt-in, a densest-training-zone 30%
+  fence and identical background inputs within each seed. Human repositioning
+  is HiGHS in every arm; human acceptance is off to isolate these AV levers.
+  AV/human acceptance coexistence is separately checked in full fixtures.
+  Measured benefits and adverse outcomes will be recorded after validation.
+- All 18 real policy runs completed successfully: build **58.70s**, full
+  experiment **1043.38s**. Actual bundle contains **3,150 evaluation +751
+  warm-up requests**, fixed **775 vehicles =78 AVs +697 humans**, 19 fence
+  zones selected only from historical pickups, and **391** synthetically
+  AV-eligible evaluation riders. All three seeds share the same input sample
+  and opt-in identities; only simulator randomness varies.
+- Final real-data independent command `.venv/bin/python
+  /workspace/.setup/phase8/analyze_real.py` completed successfully. It checks
+  every loaded ID once, every accepted booking complete, source-clock causality,
+  chronological legs, capacity, physical service minima, private pooling,
+  actual AV endpoints/opt-in, initial fence, human shift/reposition exclusion,
+  unique AV repositioning orders and runtime override/config agreement. All
+  **18 runs /15 background comparisons pass**, zero rule violations. Raw
+  hashes and audit results are in `analysis/independent_checks.json`.
+- Three-seed control (preference 0, AV repo off): **3,133.7 completed**, **102.7
+  AV /3,031.0 human trips**, AV served share **3.28%**, productive utilization
+  **13.9%**, idle share **84.7%**, eligible mean arrival wait **247.2s**.
+  Combined +300s/demand-repo: **3,144.0 completed**, **305.0 AV /2,839.0 human**,
+  AV share **9.70%**, productive utilization **40.6%**, idle share **36.1%**,
+  eligible mean wait **243.4s**, other riders **273.6s versus 291.7s**.
+  Human trips/online hour fall **6.33%**; whole-run AV repositioning averages
+  **827.1 km**. Improved AV allocation is mostly a transfer from humans; true
+  additional completion is only **10.3 requests on average**.
+- Adverse outcomes are retained: +300s preference without AV repositioning
+  yields **3,126.3 completions**, eligible mean wait **266.8s**, and lower human
+  trips. At preference 0, AV repositioning yields **3,142.0 completions**,
+  **109.0 AV trips**, eligible mean wait **225.4s**, **742.8 km** empty AV
+  repositioning and only **14.9%** productive utilization. Idle share can fall
+  because vehicles are driving empty. Conditional nearest-idle-AV gap averages
+  **94.8→49.2s** across per-seed medians; it measures proximity among eligible
+  human-winning dispatches, not guaranteed alternative insertion feasibility.
+- At preference 0/repo versus combined +300s/repo, most extra AV trips replace
+  human trips (about 194 fewer human trips for only two additional completions),
+  and eligible mean wait increases by **18.0s**. Complete per-seed/common-rider
+  effects and model financial totals are retained, with evaluation-window
+  utilization versus whole-run distance/cost domains labeled. Inspected the
+  generated standalone scientific PNG and PDF figures. No held-out tuning,
+  AV-specific ground-truth calibration or full-demand AV claim is made.
+
+### Step 4: close regression, compatibility and complete evidence gates
+
+- Final full command completed: **339 passed in 1874.71s (31:14)**, zero
+  failures/errors/skips. `audit_suite.py` independently audits **217 full
+  simulation outputs +32 restored windows** for unique accounting, completed
+  picked-up trips, chronological activity and explicit window censoring.
+  Real market workers additionally compare accepted-event IDs to completed
+  trips, so every accepted real booking is physically complete.
+- Compared AV-disabled outputs directly to the preserved Phase 7 full-suite
+  evidence: **201 common full simulations /930 tables are byte-identical**,
+  including users, vehicle activity, standard evaluation and acceptance/choice/
+  future/ranked/rematch decision records where present. The same **32 windows
+  match 128 exact cohort/driver/request/final-state tables**. This establishes
+  actual historical compatibility, not merely same-version replay. Approved
+  Phase 0 baseline CSVs and older validation archives remain unchanged.
+- Exact final source remains
+  `890505b3db913cbab61c12c3c79b29659de0e296bec1c4dce9499ea7d4f4aeee`
+  (242 files). The complete suite, focused corrections and all 18 real policy
+  runs use this source; no Python/dependency or Git HEAD edits occurred during
+  final physical validation.
+- Final orchestration: `.venv/bin/python
+  /workspace/.setup/phase8/finish_validation.py` waits for the completed pytest
+  summary, runs `audit_suite.py`, then `package.py`. Both exit zero. Packaging
+  stdout is outside the archived folder to avoid collecting a live log.
+- Complete archive: **7,383 original files**, **119,393,714 bytes**, SHA256
+  `8ae8c913e6f7db1872e2157f4b5b22448d9de174471c6508f242dd80dadecf9d`.
+  Four upload parts are at most 32 MiB each. Every archived member was read back
+  and verified against its original SHA256, and concatenated part bytes were
+  checked against the complete archive. All failed collection/assertion logs,
+  exact source snapshots, full/focused/real outputs, cohorts/forecasts/supply,
+  executed parameters/commands and independent scripts are retained.
+- The two 155 MB public matrices and original large public downloads remain
+  outside Git with verified restoration URLs/paths/hashes. Private manifests
+  are retained unchanged. Source plan photos are not republished. Data
+  attribution remains Roman Engelhardt/Florian Dandl, Zenodo 15187906, CC BY 4.0;
+  source license remains MIT. Raw scientific SVG/XML/log bytes are preserved;
+  whitespace checks exclude generated artifacts rather than normalizing them.
+- Updated Phase 8, project summary, README and improvement history with actual
+  measured gains/costs and clear future scope. Full-demand AV, cautious-speed,
+  ETA-threshold, joint forecast accounting and cross-city work are not claimed
+  delivered by this Round 1. Phase 7 calibration limits remain visible.
+- Mixed-product human acceptance is validated off/singleton, as generated by
+  the market builder; multi-item human logit menus and AV snapshot resumption
+  are outside this phase's supported profile. Previous human-only menu and
+  window features retain exact historical outputs. The AV experiment runner
+  uses complete physical runs rather than unsupported in-place AV policy swaps.

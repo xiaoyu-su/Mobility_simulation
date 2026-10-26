@@ -285,6 +285,9 @@ class FleetSimulationBase:
         if self.random_stream_mode == "legacy":
             np.random.seed(self.scenario_parameters[G_RANDOM_SEED])
         self.load_initial_state()
+        for operator in self.operators:
+            if getattr(operator, 'av_product', None) is not None:
+                operator.av_product.check_initial_state()
         LOG.info(f"Initialization of scenario {self.scenario_name} successful.")
 
         # self.routing_engine.checkNetwork()
@@ -607,6 +610,8 @@ class FleetSimulationBase:
                 if veh_obj.pos is None:
                     op_fleetctrl = self.operators[veh_obj.op_id]
                     init_dist = op_init_distributions[veh_obj.op_id]
+                    if getattr(veh_obj, 'is_av', False):
+                        init_dist = op_fleetctrl.av_product.initial_distribution(init_dist)
                     rng = component_rng(self.scenario_parameters, f"vehicle_initialization/{veh_obj.op_id}/{veh_obj.vid}")
                     generator = np.random if rng is None else rng
                     r = generator.random()

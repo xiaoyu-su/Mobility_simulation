@@ -22,9 +22,13 @@ same-controller policy windows, with request-time cohorts and explicit censoring
 training-only forecasts/travel fitting and optional HiGHS repositioning.
 The public Manhattan data is available. The [production corrections and validation](docs/PHASE_7_COMPLETION.md)
 fix causal timing, pooling consent, physical service durations and booking
-completion, with 327 passing tests and full-demand real-data comparisons.
+completion, with full-demand real-data comparisons.
 Remaining calibration errors and limits of the public observations are reported
 alongside the improvements.
+[Phase 8](docs/PHASE_8.md) adds a mixed human/AV product with a service-area
+fence, deterministic rider opt-in, a dispatch preference and separate AV
+repositioning. Validation passes 339 tests; 18 sampled Manhattan runs report allocation benefits,
+human-driver trip transfers, rider waits and empty-driving costs together.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

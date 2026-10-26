@@ -854,6 +854,11 @@ class VehiclePlan:
         if logging.DEBUG >= LOG.getEffectiveLevel():
             LOG.debug(f"update tt an check plan {veh_obj} pax {veh_obj.pax} | at {sim_time} | pax info {self.pax_info}")
         is_feasible = True
+        product = getattr(veh_obj, 'av_product', None)
+        if product is not None and not product.allows_plan(veh_obj, self):
+            self.feasible = False
+            self.structural_feasible = False
+            return False
         if len(self.list_plan_stops) == 0:
             self.pax_info = {}
             return is_feasible

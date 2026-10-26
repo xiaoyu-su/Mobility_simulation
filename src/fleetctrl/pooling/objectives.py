@@ -424,7 +424,10 @@ def return_pooling_objective_function(vr_control_func_dict:dict)->Callable[[int,
                 sum_user_times += (drop_off_time - rq_time) + walking_time_end
             # vehicle costs are taken from simulation vehicle (cent per meter)
             # value of travel time is scenario input (cent per second)
-            return sum_dist * veh_obj.distance_cost + sum_user_times * traveler_vot - assignment_reward
+            cost = sum_dist * veh_obj.distance_cost + sum_user_times * traveler_vot - assignment_reward
+            if getattr(veh_obj, 'is_av', False):
+                cost -= veh_obj.av_product.preference * traveler_vot * len(veh_plan.pax_info)
+            return cost
 
     elif func_key == "distance_and_user_vehicle_times":
         traveler_vot = vr_control_func_dict["vot"]

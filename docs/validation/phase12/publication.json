@@ -1,0 +1,28 @@
+{
+  "archive_sha256": "e5faeb681807eefb0dca4dbc73535f4c5d92245daeb0fbbb105171d744041904",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-12-cross-city-av-repositioning",
+  "committed_source_bytes_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "historical_full_cases": 269,
+  "historical_real_controls": 26,
+  "implementation_commit": "282037d82b2174dffcd0789feb118480b0c51184",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; receipt committed next, then final remote equality/identity/clean checkout checked.",
+  "pytest_passed": 424,
+  "real_policy_runs": 72,
+  "regression_full_simulations": 306,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "source_digest": "649db5e784a7838c98a31d23e21048be09fa4697e2fd5931b25d5897df110a28",
+  "source_files": 261,
+  "unique_conditions": 63,
+  "validation_json_sha256": "10a312b2f6670e0608217843c6ec2589e2c9d6a215934da5175b633b739e26e5",
+  "verified_remote_implementation_tip": "282037d82b2174dffcd0789feb118480b0c51184",
+  "verified_utc": "2026-10-26T20:05:35.850955+00:00"
+}

@@ -3219,3 +3219,20 @@ and will be committed locally before the actual push attempt is recorded.
   raw CSV/TXT/XML bytes are retained unchanged. All changes are ready for a
   Xiaoyu Su implementation/evidence commit and native GitHub push. A publication
   receipt binds the tested source to the actual remote-verified commit afterward.
+
+
+### Step 11: publish as Xiaoyu Su and verify GitHub
+
+- Implementation **`282037d82b2174dffcd0789feb118480b0c51184`** contains the full Phase12 cross-city repositioning
+  harness, profile assumptions, tests, raw evidence and measured validation
+  coverage. Native `git push -u origin phase-12-cross-city-av-repositioning` succeeds, and `git ls-remote`
+  returns that exact implementation tip. Author and committer both verify as
+  **Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com**.
+- All261 committed Python/dependency blobs match frozen source
+  `649db5e784a7838c98a31d23e21048be09fa4697e2fd5931b25d5897df110a28`. The424 tests,306 regression simulations,32 restored windows
+  and72 real policy runs belong to those exact bytes. Earlier evidence and
+  approved baselines remain unchanged. All new behavior is opt-in; legacy defaults retain exact compatibility.
+- Publication receipt records verified remote implementation, identity and
+  evidence hashes. A documentation-only receipt commit is pushed next; final
+  remote equality, identity and clean checkout are checked after that push.
+  No tokens are printed/changed and no saved repository selection is modified.

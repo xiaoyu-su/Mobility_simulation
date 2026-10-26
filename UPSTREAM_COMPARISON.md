@@ -107,3 +107,17 @@ the regression test's pinned revision must be reviewed with such an update.
 The bundled baseline scenarios read existing demand files and do not use that
 generator. Fixing and validating custom-demand preprocessing is a separate
 task; Phase 0 does not claim that pipeline is ready.
+
+
+## Phase 11: broader native fidelity validation
+
+The Phase0 reference provenance and approved baseline files above remain
+unchanged. The [Phase11 gate](docs/PHASE_11.md) now compares clean upstream
+and the current fork on all four physical output tables, with import isolation,
+actual booking completion and exact fresh-process repeatability. Complete native
+Munich, Chicago and Manhattan profiles and a clean published-source archive
+also match byte for byte in the declared matched profiles. The declared router,
+repositioning and timeout adaptations limit this claim; it is not universal
+identity of all simulator internals, configurations or known upstream faults.
+Read the [measured results](docs/validation/phase11/RESULTS.md) and
+[full source/input/output evidence](docs/validation/phase11/README.md).

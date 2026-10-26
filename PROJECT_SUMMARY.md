@@ -20,6 +20,8 @@ This project extends TUM-VT/FleetPy from upstream commit
 
 | 10: cross-city AV comparison | Native Munich/Chicago/Manhattan inputs, matched all-human/AV initialization and search, bounded CPU workers, audited policy/load comparisons; 389 passing tests, 66 physical runs /60 unique conditions; mixed policy transfer | `docs/PHASE_10.md` |
 
+| 11: native fidelity validation | Fresh upstream archive and isolated imports, original city profiles, four-table exact comparison, repeatability and clean published-source reproduction; 403 tests /269 regression simulations /15 native runs; validation improvement, unchanged policies | `docs/PHASE_11.md` |
+
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
 The approved Phase 0 CSV references are unchanged.
@@ -78,3 +80,13 @@ Higher utilization can coincide with fewer trips and longer passenger journeys;
 completion gains reverse under the doubled-fleet sensitivity. These conditional
 benchmark results do not establish field AV benefits or a geography-only effect.
 See [Phase 10](docs/PHASE_10.md) and [complete results](docs/validation/phase10/RESULTS.md).
+
+
+Phase11 expands original-output parity from the bundled examples to complete
+native Munich, Chicago and Manhattan profiles. It compares all four physical
+output tables, verifies actual booking completion, source/runtime/input isolation
+and repeats each source in a fresh process. A clean published archive reproduces
+the same outputs. Both sides use explicit matched no-repositioning/native-router/
+no-timeout adaptations; these checks do not establish universal upstream parity
+or a new policy gain. See [Phase11](docs/PHASE_11.md) and
+[measured results](docs/validation/phase11/RESULTS.md).

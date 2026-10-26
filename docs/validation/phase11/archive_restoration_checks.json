@@ -1,0 +1,13 @@
+{
+  "command": [
+    "git",
+    "archive",
+    "bccbad4bb179f48ba2fa2a53682d3d90f33c3cc3"
+  ],
+  "pinned_commit": "bccbad4bb179f48ba2fa2a53682d3d90f33c3cc3",
+  "size_bytes": 1552353280,
+  "sha256": "0493f9bdf28d739592c5d694e672b2cceb502405b55fd53d5813fea4bf5540eb",
+  "exact_reconstruction_verified_by_stream_readback": true,
+  "wall_seconds": 3.3538643709907774,
+  "note": "Recreated all bytes from the pinned Git commit as a hash stream without storing a second 1.5GB file. The existing original and full extracted-member hash map remain available."
+}

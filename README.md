@@ -38,6 +38,10 @@ separates observed inputs from adoption and speed assumptions.
 policy comparisons with shared physical initialization and matched search budgets.
 Validation passes **389 tests and66 real-city runs** (60 unique conditions), with
 [measured gains and regressions](docs/validation/phase10/RESULTS.md) recorded together.
+[Phase 11](docs/PHASE_11.md) adds clean-upstream native-city fidelity checks
+and fresh-process/clean-archive repeatability. **403 tests**, **269 regression
+simulations** and **15 native physical runs** pass, with exact original-output
+comparisons and [complete evidence](docs/validation/phase11/README.md).
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

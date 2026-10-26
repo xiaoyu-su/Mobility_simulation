@@ -507,3 +507,34 @@ outcomes. The real-data follow-up below does not change those historical results
   [complete results](docs/validation/phase10/RESULTS.md),
   [evidence and restoration](docs/validation/phase10/README.md),
   [step-by-step record](docs/WORK_LOG.md).
+
+
+## Phase 11: native upstream fidelity and consolidated validation
+
+- **Problem:** small bundled references alone do not prove native-city
+  compatibility, reference import isolation or clean-source repeatability.
+- **Change:** reusable `tools.native_fidelity` runner and neutral worker,
+  immutable upstream Git archive, verified shared vehicle/native runtime inputs,
+  one CPU/thread, explicit legacy-profile adaptations and isolated imports.
+  Full cells/columns/rows/missing values in four output tables are compared;
+  no reference is silently regenerated or approved.
+- **Benefit verified:** all three bundled controllers and original native
+  city profiles retain exact outputs. Upstream/fork pairs match24 complete
+  tables byte for byte, fresh-process repeats match24 more and a clean
+  published archive matches12. Every accepted rider completes, with full unique
+  demand, actual initialization/SOC, chronology, capacity and physical boarding/
+  alighting verified. The improvement is validation coverage, not policy service.
+- **Validation:**403 tests pass;269 complete regression simulations,32 restored
+  windows and15 native physical runs pass. All257 historical full cases retain
+  1548 byte-identical checked tables;128 window tables retain exact values.
+  Initial invalid-CPU launches occurred before Python/simulation startup and
+  are retained separately. Both focused successful source snapshots are saved.
+- **Measured native service, unchanged on both sources:**617/1788 Munich,
+  5106/12753 Chicago,5399/10700 Manhattan. Native profiles have their original
+  clocks/fleets/data and explicit no-repositioning/router/timeout adaptations;
+  no direct Phase10 gain, screenshot-total replication or field calibration
+  claim is made. Original route warnings are retained with verified completion.
+- **Record:**[phase guide](docs/PHASE_11.md),
+  [results](docs/validation/phase11/RESULTS.md),
+  [complete evidence](docs/validation/phase11/README.md),
+  [work log](docs/WORK_LOG.md).

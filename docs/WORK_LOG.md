@@ -2698,3 +2698,189 @@ and will be committed locally before the actual push attempt is recorded.
   final remote equality, identity and checkout cleanliness are checked after
   its push before reporting completion. No token was printed/changed or saved
   repository selection modified.
+
+
+## Phase 11: native upstream fidelity and consolidated validation
+
+### Step 1: identify the next numbered plan section and preserve the base
+
+- Continue from published Phase10 receipt `bccbad4bb179f48ba2fa2a53682d3d90f33c3cc3`
+  on `phase-11-native-fidelity-validation`; checkout was clean. Author and
+  committer remain Xiaoyu Su. Re-read original IMG_3329: after cross-city Round3
+  comes section5, Validation, followed by section6, Limitations. Per-city AV
+  repositioning is explicitly a follow-up, not a secretly added Round4 requirement.
+- Scope: reusable clean-Git-archive native fidelity validation, feature-off
+  proof for all3 bundled controllers and the3 full native city profiles; fresh
+  process repeatability, physical completion and exact output comparisons;
+  complete regression and preserved input/source/output/publication records.
+  This phase improves validation coverage, not an AV dispatch policy.
+- Native profile adaptations are declared before outcomes: no repositioning
+  in both versions (prior original repo runs exceeded the Gurobi license); native
+  C++ routers for Munich/Chicago; no wall-clock tree/solver cutoff in either
+  version. Munich lacks the partial preprocessed tables the default example
+  expects. All tracked upstream C++/Cython/setup sources match the installed
+  binary source inputs; share only its exact hashed native binary, never fork
+  Python, and audit every actual simulator import. Original tracked archive
+  source/configuration hashes must remain unchanged.
+
+### Step 2: implement an independent fidelity gate
+
+- Added `tools/native_fidelity.py` orchestration and neutral
+  `tools/fidelity_worker.py`, invoked by absolute filename in each source tree.
+  Reference is fresh `git archive` of upstream
+  `c813728b6d188df8dd7fd5d3d36dcb0a55c898a2`, never regenerated from fork
+  outputs. Both versions use identical original scenario rows, data and
+  explicit adaptations, one pinned CPU/thread and isolated fresh outputs.
+- Observe actual booking/rejection callbacks, initialization/SOC, simulator
+  imports, full unique demand, final task/rider drain and physical boarding/
+  alighting. Independently audit chronology and real capacity. Compare every
+  column/cell of users, vehicle legs, standard evaluation and final state with
+  exact numeric/missing-value equality; report raw byte identity separately.
+  Duplicate runs additionally require exact replay bytes. Never update approved
+  baselines. All source/input/config/output hashes and failures are recorded.
+- Added ten adversarial validation tests and3 complete bundled-controller
+  comparisons, each with two upstream/fork pairs (12 physical runs). These
+  verify source isolation, all accepted completions, exact comparisons and
+  replays; they reject tiny value drift, missing/duplicate rows, schema changes,
+  missing values, unsafe sources, ambiguous profiles and feature activation.
+- No simulator/controller matching, movement, repositioning or defaults changed.
+  Begin a focused complete simulation gate before running real native profiles.
+
+
+### Step 3: focused gates pass and final source freezes
+
+- First focused gate:13 tests pass in122.66s, including12 complete physical
+  upstream/fork simulations across all3 native bundled controllers. All4 output
+  tables agree exactly and fresh-process repeats are byte-identical.
+- Added an explicit shared-vehicle-input equality guard and a negative drift
+  test before real runs. Guarded gate:14 tests pass in126.16s, again12 complete
+  physical simulations. Both snapshots/JUnit/raw runs remain preserved.
+- Final source freezes at258 Python/dependency files, digest
+  `d05aa8b2c2bcf7892e20d3016d7c05d8b3993c0ecb99fce8ca27417b716d1caa`.
+  Source maps/snapshots and the exact native profiles are saved externally.
+- Initial launches fail before Python/simulation startup: the new environment
+  permits CPUs0–4, unlike the previous environment's24+. Preserve taskset error
+  logs in `.setup/phase11/launch-failure`. No tests or physical runs occurred in
+  these launches; no source changes are needed. Relaunch native cities pinned
+  to0/1/2 and the full suite on3–4. Native real comparisons and the full suite
+  remain pending until their actual successful completion and output audits.
+
+
+### Step 4: full native city and clean published-archive fidelity pass
+
+- For each city, run `taskset -c CPU .venv/bin/python -m tools.native_fidelity
+  --profiles /workspace/.setup/phase11/profiles/CITY.json
+  --output /workspace/.setup/phase11/native/CITY --repeats 2 --timeout 7200`,
+  with CPUs0/1/2 for Munich/Chicago/Manhattan. All12 physical runs complete
+  successfully: each source/city condition plus its fresh-process repeat.
+- Both sources complete exactly **617/1788 Munich**, **5106/12753 Chicago**,
+  **5399/10700 Manhattan**. Original full unique demand, actual initial position/
+  SOC, acceptance/rejection histories, every user/vehicle/evaluation/final-state
+  cell agree. All6 pairs match24 full tables byte for byte; the6 source
+  repeats match another24 table comparisons. No baseline or policy is retuned.
+- `taskset -c 4 .venv/bin/python /workspace/.setup/phase11/clean_artifact.py >
+  /workspace/.setup/phase11/clean-artifact-console.txt 2>&1` extracts published
+  Phase10 receipt `bccbad4bb179f48ba2fa2a53682d3d90f33c3cc3`, proves all254
+  shared simulator/dependency files equal current Phase11, and runs all3 full
+  native profiles with simulator imports confined to that extracted tree.
+  The only4 new Python files are validation harness/tests. All3 runs complete;
+  they match12 further complete tables against clean upstream byte for byte.
+  Exact shared native binary/source/vehicle hashes are recorded. This is a
+  clean published-source reproduction with verified shared runtime, not a
+  separate compiler/toolchain rebuild.
+- `.venv/bin/python /workspace/.setup/phase11/analyze_native.py >
+  /workspace/.setup/phase11/analysis-native.txt 2>&1` independently reads back
+  all15 native runs, source archives, original source members, used inputs,
+  loaded native runtimes and raw output hashes. Full unique demand, completed
+  accepted bookings, no rejected service, actual capacity/chronology, physical
+  boarding/alighting and post-drain zero tasks/onboard riders pass. All60 full
+  table comparisons are byte-identical. Native Chicago includes valid raw
+  stationary occupancy unions; pre/post loads and moving loads fit actual seats.
+- Native route warnings are preserved and counted in `native_warnings.json`;
+  they occur on the original source too. Physical completion is verified
+  independently. Full regression remains pending, so native success alone
+  does not complete the phase. No simulator behavior or policy improvement
+  is inferred from these same-output checks. Lower native completion counts
+  describe rejected requests under the original clock/fleet/no-repo profile;
+  they are not a direct Phase10 policy change or a screenshot-served-total fit.
+
+
+### Step 5: complete regression, correct audit bookkeeping and verify all history
+
+- `taskset -c 3-4 .venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase11/full/runs
+  --junitxml=/workspace/.setup/phase11/full/junit.xml >
+  /workspace/.setup/phase11/full/tests.txt 2>&1` passes **403 tests** in
+  **2521.73s** (console), **0 failures/errors/skips**. Final source remains
+  frozen at `d05aa8b2c2bcf7892e20d3016d7c05d8b3993c0ecb99fce8ca27417b716d1caa`.
+- The first external `audit_suite.py` pass misclassifies10 deliberate malformed
+  CSV negative-test fixtures as full simulations and raises a missing pickup
+  column error. Preserve the exact failed helper as `audit_suite-first.py` and
+  its traceback as `audit-suite-first.txt`. All403 tests and actual physical
+  runs had passed; this is evidence-classification bookkeeping, not a simulation
+  failure or a reason to modify tested simulator source.
+- Correct the external audit to require the real simulator's `00_config.json`
+  marker, with an explicit assertion that exactly10 excluded directories are
+  the known five reference/candidate negative fixtures. All257 old physical
+  records and all12 new controller records have the real marker. Unknown
+  missing-marker outputs still fail; malformed inputs are never silently blessed.
+  No root Python/configuration or raw output changes.
+- `.venv/bin/python /workspace/.setup/phase11/audit_suite.py >
+  /workspace/.setup/phase11/audit-suite-console.txt 2>&1` then passes independent
+  inspection of **269 complete physical simulations +32 restored windows**.
+  Full unique demand, completed pickups/dropoffs, final state and chronology
+  pass, with explicit window censoring. Every **257 historical full case**
+  retains **1548 checked tables byte for byte**, including user/vehicle/evaluation/
+  final state and applicable driver/AV/repositioning audits; **128 window tables**
+  retain exact values. The source fingerprint is checked again and unchanged.
+- All15 native city/clean-artifact runs and60 full-table comparisons already
+  pass independent physical/source/input/runtime/output readback. The original
+  published1,552,353,280-byte Git source tar is additionally reconstructed as a
+  hash stream by `verify_archive_restore.py`; SHA-256 matches exactly in3.35s,
+  proving the indexed Git restoration command without storing another huge copy.
+  Environment/package/ABI and actual CPU assignments are recorded separately.
+- Improvement versus the prior gate:14 additional adversarial/controller tests,
+  12 additional complete regression simulations, three full native city profiles
+  on both source trees with repeats, three clean-source reproductions and
+  exact four-table comparisons. Policies and matched service outcomes remain
+  unchanged; no operational performance gain is claimed from fidelity results.
+
+
+### Step 6: archive and complete reviewable documentation
+
+- `.venv/bin/python /workspace/.setup/phase11/package_final.py >
+  /workspace/.setup/phase11-package.txt 2>&1` archives13421
+  records as701879937 bytes in21 upload parts. Every archived
+  member hash and every part byte passes readback. Logical SHA-256:
+  `bc93ab8faa693505c2e55067e69263f3128fb17b087e3845aed65dc3b35bb01a`. All raw logs/output/source/failed-launch histories remain;
+  only byte-proved public matrices/duplicate historical payloads, reproducible
+  pinned Git archives and caches/symlink aliases are omitted with
+  explicit restoration records. No original evidence is overwritten.
+- `.venv/bin/python /workspace/.setup/phase11/finalize_docs.py` updates phase
+  guide, README, project summary, improvement log, upstream comparison and
+  evidence restoration guide with actual counts, exact service equality,
+  validation benefit and remaining field/profile limitations. Markdown-only
+  finalization does not change frozen tested source or native profile bytes.
+
+
+### Step 7: final prepublication gates and review
+
+- `.venv/bin/python /workspace/.setup/phase11/prepublish.py >
+  /workspace/.setup/phase11-prepublication.txt 2>&1` passes:258 source/dependency
+  files equal the frozen tested snapshot; tracked root profiles equal the
+  guarded snapshot and actual per-city CLI profiles; all native C++ source/
+  binary hashes, used public inputs and all15 final raw outputs agree.
+- All archive upload parts/logical SHA and explicitly omitted canonical public
+  matrices/protected historical payloads verify. The omitted large published
+  archive additionally passes actual pinned-Git reconstruction by hash stream.
+  Every review link resolves; historical evidence and approved baselines remain
+  unchanged. Markdown spacing is reviewed without altering any source, native
+  profile, test result or raw physical record.
+- Earlier `git push --dry-run origin HEAD:refs/heads/phase-11-native-fidelity-validation`
+  confirms current push authentication without creating/updating a remote ref.
+  This is not publication: the tested implementation is committed and actually
+  pushed next, followed by exact remote-tip/source/identity verification.
+- Source/documentation whitespace is checked before commit; generated raw
+  TXT/XML logs remain byte-exact. Validation coverage improves by14 tests,
+  12 complete regression simulations and the15 native/clean checks; actual
+  policy outputs remain unchanged in the declared matched native profiles.

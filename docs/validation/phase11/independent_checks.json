@@ -1,0 +1,1033 @@
+{
+  "all_physical_contracts_pass": true,
+  "all_raw_bytes_verified": true,
+  "clean_artifact_byte_identical_tables": 12,
+  "clean_artifact_checks": [
+    {
+      "city": "manhattan",
+      "output_sha256": {
+        "00_config.json": "9c73fbb0b539572a9a9d0912ca398051dda269ae579339ad17f5f5418d7279b6",
+        "00_simulation.log": "d5d2cc889d536e3dd6d230e0b692a2679081140877512eeba99b5107cfe72357",
+        "1_user-stats.csv": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+        "2-0_op-stats.csv": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+        "2_vehicle_types.csv": "a807d30f0899f87b9d1b880ecb8ce5d593a652b801c62e5d719b276fabb4b8b4",
+        "3-0_op-dyn_atts.csv": "a969a81d6a930d4ef3b7c669e884d1ea2605700e50881ed1bd07bd52f02fae46",
+        "fidelity_contract.json": "82c21a97d23ee257168c5cdd2d95f3062bd6202165a814e25b44067fe1aacda4",
+        "final_state.csv": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+        "standard_eval.csv": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+        "standard_mod-0.0_veh_eval.csv": "9255e93ecc5eed4bbe47f8b0829b0e09d473e3dbaac05c182ed8c5b2e72bc12a"
+      },
+      "physical": {
+        "capacity_valid": true,
+        "chronological_activity": true,
+        "completed": 5399,
+        "physical_boarding_alighting_complete": true,
+        "requests": 10700,
+        "valid_stationary_union_rows": 0
+      },
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+          "rows": 10700,
+          "upstream_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+          "rows": 22543,
+          "upstream_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+          "rows": 48,
+          "upstream_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+          "rows": 80,
+          "upstream_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "output_sha256": {
+        "00_config.json": "37fa909d91f9f5e476a2a38c3e81bb2bd9d7869b204105ad73ce49be81b4e741",
+        "00_simulation.log": "325a68e911d01ecc34e998956200ad2698b0f22cf15826c81b6d679fb6b5c378",
+        "1_user-stats.csv": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+        "2-0_op-stats.csv": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "3-0_op-dyn_atts.csv": "65dcc97095b1417dd8b5e66b48e44d222df24070bd45989bc526613010616505",
+        "fidelity_contract.json": "9fc48ae6a48ac1db9524d8e5e52354c5656d00158042098beb61090db377aa85",
+        "final_state.csv": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+        "standard_eval.csv": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+        "standard_mod-0.0_veh_eval.csv": "2ee82c08d7903373c3e7d76e61ad542a844e4ae11a33e36186f092c34711c680"
+      },
+      "physical": {
+        "capacity_valid": true,
+        "chronological_activity": true,
+        "completed": 617,
+        "physical_boarding_alighting_complete": true,
+        "requests": 1788,
+        "valid_stationary_union_rows": 0
+      },
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+          "rows": 1788,
+          "upstream_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+          "rows": 2643,
+          "upstream_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+          "rows": 48,
+          "upstream_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+          "rows": 50,
+          "upstream_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "output_sha256": {
+        "00_config.json": "dfe1574bd2d9ac8fbdb59ab0ff69f662180ba3dbaf6394c13c40853cac334e39",
+        "00_simulation.log": "9bb3a4be977a234a693801a649e7f42b07534e4d729f4a4350fd26d0fc2d8dd0",
+        "1_user-stats.csv": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+        "2-0_op-stats.csv": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "3-0_op-dyn_atts.csv": "62cda11dd11250f3e928e9e8711b4826392091024c2c80870a2530736a44399a",
+        "fidelity_contract.json": "a9d516683f1218a9a8cc6b7b3a42e9920eac745235e1a9f0b57b0da446fe3ab0",
+        "final_state.csv": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+        "standard_eval.csv": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+        "standard_mod-0.0_veh_eval.csv": "deafa5b967eb7feb92ad21bec32eb979a43f2a0c14da9fec51cfd6258474b962"
+      },
+      "physical": {
+        "capacity_valid": true,
+        "chronological_activity": true,
+        "completed": 5106,
+        "physical_boarding_alighting_complete": true,
+        "requests": 12753,
+        "valid_stationary_union_rows": 12
+      },
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+          "rows": 12753,
+          "upstream_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+          "rows": 21283,
+          "upstream_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+          "rows": 48,
+          "upstream_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+          "rows": 100,
+          "upstream_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42"
+        }
+      ]
+    }
+  ],
+  "clean_artifact_physical_runs": 3,
+  "fresh_process_byte_identical_tables": 24,
+  "fresh_process_replay_runs": 6,
+  "native_physical_runs": 12,
+  "paired_byte_identical_tables": 24,
+  "paired_comparisons": 6,
+  "pairs": [
+    {
+      "city": "munich",
+      "repeat": 0,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+          "rows": 1788,
+          "upstream_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+          "rows": 2643,
+          "upstream_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+          "rows": 48,
+          "upstream_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+          "rows": 50,
+          "upstream_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "repeat": 1,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+          "rows": 1788,
+          "upstream_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+          "rows": 2643,
+          "upstream_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+          "rows": 48,
+          "upstream_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+          "rows": 50,
+          "upstream_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "repeat": 0,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+          "rows": 12753,
+          "upstream_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+          "rows": 21283,
+          "upstream_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+          "rows": 48,
+          "upstream_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+          "rows": 100,
+          "upstream_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "repeat": 1,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+          "rows": 12753,
+          "upstream_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+          "rows": 21283,
+          "upstream_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+          "rows": 48,
+          "upstream_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+          "rows": 100,
+          "upstream_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "repeat": 0,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+          "rows": 10700,
+          "upstream_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+          "rows": 22543,
+          "upstream_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+          "rows": 48,
+          "upstream_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+          "rows": 80,
+          "upstream_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "repeat": 1,
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+          "rows": 10700,
+          "upstream_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+          "rows": 22543,
+          "upstream_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+          "rows": 48,
+          "upstream_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+          "rows": 80,
+          "upstream_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058"
+        }
+      ]
+    }
+  ],
+  "replays": [
+    {
+      "city": "munich",
+      "source": "upstream",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+          "rows": 1788,
+          "upstream_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+          "rows": 2643,
+          "upstream_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+          "rows": 48,
+          "upstream_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+          "rows": 50,
+          "upstream_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "source": "fork",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+          "rows": 1788,
+          "upstream_sha256": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+          "rows": 2643,
+          "upstream_sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+          "rows": 48,
+          "upstream_sha256": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+          "rows": 50,
+          "upstream_sha256": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "source": "upstream",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+          "rows": 12753,
+          "upstream_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+          "rows": 21283,
+          "upstream_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+          "rows": 48,
+          "upstream_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+          "rows": 100,
+          "upstream_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "source": "fork",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+          "rows": 12753,
+          "upstream_sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+          "rows": 21283,
+          "upstream_sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+          "rows": 48,
+          "upstream_sha256": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+          "rows": 100,
+          "upstream_sha256": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "source": "upstream",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+          "rows": 10700,
+          "upstream_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+          "rows": 22543,
+          "upstream_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+          "rows": 48,
+          "upstream_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+          "rows": 80,
+          "upstream_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "source": "fork",
+      "tables": [
+        {
+          "byte_identical": true,
+          "columns": 22,
+          "exact_all_cells": true,
+          "file": "1_user-stats.csv",
+          "fork_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+          "rows": 10700,
+          "upstream_sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8"
+        },
+        {
+          "byte_identical": true,
+          "columns": 21,
+          "exact_all_cells": true,
+          "file": "2-0_op-stats.csv",
+          "fork_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+          "rows": 22543,
+          "upstream_sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6"
+        },
+        {
+          "byte_identical": true,
+          "columns": 2,
+          "exact_all_cells": true,
+          "file": "standard_eval.csv",
+          "fork_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+          "rows": 48,
+          "upstream_sha256": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d"
+        },
+        {
+          "byte_identical": true,
+          "columns": 6,
+          "exact_all_cells": true,
+          "file": "final_state.csv",
+          "fork_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+          "rows": 80,
+          "upstream_sha256": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "munich",
+      "completed": 617,
+      "output_sha256": {
+        "00_config.json": "9dc81c8706cfa0d58c112be5f66f443aae851c6c1998987b614cc5031f86f371",
+        "00_simulation.log": "fa21c3c64bdd85d3c9ec249de506dd3b81b76df23a13dac95e300195fc30fd3e",
+        "1_user-stats.csv": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+        "2-0_op-stats.csv": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "3-0_op-dyn_atts.csv": "ada7ff0b918f30cf7458462e25bd9e6b9ce655adf13d4ddbe2174152b8342b02",
+        "fidelity_contract.json": "0254eed5643485e21105553a1d2773dc605bfbe3ed34d0abdf72968a3a666d48",
+        "final_state.csv": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+        "standard_eval.csv": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+        "standard_mod-0.0_veh_eval.csv": "2ee82c08d7903373c3e7d76e61ad542a844e4ae11a33e36186f092c34711c680"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 1788,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 106.9625426660059
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "munich",
+      "completed": 617,
+      "output_sha256": {
+        "00_config.json": "2ea09999e3590259ae8ee36038b7d4f7514c1b774924a09cf0a6997cbdbd968f",
+        "00_simulation.log": "22adce2d8b03d3014d2de16a86551e8a709853a899d9ebfbc4bfff09288396ea",
+        "1_user-stats.csv": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+        "2-0_op-stats.csv": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "3-0_op-dyn_atts.csv": "9ba13940d56e655f8c957e9f1c323a50e326e583d4941842eaad5b7c452effdc",
+        "fidelity_contract.json": "406388a55ad105cb7532eaf43b98ed97e5f206adbac13ff53aea5f9eb0d7bfaf",
+        "final_state.csv": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+        "standard_eval.csv": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+        "standard_mod-0.0_veh_eval.csv": "2ee82c08d7903373c3e7d76e61ad542a844e4ae11a33e36186f092c34711c680"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 1788,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 101.43424745398806
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "munich",
+      "completed": 617,
+      "output_sha256": {
+        "00_config.json": "089191b04a97703b6d4a5a6151ba7945c5793a0bba19582673cfb5065bc4676e",
+        "00_simulation.log": "3a753e0ef74d8dbc373fa9ee0405570a427ed55bd868c669de67432a0f3b21b3",
+        "1_user-stats.csv": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+        "2-0_op-stats.csv": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "3-0_op-dyn_atts.csv": "4b0d7cf8668b1b4f3aadb1fb602827d47739f61df82e95ba96c4ed9dce6daa0c",
+        "fidelity_contract.json": "0254eed5643485e21105553a1d2773dc605bfbe3ed34d0abdf72968a3a666d48",
+        "final_state.csv": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+        "standard_eval.csv": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+        "standard_mod-0.0_veh_eval.csv": "2ee82c08d7903373c3e7d76e61ad542a844e4ae11a33e36186f092c34711c680"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 1788,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 138.49982486001682
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "munich",
+      "completed": 617,
+      "output_sha256": {
+        "00_config.json": "e163e2c48874e5143199773f8748a77dbc977113f987be5e242dcd8769e0e4a6",
+        "00_simulation.log": "671a285b67beee55b5d2444ab8ebad2ee63aff66facf21a36f88b3526a293646",
+        "1_user-stats.csv": "97fc527a15e707e2b9b119776ed4fe7f5b295d41178e4b1df9fa3433430e6806",
+        "2-0_op-stats.csv": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "3-0_op-dyn_atts.csv": "881fd044a21ffa37e76c6d630ceb9234a9bf4858e5ce03fcdd3544885d336ca4",
+        "fidelity_contract.json": "406388a55ad105cb7532eaf43b98ed97e5f206adbac13ff53aea5f9eb0d7bfaf",
+        "final_state.csv": "6ae96724a5769ca4e2cf6197741e25d0d9be44e8dd63b457bc1f79fafeb654bc",
+        "standard_eval.csv": "f17408b627c499a8763ae9254f61ec0bc38ffb83324163f597ed8d7f1bb963b5",
+        "standard_mod-0.0_veh_eval.csv": "2ee82c08d7903373c3e7d76e61ad542a844e4ae11a33e36186f092c34711c680"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 1788,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 157.56347644198104
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "chicago",
+      "completed": 5106,
+      "output_sha256": {
+        "00_config.json": "0a47ef847cf2032083c95e1c948a03105b3952360eb1eacd75b56ca984e4e35b",
+        "00_simulation.log": "bc1d5a518c5c9dbee8a3bc97a30731a03941b989c4889225ee36d1524a5f08cb",
+        "1_user-stats.csv": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+        "2-0_op-stats.csv": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "3-0_op-dyn_atts.csv": "5a14b7874daef3653c019af8effde430120def3f819ae337e880f7609cb63c8f",
+        "fidelity_contract.json": "4808c2e9e205b9823d023194b99ec06843871e158632842ac4c441a2bcfc96f5",
+        "final_state.csv": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+        "standard_eval.csv": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+        "standard_mod-0.0_veh_eval.csv": "deafa5b967eb7feb92ad21bec32eb979a43f2a0c14da9fec51cfd6258474b962"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 12753,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 12,
+      "wall_seconds": 195.99620748998132
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "chicago",
+      "completed": 5106,
+      "output_sha256": {
+        "00_config.json": "eeac9f32396f642154a3d922cc5ffcbd126a15b9c4a3961f4fc7d888bc897e00",
+        "00_simulation.log": "c05ac4dff3fb805f9197bfdfcc440c8e0499ee4da57f6927631e6611ad74472e",
+        "1_user-stats.csv": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+        "2-0_op-stats.csv": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "3-0_op-dyn_atts.csv": "5b51b17d13b412c64dc7392569c92273ca4cb823c35f74e11c1f1ab57524df54",
+        "fidelity_contract.json": "fb35bfdba3d5515700e399336f9485f6f47902aedd3291cd2ed9198a4a081754",
+        "final_state.csv": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+        "standard_eval.csv": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+        "standard_mod-0.0_veh_eval.csv": "deafa5b967eb7feb92ad21bec32eb979a43f2a0c14da9fec51cfd6258474b962"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 12753,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 12,
+      "wall_seconds": 259.9229067840206
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "chicago",
+      "completed": 5106,
+      "output_sha256": {
+        "00_config.json": "224cbb504a288c702fee342534f3518f49d39662079e98bb99a1bbaa0fff3b6a",
+        "00_simulation.log": "932d55949b93a102c8d3522f10bfc74f4413112fe5c6ed06c8534dab1d693593",
+        "1_user-stats.csv": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+        "2-0_op-stats.csv": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "3-0_op-dyn_atts.csv": "5f6b4f8f1ef74904f3fbe752b8dc77982adefb0661c3f618816a4cea5b3c0b09",
+        "fidelity_contract.json": "4808c2e9e205b9823d023194b99ec06843871e158632842ac4c441a2bcfc96f5",
+        "final_state.csv": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+        "standard_eval.csv": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+        "standard_mod-0.0_veh_eval.csv": "deafa5b967eb7feb92ad21bec32eb979a43f2a0c14da9fec51cfd6258474b962"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 12753,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 12,
+      "wall_seconds": 219.1065757079923
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "chicago",
+      "completed": 5106,
+      "output_sha256": {
+        "00_config.json": "9286846348bc228536edc9b7eae6adab8684a511b0997fd41e92c049de9641b5",
+        "00_simulation.log": "29584e445c4402d8faa21c2df4836f0bb4681ee00c548ef4e7353c2277d9508a",
+        "1_user-stats.csv": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+        "2-0_op-stats.csv": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "3-0_op-dyn_atts.csv": "3349c55e66afb360741db2c6a0775019cd19438f31a1a0028ffdce4d784f0988",
+        "fidelity_contract.json": "fb35bfdba3d5515700e399336f9485f6f47902aedd3291cd2ed9198a4a081754",
+        "final_state.csv": "62bb7e55d7c5e1a89311101886238d751fffd3025e3f2b8c151e5db3ab8c5d42",
+        "standard_eval.csv": "85d77c735d41d9e6292da4eebdcaa41778bddb31f6bab4431791235252b35e60",
+        "standard_mod-0.0_veh_eval.csv": "deafa5b967eb7feb92ad21bec32eb979a43f2a0c14da9fec51cfd6258474b962"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 12753,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 12,
+      "wall_seconds": 193.02202824800042
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "manhattan",
+      "completed": 5399,
+      "output_sha256": {
+        "00_config.json": "59483fcd17ad62baa38c5b544d844dcb9a1004057f2017e64d0f0d0ec7e6c4a5",
+        "00_simulation.log": "eeb40eda17704fe9477e9f0a39c469b0be2d21694d51518a554970e7eb0f8ca7",
+        "1_user-stats.csv": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+        "2-0_op-stats.csv": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+        "2_vehicle_types.csv": "a807d30f0899f87b9d1b880ecb8ce5d593a652b801c62e5d719b276fabb4b8b4",
+        "3-0_op-dyn_atts.csv": "cfaceaf56b08e2cf4bb0201cb7bb77e1565ad1890f5b5fd1aad15cdb20a656cc",
+        "fidelity_contract.json": "a5d3c9553f5aab01d5e05724a99d21cdaa104bc92262724c53c5173307377874",
+        "final_state.csv": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+        "standard_eval.csv": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+        "standard_mod-0.0_veh_eval.csv": "9255e93ecc5eed4bbe47f8b0829b0e09d473e3dbaac05c182ed8c5b2e72bc12a"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 10700,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 130.13478472299175
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "manhattan",
+      "completed": 5399,
+      "output_sha256": {
+        "00_config.json": "8fdfeb98f5f52fd6ed6f4ef40832b4fcbffde9d50d2b12e326ecdabb530fdb4a",
+        "00_simulation.log": "6933d86f2ba4cb88176b2c6e7b5f25ccd9e999b3981b02465704e3a649ee295c",
+        "1_user-stats.csv": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+        "2-0_op-stats.csv": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+        "2_vehicle_types.csv": "a807d30f0899f87b9d1b880ecb8ce5d593a652b801c62e5d719b276fabb4b8b4",
+        "3-0_op-dyn_atts.csv": "0f1aa6219a7058f299eb6f82a349931cf1b9797e374cddd24318f9ea42e9f27a",
+        "fidelity_contract.json": "92629a33812eca5804f02e54175f429c6e443326fc5c4d5027c79638178f112c",
+        "final_state.csv": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+        "standard_eval.csv": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+        "standard_mod-0.0_veh_eval.csv": "9255e93ecc5eed4bbe47f8b0829b0e09d473e3dbaac05c182ed8c5b2e72bc12a"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 0,
+      "requests": 10700,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 137.39506154402625
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "manhattan",
+      "completed": 5399,
+      "output_sha256": {
+        "00_config.json": "47ca6bf71dc8b0f586804cff2d937a232096065f475211ceeda87a5a2c2de55d",
+        "00_simulation.log": "f6ebdacf1feebb2f67982afbcac482501ff1cd71a161e8c5ad62c2388ca21edc",
+        "1_user-stats.csv": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+        "2-0_op-stats.csv": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+        "2_vehicle_types.csv": "a807d30f0899f87b9d1b880ecb8ce5d593a652b801c62e5d719b276fabb4b8b4",
+        "3-0_op-dyn_atts.csv": "9084fa5c5ea0617b20d5b4c475bc5fb4ceac4367833f01a41215de8518a806ac",
+        "fidelity_contract.json": "a5d3c9553f5aab01d5e05724a99d21cdaa104bc92262724c53c5173307377874",
+        "final_state.csv": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+        "standard_eval.csv": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+        "standard_mod-0.0_veh_eval.csv": "9255e93ecc5eed4bbe47f8b0829b0e09d473e3dbaac05c182ed8c5b2e72bc12a"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 10700,
+      "simulator_imports_confined": true,
+      "source": "upstream",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 183.66569516301388
+    },
+    {
+      "all_bookings_complete": true,
+      "all_raw_bytes_verified": true,
+      "capacity_valid": true,
+      "chronological_activity": true,
+      "city": "manhattan",
+      "completed": 5399,
+      "output_sha256": {
+        "00_config.json": "4d9053036f331548e944f1ae190fecf3b9892daa44dc526a13f8fb38404d7df6",
+        "00_simulation.log": "72ce19d78711e678fa008b00934d377c1209eeb1297d521e0529ae34ba9cd727",
+        "1_user-stats.csv": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+        "2-0_op-stats.csv": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+        "2_vehicle_types.csv": "a807d30f0899f87b9d1b880ecb8ce5d593a652b801c62e5d719b276fabb4b8b4",
+        "3-0_op-dyn_atts.csv": "d6ae1f1ce4e852525dee9772db5fcb0762dd0ea7b3da0d25c3e4b59905537ed0",
+        "fidelity_contract.json": "92629a33812eca5804f02e54175f429c6e443326fc5c4d5027c79638178f112c",
+        "final_state.csv": "c09853dd11344aa85979b0b021f1c9ece9615bed8cbeb52f2c64761943470058",
+        "standard_eval.csv": "13c4c7373adc7946c6ca40ccf34258bc211185293432b0933b0aa10a1a9e614d",
+        "standard_mod-0.0_veh_eval.csv": "9255e93ecc5eed4bbe47f8b0829b0e09d473e3dbaac05c182ed8c5b2e72bc12a"
+      },
+      "physical_boarding_alighting_complete": true,
+      "repeat": 1,
+      "requests": 10700,
+      "simulator_imports_confined": true,
+      "source": "fork",
+      "valid_stationary_union_rows": 0,
+      "wall_seconds": 153.02084530700813
+    }
+  ],
+  "source_digest": "d05aa8b2c2bcf7892e20d3016d7c05d8b3993c0ecb99fce8ca27417b716d1caa",
+  "total_native_physical_runs": 15,
+  "unique_source_city_conditions": 6
+}

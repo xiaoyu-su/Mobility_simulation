@@ -1,0 +1,32 @@
+[
+  {
+    "name": "munich_native_batch",
+    "city": "munich",
+    "constants": "studies/munich_case_study/scenarios/const_cfg_munich_case_study.yaml",
+    "scenarios": "studies/munich_case_study/scenarios/scenario_cfg_munich_case_study.csv",
+    "scenario": "test_munich_scenario_1",
+    "data_root": "/workspace/market_inputs/cross_city/munich/FleetPy_Munich",
+    "overrides": {"op_repo_method": null, "network_type": "NetworkBasicWithStoreCpp", "op_treebuild_timeout_per_veh": null, "op_optimisation_timeout": null},
+    "description": "Original 06:00–09:00 demand/fleet/batch matcher; matched no-repositioning profile, native on-demand C++ routing because published preprocessed tables are absent; no wall-clock heuristic/solver cutoff."
+  },
+  {
+    "name": "chicago_native_batch",
+    "city": "chicago",
+    "constants": "studies/chicago_case_study/scenarios/const_cfg_chicago_case_study.yaml",
+    "scenarios": "studies/chicago_case_study/scenarios/scenario_cfg_chicago_case_study.csv",
+    "scenario": "test_chicago_scenario_1",
+    "data_root": "/workspace/market_inputs/cross_city/chicago/FleetPy_Chicago",
+    "overrides": {"op_repo_method": null, "network_type": "NetworkPartialPreprocessedCpp", "op_treebuild_timeout_per_veh": null, "op_optimisation_timeout": null},
+    "description": "Original 24-hour demand/fleet/batch matcher; matched no-repositioning profile with provided native preprocessed C++ router; no wall-clock heuristic/solver cutoff."
+  },
+  {
+    "name": "manhattan_native_batch",
+    "city": "manhattan",
+    "constants": "studies/manhattan_case_study/scenarios/const_cfg_manhattan_case_study.yaml",
+    "scenarios": "studies/manhattan_case_study/scenarios/scenario_cfg_manhattan_case_study.csv",
+    "scenario": "test_manhattatan_scenario_1",
+    "data_root": "/workspace/market_inputs/fleetpy_manhattan/FleetPy_Manhattan",
+    "overrides": {"op_repo_method": null, "op_treebuild_timeout_per_veh": null, "op_optimisation_timeout": null},
+    "description": "Original 24-hour 2018 native demand/fleet/matrix router/batch matcher; matched no-repositioning profile, no wall-clock heuristic/solver cutoff. Distinct from Phase10 2019 TLC cohort."
+  }
+]

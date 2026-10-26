@@ -1,0 +1,230 @@
+[
+  {
+    "city": "munich",
+    "errors": 0,
+    "messages": [
+      "284119-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "upstream",
+    "warnings": 1
+  },
+  {
+    "city": "munich",
+    "errors": 0,
+    "messages": [
+      "284409-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "fork",
+    "warnings": 1
+  },
+  {
+    "city": "munich",
+    "errors": 0,
+    "messages": [
+      "284778-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "upstream",
+    "warnings": 1
+  },
+  {
+    "city": "munich",
+    "errors": 0,
+    "messages": [
+      "285685-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "fork",
+    "warnings": 1
+  },
+  {
+    "city": "chicago",
+    "errors": 0,
+    "messages": [
+      "284125-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "upstream",
+    "warnings": 1
+  },
+  {
+    "city": "chicago",
+    "errors": 0,
+    "messages": [
+      "284671-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "fork",
+    "warnings": 1
+  },
+  {
+    "city": "chicago",
+    "errors": 0,
+    "messages": [
+      "286127-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "upstream",
+    "warnings": 1
+  },
+  {
+    "city": "chicago",
+    "errors": 0,
+    "messages": [
+      "286859-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "fork",
+    "warnings": 1
+  },
+  {
+    "city": "manhattan",
+    "errors": 0,
+    "messages": [
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3224, 3228, np.float64(0.9692788021597624)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3626, 4282, np.float64(0.10002062316926409)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3324, 1560, np.float64(0.6192066210674279)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (285, 379, np.float64(0.42978786572359146)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1338, 3159, np.float64(0.7487333280716524)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2309, 2311, np.float64(0.7319930342990391)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1626, 366, np.float64(0.5634620444325888)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2253, 4019, np.float64(0.2424184051022554)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1636, 1637, np.float64(0.5115716459463924)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (790, 120, np.float64(0.6728831021103424)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3594, 3595, np.float64(0.2758792517348883)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1131, 1069, np.float64(0.04004585100567845)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2311, 1016, np.float64(0.19346094218261642)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2367, 2366, np.float64(0.11186517064961121)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (174, 173, np.float64(0.6988283013534407)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2917, 1282, np.float64(0.9425388389082505)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (191, 4200, np.float64(0.6224967731453154)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3100, 3359, np.float64(0.3803415802092526)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2501, 2042, np.float64(0.5663174264145545)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1867, 1354, np.float64(0.28111059353861456)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (3810, 1878, np.float64(0.614600408158098)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1867, 2832, np.float64(0.3322113555263561)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1368, 1399, np.float64(0.12765790062404572)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2538, 2537, np.float64(0.8187543445940455)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1386, 1385, np.float64(0.9075179474394631)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (1870, 1206, np.float64(0.43561613511833713)) not found in currently assigned route []!",
+      "284118-src.simulation.Vehicles-WARNING-First node in position (2022, 1083, np.float64(0.652014137501576)) not found in currently assigned route []!",
+      "284118-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "upstream",
+    "warnings": 28
+  },
+  {
+    "city": "manhattan",
+    "errors": 0,
+    "messages": [
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3224, 3228, np.float64(0.9692788021597624)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3626, 4282, np.float64(0.10002062316926409)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3324, 1560, np.float64(0.6192066210674279)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (285, 379, np.float64(0.42978786572359146)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1338, 3159, np.float64(0.7487333280716524)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2309, 2311, np.float64(0.7319930342990391)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1626, 366, np.float64(0.5634620444325888)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2253, 4019, np.float64(0.2424184051022554)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1636, 1637, np.float64(0.5115716459463924)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (790, 120, np.float64(0.6728831021103424)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3594, 3595, np.float64(0.2758792517348883)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1131, 1069, np.float64(0.04004585100567845)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2311, 1016, np.float64(0.19346094218261642)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2367, 2366, np.float64(0.11186517064961121)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (174, 173, np.float64(0.6988283013534407)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2917, 1282, np.float64(0.9425388389082505)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (191, 4200, np.float64(0.6224967731453154)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3100, 3359, np.float64(0.3803415802092526)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2501, 2042, np.float64(0.5663174264145545)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1867, 1354, np.float64(0.28111059353861456)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (3810, 1878, np.float64(0.614600408158098)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1867, 2832, np.float64(0.3322113555263561)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1368, 1399, np.float64(0.12765790062404572)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2538, 2537, np.float64(0.8187543445940455)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1386, 1385, np.float64(0.9075179474394631)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (1870, 1206, np.float64(0.43561613511833713)) not found in currently assigned route []!",
+      "284477-src.simulation.Vehicles-WARNING-First node in position (2022, 1083, np.float64(0.652014137501576)) not found in currently assigned route []!",
+      "284477-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 0,
+    "source": "fork",
+    "warnings": 28
+  },
+  {
+    "city": "manhattan",
+    "errors": 0,
+    "messages": [
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3224, 3228, np.float64(0.9692788021597624)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3626, 4282, np.float64(0.10002062316926409)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3324, 1560, np.float64(0.6192066210674279)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (285, 379, np.float64(0.42978786572359146)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1338, 3159, np.float64(0.7487333280716524)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2309, 2311, np.float64(0.7319930342990391)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1626, 366, np.float64(0.5634620444325888)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2253, 4019, np.float64(0.2424184051022554)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1636, 1637, np.float64(0.5115716459463924)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (790, 120, np.float64(0.6728831021103424)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3594, 3595, np.float64(0.2758792517348883)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1131, 1069, np.float64(0.04004585100567845)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2311, 1016, np.float64(0.19346094218261642)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2367, 2366, np.float64(0.11186517064961121)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (174, 173, np.float64(0.6988283013534407)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2917, 1282, np.float64(0.9425388389082505)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (191, 4200, np.float64(0.6224967731453154)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3100, 3359, np.float64(0.3803415802092526)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2501, 2042, np.float64(0.5663174264145545)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1867, 1354, np.float64(0.28111059353861456)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (3810, 1878, np.float64(0.614600408158098)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1867, 2832, np.float64(0.3322113555263561)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1368, 1399, np.float64(0.12765790062404572)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2538, 2537, np.float64(0.8187543445940455)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1386, 1385, np.float64(0.9075179474394631)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (1870, 1206, np.float64(0.43561613511833713)) not found in currently assigned route []!",
+      "285278-src.simulation.Vehicles-WARNING-First node in position (2022, 1083, np.float64(0.652014137501576)) not found in currently assigned route []!",
+      "285278-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "upstream",
+    "warnings": 28
+  },
+  {
+    "city": "manhattan",
+    "errors": 0,
+    "messages": [
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3224, 3228, np.float64(0.9692788021597624)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3626, 4282, np.float64(0.10002062316926409)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3324, 1560, np.float64(0.6192066210674279)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (285, 379, np.float64(0.42978786572359146)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1338, 3159, np.float64(0.7487333280716524)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2309, 2311, np.float64(0.7319930342990391)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1626, 366, np.float64(0.5634620444325888)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2253, 4019, np.float64(0.2424184051022554)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1636, 1637, np.float64(0.5115716459463924)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (790, 120, np.float64(0.6728831021103424)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3594, 3595, np.float64(0.2758792517348883)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1131, 1069, np.float64(0.04004585100567845)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2311, 1016, np.float64(0.19346094218261642)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2367, 2366, np.float64(0.11186517064961121)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (174, 173, np.float64(0.6988283013534407)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2917, 1282, np.float64(0.9425388389082505)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (191, 4200, np.float64(0.6224967731453154)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3100, 3359, np.float64(0.3803415802092526)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2501, 2042, np.float64(0.5663174264145545)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1867, 1354, np.float64(0.28111059353861456)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (3810, 1878, np.float64(0.614600408158098)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1867, 2832, np.float64(0.3322113555263561)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1368, 1399, np.float64(0.12765790062404572)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2538, 2537, np.float64(0.8187543445940455)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1386, 1385, np.float64(0.9075179474394631)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (1870, 1206, np.float64(0.43561613511833713)) not found in currently assigned route []!",
+      "286111-src.simulation.Vehicles-WARNING-First node in position (2022, 1083, np.float64(0.652014137501576)) not found in currently assigned route []!",
+      "286111-src.FleetSimulationBase-WARNING-abstractmethod not overwritten! When defined as ABC in next commits, this will raise an error!"
+    ],
+    "repeat": 1,
+    "source": "fork",
+    "warnings": 28
+  }
+]

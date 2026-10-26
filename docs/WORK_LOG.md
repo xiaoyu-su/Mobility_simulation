@@ -2680,3 +2680,21 @@ and will be committed locally before the actual push attempt is recorded.
   evidence restoration guide are updated with actual benefits, adverse outcomes
   and remaining empirical/load limitations. No root simulation code or scenario
   configuration changes after the final validation freeze.
+
+
+### Step 12: publish as Xiaoyu Su and verify GitHub
+
+- Source/documentation whitespace and prepublication checks pass. Implementation
+  **`5b6ca17d2321c3a45d661d032b6b066fa3ffab80`** contains the complete Phase10 code, configurations, records,
+  source snapshots and measured policy tradeoffs.
+- `git push -u origin phase-10-cross-city-av-comparison` succeeds; `git ls-remote origin
+  refs/heads/phase-10-cross-city-av-comparison` returns that exact commit. Both author and committer
+  are **Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com**.
+- Every committed source/dependency blob matches the frozen254-file source
+  `c8885e74c9661a558177ac56c908e11c403006ebafcb1ae536c7f0c59333caa7`. All389 tests,257 regression simulations,32 windows and66
+  real physical runs belong to these exact bytes; prior evidence is unchanged.
+- `docs/validation/phase10/publication.json` records remote implementation tip,
+  identity and evidence hashes. A documentation-only receipt commit follows;
+  final remote equality, identity and checkout cleanliness are checked after
+  its push before reporting completion. No token was printed/changed or saved
+  repository selection modified.

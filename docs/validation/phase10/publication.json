@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "branch": "phase-10-cross-city-av-comparison",
+  "implementation_commit": "5b6ca17d2321c3a45d661d032b6b066fa3ffab80",
+  "verified_remote_implementation_tip": "5b6ca17d2321c3a45d661d032b6b066fa3ffab80",
+  "verified_utc": "2026-10-26T08:30:06.319465+00:00",
+  "author": {
+    "name": "Xiaoyu Su",
+    "email": "209944670+xiaoyu-su@users.noreply.github.com"
+  },
+  "committer": {
+    "name": "Xiaoyu Su",
+    "email": "209944670+xiaoyu-su@users.noreply.github.com"
+  },
+  "code_digest": "c8885e74c9661a558177ac56c908e11c403006ebafcb1ae536c7f0c59333caa7",
+  "source_files": 254,
+  "committed_source_bytes_match_frozen_snapshot": true,
+  "pytest_passed": 389,
+  "regression_full_simulations": 257,
+  "restored_windows": 32,
+  "real_policy_runs": 66,
+  "unique_conditions": 60,
+  "archive_sha256": "3b529a9cf8bedaeb83394035b17dc51238e39ae925c5f62abe6219dcbce9ac6d",
+  "validation_json_sha256": "944506d2c9c58b154f56064ac0353e21e6fbd7b5c432559d51056d2ee5990f93",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt. Receipt committed next; final remote equality and clean checkout checked afterward."
+}

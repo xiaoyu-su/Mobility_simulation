@@ -2884,3 +2884,20 @@ and will be committed locally before the actual push attempt is recorded.
   TXT/XML logs remain byte-exact. Validation coverage improves by14 tests,
   12 complete regression simulations and the15 native/clean checks; actual
   policy outputs remain unchanged in the declared matched native profiles.
+
+
+### Step 8: publish as Xiaoyu Su and verify GitHub
+
+- Implementation **`56edc2424ac90a6d30282a49ba127b0201e0838e`** contains the full Phase11 native-fidelity
+  harness, profile assumptions, tests, raw evidence and measured validation
+  coverage. Native `git push -u origin phase-11-native-fidelity-validation` succeeds, and `git ls-remote`
+  returns that exact implementation tip. Author and committer both verify as
+  **Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com**.
+- All258 committed Python/dependency blobs match frozen source
+  `d05aa8b2c2bcf7892e20d3016d7c05d8b3993c0ecb99fce8ca27417b716d1caa`. The403 tests,269 regression simulations,32 restored windows
+  and15 native physical runs belong to those exact bytes. Earlier evidence and
+  approved baselines remain unchanged. No simulator policy/default changed.
+- Publication receipt records verified remote implementation, identity and
+  evidence hashes. A documentation-only receipt commit is pushed next; final
+  remote equality, identity and clean checkout are checked after that push.
+  No tokens are printed/changed and no saved repository selection is modified.

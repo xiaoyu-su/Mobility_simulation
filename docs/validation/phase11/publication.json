@@ -1,0 +1,25 @@
+{
+  "archive_sha256": "bc93ab8faa693505c2e55067e69263f3128fb17b087e3845aed65dc3b35bb01a",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-11-native-fidelity-validation",
+  "committed_source_bytes_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "implementation_commit": "56edc2424ac90a6d30282a49ba127b0201e0838e",
+  "native_physical_runs": 15,
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; receipt committed next, then final remote equality/identity/clean checkout checked.",
+  "pytest_passed": 403,
+  "regression_full_simulations": 269,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "source_digest": "d05aa8b2c2bcf7892e20d3016d7c05d8b3993c0ecb99fce8ca27417b716d1caa",
+  "source_files": 258,
+  "validation_json_sha256": "da747aff949b9225b06fd2d8849586c6435c26ab7e70b715d857f55093717fe9",
+  "verified_remote_implementation_tip": "56edc2424ac90a6d30282a49ba127b0201e0838e",
+  "verified_utc": "2026-10-26T17:50:59.790530+00:00"
+}

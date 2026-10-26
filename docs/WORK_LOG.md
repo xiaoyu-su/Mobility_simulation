@@ -2342,3 +2342,22 @@ and will be committed locally before the actual push attempt is recorded.
   AV absolute-distance/percentage distinction before archiving. Its script
   and output are included in the raw record. Final inspected/scientific figure
   bytes match the earlier sample figure exactly.
+
+
+### Step 12: publish as Xiaoyu Su and verify GitHub
+
+- Source/documentation whitespace and final prepublication checks pass before
+  commit. Commit **`35d437d81475462156e0945122fca6154ec28f59`** contains the complete Phase 9 implementation,
+  regression/real experiment evidence, source snapshots and measured tradeoffs.
+- Native `git push -u origin phase-9-av-threshold-and-speed` succeeds.
+  `git ls-remote origin refs/heads/phase-9-av-threshold-and-speed` returns
+  that exact implementation commit. Both author and committer are **Xiaoyu Su
+  /209944670+xiaoyu-su@users.noreply.github.com**, verified from the actual commit.
+- Every committed source/dependency blob matches the frozen245-file digest
+  `66fe97b5ab63c89a440583da274cb3e1e87841f070285cb322e2b95f0a5ad939`. All370 tests,56 physical real runs and byte-verified evidence
+  belong to those exact bytes. Earlier evidence remains unchanged.
+- `docs/validation/phase9/publication.json` records the verified implementation
+  tip, identity, source and evidence hashes. It is added in a documentation-only
+  receipt commit; remote equality and checkout cleanliness are checked again
+  after that receipt push before reporting the phase complete. No token was
+  printed or changed and no saved repository selection was modified.

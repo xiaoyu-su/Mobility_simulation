@@ -24,6 +24,7 @@ class SimulationVehicleStruct():
                  routing_engine : NetworkBase, empty_init = False, add_assigned_route = True):
         self.op_id = simulation_vehicle.op_id
         self.vid = simulation_vehicle.vid
+        self.travel_time_factor=getattr(simulation_vehicle,'travel_time_factor',1)
         if hasattr(simulation_vehicle, 'av_product'):
             self.av_product = simulation_vehicle.av_product
             self.is_av = simulation_vehicle.is_av

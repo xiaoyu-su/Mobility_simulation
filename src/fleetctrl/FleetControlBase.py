@@ -540,7 +540,7 @@ class FleetControlBase(metaclass=ABCMeta):
         """
         LOG.debug(f"assign to {veh_obj.vid} at time {sim_time} : {vehicle_plan}")
         if self.av_product is not None and not self.av_product.allows_plan(veh_obj, vehicle_plan):
-            raise RuntimeError('AV assignment violates rider opt-in or trip endpoint fence')
+            raise RuntimeError('Assignment violates the AV product dispatch, opt-in or endpoint contract')
         vehicle_plan.update_tt_and_check_plan(veh_obj, sim_time, self.routing_engine, keep_feasible=True)
         if self.av_product is not None:
             self.av_product.record_assignment(veh_obj, vehicle_plan, sim_time)
@@ -808,6 +808,8 @@ class FleetControlBase(metaclass=ABCMeta):
 
         # 3) Repositioning
         # -------------------
+        if self.av_product is not None and self.av_product.joint:
+            self.av_product.reposition(sim_time)
         if self.repo is not None and (sim_time % self.repo_time_step == 0 or repo_activated_veh):
             t0 = time.perf_counter()
             LOG.info("Calling repositioning algorithm! (because of activated vehicles? {})".format(repo_activated_veh))
@@ -815,7 +817,7 @@ class FleetControlBase(metaclass=ABCMeta):
             self.repo.determine_and_create_repositioning_plans(sim_time)
             add_dyn_dict[G_FCTRL_CT_REPO] = round(time.perf_counter() - t0, 3)
 
-        if self.av_product is not None:
+        if self.av_product is not None and not self.av_product.joint:
             self.av_product.reposition(sim_time)
 
         # 4) Dynamic Pricing

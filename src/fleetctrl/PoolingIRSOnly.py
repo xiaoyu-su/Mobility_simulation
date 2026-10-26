@@ -136,7 +136,7 @@ class PoolingInsertionHeuristicOnly(FleetControlBase):
             if self.driver_acceptance is not None:
                 self.driver_acceptance.begin_matching_round(sim_time, self.routing_engine)
             list_tuples = insertion_with_heuristics(sim_time, prq, self, force_feasible_assignment=True, excluded_vid=excluded_vid)
-            selected = select_insertion_candidate(self.driver_acceptance, list_tuples, prq, sim_time)
+            selected = select_insertion_candidate(self.driver_acceptance, list_tuples, prq, sim_time, self.av_product)
             if selected is not None:
                 (vid, vehplan, delta_cfv) = selected
                 self.tmp_assignment[rid_struct] = vehplan

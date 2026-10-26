@@ -39,14 +39,20 @@ def veh_search_for_immediate_request(sim_time, prq, fleetctrl, list_excluded_vid
         locations = {pos: [vid for vid in vids if not fleetctrl.sim_vehicles[vid].is_av]
                      for pos, vids in locations.items()}
         locations = {pos: vids for pos, vids in locations.items() if vids}
-    rv_routing = fleetctrl.routing_engine.return_travel_costs_Xto1(locations.keys(), prq_o_stop_pos,
-                                                                   max_routes=max_routes, max_cost_value=sr)
+    search_sets=[locations]
+    if product is not None and (product.threshold is not None or product.separate_search) and product.eligible(prq):
+        search_sets=[{pos:[vid for vid in vids if fleetctrl.sim_vehicles[vid].is_av==kind]
+                      for pos,vids in locations.items()} for kind in [False,True]]
+        search_sets=[{pos:vids for pos,vids in group.items() if vids} for group in search_sets]
     rv_vehicles = []
     rv_results_dict = {}
-    for vid_pos, cfv,tt,dis in rv_routing:
-        for vid in locations[vid_pos]:
-            rv_vehicles.append(fleetctrl.sim_vehicles[vid])
-            rv_results_dict[(prq_o_stop_pos, vid_pos)] = (cfv, tt, dis)
+    for group in search_sets:
+        rv_routing = fleetctrl.routing_engine.return_travel_costs_Xto1(group.keys(), prq_o_stop_pos,
+                                                                       max_routes=max_routes, max_cost_value=sr)
+        for vid_pos, cfv,tt,dis in rv_routing:
+            for vid in group[vid_pos]:
+                rv_vehicles.append(fleetctrl.sim_vehicles[vid])
+                rv_results_dict[(prq_o_stop_pos, vid_pos)] = (cfv, tt, dis)
     return rv_vehicles, rv_results_dict
 
 

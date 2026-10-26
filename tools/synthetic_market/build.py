@@ -256,6 +256,11 @@ def build(args):
             if args.driver_model=='off':raise ValueError('Future value requires a driver model')
             parameters.update(op_driver_acceptance_future_value=True,op_driver_acceptance_future_value_top_k=3)
         if av_share:
+            from src.misc.vehicle_timing import travel_time_factor
+            av_factor=travel_time_factor(getattr(args,'av_travel_time_factor',1))
+            threshold=getattr(args,'av_eta_threshold_seconds',None)
+            retarget=getattr(args,'av_retarget',False);joint=getattr(args,'av_joint_repositioning',False)
+            forecast_sigma=getattr(args,'av_forecast_noise_sigma',0)
             av_count=max(1,int(round(fleet*av_share)))
             human_count=fleet-av_count
             if args.av_zones is not None:
@@ -268,15 +273,32 @@ def build(args):
             av_bytes,changed=re.subn(rb'(?m)^(vtype_name_full,)[^\r\n]+',lambda m:m[1]+b'av_vehtype',vehicle_path.read_bytes(),count=1)
             if changed!=1:raise ValueError('Vehicle specification lacks vtype_name_full')
             av_path.write_bytes(av_bytes)
+            if av_factor!=1:
+                av_path.write_bytes(av_bytes.rstrip(b'\r\n')+f'\ntravel_time_factor,{av_factor}\n'.encode())
             composition={'default_vehtype':human_count,'av_vehtype':av_count}
             parameters.update(op_fleet_composition={k:v for k,v in composition.items() if v},
                 op_av_vehicle_types=[['av_vehtype']],op_av_zones=[av_zones],
                 op_av_opt_in_share=args.av_opt_in_share,op_av_preference_s=args.av_preference_seconds,
                 op_av_repositioning=args.av_repositioning,op_av_repositioning_timestep=resolution)
+            if threshold is not None:parameters['op_av_eta_threshold_s']=threshold
+            if retarget:parameters['op_av_retarget']=True
+            if forecast_sigma:parameters['op_av_forecast_sigma']=forecast_sigma
+            if joint:parameters['op_av_joint_repositioning']=True
+            if getattr(args,'av_repositioning_timestep',None) is not None:
+                parameters['op_av_repositioning_timestep']=args.av_repositioning_timestep
+            if av_factor!=1 or threshold is not None or retarget or joint or forecast_sigma:
+                eligible_context=context[context.PULocationID.isin(av_zones)&context.DOLocationID.isin(av_zones)]
+                eligible_forecast,_=historical_profiles(eligible_context,len(days),sorted(centroids),sim_start,sim_end+resolution,resolution,args.utilization)
+                eligible_forecast.to_csv(forecast_dir/'av_eligible.csv',index=False)
+                parameters['op_av_eligible_forecast_f']='av_eligible.csv'
             manifest['av_product']=dict(requested_share=av_share,av_count=av_count,human_count=human_count,
                 fence_zones=av_zones,fence_selection='explicit zones' if args.av_zones is not None else 'densest training-day pickup zones',
                 opt_in_share=args.av_opt_in_share,preference_seconds=args.av_preference_seconds,repositioning=args.av_repositioning,
                 interpretation='Fixed total fleet; AVs replace human vehicles. Adoption, fence and fleet split are scenario assumptions.')
+            if av_factor!=1 or threshold is not None or retarget or joint or forecast_sigma:
+                manifest['av_product'].update(travel_time_factor=av_factor,eta_threshold_seconds=threshold,
+                    retarget=retarget,forecast_noise_sigma=forecast_sigma,joint_repositioning=joint,
+                    av_eligible_forecast='Both training trip endpoints in fence; opt-in expectation applied at runtime')
         json_write(output/'parameters.json',parameters)
         if file_digest(args.zone_map)!=manifest['zone_map_sha256'] or any(file_digest(network/name)!=digest for name,digest in manifest['network_sha256'].items()):
             raise RuntimeError('Source network/zone inputs changed during market build')

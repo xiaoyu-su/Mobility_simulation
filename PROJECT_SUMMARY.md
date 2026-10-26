@@ -16,6 +16,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 6: windowed parallel evaluation | Full baseline snapshots, same-controller interventions, bounded isolated workers, disjoint request cohorts and explicit horizon censoring | `docs/PHASE_6.md` |
 | 7: market-data pipeline | Verified public Manhattan inputs, causal requests, source pooling consent, fitted pickup service, physical completion and event-aligned reports; 327 passing tests and full-demand comparisons; residual calibration errors reported | `docs/PHASE_7.md`, `docs/PHASE_7_COMPLETION.md` |
 | 8: mixed human/AV product | Loaded AV vehicle types, geofenced/opt-in service, rider-second preference, human-operation separation, idle diagnostics and historical-demand AV repositioning; 339 passing tests, 18 sampled real policy runs and exact historical compatibility retain benefits and costs | `docs/PHASE_8.md` |
+| 9: cautious AV policy experiments | Consistent planned/executed vehicle-type travel times, ETA-threshold dispatch with accepted-product protection, moving-empty retargeting, isolated forecast noise and bounded joint demand accounting; 370 passing tests, 56 real physical runs, six-seed dispatch comparisons and a full-demand pair | `docs/PHASE_9.md`, `docs/AV_DATA.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -30,8 +31,7 @@ Phase 5 adds the choice/conflict layer and solver-selected driver menus.
 Phase 5b dispatches declined insertion requests to later feasible drivers.
 Phase 5c lets the native batch optimizer find another driver after refusals.
 Phase 6 compares local policy interventions from identical baseline histories
-without repeating every lead-in. AV speed/threshold dispatch and cross-city
-comparisons remain later phases.
+without repeating every lead-in. Cross-city comparisons remain a later phase.
 Phase 7 prepares reproducible market inputs and adds license-free repositioning;
 the public TLC/Zenodo inputs are available and verified. Production corrections
 enforce source-clock timing, source pooling consent, physical pickup/drop-off
@@ -45,6 +45,11 @@ compares allocation policies with a fixed total fleet. In the sampled Manhattan
 experiment, stronger AV preference plus AV repositioning increases AV trip share
 and utilization while reducing human trips and increasing empty driving. These
 are conditional model effects, with synthetic adoption and service-area assumptions.
+Phase 9 applies cautious type-specific travel times consistently to planning and
+physical execution. Its threshold compares retained feasible AV/human pickup
+ETAs and preserves the accepted service product during reoptimization. Experiments
+retain completion, rider waits, human trip transfers and empty-distance outcomes;
+the opt-in, speed and supply assumptions do not establish field AV benefits.
 
 - [Change history](IMPROVEMENT_LOG.md)
 - [Step-by-step work and verification record](docs/WORK_LOG.md)
@@ -59,3 +64,5 @@ are conditional model effects, with synthetic adoption and service-area assumpti
 - [Phase 7 market inputs, HiGHS repositioning, calibration limits and data requirements](docs/PHASE_7.md)
 - [Phase 7 production corrections, full-demand results and remaining limits](docs/PHASE_7_COMPLETION.md)
 - [Phase 8 mixed-fleet rules, complete policy experiments and tradeoffs](docs/PHASE_8.md)
+- [Phase 9 cautious AV timing, threshold dispatch and repositioning experiments](docs/PHASE_9.md)
+- [Observed AV study inputs, scenario assumptions and benchmark boundaries](docs/AV_DATA.md)

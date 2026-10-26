@@ -29,6 +29,11 @@ alongside the improvements.
 fence, deterministic rider opt-in, a dispatch preference and separate AV
 repositioning. Validation passes 339 tests; 18 sampled Manhattan runs report allocation benefits,
 human-driver trip transfers, rider waits and empty-driving costs together.
+[Phase 9](docs/PHASE_9.md) adds cautious AV travel times, ETA-threshold dispatch,
+accepted-product protection, moving-empty retargeting, forecast-error sensitivity
+and joint human/AV repositioning. Validation passes 370 tests and 56 real-data
+physical runs, including six-seed dispatch comparisons and a full-demand pair; [AV_DATA.md](docs/AV_DATA.md)
+separates observed inputs from adoption and speed assumptions.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

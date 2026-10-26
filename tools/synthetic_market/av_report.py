@@ -77,6 +77,43 @@ def av_report(bundle, output):
     record['human_won_while_idle_av_closer']=int(gaps.lt(0).sum())
     record['dispatch_records']=len(dispatch)
     record['av_reposition_orders']=sum(len(r['assignments']) for r in audit['repositioning_rounds'])
+    if 'eta_threshold_seconds' in audit or 'retarget_repositioning' in audit or (output/'vehicle_time_factors.json').exists():
+        record.update(eta_threshold_seconds=audit.get('eta_threshold_seconds'),opt_in_share=audit['opt_in_share'],
+                      retarget_repositioning=audit.get('retarget_repositioning',False),forecast_sigma=audit.get('forecast_sigma',0),
+                      joint_repositioning=audit.get('joint_repositioning',False))
+        factors_path=output/'vehicle_time_factors.json'
+        if factors_path.exists():
+            factors=json.loads(factors_path.read_text());record['av_travel_time_factor']=factors['av_vehtype']['effective']
+            if 'vehicle_travel_time_factor' not in legs:raise RuntimeError('Loaded vehicle factor missing from actual leg records')
+            expected=legs.vehicle_type.map({k:v['effective'] for k,v in factors.items()})
+            if not np.allclose(legs.vehicle_travel_time_factor,expected):raise RuntimeError('Executed vehicle factor differs from loader audit')
+        else:record['av_travel_time_factor']=1.0
+        for kind,mask in [('av',av_legs),('human',~av_legs)]:
+            distance=float(legs.loc[mask,'driven_distance'].sum())
+            empty=float(legs.loc[mask&legs.occupancy.eq(0),'driven_distance'].sum())
+            record[kind+'_empty_distance_km']=empty/1000
+            record[kind+'_empty_distance_share']=empty/distance if distance else None
+        decisions=audit.get('threshold_decisions',[])
+        for d in decisions:
+            qualifies=d['best_av_eta_s'] is not None and (d['best_human_eta_s'] is None or d['best_av_eta_s']<=d['best_human_eta_s']+d['threshold_s']+1e-9)
+            if (d['selected_pool']=='av')!=qualifies:raise RuntimeError('AV threshold policy was not respected')
+        for rid,d in {d['request_id']:d for d in decisions}.items():
+            if rid in users.index and pd.notna(users.loc[rid,'dropoff_time']):
+                if (users.loc[rid,'vehicle_id'] in ids)!=(d['selected_pool']=='av'):
+                    raise RuntimeError('Executed service product differs from the accepted threshold dispatch')
+        record['threshold_decisions']=len(decisions)
+        record['threshold_av_choices']=sum(d['selected_pool']=='av' for d in decisions)
+        record['threshold_violations']=0
+        record['av_retarget_orders']=sum(a.get('retargeted',False) for r in audit['repositioning_rounds'] for a in r['assignments'])
+        coverage=audit.get('human_coverage_rounds',[])
+        for r in coverage:
+            for z,value in r['expected_av_coverage'].items():
+                if value<0 or value>r['original_demand'].get(z,0)+1e-9 or value>r['expected_av_eligible'].get(z,0)+1e-9 or value>r['available_av'].get(z,0)+1e-9:
+                    raise RuntimeError('Joint AV coverage violates forecast/availability bounds')
+                if not np.isclose(r['adjusted_human_demand'].get(z,0),r['original_demand'].get(z,0)-value):raise RuntimeError('Incorrect residual human demand')
+        record['human_forecast_av_coverage_sum']=sum(sum(r['expected_av_coverage'].values()) for r in coverage)
+        record['observed_av_trips_per_day']=None
+        record['daily_benchmark_scope']='Three-hour request cohort; no extrapolated daily-trip claim'
     record['time_scope']='Evaluation clock window for utilization; request cohort for trips/waits; whole-run reposition km'
     (output/'av_report.json').write_text(json.dumps(record,indent=2,allow_nan=False)+'\n')
     return record

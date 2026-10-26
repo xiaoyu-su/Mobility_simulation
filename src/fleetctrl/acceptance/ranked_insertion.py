@@ -21,8 +21,10 @@ def enabled(attributes):
     return bool(flag)
 
 
-def select_insertion_candidate(acceptance, candidates, request, simulation_time):
+def select_insertion_candidate(acceptance, candidates, request, simulation_time, av_product=None):
     """Preserve the original stable minimum exactly when fallback is disabled."""
+    if av_product is not None:
+        candidates=av_product.threshold_candidates(candidates,request,simulation_time)
     if acceptance is not None and acceptance.ranked_fallback is not None:
         return acceptance.ranked_fallback.select(candidates, request, simulation_time)
     return min(candidates, key=lambda item: item[2]) if candidates else None

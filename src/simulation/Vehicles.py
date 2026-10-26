@@ -50,6 +50,11 @@ class SimulationVehicle:
         self.record_route_flag = record_route_flag
         self.replay_flag = replay_flag
         parameters = scenario_parameters if scenario_parameters is not None else {}
+        from src.misc.vehicle_timing import travel_time_factor
+        self.travel_time_factor=travel_time_factor(veh_attributes_dict.get('travel_time_factor',1))
+        self.loaded_travel_time_factor=travel_time_factor(veh_attributes_dict.get('loaded_travel_time_factor',self.travel_time_factor))
+        self._timing_parameters=parameters
+        if self.travel_time_factor!=1:parameters['record_vehicle_travel_time_factor']=True
         self.tt_noise_sigma = travel_time_noise_sigma(parameters)
         # A private stream even in legacy mode: enabling execution noise must
         # never consume demand, traveler, initialization, or optimizer draws.
@@ -294,6 +299,8 @@ class SimulationVehicle:
             record_dict[G_VR_LEG_END_TIME] = simulation_time
             if self.tt_noise_sigma > 0:
                 record_dict["travel_time_multiplier"] = self.cl_tt_multiplier
+            if self._timing_parameters.get('record_vehicle_travel_time_factor'):
+                record_dict['vehicle_travel_time_factor']=self.travel_time_factor
             if self.cl_start_pos is None:
                 LOG.warning(f"ending a leg that has not been started before! {self.vid} {self.status.display_name} {self.cl_start_time}")
                 if len(ca.rq_dict.get(1, [])) != 0 or len(ca.rq_dict.get(-1, [])) != 0:
@@ -572,18 +579,19 @@ class SimulationVehicle:
         # router timestamps back to wall time. Keep the exact legacy arithmetic
         # when noise is disabled; stationary service durations are unscaled.
         movement_budget = remaining_step_time
-        if self._execution_rng is not None:
-            movement_budget = remaining_step_time / self.cl_tt_multiplier
+        multiplier=self.cl_tt_multiplier*self.travel_time_factor
+        if self._execution_rng is not None or self.travel_time_factor!=1:
+            movement_budget = remaining_step_time / multiplier
         (new_pos, driven_distance, arrival_in_time_step, passed_nodes, passed_node_times) = \
             self.routing_engine.move_along_route(self.cl_remaining_route, self.pos, movement_budget, target_position=self.assigned_route[0].destination_pos,
                                                     sim_vid_id=(self.op_id, self.vid),
                                                     new_sim_time=c_time,
                                                     record_node_times=self.replay_flag)
-        if self._execution_rng is not None:
+        if self._execution_rng is not None or self.travel_time_factor!=1:
             if arrival_in_time_step != -1:
                 arrival_in_time_step = min(c_time + remaining_step_time,
-                                          c_time + (arrival_in_time_step - c_time) * self.cl_tt_multiplier)
-            passed_node_times = [c_time + (time - c_time) * self.cl_tt_multiplier for time in passed_node_times]
+                                          c_time + (arrival_in_time_step - c_time) * multiplier)
+            passed_node_times = [c_time + (time - c_time) * multiplier for time in passed_node_times]
         if logging.DEBUG >= LOG.getEffectiveLevel():
             LOG.debug(f"veh {self.vid} move {self.pos} -> {new_pos} driven {driven_distance} m in {remaining_step_time} s to {arrival_in_time_step} passed nodes {passed_nodes}")
         last_node = self.pos[0]

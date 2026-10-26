@@ -55,6 +55,7 @@ class FutureValue:
             raise ValueError(f"{TOP_K} must be a nonnegative integer")
         self.acceptance = acceptance
         self.vehicles = tuple(vehicles)
+        self.vehicle_by_id={v.vid:v for v in self.vehicles}
         self.top_k = int(top_k)
         self.context = None
         self.routing_engine = None
@@ -101,6 +102,9 @@ class FutureValue:
 
         def reachable():
             for vid, position, capacity, status in self.snapshot:
+                vehicle=self.vehicle_by_id[vid]
+                if getattr(vehicle,'is_av',False) and not vehicle.av_product.eligible(request):
+                    continue
                 if position is None or status == VRL_STATES.OUT_OF_SERVICE or capacity < passengers:
                     continue
                 if position not in by_position:
@@ -108,6 +112,8 @@ class FutureValue:
                     _, travel_time, _ = self.routing_engine.return_travel_costs_1to1(position, origin)
                     by_position[position] = travel_time
                 travel_time = by_position[position]
+                factor=getattr(vehicle,'travel_time_factor',1)
+                if factor!=1:travel_time*=factor
                 if not math.isfinite(travel_time) or travel_time < 0:
                     continue
                 eta = max(0, travel_time, earliest - simulation_time)

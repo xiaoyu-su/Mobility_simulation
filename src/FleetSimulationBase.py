@@ -273,6 +273,11 @@ class FleetSimulationBase:
         self.operators: tp.List[FleetControlBase] = []
         self.op_output = {}
         self._load_fleetctr_vehicles()
+        if self.scenario_parameters.get('record_vehicle_travel_time_factor') and not self.skip_output:
+            timing={v.veh_type:dict(loaded=v.loaded_travel_time_factor,effective=v.travel_time_factor)
+                    for v in self.sim_vehicles.values()}
+            with open(os.path.join(self.dir_names[G_DIR_OUTPUT],'vehicle_time_factors.json'),'w') as stream:
+                json.dump(timing,stream,indent=2)
 
         # call additional simulation environment specific init
         LOG.info("Simulation environment specific initializations...")
@@ -391,6 +396,13 @@ class FleetSimulationBase:
                     G_VTYPE_BATTERY_SIZE: float(veh_data[G_VTYPE_BATTERY_SIZE]),
                     G_VTYPE_RANGE: float(veh_data[G_VTYPE_RANGE])
                 }
+                from src.misc.vehicle_timing import travel_time_factor
+                loaded=travel_time_factor(veh_data.get('travel_time_factor',1))
+                overrides=self.scenario_parameters.get('vehicle_travel_time_factors',{})
+                effective=travel_time_factor(overrides.get(vehicle_type,loaded))
+                veh_type_attributes[vehicle_type].update(travel_time_factor=effective,loaded_travel_time_factor=loaded)
+                if loaded!=1 or effective!=1 or overrides:
+                    self.scenario_parameters['record_vehicle_travel_time_factor']=True
             return veh_type_attributes[vehicle_type]
 
         # simulation vehicles and fleet control modules

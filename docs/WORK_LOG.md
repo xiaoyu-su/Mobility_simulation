@@ -2022,3 +2022,323 @@ and will be committed locally before the actual push attempt is recorded.
   and links only; tested source/inputs/results remain unchanged.
 - Published branch:
   https://github.com/xiaoyu-su/Mobility_simulation/tree/phase-8-mixed-av-fleet
+
+## Phase 9: AV speed, ETA threshold and repositioning follow-ups (2026-10-25, Pacific)
+
+### Step 1: confirm the next round and preserve the published base
+
+- Started clean branch `phase-9-av-threshold-and-speed` from published
+  `59b8ff04519947fda4c2fdeb46c8ec8870ef03ac`. Both Git identities remain Xiaoyu
+  Su. Re-read IMG_3328/3329: next is AV Round 2, before cross-city evaluation.
+  Preserve every prior source/input/output reference and keep the screenshot's
+  outcome numbers separate from actual measurements in this fork.
+- Scope: consistent cautious-vehicle plans/execution, actual CSV-loader
+  retention, AV-first ETA threshold, empty moving-reposition retargeting,
+  forecast-noise sensitivity, joint expected-demand accounting and full-scale
+  simulation checks. Explicit .3 opt-in is a scenario choice; it is not inferred
+  from the 2019 trip records.
+- Attempted primary survey/benchmark access (Pew, AAA, CPUC, Obi) and accessible
+  public-repository search. All return proxy CONNECT 403; exact URLs/errors
+  remain in `.setup/phase9/research/`. Actual trip/network inputs remain fully
+  local and verified. `docs/AV_DATA.md` records the resulting empirical boundary;
+  no inaccessible reference number is presented as independently validated.
+
+### Step 2: implement the controls and exercise complete simulations
+
+- Added validated `travel_time_factor` [1,10], default 1, retained by the actual
+  vehicle-file loader. Record loaded/effective factors and actual leg values.
+  VehiclePlan arrivals/intermediary states, batch vehicle copies, future-value
+  alternative ETAs, AV proximity/reposition costs and physical driving/replay
+  use the same factor. Noise remains separate; stationary duration, distance
+  and energy per meter are unchanged. Factors below one are rejected because
+  existing reachability pruning is a safe optimistic bound for slower vehicles.
+- Future-value alternatives now exclude AVs ineligible for the request. This
+  corrects an old mixed-product proxy issue; it can intentionally change old
+  AV+future-value fixture outputs. Human-only/AV-disabled behavior remains the
+  compatibility target. Human multi-item menus are explicitly rejected in this
+  mixed-product profile instead of silently using incompatible probabilities.
+- Added inclusive ETA-threshold dispatch for the two immediate insertion
+  controllers. Threshold and cost preference are alternatives. Native global
+  batch threshold is rejected explicitly, while speed/product constraints are
+  tested under all three controllers. Every policy-grid arm has the same
+  separate human/AV nearest-position budgets, including cost controls, so a
+  search-budget expansion is not mislabeled a threshold benefit.
+- Added unlocked empty-target retargeting without replacing rider tours,
+  isolated mean-one lognormal forecast errors, rolling forecast-bin overlap
+  and a joint policy using eligible historical OD demand plus conservative AV
+  availability coverage subtracted from human forecast demand. AV planning
+  precedes human planning only in joint mode. Raw forecast adjustments/orders
+  and physical type/threshold/coverage checks are exported.
+- Expanded `tools.av_eval` with immutable named JSON policy grids and explicit
+  timing/threshold/opt-in/noise/retarget/joint overrides. Source/dependency/bundle
+  guards, every-request accounting and physical completion remain hard checks.
+  Real reports distinguish evaluation-cohort waits/trips, evaluation-clock
+  utilization and whole-run empty distance/cost; no daily extrapolation.
+
+### Step 3: failed checks, correction and actual-service commitment bug
+
+- First frozen checkpoint
+  `280077197ff10707d98b1a9e0327ac918bde3e18085f4951fdd31946cbe710f6`
+  (245 files): **27 passed /3 failed in 51.99s**. The physics assertion assumed
+  sub-microsecond matrix movement precision; NetworkTTMatrix explicitly rounds
+  event times to centiseconds. Bound this known rounding by movement updates,
+  retaining exact independent line-network checks. Another physics fixture
+  reoptimized all AV proposals onto humans, so the intended AV physics never
+  executed. Add an explicit +300s preference to that fixture to exercise AVs
+  after reoptimization; do not count a zero-AV run as an AV physics check.
+- Corrected candidate
+  `f9d6be73805299aee0d37d76fb24a2153c3ce090b648a80abe838e2803df47d5`:
+  **71 passed in 53.89s**. Then an independent check of actual service exposed
+  a real threshold integration gap: insertion-plus-batch chose **34 AV trips**
+  but completed **11 by AV**, with **23 completed product mismatches**. The
+  selection-only threshold audit did not detect later reoptimization.
+  `threshold-commitment-failure.json` preserves the affected rider IDs.
+- Stopped the owned full-suite/three real-worker process trees before changing
+  source; `interruption.json` preserves commands/PIDs/reason. The initial full
+  gate and real studies were interrupted, not passed. Existing partial/completed
+  outputs and original private bundles remain unchanged in their own paths;
+  old study manifests explicitly say interrupted for this fix.
+- Fix: commit the selected service product at acceptance in the shared plan
+  feasibility check. Native optimization can move a booking within its human/
+  AV class but cannot undo the accepted class. Repeated committed selection
+  retains the product. Actual completed user rows are independently checked
+  against threshold decisions. Strengthened end-to-end assertions compare AV
+  completion with chosen AV products, not only proposal logs.
+- Final focused candidate
+  `66fe97b5ab63c89a440583da274cb3e1e87841f070285cb322e2b95f0a5ad939`
+  (245 files): **72 passed in 54.88s**, including 17 complete physical runs.
+  The corrected insertion-plus-batch fixture now has **34 AV choices /34 AV
+  completions** in both physical arms and their exact replays. Forecast noise,
+  moving retargets, joint adjustments, private consent, human shifts/acceptance,
+  future value, loaded speed factors and all three controllers are exercised.
+
+### Step 4: fresh final full gate and real experiments
+
+- Keep repository Python/dependencies and Git HEAD frozen on the final digest.
+  Full gate: `.venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase9/full-final/runs
+  --junitxml=/workspace/.setup/phase9/full-final/junit.xml`, with stdout/stderr
+  at `full-final/tests.txt`. Earlier interrupted `full/` remains separate.
+- Fresh real runner: `.venv/bin/python -u
+  /workspace/.setup/phase9/run_final_cases.py`. Final inputs are
+  `/workspace/market_inputs/phase9_final_av_10pct` and `phase9_final_av_full`;
+  final outputs are `/workspace/market_results/phase9_final/{main,followup,full}`.
+  Exact grids, commands, return codes, runtimes and logs are in
+  `.setup/phase9/{grids_final,real_final}`. Fresh builds pass in **57.0s /66.8s**.
+  The earlier runner, inputs and `market_results/phase9/` remain preserved.
+- Main: six seeds0–5 ×six arms =36 full physical runs, comparing cost control,
+  thresholds0/120/240/480 at1.25× travel time and equal-speed threshold240.
+  Follow-ups: seeds0–2 ×six arms =18 runs: exact threshold240 control repeat,
+  noise.5, joint, callback300 control, callback300 retarget, combined. Three
+  repeated controls are replay checks, not extra independent replicas.
+  Full demand: seed0, threshold0 versus240, two full physical runs.
+- Sample inputs: **3,150 evaluation +751 warm-up requests**, **775 vehicles
+  =78 AVs +697 humans**. Full inputs: **32,192 evaluation +7,315 warm-up**,
+  **7,932 vehicles =793 AVs +7,139 humans**. Same19 training-derived fence
+  zones, .3 opt-in, zero cost preference, human acceptance off and human HiGHS
+  repositioning on. Forecasts/travel/curb/patience/supply use only earlier
+  training days. All56 final physical runs, source, inputs and paired audits
+  will be finalized before publication; this entry does not claim their gates
+  passed while they are still running.
+
+### Step 5: independent output inspection and follow-up outcomes
+
+- Independent checker: `.venv/bin/python
+  /workspace/.setup/phase9/analyze_final.py`. It verifies final source and all
+  private bundle bytes, then independently reconstructs eligibility and actual
+  pickup/drop-off IDs from raw vehicle activity. Checks include accepted promise
+  coverage, full unique demand, completion tail, chronology, capacity, private
+  consent, physical curb minima, actual human/AV product commitment, effective
+  type factors, retarget occupancy, human/AV operation separation, forecast error
+  validity and bounded residual human demand. Matched random-input audits and
+  three fresh-process control replays are checked independently of CLI success.
+- Early `--partial` inspection passed **35 completed final physical runs**;
+  it does not produce or substitute for a final all-run validation result.
+  A separate interim historical comparison matched **140 full non-AV runs /
+  638 byte-identical tables**; the final full-suite audit will cover every
+  historical counterpart. Source remains the same 245-file digest.
+- All **18 follow-up runs** finish successfully in **1173.7s**. Actual changed
+  empty targets number **191/189/210** in retarget-only seeds 0/1/2 and
+  **831/827/797** in combined cases. Joint expected coverage is bounded and
+  positive; forecast-error factors are positive, finite and reproducible.
+- Retarget-only versus the same 300-second callback control: mean completion
+  is **3135.67 in both**; AV trips rise **180.67→187.67**; whole-run AV empty
+  distance share falls **63.32%→56.59%**, but eligible served mean arrival wait
+  rises **248.91→261.52s**. Completion changes by seed are **+8/−2/−6**, so
+  this is not a robust completion improvement. Retargeting and callback-frequency
+  effects are kept separate in the paired tables.
+- Native GitHub read access succeeds (`git ls-remote origin`); configured identity
+  is Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com. No token is printed
+  or changed. Publication remains gated on final regression, all real runs and
+  complete archived evidence, including the slower full-demand pair.
+
+### Step 6: final regression and historical compatibility gate
+
+- Final `.venv/bin/python -m pytest -q` command from Step 4 finishes with
+  **370 passed, 0 failed/errors/skipped, 2045.38s**. Source and Git parent
+  remain unchanged throughout. Original JUnit/XML and stdout bytes are retained.
+- Independent audit: `.venv/bin/python
+  /workspace/.setup/phase9/audit_suite.py >
+  /workspace/.setup/phase9/suite-audit.txt 2>&1` succeeds. It checks **234 full
+  physical simulations +32 restored windows**, unique accounting, matching
+  pickup/drop-off completeness, final states and nonoverlapping vehicle activity.
+- Every unchanged historical non-AV counterpart matches Phase 8: **201 full
+  runs /930 byte-identical output tables**, plus **32 restored windows /128
+  exact tables**. The approved Phase 0 references and old published evidence
+  remain unchanged. The deliberate AV-aware future-value/product corrections
+  are exercised by new physical cases and are not mislabeled unchanged history.
+- Evidence: `.setup/phase9/suite-integrity.json`, `legacy-identity.json`,
+  `suite-audit.txt`, `full-final/{tests.txt,junit.xml,runs}`. All are included
+  in the final archive; standalone review copies are under
+  `docs/validation/phase9/` after packaging.
+
+### Step 7: sampled real results and replay gate
+
+- Main six-seed experiment finishes **36/36 physical runs, return code 0,
+  2258.23s**. Together with the 18 follow-ups, all **54 sampled physical runs**
+  are complete. The two full-demand physical runs are still running at this
+  checkpoint and are not counted as passed here.
+- `.venv/bin/python /workspace/.setup/phase9/analyze_final.py --sample >
+  /workspace/.setup/phase9/sample-analysis.txt 2>&1` passes all independent
+  physical checks on the 54 runs. All three fresh-process threshold-240 control
+  replays match **seven raw user/vehicle/product/dispatch/human-reposition/report/
+  random-audit files byte for byte**. These are 51 distinct sampled seed/config
+  conditions plus three replays. `sample-analysis/` explicitly excludes the
+  unfinished full-demand results; final all-run analysis will supersede it.
+- Cautious threshold240 versus same-search cost control, means over six seeds:
+  completed **3124.50→3133.50** of3150; actual AV trips **14.67→180.50**;
+  AV served share **0.47%→5.76%**; AV occupied utilization **2.42%→29.46%**;
+  whole-run AV empty-distance share **94.31%→58.22%**. Human trips/online hour
+  fall **1.487→1.412**, approximately5.04%. Higher allocation/productive AV use
+  is verified, but this is not an unconditional social-benefit claim.
+- The **+9.0** mean completion change has conditional six-seed t interval
+  **[−0.003,18.003]**, including zero. Eligible served mean wait changes by
+  **−3.12s**, interval **[−19.87,13.63]**. Do not claim either is a demonstrated
+  completion/wait improvement. These intervals condition on one fixed source
+  cohort and do not establish population or cross-city inference.
+- Cautious threshold240 versus threshold0 adds **127.17 AV trips** on average
+  but only **1.33 total completions** (interval[−4.88,7.55]); eligible served
+  mean wait rises **23.17s** (interval[11.66,34.68]). Larger threshold480 raises
+  AV share to **6.69%**, with eligible wait **288.63s** versus226.60s at threshold0.
+  Threshold120 gives lower eligible wait and higher mean completion than240 in
+  this fixed cohort; no policy is selected after seeing held-out outcomes.
+- Matplotlib scientific PNG/PDF is generated from all six seeds; whiskers show
+  seed ranges, not confidence intervals. Visual inspection confirms legible
+  titles, units, control label and domain definitions. `paired_effects.csv`
+  preserves actual paired intervals; `common_rider_effects.csv` preserves
+  comparisons on identical served rider IDs, including adverse effects.
+
+### Step 8: full-demand physical control
+
+- Full-demand threshold0 completes with **return code 0 in2962.72s** on the
+  same frozen source and full private bundle. It accounts for all **39,507
+  unique requests** (32,192 evaluation +7,315 warm-up). Evaluation completion is
+  **31,720**, including **317 AV /31,403 human** trips. All accepted bookings
+  finish; actual AV opt-in/fence/product checks report zero violations.
+- The eligibility cohort contains **2,377 evaluation requests**; AV eligibility
+  service rate is13.34% and AV share of completed trips1.00%. Occupied AV
+  utilization is5.44%, idle share86.09%, and whole-run AV empty-distance share
+  77.59%. Eligible served mean arrival wait is165.99s; human trips per online
+  hour1.4663. These are the control's model outcomes, not improvement claims.
+- The threshold240 full-demand counterpart starts only after this worker
+  succeeds. Final all-run publication still waits for that counterpart and
+  its paired/output audit. The existing driver-metrics CSV read emits a
+  nonfatal pandas mixed-column DtypeWarning on the large vehicle table; raw
+  logs are retained. Independent vehicle-output inspection reads with
+  `low_memory=False` and checks physical activity directly.
+
+### Step 9: old AV-default compatibility extension
+
+- `.venv/bin/python /workspace/.setup/phase9/audit_av_defaults.py` checks the
+  16 previously published Phase 8 full AV cases against their final-suite
+  counterparts. With the new controls disabled, **14 runs /93 user, vehicle,
+  evaluation, dispatch, product, repositioning and acceptance tables match byte
+  for byte**. Two AV/future-value cases are recorded separately because the
+  eligibility-aware fallback-value correction is intentional; they are not
+  claimed unchanged. Every counterpart finishes under the full regression gate.
+- This extends the 201-run non-AV compatibility proof to the AV-default
+  repositioning/dispatch path. Evidence: `av-default-compatibility.json` and
+  its exact command/output log, both retained in the complete archive.
+- The independent real-data checker now passes **55 completed runs**, including
+  the full-demand threshold0 control; the final threshold240 case remains
+  running. The 55-run checkpoint is stored in
+  `full-control-independent-check.txt`; it is not a substitute for final
+  56-run validation and is not used to declare the unfinished phase complete.
+
+- The full-demand control's actual completion tail ends at **53,580s (14:53)**,
+  **17,520s after the 10:00 cohort endpoint**, with **0 remaining tasks /0
+  onboard request IDs**. No incomplete trip is hidden by stopping at the
+  request horizon. The report distinguishes this full physical fulfillment
+  domain from evaluation-clock utilization and request-cohort trip counts.
+
+- Focused checkpoint selections are preserved by JUnit and
+  `focused_reproduction.json`. The 30-case first checkpoint selects
+  `tests/unit/test_av_round2.py tests/integration/test_av_round2_examples.py`.
+  The 71/72-case corrected gates additionally select
+  `tests/unit/test_av_product.py tests/unit/test_highs_repositioning.py
+  tests/unit/test_future_value.py`. Equivalent exact argument-vector reproduction
+  commands use `.venv/bin/python -m pytest -q` with those files and fresh
+  basetemp/JUnit paths under `.setup/phase9-reproduction/<checkpoint>/`.
+  These are archived reproduction recipes derived from actual JUnit selections,
+  not a claim of an additional rerun. Restore each matching source digest first;
+  controller/config/seed details remain in its complete physical run outputs.
+
+
+### Step 10: final full-demand counterpart and all-run audit
+
+- All three final real-study commands finish with return code0: main **36 runs
+  /2258.23s**, follow-ups **18 runs /1173.74s**, full-demand **2 runs
+  /5731.69s**. Exact commands, runtime and logs are
+  retained under `.setup/phase9/real_final`; the outer runner writes
+  `execution.json` only after all studies succeed.
+- The single-seed full-demand pair completes **31720→31831 of 32,192 evaluation requests**, with actual AV completions **317→2139**, AV served share **1.00%→6.72%**, and AV occupied utilization **5.44%→35.23%**. Eligible served mean arrival wait changes **165.99→180.85s**; human trips per online hour change **1.4663→1.3864**. Whole-run AV empty-distance share changes **77.59%→42.42%**, while absolute empty AV distance increases **3715.15→6010.40km**. A lower empty share is not an absolute empty-driving reduction. Both runs clear every accepted booking and all physical/product checks. This is a one-seed scale check, with no replicated full-demand interval or full-day claim.
+- `.venv/bin/python /workspace/.setup/phase9/analyze_final.py >
+  /workspace/.setup/phase9/analysis.txt 2>&1` passes all **56 final physical
+  runs /53 unique seed-configurations**, **49 matched input comparisons** and
+  **three exact fresh-process control replays across seven files each**.
+  All accepted bookings physically board/alight; all unique demand is accounted
+  for; tails clear; product commitment, fence/opt-in, chronology, capacity,
+  service minima, effective timing factors, retarget occupancy and joint bounds
+  pass. Source/dependencies remain the frozen245-file digest recorded above.
+- Final outputs include per-seed/range tables, paired effects/conditional
+  intervals, common-served-rider changes, all file hashes, scientific PNG/PDF
+  and explicit sampling/benchmark/financial/domain limits. The earlier
+  `sample-analysis/` checkpoint remains archived; final `analysis/` supersedes it.
+
+### Step 11: complete raw evidence and upload-byte verification
+
+- `.venv/bin/python /workspace/.setup/phase9/package_final.py >
+  /workspace/.setup/phase9-package.txt 2>&1` retains final and failed/interrupted
+  raw runs, complete regression/windows, original/corrected frozen sources,
+  private training/demand/supply/forecast inputs, all scripts/grids/execution
+  logs, public source manifests and independent analyses.
+- Archive contains **11834 files**, logical compressed
+  size **494712640 bytes**, in **15 upload part(s)**.
+  SHA-256: `5508b17d1dd3e191a9bbeb88fdc2029a94bf06e9842f3578dfd745bf37c58027`. Every stored member's bytes and all upload parts
+  pass readback verification. Repeated large public matrices are explicitly
+  listed with exact size/hash/restoration path; original large public Parquet/
+  ZIP inputs stay outside Git with verified source URLs and hashes.
+- No raw SVG/XML/TXT whitespace is rewritten. Source/documentation whitespace
+  gates exclude generated raw artifacts. No plan photographs are republished.
+- `.venv/bin/python /workspace/.setup/phase9/prepublish.py` checks the final
+  source/snapshot, all real output hashes, final manifests/input bundles,
+  uploaded archive bytes and omitted-matrix restoration hashes, report links,
+  inspected figure identity and unchanged old evidence before commit/push.
+- Final profile retains assumptions: .3 opt-in, cautious travel time1.25, fixed
+  replacement fleet and training proxies. External AV benchmarks remain
+  unverified; calibration closure, full-day inference, cross-city validation,
+  global-batch threshold dispatch and mixed human multi-item menus are not claimed.
+
+- Final presentation clarification derives full-demand fleet empty totals as
+  `av_empty_distance_km + human_empty_distance_km` from the published
+  `seed_results.csv`: **55159.55→55348.77km (+0.34%)**. The AV-only
+  increase is partly offset by reduced human empty kilometers. This note is
+  added to the standalone derived report/phase guide after raw packaging;
+  the archive's original analysis and all component values remain unchanged.
+  This is presentation arithmetic, not an extra simulation or altered output.
+- The post-analysis command `.venv/bin/python
+  /workspace/.setup/phase9/augment_results.py >
+  /workspace/.setup/phase9/absolute-distance-analysis.txt` adds the explicit
+  AV absolute-distance/percentage distinction before archiving. Its script
+  and output are included in the raw record. Final inspected/scientific figure
+  bytes match the earlier sample figure exactly.

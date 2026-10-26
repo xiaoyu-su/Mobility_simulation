@@ -427,3 +427,47 @@ outcomes. The real-data follow-up below does not change those historical results
   or cross-city claim. Cautious speeds and threshold dispatch are later rounds.
 - **Record:** [Phase 8 guide and results](docs/PHASE_8.md),
   [step-by-step log](docs/WORK_LOG.md), [complete evidence](docs/validation/phase8/).
+
+## Phase 9: cautious AV policy experiments, Round 2
+
+- **Problem:** vehicle-type speed declarations must survive the actual CSV
+  loader and affect both planning and movement. A matching bonus alone does
+  not express a rider pickup-ETA allowance; later batch reoptimization can also
+  silently change an accepted service product.
+- **Change:** validated per-type travel-time factors in loaded vehicles, plans,
+  native vehicle copies, fallback ETAs and physical execution; AV-first feasible
+  ETA thresholds with identical per-class candidate search in controls;
+  accepted human/AV product protection; moving-empty retargeting; isolated
+  forecast-error streams; training-only eligible forecasts and bounded residual
+  human demand in joint repositioning. Existing settings retain old behavior.
+- **Benefit verified:** the real loader/physical-route tests cover all three
+  controllers; the two insertion controllers support threshold dispatch and
+  combined human acceptance, future value and shift cases. A discovered
+  insertion-plus-batch bug changes from 34 AV choices /11 AV completions to
+  **34 /34** after accepted-product protection. Actual service is checked in
+  addition to proposal logs.
+- **Validation:** **370 tests pass** in 2045.38 seconds; independent inspection
+  covers **234 full simulations +32 restored windows**. Historical non-AV
+  behavior matches **201 full runs /930 byte-identical tables** and **128 exact
+  restored-window tables**. Failed/interrupted candidates remain preserved.
+- **Measured allocation gains and costs:** across six sampled seeds, cautious
+  threshold 240 versus the same-search cost control raises AV served share
+  **0.47%→5.76%** and occupied utilization **2.42%→29.46%**, while human trips
+  per online hour fall **5.04%**. Mean completion rises by 9 of 3150 requests,
+  but its conditional interval includes zero. Relative to threshold 0, the
+  larger threshold increases eligible served wait by **23.17s**. Retargeting
+  reduces empty-distance share against its callback-matched control, with no
+  mean completion gain and worse eligible wait. These are conditional model
+  tradeoffs, not a claim of universally better service.
+- **Real validation:** all **56 physical policy runs** pass independent output
+  checks, with three exact seven-file control replays. **14 historical AV-default
+  cases /93 tables** also match byte for byte. The single-seed full-demand pair completes **31720→31831 of 32,192 evaluation requests**, with actual AV completions **317→2139**, AV served share **1.00%→6.72%**, and AV occupied utilization **5.44%→35.23%**. Eligible served mean arrival wait changes **165.99→180.85s**; human trips per online hour change **1.4663→1.3864**. Whole-run AV empty-distance share changes **77.59%→42.42%**, while absolute empty AV distance increases **3715.15→6010.40km**. A lower empty share is not an absolute empty-driving reduction. Both runs clear every accepted booking and all physical/product checks. This is a one-seed scale check, with no replicated full-demand interval or full-day claim.
+- **Scope:** empirical trips/network are available; .3 opt-in and 1.25 travel
+  time are explicit assumptions. Thresholds apply to retained feasible plans at
+  dispatch, not actual pickup guarantees. Native global-batch threshold dispatch,
+  mixed multi-item human menus, daily AV benchmarks and cross-city validation
+  are outside this profile. Inaccessible external reference figures are not
+  presented as verified field targets.
+- **Record:** [Phase 9 implementation and experiment design](docs/PHASE_9.md),
+  [data and assumptions](docs/AV_DATA.md), [step-by-step log](docs/WORK_LOG.md)
+  and [complete validation evidence](docs/validation/phase9/).

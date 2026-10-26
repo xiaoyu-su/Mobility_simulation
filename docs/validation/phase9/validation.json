@@ -1,0 +1,33 @@
+{
+  "code_digest": "66fe97b5ab63c89a440583da274cb3e1e87841f070285cb322e2b95f0a5ad939",
+  "source_files": 245,
+  "pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "370",
+    "time": "2045.372",
+    "timestamp": "2026-10-26T04:32:18.616325+00:00",
+    "hostname": "48c69016c736"
+  },
+  "regression_full_simulations": 234,
+  "restored_windows": 32,
+  "historical_non_av_full_runs": 201,
+  "historical_exact_tables": 930,
+  "historical_byte_identical_tables": 930,
+  "historical_exact_window_tables": 128,
+  "unchanged_av_default_runs": 14,
+  "unchanged_av_default_byte_identical_tables": 93,
+  "real_policy_runs": 56,
+  "unique_seed_configurations": 53,
+  "full_demand_policy_runs": 2,
+  "exact_fresh_process_control_replays": 3,
+  "real_rule_violations": 0,
+  "all_accepted_real_bookings_complete": true,
+  "all_archived_bytes_verified": true,
+  "archive_sha256": "5508b17d1dd3e191a9bbeb88fdc2029a94bf06e9842f3578dfd745bf37c58027",
+  "archived_files": 11834,
+  "claim": "Conditional counterfactual policy effects on public Manhattan demand; no field, daily-trip, calibration-closure or cross-city claim",
+  "source_plan_scope": "IMG_3328/3329 AV product Round 2; cross-city Round 3 remains later"
+}

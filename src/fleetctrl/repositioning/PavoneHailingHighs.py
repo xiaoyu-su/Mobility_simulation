@@ -79,6 +79,10 @@ class PavoneHailingHighs(PavoneHailingRepositioningFC):
         t0,t1 = [sim_time+h for h in self.list_horizons]
         zones = sorted(z for z in self.zone_system.get_all_zones() if z >= 0)
         demand = self._get_demand_forecasts(t0,t1);supply = self._get_historic_arrival_forecasts(t0,t1)
+        av_coverage={}
+        product=getattr(self.fleetctrl,'av_product',None)
+        if product is not None:
+            demand,av_coverage=product.human_forecast(demand,t0,t1)
         weight = 1 if self._weight_on_forecast is None else self._weight_on_forecast
         if not math.isfinite(weight) or weight < 0:raise ValueError('Forecast weight must be nonnegative and finite')
         for values in [demand,supply]:
@@ -112,5 +116,6 @@ class PavoneHailingHighs(PavoneHailingRepositioningFC):
             vehicles.remove(vehicle);changed.append(vehicle.vid)
         self.audit['rounds'].append(dict(time=sim_time,idle=idle,forecast_weight=weight,forecast_demand=demand,forecast_arrivals=supply,
             **result,flows=[list(pair) for pair in flows],assigned_vehicles=changed))
+        if av_coverage:self.audit['rounds'][-1]['av_coverage']=av_coverage
         if self.audit_path is not None:self.audit_path.write_text(json.dumps(self.audit,indent=2,allow_nan=False)+'\n')
         return changed

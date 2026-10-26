@@ -802,7 +802,8 @@ class VehiclePlan:
             if c_pos != pstop.get_pos():
                 _, tt, tdist = routing_engine.return_travel_costs_1to1(c_pos, pstop.get_pos())
                 c_pos = pstop.get_pos()
-                c_time += tt
+                factor=getattr(veh_obj,'travel_time_factor',1)
+                c_time += tt if factor==1 else tt*factor
                 c_soc -= veh_obj.compute_soc_consumption(tdist)
             if c_pos == pstop.get_pos():
                 last_c_time = c_time
@@ -905,7 +906,8 @@ class VehiclePlan:
                     break
                 _, tt, tdist = routing_engine.return_travel_costs_1to1(c_pos, pstop_pos)
                 c_pos = pstop_pos
-                c_time += tt
+                factor=getattr(veh_obj,'travel_time_factor',1)
+                c_time += tt if factor==1 else tt*factor
                 # LOG.debug(f"c_time 2 {c_time}")
 
                 c_soc -= veh_obj.compute_soc_consumption(tdist)

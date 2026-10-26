@@ -38,6 +38,14 @@ def main():
     parser.add_argument('--policy',choices=['no_repo','repo'],required=True)
     parser.add_argument('--av-preference-seconds',type=float)
     parser.add_argument('--av-repositioning',choices=['off','demand'])
+    parser.add_argument('--av-eta-threshold-seconds')
+    parser.add_argument('--av-travel-time-factor',type=float)
+    parser.add_argument('--av-opt-in-share',type=float)
+    parser.add_argument('--av-retarget',choices=['off','on'])
+    parser.add_argument('--av-forecast-noise-sigma',type=float)
+    parser.add_argument('--av-joint-repositioning',choices=['off','on'])
+    parser.add_argument('--av-repositioning-timestep',type=int)
+    parser.add_argument('--av-separate-search',choices=['off','on'])
     args=parser.parse_args();bundle=args.bundle.resolve();output=args.output.resolve()
     if output.exists():raise ValueError('Refusing to overwrite market simulation output')
     manifest=verify_bundle(bundle)
@@ -45,10 +53,20 @@ def main():
     parameters.update(random_seed=args.seed,scenario_name=f'market_{args.policy}_{args.seed}',
         evaluate=1,keep_old=False,show_progress_bar=False,log_level='warning',bugfix=False)
     if args.policy=='repo':parameters['op_repo_method']='PavoneFCHiGHS'
-    if args.av_preference_seconds is not None or args.av_repositioning is not None:
+    av_overrides={k:v for k,v in vars(args).items() if k.startswith('av_') and v is not None}
+    if av_overrides:
         if not parameters.get('op_av_vehicle_types'):raise ValueError('AV policy overrides require an AV input bundle')
         if args.av_preference_seconds is not None:parameters['op_av_preference_s']=args.av_preference_seconds
         if args.av_repositioning is not None:parameters['op_av_repositioning']=args.av_repositioning=='demand'
+        if args.av_eta_threshold_seconds is not None:
+            parameters['op_av_eta_threshold_s']=None if args.av_eta_threshold_seconds=='off' else float(args.av_eta_threshold_seconds)
+        if args.av_travel_time_factor is not None:parameters['vehicle_travel_time_factors']={'av_vehtype':args.av_travel_time_factor}
+        if args.av_opt_in_share is not None:parameters['op_av_opt_in_share']=args.av_opt_in_share
+        if args.av_retarget is not None:parameters['op_av_retarget']=args.av_retarget=='on'
+        if args.av_forecast_noise_sigma is not None:parameters['op_av_forecast_sigma']=args.av_forecast_noise_sigma
+        if args.av_joint_repositioning is not None:parameters['op_av_joint_repositioning']=args.av_joint_repositioning=='on'
+        if args.av_repositioning_timestep is not None:parameters['op_av_repositioning_timestep']=args.av_repositioning_timestep
+        if args.av_separate_search is not None:parameters['op_av_separate_search']=args.av_separate_search=='on'
     original=FleetSimulationBase.get_directory_dict
     def private_inputs(parameters,operators):
         result=original(parameters,operators)

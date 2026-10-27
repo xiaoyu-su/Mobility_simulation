@@ -3236,3 +3236,284 @@ and will be committed locally before the actual push attempt is recorded.
   evidence hashes. A documentation-only receipt commit is pushed next; final
   remote equality, identity and clean checkout are checked after that push.
   No tokens are printed/changed and no saved repository selection is modified.
+
+
+## Phase 13: Chicago threshold/speed mechanisms
+
+### Step 1: recover the documented open question and preserve the base
+
+- Start from published Phase12 receipt `47bc5aa4214d83a50e4a900a5858abcad756b969`
+  on `phase-13-chicago-threshold-mechanisms`; the checkout was clean. Author
+  and committer remain Xiaoyu Su. Re-read original IMG_3329, which explicitly
+  calls Chicago's non-monotone result an open follow-up. Phase11 also records
+  that open question; Phase12 has completed the separate per-city repositioning
+  follow-up. Do not invent an unnumbered original Round4 or fit screenshot data.
+- Scope: a read-only physical accounting/reporting tool plus a prespecified
+  Chicago threshold/speed/load study. Explain which recorded time quantities
+  reconcile higher AV utilization with potentially fewer AV trips. This improves
+  diagnostic coverage; it does not add a new matching policy or identify causal
+  mediators, empirical adoption/supply/patience, or a geography-only effect.
+- Grid declared before new outcomes: thresholds0/120/240/480 seconds crossed
+  with travel-time multipliers1/1.25, seeds0/1/2, fleets100/200. Human acceptance,
+  human/AV repositioning and execution noise stay off; both fleet types replace
+  existing slots. Six matched all-human cases plus48 AV cases give54 unique
+  conditions. Ten initial pilot cases repeat main conditions and are checked
+  separately as fresh-process replays, not additional independent samples.
+- Only1.3GiB was initially free. Reclaim1861237320 bytes of redundant logical
+  archive caches for Phases9–12 after verifying every retained published part
+  and exact concatenated size/SHA against each original cache. All original
+  raw outputs, source snapshots, inputs, Git evidence/upload parts and prior
+  work remain preserved. `storage_reclaim.json` retains every path/hash and
+  exact reconstruction command; `reclaim_cache.py` is the executed helper.
+
+### Step 2: implement exact accounting and auditable observed-state diagnostics
+
+- Add `tools/city_av/mechanism.py` and `mechanism_plot.py`; no existing simulator
+  policy/default/output is changed. Read verified complete city experiments,
+  reject changed source/input/raw evidence and duplicate conditions, check
+  actual demand IDs, accepted service, boarding/alighting timestamps and vehicle
+  identity, capacity, chronology, product/fence/opt-in, and matched backgrounds.
+- An exploratory readback of already published Chicago outputs reveals an
+  important clock definition: user dropoff records alighting start; logged
+  vehicle occupancy retains the passenger through alighting end. For seed0
+  main threshold0, ordinary passenger-interval union understates logged occupied
+  time by690s; at threshold240 by510s. These are existing-record observations,
+  not new physical simulations or an identified causal service benefit.
+- Reconstruct actual passenger-holding intervals through each physical
+  alighting leg end. Verify their union against occupied vehicle seconds and
+  their passenger-weighted exposure against raw occupancy. Reconcile full
+  evaluation-cohort passenger time, pre/post-window clipping, warm-up carry-in,
+  alighting dwell and logged passenger overlap exactly. Logged overlap includes
+  stationary exchange unions and multi-passenger bookings; do not call it solely
+  a moving pooling effect. A symmetric count/duration decomposition allocates
+  the interaction exactly and keeps all timing corrections explicit.
+- Retain per-request outcomes and final retained-candidate reasons, all nine
+  AV/human/unserved transitions, same-served-ID waits, and900s time bins with
+  separately labeled decision events/unique arrivals/actual pickups. Candidate
+  absence describes the retained bounded search in that observed policy state;
+  it does not prove that no vehicle was physically feasible. Threshold/speed
+  changes also change later availability and request history.
+- New scientific PNG/PDF and standalone result tables show every policy/seed,
+  count/utilization/duration/empty-distance tradeoffs and exact time components.
+  No two-seed historical direction or screenshot figure is a fitted target.
+
+### Step 3: first tests, orchestration correction and affected full scenarios
+
+- Initial command: `.venv/bin/python -m pytest -q
+  tests/unit/test_city_av_mechanism.py
+  tests/integration/test_city_av_mechanism_examples.py
+  --basetemp=/workspace/.setup/phase13/checkpoint/runs
+  --junitxml=/workspace/.setup/phase13/checkpoint/junit.xml`.
+  Actual result:6 pass/3 setup errors in1.50s; zero simulations start because
+  the parent of pytest's custom basetemp does not exist. Preserve exact console
+  and JUnit. This is not a completed simulation validation.
+- Capture265 Python/dependency files under `checkpoint/source`, digest
+  `fc6b3cf691f5101e09e0498473ef363f80e5dd4a16a17e0c1a34b96f666c4eac`.
+  Create a fresh `corrected` parent; rerun the same tests with basetemp/JUnit
+  beneath it and stdout/stderr in `corrected/tests.txt`. Source stays unchanged
+  throughout. Integration cases exercise both immediate controllers, Python
+  and C++ routing, complete bookings/physical time bridges, exact fresh-process
+  replay, read-only raw-byte preservation and tamper/duplicate/overwrite gates.
+- Corrected-directory gate passes9 tests/18 complete physical simulations in
+  31.44s; three Matplotlib single-Series deprecation warnings are preserved.
+  Strengthen physical audit counts/service/privacy/threshold/background checks
+  and pass NumPy plotting arrays; the new final-focused source digest is
+  `3ce98d7bcda1eec87d38d2a673ba78a979502db08ee800d9bf092b6c713e9d7b`.
+  This gate again passes9 tests/18 complete simulations in30.75s, with24
+  library single-point-array deprecation warnings. No physical failure occurs.
+- Replace the single-point errorbar conversion with equivalent explicit
+  line/whisker/cap plotting. Final `validated` gate passes **9 tests and18
+  complete physical simulations in31.71s, without warnings or skips**. Freeze
+  all265 Python/dependency files at
+  `cb250f100fdc138d8d2dbc10a55f1190f8fb4d601e8c99f744c5322c06b7a944`.
+  Preserve all source checkpoints, exact JUnit/consoles and physical outputs.
+- Track `docs/city_mechanisms/chicago.json`, `policies.json` and `pilot.json`;
+  copy their exact bytes beside the final source snapshot. Chicago inputs are
+  rebuilt from original public native files under the new source, never
+  source-retagged. New configs remove the unused separate-reference AV repo
+  forecast to isolate threshold/speed with repositioning off in every arm.
+
+### Step 4: rebuild physical inputs and validate real pilots before the main run
+
+- Run `.venv/bin/python /workspace/.setup/phase13/prepare.py >
+  /workspace/.setup/phase13/prepare-console.txt 2>&1`. It builds fresh100/200
+  vehicle bundles under `market_inputs/phase13`, records exact build commands,
+  then runs two five-arm seed0 pilot studies under `market_results/phase13`.
+  The pilots use one pinned worker each onCPUs0/1 and one BLAS/OMP/MKL thread.
+- New private matrices share storage with original public native matrices only
+  after exact size/SHA verification. Every logical input path and byte remains
+  present, and each storage action is recorded. Source and three config files
+  remain frozen while all physical runs/reporting execute.
+- The new CLI audits both pilot studies into `phase13/pilot-analysis`. Actual
+  accepted service, all passenger events, exact occupied/passenger exposure,
+  accounting decomposition and raw-input contracts must pass before main
+  studies or full regression launch. Ten planned pilots are not yet claimed
+  successful here; actual results are appended after completion.
+- All10 real pilots finish and the new physical accounting CLI passes all10
+  with eight paired contrasts. Pilot100 takes71.01s and pilot200 takes102.26s.
+  Source remains265 files/cb250f10 and all three config snapshots match.
+- Seed0 fleet200 threshold0→240 changes AV completions59→53 while occupied
+  utilization rises10.744 percentage points. Exact occupied-time contributions:
+  count−4.430pp, duration+12.856pp, warm-up carry-in+4.185pp, post-window−0.253pp,
+  alighting−0.139pp and logged overlap−1.475pp, with zero pre-window term.
+  Fleet200 cautious versus equal-speed threshold240 has27 fewer AV completions
+  but+1.979pp occupied utilization. These are pilot accounting observations,
+  not final three-seed means or an identified causal mediation result.
+
+### Step 5: frozen final physical studies and full regression start
+
+- Main/supply commands are executed by `.venv/bin/python
+  /workspace/.setup/phase13/run_studies.py`, recorded under `studies/` with
+  exact CPU/thread settings, stdout/stderr, statuses and timings. Both use the
+  full eight-policy grid plus matched all-human control, seeds0/1/2 and one
+  pinned worker each onCPUs0/1. Total54 unique main/supply cases are planned.
+- Full command: `taskset -c 3-4 .venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase13/full/runs
+  --junitxml=/workspace/.setup/phase13/full/junit.xml >
+  /workspace/.setup/phase13/full/tests.txt 2>&1`. Start/source/command metadata
+  are retained in `full/execution.json`. Expected433 tests,324 full physical
+  regression simulations and32 restored windows remain pending actual finish.
+- No Python, dependency, configuration or HEAD changes until both full studies
+  and the complete regression suite finish. Markdown and external read-only
+  analysis/reporting helpers may be prepared while they run. Preserve all
+  old/new raw records; actual improvement and adverse results follow the final
+  independent physical/accounting/historical readback.
+
+### Step 6: all real runs and independent mechanism/readback gates pass
+
+- Main27 completes in391.50s and supply27 in580.64s. Together with ten pilot
+  records, all64 physical runs complete with54 unique conditions and56 matched
+  background checks. Normal physical reports reject no AV rule/booking/service
+  violation. The frozen265-file source and three configuration bytes stay fixed.
+- Independent command: `taskset -c 2 .venv/bin/python
+  /workspace/.setup/phase13/analyze_real.py >
+  /workspace/.setup/phase13/analysis-real.txt 2>&1`. It reads actual full-demand
+  IDs, causal60s admission/480s patience, accepted pickup/dropoff/tail completion,
+  every boarding/alighting event/vehicle/timestamp, service durations, privacy,
+  moving/pre-post capacity, chronology, product/fence/opt-in, actual loaded and
+  effective type factors, geometry/SOC audits and all raw/input/runtime hashes.
+- A separate event-sweep integrator, rather than the module's interval-union
+  algorithm, reconstructs each AV's logged occupied and passenger exposure from
+  actual pickup/alighting-end events. All64 sweep checks close. Native binary,
+  C++/Cython source and dependency/runtime versions are captured. Ten fresh
+  pilot/main replays retain114 critical file comparisons byte for byte.
+- First independent collector stops only at its expected-control-count assertion:
+  all raw equality checks pass, but23 old conditions exist rather than19. Four
+  additional Phase10 threshold120/480 seed0/1 controls were omitted from the
+  expected count. Preserve `analyze_real-first.py` and its exact traceback;
+  correct this bookkeeping expectation only. All23 conditions retain195 critical
+  files byte for byte. No simulation source/input/output is altered or relaxed.
+- The reusable CLI audits54 unique main/supply cases and60 paired accounting
+  identities. Its original output hashes remain intact. Supplementary command
+  `.venv/bin/python /workspace/.setup/phase13/request_composition.py` writes
+  separate same-request/selection/overlap CSVs, `REQUEST_COMPOSITION.md` and
+  explicit input/output hashes. All60 gained/lost-count and passenger-time
+  identities close; actual moving/boarding/other overlap sums exactly to the
+  logged-overlap term. Original RESULTS.md is not rewritten.
+- `.venv/bin/python /workspace/.setup/phase13/finalize_analysis.py` verifies
+  original/supplementary hashes and pins20 analysis files in a separate evidence
+  manifest. A fontconfig no-writable-cache message occurs during scientific
+  rendering; process/reporting completes successfully. Preserve the console;
+  both rendered PNGs are visually inspected with readable labels/legends,
+  explicit seed ranges and intact adverse outcomes. Save SHA-256 for both
+  inspected images and their companion PDFs; no rerun or raw rewrite is needed.
+- Threshold0→240 three-seed means:
+
+  | Fleet | Travel-time factor | Total completed | AV trips | AV occupied % | Mean AV pickup-to-dropoff s | Fleet empty km |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 100 | 1.25 | 536.00→547.00 | 23.00→29.33 | 36.18→53.87 | 1691.82→2010.49 | 693.07→727.31 |
+  | 100 | 1.00 | 531.67→535.67 | 30.67→44.67 | 40.40→53.03 | 2031.77→1756.41 | 674.64→725.57 |
+  | 200 | 1.25 | 1212.00→1208.67 | 71.33→60.67 | 41.05→48.79 | 1381.28→1906.93 | 1214.43→1218.47 |
+  | 200 | 1.00 | 1269.00→1208.33 | 86.00→96.00 | 37.18→52.88 | 1240.63→1706.25 | 1242.03→1237.43 |
+
+- Fleet200 cautious threshold0→240 utilization change+7.742pp reconciles to
+  count−7.920pp, duration+17.115pp, post-window−1.813pp, warm-up+3.662pp,
+  alighting−0.241pp and overlap−3.061pp. It is not a service improvement merely
+  because utilization rises: total completion falls3.33 and same-served eligible
+  wait rises16.92s. AV count changes across seeds are−6/−41/+15; the mean is not
+  a universal direction or a population effect.
+- Crucial selection check: fleet200's mean AV journey duration rises525.65s,
+  but the mean of same-AV-ID per-seed duration changes is only+1.94s. Full AV
+  passenger time rises19860.44s on average: newly/lost AV-request composition
+  contributes19867.17s, while common-AV-request changes contribute−6.73s.
+  The exact identity distinguishes a changed trip sample from a claim that the
+  same riders each travel525s longer. Common AV IDs average12.33, gained48.33,
+  lost59.00; all nine service/product transitions and conditioning limits remain.
+- Speed direction also differs by seed/regime: cautious-minus-equal threshold240
+  averages AV count−15.33 /utilization+0.845pp atfleet100, and count−35.33 /
+  utilization−4.085pp atfleet200. Higher simultaneous passenger exposure in fast
+  runs is separately observed on moving routes and stationary exchanges; no
+  causal pooling intervention or empirical speed/adoption calibration is inferred.
+- The verified improvement is exact, reproducible diagnostic/accounting coverage
+  and stronger tests, with all earlier policy source unchanged. Retain all
+  thresholds, speeds, seeds and adverse service/empty-driving/wait outcomes.
+  Full regression and final publication remain pending their actual gates.
+
+### Step 7: full regression and historical physical-output gates pass
+
+- The exact full command from Step5 exits0: **433 passed in2188.83s
+  (36m28s)**, zero failures/errors/skips. JUnit records2188.827s and start
+  2026-10-27 02:19:49 UTC. `full/execution.json` records actual completion,
+  returncode, source, command and CPU affinity. No Python/configuration/HEAD
+  change occurs while physical studies or the suite run.
+- `.venv/bin/python /workspace/.setup/phase13/audit_suite.py >
+  /workspace/.setup/phase13/suite-audit-console.txt 2>&1` independently verifies
+  **324 full physical simulations and32 restored windows**. All full-demand IDs
+  are unique, all picked-up bookings have dropoff, available accepted-promise
+  fields complete, and vehicle chronology is valid. Original upstream records
+  without promise fields remain explicitly unavailable, not inferred.
+- All **306 previous full cases preserve2234 checked tables byte for byte**.
+  The expanded check includes primary physical tables, applicable human/AV/
+  repositioning audits, city reports/contracts and initialization/random/search
+  records. All32 previous windows preserve128 exact table values. Exclude ten
+  deliberately nonphysical negative comparison fixtures with no scenario config;
+  archived source tables are not miscounted as executed simulations.
+- Final gates establish433 passing tests,324 full regression simulations,
+  32 windows,64 real physical runs/54 unique conditions, ten exact replays/
+  114 critical file matches,56 matched backgrounds,23 old real controls/
+  195 critical file matches and60 exact main accounting/composition contrasts.
+  The diagnostic improvement adds9 tests and18 complete regression scenarios;
+  no existing matching policy/default or261 previous source files changes.
+- All actual source/configuration/runtime/input/raw/analysis hashes and failure/
+  warning records are ready for complete packaging. Remaining work is final
+  documentation, upload-byte readback, native GitHub commit/push and remote
+  publication/author/source verification.
+
+
+### Step 8: complete evidence packaging and measured review documents
+
+- Package 12992 records into 285208899 bytes across
+  9 upload parts. Every member hash and every part byte passes readback.
+  Logical archive SHA-256: `7af9519f9afe4608b09ad1487cf3a1c282b6340cda8bdf760a3d974d18a7f856`.
+- Preserve all failed/corrected focused sources, JUnit/raw histories, full
+  regression/windows, both new native inputs, all real pilots/studies, commands,
+  independent event-sweep/accounting/composition audits, runtime dependencies
+  and scientific figures. Only exact canonical public matrices and caches/
+  symlink aliases are omitted with reconstruction metadata. All original
+  module result hashes remain valid; supplementary analyses have separate proof.
+- Finalize README, project summary, improvement log, phase guide and restoration
+  guide with actual three-seed effects, lower/worse outcomes, diagnostic benefits
+  and causal/calibration limits. Markdown adds no simulation behavior change.
+
+### Step 9: final publication checks pass
+
+- `.venv/bin/python /workspace/.setup/phase13/prepublish.py >
+  /workspace/.setup/phase13-prepublish-console.txt 2>&1` exits0. It verifies all
+  265 frozen source/dependency hashes and three config snapshots, and proves
+  all261 earlier source files remain byte-identical to the published Phase12
+  source map. Both fresh input bundles and native runtime pass exact readback.
+- All64 final raw output sets and four study manifests,54 unique conditions,
+  ten exact replays,56 matched backgrounds,23 historical controls and60 main
+  paired accounting identities match the audited records. Original module
+  outputs, supplementary input/output proofs and all21 copied analysis files
+  retain their recorded hashes. All figure copies match inspected PNG/PDF data.
+- Logical archive SHA-256 is
+  `7af9519f9afe4608b09ad1487cf3a1c282b6340cda8bdf760a3d974d18a7f856`:
+  12992 records,285208899 bytes and nine verified upload parts. All six omitted
+  matrix paths have exact canonical size/SHA restoration data. Every published
+  artifact is below GitHub's per-file size limit. All local report links exist.
+- Every earlier validation directory and approved regression/reference baseline
+  remains unchanged against parent47bc5aa. Whitespace checks cover source,
+  Markdown and JSON; raw CSV/TXT/XML bytes are retained. Implementation/evidence
+  is ready for the Xiaoyu Su commit and native push; an actual remote/source/
+  author publication receipt follows after successful implementation publication.

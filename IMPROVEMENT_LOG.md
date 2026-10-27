@@ -574,3 +574,30 @@ outcomes. The real-data follow-up below does not change those historical results
 - **Record:**[phase guide](docs/PHASE_12.md),
   [full results](docs/validation/phase12/RESULTS.md),
   [evidence](docs/validation/phase12/README.md),[work log](docs/WORK_LOG.md).
+
+
+## Phase 13: Chicago threshold/speed mechanism accounting
+
+- **Problem:** higher occupied AV utilization can coexist with fewer AV trips;
+  count, passenger duration, clock clipping, service dwell and shared exposure
+  have different domains and previously lacked an exact reconciliation.
+- **Change:** add read-only SHA-guarded event/interval accounting and a fixed
+  threshold0/120/240/480 × speed1/1.25 × fleet100/200 × three-seed study.
+  Preserve original module reports and separately hash supplementary analysis.
+- **Verified benefit:** all 64 physical runs pass independent event-sweep
+  exposure reconstruction; 60 main paired identities close exactly. Same-request
+  time changes are separated from gained/lost AV selection. Moving passenger
+  overlap is distinguished from stationary exchange unions and group size.
+  No existing simulation policy/source/default changes.
+- **Validation:** 433 passing tests, 324 full regression simulations, 32 windows;
+  all 306 previous full cases preserve 2234 checked tables byte for byte,
+  128 window tables remain exact, and 23 old real controls preserve
+  195 critical comparisons. Ten replays supplement 54 unique conditions.
+- **Measured effects:** completion, waits, AV allocation, passenger duration,
+  utilization and empty-driving costs are retained, including adverse directions.
+  Exact time contributions explain recorded arithmetic; they do not identify a
+  causal mediation effect or empirically calibrate AV deployment.
+- **Records:** [guide](docs/PHASE_13.md),
+  [results](docs/validation/phase13/RESULTS.md),
+  [same-request analysis](docs/validation/phase13/REQUEST_COMPOSITION.md),
+  [evidence](docs/validation/phase13/README.md), [work log](docs/WORK_LOG.md).

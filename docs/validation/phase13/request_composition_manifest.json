@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "manifest.json": "8c81995f9a523efb1f4cb7059b8c2323a41c93c92bc8cc6c7aef92303b62d521",
+    "request_mechanisms.csv": "e6dede4e93478aadf1ef31e2cbba74f6289b4d88e83eefc721d4d9852468e0b1",
+    "paired_accounting.csv": "85d132d5fe986c8fc07dcf9af887f02ee3dc77bb5c960a3b6c17d06c256f5c81",
+    "independent_sweep_results.csv": "73fc1d15c10efc847ab6d8aee7cd0d88d97af3914cddba6cbd5673eabaa20684"
+  },
+  "outputs": {
+    "request_composition_seed.csv": "f6e54370ec28d7c66b31489949d9e1ba1273e913a0da35259f001a8331f58923",
+    "request_composition_summary.csv": "fb0bc3145f9a9f62d4f1b38c0dcbc2b8bc2bc98f1e542bce1560b2e59727169c",
+    "REQUEST_COMPOSITION.md": "dc2476329b33c4f64a6bf6a342b2f75fd9b6df2b949116e25aaee79d49ec5092"
+  },
+  "contrasts": 60,
+  "all_passenger_time_and_count_identities_close": true,
+  "original_module_results_unchanged": true
+}

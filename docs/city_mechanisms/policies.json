@@ -1,0 +1,58 @@
+[
+  {
+    "name": "threshold_0",
+    "eta_threshold_seconds": 0,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "threshold_120",
+    "eta_threshold_seconds": 120,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "threshold_240",
+    "eta_threshold_seconds": 240,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "threshold_480",
+    "eta_threshold_seconds": 480,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "equal_speed_0",
+    "eta_threshold_seconds": 0,
+    "travel_time_factor": 1,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "equal_speed_120",
+    "eta_threshold_seconds": 120,
+    "travel_time_factor": 1,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "equal_speed_240",
+    "eta_threshold_seconds": 240,
+    "travel_time_factor": 1,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "equal_speed_480",
+    "eta_threshold_seconds": 480,
+    "travel_time_factor": 1,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  }
+]

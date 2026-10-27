@@ -20,6 +20,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 10: cross-city AV comparison | Native Munich/Chicago/Manhattan inputs, matched all-human/AV initialization and search, bounded CPU workers, audited policy/load comparisons; 389 passing tests, 66 physical runs /60 unique conditions; mixed policy transfer | `docs/PHASE_10.md` |
 | 11: native fidelity validation | Fresh upstream archive and isolated imports, original city profiles, four-table exact comparison, repeatability and clean published-source reproduction; 403 tests /269 regression simulations /15 native runs; validation improvement, unchanged policies | `docs/PHASE_11.md` |
 | 12: cross-city AV repositioning | Strictly separate reference OD weights, empty AV movement contracts, opt-in pre-booking service priority, paired off/on/supply experiments; 424 tests, 306 regression simulations, 72 real runs /63 conditions; gains and adverse outcomes retained | `docs/PHASE_12.md` |
+| 13: Chicago mechanism diagnostics | Read-only exact occupied/passenger-time bridges, symmetric count/duration accounting, same-request and selection/overlap diagnostics; 433 tests, 324 regression simulations, 64 real runs /54 unique conditions; all prior policy source unchanged | `docs/PHASE_13.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -98,3 +99,13 @@ zero, with all accepted bookings complete. Locked work and legacy defaults remai
 preserved. Main/supply experiments retain paired three-seed completion, waits,
 human allocation, absolute empty driving and actual passenger durations.
 See [Phase12](docs/PHASE_12.md) and [complete results](docs/validation/phase12/RESULTS.md).
+
+
+Phase 13 diagnoses Chicago's non-monotone threshold/speed outcomes with exact
+physical accounting. It separates evaluation-cohort trip count/duration,
+window boundaries, warm-up carry-in, alighting dwell and logged overlap. The
+supplementary analysis separates the same AV request IDs from gained/lost AV
+selection and actual moving overlap from stationary boarding unions. All earlier
+simulation source and policy defaults are unchanged. The recorded components
+are algebraic contributions, not identified causal mediators or field benefits.
+See [Phase 13](docs/PHASE_13.md) and [results](docs/validation/phase13/RESULTS.md).

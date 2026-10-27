@@ -1,0 +1,38 @@
+{
+  "action": "Remove only redundant logical archive caches after exact published-part reconstruction proof",
+  "bytes_reclaimed": 1861237320,
+  "files": [
+    {
+      "path": "/workspace/.setup/phase9-complete-records.tar.gz",
+      "size_bytes": 494712640,
+      "sha256": "5508b17d1dd3e191a9bbeb88fdc2029a94bf06e9842f3578dfd745bf37c58027",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.0* > /workspace/.setup/phase9-complete-records.tar.gz",
+      "all_original_raw_records_and_published_parts_preserved": true,
+      "exact_stream_reconstruction_verified": true
+    },
+    {
+      "path": "/workspace/.setup/phase10-complete-records.tar.gz",
+      "size_bytes": 250483623,
+      "sha256": "3b529a9cf8bedaeb83394035b17dc51238e39ae925c5f62abe6219dcbce9ac6d",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.0* > /workspace/.setup/phase10-complete-records.tar.gz",
+      "all_original_raw_records_and_published_parts_preserved": true,
+      "exact_stream_reconstruction_verified": true
+    },
+    {
+      "path": "/workspace/.setup/phase11-complete-records.tar.gz",
+      "size_bytes": 701879937,
+      "sha256": "bc93ab8faa693505c2e55067e69263f3128fb17b087e3845aed65dc3b35bb01a",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase11/records.tar.gz.0* > /workspace/.setup/phase11-complete-records.tar.gz",
+      "all_original_raw_records_and_published_parts_preserved": true,
+      "exact_stream_reconstruction_verified": true
+    },
+    {
+      "path": "/workspace/.setup/phase12-complete-records.tar.gz",
+      "size_bytes": 414161120,
+      "sha256": "e5faeb681807eefb0dca4dbc73535f4c5d92245daeb0fbbb105171d744041904",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase12/records.tar.gz.0* > /workspace/.setup/phase12-complete-records.tar.gz",
+      "all_original_raw_records_and_published_parts_preserved": true,
+      "exact_stream_reconstruction_verified": true
+    }
+  ]
+}

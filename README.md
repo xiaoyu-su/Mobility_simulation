@@ -46,6 +46,10 @@ comparisons and [complete evidence](docs/validation/phase11/README.md).
 across three cities and opt-in passenger service priority over soft empty targets.
 **424 tests and 72 real policy runs** pass; [measured results](docs/validation/phase12/RESULTS.md)
 retain completion, waits, utilization and empty-driving tradeoffs.
+[Phase 13](docs/PHASE_13.md) adds exact Chicago threshold/speed time accounting,
+same-request and selection diagnostics, and matched load sensitivities.
+**433 tests and 64 real physical runs** pass; [results](docs/validation/phase13/RESULTS.md)
+separate trip counts, passenger time, overlap, service dwell and window timing.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

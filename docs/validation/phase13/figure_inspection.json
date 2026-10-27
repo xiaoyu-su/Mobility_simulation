@@ -1,0 +1,20 @@
+{
+  "visually_inspected": true,
+  "visually_inspected_images": [
+    "threshold_speed.png",
+    "occupied_time_components.png"
+  ],
+  "figures_sha256": {
+    "threshold_speed.png": "9bfdb22f0b6b499387f10b7db62955694780665bef9220f4e98416540833ce90",
+    "threshold_speed.pdf": "f92fa873f560cd5f5589af8870bc68df4a16493ee95c10ff8ec93c3b5b6185fd",
+    "occupied_time_components.png": "5d7f257bf6bc0db131e2189f5ecd616e7c9134b37674b2af2ce226070f511e57",
+    "occupied_time_components.pdf": "b93018b28848e4a8ad69c2fa92f4d37daef08f6f91de4952b86a2a54d3ced302"
+  },
+  "checks": [
+    "All eight threshold/speed panels and legends readable",
+    "Fleet/speed domains and paired seed ranges explicit",
+    "Four stacked positive/negative accounting contrasts reconcile total markers",
+    "Scientific axes include adverse count/utilization and empty-distance outcomes",
+    "Original and supplementary report files remain independently hashed"
+  ]
+}

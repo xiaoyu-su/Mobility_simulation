@@ -1,0 +1,28 @@
+{
+  "source_digest": "cb250f100fdc138d8d2dbc10a55f1190f8fb4d601e8c99f744c5322c06b7a944",
+  "verified_utc": "2026-10-27T02:41:16.022891+00:00",
+  "original_module_results_unchanged": true,
+  "all_supplementary_input_output_hashes_verified": true,
+  "files_sha256": {
+    "request_composition_seed.csv": "f6e54370ec28d7c66b31489949d9e1ba1273e913a0da35259f001a8331f58923",
+    "time_bins.csv": "6cd47d56ce00b13bbf95d4f9eedb339d6f9bd4305993bc049ef5df68b2a720c8",
+    "request_composition_manifest.json": "ae95553047955291157d28ec3170afecc8a9a69eeae6dda756429e034ef38b6c",
+    "threshold_speed.pdf": "f92fa873f560cd5f5589af8870bc68df4a16493ee95c10ff8ec93c3b5b6185fd",
+    "historical_real_identity.json": "0fb988879a81f9d68d4d66e87d33fc1c9af01800fdbce6c3cc4545dbb97f8128",
+    "request_mechanisms.csv": "e6dede4e93478aadf1ef31e2cbba74f6289b4d88e83eefc721d4d9852468e0b1",
+    "independent_sweep_results.csv": "73fc1d15c10efc847ab6d8aee7cd0d88d97af3914cddba6cbd5673eabaa20684",
+    "manifest.json": "8c81995f9a523efb1f4cb7059b8c2323a41c93c92bc8cc6c7aef92303b62d521",
+    "paired_accounting.csv": "85d132d5fe986c8fc07dcf9af887f02ee3dc77bb5c960a3b6c17d06c256f5c81",
+    "threshold_speed.png": "9bfdb22f0b6b499387f10b7db62955694780665bef9220f4e98416540833ce90",
+    "runtime_environment.json": "59387c7a86370c3021e1cf7ba514935962f7e621145b170f5fa904cd93a5a641",
+    "request_composition_summary.csv": "fb0bc3145f9a9f62d4f1b38c0dcbc2b8bc2bc98f1e542bce1560b2e59727169c",
+    "occupied_time_components.png": "5d7f257bf6bc0db131e2189f5ecd616e7c9134b37674b2af2ce226070f511e57",
+    "configuration_accounting.csv": "b8a2514a6af6cad9f8a8b90befb9e021a799a702334fe8ff5728beaee3a928b4",
+    "occupied_time_components.pdf": "b93018b28848e4a8ad69c2fa92f4d37daef08f6f91de4952b86a2a54d3ced302",
+    "independent_checks.json": "220d166d9f646c8c8b4a92737885aa2af56fcc5c46b376174e3e9898c5699ef5",
+    "seed_accounting.csv": "853aa453f29c5830a632604a9a8b002fdc6dfa5d34c96108de1385db9e330209",
+    "REQUEST_COMPOSITION.md": "dc2476329b33c4f64a6bf6a342b2f75fd9b6df2b949116e25aaee79d49ec5092",
+    "RESULTS.md": "9f1e3024e2780e08be5a6ca6ae30211febe61c8e8d7d688ddac4124865ea348c",
+    "product_transitions.csv": "4089f74064eb7377924740cc21d7e686505602edd361d0b95e661bb159bf5c25"
+  }
+}

@@ -50,6 +50,10 @@ retain completion, waits, utilization and empty-driving tradeoffs.
 same-request and selection diagnostics, and matched load sensitivities.
 **433 tests and 64 real physical runs** pass; [results](docs/validation/phase13/RESULTS.md)
 separate trip counts, passenger time, overlap, service dwell and window timing.
+[Phase 14](docs/PHASE_14.md) adds matched 4/8/12-minute booking-patience
+robustness, strict input-stratum checks, actual-lateness reporting and a fixed
+8-minute service target. **442 tests and 90 real physical records** pass;
+[results](docs/validation/phase14/ROBUSTNESS.md) retain gains and regressions.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

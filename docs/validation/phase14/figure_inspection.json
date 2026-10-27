@@ -1,0 +1,16 @@
+{
+  "visually_inspected": true,
+  "visually_inspected_images": [
+    "patience_sensitivity.png"
+  ],
+  "figures_sha256": {
+    "patience_sensitivity.png": "3b965c2a1b5271a823f1fd247806c7be865b1acddd136967f49bb58d4804fbeb",
+    "patience_sensitivity.pdf": "12937a5d5cb5d490a018f8117fa85e9d21d997d69c3728b7db187ebd8989f98d"
+  },
+  "checks": [
+    "All12panels and legends readable with explicit policy/stratum labels",
+    "Whiskers explicitly initialization-seed ranges",
+    "Offer-cutoff versus actual-arrival distinction in figure title",
+    "Adverse wait/empty-driving and non-monotone completion/allocation directions retained"
+  ]
+}

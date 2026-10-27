@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "city": "chicago",
+  "input_kind": "native",
+  "network_path": "networks/Chicago_2023",
+  "router": "NetworkPartialPreprocessedCpp",
+  "network_dynamics": "2022-06-7_tt_factors_hourly.csv",
+  "zone_map": "zones/ChicagoCensusTracts/Chicago_2023/node_zone_info.csv",
+  "requests": "demand/Chicago_2022/matched/Chicago_2023/2022-06-7_sample_10_0.csv",
+  "reference_start": 0,
+  "reference_end": 18000,
+  "warmup_start": 18000,
+  "evaluation_start": 25200,
+  "evaluation_end": 36000,
+  "time_step": 60,
+  "fleet_size": 100,
+  "av_share": 0.1,
+  "opt_in_share": 0.3,
+  "fence_share": 0.3,
+  "travel_time_factor": 1.25,
+  "max_wait_seconds": 240,
+  "pickup_service_seconds": 30,
+  "dropoff_service_seconds": 30,
+  "max_route_candidates": 30,
+  "provenance": {
+    "doi": "https://doi.org/10.5281/zenodo.15189440",
+    "license": "CC BY 4.0",
+    "creators": [
+      "Florian Dandl",
+      "Roman Engelhardt"
+    ],
+    "demand": "TUM node-matched 10% sample of June 7 2022 Chicago TNC completed trips",
+    "network": "2023 OSM benchmark; provided same-day traffic factors, not a held-out forecast",
+    "fleet": "100 vehicles from supplied upstream example; doubled only in prespecified supply sensitivity"
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "duplicate_caches_removed": [
+    {
+      "path": "/workspace/.setup/phase8-complete-records.tar.gz",
+      "size_bytes": 119393714,
+      "sha256": "8ae8c913e6f7db1872e2157f4b5b22448d9de174471c6508f242dd80dadecf9d",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase8/records.tar.gz.0* > /workspace/.setup/phase8-complete-records.tar.gz",
+      "all_original_records_and_published_parts_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase13-complete-records.tar.gz",
+      "size_bytes": 285208899,
+      "sha256": "7af9519f9afe4608b09ad1487cf3a1c282b6340cda8bdf760a3d974d18a7f856",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase13/records.tar.gz.0* > /workspace/.setup/phase13-complete-records.tar.gz",
+      "all_original_records_and_published_parts_preserved": true
+    }
+  ],
+  "identical_immutable_files_shared": [
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase5c/simulation_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase5c/simulation_records.tar.gz",
+      "size_bytes": 16100150,
+      "sha256": "6f09805681a7a6ae847f9de360a4c19e66a5ae1961082a8ce2152c1ceacca788",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-real/evidence.tar.xz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-real/evidence.tar.xz",
+      "size_bytes": 51639272,
+      "sha256": "309861418b9818b3c913d361dcc8cac5d74dfa5ad4d8b51d7eaf96c94f5244dd",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.006",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.006",
+      "size_bytes": 33554432,
+      "sha256": "fbe63e39debb62296b491009cdb61b0a4a0c4de6aa8e5479d76fb3bbf2def588",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.007",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.007",
+      "size_bytes": 33554432,
+      "sha256": "6eb32e03f0c8e9496458e0f9977fd51bd6623daea407f5cbdfeb9a1867c06f29",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.002",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.002",
+      "size_bytes": 33554432,
+      "sha256": "caec3293763a423ed322f98581945b8edffdae5c9969c4c19426b9356d92f2aa",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.001",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.001",
+      "size_bytes": 33554432,
+      "sha256": "308ea4a6376f591b70a223cabd732716e7a46b0517c91a024dedcceb83775282",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.009",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.009",
+      "size_bytes": 13087566,
+      "sha256": "81fd77f4ca42354f1d8eb97af7efe926452db243392de20f4257c6887ba1e5fe",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.004",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.004",
+      "size_bytes": 33554432,
+      "sha256": "33e2149c492388aeda2d040ef16e69d91564050c7421d9868e7ceb313da3f104",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.005",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.005",
+      "size_bytes": 33554432,
+      "sha256": "b214b2072a7af3c8381445aa96568b8637b2fb953920b85432ea7bc530ba5476",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.008",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.008",
+      "size_bytes": 33554432,
+      "sha256": "581d5c26b05318790bedbae632f4b2900df59a53f28b6b3c646dfb487e1f04ab",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/real_records.tar.gz.003",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.003",
+      "size_bytes": 33554432,
+      "sha256": "23388a0837f1eb898f455fb2dc7906f218eed992f53f7f65d02ee1bf0ba9e47c",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7-completion/regression_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7-completion/regression_records.tar.gz",
+      "size_bytes": 39566931,
+      "sha256": "687d5d5f75cb146af20ea7c73c63d4a9d500ff9471dc06bfeb66fc3e75ba474b",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7/checkpoint_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7/checkpoint_records.tar.gz",
+      "size_bytes": 18090605,
+      "sha256": "547025307377733cfb651474e182a7181c0a241b87950b582e4cd2c2f8c15499",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase7/simulation_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase7/simulation_records.tar.gz",
+      "size_bytes": 36196510,
+      "sha256": "9944c4bd526a4d9c5c8b3ca62cd58d3f53a7b21fa93fbd2c4dee22aa22635d75",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.004",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.004",
+      "size_bytes": 33554432,
+      "sha256": "2a430484f6703129aeffadb349f80c88008b3f523dc7656736a503f84c36c724",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.008",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.008",
+      "size_bytes": 15602599,
+      "sha256": "559325c8fda06fa22252a90e32468a9fd6221b2c83a4e7140d78d03ee061fa8e",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.006",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.006",
+      "size_bytes": 33554432,
+      "sha256": "429ba7cd3f012abbd48e7e2c027df9cf9918cf62641dc48bb5494f2b1a3ac6d7",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.007",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.007",
+      "size_bytes": 33554432,
+      "sha256": "28b8342e11db303826ac20bde3a74dd15dc08472e80425d36237b596f0d381ed",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.005",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.005",
+      "size_bytes": 33554432,
+      "sha256": "2872bf5cd4b628a4db6ae05b682ad4693837fe00cf82c2b4003c5e06f616d0e6",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.002",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.002",
+      "size_bytes": 33554432,
+      "sha256": "c1035a38e831ed57b2c123cec1a79e8f51cb5c0370afe5950dd95ac24a79dfd4",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.003",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.003",
+      "size_bytes": 33554432,
+      "sha256": "8ea32bb99b5e716c75d3fcae81c876701248fd0426c4a9e00c53162861b8d4b3",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase10/records.tar.gz.001",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase10/records.tar.gz.001",
+      "size_bytes": 33554432,
+      "sha256": "d60c9a9aebf692210def0a480e260a7c134d606a2f58f6c0223aa2c08a609ae4",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase5b/simulation_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase5b/simulation_records.tar.gz",
+      "size_bytes": 13431239,
+      "sha256": "b72718a6817b781e5de35db1ff035f74cc36e8f4fb89fbc5d9b2bcc9e89cce8a",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase8/records.tar.gz.004",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase8/records.tar.gz.004",
+      "size_bytes": 18730418,
+      "sha256": "ef7a306888a505e227af6d9d3f62d1f983711fb208beb55a291ae874167b0b4f",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase8/records.tar.gz.002",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase8/records.tar.gz.002",
+      "size_bytes": 33554432,
+      "sha256": "0ca4df629b8b9f7c443ab2c4ce9e88b01266de905ebe5a22a836297b027592f1",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase8/records.tar.gz.003",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase8/records.tar.gz.003",
+      "size_bytes": 33554432,
+      "sha256": "3342b8b84c7c9561da5a1ae0adf756ad1dad5ccf8e0d818a91a22c24b2340c74",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase8/records.tar.gz.001",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase8/records.tar.gz.001",
+      "size_bytes": 33554432,
+      "sha256": "2099fb15dd893c00a02628742879ac0c677ea2600bfe9c4064399b396c950093",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.004",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.004",
+      "size_bytes": 33554432,
+      "sha256": "ca7649839a6000174b4192cd22f7a7781ae0d38eea28407f1a5202ed148fa528",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.008",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.008",
+      "size_bytes": 33554432,
+      "sha256": "9f9f2e047e8e1227645c5b60c174cfefb5e8dd49c44906b07d89f5e536ca3968",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.006",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.006",
+      "size_bytes": 33554432,
+      "sha256": "b0da66559c175fd7d1bb66b45eaf12f9e83cf28440632a2a84496d83675c0c65",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.014",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.014",
+      "size_bytes": 33554432,
+      "sha256": "7862b116964c08346786c8599fcca2f0c890a26858d5faefa4339ae6932641f9",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.007",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.007",
+      "size_bytes": 33554432,
+      "sha256": "0f20b2591dbabc9002f43bea37a74321fffd143e6861c9018a8ada6b53df2960",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.013",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.013",
+      "size_bytes": 33554432,
+      "sha256": "83b4ce44325301be2400f520f9de60e1271f95d882f60c79f3580a042bdf8cfb",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.005",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.005",
+      "size_bytes": 33554432,
+      "sha256": "541c7058fd48822132b7d515eb56e274862834c30eab84f5ddc2aa14c3427b4c",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.012",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.012",
+      "size_bytes": 33554432,
+      "sha256": "4126282b736895e6371196a3d5204955ae238fe3e986dc9ca486913df5b8e2cc",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.002",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.002",
+      "size_bytes": 33554432,
+      "sha256": "ee3a101fd547418b0b4b2e67d1f90f3b285bd2402ff3912b2170ef72a7b50aa6",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.009",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.009",
+      "size_bytes": 33554432,
+      "sha256": "e6e9aee30a605af10769be2668afe993f90cd303aae271ef039ba9f38847e52d",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.015",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.015",
+      "size_bytes": 24950592,
+      "sha256": "190e7a921e8bad179528854428f14b563747b996ef760ef7181cfa0163412d5e",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.003",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.003",
+      "size_bytes": 33554432,
+      "sha256": "612b1c096a3a346268799cec4c350f3388e2c4713268188769d270470e850bb3",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.001",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.001",
+      "size_bytes": 33554432,
+      "sha256": "68a0626fdaab268bcd052a2cb77bc4bd478f59b9fede91025aeac312b0a05bd4",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.011",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.011",
+      "size_bytes": 33554432,
+      "sha256": "fd5f85f1a279760b23319c7606eadcee246164474dfa7fbfafa3d82bce4876a1",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase9/records.tar.gz.010",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase9/records.tar.gz.010",
+      "size_bytes": 33554432,
+      "sha256": "bdbb740fa2ba43f3982dd4d944641094acb9dadc84812b5d3dd1f3b31744de3b",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase6/checkpoint_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase6/checkpoint_records.tar.gz",
+      "size_bytes": 36252814,
+      "sha256": "bc93efc04239702ffe84c7f83ddb36a231ae983ac82a8f9af1c087ae6a96ff08",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase6/suite_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase6/suite_records.tar.gz",
+      "size_bytes": 31101657,
+      "sha256": "1305a52aded508bc0f0b8bc6b0a037f5d3967c897460f085053614418e539ad0",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/docs/validation/phase6/benchmark_records.tar.gz",
+      "immutable_canonical": "/workspace/Mobility_simulation/docs/validation/phase6/benchmark_records.tar.gz",
+      "size_bytes": 58107254,
+      "sha256": "57f932e355f0d673ec8e252d6ebb0725c03bc2012df6cda4bd0c538f37d55d4b",
+      "method": "Share identical immutable already-published evidence bytes; preserve both logical paths and all data"
+    }
+  ],
+  "bytes_reclaimed": 1851202044,
+  "all_original_raw_source_and_published_evidence_preserved": true
+}

@@ -21,6 +21,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 11: native fidelity validation | Fresh upstream archive and isolated imports, original city profiles, four-table exact comparison, repeatability and clean published-source reproduction; 403 tests /269 regression simulations /15 native runs; validation improvement, unchanged policies | `docs/PHASE_11.md` |
 | 12: cross-city AV repositioning | Strictly separate reference OD weights, empty AV movement contracts, opt-in pre-booking service priority, paired off/on/supply experiments; 424 tests, 306 regression simulations, 72 real runs /63 conditions; gains and adverse outcomes retained | `docs/PHASE_12.md` |
 | 13: Chicago mechanism diagnostics | Read-only exact occupied/passenger-time bridges, symmetric count/duration accounting, same-request and selection/overlap diagnostics; 433 tests, 324 regression simulations, 64 real runs /54 unique conditions; all prior policy source unchanged | `docs/PHASE_13.md` |
+| 14: booking-patience robustness | Explicit 4/8/12-minute strata, source-clock offer bounds, actual lateness and fixed 480s service target; compatible-input guards, 442 tests, 360 regression simulations, 90 physical records /81 unique conditions; no matching-policy change | `docs/PHASE_14.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.
@@ -109,3 +110,12 @@ selection and actual moving overlap from stationary boarding unions. All earlier
 simulation source and policy defaults are unchanged. The recorded components
 are algebraic contributions, not identified causal mediators or field benefits.
 See [Phase 13](docs/PHASE_13.md) and [results](docs/validation/phase13/RESULTS.md).
+
+
+Phase 14 measures whether city policy conclusions survive an unverified
+booking-patience assumption. Controlled source/geometry/runtime inputs remain
+fixed while deadline and max-wait parameters change. Offered limits, actual
+lateness and service within a fixed 480-second target are reported separately.
+The ordinary summary rejects incompatible assumptions. All prior non-summary
+source and matching policies remain unchanged. See [Phase 14](docs/PHASE_14.md)
+and [robustness results](docs/validation/phase14/ROBUSTNESS.md).

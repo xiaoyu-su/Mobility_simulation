@@ -601,3 +601,30 @@ outcomes. The real-data follow-up below does not change those historical results
   [results](docs/validation/phase13/RESULTS.md),
   [same-request analysis](docs/validation/phase13/REQUEST_COMPOSITION.md),
   [evidence](docs/validation/phase13/README.md), [work log](docs/WORK_LOG.md).
+
+
+## Phase 14: booking-patience sensitivity and input-stratum safety
+
+- **Problem:** the latest-start/patience assumption can materially determine
+  completion; offered deadlines and realized lateness have different meanings.
+  City/fleet labels alone do not identify a comparable input regime.
+- **Change:** enforce compatible input contracts in ordinary city summaries;
+  add explicit patience strata, controlled-input checks, accepted-offer bounds,
+  preserved actual late pickups and a fixed 480-second service target. Run the
+  prespecified three-city/three-seed/three-cutoff matched policy study.
+- **Verified benefit:** all 90 physical records pass independent deadline,
+  event-sweep, capacity, privacy, service, product and completion checks. Nine
+  replays supplement81 unique conditions. Source-clock feasibility probes work
+  on both controllers and C++ routing. Generic reports reject input conflation.
+- **Validation:**442 tests,360 full regressions,32 restored windows; all 324
+  prior full cases preserve 2402 checked tables byte for byte and 128
+  window tables retain exact values. All 27 default-cutoff controls preserve
+  225 critical file comparisons. Matching-policy code is unchanged.
+- **Measured results:** completions, a common actual-service target, AV
+  allocation/utilization, same-served waits, late pickups and empty driving are
+  retained at every cutoff, including adverse and non-monotone directions.
+  Sensitivity is not fitted cancellation behavior or field AV calibration.
+- **Records:**[guide](docs/PHASE_14.md),
+  [results](docs/validation/phase14/RESULTS.md),
+  [robustness](docs/validation/phase14/ROBUSTNESS.md),
+  [evidence](docs/validation/phase14/README.md),[work log](docs/WORK_LOG.md).

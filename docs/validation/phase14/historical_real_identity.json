@@ -1,0 +1,1149 @@
+{
+  "comparable_unique_conditions": 27,
+  "byte_identical_files": 225,
+  "checks": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "7d24f717a668f14fc65af025a97610ac538f5427c3a3afba8d17f950d7619ac7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "dc277aadbccc55984c660458a9f01d862963affc24606039936dc7877ce399b8"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "1031b5fccbdb4b14a61acca6a877fb582adb18f6fe3a4a89f1c07b94169dea67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7a600c4ef84d5f3102227ee2afc768457b38265c55cd7c41c16bce24ee680b28"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f7dbec959bbb5f82f958a79af5354cc81f1487cc446c55fed9e1542a421bd80e"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "17e1e81d43b62e324ea8f42f6024f1e8f299a26774bb0fa553c61c1d35f59854"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c4befc7bf55a6fcc2e897eb39167daf0ab0faf08962373830167adf04d4a8efe"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "77479ca3fdfac44547f0085ad2a9c969cbc87136ae8c6b0e7dd00e1b528a821e"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e7163cf126d47a3660b5fbc799fb49a5ec174a868878548cd3128be700b9a203"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "d7b2995dad749df3e08e527fff922f83373a5ad9ccae60f57f6604d42977d232"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "066ee71bd5c164bd99ca95d3c36c0b5b99c846e409b5588c83cd7e441a8414ec"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "500e9e12157c35c6c781f3e51f6d9769b2d866d754a9d63bcb955ea36ea025c1"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c32ab1b75a5d0858be016feddc7079e9ad2740a5dca453f1d57358af766c6582"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "37344da772130294ac78cf42a46b2486dc86b92949debdda557f7cea68176ea3"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7b7164fe770a73b074e497338eefc3c3772b0a5f7701e0582017384f0880e830"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "70f33fc8aa76f5e6c87f1916fcf4d7118ce9da85bcad9f7b67a86028f5b1742f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ce803f89b0448c1123cb39ba5395e5ceffde27e0af3ead26e83f9fb5e59364f2"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "74838cddb3bc22177331dee3d1640234a2476fc62fd3dc577bbabc8768183060"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "189b8a21f3ee0338a7e2e798dce795a08b0e02cc494ece26576715bfeb53c1ec"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "7712b3cc3be1eaa330ac77bbc42d4fb9896a94428a0597352398763c502086f0"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "12c20e11d88a6da21d75a12407ab182b86ff724e02a726289b4d682c8791b82a"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "ac790d4a27bf71228296f00099b36dc8f580e0e0137fecac1d958c9ebb50a668"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cbab0f412840cca2f11eb3826769171467b30f432efa766346ecb4305c82a287"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "455385248c5e7814996226b53d893607f18b31a5120caef2182e873e21e237c6"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "746985ddc7848cc12985732337a87d7c62a5b352d972b00bf51c14a9c261047a"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "acc26d6efac94a723c1f080151248239d985061587f03856d35ffc793e24002f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "d109b04d5db36d9c4eceabaae249eb27c4bf11210031753777cdc9b6e468a094"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "ac790d4a27bf71228296f00099b36dc8f580e0e0137fecac1d958c9ebb50a668"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f9366b167814b639519bdcf45a917931068e4c06fb6fceaa2a16bb01b504dad4"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "153cee72b45148588527e5fff49dbc8e8033460e0190338cc3bc7b440b66851c"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "f59e1ef71d14bf9ff411d24518bf94ebce60717415280f5710a36692b0ba031c"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3a36e5261b06d390b2611cb4ee454e06e22b09a0ae2258ab3a90866bb7840208"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "e0515c3b2efe22fca008019a9d83cc17c91d838b9ea193639d212bf497731e84"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "fab43fd61241e809435c4e3df0d4164a849d6e8560cd4ab9240fb4f25f533713"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "4d0c36503a46c5752bfd98b8371dad0cb97bcdd63ad051c6f0fecde269be824c"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "ac790d4a27bf71228296f00099b36dc8f580e0e0137fecac1d958c9ebb50a668"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f9366b167814b639519bdcf45a917931068e4c06fb6fceaa2a16bb01b504dad4"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "0bc34ce27a0396f1b6a0df5cec27bf18506a9e99f6385c518d7c5e0c28ddb479"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ddc67ef8a191660b3fb5df78788f204cc0a3a1f2db2de88900f85e8f9df4bc67"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "56f9c867086ae5be8d1efd06d3937e517c325822f9d8522356ae0217c2159e95"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "2237bf28c4cde247c43c05503f4e1b9f87c34fbf4c170eaaeb3cf2c832aa0611"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "18e89f0a69cdcc4a3c28ec47e91f6f69d42489228e3c1b24a3182dd98b3157c3"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e459579d3d4ce789dad7b3868ebb2593db59d67350f33e7ccf501f9aa9d70318"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "a554b89e6922503c734815bf6f0597670ee4185b40bf6b13f06e1f6844d8d05b"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "93921631ea1a6715e7bad98677d10592ba5632d01497024ab7bbdd154c1ced8a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "88b763e5395e0a86745775faefab3d081214ddb715a88898d8d9a1c4bd7c3a1c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "0eb096e4f2ac5660ea57802ae8ceb291d7b06f61c061a8262cc40cd063b49d63"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c252f2a1f2efc467f41f0d6be2bad4ed503be7ea0ea1ae41326308f88091aa52"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "80411d18ee70104d49d70cc41ce2863410ba2ef404981b546f397f5d13d60de2"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "a554b89e6922503c734815bf6f0597670ee4185b40bf6b13f06e1f6844d8d05b"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "64ef1e58e13506abe6eab0882853a6c886954f21f90b56d94655c93a82763bba"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "d1ded922753a1f0b7ecee626b91af3a97105bbb9cb44419e5c1b385ccddd50d4"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "7ac9e6a7ba777185c4411e329118308256636cfdad2be38854d96113a682abe9"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "09894181ee02dfe8ab1f647bc3a0bc51d926b503fcdc4ec23bda52c9d13143d5"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7a37ab8bef00bb77968fc37e2462e81a4d658e877be7c3266d08e240ebd5e281"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "407131f16b85a9f7be9c760cc294dd1600d2898570f03d8712f1e3dc81b87774"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "5156c821e6337273cdf6f31e3a4f5a7b8038d9bbaa5085804076dd732979ffce"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "a554b89e6922503c734815bf6f0597670ee4185b40bf6b13f06e1f6844d8d05b"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "64ef1e58e13506abe6eab0882853a6c886954f21f90b56d94655c93a82763bba"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "e1eb9d8453470237effdf043028d3e2884bb2b221ae4f8da1c508d66feea8423"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ec32285e2bcb410eb4e1cf0aab23626ec9cc0fe6dff697d925e49ed34efc16c4"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "all_human",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "a44123cd833b0f12f2fc20d1d73973f1b86946a0648b68526d3bddc6dee31daf"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d713f8738edb15742f32a740b6e71e28dfb8fb2155cc66ddc730993686376f73"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d3421e7d9b7526bf225bbb07de297a06720d693fef86bc9e515146f214ff5ee8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e2a04f752da59cf2440bcbe117d8a7f6ba7f1b61547a24449c699d43da4825e8"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "dcc5aae7a6bb98a5b862f48f32d4a3836c917764370c38b2c5fd59582c43b65a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "threshold_0",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "20e67d766dedc03a0366d403915ce1f34e10ce05438e35889a038442d1dc2bf9"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "4c99e395b22ab16d7d36b2977bad37373b20fea59a088ddedc7df8044eb3a191"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "cb558f9b7b3d870b838ced93ba71c919fd4a3751708994b45777d0eab3ad633a"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6a076ad84c327b6a28d3d07f203f3bad1b852e765d115004f7d55d086e83c00c"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "0bc48e5e65aa6df33d4a1b6a974da66a07cf88cb0212c316a3b111306d6cd6cb"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "b3afb5e2df65185f6a9c53d98dcab7258063f31603cc9f3db626821797fada04"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "arm": "threshold_240",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "318dcb3fcca83717dc5ec1a584f372dd0319cc0b408666295a6499db45f349d7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "837e8d329ff2c66faa66d04ca77c0542910eaf15330b3b3ddd8eeb11d4e94f7e"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "e09743ac027a0e65851ee4c1bb97d9b0c06e76053fa0087db85b2b9a71050c67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "a8aaa8b92a268116d7c7f0e9af6b15c094d9c40212aa8bec072268f123aa2852"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "1e69f6aecaaf94fb833b978e75dc224d6066581e452718fdb7c5497eb65e7e7f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ae5fd1f34e938143ee2c4cf331fad8e61c12aa4e1fbfde6a60dcbcbeb406f29d"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "arm": "all_human",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "89363220f1209d0d3ca213b81613262a9913886cac15c0f9b75f9e5217198d9a"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "a1b0b6ca1f9932e76c9f3d251c50823e56f62c7b115eae6ab6332927d175dfea"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "ab805aaed9a9029f89db32722416813c4ba3f17f3c182ed6f7aaa323b63ad924"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "04fc611a6a35a270d2a786b012da698d3cc9aa5425fda42ddd8484fea862b975"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "29ead36223492ba1fbf6031f5c9528b18cef659c593d475e9364773d67f3fedc"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "9e965c21cd183383339bde022d832058454c05f4e52899c207dcc64499d2868a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "arm": "threshold_0",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "f13f4c8e2cb45a87bc8d654b684720854e7f47da732333efcabc8fa5dfa35554"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "51b9dac28e4699da2f82f88fa70a9226d50995acd864a3a4cc237773849063f6"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "f2ee8a37fc713b822cc359e7861bb427091d4373de88a5691a2718272858029e"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "c58d703c2a1ed95837b22bf4eb672300fc4dd3151e8f3128a0298e81ec9bda20"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "29ead36223492ba1fbf6031f5c9528b18cef659c593d475e9364773d67f3fedc"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f42d9fc8e2e56824d403c8f220d837a8068d274cfc18d31b03d3cfec32d621c7"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "8a0619ee1ec9cd7076a8adb5a010ee2e90dd561a07f442c62ebe98394e95f371"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "1f7f81f05b3e97979b27853b912513606ddbb459813d104012a1731c40a2123f"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "arm": "threshold_240",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "5792509fb0d13a22c4e66b373c31c91a52e9d4474f5f6914683ffcc31898e5ee"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "aa883baea7ff5385940ef37e5f48f8692efc174b604da85c2b941a924d8615ac"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "455624d0c022d7de865026414c94f77d1b2db8de20e3a3935ee75cc2808e5c7f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "664ed4f2c28175c15571aa5e0a932f0ee31ac03909422f23724f6d30388cac1a"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "29ead36223492ba1fbf6031f5c9528b18cef659c593d475e9364773d67f3fedc"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f42d9fc8e2e56824d403c8f220d837a8068d274cfc18d31b03d3cfec32d621c7"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "4c19434ab000d532d5dc333587924deac477770c359d69fb70c546b3c6a7e8e5"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ac333cb0709cd1fdb911920d7ede16bdabba349501668c3b3bbb36c65119c074"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "arm": "all_human",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "5f0fb881764df1e972b7b1178a4dea7229f0317a36b2e7e5b6989a987e356442"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c57a93766119194dd63247272a1a938d3db21bd7341dc9ad762449ddef7f48e7"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "93a3b6d721b39f325aee87015cc95d694e823216e44c8e1b5f5bb6901171fcb7"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "8f1d032dd1c3e14831a20c642ab8bcc3af8a56f036c2f3cf6af9449bec4f4fc9"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "45ad20d905bbf444c61e58ba29d05db4d88a1148afca733ae9054f0e75c4771f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "efa8d7b4f7bfff6422792dbbca423aadfff23eff6a51f76b338a1b946801ed77"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "arm": "threshold_0",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3d6a024a1e8a1af6f1ecafdfd73b67dd830720ada4c4b3b54f76d0d292367065"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "569b05c53e09fb8863dce22c171eab805baeb9964649f27ff20d43620cb183cd"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "421e87149566233e3f4459592d8e579c6173c93dd46420e5f997df37f2ae4fc5"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "578384e58cd706fa5a238c25118ebdca3a6f51708c752733ea043da0cef3a77c"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "45ad20d905bbf444c61e58ba29d05db4d88a1148afca733ae9054f0e75c4771f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "7b897f0f4c97d7cecbce4f7e8e74572724b55ed04ba64d1cf49fa0d468b6415c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "f9e63db18b0e05b08a084ad32b391f5ecfff128905a88833ed548b39b29c4d81"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "7a3e2b831fe38c12ecf628ab33f05283f5e0e752048e3c0ee58ad04110fb5545"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "arm": "threshold_240",
+      "previous_study": "phase13",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "c9d220bacf9d2a85e76ef52c0f9cd6cb372a4424a9d9485b6ca8d5af85e24d1a"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7e138c07582e7033b8df0370da7e6878c7ca24a97012dd8d8f415ec68a3f8993"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "4bd8d5dcefada3773d330cb6bf0f906afd883d480eb1ee1dffe0631d190fb0b0"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "43c7b16c2e77ec72debe1aed7ad0210d7bccf6c4d633249ec4a6f3b14c4a4dbd"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "45ad20d905bbf444c61e58ba29d05db4d88a1148afca733ae9054f0e75c4771f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "7b897f0f4c97d7cecbce4f7e8e74572724b55ed04ba64d1cf49fa0d468b6415c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "e6d7739553fc76ed37d965c55d76f6bc391e4c4495a8d6f90557e7df89070f9a"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "f00712fc47239dcf6ad24f346e2235bd05a08d7031b111b67b98370d5e49d1b2"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3a9b8853ead28f0bc8d2b9e41af374df5d6d95dd068332318ce843e96fec649c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "30db1f80a31929e1bd5b74c05c2c928e4c3ae2fa1203270bb35dc94d644caed9"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "fdc0b6e2763bd3468890529c7f4757370d762961c65265ebee4e1c107a21c395"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "de2d71eedb738070b0f60c555287310d303bac193d9011f38990164b98193097"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "81594dc9404e78fded659a646e47ffe439b7c71604990621424f15194cc39242"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "18d02813b5cb1dd3a1ff12e401c0fe31c3d0822f530951480f4b7f83539e82ca"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "2e58e9bd536c5c640fd5cd5396bd80e3f5d833b0344eac6b1f4da753bae4eeac"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "450b3f2da5df1a08ef10b4c8a1a380f7b045accfbb07dcdb53cf894129c409b8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "3fa83b6d90755c0c055826766efb588b8febc45a8a0b00090d0b6a49c6c7e311"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "cda9b03cadafc86dc2746e51deba68f73d1f07990c9624d9f06b99711910a7a0"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "937ccd7d8c5ac3c6f7ecdbd026e30df6ebf3d2a37138a040154ecfa00ba03a8d"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9702f7cebf307d8c5d64d96a1ed2e8e3bf0446dd8b10f6d361a523a4f1e5d354"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "5a4ce60638f48b7a5eb2dc6da106b10d7fbc644e14a6a4c7399311535549e91d"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "5ca5092b0ff6de9217362fde463aa8d97ae7709eb097e895b89e31ac4ac76e21"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "fbe3660c8881f332676961c225bdd2b4e0d83772fd87545f10a2fde28f49de86"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "a5ea3eec46e3c14c70b4c3c467e228eefa90a6605f8582be50806166ad4bb07c"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "fa154955c8f3faef72a5f4a67474a0c276d8693060318eeac83f3f2d6e7edfac"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "d2364889f0959d50495ba590df0588ecf10abeb4790394a88e98a107be09d14f"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "29478bd5acf4704799592326b3b65c9bd233971124771915e7c549997d3be86b"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "aca0bd370311c37bc726f06cfcd7ffaeeec86f88b464dbfe3c55f24ad158a0db"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "415f11c04ae399738f5b2acae8f138a0eb6fefdef328ce3380f5aec5a4c9a084"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "2921c145f2254913bf3ab257b6f73281adb9a423560fbcacf4d385f952cbe3fd"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "daab207a062b15bb9d899c5a71b5dee6f8b142d6b96a3bb6ccc22a6dd89cff71"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3a2e63d97c1b0535e21b5254ca730b46ca59efd844eda48a3c2e65856a30aeb8"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "091a51b0cff8785a4b475f2bb919cc8c45c3a43c9b2f4a661d51d8fda1cc7f39"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "ca37110344be00e0961e23ee6655b18ff6587f0358c8aab75bb1b8c9a2b5bc7b"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "cd484ed4c8482a33f52e50cd93eed6461cf3665abc82412479fef2dd4df737f7"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "2921c145f2254913bf3ab257b6f73281adb9a423560fbcacf4d385f952cbe3fd"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "b1e41cf8e6e2c1ef5227fa4316e5f8e52c6f86071bc3ee43c2d1fce6c9c13164"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "f394ed45baa826ff373f8457064379a389fc8e002f478eb9a40789d961a1fca9"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "76b6ac7570729571f61afd75d31c0b357879aa41658b985d594f4836db247126"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "2f03f001172d8088f7e2bd9458b744ec82581c86ba44b474fb6d811c74c30f02"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "454252b9c0afb686fdfd5dcbfadbf0125318c49c3b10a043f0f76e87b846145b"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "01da23a14c05c71f98b662d6d9348764391fc32e943b6b00ef83ae4ed1d6a675"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "b5156df835c41a7c8c7ebc24ae86b9c7e66adcf58cdc1a512eefde558c2f83dc"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "2921c145f2254913bf3ab257b6f73281adb9a423560fbcacf4d385f952cbe3fd"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "b1e41cf8e6e2c1ef5227fa4316e5f8e52c6f86071bc3ee43c2d1fce6c9c13164"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "5c475f517825730e3444c37775a38872ad86f78d10b18d8dbd10fc51e9fa3b82"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "6ef5a3552d397bd743400abdee427f000aa85c47012088a62cc4f009ec9f3f27"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "arm": "all_human",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9c497cb3e01c27776029026f98f48b30819ea0f4455f22a6af1ec7f1c919f954"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "9ce8b488af04a173ef2f6e75d9c9479f34f0eb7fe6a7146cdbc8538b5c519921"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "abfeba6950aa052c4a5308cd56ad1ae67da2dc675862e990ea00ceb868ab7f47"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "a9a334488c46c4274a1a8e5bd3833420d69624e5adde529970e084b104166213"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "4966a68f2cac39a45ec2d7887570de76e39c8aad6fff9bc85f4c80af14e3ec7e"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "fb1c739c5dbf596b904be31778407f88d7c641df9a39d8bf27a6485b15210172"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "arm": "threshold_0",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "10103b9f5aa14b187be782547b1b64fffed47cebf7700708d06a72d3d1e021df"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "1ea0eb1a5d2f6ea67fea7f08f084b0a49982b4c3498801ed2d3ea366bb391abb"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "a3e3e07b081096a3deee3ba2f25d767ce236fe0a74b9ba9aed5ec17f43299781"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "529128ea176c9b4028b412d25d6df99df684b76666f6f94165b9459c0f59865a"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "4966a68f2cac39a45ec2d7887570de76e39c8aad6fff9bc85f4c80af14e3ec7e"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "083a9491cbe43e6bd2b867592c0699e7a626e5e773501702890ee3435a4b5ff3"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "291b1f44c60336ffabb88f9a61c789be88b1eaab9a48a711eac8be270031cdee"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "77e4a83654f4533ca8d2eee21bb6987993543f039e4f13ad49e4862a805f2e00"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "arm": "threshold_240",
+      "previous_study": "phase12_priority",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "adfb7f9a4baece78cd0007d0db3daf7be5efae5d619fc7933dbb1a3e553703bd"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d6f413367d4a3497a37625f7054af3f8322171b3359ad3a83965f7b15951bd57"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "ffe2ac9fc6879852ed65893a2600157272940a5be4ccfdb0ba5a908da97edc9f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "69b842c965931a63b9772f823227b9aa1bdbcd4cd91f4a224f6f57d0f2952390"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "4966a68f2cac39a45ec2d7887570de76e39c8aad6fff9bc85f4c80af14e3ec7e"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "083a9491cbe43e6bd2b867592c0699e7a626e5e773501702890ee3435a4b5ff3"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "6e44a941ced16b1ae01fc4b35a9362825b6f7e0f9d57f9b046af7f4d9f949702"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "4ec592747146251e243f372e0a50b55fa5a1536c5a081754d9404fd8c8816aac"
+        }
+      ]
+    }
+  ]
+}

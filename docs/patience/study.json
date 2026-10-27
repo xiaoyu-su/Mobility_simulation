@@ -1,0 +1,26 @@
+{
+  "patience_seconds": [
+    240,
+    480,
+    720
+  ],
+  "reference_patience_seconds": 480,
+  "common_actual_pickup_target_seconds": 480,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "pilot_seeds": [
+    0
+  ],
+  "cities": [
+    "munich",
+    "chicago",
+    "manhattan"
+  ],
+  "physical_main_runs": 81,
+  "physical_pilot_replays": 9,
+  "unique_conditions": 81,
+  "scope": "Booking/offer cutoff sensitivity; actual lateness is reported and accepted passengers are fulfilled"
+}

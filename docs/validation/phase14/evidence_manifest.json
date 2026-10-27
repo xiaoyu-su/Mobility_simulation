@@ -1,0 +1,24 @@
+{
+  "source_digest": "6fbe2c809b300edbdb28cd54f20d4079706f31d151aba1ffda3219f26e40fd8e",
+  "verified_utc": "2026-10-27T04:54:50.589439+00:00",
+  "original_and_derived_hashes_verified": true,
+  "files_sha256": {
+    "patience_sensitivity.png": "3b965c2a1b5271a823f1fd247806c7be865b1acddd136967f49bb58d4804fbeb",
+    "policy_effects_by_cutoff.csv": "394632649118a8396fd2af4366b9fe9794a05034e058b79da9e63bf664a77e51",
+    "configuration_summary.csv": "ec96d9f7206e792819cb9ebed12c664b694aae6bb6745a2806bfb0ad6d7961bf",
+    "historical_real_identity.json": "a7eebb7c50179c3957df26ff282b6284571cb93811fb8713363ecd4fdba77db7",
+    "seed_results.csv": "2e9782e1da93ed8240eece801cca27d461d332ea0f56cefe48a894376ec38a88",
+    "manifest.json": "e2dfdf620f83ad8600017da145db67a0208edea5e34ef67b7de5863fe57c462f",
+    "independent_seed_checks.csv": "4bc2dfde480a119166e0c0b6304a04d71a868700edbccc46274a689758647acf",
+    "robustness_manifest.json": "bd413aa325cd50af88a6cc417ff5412bd602945eda5d9c9ce5cb7801e948f5c5",
+    "common_rider_effects.csv": "c356e1568aa3541afe6bd64a28a5b9eca6902396fa49de9c2631b4aa27bb5b50",
+    "runtime_environment.json": "59387c7a86370c3021e1cf7ba514935962f7e621145b170f5fa904cd93a5a641",
+    "policy_stability_by_city.csv": "17832e5d54b7f4338f43f22e2f39fdd8135d810a48c55c881956d47bb98c68b3",
+    "independent_checks.json": "dadd517220192a021ac8bfd1007200788a9fabb36097e1bbdefe967b81d9357f",
+    "ROBUSTNESS.md": "2495aedc4145b8b6076553d718a7b35ee4bfe092bf16eecc8442c9fb1c3f6a53",
+    "RESULTS.md": "f5080d8126dafc1c31ecc94de19835150f479705c491cbaa11e79f8d6021cf15",
+    "patience_sensitivity.pdf": "12937a5d5cb5d490a018f8117fa85e9d21d997d69c3728b7db187ebd8989f98d",
+    "paired_effects.csv": "5c845fb8e009caf948b83cef98c25437ed1fa884dfb1b16b3e05968870be323b",
+    "late_pickup_records.csv": "c49525d0dc73f88b76885687bfcc301937c20450fba809491e6ad171fa4dc2c8"
+  }
+}

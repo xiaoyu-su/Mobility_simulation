@@ -3534,3 +3534,254 @@ and will be committed locally before the actual push attempt is recorded.
   A documentation-only receipt commit is pushed next; final remote equality,
   author/committer and clean checkout are verified after that push. No saved
   repository selection or secret is changed.
+
+
+## Phase 14: booking-patience robustness across cities
+
+### Step 1: identify the next open assumption and preserve published work
+
+- Start from published Phase13 receipt `07cdae37357f7514a7e151a6caf91e24b82bcfd3`
+  on `phase-14-patience-robustness`, with a clean checkout. Author and committer
+  remain Xiaoyu Su. The original plan's limitations identify unverified rider
+  patience as a major completion driver. Existing phase guides retain that
+  calibration gap; this phase measures robustness rather than fitting a true
+  cancellation model or claiming the supplied screenshot's numerical outcomes.
+- Prespecify assumed booking/offer cutoffs240/480/720s across Munich/Chicago/
+  Manhattan, seeds0/1/2, all-human and cautious AV threshold0/240 controls.
+  Original fleets50/100/775, 10% AV replacement, opt-in0.3, reference fence,
+  source cohort, service, network, search, geometry/SOC remain fixed within city.
+  Human acceptance, human/AV repositioning and execution noise stay off.
+  Main81 unique conditions plus nine baseline pilots/replays are planned.
+- Initial1.4GiB free is insufficient for full new evidence. Verify exact
+  published-part reconstruction before removing only redundant Phase8/13
+  logical archive caches. Share45 byte-identical immutable large published
+  evidence files between the old clean-artifact extraction and retained Git
+  evidence using verified hardlinks; every original path/data/raw/source record
+  remains present. `storage_record.json` records SHA/size/method/restore commands.
+  Actual reclaimed bytes1851202044; no older evidence content or Git file changes.
+
+### Step 2: define booking cutoff, execution lateness and input strata precisely
+
+- Baseline exploratory readback finds actual pickups beyond480s despite accepted
+  offers inside their deadline: seed0 threshold240 has6 full-run cases in Munich,
+  15 Chicago and20 Manhattan. For Munich the largest actual excess is157.824s;
+  all six accepted promises remain before the deadline. This is not a new run,
+  nor proof of a specific traffic/replanning cause. Phase2 already distinguishes
+  frozen accepted promises from realized execution and preserves committed riders.
+- Treat patience as the accepted-offer/latest-start assumption implemented by
+  the existing traveler/planning model. Require every accepted promise to fit
+  the original source-clock cutoff and every booking to physically complete.
+  Retain actual late pickups instead of silently cancelling riders, rewriting
+  output, or equating a quote constraint with guaranteed execution punctuality.
+- Add a read-only `tools.city_av.patience` report and scientific plots. Hold
+  all input bytes fixed except request deadlines and `op_max_wait_time`; verify
+  source cohort, consent/service, network/runtime, reference/fence, vehicles and
+  initial distributions. Across cutoffs, demand-file audit hashes intentionally
+  differ; all non-deadline request fields and actual typed geometry/SOC/random
+  backgrounds are checked separately. Every cutoff is an explicit report stratum.
+- Strengthen ordinary city summaries: verify full input snapshot hashes and
+  reject incompatible input contracts for the same city/fleet. Changing an
+  assumption must not be treated as initialization-seed variation or a pooled
+  policy contrast. The default valid-report file format and simulator policy
+  behavior remain unchanged.
+- Report offered waits, actual waits, within-own-limit completion, actual late
+  counts/excess, same-served-ID waits, allocation/utilization/empty driving and
+  conditional paired effects. Add a fixed480s actual-pickup target across all
+  strata so a looser cutoff does not mechanically redefine good service. No
+  empirical cancellation/adoption/supply or geography-only effect is identified.
+
+### Step 3: physical probes, default compatibility and frozen source
+
+- First focused command runs `tests/unit/test_city_av_patience.py` and
+  `tests/integration/test_city_av_patience_examples.py`, with outputs/JUnit under
+  `/workspace/.setup/phase14/checkpoint`. Actual **9 pass /36 complete physical
+  simulations in69.42s**, no failures/skips/warnings. Snapshot269 files digest
+  `b363ec0d98e1fbb2844b07ffe70162bb47a6f6e7df2dd2da33e2e949b5ef4a9f`.
+- A controlled source-clock probe is unreachable within240s but feasible at
+  480/720s. All three arms complete1 request at240s and2 at480s. Cohort bytes,
+  all non-deadline demand, initial geometry/SOC and background inputs are held
+  fixed. Both immediate controllers and C++ routing complete bookings, enforce
+  accepted-offer deadlines, replay exactly, preserve raw bytes during analysis,
+  and reject mixed ordinary summaries/tampered inputs/existing report targets.
+- Add the fixed480s quality target and hash the exact round-trip-parsed SOC
+  bytes. Expanded gate additionally includes previous city units/integrations
+  and AV-repositioning integrations, exercising old off/on and feature combos.
+  **37 tests /96 complete physical simulations pass in166.02s**, no warnings
+  or skips. Final269-file Python/dependency digest is
+  `6fbe2c809b300edbdb28cd54f20d4079706f31d151aba1ffda3219f26e40fd8e`.
+  Snapshot all source files and11 tracked JSONs under `validated/source`.
+- Track nine patience-specific city configs, two-policy grid and prespecified
+  study plan in `docs/patience/`. Rebuild fresh datasets from original public
+  native inputs and the immutable Phase9 Manhattan parent; never source-retag
+  old inputs. Source/configuration/HEAD stay unchanged while physical runs run.
+
+### Step 4: fresh input contracts and real pilot gate
+
+- `.venv/bin/python /workspace/.setup/phase14/prepare.py >
+  /workspace/.setup/phase14/prepare-console.txt 2>&1` builds nine private bundles
+  under `market_inputs/phase14`, with exact commands/statuses/timings. Verified
+  identical immutable large matrices share storage with their source only after
+  exact size/SHA proof; all logical data paths/bytes are preserved.
+- Preflight each city across cutoffs: only patience/deadline parameters may
+  change. Then run nine seed0 default480s pilots onCPUs0/1 with two pinned
+  one-thread workers. New CLI checks full physical events, offer-cutoff and
+  actual-lateness accounting before main sweeps or full regression may start.
+  Actual pilot/main results follow completion; planned counts are not successes.
+- Nine default480s pilots finish successfully in156.74s. The report checks all
+  accepted promises against source-clock cutoffs, requires actual completion,
+  reconstructs physical events/occupancy, and explicitly retains late execution.
+  Source269/6fbe2c80 and all11 config snapshots remain exact. This gate passes
+  before any final main sweep or full regression is launched.
+
+### Step 5: frozen prespecified sweeps and full regression launch
+
+- `.venv/bin/python /workspace/.setup/phase14/run_studies.py >
+  /workspace/.setup/phase14/studies-console.txt 2>&1` launches three cutoff
+  strata, each with27 full cases (three cities ×three seeds ×three policies).
+  Each uses one pinned worker/BLAS/OMP/MKL thread, onCPUs0/1/2 respectively.
+  Exact commands/statuses/logs/timings are recorded under `studies/` and each
+  physical experiment retains source/input/output hashes and matched audits.
+- Full command: `taskset -c 3-4 .venv/bin/python -m pytest -q
+  --basetemp=/workspace/.setup/phase14/full/runs
+  --junitxml=/workspace/.setup/phase14/full/junit.xml >
+  /workspace/.setup/phase14/full/tests.txt 2>&1`. Expected442 tests,360 complete
+  regression simulations and32 restored windows remain pending actual finish.
+- Freeze Python/dependency/configuration/HEAD bytes while both sweep and full
+  suite run. Remaining preparation may use Markdown or external read-only
+  helpers. Pilot repetitions are not extra independent conditions: planned
+  totals are90 physical records /81 unique conditions /nine exact replays.
+
+### Step 6: complete real sweeps, independent deadlines and robustness records
+
+- All81 main conditions finish: p24027 cases /520.19s, p48027 /856.87s,
+  p72027 /1310.98s. Together with nine seed0 pilots there are90 physical
+  records /81 unique conditions /nine replays. All accepted promises fit their
+  own source-clock cutoff and all bookings physically finish. Longer-cutoff
+  runtime differences are recorded, not treated as a matching-policy gain.
+- `taskset -c 2 .venv/bin/python /workspace/.setup/phase14/analyze_real.py >
+  /workspace/.setup/phase14/analysis-real.txt 2>&1` independently checks every
+  raw/source/input/runtime hash, demand identity/causal admission/deadline,
+  promise/actual completion, boarding/alighting timestamp and vehicle, service,
+  private consent, moving/pre-post capacity, chronology, effective type factor,
+  threshold/product/fence/opt-in and actual geometry/SOC/random backgrounds.
+- An independent event-sweep integration of actual pickup→alighting-end
+  intervals reconciles occupied/passenger exposure in all90 records. Non-
+  deadline demand and all non-wait parameters remain exact. All27 historical
+  default480s controls preserve225 critical files byte for byte; nine exact
+  fresh-process replays preserve84 critical comparisons. Within-stratum
+  backgrounds total60; cross-patience typed background checks total54.
+- All81 main conditions and nine replays pass the reusable patience CLI's
+  explicit nine-stratum report. Record581 late evaluation pickup events
+  (995 including warm-up) across81 counterfactual runs, not unique passengers.
+  `late_pickup_records.csv` preserves individual original request, deadline,
+  accepted promise, actual time, excess, product and warm-up/evaluation/study.
+  Late execution is neither deleted nor counted as invalid accepted offers.
+- Supplementary commands `robustness.py` and `finalize_analysis.py` (same
+  external helper directory) retain27 policy/cutoff contrasts, mean-direction
+  stability, fixed-target service and same-served eligible waits. Original
+  RESULTS/plots remain byte-identical to their manifest; ROBUSTNESS and derived
+  CSVs have separate input/output proofs. Seventeen original/derived artifacts
+  are pinned in `evidence_manifest.json`. The scientific12-panel figure is
+  visually inspected with readable labels/legends, explicit offer/arrival scope,
+  seed ranges and adverse outcomes; PNG/PDF hashes are recorded.
+- Threshold240 three-seed means at cutoff4/8/12 minutes:
+
+  | City | Cutoff s | Completed | Within fixed480s | AV trips | Eligible wait s | Late actual pickups | Fleet empty km |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Munich | 240 | 382.67 | 382.67 | 7.33 | 160.05 | 1.33 | 510.54 |
+  | Munich | 480 | 556.00 | 554.67 | 25.67 | 302.44 | 1.33 | 1033.37 |
+  | Munich | 720 | 581.33 | 213.00 | 31.67 | 487.77 | 8.00 | 1213.54 |
+  | Chicago | 240 | 445.67 | 445.67 | 18.00 | 153.57 | 1.33 | 341.54 |
+  | Chicago | 480 | 547.00 | 543.67 | 29.33 | 311.52 | 3.33 | 727.31 |
+  | Chicago | 720 | 536.67 | 223.33 | 35.00 | 470.42 | 6.67 | 890.68 |
+  | Manhattan | 240 | 1762.33 | 1762.33 | 91.33 | 143.65 | 6.67 | 696.24 |
+  | Manhattan | 480 | 2441.00 | 2423.33 | 134.00 | 257.34 | 17.67 | 1438.85 |
+  | Manhattan | 720 | 2707.33 | 1924.33 | 152.67 | 329.28 | 19.67 | 1862.68 |
+
+- Policy conclusions are assumption-dependent. Threshold0→240 completion
+  changes at4/8/12 minutes are−4/+11/−1.67 Chicago,−3.67/−1/+5.67 Munich,
+  and+16.67/+5/+5 Manhattan. Chicago/Munich mean directions change with cutoff;
+  small-seed intervals and all individual seeds are retained. AV allocation
+  changes are−1.67/+6.33/+3.67 Chicago and−1.33/+2.33/−2.67 Munich; stronger
+  AV threshold is not uniformly more AV throughput under altered histories.
+- Same-served eligible wait changes remain adverse for threshold0→240:
+  +7.65/+13.17/+14.47s Chicago,+5.27/+21.55/+9.71s Munich and
+  +22.66/+61.57/+62.84s Manhattan. Empty-driving changes and the fixed480s
+  service target are retained alongside completion. Munich's looser8→12 minute
+  assumption adds25.33 completions but removes341.67 services within that
+  common target. Chicago completion is non-monotone547→536.67 while empty
+  distance rises727.31→890.68km. These are model sensitivities, not calibrated
+  real patience or universal AV gains.
+- Verified improvement: explicit assumption strata, stronger compatible-input
+  safety, original-clock booking validation, transparent actual lateness and
+  common-target/same-ID comparisons. No simulation matching policy/default is
+  changed. Full regression and final publication remain pending actual gates.
+
+### Step 7: full regression and historical byte-identity gates pass
+
+- Full command from Step5 exits0: **442 passed in2117.94s (35m17s)**, with
+  zero failures/errors/skips. JUnit time2117.927s, actual start2026-10-27
+  04:27:47 UTC, source/command/CPU affinity and completion observation are
+  retained in `full/execution.json`. All physical jobs finish before any
+  source/configuration/HEAD change or implementation commit.
+- `.venv/bin/python /workspace/.setup/phase14/audit_suite.py >
+  /workspace/.setup/phase14/suite-audit-console.txt 2>&1` verifies **360 complete
+  physical regression simulations and32 restored windows**. Full IDs are
+  unique, picked-up bookings have dropoff, all available accepted promises
+  complete, and actual vehicle activity is chronological. Original upstream
+  outputs without promise fields remain explicitly unavailable, not inferred.
+- All **324 previous full cases preserve2402 checked tables byte for byte**;
+  all32 previous windows retain128 exact table values. The check includes
+  applicable human/AV/repositioning, city/initialization/random/search audits
+  alongside primary physical outputs. Ten deliberate negative CSV fixtures
+  without a scenario configuration and archived source-only tables are not
+  counted as executed physical simulations.
+- Final gates establish442 tests,360 full regressions,32 windows,90 real
+  records /81 unique conditions /nine exact replays,27 default-cutoff historical
+  controls /225 byte-identical critical files,60 within-stratum and54 cross-
+  patience background matches. All90 independently reconstructed event sweeps,
+  original-clock deadlines, accepted promises and physical booking tails pass.
+- Verified gains are9 added tests/36 complete regression probes, stricter
+  input-contract safety and auditable patience/actual-timing robustness with
+  common-target and same-ID comparisons. Prior matching policy/default code
+  remains unchanged. All observed adverse directions and actual lateness are
+  retained. Remaining work is packaging, documentation, final checks and push.
+
+
+### Step 8: complete evidence packaging and measured review documents
+
+- Package 16508 records into 392635562 bytes across
+  12 upload parts. Every member and part byte passes readback;
+  logical SHA-256 `8c80ec2646fa68acc4a414db677a612f81bf01b80d675d5bf1c58b4002cd1dde`.
+- Preserve both source/focused checkpoints, full regression/windows, nine new
+  inputs and immutable Manhattan parent, all studies/replays, commands,
+  original/derived report proofs, runtime dependencies and scientific figures.
+  Only exact canonical public matrices, symlink aliases and reproducible
+  caches are omitted with explicit restoration metadata.
+- Finalize guide, README, project summary, improvement log and restoration
+  record using actual results. Keep offered versus actual deadlines, the fixed
+  service target, policy-direction changes, adverse outcomes and empirical
+  limits explicit. No raw byte or simulation-policy source changes.
+
+### Step 9: final publication gates pass
+
+- `.venv/bin/python /workspace/.setup/phase14/prepublish.py >
+  /workspace/.setup/phase14-prepublish-console.txt 2>&1` exits0. All269 frozen
+  Python/dependency hashes and11 config snapshots match; all264 prior non-
+  summary source files remain unchanged. Only the existing ordinary summary
+  gains input validation; matching policy/default code is unchanged.
+- All90 raw output sets and four complete study manifests,81 unique conditions,
+  nine replays, nine explicit strata,60 within/54 cross-patience backgrounds,
+  all accepted-offer deadlines and actual-lateness records pass exact readback.
+  Nine input bundles/native runtimes, original and derived report hashes,
+  complete evidence manifest, inspected figure identity and all links pass.
+- Archive contains16508 records /392635562 bytes /12 verified upload parts;
+  logical SHA-256 is
+  `8c80ec2646fa68acc4a414db677a612f81bf01b80d675d5bf1c58b4002cd1dde`.
+  Every member and part byte passes readback; all16 omitted matrix paths have
+  exact canonical size/SHA reconstruction data. Every artifact fits GitHub's
+  per-file limit; original large public inputs retain source provenance.
+- All earlier validation directories and approved reference/regression baselines
+  remain unchanged against parent07cdae3. Source/Markdown/JSON whitespace gates
+  pass; raw CSV/TXT/XML bytes are not rewritten. Actual-source/configuration/
+  author and remote publication receipts follow successful implementation push.

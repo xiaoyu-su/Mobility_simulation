@@ -22,10 +22,29 @@ REPOSITION_METRICS=['av_repositioning_assignments','av_repositioning_distance_km
                     'av_repositioning_time_s','av_repositioning_arrivals','av_repositioning_interrupted_legs']
 
 
+def bundle_contract(meta):
+    """The declared input regime, distinct from initialization-seed variation."""
+    return dict(config=meta['config'],files=meta['output_sha256'],
+                dependencies=meta['dependencies'],runtime=meta.get('runtime_files_sha256',{}))
+
+
+def verified_city_bundle(path, manifest_sha256):
+    """Verify the full recorded input snapshot without retagging historical source."""
+    path=Path(path).resolve()
+    if file_digest(path/'manifest.json')!=manifest_sha256:raise ValueError('City input manifest changed')
+    meta=json.loads((path/'manifest.json').read_text())
+    if meta['status']!='complete':raise ValueError('Incomplete city input snapshot')
+    for name,h in meta['output_sha256'].items():
+        target=(path/name).resolve()
+        if not target.is_relative_to(path) or not target.is_file() or file_digest(target)!=h:
+            raise ValueError(f'City input snapshot changed: {name}')
+    return meta
+
+
 def summarize(experiments, output):
     output=Path(output)
     if output.exists():raise ValueError('Refusing to overwrite city summary')
-    rows=[];conditions={};replays=[];source=None;inputs=[];physical=0;checks=0;cohorts={};folders={}
+    rows=[];conditions={};replays=[];source=None;inputs=[];physical=0;checks=0;cohorts={};folders={};contracts={}
     for experiment in map(Path,experiments):
         m=json.loads((experiment/'manifest.json').read_text())
         if m['status']!='complete' or any(r['status']!='complete' or r['returncode']!=0 for r in m['runs']):raise ValueError('Cannot summarize incomplete city studies')
@@ -34,6 +53,12 @@ def summarize(experiments, output):
         for name,h in m['output_sha256'].items():
             if file_digest(experiment/name)!=h:raise ValueError('City study report changed after completion')
         inputs.append(dict(path=str(experiment),manifest_sha256=file_digest(experiment/'manifest.json')))
+        for city,record in m['bundles'].items():
+            meta=verified_city_bundle(record['path'],record['manifest_sha256'])
+            cohort_key=(city,meta['fleet_size']);contract=bundle_contract(meta)
+            if cohort_key in contracts and contracts[cohort_key]!=contract:
+                raise ValueError('Incompatible city input assumptions; report patience/input strata separately')
+            contracts[cohort_key]=contract
         for entry in m['runs']:
             physical+=1;folder=Path(entry['output']);city=entry['city'];bundle=Path(m['bundles'][city]['path'])
             if file_digest(bundle/'manifest.json')!=m['bundles'][city]['manifest_sha256']:raise ValueError('City input manifest changed')

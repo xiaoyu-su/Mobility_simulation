@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "7af9519f9afe4608b09ad1487cf3a1c282b6340cda8bdf760a3d974d18a7f856",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-13-chicago-threshold-mechanisms",
+  "committed_source_and_three_configuration_bytes_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "historical_full_cases": 306,
+  "historical_real_controls": 23,
+  "implementation_commit": "6047254406646f43881408d04bb3ffe26ad466e5",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; final receipt push, remote equality, author/committer and clean checkout checked next.",
+  "pytest_passed": 433,
+  "real_policy_runs": 64,
+  "regression_full_simulations": 324,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "scope": "Read-only mechanism diagnostics; all261 earlier simulation source files and legacy policy outputs preserved",
+  "source_digest": "cb250f100fdc138d8d2dbc10a55f1190f8fb4d601e8c99f744c5322c06b7a944",
+  "source_files": 265,
+  "unique_conditions": 54,
+  "validation_json_sha256": "fe5c9806cee6a32d8f83efa46e73d5822e4d5c0958a0538766049efc44715ea8",
+  "verified_remote_implementation_tip": "6047254406646f43881408d04bb3ffe26ad466e5",
+  "verified_utc": "2026-10-27T03:04:08.799064+00:00"
+}

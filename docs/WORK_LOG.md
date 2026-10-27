@@ -3517,3 +3517,20 @@ and will be committed locally before the actual push attempt is recorded.
   Markdown and JSON; raw CSV/TXT/XML bytes are retained. Implementation/evidence
   is ready for the Xiaoyu Su commit and native push; an actual remote/source/
   author publication receipt follows after successful implementation publication.
+
+
+### Step 10: publish as Xiaoyu Su and verify GitHub
+
+- Implementation **`6047254406646f43881408d04bb3ffe26ad466e5`** contains Phase13 diagnostics, tracked study
+  grids, tests, measured accounting and complete failed/corrected/raw evidence.
+  Native `git push -u origin phase-13-chicago-threshold-mechanisms` succeeds; `git ls-remote` returns
+  that exact implementation tip. Author and committer both verify as
+  **Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com**.
+- All265 committed Python/dependency blobs and all three configuration files
+  match the tested frozen bytes. The433 tests,324 regression simulations,
+  32 restored windows and64 real physical runs belong to those exact bytes.
+  All261 earlier source files, prior evidence and baselines are unchanged.
+- Publication receipt records actual remote identity/source/evidence proof.
+  A documentation-only receipt commit is pushed next; final remote equality,
+  author/committer and clean checkout are verified after that push. No saved
+  repository selection or secret is changed.

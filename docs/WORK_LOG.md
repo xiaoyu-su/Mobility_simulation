@@ -3785,3 +3785,21 @@ and will be committed locally before the actual push attempt is recorded.
   remain unchanged against parent07cdae3. Source/Markdown/JSON whitespace gates
   pass; raw CSV/TXT/XML bytes are not rewritten. Actual-source/configuration/
   author and remote publication receipts follow successful implementation push.
+
+
+### Step 10: publish as Xiaoyu Su and verify GitHub
+
+- Implementation **`c86df321c261fb137b50f3fcb2ffe07eff716464`** contains Phase14 patience diagnostics,
+  input-contract guard, tracked assumptions/grids, tests, measured sensitivity
+  and complete raw/source evidence. Native `git push -u origin phase-14-patience-robustness`
+  succeeds; `git ls-remote` returns that exact implementation tip. Author and
+  committer both verify as Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com.
+- All269 committed Python/dependency blobs and11 configurations match frozen
+  tested bytes. The442 tests,360 full regression simulations,32 windows and
+  90 real physical runs belong to those bytes. All264 prior non-summary source
+  files, simulation policy/default behavior and historical evidence remain
+  unchanged; the ordinary summary adds input validation.
+- Publication receipt records actual source/configuration/remote/identity proof.
+  A documentation-only receipt commit follows, with final remote equality,
+  author/committer and clean checkout verified after its push. No secret or
+  saved repository selection changes.

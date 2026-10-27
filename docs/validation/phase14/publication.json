@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "8c80ec2646fa68acc4a414db677a612f81bf01b80d675d5bf1c58b4002cd1dde",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-14-patience-robustness",
+  "committed_source_and_eleven_configurations_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "historical_full_cases": 324,
+  "historical_real_controls": 27,
+  "implementation_commit": "c86df321c261fb137b50f3fcb2ffe07eff716464",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; final receipt push, remote equality, identities and clean checkout checked next.",
+  "pytest_passed": 442,
+  "real_policy_runs": 90,
+  "regression_full_simulations": 360,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "scope": "Patience assumption sensitivity and input-contract safety; accepted-offer cutoff checked, actual lateness preserved, no matching-policy change",
+  "source_digest": "6fbe2c809b300edbdb28cd54f20d4079706f31d151aba1ffda3219f26e40fd8e",
+  "source_files": 269,
+  "unique_conditions": 81,
+  "validation_json_sha256": "7ee3023914572563dbbc0a736237e951b31eea3c54db49fc468dabc87e864888",
+  "verified_remote_implementation_tip": "c86df321c261fb137b50f3fcb2ffe07eff716464",
+  "verified_utc": "2026-10-27T05:08:47.861882+00:00"
+}

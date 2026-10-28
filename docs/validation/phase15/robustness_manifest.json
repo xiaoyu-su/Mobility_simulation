@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "manifest.json": "584b71481f1e9d34762050f11e2cb05c288c920237b39904d459957d3597f464",
+    "seed_results.csv": "aac9c905d872c4359178b3833dab3dab54b448d61c4f97282dd28253d3ece0de",
+    "common_rider_effects.csv": "53861b6faabf85ac0bd24e182b1fced651b2ce69ca1a26ddc8439d3a8e3e8f47",
+    "fixed_group_results.csv": "06848262e3ecdf048ee589ef3626463dce9418b6d7d6b917af9f0f8ea5fcc5cd"
+  },
+  "outputs": {
+    "policy_effects_by_opt_in.csv": "f84125aa113798debc5b6aece734cb9dd7922c43ee7d5c79f5467d4bf0f2361a",
+    "policy_stability_by_city.csv": "62cbbfaab67c35571045af87d42272d0018710563d3f95f415f4aa73720ca8c7",
+    "fixed_group_spillovers.csv": "77e9b47a01f7beef5a53f4062f1937ac10c2358ee7e58699c6cc3f99559fb966",
+    "ROBUSTNESS.md": "5908ff99dcf015ec5c2458eefef5c3ab0d5dc2d9bc455114f069c8c0adb9df1c"
+  },
+  "policy_opt_in_contrasts": 27,
+  "fixed_group_spillover_contrasts": 54,
+  "all_seeds_matched": true,
+  "original_report_files_unchanged": true
+}

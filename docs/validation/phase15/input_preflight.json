@@ -1,0 +1,151 @@
+{
+  "fresh_current_source_bundles": 9,
+  "all_three_default_bundles_preserve_historical_input_bytes": true,
+  "no_historical_source_retagged": true,
+  "checks": [
+    {
+      "city": "munich",
+      "opt_in_share": 0,
+      "fleet": 50,
+      "av_slots": 5,
+      "requests": 2523,
+      "evaluation_requests": 1892,
+      "fixed_evaluation_groups": {
+        "outside_fence": 1588,
+        "additional_opt_in": 191,
+        "baseline_eligible": 113
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "e68794cf35e8176d08d9335883376d21268e77d795301c2c8b81693151861e2e"
+    },
+    {
+      "city": "munich",
+      "opt_in_share": 0.3,
+      "fleet": 50,
+      "av_slots": 5,
+      "requests": 2523,
+      "evaluation_requests": 1892,
+      "fixed_evaluation_groups": {
+        "outside_fence": 1588,
+        "additional_opt_in": 191,
+        "baseline_eligible": 113
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "c8993f87da0708eadc725a9d6a4b1049131bfafdbdcf27cbdd4041bbd963e291"
+    },
+    {
+      "city": "munich",
+      "opt_in_share": 1,
+      "fleet": 50,
+      "av_slots": 5,
+      "requests": 2523,
+      "evaluation_requests": 1892,
+      "fixed_evaluation_groups": {
+        "outside_fence": 1588,
+        "additional_opt_in": 191,
+        "baseline_eligible": 113
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "e5a8bd77157020fd9d5ea601716ec14f0a3e105bc7fbb2ee7ff7590b3b6a7762"
+    },
+    {
+      "city": "chicago",
+      "opt_in_share": 0,
+      "fleet": 100,
+      "av_slots": 10,
+      "requests": 2690,
+      "evaluation_requests": 2051,
+      "fixed_evaluation_groups": {
+        "additional_opt_in": 860,
+        "outside_fence": 821,
+        "baseline_eligible": 370
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "6f939b2c48197c2c40d26712e833f4e2abb184f83a5fdb9fb36bb1c942893054"
+    },
+    {
+      "city": "chicago",
+      "opt_in_share": 0.3,
+      "fleet": 100,
+      "av_slots": 10,
+      "requests": 2690,
+      "evaluation_requests": 2051,
+      "fixed_evaluation_groups": {
+        "additional_opt_in": 860,
+        "outside_fence": 821,
+        "baseline_eligible": 370
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "9685f601acc99b17fedec30de6b449653cf9e07fbf53d23cd3b62f30305782c5"
+    },
+    {
+      "city": "chicago",
+      "opt_in_share": 1,
+      "fleet": 100,
+      "av_slots": 10,
+      "requests": 2690,
+      "evaluation_requests": 2051,
+      "fixed_evaluation_groups": {
+        "additional_opt_in": 860,
+        "outside_fence": 821,
+        "baseline_eligible": 370
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "ace89393f83ccc5f14b19055870ab1820b4d641de0d34557c5931eedfdf1e516"
+    },
+    {
+      "city": "manhattan",
+      "opt_in_share": 0,
+      "fleet": 775,
+      "av_slots": 78,
+      "requests": 3901,
+      "evaluation_requests": 3150,
+      "fixed_evaluation_groups": {
+        "outside_fence": 2401,
+        "additional_opt_in": 525,
+        "baseline_eligible": 224
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "c438f5156891a2d1f417069d65ed63c256bbd2a7fae8404eadd0f79da8f3ef00"
+    },
+    {
+      "city": "manhattan",
+      "opt_in_share": 0.3,
+      "fleet": 775,
+      "av_slots": 78,
+      "requests": 3901,
+      "evaluation_requests": 3150,
+      "fixed_evaluation_groups": {
+        "outside_fence": 2401,
+        "additional_opt_in": 525,
+        "baseline_eligible": 224
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "887dd895e35ab5eaedfc8924a281a2b6e751d87e803b2446108e0ce33de1c88c"
+    },
+    {
+      "city": "manhattan",
+      "opt_in_share": 1,
+      "fleet": 775,
+      "av_slots": 78,
+      "requests": 3901,
+      "evaluation_requests": 3150,
+      "fixed_evaluation_groups": {
+        "outside_fence": 2401,
+        "additional_opt_in": 525,
+        "baseline_eligible": 224
+      },
+      "all_input_hashes_verified": true,
+      "only_opt_in_parameter_changes": true,
+      "manifest_sha256": "721f115580ae68fb5356776f96aedd8a517781265816fbecc57063a9ead459a5"
+    }
+  ]
+}

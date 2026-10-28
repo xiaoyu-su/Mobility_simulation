@@ -1,0 +1,29 @@
+{
+  "source_digest": "34413610b2a4764f0a8dce01f65de5edece6bce01e292a723f819433ba1b88fe",
+  "verified_utc": "2026-10-28T00:52:56.088789+00:00",
+  "original_and_derived_hashes_verified": true,
+  "files_sha256": {
+    "policy_effects_by_opt_in.csv": "f84125aa113798debc5b6aece734cb9dd7922c43ee7d5c79f5467d4bf0f2361a",
+    "boundary_invariance.json": "e184d5329606501836b2181399fa264cbfdddfb50c0bff015062091439341630",
+    "opt_in_sensitivity.png": "c8dfc1c443508db555393c7b4584489398944612d56851cce1fc4e391f5e9f5b",
+    "fixed_group_spillovers.csv": "77e9b47a01f7beef5a53f4062f1937ac10c2358ee7e58699c6cc3f99559fb966",
+    "configuration_summary.csv": "6ee9bcb44ca95da857410a37f4828874d33f93582d601b01b49af93f62cc2ca9",
+    "historical_real_identity.json": "6eaf9555ef756e134450750d1a7f724bbf40d6d4332bbf5b6c24682c22dace78",
+    "seed_results.csv": "aac9c905d872c4359178b3833dab3dab54b448d61c4f97282dd28253d3ece0de",
+    "manifest.json": "584b71481f1e9d34762050f11e2cb05c288c920237b39904d459957d3597f464",
+    "independent_seed_checks.csv": "fca8ce75541318fc2297ea4f21d1bc4e3122203d908e66ccc2c6b15d641c6950",
+    "independent_fixed_group_checks.csv": "0fa94caeefec7ece122ddc6fa1e5ccf0f91ad1d0327885d3c2168ea40acc2329",
+    "fixed_group_results.csv": "06848262e3ecdf048ee589ef3626463dce9418b6d7d6b917af9f0f8ea5fcc5cd",
+    "robustness_manifest.json": "12817e17b82bed407dd758f4d4f0403fce435572c17a1353f4ca2a2010b14a10",
+    "common_rider_effects.csv": "53861b6faabf85ac0bd24e182b1fced651b2ce69ca1a26ddc8439d3a8e3e8f47",
+    "opt_in_sensitivity.pdf": "4dec193eaebb2156ff0e7cd43d71aad1b2817cabef83f7a8b988247031371d9f",
+    "runtime_environment.json": "59387c7a86370c3021e1cf7ba514935962f7e621145b170f5fa904cd93a5a641",
+    "policy_stability_by_city.csv": "62cbbfaab67c35571045af87d42272d0018710563d3f95f415f4aa73720ca8c7",
+    "independent_checks.json": "b9d0f8c810eb45a1d3d7c0439fe90d51ea8b5c98532bee50cb4ed58d8477acd4",
+    "fixed_group_effects.csv": "469f7eef1bca6417a0af7706b878f4b27ecf97484dce23d55d1a3f4f1657165f",
+    "ROBUSTNESS.md": "5908ff99dcf015ec5c2458eefef5c3ab0d5dc2d9bc455114f069c8c0adb9df1c",
+    "RESULTS.md": "a0d7093cac227d7a37eacfcd522b4c7b8c14f83304e9c554c39cf9775780f66d",
+    "paired_effects.csv": "28c76782854e7c040ce7155e84716d603726faa7377a5898467b0c8fe797b8c8",
+    "late_pickup_records.csv": "f754e4a8300816f0cbd8e0ec15156242dbe69da8865c629ad41f201f45c2d432"
+  }
+}

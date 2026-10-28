@@ -1,0 +1,16 @@
+{
+  "visually_inspected": true,
+  "visually_inspected_images": [
+    "opt_in_sensitivity.png"
+  ],
+  "figures_sha256": {
+    "opt_in_sensitivity.png": "c8dfc1c443508db555393c7b4584489398944612d56851cce1fc4e391f5e9f5b",
+    "opt_in_sensitivity.pdf": "4dec193eaebb2156ff0e7cd43d71aad1b2817cabef83f7a8b988247031371d9f"
+  },
+  "checks": [
+    "All12panels, legends, policy colors, opt-in percentages and units readable",
+    "Seed-range whiskers are explicitly distinguished from population uncertainty",
+    "Fixed baseline rider-group labels apply even at zero opt-in",
+    "All-human physical invariance and adverse completion/wait/empty-distance directions retained"
+  ]
+}

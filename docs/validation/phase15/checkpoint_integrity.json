@@ -1,0 +1,53 @@
+{
+  "all_recorded_counts_verified": true,
+  "checkpoints": [
+    {
+      "checkpoint": "checkpoint",
+      "full_physical_runs": 27,
+      "pytest": {
+        "errors": "0",
+        "failures": "3",
+        "hostname": "48c69016c736",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "10",
+        "time": "54.417",
+        "timestamp": "2026-10-27T06:34:43.137832+00:00"
+      },
+      "source_checkpoint": "checkpoint",
+      "source_digest": "1a799dfb0614ce849e1283acea9be00cef5e0ca37162033fe16923316d0db0c6"
+    },
+    {
+      "checkpoint": "validated",
+      "full_physical_runs": 63,
+      "pytest": {
+        "errors": "0",
+        "failures": "3",
+        "hostname": "48c69016c736",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "19",
+        "time": "118.180",
+        "timestamp": "2026-10-27T06:36:02.760027+00:00"
+      },
+      "source_checkpoint": "validated",
+      "source_digest": "30afffb03b56757505ad8857458829506abd8f5c439af233b02fa2a28fdcbe3c"
+    },
+    {
+      "checkpoint": "validated2",
+      "full_physical_runs": 72,
+      "pytest": {
+        "errors": "0",
+        "failures": "0",
+        "hostname": "48c69016c736",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "19",
+        "time": "145.365",
+        "timestamp": "2026-10-27T06:38:25.003242+00:00"
+      },
+      "source_checkpoint": "validated2",
+      "source_digest": "34413610b2a4764f0a8dce01f65de5edece6bce01e292a723f819433ba1b88fe"
+    }
+  ]
+}

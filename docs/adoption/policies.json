@@ -1,0 +1,16 @@
+[
+  {
+    "name": "threshold_0",
+    "eta_threshold_seconds": 0,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  },
+  {
+    "name": "threshold_240",
+    "eta_threshold_seconds": 240,
+    "travel_time_factor": 1.25,
+    "av_repositioning": "off",
+    "preference_seconds": 0
+  }
+]

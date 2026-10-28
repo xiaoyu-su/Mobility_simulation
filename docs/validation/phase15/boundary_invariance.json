@@ -1,0 +1,403 @@
+{
+  "all_human_cross_opt_in_checks": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "opt_in_share": 0.3,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "opt_in_share": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    }
+  ],
+  "zero_opt_in_threshold_equivalence": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "byte_identical_files": [
+        "1_user-stats.csv",
+        "2-0_op-stats.csv",
+        "standard_eval.csv",
+        "final_state.csv",
+        "initial_placement.csv",
+        "random_streams.json",
+        "city_search_contract.json"
+      ]
+    }
+  ],
+  "independent_fixed_group_rows": 270
+}

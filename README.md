@@ -54,6 +54,10 @@ separate trip counts, passenger time, overlap, service dwell and window timing.
 robustness, strict input-stratum checks, actual-lateness reporting and a fixed
 8-minute service target. **442 tests and 90 real physical records** pass;
 [results](docs/validation/phase14/ROBUSTNESS.md) retain gains and regressions.
+[Phase 15](docs/PHASE_15.md) adds matched 0/30/100% rider opt-in robustness,
+fixed-group allocation/spillovers and invariant all-human controls.
+**452 tests and90 real physical records** pass;
+[results](docs/validation/phase15/ROBUSTNESS.md) retain gains and regressions.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

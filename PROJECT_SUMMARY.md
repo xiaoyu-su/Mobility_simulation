@@ -22,6 +22,7 @@ This project extends TUM-VT/FleetPy from upstream commit
 | 12: cross-city AV repositioning | Strictly separate reference OD weights, empty AV movement contracts, opt-in pre-booking service priority, paired off/on/supply experiments; 424 tests, 306 regression simulations, 72 real runs /63 conditions; gains and adverse outcomes retained | `docs/PHASE_12.md` |
 | 13: Chicago mechanism diagnostics | Read-only exact occupied/passenger-time bridges, symmetric count/duration accounting, same-request and selection/overlap diagnostics; 433 tests, 324 regression simulations, 64 real runs /54 unique conditions; all prior policy source unchanged | `docs/PHASE_13.md` |
 | 14: booking-patience robustness | Explicit 4/8/12-minute strata, source-clock offer bounds, actual lateness and fixed 480s service target; compatible-input guards, 442 tests, 360 regression simulations, 90 physical records /81 unique conditions; no matching-policy change | `docs/PHASE_14.md` |
+| 15: rider opt-in robustness | Nested0/30/100% request eligibility, fixed-group allocation/spillovers, all-human invariance, zero-boundary equivalence and paired same-ID effects; 452 tests, 396 regression simulations, 90 physical records /81 unique conditions; all269 previous source files unchanged | `docs/PHASE_15.md` |
 
 Defaults retain upstream random behavior. New independent-stream mode is
 explicit and currently scoped to single-worker baseline matching experiments.

@@ -1,0 +1,372 @@
+{
+  "historical_phase": "phase14/p480",
+  "new_study": "phase15/pilot",
+  "identical_controls": 9,
+  "identical_files": 75,
+  "all_original_raw_bytes_preserved": true,
+  "checks": [
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "7d24f717a668f14fc65af025a97610ac538f5427c3a3afba8d17f950d7619ac7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "dc277aadbccc55984c660458a9f01d862963affc24606039936dc7877ce399b8"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "1031b5fccbdb4b14a61acca6a877fb582adb18f6fe3a4a89f1c07b94169dea67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7a600c4ef84d5f3102227ee2afc768457b38265c55cd7c41c16bce24ee680b28"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f7dbec959bbb5f82f958a79af5354cc81f1487cc446c55fed9e1542a421bd80e"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "17e1e81d43b62e324ea8f42f6024f1e8f299a26774bb0fa553c61c1d35f59854"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c4befc7bf55a6fcc2e897eb39167daf0ab0faf08962373830167adf04d4a8efe"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "77479ca3fdfac44547f0085ad2a9c969cbc87136ae8c6b0e7dd00e1b528a821e"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e7163cf126d47a3660b5fbc799fb49a5ec174a868878548cd3128be700b9a203"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "d7b2995dad749df3e08e527fff922f83373a5ad9ccae60f57f6604d42977d232"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "066ee71bd5c164bd99ca95d3c36c0b5b99c846e409b5588c83cd7e441a8414ec"
+        }
+      ]
+    },
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "500e9e12157c35c6c781f3e51f6d9769b2d866d754a9d63bcb955ea36ea025c1"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c32ab1b75a5d0858be016feddc7079e9ad2740a5dca453f1d57358af766c6582"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "37344da772130294ac78cf42a46b2486dc86b92949debdda557f7cea68176ea3"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7b7164fe770a73b074e497338eefc3c3772b0a5f7701e0582017384f0880e830"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "70f33fc8aa76f5e6c87f1916fcf4d7118ce9da85bcad9f7b67a86028f5b1742f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ce803f89b0448c1123cb39ba5395e5ceffde27e0af3ead26e83f9fb5e59364f2"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "a44123cd833b0f12f2fc20d1d73973f1b86946a0648b68526d3bddc6dee31daf"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d713f8738edb15742f32a740b6e71e28dfb8fb2155cc66ddc730993686376f73"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d3421e7d9b7526bf225bbb07de297a06720d693fef86bc9e515146f214ff5ee8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e2a04f752da59cf2440bcbe117d8a7f6ba7f1b61547a24449c699d43da4825e8"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "dcc5aae7a6bb98a5b862f48f32d4a3836c917764370c38b2c5fd59582c43b65a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "20e67d766dedc03a0366d403915ce1f34e10ce05438e35889a038442d1dc2bf9"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "4c99e395b22ab16d7d36b2977bad37373b20fea59a088ddedc7df8044eb3a191"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "cb558f9b7b3d870b838ced93ba71c919fd4a3751708994b45777d0eab3ad633a"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6a076ad84c327b6a28d3d07f203f3bad1b852e765d115004f7d55d086e83c00c"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "0bc48e5e65aa6df33d4a1b6a974da66a07cf88cb0212c316a3b111306d6cd6cb"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "b3afb5e2df65185f6a9c53d98dcab7258063f31603cc9f3db626821797fada04"
+        }
+      ]
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "318dcb3fcca83717dc5ec1a584f372dd0319cc0b408666295a6499db45f349d7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "837e8d329ff2c66faa66d04ca77c0542910eaf15330b3b3ddd8eeb11d4e94f7e"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "e09743ac027a0e65851ee4c1bb97d9b0c06e76053fa0087db85b2b9a71050c67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "a8aaa8b92a268116d7c7f0e9af6b15c094d9c40212aa8bec072268f123aa2852"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "1e69f6aecaaf94fb833b978e75dc224d6066581e452718fdb7c5497eb65e7e7f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ae5fd1f34e938143ee2c4cf331fad8e61c12aa4e1fbfde6a60dcbcbeb406f29d"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3a9b8853ead28f0bc8d2b9e41af374df5d6d95dd068332318ce843e96fec649c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "30db1f80a31929e1bd5b74c05c2c928e4c3ae2fa1203270bb35dc94d644caed9"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "fdc0b6e2763bd3468890529c7f4757370d762961c65265ebee4e1c107a21c395"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "de2d71eedb738070b0f60c555287310d303bac193d9011f38990164b98193097"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "81594dc9404e78fded659a646e47ffe439b7c71604990621424f15194cc39242"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "18d02813b5cb1dd3a1ff12e401c0fe31c3d0822f530951480f4b7f83539e82ca"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "2e58e9bd536c5c640fd5cd5396bd80e3f5d833b0344eac6b1f4da753bae4eeac"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "450b3f2da5df1a08ef10b4c8a1a380f7b045accfbb07dcdb53cf894129c409b8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "3fa83b6d90755c0c055826766efb588b8febc45a8a0b00090d0b6a49c6c7e311"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "cda9b03cadafc86dc2746e51deba68f73d1f07990c9624d9f06b99711910a7a0"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "937ccd7d8c5ac3c6f7ecdbd026e30df6ebf3d2a37138a040154ecfa00ba03a8d"
+        }
+      ]
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9702f7cebf307d8c5d64d96a1ed2e8e3bf0446dd8b10f6d361a523a4f1e5d354"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "5a4ce60638f48b7a5eb2dc6da106b10d7fbc644e14a6a4c7399311535549e91d"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "5ca5092b0ff6de9217362fde463aa8d97ae7709eb097e895b89e31ac4ac76e21"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "fbe3660c8881f332676961c225bdd2b4e0d83772fd87545f10a2fde28f49de86"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "a5ea3eec46e3c14c70b4c3c467e228eefa90a6605f8582be50806166ad4bb07c"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "fa154955c8f3faef72a5f4a67474a0c276d8693060318eeac83f3f2d6e7edfac"
+        }
+      ]
+    }
+  ]
+}

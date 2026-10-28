@@ -1,0 +1,2374 @@
+{
+  "duplicate_caches_removed": [
+    {
+      "path": "/workspace/.setup/phase14-complete-records.tar.gz",
+      "size_bytes": 392635562,
+      "sha256": "8c80ec2646fa68acc4a414db677a612f81bf01b80d675d5bf1c58b4002cd1dde",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase14/records.tar.gz.0* > /workspace/.setup/phase14-complete-records.tar.gz",
+      "all_original_records_and_published_parts_preserved": true
+    }
+  ],
+  "identical_immutable_files_shared": [
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/runtime_snapshot/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/runtime_snapshot/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/runtime_snapshot/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/clean_artifact/source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/guarded/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase12/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase13/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase14/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_0/fork/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/1_user-stats.csv",
+      "size_bytes": 2477890,
+      "sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_0/upstream/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/1_user-stats.csv",
+      "size_bytes": 2477890,
+      "sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_1/fork/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/1_user-stats.csv",
+      "size_bytes": 2477890,
+      "sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_1/upstream/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/1_user-stats.csv",
+      "size_bytes": 2477890,
+      "sha256": "6fe871b0489481dcb7b4858edafc1add6f72851b050e2e72abe95993681157e9",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_0/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/2-0_op-stats.csv",
+      "size_bytes": 10628181,
+      "sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_0/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/2-0_op-stats.csv",
+      "size_bytes": 10628181,
+      "sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_1/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/2-0_op-stats.csv",
+      "size_bytes": 10628181,
+      "sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/chicago/runs/chicago_native_batch/repeat_1/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/chicago/2-0_op-stats.csv",
+      "size_bytes": 10628181,
+      "sha256": "ddce420965973f76d645647acf0fd9bb797a879fc92d973473644c7455fd1b77",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_0/fork/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/1_user-stats.csv",
+      "size_bytes": 2056561,
+      "sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_0/upstream/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/1_user-stats.csv",
+      "size_bytes": 2056561,
+      "sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_1/fork/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/1_user-stats.csv",
+      "size_bytes": 2056561,
+      "sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_1/upstream/1_user-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/1_user-stats.csv",
+      "size_bytes": 2056561,
+      "sha256": "9be990240f5fae7332b2ce60f979553f8c9320269db3e6d78a6db64135abdec8",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_0/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/2-0_op-stats.csv",
+      "size_bytes": 6353126,
+      "sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_0/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/2-0_op-stats.csv",
+      "size_bytes": 6353126,
+      "sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_1/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/2-0_op-stats.csv",
+      "size_bytes": 6353126,
+      "sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/manhattan/runs/manhattan_native_batch/repeat_1/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/manhattan/2-0_op-stats.csv",
+      "size_bytes": 6353126,
+      "sha256": "3f596c9eb7fb192d90d61bf5d2e379553698b8ad7909920d991b569f3704add6",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/runs/munich_native_batch/repeat_0/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/munich/2-0_op-stats.csv",
+      "size_bytes": 2252742,
+      "sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/runs/munich_native_batch/repeat_0/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/munich/2-0_op-stats.csv",
+      "size_bytes": 2252742,
+      "sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/runs/munich_native_batch/repeat_1/fork/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/munich/2-0_op-stats.csv",
+      "size_bytes": 2252742,
+      "sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    },
+    {
+      "path": "/workspace/.setup/phase11/native/munich/runs/munich_native_batch/repeat_1/upstream/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/.setup/phase11/clean_artifact/runs/munich/2-0_op-stats.csv",
+      "size_bytes": 2252742,
+      "sha256": "5e12bf4f7b44faa7e4513ab62c81fe1a0f60cabf411b1c68fc1b1d06d70a6584",
+      "method": "Share exact completed immutable evidence bytes, retaining all logical paths"
+    }
+  ],
+  "bytes_reclaimed": 2985075060,
+  "all_original_raw_source_and_published_evidence_preserved": true
+}

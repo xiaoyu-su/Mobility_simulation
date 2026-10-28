@@ -3803,3 +3803,128 @@ and will be committed locally before the actual push attempt is recorded.
   A documentation-only receipt commit follows, with final remote equality,
   author/committer and clean checkout verified after its push. No secret or
   saved repository selection changes.
+
+
+## Phase 15: fixed rider opt-in robustness
+
+### Step 1: select the next open assumption and preserve the baseline
+
+- The photographed plan and Phase14 limitations leave rider opt-in unverified. Study the existing nested per-request flag at 0%, 30% and 100%; this is a robustness follow-up, not a new field calibration or dynamic rider-choice model. Source baseline `58601ab79a23c79042393523540fbfdffb99c08d`; new branch `phase-15-opt-in-robustness`. All269 prior Python/dependency files remain unchanged. Both Git identities remain Xiaoyu Su.
+- Prespecify three fixed city cohorts, three seeds0/1/2, all-human/threshold0/threshold240 controls, cautious speed1.25, 10% AV replacement and unchanged fence/supply/480-second offer cutoff. Main81 unique conditions plus9 physical seed0 pilot replays. Zero opt-in retains unusable AV replacement vehicles; compare separately to all-human supply.
+- Add read-only opt-in strata, fixed request groups relative to30% (baseline eligible, additional inside-fence opt-in, outside fence), matched-ID waits, paired seed effects, actual lateness and complete physical audits. Benefit: separate allocation/spillovers from changing eligibility composition. No matching policy changes.
+
+### Step 2: preserve evidence while making space
+
+- Only781MiB was free. `/workspace/.setup/phase15/storage.py` verifies the Phase14 redundant logical archive against every published part and its concatenated SHA before removing that cache. It also replaces337 duplicate immutable completed evidence files with hard links to identical SHA/size-verified originals. Every raw/source/published logical path and byte is retained. Exactly2,985,075,060 bytes reclaimed; full proof and archive restore command in `storage_record.json`. No unique simulation output or input is deleted.
+
+### Step 3: implement and check loaded boundaries
+
+- New `tools/city_av/adoption.py` and `adoption_plot.py` accept only the explicit0/30/100% grid and480-second patience, validate unchanged demand/network/fence/fleet/runtime/parameters, audit raw passenger/vehicle histories, preserve fixed-group denominators, distinguish all-human from zero opt-in and check physical all-human invariance. Existing generic summaries continue rejecting incompatible assumptions.
+- New unit/integration tests cover uncontrolled-input rejection, nested draw/fence boundaries, missing zero-denominator waits, both immediate matching controllers and Python/C++ routing, actual extra-group AV service, no outside-fence AV service, full accepted-booking completion, immutable report reads, tamper rejection and fresh-process replay. Tracked configs in `docs/adoption`; all helper commands/checkpoints/raw records retained in `/workspace/.setup/phase15`.
+
+- First checkpoint:7 unit tests passed,3 integration report checks failed after all27 physical scenarios completed (`checkpoint`, frozen source `1a799dfb0614ce849e1283acea9be00cef5e0ca37162033fe16923316d0db0c6`). The report incorrectly required identical row order between source demand and completed-user output; user output ordering is legitimately different. Fix: require exactly equal unique request-ID sets, then explicitly reindex groups to user IDs. Add shuffled-order and missing-ID checks. No raw simulation is altered. Exact commands/JUnit/source and all27 completed histories are preserved.
+
+- Expanded checkpoint (`validated`, source `30afffb03b56757505ad8857458829506abd8f5c439af233b02fa2a28fdcbe3c`):16 passed and3 report checks failed in118.18s; all63 physical scenarios complete. The full-opt-in endpoint assertion also compared row order. Apply explicit ID reindexing there as well; retain the failure/source/raw evidence. This fixes the same reporting issue without changing dispatch or histories. Final expanded validation is rerun from fresh processes before pilot/main simulations.
+
+- Final focused gate (`validated2`): **19 passed in145.36s**, no failures/errors/skips, **72 complete physical simulations**. Frozen273-file source digest `34413610b2a4764f0a8dce01f65de5edece6bce01e292a723f819433ba1b88fe`; all269 previous Python/dependency files byte-identical. Nine city configs plus policy/study configs are snapshotted with source. Full regression and real studies use these exact bytes; Python/dependencies/config/HEAD remain frozen while they run.
+
+### Step 4: fresh city inputs, real pilots and full regression
+
+- `/workspace/.setup/phase15/prepare.py` records exact build commands, return codes/wall times, fresh manifests and shared-input storage proofs for9 bundles, then runs9 seed0 pilots with physical/consent/timing reporting. Only hash/size-identical large public matrices share storage with immutable originals. Demand IDs, source consent/deadlines and all non-opt-in bytes remain fixed.
+- Full command and thread/CPU settings in `full/execution.json`: `.venv/bin/python -m pytest -q --basetemp=/workspace/.setup/phase15/full/runs --junitxml=/workspace/.setup/phase15/full/junit.xml`, pinned CPUs3–4, PYTHONHASHSEED0 and one OPENBLAS/OMP/MKL thread. All full raw runs/JUnit/logs/frozen source retained; results recorded on completion.
+
+- All9 real pilots pass the full read-only consent/booking/physical/timing gate. Pilot wall time **173.21s**. Cohorts are unchanged: Munich2523 requests (1892 eval/631 warm), Chicago2690 (2051/639), Manhattan3901 (3150/751). Fleets50/100/775 with5/10/78 AV slots. Actual promise/deadline checks retain late execution rather than cancelling accepted passengers.
+
+### Step 5: prespecified matched opt-in study
+
+- `/workspace/.setup/phase15/run_studies.py` launches independent s0/s30/s100 studies on CPUs0/1/2, one worker and one BLAS/OMP/MKL thread each. Each comprises three cities ×three seeds ×all-human/threshold0/threshold240 =27 physical runs. Total81 unique conditions, plus the nine pilot records reused only as fresh-process replay checks. Source/HEAD/config remains frozen, and existing outputs are refused. Exact study commands/logs/status/times/hashes are retained.
+
+- Independent pilot historical readback (`pilot_history.py` / `pilot_historical_identity.json`): all9 pilot controls preserve75 original Phase14 default-30%/480s critical files byte for byte. Both old and new manifest hashes verify before comparison. This establishes exact physical baseline preservation before interpreting opt-in interventions; original raw files are untouched.
+
+- Independent input readback (`input_preflight.py` / `input_preflight.json`) verifies every file hash in all9 fresh bundles and the opt-in-only parameter intervention. All three default-30% bundles have exactly the previous Phase14 input-file hashes, while their newly built manifests correctly record the new source; no historical source is retagged. Fixed evaluation group counts/denominators are recorded before outcomes.
+
+
+### Step 6: independently audit completed trajectories and fixed groups
+
+- All81 main conditions and9 pilot records complete. Per-profile wall times:
+  s0 **932.51s**, s30 **933.64s**, s100 **953.60s**; all zero return codes.
+  `/workspace/.setup/phase15/analyze_real.py` separately reads every raw/source/
+  input/runtime hash, actual loaded config, full request IDs, original clocks,
+  promises, roster, typed initialization/SOC, service events, privacy/capacity,
+  chronology, threshold decisions and final/tail state. All90 physical records
+  pass, with81 distinct settings and nine exact fresh-process replays.
+- Independent passenger event sweeps (pickup through actual alighting END)
+  reconcile occupied and passenger exposure for every record. Actual user
+  dropoff is alighting START. Accepted promises fit the original480s cutoff;
+  every accepted passenger completes. Actual lateness is retained: main-grid
+  counterfactual records contain **586 evaluation
+  late pickups /993 full-cohort late pickups**.
+  These summed policy/seed records are not unique real-world passengers.
+- All60 within-study and54 cross-opt-in background comparisons pass. All27
+  historical30% controls preserve225 critical files byte for byte. All18
+  all-human cross-share checks preserve126 physical files; nine zero-opt-in
+  threshold0/240 checks preserve63 physical files. No AV serves at zero opt-in;
+  full opt-in still respects the endpoint fence.
+- Independently computed fixed groups match all270 physical group rows:
+  IDs/denominators, completion, AV counts, waits and480s service. Separate
+  reports retain243 unique group rows, fixed-group paired contrasts and
+  same-served-ID wait selection. Original analysis hashes are preserved;
+  supplementary policy/stability/spillover interpretation has its own manifest.
+- At threshold240,30%→100% opt-in changes mean completion Munich **+8.33**,
+  Chicago **−9.33**, Manhattan **+23.33**. Fixed baseline-group completions
+  change **−4.33 /0 /−3.00**, respectively; additional-group completions change
+  **+16.67 /−1.00 /+16.67**; outside-fence completions change **−4.00 /−8.33
+  /+9.67**. Thus expanding eligibility can displace existing riders and affect
+  riders who never become eligible. Chicago AV trips rise21.67 while total
+  completion falls. Retain every seed/interval and adverse outcome.
+- Benefit: identify robustness and allocation/selection risks hidden by a
+  changing eligible population. This is conditional simulation evidence, not
+  an empirical adoption estimate, dynamic rider-choice model or new dispatch
+  policy. Three seeds on one fixed cohort do not identify population effects.
+- Visually inspected all12 scientific figure panels; colors/legends/units,
+  fixed baseline groups and seed-range whiskers are readable. PNG/PDF hashes
+  are pinned in `figure_inspection.json`; no original report is rewritten.
+
+### Step 7: full regression, historical compatibility and source freeze
+
+- **452 tests pass in2300.98s**, zero failures/errors/skips. Actual run audit
+  verifies **396 complete regression simulations and32 restored windows**;
+  ten deliberate non-simulation negative fixtures are identified separately.
+  All360 prior full cases preserve **2738 checked tables byte for byte**,
+  and128 restored-window tables preserve exact values. Unavailable upstream
+  promise columns are explicitly marked unavailable; all actual picked-up
+  bookings still require completion.
+- All273 source/dependency files and11 tracked configs match frozen snapshots;
+  all269 pre-existing source files remain unchanged. No Python/dependency/
+  config/HEAD changes occurred while full/paired runs executed.
+- Only after the full test process completed, `postrun_storage.py` verifies
+  size/SHA equality for45 immutable duplicate full-suite files, then shares
+  storage with retained Phase14 originals. All original/new logical paths and
+  raw bytes remain;365,383,854 bytes of duplicate storage are shared. Proof:
+  `postrun_storage_record.json`. No unique evidence is deleted.
+
+
+### Step 8: archive complete, reviewable evidence
+
+- `/workspace/.setup/phase15/package_final.py` packages every focused/full/raw
+  source/run/window/input/runtime record and helper, including both failed
+  reporting checkpoints. All **18600 members** are read back
+  and checked against SHA; all **10 32MiB-or-smaller upload parts**
+  reconstruct exactly **315930718 bytes**, SHA **`35666eb97f694de7de795fa3e762973b83972897bbfec6647acd20351748c3ed`**.
+- Only16 exact canonical large public matrix
+  duplicates are omitted, with size/SHA/restore paths; small/private/nonidentical
+  data stay included. Used native public inputs/provenance/CC BY4.0 attribution,
+  immutable Manhattan parent, runtime binary/C++/Cython source and all configs
+  remain restorable. Original external public ZIP/Parquet hashes are retained.
+- Logical archive and stdout stay outside the archived tree to avoid self-
+  inclusion. Final original/derived artifact hashes and visually inspected
+  PNG/PDF are pinned. Source273/config11 bytes remain frozen and all269 prior
+  source files/evidence/baselines unchanged. Updated guide/README/summary/log
+  distinguish measured robustness/validation benefits from policy improvement.
+
+
+### Step 9: final publication gate
+
+- `.venv/bin/python /workspace/.setup/phase15/prepublish.py` passes complete source/configuration/runtime/raw/report/archive/restore/figure/link readback. All273 source blobs and11 configurations match the tested snapshots; every old269 source file, historical evidence directory and baseline remains unchanged. All90 physical records,81 unique settings, nine replays,27 historical controls and fixed-group/boundary checks verify again.
+- The final archive has18,600 members in10 upload parts,315,930,718 logical bytes, SHA256 `35666eb97f694de7de795fa3e762973b83972897bbfec6647acd20351748c3ed`. Each member/part is byte-verified and each uploaded file is below GitHub's100MB limit. Main figures and original/derived report hashes remain unchanged.
+- Only the new phase source/tests/configurations, guide, validation/evidence and project/work logs are staged. Commit and push use Xiaoyu Su as BOTH author and committer. A successful earlier dry run establishes access; actual push and remote-tip verification are recorded separately after publication. No force push, secret changes or repository-selection changes.

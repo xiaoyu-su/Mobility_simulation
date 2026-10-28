@@ -628,3 +628,25 @@ outcomes. The real-data follow-up below does not change those historical results
   [results](docs/validation/phase14/RESULTS.md),
   [robustness](docs/validation/phase14/ROBUSTNESS.md),
   [evidence](docs/validation/phase14/README.md),[work log](docs/WORK_LOG.md).
+
+
+## Phase 15 — rider opt-in robustness
+
+- **What changed:** read-only opt-in strata/report/figures and loaded regression
+  tests for nested0/30/100% eligibility. Fixed baseline/additional/outside-fence
+  groups retain request IDs and denominators; paired effects preserve omitted
+  zero-denominator waits and common-served selection.
+- **Why/benefit:** adoption is unobserved in the completed-trip sources. Report
+  expanding eligibility separately from changes to the served rider mix and
+  external effects on riders who never enter the fence. Verify all-human
+  invariance and zero-opt-in threshold equivalence physically.
+- **Validation:**452 tests,396 complete regression simulations,32 windows and90
+  real physical records /81 unique conditions /nine exact replays pass. All269
+  previous source files and all360 previous full cases remain unchanged.
+- **Measured effects:** every city/seed/assumption and adverse outcome remains in
+  [results](docs/validation/phase15/ROBUSTNESS.md); source demand, fleet, fence,
+  speed,480s offer cutoff and actual lateness are held fixed or retained. This
+  adds sensitivity evidence, not estimated real adoption or a new dispatch rule.
+
+Exact commands, initial reporting failures/fixes, changes/benefits and complete
+source/input/output evidence are in [Phase15](docs/PHASE_15.md) and the work log.

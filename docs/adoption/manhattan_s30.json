@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "city": "manhattan",
+  "input_kind": "market_bundle",
+  "parent_code_digest": "66fe97b5ab63c89a440583da274cb3e1e87841f070285cb322e2b95f0a5ad939",
+  "reference_start": 0,
+  "reference_end": 18000,
+  "warmup_start": 18000,
+  "evaluation_start": 25200,
+  "evaluation_end": 36000,
+  "time_step": 60,
+  "fleet_size": 775,
+  "av_share": 0.1,
+  "opt_in_share": 0.3,
+  "fence_share": 0.3,
+  "travel_time_factor": 1.25,
+  "max_wait_seconds": 480,
+  "pickup_service_seconds": 30,
+  "dropoff_service_seconds": 30,
+  "max_route_candidates": 30,
+  "provenance": {
+    "network_doi": "https://doi.org/10.5281/zenodo.15187906",
+    "trip_source": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "network_license": "CC BY 4.0",
+    "network_creators": [
+      "Roman Engelhardt",
+      "Florian Dandl"
+    ],
+    "demand": "Phase 9 verified 10% fixed November 26 2019 NYC TLC cohort; prior Tuesdays supply the fence/reference",
+    "comparison_changes": "Shared placement; declared max_wait_seconds offer cutoff; 30s pickup/dropoff; no execution noise; historical factors/source consent retained",
+    "fleet": "775 training-workload proxy vehicles retained from Phase 9; not observed online supply"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "all_recorded_raw_source_input_runtime_bytes_restorable": true,
+  "archive_sha256": "f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9",
+  "counts": {
+    "full_raw_files": 8177,
+    "window_files": 584,
+    "checkpoint_source_configs": 2037,
+    "focused_and_superseded_raw_files": 14328,
+    "study_manifests": 8,
+    "demonstration_raw_files": 1680,
+    "historical_manifests": 2,
+    "historical_raw_files": 1368,
+    "historical_input_manifests": 6,
+    "historical_input_files": 132,
+    "current_input_manifests": 6,
+    "current_input_files": 126,
+    "native_runtime": 11,
+    "original_proposals": 4
+  },
+  "verifier_source": "\"\"\"After archive creation, prove all recorded source/input/output paths are restorable.\"\"\"\nfrom pathlib import Path\nimport hashlib,json\nW=Path('/workspace');R=W/'Mobility_simulation';P=W/'.setup/project_audit';D=R/'docs/validation/project_completion'\na=json.loads((D/'archive_index.json').read_text());files={r['path']:r for r in a['files']};omitted={r['path']:r for r in a['omitted_public_matrices']};counts={}\ndef sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()\ndef check(path,h,kind):\n n=str(path.relative_to(W));row=files.get(n) or omitted.get(n);assert row is not None and row['sha256']==h,(n,'missing archive coverage or mismatched SHA');counts[kind]=counts.get(kind,0)+1\nsuite=json.loads((P/'suite-integrity.json').read_text())\nfor row in suite['full_run_checks']:\n for n,h in row['output_sha256'].items():check(P/'full_final'/row['path']/n,h,'full_raw_files')\nfor row in suite['window_checks']:\n for f in (P/'full_final'/row['path']).iterdir():\n  if f.is_file():check(f,sha(f),'window_files')\nfor label in ['checkpoint','validated','units_corrected','validated2','full','validated3','full_final']:\n root=P/label\n for f in (root/'source').rglob('*'):\n  if f.is_file():check(f,sha(f),'checkpoint_source_configs')\n for marker in (root/'runs').rglob('standard_eval.csv'):\n  folder=marker.parent\n  if not (folder/'00_config.json').is_file() or not (folder/'final_state.csv').is_file():continue\n  for f in folder.iterdir():\n   if f.is_file():check(f,sha(f),'focused_and_superseded_raw_files')\nfor prefix in ['project_completion','project_completion_final']:\n for root in [W/'market_results'/prefix/'matching'/x for x in ['insertion','immediate_batch','alonso_mora']]+[W/'market_results'/prefix/'city']:\n  m=json.loads((root/'manifest.json').read_text());check(root/'manifest.json',sha(root/'manifest.json'),'study_manifests')\n  for e in m['runs']:\n   folder=Path(e['output']) if 'output' in e else root/e['directory']\n   for n,h in e['output_sha256'].items():check(folder/n,h,'demonstration_raw_files')\nfor root in [W/'market_results/phase16/s10',W/'market_results/phase12_priority/main']:\n m=json.loads((root/'manifest.json').read_text());check(root/'manifest.json',sha(root/'manifest.json'),'historical_manifests')\n for e in m['runs']:\n  for n,h in e['output_sha256'].items():check(Path(e['output'])/n,h,'historical_raw_files')\n for b in m['bundles'].values():\n  folder=Path(b['path']);meta=json.loads((folder/'manifest.json').read_text());check(folder/'manifest.json',b['manifest_sha256'],'historical_input_manifests')\n  for n,h in meta['output_sha256'].items():check(folder/n,h,'historical_input_files')\nfor prefix in ['project_completion','project_completion_final']:\n for root in sorted((W/'market_inputs'/prefix).iterdir()):\n  m=json.loads((root/'manifest.json').read_text());check(root/'manifest.json',sha(root/'manifest.json'),'current_input_manifests')\n  for n,h in m['output_sha256'].items():check(root/n,h,'current_input_files')\nfor f in (P/'runtime_snapshot').rglob('*'):\n if f.is_file():check(f,sha(f),'native_runtime')\nfor f in (W/'attachments').rglob('IMG_332*.HEIC'):check(f,sha(f),'original_proposals')\nrecord=dict(all_recorded_raw_source_input_runtime_bytes_restorable=True,archive_sha256=a['sha256'],counts=counts,verifier_source=Path(__file__).read_text(),method='Recorded SHA must match a byte-readback-verified archive member or exact public-matrix restore entry')\n(D/'archive_coverage_checks.json').write_text(json.dumps(record,indent=2)+'\\n');print(json.dumps(counts,indent=2))\n",
+  "method": "Recorded SHA must match a byte-readback-verified archive member or exact public-matrix restore entry"
+}

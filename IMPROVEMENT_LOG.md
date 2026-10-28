@@ -671,3 +671,26 @@ source/input/output evidence are in [Phase15](docs/PHASE_15.md) and the work log
 
 [Phase16](docs/PHASE_16.md) and the work log retain exact reproduction,
 source/input/output/runtime evidence and the separate placement bridge.
+
+
+## Project completion audit and comparison workflow
+
+- **What changed:** a sealed multi-policy runner for all three supported matching
+  controllers and a shared read-only reporter for matching/full city AV studies;
+  46 defined KPIs, parameter differences, paired effects, explicit missing values,
+  replay deduplication and scientific figures. Archived vehicle specifications
+  make matching reports portable without rewriting raw configurations.
+- **Why/benefit:** policy comparison previously required scattered commands and
+  incompatible metric clocks. The new entry point makes reference selection,
+  units, cohort/activity clocks, human/AV allocation and assumptions explicit.
+  Existing policy code is unchanged; one optional metric-helper argument supports
+  archived specifications while preserving its default behavior.
+- **Verification:** all three controllers, city Python/C++ routing, AV
+  repositioning, raw tamper rejection, portable reports and replay accounting are
+  exercised in complete simulations. Exact final counts, policy effects,
+  compatibility and publication records are in the
+  [completion review](docs/PROJECT_COMPLETION.md) and
+  [evidence](docs/validation/project_completion/README.md).
+- **Limits:** illustrative matching coefficients and assumed AV adoption/supply
+  remain scenarios. Completion of the software/proposal work is not empirical
+  identification of real driver decisions, unmet demand or AV benefits.

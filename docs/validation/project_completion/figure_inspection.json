@@ -1,0 +1,26 @@
+{
+  "visually_inspected": true,
+  "visually_inspected_pngs": [
+    "portfolio/policy_comparison.png",
+    "current_av/policy_comparison.png",
+    "historical_av/policy_comparison.png",
+    "historical_repositioning/policy_comparison.png"
+  ],
+  "same_render_pdf_bytes_bound": true,
+  "figures_sha256": {
+    "portfolio/policy_comparison.png": "d530838d9880d77924da09c1e4162344be90ff050831371a9ba917f44003c449",
+    "portfolio/policy_comparison.pdf": "8bf38b2889443dab5412a64712e29d2e6373a56ef4a01665db02c34c8a831acb",
+    "current_av/policy_comparison.png": "8454c0a59e4a4321fe321eede8bd82d4ffc14770c0e85901e17218f4f32b8455",
+    "current_av/policy_comparison.pdf": "699fe1d3c576577ae06d6aee135ac40bb58ac6cae5c3eb05a5b16dfde5f7f9c6",
+    "historical_av/policy_comparison.png": "b41358732c439f2c69b41503767b797eccce86e17e9a07a5be32739bcfe64cb0",
+    "historical_av/policy_comparison.pdf": "50145676ac2f5af061c92bac19efdc9a113b04a8c25d85615ba2b2d09ffdf502",
+    "historical_repositioning/policy_comparison.png": "1c804614e6a6097beac5a79802ae7d70d3024af2cb44dabd89f16d80d4e07fcb",
+    "historical_repositioning/policy_comparison.pdf": "c50ce4eddc7c5a63948b5553cf540c0b9b71bf4d90fb490bdb8d70a2add2bddf"
+  },
+  "checks": [
+    "Titles, city/fleet and policy labels, KPI axes and units readable",
+    "Seed ranges labeled, unavailable all-human AV utilization retained in tables",
+    "Matching and city panels remain distinct; historical sources identified in companion tables",
+    "Full PNG/PDF exports retained; no automatic ranking or welfare score"
+  ]
+}

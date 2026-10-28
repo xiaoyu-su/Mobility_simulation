@@ -1,0 +1,2602 @@
+{
+  "comparisons": [
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9fceb7caea73e383e27be2dd67649a8f65375bf42663fb8447194533e78f1427"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "958f394601d0e84c45eb3ca99e82437afc694f39ece6a05041fd1715cd502fda"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "8e402c8ec6296e2bc66b6da2177dda61003b652c71f4b201d76d05c57cf26da1"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6d811428dd08138db06fc4026dc3aa5ca4cfe398fb7dc6a665c216b01798e7f8"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "a0c7c19894bc85fe8af598fd854b52dfd745866ed02bdb6012630b763167da75"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "e6ade32e2217bb72709d32d830efb3cdaa5cd4bb7c684b5e1ff8e6ee10f187fe"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "005fe109e28415f2eddfb600d74d771765adc00ba840b99401811cdfa782676e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "81223efb9ef0e4bf273cff7727fb50fde02653303faa442da98f9a6908b22437"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "57a53fa60a5c4cd49f8f5fafb86bf36f5cfab45d3092c45de147225742390b8d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "bbfe6214f9d8820d2711a2aba600e5cc57ac8bd3e998d6f3dbcd69d124ccf813"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "29258ad64d1513bd7299be6a3fa7578ae5884551a6e7fcebbe1aa12529b14048"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "1b97e41e3a8cf06036d6904cdf80705873ea34f367a297f4a85dda9dfa357f6b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "cae62ceaef9b98832cfb96a59b2f208e631d3ad30a72e65fef4d247e7845a6cf"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "bf1a426fa2c6b617e18ae0d293342dd6bba4c6963d66b9353841bc1877685e82"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f71c98551565fddb08cb56dc83f1f20d5c4ef2f03f5495cbfc8531e012e91afb"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "2761347ae9ee7e6d8f56041ea69d6ea8c6b1dd7fa9786612e0386e976a391391"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "90acc4d180b256997e63e8e5508ca4b55cc78790e3d2039c9170831b3f46a269"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "02592adb6a26abb4e900bf24c323c3e8e5d499c7afd4f948f01b0b0058cded60"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d74d1ce1bd329a9a7244c9ad08ccab95c8437e916ee1ac2645e46588cfd1ef2f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6140c878e36047b2f71b541680344a9d6b67efb6c9a9eb1743abca6c4d536f9b"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "b12627ae03ddcac5dc89af0f73b6639fd7970a3e84f0b2fc9ee08227b026745b"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "735e49f2017bc955287c6fce4c4f9b07bc2f10dcc4fcad850754a1e3718a3bb7"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "55caef679d80a3a1313bdb2d9d5869cd4564c9d0cb73f136ce2efad4fb632f90"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "43d28695741ccb7f53f0c6ecb8f574ffc398ce8b95478bb9775ae622b8930c1e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "13a8215abff5398266cf3c309ac5b6b108f71dddc67a6698330b526bece6bb7d"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6bb6b878c50268fc1de94dd3820a1133007f9f7ca39463e3350026cfd10af1b7"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "af409ae5bc8a1f44f3cda6f81b507d80a60fcf5cc0a9de850327527e9bfcbf4f"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/future_value/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/future_value/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "ea65235760fde94bc8594f13ef5619b972177d9cd1d75415f4e92b35735f1fc6"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "f34013590b6c60eb77223ebdb659a21c154218bb445f31b6c9c4872222d7eb62"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "8b95dab2bfc8a88a2b36a0ce5d82e1ec5c132642e1c1c6a587707b677507cd28"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "035796f66cd9608985e5c1994b7126727659771e5d7da67c48defce951f33309"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "1473450c793505403687f660a10b8f5ea795a42a00b6ecfb2c87f42e726d2be7"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "f8e7ac11ab97aaf39b56687079d9ba997576d5f96e27d54039eaba6286499b15"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9fceb7caea73e383e27be2dd67649a8f65375bf42663fb8447194533e78f1427"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "958f394601d0e84c45eb3ca99e82437afc694f39ece6a05041fd1715cd502fda"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "8e402c8ec6296e2bc66b6da2177dda61003b652c71f4b201d76d05c57cf26da1"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6d811428dd08138db06fc4026dc3aa5ca4cfe398fb7dc6a665c216b01798e7f8"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "a0c7c19894bc85fe8af598fd854b52dfd745866ed02bdb6012630b763167da75"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3fc2362a21da0be9f236f87571cdf11cc9da0a1b8f2103960809a3f78e7ccde1"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "55bd32d31bb1fcaade19ee4306107c6c5f62a4735b6175e4ff365bdc09f61f52"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "0da22cd877be67a0fe2511bc397120daf4e23b2a64cf70944d6b3a6539502cc5"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "d3b793e3a71568ec6101cf0eb555c6681a4db0c76e70c1574dbd984f8f2f70fd"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "4908623cd8aff128c0416cd3eac1a5947ca229b7394b76899fba77fdc10e2052"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "3de64a98853e492364ef0779a3ff4487e1b2db1e62a7077d0aa3d806b5dec821"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "8a27c7aacec0f97fc052cf6bf3d1f00826a1b341c4756f837d641b36f1cb6793"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "a0223e5725c0b26f960211e88cb6555469569313ae942f5682a79039b3c60da3"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "1b97e41e3a8cf06036d6904cdf80705873ea34f367a297f4a85dda9dfa357f6b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "cae62ceaef9b98832cfb96a59b2f208e631d3ad30a72e65fef4d247e7845a6cf"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "bf1a426fa2c6b617e18ae0d293342dd6bba4c6963d66b9353841bc1877685e82"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f71c98551565fddb08cb56dc83f1f20d5c4ef2f03f5495cbfc8531e012e91afb"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "2761347ae9ee7e6d8f56041ea69d6ea8c6b1dd7fa9786612e0386e976a391391"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "14d4625427db5889c8b4768d5d3e44389e1a614ad8c3acf796a511f6e1805999"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "44793182923499bdfff42324dc0680dc193483af8b3a8ae5772cf6096813e28b"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "363dec8305841ab145ef9ebbf47968eaee358fe41efdf45d55afb24138e16c3c"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "1ed24403401de3a1583bcf2890b8d7d97286c08cfda99921320c6127345eb022"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "408518668a3afa8395b51c82d9b880413df91a2e8822df0861901573aafd2409"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "9caa95e253a021428ce35954f3d2d53ed0851bfd8bf4d6287da642ec73456680"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "4420e065bd4cd0297953f0b99c55090ac46322931545024f1b8add02417e7c9e"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "57937d4c95d2ab6c6cbb9ab25da4c3743fe255e2f988c137268850d6a0a0f0d1"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "55caef679d80a3a1313bdb2d9d5869cd4564c9d0cb73f136ce2efad4fb632f90"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "43d28695741ccb7f53f0c6ecb8f574ffc398ce8b95478bb9775ae622b8930c1e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "13a8215abff5398266cf3c309ac5b6b108f71dddc67a6698330b526bece6bb7d"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6bb6b878c50268fc1de94dd3820a1133007f9f7ca39463e3350026cfd10af1b7"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "af409ae5bc8a1f44f3cda6f81b507d80a60fcf5cc0a9de850327527e9bfcbf4f"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_fallback/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_fallback/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "88f7b0d2305e862731adacbe923f5a6567666d29f0c53a278e70023e3211edff"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "fef6a3dfa41f5bb9925e7e9ae20e7ab4b0f09a7081059321a472b964aa65c93e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "4bec83edae9c8b0bbd677c204982079d72748154f5ddcdae582ffe6c96e2cd26"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "ffd66ea63d3e42dea75f75367961fbfd9ca8778e340420f3a5cee901d6822315"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "0f4062b7900ef80b104695bd44f9c2bd2b8fc3c650db877c8d2853a6da614075"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "88a8843ca1d7fab5359c14e1e4087582896d6e4c4b47175786ad30f3ce2cebae"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "ee535502933994791357b3b6781029016c3ecd996a854c3c067f1506322c2c78"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "c2c134c2f45fba08966d74f2d9e0a63c67b5f02f002cb98ef2e8c9334d71e8f5"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9fceb7caea73e383e27be2dd67649a8f65375bf42663fb8447194533e78f1427"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "958f394601d0e84c45eb3ca99e82437afc694f39ece6a05041fd1715cd502fda"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "8e402c8ec6296e2bc66b6da2177dda61003b652c71f4b201d76d05c57cf26da1"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6d811428dd08138db06fc4026dc3aa5ca4cfe398fb7dc6a665c216b01798e7f8"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "a0c7c19894bc85fe8af598fd854b52dfd745866ed02bdb6012630b763167da75"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 0,
+      "arm": "ranked_future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "8ffa6438eae2ae6ab7359e349036f48038cfc503c8d1d7535f68788b9f8f78d4"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "40627a6110e4c8da727897994f76801d2784d19cbae6cf5f53385ddd40392249"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "45b237293f440ae5f5cbf1fb5ea432bd4be2e3e37ec786813cf8e46fe20b3a61"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "ce331e434ad28738e0c17ffe86312089acf929580a5a4324d84cd668e8c355d1"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "d22508bc05e5566208b1b1705fe6193994d1af1477979730bb840ece8083d9c4"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "38614f14411c34ab0e3181a80ee3784a6799e247677b9a37b87b1c0a140a4a0e"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "26b69e19a009519b58927f7aed43e650502bd013e3d27cffef6b9747bf357f76"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "a662a512a176f6455e21fcd6a11c4866a76edff7dc363d0546c1ce7a8fe811c9"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "1ec6600f0e59af22a6f70f7aa9cce7629e35b9c50dd415cfefff83abb402f80f"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "1b97e41e3a8cf06036d6904cdf80705873ea34f367a297f4a85dda9dfa357f6b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "cae62ceaef9b98832cfb96a59b2f208e631d3ad30a72e65fef4d247e7845a6cf"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "bf1a426fa2c6b617e18ae0d293342dd6bba4c6963d66b9353841bc1877685e82"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f71c98551565fddb08cb56dc83f1f20d5c4ef2f03f5495cbfc8531e012e91afb"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "2761347ae9ee7e6d8f56041ea69d6ea8c6b1dd7fa9786612e0386e976a391391"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 1,
+      "arm": "ranked_future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "c13c549c7b72164240d4b2dbd5c593e8c1584e4f9f37d58a80ef208ab9cb57af"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7b9cbce5257f71071495993085b6f38b8312ae641d44beb0b70f13af5697ae98"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "68cbb22ac6da86e82de88161ba07734ea44fdcd77124b59e00116402df758f35"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "28a7b0589c49d63b0516a56577c59e09950f8f343d1a2458fc0b0b05b92aff76"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "48f9c8abf482c257b03e930c16077c4b3479cbd38547d84538546ab0758e5cc3"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "06d44637f45c655bf5a40c78da8e8c0ce22c19698038ed28e68303d7c33f188d"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "d21016fa4672eab22265369da7deacc2e27edbde8fbf296bf0c3cd82770efabf"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "f1e507667563d4bbcd236afcd760020299d18e8914a911c8c2132b1bf3bd7a9e"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "5b2b23093995865db60b04bf21837c71ff8d9f39892d551b1c3f5a74bc8767f0"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "55caef679d80a3a1313bdb2d9d5869cd4564c9d0cb73f136ce2efad4fb632f90"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "43d28695741ccb7f53f0c6ecb8f574ffc398ce8b95478bb9775ae622b8930c1e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "13a8215abff5398266cf3c309ac5b6b108f71dddc67a6698330b526bece6bb7d"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6bb6b878c50268fc1de94dd3820a1133007f9f7ca39463e3350026cfd10af1b7"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "af409ae5bc8a1f44f3cda6f81b507d80a60fcf5cc0a9de850327527e9bfcbf4f"
+        }
+      ]
+    },
+    {
+      "study": "insertion",
+      "seed": 2,
+      "arm": "ranked_future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/insertion/paired/ranked_future_value/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/insertion/paired/ranked_future_value/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "474d272791ea8d55115e21b43a1dc0c4848c47119fda133b3df464a58ccb2f7c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "9c45e4a2e0591e5455391d9338976f44e8b2b5057bffc0094381bb8857b216ba"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "ddde90d003ac014f01abd1344833bf31c95291c6efef0133010707dfacae6278"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e8e88ccae432bc8edcb5634d7ea0eceb3c4fbf1d1f345121de6b4e926d444b45"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "b2f549e0ce7f35adae05ce42dba6c65bd48b2ac42680272c86141e2a6b43f56e"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "5661beb09ce81a8e5734746bf6aed9f9d471f98f733cd4e590c9c7bd8247ae7f"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "842c503a338a77101f582c28726acbf6710b765ac0b4c0e9822d68b1ab93c2e3"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "33021e43dfa5c68ae2a0bce0374406ea08425030bb6e7aa6b89e76d4197ff3d5"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "582c73af4e00dda5d5fd7a01a20815faca88a8c4c5989fadc437a84c1577e9e6"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "28660f4dc59bee6ec8bbc30ec262e792c3c8f97f73c31dd62806f14ff0ae8760"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "4fd9302e0e48bbd9401cc1a4e65bd063f36f10064ae1e39a059a42e0d69150ca"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "eb21821e601e33bb460fd1730daf1e152dd0fe2e1bb7e863deb8f12bb2857796"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "8481a6056c8e11f456d568a388132da74c5488e24149f907901028424e6c297f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9f727627ab1485d17b24acfd8365d1ee2fdff325e893bdbe7d5f9b6ad3379260"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "a961b503183d8f282f5f6c33e13a36050b7090fe3211041c4ed31dfd1cc5b286"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "de74bddf54fa21ff1bafb15e977bd5eb1fd2eaba5257629adc9707b356cd1a91"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 0,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "7b569ff0a3782e945e8b2211a8f1afd074d54f75471e73218c44cf73646e2db5"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "864e99ad9c63a3617125e581bcc635da313458240b34f63c93696d7221870f49"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "0b40f73735493ba0a46eca94e059cddc2d8f3588a7d552a0de0daf0105a52146"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "8b03c334b14290ef8740e929bbf16d0445f20c64101f8c45c77f43b6406ce9c4"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "21e4ae521b4c4f754272439da05f08e916c262c5891542da456255f87924cb43"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "6dc7d8fee20f871cb9211a86b1e01a3abe0a46415b5928cb4b64ea97b9723913"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "9ac2ed159c09c6c02ae63bd0844950ed8a0a7ccdc3f07b17821204cf7d64dcc3"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "06ce23ba9ac4c96e18fe3cb95d3baa839b8e2aad468f8037d660075dc2de116c"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "fd6c38540d7782d8668b39b4c5c38afd0a751fedc8e500d5676f9db099fd3417"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "92982bdf918c33370dee4f5fa538c6ebd9233fe42a7c847706b739d914e33e90"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "0b84625af877221285273b7102899c196b5ef5c9b7b3b1b9c819ba426acf26ad"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f294ee4acae16f11f74fdecd08db2a0ac7527810a0ec33252eaa531533bc276a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "61d7702d2525eaaaffe4bf942ef972de76dbd5e66edb2602fefcfb712024540d"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "b04c441a0a65e83e16f17124bf3184304ab41d7018bc6441ef9df7b0142c969a"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "83add1fff68f5e50ba17236c6735a0e9e3c99f443fb5bc0ec6331d83bc661055"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 1,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "279ebbc5f0a0cab0d6c6a799f6e293b2a57e512485eed52a2321c1b86ca9bfac"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "039c92c61e6473cf931377dd4ac1920413acb48f2209d7fd206529157408d227"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "17b9d68d949bf9027533d151d04409d87452ad9008489d9150133674a273317e"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "2de391ce4e0fc5f37c545de4d00b21717338ca58b5af4b6257148c1921e89104"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "2b0f57719967d782561bcc98685a3f80bdec1851cf5b58e23f96cdf9598735e4"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "7c5b89864c8b7d812cbcd95abe884f9054d46f1ab21a87f9d7aa5a68dcee6e39"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "d31d939505a2510760a25f49d91f32a86e5128c604f8a96ae95badbdb0443043"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "5d1ec3da8ad9536867c24a84291d29dbe1d67ec7315d33a238041bc25dbd5f01"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "cbbe78e6b20812d4181064b4e9ccfbdb30e99f40a489121d82d6aed74c828dc2"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "15c8c80a76271c84d06b618a00731b5227edb96660fa4ddeec066892f10c2a75"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c75b56e7571e285d6901e3a955d7a0219b2159f9474e90f25bf7304f2be04b86"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "bb3a140c8d51573e19a02e7b87e0a0d92a90e1e2b40d49c5a152c6981a1f8ba2"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "8a199a78df5c88d87725e3026470de8a6a7d45685000ecd91d74b547e8155ec7"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "88fdc73501f7119aa3b5aa8a79dba80b780cc254b538ae25ee21ab8f341656be"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "127df9eb1c82018b1b35fc8543ffde2cf75d23f4ce98a5fab61c4ade008ef063"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 2,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/future_value/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/future_value/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "7fd417178bcde402c650a7249972c7f17f709d0b71fdf9e6b2c967e0b2c4dec6"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "ad1eadb23e482565be9110a07458aa4b68df83e0d933ce073300f474a2bcbf8a"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "7c262ceb407a67f45667b45e089de1be5bb8899e5523c39062ac5348e69dda55"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "a6911f7378517357c6719c989b4cb19deaae12d29e1c0dbfc98109428fa479c9"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "35c5bdbf148abb96194777e3c80392d20d0eebc7b59a2307ad3ba00ff84212a8"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "08c5fe63389382656d96a1b5690835c1c715e19232a2c59ee340a1f14263c442"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "8525462fa04a77d9bcd18b3854feb93595a2a340fb2408199ca069a104c0c84c"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "f05acbdb912d99549414a543325e6e61d76c6b0179735fc9dc188bb879c0de76"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "28660f4dc59bee6ec8bbc30ec262e792c3c8f97f73c31dd62806f14ff0ae8760"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "4fd9302e0e48bbd9401cc1a4e65bd063f36f10064ae1e39a059a42e0d69150ca"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "eb21821e601e33bb460fd1730daf1e152dd0fe2e1bb7e863deb8f12bb2857796"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "8481a6056c8e11f456d568a388132da74c5488e24149f907901028424e6c297f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9f727627ab1485d17b24acfd8365d1ee2fdff325e893bdbe7d5f9b6ad3379260"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "a961b503183d8f282f5f6c33e13a36050b7090fe3211041c4ed31dfd1cc5b286"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "de74bddf54fa21ff1bafb15e977bd5eb1fd2eaba5257629adc9707b356cd1a91"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 0,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "d237519b2b40b56fb3023a5e82b8356c256130f8e8ae5fb99cc972c58a6884d0"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "020b8f486fc18d5a62d9c322b08ab5f265bdac4fafc3bb3639632ecdb3cb4a47"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "1fcb1d779473b18f0caddd96b03bcbf84b4239636cddd7d52775beffe18b14bf"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "785d5c3bb6a2b03f9c9dc76b532710e772f61a2602c18754971f854605be0759"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "26dcbf367e20b490d2cc460f65854b4ae0de4e2f51423657b714235a42abfd4f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "04a5e58ce0595db97e209c46ce5fc604de65333c3ee166cdb3697fe3de2a2de0"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "2c6719d0ae749957637ff3579e207a9a7a705fe844c43004afa1639121cb00af"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "f5837f595897d0eea470408f6419a43ad6886e51dd3adde367ca67a3a3ea779c"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "ce9e42f9947e76ca2503188d5e117acc9e8848c4d43862a984f9e332aa3463df"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "fd6c38540d7782d8668b39b4c5c38afd0a751fedc8e500d5676f9db099fd3417"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "92982bdf918c33370dee4f5fa538c6ebd9233fe42a7c847706b739d914e33e90"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "0b84625af877221285273b7102899c196b5ef5c9b7b3b1b9c819ba426acf26ad"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f294ee4acae16f11f74fdecd08db2a0ac7527810a0ec33252eaa531533bc276a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "61d7702d2525eaaaffe4bf942ef972de76dbd5e66edb2602fefcfb712024540d"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "b04c441a0a65e83e16f17124bf3184304ab41d7018bc6441ef9df7b0142c969a"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "83add1fff68f5e50ba17236c6735a0e9e3c99f443fb5bc0ec6331d83bc661055"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 1,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "6ecb42020318ade131b7e30ec0d1b9e1643363b908c166361a0bb0f85791f310"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d91b82b6d82fd9fde0587d745fa1268bedf1025e2509163628dbaffcd2636711"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "3909899e5ef8a4dbbbe1cc0c95cd5e08bbda56fc7956f9c8002a0236c5bcf347"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "ccd981b4fd0e356a3d6a446a2ca5e25d67dad1313ae32465991e0e7be1478095"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "30daf88f26d81b19d70ecae4fe9e991f125ce3396d32d8b15408e90040c51f71"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "2dac50658cafb1c36bba0c9654c54cdcddcc0ea5ce82a9dc5aeddc665ba6d9df"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "aaef320cf896247079e1d3c426f9c046c4356c91433ffd5dc27e259f2f2fc302"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "ff75042b8061bd79818115ce786d35d08d09fc5a64215d3a0bf43750bb427b3c"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "be97f6432aba03291d33fdc9a71f7eac1b7ed3bbac3886d3b982c809a77263e2"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "cbbe78e6b20812d4181064b4e9ccfbdb30e99f40a489121d82d6aed74c828dc2"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "15c8c80a76271c84d06b618a00731b5227edb96660fa4ddeec066892f10c2a75"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c75b56e7571e285d6901e3a955d7a0219b2159f9474e90f25bf7304f2be04b86"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "bb3a140c8d51573e19a02e7b87e0a0d92a90e1e2b40d49c5a152c6981a1f8ba2"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "8a199a78df5c88d87725e3026470de8a6a7d45685000ecd91d74b547e8155ec7"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "88fdc73501f7119aa3b5aa8a79dba80b780cc254b538ae25ee21ab8f341656be"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "127df9eb1c82018b1b35fc8543ffde2cf75d23f4ce98a5fab61c4ade008ef063"
+        }
+      ]
+    },
+    {
+      "study": "immediate_batch",
+      "seed": 2,
+      "arm": "ranked_fallback",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/immediate_batch/paired/ranked_fallback/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/immediate_batch/paired/ranked_fallback/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "6f5a6cdfd4678acf4c991737fda338016cccbfba7d21340593a65047fa2f6425"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "106b608f02430c077d7e2c205285dbe9d0008f025f7e14c8e825221adedea374"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "990b48897846a3bbfae34c318f9918dc0c1bb7e5b641b5581faffbf0f0dc012f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "d75184954975b17f1f61be23a17c7c6b32b9b7c589e4140d42b902c314db1be1"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "cd973b002d3dc8097aec834692d62fa728e4c2994dca0c63da77c90e49d8e2dc"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9f73276c730a91e9fe16111b541ce7cab8d61b5956db7bf7579b59fb61885b3d"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "3439fd0a31e07bbbf3a0e797ace0a46bc32399fa8d9f4ea0a43f0d41cf4c455b"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "b8ad7fa8e14f6451922fcbee908b0004fa3bd85264f3eee38dc5af76458b1315"
+        },
+        {
+          "file": "ranked_insertion_op_0.csv",
+          "sha256": "0398ec127752713efcf354fd28e61ba2bbbb08d20c55b8d93c6282d68c45b362"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "2e4300efc90d2c37ee60b43268c6edaadd0c26d001d4ec600add6d7304753b5b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "f36feab615c2c669a98d9779887fef4c85f15521c781ac5ed1368a586358db5f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "3e12e1f8d59174e1299a763251ce38ea2c3b8f5389fefc870b4afdadcf4f3fdb"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "b1c09e29719920c9a2ee99f0660217917a2008cc7a69bad7db47e108ae6d1276"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "f716132b0293717fdce9d54cf4ea8a8c7894340811f4b4f2c48870a875682247"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9288330c1d467f6b464e949458188538e7ce673de5573c3e60bcd0e344ac916d"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "136337be0bd35460ad9b380b66514b283c8377ad1323c20e75ae2bb96d959c30"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "2e07eb9274df9219ef82d6c4acf6b27394a8c8184ff5029b4963168b70beda46"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "3707e4900560fa84484031dbd42df7004abd30fc7d1b20b37690037dab382349"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "ea77adf13ac8cda06ec75705ddbe84ae7df89496c5e28b0883942b087d77f8df"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "724ee72a5399e41b5bb75125a00bb2401dfa419dc9bbec0b05919bea605c177c"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "895d55b1dbd471d15e9c1f504fb8aecee39c05480089723226ca315f059df651"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7100aa2aeb9c98aa70c6b47df0181ff3a63c2bb1d0f7fb292492d20beb42b73f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d66969b5e0dd3608aa765af8e62a1f7e9a85f492099276bf17fddd26e8ba258f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "c36347ae711c35721a8cf5cb5f95dde3e311f51b4b31df5333e803168fcfd0ef"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "16300087b82fe7065626a6a89380855d6b94809b22e860a17ef6e7c2144afed4"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3d0797863bf16bc7131f0023a877f61cbb01425f565f6d404f9476ee1fe08c72"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "bb9cdf10a06a95d654b100984f3b1e0c1c6d4b184892565a01a2e4241743142d"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "62a007a38c4a70701e96a520d96c86687a45f00b752b0384222f60e6bbc9f793"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "06ba5cb0d11577bd5dc574f4b5527c52598b6fd14293f6524e739446603c8f12"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "34a83222b4054b00c0b740cf71d5eacdedbf9bb5eb4e7c01b20d4797594abe85"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "0dfda9b27d012db65297e72d5fdc03651755d23d7d7a03813051c4c23ee81dc4"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "eb68ad4e51cb571eceffc5fbb9794665afc2485ccda77f37b0eb02da48d8107c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c5d7654aa55454bb429dd082ac1893a02417e08a29f2b6eb9c09212348917f15"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c187e95050d98fb33bc57b8d3f6b2e14d06510b4b817d4892a7ef3361fe9ccbe"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "2831b29dcebc9a179f0f4523488746c3cd0ede009cd95d19b051b869e7305514"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9834c5fe536730a2246508d4e5b6a15991c5c15c54d6009cda8bb84472f7f087"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "future_value",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_value/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_value/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "df33bf604b2f21323b0f8c200ae8362a59b003ff26dd961b1c44cfd6918a00d9"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "b42997df1f3ab590800fed0ad21b4c95d892e1daec3022f93b1230aa2e5d091a"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "fa445cdc86a1968ab4b7683cc8eb885c22d89938da45affe0fab904ec9beb0cf"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "9f77910135445e218480088ce6d9ab862d01945b9a82f97f7bbcdd414e887ead"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "f61ae5a641c36a2cc75d0f4e7a1587e8a41de9e5fb621fa8fd6b4e92294c99b2"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "28a24331ff87489de33a1a44f565748743013fe85daf29b53907eb2050a0babc"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "2e4300efc90d2c37ee60b43268c6edaadd0c26d001d4ec600add6d7304753b5b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "f36feab615c2c669a98d9779887fef4c85f15521c781ac5ed1368a586358db5f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "3e12e1f8d59174e1299a763251ce38ea2c3b8f5389fefc870b4afdadcf4f3fdb"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "b1c09e29719920c9a2ee99f0660217917a2008cc7a69bad7db47e108ae6d1276"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "f716132b0293717fdce9d54cf4ea8a8c7894340811f4b4f2c48870a875682247"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "driver_menus",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "af105acd925300feb22596251580898c5f05d8730b22140dfdf16960ba92fa50"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "cf05fa2101abc6c4590c68f41c51ca2f3e10e11294e7c84dfb85a60df67b37de"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "da05f71ceb9b53f6c26b5c43dd5a97c910d310d41786f986f604d7001fdb5586"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "9a044d0a7a4c403f4b14406e6b4b93d5da8810b5aec5965732458473f86c1d5a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "672a4d7e67147dfe1e40919e67a22c48b815712fcb5169bbc5bb8d2774ce7043"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "eee0eb58779db81787be6ac5552d42fa2b12a22ea1dbf0bab5fa8a65362b19d4"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "d803c6cd8a57b190a3b6aa84157c6366171764c6f9c695b85e2981a398d9a2a5"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "895d55b1dbd471d15e9c1f504fb8aecee39c05480089723226ca315f059df651"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7100aa2aeb9c98aa70c6b47df0181ff3a63c2bb1d0f7fb292492d20beb42b73f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d66969b5e0dd3608aa765af8e62a1f7e9a85f492099276bf17fddd26e8ba258f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "c36347ae711c35721a8cf5cb5f95dde3e311f51b4b31df5333e803168fcfd0ef"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "16300087b82fe7065626a6a89380855d6b94809b22e860a17ef6e7c2144afed4"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "driver_menus",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "ebf447b1bc58e43b4c7a209470a5730c8705192d74bb9ac9bae9af3df7e7ce2a"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "cef8330e98d557e644174bf183c33f7f7bbafbb732c1554ca131236e84c3d138"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "f77da0bb57bc96fed705e7d15b57af74ac5c75cc3bfb71d4eff87734d2b755f8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "0e5eb218a0f64e1d3838c07b2ac25c780641495b7404de36c2eaccb1ab60fa9f"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "6f86a6288cbebadff9733f9640d4931fde4409425be7f845c597f8c46bf82b48"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "42cae728b53fe22904cc88619a5a6b921dc96d29f04f3f83b7d09cff60ec814d"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "c153b144f3324cd623cccf41bd18cd9f27a599f6bcf42eab22f07292d0941ba3"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "eb68ad4e51cb571eceffc5fbb9794665afc2485ccda77f37b0eb02da48d8107c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c5d7654aa55454bb429dd082ac1893a02417e08a29f2b6eb9c09212348917f15"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c187e95050d98fb33bc57b8d3f6b2e14d06510b4b817d4892a7ef3361fe9ccbe"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "2831b29dcebc9a179f0f4523488746c3cd0ede009cd95d19b051b869e7305514"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9834c5fe536730a2246508d4e5b6a15991c5c15c54d6009cda8bb84472f7f087"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "driver_menus",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/driver_menus/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/driver_menus/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "e55d6d48bfd3806e0c2736ffb77dd1abf1c4803964729029eb1db3f7994c0137"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "aa6380d90f58948e51a8a8d203ee5eead8f851838ee26c3a1476083684df82da"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "4b8f6f468cef4127184fda97e7411e40303b0dea6722b51ff564bc2af63e9777"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "572a66464ae55f02382c235ce6871ad8c0e7ac0b37e8b9cbc3bd7948f54695d7"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "f739b6bb0d56180e3c41eb5fb9c6026e00d9a605ddca225c83c571f2708ef314"
+        },
+        {
+          "file": "driver_choice_op_0.csv",
+          "sha256": "f4e11ba73e0cf126cdd5b6efaac339bfea8917c5f2c04554b57738e9926abda8"
+        },
+        {
+          "file": "driver_choice_op_0.json",
+          "sha256": "dade813d691587c364bcc959682d5f62c9a0f2abe6c0a9b8e6eddb78c3195205"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_0/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_0/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "2e4300efc90d2c37ee60b43268c6edaadd0c26d001d4ec600add6d7304753b5b"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "f36feab615c2c669a98d9779887fef4c85f15521c781ac5ed1368a586358db5f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "3e12e1f8d59174e1299a763251ce38ea2c3b8f5389fefc870b4afdadcf4f3fdb"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "b1c09e29719920c9a2ee99f0660217917a2008cc7a69bad7db47e108ae6d1276"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "f716132b0293717fdce9d54cf4ea8a8c7894340811f4b4f2c48870a875682247"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 0,
+      "arm": "future_reoffer",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_0/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_0/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "469a2cda38824551ca07a0b5717573cc9180f8e23853ac45f70948cbd26a8dcd"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "8290c1f3fcd936f185ba61e8a6a1bd17112f9beea23f2db6f72fd5af07588843"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "cf57db0371108f2949f42857c029d6872d2e29303e961c32b957bc3bf98541fe"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "bb103c9f79054adb1017f82638cf91ce7feda2217a08d766e1c51bc5a1e0c2f9"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "bc386c3e81e95d9b386aada41a1c6453020f8a572749466a1814f922dfb9ae4a"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "0871f1702ec8e05a3df76afac59c5bb6b81ade37200ebd7e4af24844ddce38f4"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "67ab00c29a26e24b46f8377667d4afd2c2ab7d8dcdcf3d40e506895231f7cb91"
+        },
+        {
+          "file": "forbid_rematch_op_0.csv",
+          "sha256": "829f0159eb294e46d32f327db13bbf99eafccb947114b4335bf5131c4e174e6b"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_1/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_1/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "895d55b1dbd471d15e9c1f504fb8aecee39c05480089723226ca315f059df651"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "7100aa2aeb9c98aa70c6b47df0181ff3a63c2bb1d0f7fb292492d20beb42b73f"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d66969b5e0dd3608aa765af8e62a1f7e9a85f492099276bf17fddd26e8ba258f"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "c36347ae711c35721a8cf5cb5f95dde3e311f51b4b31df5333e803168fcfd0ef"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "16300087b82fe7065626a6a89380855d6b94809b22e860a17ef6e7c2144afed4"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 1,
+      "arm": "future_reoffer",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_1/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_1/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "d0ddf62ba591a64373eb62f6e02199d2869fa21c183f50cd246df277b3cb0523"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "0fddf95be0a03268a6265321d727ba0bd17b642f71d9e9efb1baa42586bdb599"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "693fc5ce22cfdc59e53b53d27ca501568f08d00551f62316d5eb3da80021f236"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7107fc05520362698e6fb8c38ebcadedb4428d3684f81c8827adbbeab7709668"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "3dda9a8a7ed19b1b9a3c22cd46cc6535a903efa6a18b785d8984a46588aff5c5"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "275718cb01586b0d6417e35e174ca2ec8563966286e5bd4b357c6d9c1f4e5eaa"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "54adb44bd290aeee57d2ebc54a1ed0099c863a9dc15c21519dd91d59a04e3b09"
+        },
+        {
+          "file": "forbid_rematch_op_0.csv",
+          "sha256": "4176d923d0af4cec37c91dc999636311d95902544dbd0037cabd26601a834325"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "acceptance_weighted",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_2/baseline",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_2/baseline",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "eb68ad4e51cb571eceffc5fbb9794665afc2485ccda77f37b0eb02da48d8107c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c5d7654aa55454bb429dd082ac1893a02417e08a29f2b6eb9c09212348917f15"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "c187e95050d98fb33bc57b8d3f6b2e14d06510b4b817d4892a7ef3361fe9ccbe"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "2831b29dcebc9a179f0f4523488746c3cd0ede009cd95d19b051b869e7305514"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "9834c5fe536730a2246508d4e5b6a15991c5c15c54d6009cda8bb84472f7f087"
+        }
+      ]
+    },
+    {
+      "study": "alonso_mora",
+      "seed": 2,
+      "arm": "future_reoffer",
+      "city": null,
+      "new": "/workspace/market_results/project_completion_final/matching/alonso_mora/paired/future_reoffer/runs/seed_2/candidate",
+      "previous": "/workspace/market_results/project_completion/matching/alonso_mora/paired/future_reoffer/runs/seed_2/candidate",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "5950671ca32930d08fd8c700fbbd32657466b96e5f68f636b5068ef98dde592c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "aeda84cf065378b7af6d5c6a443bef501429e4e9a3779d22ab3cb9cbee4297cf"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "5fccf3738ec310d12f78fc1bb5f57c9ea6c24ddd21b5d4a008bedbc182be5ca5"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "f7cc3023dd7b88b5e15666faaa58660e82b19bfcc52ca1f692c5306eec9f8882"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "bc149d97e0c7af3e5fc9680ac304f11568d9e0d82fbdbbfc25db82e27119c5b5"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "a71ea394dfca988c701013c10a0be64619d512e250ed2ef8041f3d7100e9eb9f"
+        },
+        {
+          "file": "driver_acceptance_op_0.csv",
+          "sha256": "49fda1e5229b65e7acc653fe8c9e5c01ae72936561c1752845bd471a5461f8e0"
+        },
+        {
+          "file": "future_value_op_0.csv",
+          "sha256": "dc682d779e82589a04b50f355959a89c5d6628cdc0b452421e89831c5885df6c"
+        },
+        {
+          "file": "forbid_rematch_op_0.csv",
+          "sha256": "087c898b542f694842f0ae5d73003517bdfa3fe809f526f0ed3cb23e3ba387f3"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "all_human",
+      "city": "munich",
+      "new": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/all_human",
+      "previous": "/workspace/market_results/phase16/s10/runs/munich/seed_0/all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "da8ce09081271b3f0fc537f94edf949f713c1b6dd6c64259780d2c30fa950e3d"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "0e486f51f509f872be604a1b7210de546a6a73631155964a97747c1faee9b00a"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "c5f8ae9a0936eca3496ec3dc9512ba484a1e722ae9a41fbabb87efa7367ce9a5"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "f25b24ac2f1e2a647e59f27efef9cb49be412954e340fba555f6a373772fb506"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "d3cdfe05f85170af6147433973fc3e5f8bd2d9e8192bfe083488b81f2edfbc8a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "9558e50848b29907b6969bad97ca091f1ebe2591ce505c70878b14d48eb9259e"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "76f931061c8485b2e6bb7731e84ec1ec67363fc5cb3ef49950aa4fa891d61648"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_0",
+      "city": "munich",
+      "new": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/threshold_0",
+      "previous": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "38abb0ae4fbd8748ab7525fabbd3ef846f827fdafcaf8a674e0540dd54cbdd77"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "66c1c37a645cf1bf1a2e472100b70341582b8f345326241276d207100b1f2f42"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "1ddca49f1dec4252cf37c94f48afee3f4fa100ab17bf157e55608670733e973b"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "cdf805c16d44807ce66e84e48557ab1ad0b8e86769140a819c25bd29bb07fb1b"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "5ce4d78f87c8d29af88582fdb99a6475b84a6b19f3148be9bd24d6440028525a"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "f25b24ac2f1e2a647e59f27efef9cb49be412954e340fba555f6a373772fb506"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "70f49c77252e2502bf1ce9f69c7e9a9d11b61f95715b33c0913f294facf95a21"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "9558e50848b29907b6969bad97ca091f1ebe2591ce505c70878b14d48eb9259e"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "c7f8721a5b95898c0a2bb98bbe53de521c57601b7228320566b45e10f2cd7399"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "26bfed670a2df49467df6b04863ca8d7113f662dfc928218ddfa937a721f5442"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "e0f30c8079d040ff00ffc76223b98de647eb12f143553a32c5a3a93b098ae0fb"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_240",
+      "city": "munich",
+      "new": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/threshold_240",
+      "previous": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "6f3f33d65302aea589cb5076f5849cd1d742b3349807943e1f2ba51180ff688a"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "902f3c328e2659cff67260b3fcaf5b5c90326fca71d5a9abda920ac61e3bee21"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "1ddca49f1dec4252cf37c94f48afee3f4fa100ab17bf157e55608670733e973b"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "458d998f2cb1d50461babd34368f98b28c3e1170472145ea3c0a7051971ddbde"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "da906fdc2efeeeb100002b526cbd5e93f74f77a112f68dff5010aa0308011c50"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "f25b24ac2f1e2a647e59f27efef9cb49be412954e340fba555f6a373772fb506"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "70f49c77252e2502bf1ce9f69c7e9a9d11b61f95715b33c0913f294facf95a21"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "9558e50848b29907b6969bad97ca091f1ebe2591ce505c70878b14d48eb9259e"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "13dae411c0777dcfca909ddf7dccc3a865998024c53da21488771023d35583ac"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ea88f0fc7a0a0e3c97ea3692f8c3a3a6aac74bb7f50e2268fb40e14210e73e08"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "a08b44537961308ea2c2c8056cd126cdc02580fc188e2e8074bdd078b885c433"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "all_human",
+      "city": "chicago",
+      "new": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/all_human",
+      "previous": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "40c13054713aa924a5c260227b8da1f8db61d6995193d602aad908871b3e985f"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "69e786b5caa8ab5388fdc1e2e8a87fb88239c957a2f6e82877611ed4996208ff"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "ee0275a34d6a3721c57a553b0a23b27ce02ed028ee904456df8c0f2ff95c78f0"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f64774104d597459d554e5831f0f05576e5856134a6e0ee383ef3c04a616262d"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "8fcc7a515bb737f0268a4b5dfb7b53b14db3b73950ba930e01de066b0a946057"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "7ca96713756b6820cd0aef05e9653a0258d56d95195e46d387c473d16a7008c6"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "a4a65bf9116624cfd16583c48242627cecec410a02ca3ee6f14119a0f709b480"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "aebf39fe6d3a03ad32d9588c2b5899d0843ccce314890d94e10b8788f7860d5f"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_0",
+      "city": "chicago",
+      "new": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/threshold_0",
+      "previous": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "81e74aec75cafad971349c171fde15d6981e0119e9a4ebd248bf8986744253bd"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "9b5b3345324874948ed739e8b7870ca785aaa04caae217681b823a5369e7d18e"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "40b2df0998bf2fc2b3d35aa07e15645fa3944b6fadd1f853e00b4095d63e01ee"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "a7d50e41809091bfecb505b98b5a8d06db1c0252f9300d02c5487f44239ed5bd"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "d8c898a47a5705106d502d76b50a8226db6d4e33755e84916470e85207ee7d80"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "8fcc7a515bb737f0268a4b5dfb7b53b14db3b73950ba930e01de066b0a946057"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5c86abc2f30bf73ef6410c5019f2c3c4035104c362af1c83a5e6234eaa79ee14"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "a4a65bf9116624cfd16583c48242627cecec410a02ca3ee6f14119a0f709b480"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "ed0b1d4f12ac5d1fb472c2a61f81f50143e3cea655bbfbe4ed859eb9c192aadc"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "72aaed4227aa8e148b01dfe90627dd11f850c0ddabb35186ebb8a174eec6c1e8"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "b475e5c9e113acb484be18963298c6e8c375916020112707c47dd60bb82ad4e5"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_240",
+      "city": "chicago",
+      "new": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/threshold_240",
+      "previous": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "08e8f5e44dd19e9b4a34837194fa559be32bc45b9857670a8dbda7a9d9c2e0b0"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "462c29ac8981dfa0876e6a9ad1c27b85b0051ce23847134920242892d3a7b334"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "40b2df0998bf2fc2b3d35aa07e15645fa3944b6fadd1f853e00b4095d63e01ee"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "9bb8f7fa1646ab328da1dc3d3653be7df2da84bf7b81782a1222290935a18403"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "cf14be510c83057cd36abe58771bd234232ce2b9b0ade4e4af6f43c36e18c585"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "8fcc7a515bb737f0268a4b5dfb7b53b14db3b73950ba930e01de066b0a946057"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5c86abc2f30bf73ef6410c5019f2c3c4035104c362af1c83a5e6234eaa79ee14"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "a4a65bf9116624cfd16583c48242627cecec410a02ca3ee6f14119a0f709b480"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "f03f1c453cf904d135fe02f576e7bba9a0a7ab29672c238b68181b8c87d0fc28"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "7e37b0bb202a6a5f4d12de363a9cc078386ddedde8c5ded7f41500c6502f5460"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "0f51cece4197ec2868bbfa03cd4b662306ba2b4bb2111eb4b7a36485422cc7a9"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "all_human",
+      "city": "manhattan",
+      "new": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/all_human",
+      "previous": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/all_human",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "bf85b73ba75512e20548cda2ee13d548649d353f39f3e66ef41d41e49a487bc4"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "5b9fce299c242d518c6a3036dd430734cb466cc5b63588e3a8624c7cf0eee70a"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "ea1a2cba0faea25d055989caabbab2ba1b06eee4b7c9355ca78ff387bdaab187"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "be61c1ab8b82a978234031dcb1bd4a4de1beec571374c6fc5e0de0c4763fc8de"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "fde9f8ee836593323fbf8612850846768d369f14f9cacd13497418160547798f"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "49a30661a0374fe163180d6ebd0b26816eb6019f241efa662f0d6e1dde5448a0"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "d2ba6cce4497d027c220b0c9414ca5ed5b517bd09284f095ab7a2d17ed6dd3da"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "7101d22f3c44ff0c0c1dc63f1a4b1835c1cb713e6d5e33e7421f4db8f1be9cbe"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "b5beb0c65111a040c00ae215862ddf0aec306d14cd3e7c42006f41b9c4c9d9b1"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_0",
+      "city": "manhattan",
+      "new": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_0",
+      "previous": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3afa90ea7412da3c229be85127ff349c543d8a6d280284a2832e1e02ff48e49a"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "e2687543a2d2ddc1cd62fbe6b723b7c9fac26c646c451a6ccd3a57bd8107e1b1"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "a0993b21b12d1f63adda9dd7608121a5e00a71d19e2df3dafcff91853c667398"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "af88176096ac366e56b2015579e14b177e0a5e5cc6ef2bd62e915fad0216a171"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "dc4580c89456580100c7cf4206d58f40fe9a7fc77d1f0c5c0964cc3ed2692f8d"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "49a30661a0374fe163180d6ebd0b26816eb6019f241efa662f0d6e1dde5448a0"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "e586786adc70bdf69301af977bf2c4458ef3472ae16fea87cd10e9345492fb68"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "7101d22f3c44ff0c0c1dc63f1a4b1835c1cb713e6d5e33e7421f4db8f1be9cbe"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "385509b30ac208926db1ce183997be0134b027859531d7516eb3a03611f2e09e"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "81c2834c7f96f7b2ccc63fc32679e28c25a589dbfbeb0b1aa2414ce65dbd7b00"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "99ea16649ad5a3c5f66a7a08556cafdd8764804c2565c6fb1cd74b2951fa40a8"
+        }
+      ]
+    },
+    {
+      "study": "city",
+      "seed": 0,
+      "arm": "threshold_240",
+      "city": "manhattan",
+      "new": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_240",
+      "previous": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240",
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "c06995f32bd1bcc9117fce27979dfd3c3003d808ff0a6505de0a756ac9fb6101"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d54dc422595cd4bfab2fce8f9caa39e69fb6979b2ed6fa8c66bd5a48e51aced6"
+        },
+        {
+          "file": "2_vehicle_types.csv",
+          "sha256": "a0993b21b12d1f63adda9dd7608121a5e00a71d19e2df3dafcff91853c667398"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "12422c81a13d93957542563e9cb28bc82640b318b8b828ed3ac117c404729cd3"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "f33582d327bb78bd95cf1fe8a26b1140c7820529e06d7ec8858b6e58f7258423"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "49a30661a0374fe163180d6ebd0b26816eb6019f241efa662f0d6e1dde5448a0"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "e586786adc70bdf69301af977bf2c4458ef3472ae16fea87cd10e9345492fb68"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "city_placement_anchor.json",
+          "sha256": "7101d22f3c44ff0c0c1dc63f1a4b1835c1cb713e6d5e33e7421f4db8f1be9cbe"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "ae0a7d30a8a8ba5cc1b65ba1970a31af5100aff41f84e3dc823d940435f21ce4"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "8740ec2a0b1871baae6c293e65229a28bd3ca8e6e9a2508a9751a2cc56680709"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "0960854f47ac4e9ba9a27775df411cd0bfe989b9dbf0f3df77972429799eb657"
+        }
+      ]
+    }
+  ]
+}

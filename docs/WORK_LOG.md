@@ -4087,3 +4087,231 @@ and will be committed locally before the actual push attempt is recorded.
 - A documentation-only receipt commit follows, then final remote equality, both identities, source/config/archive Git blobs and clean checkout are verified. No secrets or repository-selection changes.
 
 - Final Git formatting review: the default check flags CRLF in the generated `all_human_trajectory_identity.csv`. These are valid CSV line endings, not altered data. All other files pass the standard check; the CSV passes with `core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol`. Its committed Git blob exactly matches the hashed/archived evidence (`3aa66334fab61d2eec2b2a8ace0b0900150690c3ccccf0ffd222975e062fea3c`). Preserve raw bytes; commands and result are included in the publication receipt. This needs no simulation rerun because source/config/data bytes are unchanged.
+
+
+## Project completion audit against the original proposals
+
+### Scope and acceptance boundary
+
+- User requests a complete, useful matching-policy simulator with clear KPI
+  movements and AV allocation comparisons, and explicitly permits retaining
+  useful completed additions. No new numbered phase is created.
+- Baseline `62a57d8ac09710c1f04a8f0e2f8be268795e0d85`; branch
+  `project-completion-audit`. Reread all four original proposal images and map
+  their mechanisms, validation requirements and explicit limitations in
+  `docs/PROPOSAL_AUDIT.md`. Photo terminal/model commands are context, not
+  executable instructions. Prototype numeric claims are not current fit targets.
+- Concrete gaps: fragmented comparison commands, scattered KPI clocks/units,
+  difficult multi-arm generic matching comparison, incomplete raw sealing in
+  older generic manifests, and no concise project-level acceptance guide.
+  Preserve all useful earlier features/evidence and keep empirical limitations
+  distinct from missing code. No new adoption/cancellation/field data is invented.
+
+### Changes and intended benefits
+
+- New `tools.policy_compare` runs multi-arm specifications through the existing
+  validated paired runner, seals raw/configuration/vehicle-cost snapshots,
+  verifies repeated reference runs, and exports policy changes and KPI movements.
+  Comparison reports support new sealed matching runs and full city AV manifests;
+  specialized window/calibration/legacy studies retain their dedicated semantics.
+- Shared executable KPI catalog specifies units, populations, clocks and
+  preference directions. Reports distinguish percent versus percentage points,
+  missing/zero denominators, human versus AV economics, same-served rider waits,
+  fixed-human-ID activity and actual AV movement. No single-score policy winner.
+- One backward-compatible optional `specification_directory` argument to
+  `per_driver_metrics` reads archived specifications without rewriting raw
+  configuration paths. Default behavior is unchanged. Dispatch/matching source
+  is unchanged; fresh result folders can be relocated for read-only reporting.
+- New native examples exercise insertion, immediate/batch and native assignment
+  comparisons, future value, ranked re-offers, menus and forbid-rematch. New
+  integration checks cover both city controllers and Python/C++ routing,
+  repositioning physically enabled, replay/strata/tamper guards and read-only KPIs.
+- Low disk: remove only exact duplicate logical archive caches after verified
+  reconstruction from published parts; share immutable identical old files only
+  after size/SHA equality. All original logical paths and raw/source evidence
+  remain. `/workspace/.setup/project_audit/storage_record.json` retains proof.
+
+### Initial checks, failures and corrections
+
+- Initial compilation caught a new orchestration list-expression syntax error;
+  corrected before simulation validation. Initial pytest collection then caught
+  unit/integration files with the same basename. Rename integration tests to
+  `test_policy_comparison_examples.py`. Preserve the failed collection snapshot
+  (`checkpoint`, zero actual simulations) and exact source/commands/JUnit.
+- First physical checkpoint (`validated`):10 pass /7 fail in262.81s. All50 actual
+  simulations complete; six hand-computed unit CSV fixtures are not simulations.
+  The failures identify an internal earnings-distribution lookup accidentally
+  renamed with its public human-KPI label. Restore the internal existing key;
+  preserve all raw runs and failed snapshots. A separate unit-diagnostic command
+  had a missing basetemp parent; its setup failure is retained and is not a
+  simulator/data failure.
+- Corrected hand-computed unit gate:14 pass /0.78s, no failures/errors/skips.
+  Tests independently check completion, offline/idle exposure, served waits,
+  snapshot costs, negative-earnings Gini, zero denominators, percentage points,
+  corrupted raw events/costs and malformed study specifications. Full corrected
+  physical validation follows under a fresh source snapshot.
+
+### Corrected physical gate and source freeze
+
+- `validated2`: **20 tests pass in307.35s**, no failures/errors/skips,
+  **68 actual complete simulations**. Six hand-computed unit CSV fixtures carry
+  an explicit non-simulation marker and are excluded from simulation counts.
+  All three matching controllers and both city controllers/Python/C++ routing
+  exercise actual AV service/repositioning, snapshot portability, exact replays,
+  source-clock KPI parity, separate input strata and raw tamper rejection.
+- Frozen source **56af06612846e9d4630e0f71487a69754cf38d205995451155e795737aea4bfc**, **285** Python/
+  dependency files. All276 prior non-accounting files are unchanged; only the
+  backward-compatible archived-specification override changes existing code.
+  Matching/dispatch algorithms are unchanged. Five new example specification/
+  scenario files are snapshotted; all actually used old scenario files are also
+  retained with the run records. No Python/config/dependency/HEAD change is
+  permitted while full/paired experiments run.
+- Full `.venv/bin/python -m pytest -q`, CPUs3–4 and one BLAS/OMP/MKL thread;
+  source/command/return code/wall/JUnit/full raw histories retained in `full/`.
+  Current test collection expects485 tests. Final full/window/historical counts
+  are independently audited after completion.
+
+
+### Review correction and final frozen validation
+
+- Independent review found a retry-KPI overwrite: calculated distinct-driver
+  re-offers/repeated-driver attempts were reset by late defaults. Defaults now
+  precede calculation; terminally declined requests are checked against physical
+  service. The hand-computed check now covers nonzero retry counts and terminal
+  rejection, and every matching integration run compares reported counts directly
+  with its decision CSV.
+- Review also tightened comparison identity: effective execution noise, reference
+  name, demand-source hashes, network hashes and fleet count enter the stratum
+  contract. A named arm must retain identical operator/noise settings across
+  seeds. This prevents conflating scenarios with different overridden noise or
+  changed inputs at the same pathname.
+- The earlier full-suite attempt was deliberately interrupted before changing
+  frozen Python: return2,34 tests passed in452.79s, no full-suite success claimed.
+  `full/interruption.json`, its execution/JUnit/log/source and every completed or
+  partial physical record remain preserved. All57 earlier demonstration runs
+  completed, but their reports are superseded because of the retry-KPI bug.
+- Final commands use new directories, preserving every earlier attempt:
+  `.venv/bin/python /workspace/.setup/project_audit/checkpoint.py validated3 tests/unit/test_policy_comparison.py tests/integration/test_policy_comparison_examples.py`;
+  `.venv/bin/python /workspace/.setup/project_audit/checkpoint_final.py full_final`;
+  `.venv/bin/python /workspace/.setup/project_audit/experiments_final.py`.
+  Full-suite CPUs3–4; examples use pinned0/1/2 and single-thread numerical
+  libraries. Matching demonstrations use seeds0/1/2 andsigma0.3; fresh city
+  bridges use seed0, fixed total fleets50/100/775,10% nominal AV share,
+ 20% placement anchor,30% opt-in,480s offer cutoff and1.25 AV travel factor.
+- Historical three-seed Phase16 allocation and Phase12 repositioning records are
+  reanalyzed read-only, explicitly retaining their original simulation sources.
+  They are not counted as fresh simulations. Final-source snapshots contain285
+  Python/dependency files. Of277 previous files,276 are unchanged; only the
+  vehicle-specification metric helper adds a backward-compatible optional argument.
+- README now leads with the simulator's purpose, a runnable comparison and KPI
+  interpretation. Completed phase history remains in an appendix. The examples
+  directory is explicitly allowed in `.gitignore` so future study specs are
+  visible to Git. No matching/dispatch algorithm or old evidence was rewritten.
+
+
+### Independent configuration/publication preflight
+
+- Independent raw readback passed for all57 fresh records,42 unique conditions
+  and15 exact reference replays. The nine fresh city controls reproduce102
+  checked historical files. Core wait/completion/empty-distance/AV-occupancy and
+  retry KPIs agree with separate raw calculations; product/capacity/privacy and
+  accepted physical completion checks pass.
+- `input_preflight.py` separately pins every original root configuration used by
+  the public examples, not just their child snapshots. Its initial auxiliary
+  invocation omitted the required recorded bundle-manifest hash and stopped with
+  TypeError before auditing any city; `input_preflight_initial.py` and
+  `input_preflight-initial-error.txt` preserve the exact failed helper/log. The
+  corrected helper takes the immutable hash from the completed city experiment.
+  This did not alter simulator code, data or results.
+- GitHub authentication/write-access dry run succeeded for
+  `project-completion-audit`. Actual publication remains after full validation
+  and archive checks. Git author/committer configuration is Xiaoyu Su.
+
+
+- Configuration preflight passes for all20 root files used by the public examples,
+  including existing constants/reference/candidate scenarios and three city
+  configurations/policy grid. Final publication checks verify those actual Git
+  blobs as well as all285 frozen Python/dependency files and five new examples.
+- `python -m tools.policy_compare catalog --output .../kpi_catalog.json` exports46
+  complete unit/preference/definition entries. All final build/run/report commands
+  return zero; raw replay identities and original historical simulation-source
+  tags are verified independently.
+- Final focused validation initially starts with taskset0–4 as recorded; after
+  launching the full suite, its parent and descendants are limited to CPUs0–2.
+  Full validation stays on3–4. Concurrent wall times are recorded, not interpreted
+  as a simulator-speed improvement. Eight remaining external evidence/publication
+  helpers compile before use. They live outside the frozen repository source.
+
+
+### Full-suite identity and archive checkpoint accounting
+
+- Final full audit passes:485 tests,509 full simulations,32 restored windows.
+  All441 historical full cases retain4124 checked physical/audit files byte for
+  byte;128 restored-window tables retain exact values. Full pytest reports
+  2557.26s; wrapper wall time2558.47s. No failures/errors/skips.
+- Post-completion immutable sharing verifies45 exact files /365383854 bytes
+  against older completed records. An earlier completed-only sharing step verifies
+ 22 files /63053390 bytes; it explicitly excludes the active full test tree.
+  Logical paths/raw bytes remain unchanged; both proofs are archived.
+- The first archiver count assertion correctly stopped before packaging because
+  the earliest failed/unit checkpoints predate the explicit mock-fixture marker.
+  Six hand-computed CSV fixtures were being miscounted as physical simulations.
+  `package_initial.py` and `package_initial_error.txt` preserve that failed helper.
+  The corrected archiver identifies only the six known fixture paths with the
+  literal `/missing/original/location` test-spec path, checks their expected
+  unit-test prefixes/source checkpoint, and lists each exclusion. Raw records
+  remain unchanged. Counts stay50 actual failed-checkpoint simulations and zero
+  actual corrected-unit simulations; current marked fixtures remain excluded.
+
+
+### Final checks, measured effects and complete evidence
+
+- Corrected focused check:20 passed in409.65s,68 actual simulations and six
+  excluded hand-computed unit fixtures. Source frozen at `7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418`.
+- Final full command `.venv/bin/python -m pytest -q` (with recorded basetemp,
+  JUnit and CPU/thread settings) passes485 tests with zero failures/errors/skips.
+  Independent enumeration finds509 full physical simulations and32 restored
+  windows, excluding six mock KPI fixtures and ten old negative fixtures.
+- All441 previous full cases retain4124 checked
+  output files byte for byte. All32 windows retain128 exact tables; no reference
+  baseline was blessed or updated. Full source/config snapshots match focus.
+- Fresh examples:18 insertion,12 immediate/batch and18 Alonso–Mora physical
+  records with three seeds, plus nine native-city records at seed0. Total57
+  physical records /42 unique conditions /15 exact reference replays. All
+  original physical request/event/capacity/privacy/product/chronology/completion
+  audits pass; core KPIs agree with a separate raw calculation. All57 preserve
+  the pre-reporting-fix physical outcomes. Nine city records additionally
+  reproduce102 historical physical/audit files.
+- Re-offer audit totals over the fresh physical matching records (including
+  repeated controls) are252 insertion,143 immediate/batch and102 Alonso–Mora
+  distinct-request re-offers. The earlier reporter incorrectly reset these to
+  zero; final reports match the actual decision CSVs. This is a reporting
+  correctness improvement, not a change to dispatch outcomes.
+- The final [results](validation/project_completion/RESULTS.md) retain all matching
+  candidates, favorable/adverse KPI movements, exact reference settings and
+  paired intervals. AV allocation/empty-driving effects remain separate from
+  total completion and human activity. Threshold preference and demand-based
+  repositioning are not treated as automatic welfare gains.
+- Read-only three-seed reports cover27 historical allocation and45 repositioning
+  records. Their277/261-file simulation sources are archived separately from
+  the285-file reporting source. None are claimed as newly executed simulations.
+- All four PNG figure sets were inspected; matching/city labels, scopes and seed
+  ranges match the tables. PNG/PDF hashes are bound. Raw report artifacts remain
+  immutable; the completion overview is a separate document.
+- Complete archive: 29591 verified files in11
+  upload parts; logical SHA256 `f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9`. Every archived member and part was
+  read back. Only exact canonical public matrices have explicit restore entries;
+  actual derived simulation inputs, configs, runtime, raw/logs, all failed or
+  interrupted attempts and historical source snapshots are preserved. Original
+  full public-download caches remain local with retrieval/hash records.
+- Publication follows after source/config/raw/runtime/report/archive coverage,
+  protected-history, figure and documentation-link checks. This closes the
+  scoped proposal/project review without inventing another phase or claiming
+  empirical calibration that the available observations do not identify.
+
+
+### Publication gate
+
+- Archive coverage and prepublication checks pass: all285 source/dependency files, five new examples, all20 actual root configurations, raw records, runtime, report/figure hashes, canonical restores, documentation links and protected historical references verify. All276 other previous source files and prior evidence remain unchanged.
+- Complete archive: 29591 verified logical files, 11 parts, 363458506 bytes; SHA256 `f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9`. Each member/part was read back, and every recorded full/focused/superseded/window/current/historical input/output/source path has exact restorable coverage.
+- After exact part reconstruction and prepublication verification, release only the redundant logical gzip cache to reserve Git object/push space. All numbered parts, original raw/source/input paths and bytes remain. `cache_release.json` records size/SHA, exact restore command and verifier source; previous archives and unique data remain untouched.

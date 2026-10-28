@@ -1,0 +1,462 @@
+{
+  "7ddc0f7a635ef3bb8833": {
+    "all_human": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_opt_in_share": {
+        "reference": 0.3,
+        "candidate": null
+      },
+      "op_av_preference_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_repositioning": {
+        "reference": false,
+        "candidate": null
+      },
+      "op_av_repositioning_timestep": {
+        "reference": 900,
+        "candidate": null
+      },
+      "op_av_separate_search": {
+        "reference": true,
+        "candidate": null
+      },
+      "op_av_vehicle_types": {
+        "reference": [
+          [
+            "av_vehtype"
+          ]
+        ],
+        "candidate": null
+      },
+      "op_av_zones": {
+        "reference": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11,
+            16,
+            17,
+            19,
+            22,
+            26,
+            28,
+            29,
+            31,
+            32,
+            33,
+            34,
+            36,
+            38,
+            39,
+            44,
+            46,
+            48,
+            50,
+            51,
+            53,
+            54,
+            55,
+            56,
+            57,
+            60,
+            61,
+            63,
+            66,
+            67,
+            69,
+            70,
+            72,
+            73,
+            74,
+            77,
+            79,
+            81,
+            83,
+            84,
+            86,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            95,
+            96,
+            97,
+            98,
+            100,
+            103,
+            105,
+            106,
+            107,
+            109,
+            110,
+            111,
+            112,
+            113,
+            118,
+            122,
+            124,
+            125,
+            126,
+            127,
+            131,
+            132,
+            134,
+            135,
+            136,
+            137,
+            139,
+            141,
+            143,
+            152,
+            153,
+            154,
+            155,
+            156,
+            159,
+            160,
+            162,
+            164,
+            165,
+            167,
+            171,
+            172,
+            174,
+            176,
+            177,
+            178,
+            181,
+            182,
+            183,
+            186,
+            187,
+            189,
+            192,
+            196,
+            199,
+            202,
+            203,
+            205,
+            206,
+            209,
+            210,
+            211,
+            212,
+            214,
+            217,
+            218,
+            219,
+            220,
+            222,
+            224,
+            228,
+            229,
+            233,
+            234,
+            239,
+            241,
+            243,
+            244,
+            248,
+            249,
+            250,
+            254,
+            256,
+            259,
+            260,
+            262,
+            263,
+            264,
+            265,
+            268,
+            272,
+            279,
+            281,
+            296,
+            300,
+            306,
+            307,
+            310,
+            313,
+            316,
+            317,
+            318,
+            319,
+            322,
+            328,
+            331,
+            341,
+            373,
+            374,
+            375,
+            377,
+            381,
+            385,
+            393,
+            404,
+            406,
+            411,
+            417,
+            426,
+            431,
+            441,
+            445,
+            451,
+            487,
+            489,
+            490,
+            491,
+            505,
+            507,
+            508,
+            510,
+            511,
+            527,
+            532,
+            546,
+            548,
+            549,
+            550,
+            551,
+            558,
+            559,
+            562,
+            575,
+            578,
+            590,
+            598,
+            605,
+            626,
+            630,
+            636,
+            646,
+            651,
+            660,
+            678,
+            679,
+            680,
+            688,
+            689,
+            691,
+            696,
+            719,
+            727,
+            729,
+            730,
+            732,
+            747,
+            750,
+            754,
+            756,
+            769,
+            774,
+            780,
+            781,
+            784,
+            785,
+            786,
+            788,
+            796
+          ]
+        ],
+        "candidate": null
+      },
+      "op_fleet_composition": {
+        "reference": {
+          "default_vehtype": 90,
+          "av_vehtype": 10
+        },
+        "candidate": {
+          "default_vehtype": 100
+        }
+      }
+    },
+    "threshold_0": {},
+    "threshold_240": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": 240.0
+      }
+    }
+  },
+  "b18708394be1908584f6": {
+    "all_human": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_opt_in_share": {
+        "reference": 0.3,
+        "candidate": null
+      },
+      "op_av_preference_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_repositioning": {
+        "reference": false,
+        "candidate": null
+      },
+      "op_av_repositioning_timestep": {
+        "reference": 900,
+        "candidate": null
+      },
+      "op_av_separate_search": {
+        "reference": true,
+        "candidate": null
+      },
+      "op_av_vehicle_types": {
+        "reference": [
+          [
+            "av_vehtype"
+          ]
+        ],
+        "candidate": null
+      },
+      "op_av_zones": {
+        "reference": [
+          [
+            1,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10,
+            13,
+            15,
+            17,
+            18,
+            19,
+            23,
+            26,
+            27,
+            28,
+            29,
+            30,
+            32,
+            34,
+            37,
+            49,
+            53,
+            65,
+            72,
+            77,
+            78,
+            83,
+            85,
+            106
+          ]
+        ],
+        "candidate": null
+      },
+      "op_fleet_composition": {
+        "reference": {
+          "default_vehtype": 45,
+          "av_vehtype": 5
+        },
+        "candidate": {
+          "default_vehtype": 50
+        }
+      }
+    },
+    "threshold_0": {},
+    "threshold_240": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": 240.0
+      }
+    }
+  },
+  "b315490022c3ea774dba": {
+    "all_human": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_opt_in_share": {
+        "reference": 0.3,
+        "candidate": null
+      },
+      "op_av_preference_s": {
+        "reference": 0.0,
+        "candidate": null
+      },
+      "op_av_repositioning": {
+        "reference": false,
+        "candidate": null
+      },
+      "op_av_repositioning_timestep": {
+        "reference": 900,
+        "candidate": null
+      },
+      "op_av_separate_search": {
+        "reference": true,
+        "candidate": null
+      },
+      "op_av_vehicle_types": {
+        "reference": [
+          [
+            "av_vehtype"
+          ]
+        ],
+        "candidate": null
+      },
+      "op_av_zones": {
+        "reference": [
+          [
+            48,
+            68,
+            79,
+            107,
+            140,
+            142,
+            161,
+            162,
+            163,
+            164,
+            170,
+            230,
+            231,
+            234,
+            236,
+            237,
+            239,
+            246,
+            249
+          ]
+        ],
+        "candidate": null
+      },
+      "op_fleet_composition": {
+        "reference": {
+          "default_vehtype": 697,
+          "av_vehtype": 78
+        },
+        "candidate": {
+          "default_vehtype": 775
+        }
+      }
+    },
+    "threshold_0": {},
+    "threshold_240": {
+      "op_av_eta_threshold_s": {
+        "reference": 0.0,
+        "candidate": 240.0
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "b18708394be1908584f6": {
+    "kind": "city",
+    "label": "munich, N50, AV target 10%",
+    "simulation_source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418",
+    "reference": "threshold_0",
+    "city": "munich",
+    "fleet_size": 50,
+    "config": {
+      "schema_version": 1,
+      "city": "munich",
+      "input_kind": "native",
+      "network_path": "networks/Aimsun_Munich_2020",
+      "router": "NetworkBasicWithStoreCpp",
+      "network_dynamics": null,
+      "zone_overlap_policy": "lowest_zone_id",
+      "zone_map": "zones/Munich_Municipalities/Aimsun_Munich_2020/node_zone_info.csv",
+      "requests": "demand/Munich_PV_2020/matched/Aimsun_Munich_2020/d_10_s_1.csv",
+      "reference_start": 0,
+      "reference_end": 18000,
+      "warmup_start": 18000,
+      "evaluation_start": 25200,
+      "evaluation_end": 36000,
+      "time_step": 60,
+      "fleet_size": 50,
+      "av_share": 0.1,
+      "opt_in_share": 0.3,
+      "fence_share": 0.3,
+      "travel_time_factor": 1.25,
+      "max_wait_seconds": 480,
+      "pickup_service_seconds": 30,
+      "dropoff_service_seconds": 30,
+      "max_route_candidates": 30,
+      "provenance": {
+        "doi": "https://doi.org/10.5281/zenodo.15195726",
+        "license": "CC BY 4.0",
+        "creators": [
+          "Roman Engelhardt",
+          "Florian Dandl"
+        ],
+        "demand": "AIMSUN PV-to-MoD synthetic benchmark; d_10 means 1%, not 10%, of PV trips",
+        "fleet": "50 vehicles from supplied upstream example; doubled only in prespecified supply sensitivity"
+      },
+      "placement_av_share": 0.2
+    },
+    "bundle_manifest_sha256": "1be5460ca787d0e687be1998759a0e1e199c6c69c16c588c751cbdd9b3e220d9"
+  },
+  "7ddc0f7a635ef3bb8833": {
+    "kind": "city",
+    "label": "chicago, N100, AV target 10%",
+    "simulation_source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418",
+    "reference": "threshold_0",
+    "city": "chicago",
+    "fleet_size": 100,
+    "config": {
+      "schema_version": 1,
+      "city": "chicago",
+      "input_kind": "native",
+      "network_path": "networks/Chicago_2023",
+      "router": "NetworkPartialPreprocessedCpp",
+      "network_dynamics": "2022-06-7_tt_factors_hourly.csv",
+      "zone_map": "zones/ChicagoCensusTracts/Chicago_2023/node_zone_info.csv",
+      "requests": "demand/Chicago_2022/matched/Chicago_2023/2022-06-7_sample_10_0.csv",
+      "reference_start": 0,
+      "reference_end": 18000,
+      "warmup_start": 18000,
+      "evaluation_start": 25200,
+      "evaluation_end": 36000,
+      "time_step": 60,
+      "fleet_size": 100,
+      "av_share": 0.1,
+      "opt_in_share": 0.3,
+      "fence_share": 0.3,
+      "travel_time_factor": 1.25,
+      "max_wait_seconds": 480,
+      "pickup_service_seconds": 30,
+      "dropoff_service_seconds": 30,
+      "max_route_candidates": 30,
+      "provenance": {
+        "doi": "https://doi.org/10.5281/zenodo.15189440",
+        "license": "CC BY 4.0",
+        "creators": [
+          "Florian Dandl",
+          "Roman Engelhardt"
+        ],
+        "demand": "TUM node-matched 10% sample of June 7 2022 Chicago TNC completed trips",
+        "network": "2023 OSM benchmark; provided same-day traffic factors, not a held-out forecast",
+        "fleet": "100 vehicles from supplied upstream example; doubled only in prespecified supply sensitivity"
+      },
+      "placement_av_share": 0.2
+    },
+    "bundle_manifest_sha256": "9207878991add98f6fe5f1bc32df542307646247e3f90ef5316966fcd60cc36c"
+  },
+  "b315490022c3ea774dba": {
+    "kind": "city",
+    "label": "manhattan, N775, AV target 10%",
+    "simulation_source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418",
+    "reference": "threshold_0",
+    "city": "manhattan",
+    "fleet_size": 775,
+    "config": {
+      "schema_version": 1,
+      "city": "manhattan",
+      "input_kind": "market_bundle",
+      "parent_code_digest": "66fe97b5ab63c89a440583da274cb3e1e87841f070285cb322e2b95f0a5ad939",
+      "reference_start": 0,
+      "reference_end": 18000,
+      "warmup_start": 18000,
+      "evaluation_start": 25200,
+      "evaluation_end": 36000,
+      "time_step": 60,
+      "fleet_size": 775,
+      "av_share": 0.1,
+      "opt_in_share": 0.3,
+      "fence_share": 0.3,
+      "travel_time_factor": 1.25,
+      "max_wait_seconds": 480,
+      "pickup_service_seconds": 30,
+      "dropoff_service_seconds": 30,
+      "max_route_candidates": 30,
+      "provenance": {
+        "network_doi": "https://doi.org/10.5281/zenodo.15187906",
+        "trip_source": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+        "network_license": "CC BY 4.0",
+        "network_creators": [
+          "Roman Engelhardt",
+          "Florian Dandl"
+        ],
+        "demand": "Phase 9 verified 10% fixed November 26 2019 NYC TLC cohort; prior Tuesdays supply the fence/reference",
+        "comparison_changes": "Shared placement; declared max_wait_seconds offer cutoff; 30s pickup/dropoff; no execution noise; historical factors/source consent retained",
+        "fleet": "775 training-workload proxy vehicles retained from Phase 9; not observed online supply"
+      },
+      "placement_av_share": 0.2
+    },
+    "bundle_manifest_sha256": "5591a7ef972b0b507f55ab0d53edfa921a79ee6871b8bc1532126e0285c3147f"
+  }
+}

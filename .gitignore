@@ -58,6 +58,7 @@ studies/chicago_case_study/git_info.txt
 studies/munich_case_study/results/*
 studies/munich_case_study/git_info.txt
 !studies/cross_city_av
+!studies/policy_comparison
 studies/cross_city_av/*
 !studies/cross_city_av/configs
 !studies/cross_city_av/README.md

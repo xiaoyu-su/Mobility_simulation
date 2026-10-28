@@ -1,0 +1,995 @@
+{
+  "duplicate_caches_removed": [
+    {
+      "path": "/workspace/.setup/phase16-complete-records.tar.gz",
+      "size_bytes": 343071415,
+      "sha256": "0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase16/records.tar.gz.0* > /workspace/.setup/phase16-complete-records.tar.gz",
+      "all_original_raw_and_published_parts_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase7-production-real-records.tar.gz",
+      "size_bytes": 281523022,
+      "sha256": "fa34cd1d41040439c0818b1e311881cd0d40bc7e8acd642091381309d6d93da7",
+      "restore_command": "cat /workspace/Mobility_simulation/docs/validation/phase7-completion/real_records.tar.gz.0* > /workspace/.setup/phase7-production-real-records.tar.gz",
+      "all_original_raw_and_published_parts_preserved": true
+    }
+  ],
+  "immutable_files_shared": [
+    {
+      "path": "/workspace/.setup/phase16/runtime_snapshot/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase11/checkpoint/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/chicago_legacy/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/chicago_p240/network/base/edges.csv",
+      "size_bytes": 1311586,
+      "sha256": "46b6f19b28c5df176eac104708ca1922c9f8ff54d169f2290f32515d4ffa1fa7",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/chicago_s10/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/chicago_p240/network/base/edges.csv",
+      "size_bytes": 1311586,
+      "sha256": "46b6f19b28c5df176eac104708ca1922c9f8ff54d169f2290f32515d4ffa1fa7",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/chicago_s20/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/chicago_p240/network/base/edges.csv",
+      "size_bytes": 1311586,
+      "sha256": "46b6f19b28c5df176eac104708ca1922c9f8ff54d169f2290f32515d4ffa1fa7",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/chicago_s5/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/chicago_p240/network/base/edges.csv",
+      "size_bytes": 1311586,
+      "sha256": "46b6f19b28c5df176eac104708ca1922c9f8ff54d169f2290f32515d4ffa1fa7",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/0/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/0/edges_td_att.csv",
+      "size_bytes": 1217402,
+      "sha256": "44c9b98fc983f96025d4ec8b5719c88a53df57e609608dddb010b0e1b23cd341",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/0/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/0/edges_td_att.csv",
+      "size_bytes": 1217402,
+      "sha256": "44c9b98fc983f96025d4ec8b5719c88a53df57e609608dddb010b0e1b23cd341",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/0/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/0/edges_td_att.csv",
+      "size_bytes": 1217402,
+      "sha256": "44c9b98fc983f96025d4ec8b5719c88a53df57e609608dddb010b0e1b23cd341",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/0/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/0/edges_td_att.csv",
+      "size_bytes": 1217402,
+      "sha256": "44c9b98fc983f96025d4ec8b5719c88a53df57e609608dddb010b0e1b23cd341",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/10800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/10800/edges_td_att.csv",
+      "size_bytes": 1220457,
+      "sha256": "7eaa373d8b2d721b47a3ca725542b664444f15c2112dc56925741a4beb1e61c4",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/10800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/10800/edges_td_att.csv",
+      "size_bytes": 1220457,
+      "sha256": "7eaa373d8b2d721b47a3ca725542b664444f15c2112dc56925741a4beb1e61c4",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/10800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/10800/edges_td_att.csv",
+      "size_bytes": 1220457,
+      "sha256": "7eaa373d8b2d721b47a3ca725542b664444f15c2112dc56925741a4beb1e61c4",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/10800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/10800/edges_td_att.csv",
+      "size_bytes": 1220457,
+      "sha256": "7eaa373d8b2d721b47a3ca725542b664444f15c2112dc56925741a4beb1e61c4",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/14400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/14400/edges_td_att.csv",
+      "size_bytes": 1221294,
+      "sha256": "3fdd6ff9f47bc2337c554312c50010e06e0c8dfea2bef5f3501b59201c52bac6",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/14400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/14400/edges_td_att.csv",
+      "size_bytes": 1221294,
+      "sha256": "3fdd6ff9f47bc2337c554312c50010e06e0c8dfea2bef5f3501b59201c52bac6",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/14400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/14400/edges_td_att.csv",
+      "size_bytes": 1221294,
+      "sha256": "3fdd6ff9f47bc2337c554312c50010e06e0c8dfea2bef5f3501b59201c52bac6",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/14400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/14400/edges_td_att.csv",
+      "size_bytes": 1221294,
+      "sha256": "3fdd6ff9f47bc2337c554312c50010e06e0c8dfea2bef5f3501b59201c52bac6",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/18000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/18000/edges_td_att.csv",
+      "size_bytes": 1224796,
+      "sha256": "9132cb74ca8e3aa133add668e1671ad13f644332e96d24bb5a9ed6c15bf27654",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/18000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/18000/edges_td_att.csv",
+      "size_bytes": 1224796,
+      "sha256": "9132cb74ca8e3aa133add668e1671ad13f644332e96d24bb5a9ed6c15bf27654",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/18000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/18000/edges_td_att.csv",
+      "size_bytes": 1224796,
+      "sha256": "9132cb74ca8e3aa133add668e1671ad13f644332e96d24bb5a9ed6c15bf27654",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/18000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/18000/edges_td_att.csv",
+      "size_bytes": 1224796,
+      "sha256": "9132cb74ca8e3aa133add668e1671ad13f644332e96d24bb5a9ed6c15bf27654",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/21600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/21600/edges_td_att.csv",
+      "size_bytes": 1226437,
+      "sha256": "9640941e4326ea1e1b611a9e110ed5dd39b774b90ce80f332d3d7c0e24b3272c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/21600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/21600/edges_td_att.csv",
+      "size_bytes": 1226437,
+      "sha256": "9640941e4326ea1e1b611a9e110ed5dd39b774b90ce80f332d3d7c0e24b3272c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/21600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/21600/edges_td_att.csv",
+      "size_bytes": 1226437,
+      "sha256": "9640941e4326ea1e1b611a9e110ed5dd39b774b90ce80f332d3d7c0e24b3272c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/21600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/21600/edges_td_att.csv",
+      "size_bytes": 1226437,
+      "sha256": "9640941e4326ea1e1b611a9e110ed5dd39b774b90ce80f332d3d7c0e24b3272c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/25200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/25200/edges_td_att.csv",
+      "size_bytes": 1226613,
+      "sha256": "e608d456fd5be320e18b1914e9b5444282ae0c5e08def425d5fb1928ef422ecd",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/25200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/25200/edges_td_att.csv",
+      "size_bytes": 1226613,
+      "sha256": "e608d456fd5be320e18b1914e9b5444282ae0c5e08def425d5fb1928ef422ecd",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/25200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/25200/edges_td_att.csv",
+      "size_bytes": 1226613,
+      "sha256": "e608d456fd5be320e18b1914e9b5444282ae0c5e08def425d5fb1928ef422ecd",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/25200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/25200/edges_td_att.csv",
+      "size_bytes": 1226613,
+      "sha256": "e608d456fd5be320e18b1914e9b5444282ae0c5e08def425d5fb1928ef422ecd",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/28800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/28800/edges_td_att.csv",
+      "size_bytes": 1226700,
+      "sha256": "18ef89cc58b86bcf56401b763c101647d7b7664beaec86ed62db9a86d9956f16",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/28800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/28800/edges_td_att.csv",
+      "size_bytes": 1226700,
+      "sha256": "18ef89cc58b86bcf56401b763c101647d7b7664beaec86ed62db9a86d9956f16",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/28800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/28800/edges_td_att.csv",
+      "size_bytes": 1226700,
+      "sha256": "18ef89cc58b86bcf56401b763c101647d7b7664beaec86ed62db9a86d9956f16",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/28800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/28800/edges_td_att.csv",
+      "size_bytes": 1226700,
+      "sha256": "18ef89cc58b86bcf56401b763c101647d7b7664beaec86ed62db9a86d9956f16",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/32400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/32400/edges_td_att.csv",
+      "size_bytes": 1226759,
+      "sha256": "edb224c119240e6affa547890c8a7a6d1b8d9a26396a0a6300166a7829a82a3c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/32400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/32400/edges_td_att.csv",
+      "size_bytes": 1226759,
+      "sha256": "edb224c119240e6affa547890c8a7a6d1b8d9a26396a0a6300166a7829a82a3c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/32400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/32400/edges_td_att.csv",
+      "size_bytes": 1226759,
+      "sha256": "edb224c119240e6affa547890c8a7a6d1b8d9a26396a0a6300166a7829a82a3c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/32400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/32400/edges_td_att.csv",
+      "size_bytes": 1226759,
+      "sha256": "edb224c119240e6affa547890c8a7a6d1b8d9a26396a0a6300166a7829a82a3c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/3600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/3600/edges_td_att.csv",
+      "size_bytes": 1216543,
+      "sha256": "150ccd8b0f61877b339df204f48669e6f74fd19f332190e3077f0813fd057718",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/3600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/3600/edges_td_att.csv",
+      "size_bytes": 1216543,
+      "sha256": "150ccd8b0f61877b339df204f48669e6f74fd19f332190e3077f0813fd057718",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/3600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/3600/edges_td_att.csv",
+      "size_bytes": 1216543,
+      "sha256": "150ccd8b0f61877b339df204f48669e6f74fd19f332190e3077f0813fd057718",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/3600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/3600/edges_td_att.csv",
+      "size_bytes": 1216543,
+      "sha256": "150ccd8b0f61877b339df204f48669e6f74fd19f332190e3077f0813fd057718",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/36000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/36000/edges_td_att.csv",
+      "size_bytes": 1226586,
+      "sha256": "afd88e76dba2c40b55c47e292e0e3ae8d4c959ea552d67b41b2aec792099924f",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/36000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/36000/edges_td_att.csv",
+      "size_bytes": 1226586,
+      "sha256": "afd88e76dba2c40b55c47e292e0e3ae8d4c959ea552d67b41b2aec792099924f",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/36000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/36000/edges_td_att.csv",
+      "size_bytes": 1226586,
+      "sha256": "afd88e76dba2c40b55c47e292e0e3ae8d4c959ea552d67b41b2aec792099924f",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/36000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/36000/edges_td_att.csv",
+      "size_bytes": 1226586,
+      "sha256": "afd88e76dba2c40b55c47e292e0e3ae8d4c959ea552d67b41b2aec792099924f",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/39600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/39600/edges_td_att.csv",
+      "size_bytes": 1226482,
+      "sha256": "ebf363fa6dd7a1c63888b1224e9342c8b58f244d8c52ba595ba4a1dda834b49c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/39600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/39600/edges_td_att.csv",
+      "size_bytes": 1226482,
+      "sha256": "ebf363fa6dd7a1c63888b1224e9342c8b58f244d8c52ba595ba4a1dda834b49c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/39600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/39600/edges_td_att.csv",
+      "size_bytes": 1226482,
+      "sha256": "ebf363fa6dd7a1c63888b1224e9342c8b58f244d8c52ba595ba4a1dda834b49c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/39600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/39600/edges_td_att.csv",
+      "size_bytes": 1226482,
+      "sha256": "ebf363fa6dd7a1c63888b1224e9342c8b58f244d8c52ba595ba4a1dda834b49c",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/43200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/43200/edges_td_att.csv",
+      "size_bytes": 1226648,
+      "sha256": "8ea13a3b485e205383dbff4c7de81967825e6300ad3d37fea667845ac468c059",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/43200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/43200/edges_td_att.csv",
+      "size_bytes": 1226648,
+      "sha256": "8ea13a3b485e205383dbff4c7de81967825e6300ad3d37fea667845ac468c059",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/43200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/43200/edges_td_att.csv",
+      "size_bytes": 1226648,
+      "sha256": "8ea13a3b485e205383dbff4c7de81967825e6300ad3d37fea667845ac468c059",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/43200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/43200/edges_td_att.csv",
+      "size_bytes": 1226648,
+      "sha256": "8ea13a3b485e205383dbff4c7de81967825e6300ad3d37fea667845ac468c059",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/46800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/46800/edges_td_att.csv",
+      "size_bytes": 1226540,
+      "sha256": "1fd7ac420b6128bbcb1eae29a9bb42fde52691e9b970e4877142f2399b196dce",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/46800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/46800/edges_td_att.csv",
+      "size_bytes": 1226540,
+      "sha256": "1fd7ac420b6128bbcb1eae29a9bb42fde52691e9b970e4877142f2399b196dce",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/46800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/46800/edges_td_att.csv",
+      "size_bytes": 1226540,
+      "sha256": "1fd7ac420b6128bbcb1eae29a9bb42fde52691e9b970e4877142f2399b196dce",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/46800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/46800/edges_td_att.csv",
+      "size_bytes": 1226540,
+      "sha256": "1fd7ac420b6128bbcb1eae29a9bb42fde52691e9b970e4877142f2399b196dce",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/50400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/50400/edges_td_att.csv",
+      "size_bytes": 1226425,
+      "sha256": "e8644b81578492093edfb999352f3ffa8b6fc578d2a29770a5d83837fb93ba0d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/50400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/50400/edges_td_att.csv",
+      "size_bytes": 1226425,
+      "sha256": "e8644b81578492093edfb999352f3ffa8b6fc578d2a29770a5d83837fb93ba0d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/50400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/50400/edges_td_att.csv",
+      "size_bytes": 1226425,
+      "sha256": "e8644b81578492093edfb999352f3ffa8b6fc578d2a29770a5d83837fb93ba0d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/50400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/50400/edges_td_att.csv",
+      "size_bytes": 1226425,
+      "sha256": "e8644b81578492093edfb999352f3ffa8b6fc578d2a29770a5d83837fb93ba0d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/54000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/54000/edges_td_att.csv",
+      "size_bytes": 1226612,
+      "sha256": "6ec5d12aadcaf2c3b5518b112330d2b90e7895bd2d3538377fb83859c4262ff8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/54000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/54000/edges_td_att.csv",
+      "size_bytes": 1226612,
+      "sha256": "6ec5d12aadcaf2c3b5518b112330d2b90e7895bd2d3538377fb83859c4262ff8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/54000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/54000/edges_td_att.csv",
+      "size_bytes": 1226612,
+      "sha256": "6ec5d12aadcaf2c3b5518b112330d2b90e7895bd2d3538377fb83859c4262ff8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/54000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/54000/edges_td_att.csv",
+      "size_bytes": 1226612,
+      "sha256": "6ec5d12aadcaf2c3b5518b112330d2b90e7895bd2d3538377fb83859c4262ff8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/57600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/57600/edges_td_att.csv",
+      "size_bytes": 1226526,
+      "sha256": "3636388787016015a1982ea5caa1f0a97aad897fc9f94ec9043ac13b4cd915f0",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/57600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/57600/edges_td_att.csv",
+      "size_bytes": 1226526,
+      "sha256": "3636388787016015a1982ea5caa1f0a97aad897fc9f94ec9043ac13b4cd915f0",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/57600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/57600/edges_td_att.csv",
+      "size_bytes": 1226526,
+      "sha256": "3636388787016015a1982ea5caa1f0a97aad897fc9f94ec9043ac13b4cd915f0",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/57600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/57600/edges_td_att.csv",
+      "size_bytes": 1226526,
+      "sha256": "3636388787016015a1982ea5caa1f0a97aad897fc9f94ec9043ac13b4cd915f0",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/61200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/61200/edges_td_att.csv",
+      "size_bytes": 1226687,
+      "sha256": "104f9f269cae9ea84caa49c036fbf1cbc3ce9eeb7f6fe6ff0911b4c516be2d4d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/61200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/61200/edges_td_att.csv",
+      "size_bytes": 1226687,
+      "sha256": "104f9f269cae9ea84caa49c036fbf1cbc3ce9eeb7f6fe6ff0911b4c516be2d4d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/61200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/61200/edges_td_att.csv",
+      "size_bytes": 1226687,
+      "sha256": "104f9f269cae9ea84caa49c036fbf1cbc3ce9eeb7f6fe6ff0911b4c516be2d4d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/61200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/61200/edges_td_att.csv",
+      "size_bytes": 1226687,
+      "sha256": "104f9f269cae9ea84caa49c036fbf1cbc3ce9eeb7f6fe6ff0911b4c516be2d4d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/64800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/64800/edges_td_att.csv",
+      "size_bytes": 1226706,
+      "sha256": "7e2df16bdbf33c312b4b5bd5f4a4e487b181910ecfad7456cb02da74affaa149",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/64800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/64800/edges_td_att.csv",
+      "size_bytes": 1226706,
+      "sha256": "7e2df16bdbf33c312b4b5bd5f4a4e487b181910ecfad7456cb02da74affaa149",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/64800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/64800/edges_td_att.csv",
+      "size_bytes": 1226706,
+      "sha256": "7e2df16bdbf33c312b4b5bd5f4a4e487b181910ecfad7456cb02da74affaa149",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/64800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/64800/edges_td_att.csv",
+      "size_bytes": 1226706,
+      "sha256": "7e2df16bdbf33c312b4b5bd5f4a4e487b181910ecfad7456cb02da74affaa149",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/68400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/68400/edges_td_att.csv",
+      "size_bytes": 1226686,
+      "sha256": "1bc0be0c551aa1d3c3ce0d5b76ba8b4a163c3b8fccb467da026602294e8af8d8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/68400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/68400/edges_td_att.csv",
+      "size_bytes": 1226686,
+      "sha256": "1bc0be0c551aa1d3c3ce0d5b76ba8b4a163c3b8fccb467da026602294e8af8d8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/68400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/68400/edges_td_att.csv",
+      "size_bytes": 1226686,
+      "sha256": "1bc0be0c551aa1d3c3ce0d5b76ba8b4a163c3b8fccb467da026602294e8af8d8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/68400/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/68400/edges_td_att.csv",
+      "size_bytes": 1226686,
+      "sha256": "1bc0be0c551aa1d3c3ce0d5b76ba8b4a163c3b8fccb467da026602294e8af8d8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/7200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/7200/edges_td_att.csv",
+      "size_bytes": 1211277,
+      "sha256": "dd6bddc28437a661a91f2e93afece559a4888d9c7959c5974b7cd92b620f8162",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/7200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/7200/edges_td_att.csv",
+      "size_bytes": 1211277,
+      "sha256": "dd6bddc28437a661a91f2e93afece559a4888d9c7959c5974b7cd92b620f8162",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/7200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/7200/edges_td_att.csv",
+      "size_bytes": 1211277,
+      "sha256": "dd6bddc28437a661a91f2e93afece559a4888d9c7959c5974b7cd92b620f8162",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/7200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/7200/edges_td_att.csv",
+      "size_bytes": 1211277,
+      "sha256": "dd6bddc28437a661a91f2e93afece559a4888d9c7959c5974b7cd92b620f8162",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/72000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/72000/edges_td_att.csv",
+      "size_bytes": 1226374,
+      "sha256": "325eb2cd8da2cdcda32c921bea49c5ab74d44bb4e55dc1ef06db599be68ec8ad",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/72000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/72000/edges_td_att.csv",
+      "size_bytes": 1226374,
+      "sha256": "325eb2cd8da2cdcda32c921bea49c5ab74d44bb4e55dc1ef06db599be68ec8ad",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/72000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/72000/edges_td_att.csv",
+      "size_bytes": 1226374,
+      "sha256": "325eb2cd8da2cdcda32c921bea49c5ab74d44bb4e55dc1ef06db599be68ec8ad",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/72000/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/72000/edges_td_att.csv",
+      "size_bytes": 1226374,
+      "sha256": "325eb2cd8da2cdcda32c921bea49c5ab74d44bb4e55dc1ef06db599be68ec8ad",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/75600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/75600/edges_td_att.csv",
+      "size_bytes": 1226148,
+      "sha256": "f965282d9b3d813f9af49a84c255c83cd16e5bd4e3ed036448e533858cd8ec47",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/75600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/75600/edges_td_att.csv",
+      "size_bytes": 1226148,
+      "sha256": "f965282d9b3d813f9af49a84c255c83cd16e5bd4e3ed036448e533858cd8ec47",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/75600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/75600/edges_td_att.csv",
+      "size_bytes": 1226148,
+      "sha256": "f965282d9b3d813f9af49a84c255c83cd16e5bd4e3ed036448e533858cd8ec47",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/75600/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/75600/edges_td_att.csv",
+      "size_bytes": 1226148,
+      "sha256": "f965282d9b3d813f9af49a84c255c83cd16e5bd4e3ed036448e533858cd8ec47",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/79200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/79200/edges_td_att.csv",
+      "size_bytes": 1226197,
+      "sha256": "ca043387be606a92d3b14d48682ba11f816d0a3ea92699c33edc2e99acbc108d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/79200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/79200/edges_td_att.csv",
+      "size_bytes": 1226197,
+      "sha256": "ca043387be606a92d3b14d48682ba11f816d0a3ea92699c33edc2e99acbc108d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/79200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/79200/edges_td_att.csv",
+      "size_bytes": 1226197,
+      "sha256": "ca043387be606a92d3b14d48682ba11f816d0a3ea92699c33edc2e99acbc108d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/79200/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/79200/edges_td_att.csv",
+      "size_bytes": 1226197,
+      "sha256": "ca043387be606a92d3b14d48682ba11f816d0a3ea92699c33edc2e99acbc108d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/82800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/82800/edges_td_att.csv",
+      "size_bytes": 1225360,
+      "sha256": "76b08d5ed27648c5d85f02356e6fe07e765766d415ffd86a93e24fb2060c7ff3",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/82800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/82800/edges_td_att.csv",
+      "size_bytes": 1225360,
+      "sha256": "76b08d5ed27648c5d85f02356e6fe07e765766d415ffd86a93e24fb2060c7ff3",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/82800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/82800/edges_td_att.csv",
+      "size_bytes": 1225360,
+      "sha256": "76b08d5ed27648c5d85f02356e6fe07e765766d415ffd86a93e24fb2060c7ff3",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/82800/edges_td_att.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/82800/edges_td_att.csv",
+      "size_bytes": 1225360,
+      "sha256": "76b08d5ed27648c5d85f02356e6fe07e765766d415ffd86a93e24fb2060c7ff3",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/edges.csv",
+      "size_bytes": 2895562,
+      "sha256": "81b992e03e7aec5b379dd5d079bf2874e729b1dc997ce461046b308f6320269e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/edges.csv",
+      "size_bytes": 2895562,
+      "sha256": "81b992e03e7aec5b379dd5d079bf2874e729b1dc997ce461046b308f6320269e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/edges.csv",
+      "size_bytes": 2895562,
+      "sha256": "81b992e03e7aec5b379dd5d079bf2874e729b1dc997ce461046b308f6320269e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/base/edges.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/edges.csv",
+      "size_bytes": 2895562,
+      "sha256": "81b992e03e7aec5b379dd5d079bf2874e729b1dc997ce461046b308f6320269e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_legacy/network/base/nodes.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/nodes.csv",
+      "size_bytes": 1486585,
+      "sha256": "5df55ad5f6ed64f0185b488c94b55bc268e41dd3bd355212f34a822ca2c4e5c2",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s10/network/base/nodes.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/nodes.csv",
+      "size_bytes": 1486585,
+      "sha256": "5df55ad5f6ed64f0185b488c94b55bc268e41dd3bd355212f34a822ca2c4e5c2",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s20/network/base/nodes.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/nodes.csv",
+      "size_bytes": 1486585,
+      "sha256": "5df55ad5f6ed64f0185b488c94b55bc268e41dd3bd355212f34a822ca2c4e5c2",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_inputs/phase16/munich_s5/network/base/nodes.csv",
+      "immutable_canonical": "/workspace/market_inputs/phase14/munich_p240/network/base/nodes.csv",
+      "size_bytes": 1486585,
+      "sha256": "5df55ad5f6ed64f0185b488c94b55bc268e41dd3bd355212f34a822ca2c4e5c2",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 2097189,
+      "sha256": "d713f8738edb15742f32a740b6e71e28dfb8fb2155cc66ddc730993686376f73",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 2097815,
+      "sha256": "4c99e395b22ab16d7d36b2977bad37373b20fea59a088ddedc7df8044eb3a191",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 2170700,
+      "sha256": "837e8d329ff2c66faa66d04ca77c0542910eaf15330b3b3ddd8eeb11d4e94f7e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 4266770,
+      "sha256": "30db1f80a31929e1bd5b74c05c2c928e4c3ae2fa1203270bb35dc94d644caed9",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 4290010,
+      "sha256": "2e58e9bd536c5c640fd5cd5396bd80e3f5d833b0344eac6b1f4da753bae4eeac",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "size_bytes": 1069155,
+      "sha256": "937ccd7d8c5ac3c6f7ecdbd026e30df6ebf3d2a37138a040154ecfa00ba03a8d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 4328100,
+      "sha256": "5a4ce60638f48b7a5eb2dc6da106b10d7fbc644e14a6a4c7399311535549e91d",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "size_bytes": 1076476,
+      "sha256": "fa154955c8f3faef72a5f4a67474a0c276d8693060318eeac83f3f2d6e7edfac",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3546274,
+      "sha256": "dc277aadbccc55984c660458a9f01d862963affc24606039936dc7877ce399b8",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 3388686,
+      "sha256": "c4befc7bf55a6fcc2e897eb39167daf0ab0faf08962373830167adf04d4a8efe",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase14/p480/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 3387146,
+      "sha256": "c32ab1b75a5d0858be016feddc7079e9ad2740a5dca453f1d57358af766c6582",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 2179947,
+      "sha256": "69e786b5caa8ab5388fdc1e2e8a87fb88239c957a2f6e82877611ed4996208ff",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s20/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 2179947,
+      "sha256": "69e786b5caa8ab5388fdc1e2e8a87fb88239c957a2f6e82877611ed4996208ff",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 2054008,
+      "sha256": "9b5b3345324874948ed739e8b7870ca785aaa04caae217681b823a5369e7d18e",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 2147175,
+      "sha256": "462c29ac8981dfa0876e6a9ad1c27b85b0051ce23847134920242892d3a7b334",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 4233855,
+      "sha256": "5b9fce299c242d518c6a3036dd430734cb466cc5b63588e3a8624c7cf0eee70a",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 4269210,
+      "sha256": "e2687543a2d2ddc1cd62fbe6b723b7c9fac26c646c451a6ccd3a57bd8107e1b1",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "size_bytes": 1068867,
+      "sha256": "81c2834c7f96f7b2ccc63fc32679e28c25a589dbfbeb0b1aa2414ce65dbd7b00",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 4280985,
+      "sha256": "d54dc422595cd4bfab2fce8f9caa39e69fb6979b2ed6fa8c66bd5a48e51aced6",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "size_bytes": 1075905,
+      "sha256": "8740ec2a0b1871baae6c293e65229a28bd3ca8e6e9a2508a9751a2cc56680709",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3538732,
+      "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s20/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3538732,
+      "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s5/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3538732,
+      "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 3342319,
+      "sha256": "66c1c37a645cf1bf1a2e472100b70341582b8f345326241276d207100b1f2f42",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/pilot/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 3335692,
+      "sha256": "902f3c328e2659cff67260b3fcaf5b5c90326fca71d5a9abda920ac61e3bee21",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s5/runs/chicago/seed_2/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_2/all_human/2-0_op-stats.csv",
+      "size_bytes": 2206423,
+      "sha256": "2011c2954a6173193c6412dd07211bb8f056fdea457019ebd3d2f0298d68b6fe",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s20/runs/munich/seed_1/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_1/all_human/2-0_op-stats.csv",
+      "size_bytes": 3571169,
+      "sha256": "dd5e1594d955ac26de5c383437de0a5548e7ca87a18b8e6ab9c16a2494096a39",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s5/runs/munich/seed_1/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_1/all_human/2-0_op-stats.csv",
+      "size_bytes": 3571169,
+      "sha256": "dd5e1594d955ac26de5c383437de0a5548e7ca87a18b8e6ab9c16a2494096a39",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s20/runs/munich/seed_2/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_2/all_human/2-0_op-stats.csv",
+      "size_bytes": 3545537,
+      "sha256": "77ec8153e1cfe66bd9082482c7352e15ba391f70c12c8d13a5c273af3c8b19e0",
+      "all_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/phase16/s5/runs/munich/seed_2/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_2/all_human/2-0_op-stats.csv",
+      "size_bytes": 3545537,
+      "sha256": "77ec8153e1cfe66bd9082482c7352e15ba391f70c12c8d13a5c273af3c8b19e0",
+      "all_logical_paths_and_bytes_preserved": true
+    }
+  ],
+  "verified_duplicate_logical_bytes": 855159091,
+  "all_original_raw_source_and_published_evidence_preserved": true
+}

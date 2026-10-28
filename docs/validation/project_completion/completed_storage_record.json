@@ -1,0 +1,160 @@
+{
+  "active_full_tree_excluded": true,
+  "shared_bytes": 63053390,
+  "checks": [
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 2179947,
+      "sha256": "69e786b5caa8ab5388fdc1e2e8a87fb88239c957a2f6e82877611ed4996208ff",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 2179947,
+      "sha256": "69e786b5caa8ab5388fdc1e2e8a87fb88239c957a2f6e82877611ed4996208ff",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 2054008,
+      "sha256": "9b5b3345324874948ed739e8b7870ca785aaa04caae217681b823a5369e7d18e",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 2054008,
+      "sha256": "9b5b3345324874948ed739e8b7870ca785aaa04caae217681b823a5369e7d18e",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 2147175,
+      "sha256": "462c29ac8981dfa0876e6a9ad1c27b85b0051ce23847134920242892d3a7b334",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/chicago/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 2147175,
+      "sha256": "462c29ac8981dfa0876e6a9ad1c27b85b0051ce23847134920242892d3a7b334",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 4233855,
+      "sha256": "5b9fce299c242d518c6a3036dd430734cb466cc5b63588e3a8624c7cf0eee70a",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 4233855,
+      "sha256": "5b9fce299c242d518c6a3036dd430734cb466cc5b63588e3a8624c7cf0eee70a",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 4269210,
+      "sha256": "e2687543a2d2ddc1cd62fbe6b723b7c9fac26c646c451a6ccd3a57bd8107e1b1",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 4269210,
+      "sha256": "e2687543a2d2ddc1cd62fbe6b723b7c9fac26c646c451a6ccd3a57bd8107e1b1",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "size_bytes": 1068867,
+      "sha256": "81c2834c7f96f7b2ccc63fc32679e28c25a589dbfbeb0b1aa2414ce65dbd7b00",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_0/av_product_op_0.json",
+      "size_bytes": 1068867,
+      "sha256": "81c2834c7f96f7b2ccc63fc32679e28c25a589dbfbeb0b1aa2414ce65dbd7b00",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 4280985,
+      "sha256": "d54dc422595cd4bfab2fce8f9caa39e69fb6979b2ed6fa8c66bd5a48e51aced6",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 4280985,
+      "sha256": "d54dc422595cd4bfab2fce8f9caa39e69fb6979b2ed6fa8c66bd5a48e51aced6",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "size_bytes": 1075905,
+      "sha256": "8740ec2a0b1871baae6c293e65229a28bd3ca8e6e9a2508a9751a2cc56680709",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/manhattan/seed_0/threshold_240/av_product_op_0.json",
+      "size_bytes": 1075905,
+      "sha256": "8740ec2a0b1871baae6c293e65229a28bd3ca8e6e9a2508a9751a2cc56680709",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3538732,
+      "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/all_human/2-0_op-stats.csv",
+      "size_bytes": 3538732,
+      "sha256": "61c81626dc1260ddb8854c89c6b49e1c4318ea3778e7b0971b09d05564bba267",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 3342319,
+      "sha256": "66c1c37a645cf1bf1a2e472100b70341582b8f345326241276d207100b1f2f42",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_0/2-0_op-stats.csv",
+      "size_bytes": 3342319,
+      "sha256": "66c1c37a645cf1bf1a2e472100b70341582b8f345326241276d207100b1f2f42",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion/city/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 3335692,
+      "sha256": "902f3c328e2659cff67260b3fcaf5b5c90326fca71d5a9abda920ac61e3bee21",
+      "all_logical_bytes_and_paths_preserved": true
+    },
+    {
+      "path": "/workspace/market_results/project_completion_final/city/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "immutable_canonical": "/workspace/market_results/phase16/s10/runs/munich/seed_0/threshold_240/2-0_op-stats.csv",
+      "size_bytes": 3335692,
+      "sha256": "902f3c328e2659cff67260b3fcaf5b5c90326fca71d5a9abda920ac61e3bee21",
+      "all_logical_bytes_and_paths_preserved": true
+    }
+  ]
+}

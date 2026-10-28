@@ -1,0 +1,232 @@
+{
+  "requests": {
+    "unit": "requests",
+    "preference": "contextual",
+    "definition": "All evaluation-cohort requests, including unserved"
+  },
+  "completed": {
+    "unit": "requests",
+    "preference": "higher",
+    "definition": "Evaluation requests with actual pickup and dropoff, including later fulfillment"
+  },
+  "unserved": {
+    "unit": "requests",
+    "preference": "lower",
+    "definition": "Evaluation requests without completed service"
+  },
+  "completion_rate": {
+    "unit": "fraction",
+    "preference": "higher",
+    "definition": "Completed / all evaluation-cohort requests"
+  },
+  "wait_mean_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "Actual boarding start minus original request time, served evaluation requests"
+  },
+  "wait_p50_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "Median wait among served evaluation requests"
+  },
+  "wait_p95_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "95th percentile wait among served evaluation requests"
+  },
+  "ride_mean_s": {
+    "unit": "s",
+    "preference": "contextual",
+    "definition": "Dropoff/alighting start minus pickup/boarding start; served evaluation requests"
+  },
+  "pickup_promise_mae_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "Absolute actual-minus-accepted pickup error; completed evaluation requests with promises"
+  },
+  "pickup_late_rate": {
+    "unit": "fraction",
+    "preference": "lower",
+    "definition": "Actual pickup later than accepted promise; completed evaluation requests with promises"
+  },
+  "driver_offer_attempts": {
+    "unit": "offers",
+    "preference": "contextual",
+    "definition": "Actual human offer attempts, whole physical run"
+  },
+  "reoffered_requests": {
+    "unit": "requests",
+    "preference": "contextual",
+    "definition": "Unique requests actually offered to more than one distinct human driver; whole run"
+  },
+  "repeat_driver_offer_attempts": {
+    "unit": "offers",
+    "preference": "contextual",
+    "definition": "Repeated attempts to the same request/driver pair; whole run"
+  },
+  "driver_outside_choices": {
+    "unit": "menus",
+    "preference": "contextual",
+    "definition": "Driver menus selecting the outside option; whole run; unavailable when choice disabled"
+  },
+  "driver_menu_conflicts": {
+    "unit": "offers",
+    "preference": "contextual",
+    "definition": "Selected driver offers lost to request conflicts; whole run; unavailable when choice disabled"
+  },
+  "driver_declines": {
+    "unit": "offers",
+    "preference": "contextual",
+    "definition": "Actual declined human offer attempts, whole physical run"
+  },
+  "driver_acceptances": {
+    "unit": "offers",
+    "preference": "contextual",
+    "definition": "Actual accepted human offers, whole physical run"
+  },
+  "offer_acceptance_rate": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Accepted human offer attempts / actual attempts; not request completion"
+  },
+  "terminal_declined_requests": {
+    "unit": "requests",
+    "preference": "lower",
+    "definition": "Unique request IDs with a terminal driver decline, whole physical run"
+  },
+  "utilization": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Occupied vehicle seconds / online vehicle seconds in evaluation clock"
+  },
+  "idle_share": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Unlogged or explicitly idle online seconds / online seconds in evaluation clock"
+  },
+  "empty_distance_km": {
+    "unit": "km",
+    "preference": "contextual",
+    "definition": "Occupancy-zero distance over whole physical run, including warm-up/tail"
+  },
+  "empty_distance_share": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Empty / all driven distance over the same whole physical run"
+  },
+  "av_reposition_distance_km": {
+    "unit": "km",
+    "preference": "contextual",
+    "definition": "Empty AV repositioning distance over the whole physical run"
+  },
+  "reposition_distance_km": {
+    "unit": "km",
+    "preference": "contextual",
+    "definition": "Repositioning legs over whole physical run; not all empty driving"
+  },
+  "vehicle_modeled_net_earnings_mean_cent": {
+    "unit": "cent",
+    "preference": "contextual",
+    "definition": "Per-driver modeled fare minus distance/fixed/toll cost, whole run/tail; not observed wages"
+  },
+  "human_earnings_per_online_hour_mean_cent": {
+    "unit": "cent/hour",
+    "preference": "contextual",
+    "definition": "Mean human-driver modeled net / own online hours, whole run/tail"
+  },
+  "human_earnings_cv": {
+    "unit": "ratio",
+    "preference": "contextual",
+    "definition": "Human-driver CV of modeled per-online-hour earnings; whole run/tail"
+  },
+  "human_earnings_p10_cent": {
+    "unit": "cent/hour",
+    "preference": "contextual",
+    "definition": "Human driver p10 modeled per-online-hour earnings; whole run/tail"
+  },
+  "human_earnings_p50_cent": {
+    "unit": "cent/hour",
+    "preference": "contextual",
+    "definition": "Human driver p50 modeled per-online-hour earnings; whole run/tail"
+  },
+  "human_earnings_p90_cent": {
+    "unit": "cent/hour",
+    "preference": "contextual",
+    "definition": "Human driver p90 modeled per-online-hour earnings; whole run/tail"
+  },
+  "human_earnings_gini": {
+    "unit": "fraction",
+    "preference": "lower",
+    "definition": "Human-driver modeled per-online-hour earnings Gini; unavailable with negative earnings"
+  },
+  "av_count": {
+    "unit": "vehicles",
+    "preference": "contextual",
+    "definition": "Actual loaded AV roster, not requested percentage"
+  },
+  "av_completed": {
+    "unit": "requests",
+    "preference": "contextual",
+    "definition": "Completed evaluation requests assigned to actual AV IDs"
+  },
+  "human_completed": {
+    "unit": "requests",
+    "preference": "contextual",
+    "definition": "Completed evaluation requests assigned to human IDs"
+  },
+  "av_share_served": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "AV completed / all completed evaluation requests; allocation, not welfare"
+  },
+  "av_utilization": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Occupied AV seconds / actual AV online seconds in evaluation clock"
+  },
+  "av_idle_share": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Unlogged or explicitly idle AV seconds / AV online seconds in evaluation clock"
+  },
+  "eligible_av_service_rate": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "AV completed / fixed AV-eligible evaluation requests"
+  },
+  "eligible_wait_mean_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "Served evaluation requests satisfying declared opt-in and both-endpoint fence"
+  },
+  "other_wait_mean_s": {
+    "unit": "s",
+    "preference": "lower",
+    "definition": "Served evaluation requests outside declared AV eligibility"
+  },
+  "av_empty_distance_share": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Empty / all AV driven distance, whole physical run"
+  },
+  "idle_av_closer_human_won_rate": {
+    "unit": "fraction",
+    "preference": "contextual",
+    "definition": "Eligible human-won diagnostics with idle AV closer / eligible human-won diagnostics with defined ETA gap"
+  },
+  "common_human_completed": {
+    "unit": "requests",
+    "preference": "contextual",
+    "definition": "Evaluation trips served by the same always-human prefix IDs within the input regime"
+  },
+  "common_human_trips_per_online_hour": {
+    "unit": "trips/hour",
+    "preference": "contextual",
+    "definition": "Same human-prefix evaluation trips / prefix evaluation-clock online hours"
+  },
+  "rule_violations": {
+    "unit": "violations",
+    "preference": "lower",
+    "definition": "Zero only after physical accounting, event, capacity and applicable eligibility/privacy checks pass"
+  }
+}

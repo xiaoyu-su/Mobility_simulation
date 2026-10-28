@@ -1,0 +1,57 @@
+{
+  "source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418",
+  "all_current_example_root_configurations_verified": true,
+  "root_configuration_sha256": {
+    "studies/policy_comparison/insertion.json": "4a851722414b15bf6d4c0242a464fae2e30c3c8ecbc659021bb7e71490e88865",
+    "studies/example_study/scenarios/constant_config_ir.csv": "a7fe14b8d0e33a49765894e174015ce8471ef424d0c6d92f5212c5defcd1eee9",
+    "studies/example_study/scenarios/example_ir_driver_acceptance.yaml": "c39d3878873b5d62ef00f53227a648503498e97df18d511c9363bf414cb304f1",
+    "studies/example_study/scenarios/example_ir_future_value.yaml": "c44429a5938aafc2eb33be0f72267310c5907dc785468eabb3e71130ab52b94a",
+    "studies/example_study/scenarios/example_ir_ranked_fallback.yaml": "3d5c0f08e3bba6d7ac9584d107a60bd238d3edebc04e702701d61392cfa57784",
+    "studies/example_study/scenarios/example_ir_ranked_future_value.yaml": "c750d4259974d06cc08d97d8574ac8a6cf5e7293495650a98c0a48a1bb4e492d",
+    "studies/policy_comparison/immediate_batch.json": "a5c06ed93eddfd8c4c14b241cfdfa0e69b68f4ef5f7ded6281f80d6c5ee3a911",
+    "studies/example_study/scenarios/example_ir_batch_driver_choice.yaml": "6f1184f3164b65c24677667915c3708bfbf4b25b8817a03dc237d12eb2fe28de",
+    "studies/policy_comparison/scenarios/immediate_future.yaml": "1f33a41161817353d3c6fad681c3248741ce508073baa492cfc7b110cc6103bf",
+    "studies/example_study/scenarios/example_ir_batch_ranked_fallback.yaml": "7da9fe15aea988e5f96ed8f6a2a9aff43c8c78ad8ef7c137ad47ac2762d79d37",
+    "studies/policy_comparison/alonso_mora.json": "1a56112cd19c335b8c3e7beb5a69753d1a7c8736e558fe69d3c7df28df7833b1",
+    "studies/example_study/scenarios/constant_config_pool.csv": "54abb828fb57d63fdf504859766efedefe57b0ffb835d7533991f5476bced2f6",
+    "studies/example_study/scenarios/example_batch_driver_choice_control.yaml": "f00267e261c9b2158119d5eea40509f6636ea12898f2f75addf67aaf6365079e",
+    "studies/policy_comparison/scenarios/batch_future.yaml": "ab0f8f215ee69352d8b5d51752a35d29fb80282e84da4f3da1a615a098e78abd",
+    "studies/example_study/scenarios/example_batch_driver_choice.yaml": "6f60cf6e133c022788b34d3d9a7de0d2d2f222c09457fb4216492868705922f0",
+    "studies/example_study/scenarios/example_batch_forbid_rematch_future.yaml": "f5e02a9a91b8b9db14c66cff3b8850919057bda224ed924240239502ad92393e",
+    "docs/fleet_share/munich_s10.json": "c1f4d7fbb019f315fbadb32ad6848689efdc18ade34ab57a434ee10c5520670e",
+    "docs/fleet_share/chicago_s10.json": "bef391d10fa6fc3f9aeeddecfa9b705c06e6536e68e075cb43f4c83ac52f9141",
+    "docs/fleet_share/manhattan_s10.json": "fd8491fb49caf3477a262d26620af318754e734b82c9353cbbbebc663ccb48d3",
+    "docs/fleet_share/policies.json": "e2868699a631c9ee0af7d41bfe768dca006503d0148d9bc1fca487b7956c716e"
+  },
+  "configuration_files": 20,
+  "fresh_city_inputs": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "actual_av_count": 5,
+      "whole_requests": 2523,
+      "evaluation_requests": 1892,
+      "bundle_manifest_sha256": "1be5460ca787d0e687be1998759a0e1e199c6c69c16c588c751cbdd9b3e220d9",
+      "all_input_hashes_verified": true
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "actual_av_count": 10,
+      "whole_requests": 2690,
+      "evaluation_requests": 2051,
+      "bundle_manifest_sha256": "9207878991add98f6fe5f1bc32df542307646247e3f90ef5316966fcd60cc36c",
+      "all_input_hashes_verified": true
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "actual_av_count": 78,
+      "whole_requests": 3901,
+      "evaluation_requests": 3150,
+      "bundle_manifest_sha256": "5591a7ef972b0b507f55ab0d53edfa921a79ee6871b8bc1532126e0285c3147f",
+      "all_input_hashes_verified": true
+    }
+  ],
+  "no_historical_source_retagged": true
+}

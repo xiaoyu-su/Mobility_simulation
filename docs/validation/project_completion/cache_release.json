@@ -1,0 +1,11 @@
+{
+  "only_redundant_logical_cache_removed": "/workspace/.setup/project-completion-complete-records.tar.gz",
+  "size_bytes": 363458506,
+  "sha256": "f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9",
+  "all_original_raw_source_input_paths_and_bytes_preserved": true,
+  "all_local_numbered_parts_preserved": true,
+  "all_parts_and_reconstruction_verified_before_cache_removal": true,
+  "restore_command": "cat /workspace/Mobility_simulation/docs/validation/project_completion/records.tar.gz.0* > /workspace/.setup/project-completion-complete-records.tar.gz",
+  "reason": "Reserve disk space for Git objects/push pack without deleting any raw or unique evidence",
+  "verifier_source": "\"\"\"Remove only the redundant logical gzip cache after exact numbered-part reconstruction.\"\"\"\nfrom pathlib import Path\nimport hashlib,json\nW=Path('/workspace');D=W/'Mobility_simulation/docs/validation/project_completion';cache=W/'.setup/project-completion-complete-records.tar.gz'\ndef sha(p):\n h=hashlib.sha256()\n with p.open('rb') as f:\n  for b in iter(lambda:f.read(2**20),b''):h.update(b)\n return h.hexdigest()\na=json.loads((D/'archive_index.json').read_text());pre=json.loads((D/'prepublication_checks.json').read_text());assert pre['all_archive_upload_bytes_verified'] and pre['archive_sha256']==a['sha256']\nassert cache.stat().st_size==a['size_bytes'] and sha(cache)==a['sha256'];h=hashlib.sha256();size=0\nfor part in a['parts']:\n p=D/part['name'];assert p.stat().st_size==part['size_bytes'] and sha(p)==part['sha256']\n with p.open('rb') as f:\n  for b in iter(lambda:f.read(2**20),b''):h.update(b);size+=len(b)\nassert size==a['size_bytes'] and h.hexdigest()==a['sha256']\nrecord=dict(only_redundant_logical_cache_removed=str(cache),size_bytes=size,sha256=a['sha256'],all_original_raw_source_input_paths_and_bytes_preserved=True,all_local_numbered_parts_preserved=True,all_parts_and_reconstruction_verified_before_cache_removal=True,restore_command=f'cat {D}/records.tar.gz.0* > {cache}',reason='Reserve disk space for Git objects/push pack without deleting any raw or unique evidence',verifier_source=Path(__file__).read_text())\ncache.unlink();(D/'cache_release.json').write_text(json.dumps(record,indent=2)+'\\n');print('Released reconstructible logical cache:',size,'bytes')\n"
+}

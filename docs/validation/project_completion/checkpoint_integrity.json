@@ -1,0 +1,264 @@
+{
+  "all_recorded_counts_verified": true,
+  "checkpoints": [
+    {
+      "checkpoint": "checkpoint",
+      "pytest": {
+        "name": "pytest",
+        "errors": "1",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "1",
+        "time": "1.553",
+        "timestamp": "2026-10-28T04:20:50.236639+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "0-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/unit/test_policy_comparison.py",
+          "tests/integration/test_policy_comparison.py",
+          "--basetemp=/workspace/.setup/project_audit/checkpoint/runs",
+          "--junitxml=/workspace/.setup/project_audit/checkpoint/junit.xml"
+        ],
+        "returncode": 2,
+        "wall_seconds": 2.0090215140007786,
+        "source_digest": "55bbe0adbfb2b5ef932f8eecc708c3468772f696942df1e017f6572055ed4da6"
+      },
+      "actual_full_simulations": 0,
+      "excluded_hand_computed_unit_fixtures": 0,
+      "legacy_unmarked_mock_paths": [],
+      "interrupted": false
+    },
+    {
+      "checkpoint": "validated",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "7",
+        "skipped": "0",
+        "tests": "17",
+        "time": "262.804",
+        "timestamp": "2026-10-28T04:22:28.171397+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "0-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/unit/test_policy_comparison.py",
+          "tests/integration/test_policy_comparison_examples.py",
+          "--basetemp=/workspace/.setup/project_audit/validated/runs",
+          "--junitxml=/workspace/.setup/project_audit/validated/junit.xml"
+        ],
+        "returncode": 1,
+        "wall_seconds": 263.4640625810025,
+        "source_digest": "2166f43ef32c84a96a44961c74a7bc24b11a9942cde1eca3c14469b815e9754f"
+      },
+      "actual_full_simulations": 50,
+      "excluded_hand_computed_unit_fixtures": 6,
+      "legacy_unmarked_mock_paths": [
+        "runs/test_physical_and_cost_corrupt2",
+        "runs/test_hand_computed_clock_idle_0",
+        "runs/test_physical_and_cost_corrupt4",
+        "runs/test_physical_and_cost_corrupt3",
+        "runs/test_physical_and_cost_corrupt0",
+        "runs/test_physical_and_cost_corrupt1"
+      ],
+      "interrupted": false
+    },
+    {
+      "checkpoint": "units_corrected",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "14",
+        "time": "0.779",
+        "timestamp": "2026-10-28T04:29:39.224475+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "0-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/unit/test_policy_comparison.py",
+          "--maxfail=1",
+          "--basetemp=/workspace/.setup/project_audit/units_corrected/runs",
+          "--junitxml=/workspace/.setup/project_audit/units_corrected/junit.xml"
+        ],
+        "returncode": 0,
+        "wall_seconds": 1.2702715209998132,
+        "source_digest": "4b832edf44ca2daff5e11b9a3c25e162b6ad3e5f95769d8027c597b456c4fb22"
+      },
+      "actual_full_simulations": 0,
+      "excluded_hand_computed_unit_fixtures": 6,
+      "legacy_unmarked_mock_paths": [
+        "runs/test_physical_and_cost_corrupt2",
+        "runs/test_hand_computed_clock_idle_0",
+        "runs/test_physical_and_cost_corrupt4",
+        "runs/test_physical_and_cost_corrupt3",
+        "runs/test_physical_and_cost_corrupt0",
+        "runs/test_physical_and_cost_corrupt1"
+      ],
+      "interrupted": false
+    },
+    {
+      "checkpoint": "validated2",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "20",
+        "time": "307.351",
+        "timestamp": "2026-10-28T04:31:41.956987+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "0-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/unit/test_policy_comparison.py",
+          "tests/integration/test_policy_comparison_examples.py",
+          "--maxfail=1",
+          "--basetemp=/workspace/.setup/project_audit/validated2/runs",
+          "--junitxml=/workspace/.setup/project_audit/validated2/junit.xml"
+        ],
+        "returncode": 0,
+        "wall_seconds": 308.2769280520006,
+        "source_digest": "56af06612846e9d4630e0f71487a69754cf38d205995451155e795737aea4bfc"
+      },
+      "actual_full_simulations": 68,
+      "excluded_hand_computed_unit_fixtures": 6,
+      "legacy_unmarked_mock_paths": [],
+      "interrupted": false
+    },
+    {
+      "checkpoint": "full",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "34",
+        "time": "452.789",
+        "timestamp": "2026-10-28T04:41:31.848901+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "3-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--basetemp=/workspace/.setup/project_audit/full/runs",
+          "--junitxml=/workspace/.setup/project_audit/full/junit.xml"
+        ],
+        "returncode": 2,
+        "wall_seconds": 453.84444000200165,
+        "source_digest": "56af06612846e9d4630e0f71487a69754cf38d205995451155e795737aea4bfc"
+      },
+      "actual_full_simulations": 166,
+      "excluded_hand_computed_unit_fixtures": 0,
+      "legacy_unmarked_mock_paths": [],
+      "interrupted": true
+    },
+    {
+      "checkpoint": "validated3",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "20",
+        "time": "409.649",
+        "timestamp": "2026-10-28T04:51:04.313548+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "0-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/unit/test_policy_comparison.py",
+          "tests/integration/test_policy_comparison_examples.py",
+          "--basetemp=/workspace/.setup/project_audit/validated3/runs",
+          "--junitxml=/workspace/.setup/project_audit/validated3/junit.xml"
+        ],
+        "returncode": 0,
+        "wall_seconds": 410.6038487870028,
+        "source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418"
+      },
+      "actual_full_simulations": 68,
+      "excluded_hand_computed_unit_fixtures": 6,
+      "legacy_unmarked_mock_paths": [],
+      "interrupted": false
+    },
+    {
+      "checkpoint": "full_final",
+      "pytest": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "485",
+        "time": "2557.252",
+        "timestamp": "2026-10-28T04:51:19.089808+00:00",
+        "hostname": "cd50c4623c22"
+      },
+      "execution": {
+        "command": [
+          "taskset",
+          "-c",
+          "3-4",
+          "/workspace/Mobility_simulation/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--basetemp=/workspace/.setup/project_audit/full_final/runs",
+          "--junitxml=/workspace/.setup/project_audit/full_final/junit.xml"
+        ],
+        "returncode": 0,
+        "wall_seconds": 2558.4719614749956,
+        "source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418"
+      },
+      "actual_full_simulations": 509,
+      "excluded_hand_computed_unit_fixtures": 6,
+      "legacy_unmarked_mock_paths": [],
+      "interrupted": false
+    }
+  ],
+  "unit_diagnose_setup_error_log": "unit-diagnose.txt",
+  "superseded_demonstrations_physical_records": 57,
+  "superseded_demonstrations_source_digest": "56af06612846e9d4630e0f71487a69754cf38d205995451155e795737aea4bfc"
+}

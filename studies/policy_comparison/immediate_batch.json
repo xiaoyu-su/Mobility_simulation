@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "immediate_batch",
+  "constant_config": "../example_study/scenarios/constant_config_ir.csv",
+  "reference": {
+    "name": "acceptance_weighted",
+    "scenario": "../example_study/scenarios/example_ir_batch_driver_choice.yaml"
+  },
+  "policies": [
+    {
+      "name": "future_value",
+      "scenario": "scenarios/immediate_future.yaml"
+    },
+    {
+      "name": "ranked_fallback",
+      "scenario": "../example_study/scenarios/example_ir_batch_ranked_fallback.yaml"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "timeout": 600,
+  "network_tt_noise_sigma": 0.3
+}

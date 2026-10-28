@@ -1,7 +1,58 @@
-# 🚖 FleetPy – Open-Source Fleet Simulation Framework  
+# Mobility Simulation: matching policies and human/AV allocation
 
-This is the [xiaoyu-su/Mobility_simulation](https://github.com/xiaoyu-su/Mobility_simulation)
-fork of [TUM-VT/FleetPy](https://github.com/TUM-VT/FleetPy). Phase 0 adds upstream
+This [Xiaoyu Su fork](https://github.com/xiaoyu-su/Mobility_simulation) extends
+[TUM-VT/FleetPy](https://github.com/TUM-VT/FleetPy) for reproducible comparisons
+of matching, driver decisions, repositioning and mixed human/AV service.
+
+Start with the [project completion review](docs/PROJECT_COMPLETION.md),
+[original proposal audit](docs/PROPOSAL_AUDIT.md),
+[comparison workflow](docs/POLICY_COMPARISON.md) and
+[KPI definitions](docs/KPI_GUIDE.md).
+
+## Compare policies
+
+After installing and activating the environment below, run this from the repository root:
+
+```bash
+python -m tools.policy_compare run \
+  --spec studies/policy_comparison/insertion.json \
+  --output /tmp/my_matching_comparison
+```
+
+The three-seed example compares acceptance-weighted insertion, future value,
+ranked fallback and their combination. Equivalent examples cover immediate
+insertion with batch reoptimization and Alonso–Mora assignment. Native
+optimization requires a Gurobi license; the bundled small examples fit its
+restricted license. See the [workflow](docs/POLICY_COMPARISON.md) for all commands
+and the existing city-data/AV study tools.
+
+Each report includes policy parameter differences, per-seed KPIs, paired changes,
+uncertainty, common-served rider diagnostics, figures and source/input/output
+hashes. Repeated reference runs count once; incompatible assumptions and source
+versions remain separate. Raw results and archived vehicle specifications support
+repeatable reporting.
+
+| Question | Read together |
+| --- | --- |
+| Does matching serve more demand? | Completion, offer/rejection decisions, served waits, same-served waits and lateness |
+| Who receives service? | Eligible/other rider coverage and waits, AV trip share, human trip transfers and fixed-driver activity |
+| What does allocation cost? | AV occupancy/idle time, passenger time, total/empty/repositioning distance and modeled human earnings |
+| Is a change credible? | Paired seeds, physical completion/product checks, declared parameter differences and input/source strata |
+
+Use results as conditional simulation evidence. Driver behavior, AV adoption,
+service areas and fleet supply include assumptions; public completed-trip data
+cannot identify unserved demand, online supply or real AV welfare. The simulator
+retains adverse effects and does not automatically declare a winning policy.
+
+## Implementation and study history
+
+Useful completed additions remain available. The phase numbers describe the
+engineering history; they do not imply further phases are required.
+
+<details>
+<summary>Completed capabilities, study guides and historical validation</summary>
+
+Phase 0 adds upstream
 regression references and baseline bug fixes; [Phase 1](docs/PHASE_1.md) adds
 opt-in independent random streams and audited paired policy evaluation.
 [Phase 2](docs/PHASE_2.md) adds accepted pickup/dropoff promises and optional
@@ -65,6 +116,11 @@ activity metrics. **465 tests and99 real physical records** pass;
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 
+
+</details>
+
+## Upstream FleetPy documentation
+
 [![GitHub stars](https://img.shields.io/github/stars/TUM-VT/FleetPy?style=social)](https://github.com/TUM-VT/FleetPy)  
 FleetPy is an open-source **fleet simulation framework** for modeling and controlling vehicle fleets in **ride-sharing, autonomous mobility, and on-demand transport** applications.  
 
@@ -93,8 +149,8 @@ Get up and running in just a few commands!
 
 ```bash
 # Clone the repository
-git clone https://github.com/TUM-VT/FleetPy.git
-cd FleetPy
+git clone https://github.com/xiaoyu-su/Mobility_simulation.git
+cd Mobility_simulation
 
 # Set up the virtual environment
 conda env create -f environment.yml
@@ -104,7 +160,7 @@ conda activate fleetpy
 python studies/example_study/run_examples.py
 ```
 
-✔ The results will be saved in `FleetPy/studies/example_study/results/`  
+✔ The results will be saved in `Mobility_simulation/studies/example_study/results/`
 ✔ To visualize the results, run:  
 
 ```bash
@@ -121,8 +177,8 @@ Ensure you have [Anaconda](https://www.anaconda.com/products/distribution) insta
 
 ```bash
 # Fetch the latest updates
-git clone https://github.com/TUM-VT/FleetPy.git
-cd FleetPy
+git clone https://github.com/xiaoyu-su/Mobility_simulation.git
+cd Mobility_simulation
 
 # Set up a Conda environment
 conda env create -f environment.yml
@@ -134,14 +190,14 @@ conda activate fleetpy
 For improved road network routing efficiency, compile the C++ road router:
 
 ```bash
-cd FleetPy/src/routing/road/cpp_router
+cd src/routing/road/cpp_router
 python setup.py build_ext --inplace
 ```
 
 To enable public transport routing, compile the C++ RAPTOR router:
 
 ```bash
-cd FleetPy/src/routing/pt/cpp_raptor_router
+cd src/routing/pt/cpp_raptor_router
 python setup.py build_ext --inplace
 ```
 
@@ -199,7 +255,7 @@ python studies/example_study/run_examples.py
 ```
 
 ✔ The output will be stored in:  
-📂 `FleetPy/studies/example_study/results/`  
+📂 `Mobility_simulation/studies/example_study/results/`
 
 ### 📊 Output Files
 

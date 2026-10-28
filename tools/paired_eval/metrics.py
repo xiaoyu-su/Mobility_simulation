@@ -17,9 +17,11 @@ METRICS = ["idle_time_s", "driving_time_s", "occupied_time_s", "online_time_s",
            "modeled_net_earnings_cent", "earnings_per_online_hour_cent"]
 
 
-def per_driver_metrics(result_directory, clip_initial_inactivity=False):
+def per_driver_metrics(result_directory, clip_initial_inactivity=False, specification_directory=None):
     """Account recorded activity; optionally left-truncate initial parked time.
 
+    An explicit specification directory reads archived cost assumptions without
+    rewriting raw configuration paths; the default retains existing behavior.
     TimeBasedFS can start an initial inactive leg one grid tick before start.
     Only stationary, empty, toll-free out-of-service time may be truncated;
     moving or overlapping records remain invalid. Raw output is never changed.
@@ -50,7 +52,7 @@ def per_driver_metrics(result_directory, clip_initial_inactivity=False):
         if not assigned.issubset(set(map(tuple, roster[keys].to_numpy()))):
             raise ValueError("A completed ride references an unknown vehicle")
 
-    cost_directory = Path(config["directories"][G_DIR_VEH])
+    cost_directory = Path(specification_directory) if specification_directory is not None else Path(config["directories"][G_DIR_VEH])
     costs = {}
     for vehicle_type in roster.vehicle_type.unique():
         specification = pd.read_csv(cost_directory / f"{vehicle_type}.csv", header=None, index_col=0).iloc[:, 0]

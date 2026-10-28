@@ -3,6 +3,13 @@
 This project extends TUM-VT/FleetPy from upstream commit
 `c813728b6d188df8dd7fd5d3d36dcb0a55c898a2`.
 
+The current user-facing product is a matching-policy comparison simulator with
+human/AV allocation diagnostics. The [completion review](docs/PROJECT_COMPLETION.md)
+reconciles the original proposals, tests and remaining empirical limits. Use the
+[comparison workflow](docs/POLICY_COMPARISON.md) and [KPI guide](docs/KPI_GUIDE.md)
+to run policies and interpret movements. Completed studies below remain evidence;
+this review does not add another numbered phase.
+
 | Phase | Delivered capability | Evidence |
 | --- | --- | --- |
 | 0: baseline hygiene | Independent upstream references, exact example regressions, fixes for retry/rejection/forecast handling, default debug dumps disabled | `UPSTREAM_COMPARISON.md` |

@@ -1,0 +1,62 @@
+{
+  "anchored_physical_runs": 90,
+  "anchored_unique_conditions": 81,
+  "archive_sha256": "0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-16-av-fleet-share",
+  "committed_source_and_fourteen_configurations_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "historical_full_cases": 396,
+  "historical_real_controls": 9,
+  "implementation_commit": "90fb45d43653670765c8c05f88db5f2a15ce0371",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; final receipt push, remote equality, identities and clean checkout checked next.",
+  "pytest_passed": 465,
+  "real_policy_runs": 99,
+  "regression_full_simulations": 441,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "scope": "AV replacement-share robustness with optional fixed placement anchor, retained search-partition controls and unchanged legacy matching; no calibrated AV supply claim",
+  "source_digest": "e3e70ac0eb6d716b90491ece20701abad3afb61da924464a427a5e952a29dc5c",
+  "source_files": 277,
+  "unique_conditions": 90,
+  "validation_json_sha256": "80d48c2b786e459ae970db7632b76f4a0b7662d906928750726543b659b24191",
+  "verified_remote_implementation_tip": "90fb45d43653670765c8c05f88db5f2a15ce0371",
+  "verified_utc": "2026-10-28T02:50:42.410022+00:00",
+  "csv_line_ending_verification": {
+    "all_other_files_standard_whitespace_check_passed": true,
+    "csv_standard_crlf_check_passed": true,
+    "csv_git_blob_matches_exact_hashed_evidence": true,
+    "csv_sha256": "3aa66334fab61d2eec2b2a8ace0b0900150690c3ccccf0ffd222975e062fea3c",
+    "commands": [
+      [
+        "git",
+        "diff",
+        "--check",
+        "HEAD^",
+        "HEAD",
+        "--",
+        ".",
+        ":(exclude)docs/validation/phase16/all_human_trajectory_identity.csv"
+      ],
+      [
+        "git",
+        "-c",
+        "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+        "diff",
+        "--check",
+        "HEAD^",
+        "HEAD",
+        "--",
+        "docs/validation/phase16/all_human_trajectory_identity.csv"
+      ]
+    ],
+    "raw_bytes_unchanged": true
+  },
+  "archive_coverage_checks_sha256": "b679459cca83a5bbc950b7eaf9f922e608378cc4efdea98caa85eb987fbb1b64"
+}

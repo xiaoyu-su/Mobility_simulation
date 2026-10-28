@@ -4078,3 +4078,12 @@ and will be committed locally before the actual push attempt is recorded.
 - Final archive: **16704 members**, **11 parts**, **343071415 bytes**, SHA256 `0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb`. Member/part byte readback passes and every upload file is below100MB.
 - Additional `archive_coverage_checks.json` includes its verifier source and verifies exact restorable index coverage for every recorded full/focused/window/real output, all12 fresh inputs, both277-file source snapshots and both14-config snapshots: `{'full_raw_files': 7045, 'window_files': 584, 'focused_raw_files': 831, 'study_manifests': 5, 'real_raw_files': 1839, 'input_files': 252, 'source_files': 554, 'configuration_files': 28}`. No tested raw or source/configuration file is missing from the archive/explicit canonical restore entries.
 - Stage only the new source/tests/configs/phase guide/evidence and project/work logs. Commit/push uses Xiaoyu Su as BOTH author and committer. Actual push and remote-tip/Git-blob checks follow; no force push, secrets or repository-selection changes.
+
+
+### Step 10: publish and verify GitHub
+
+- Implementation `90fb45d43653670765c8c05f88db5f2a15ce0371` is pushed to `phase-16-av-fleet-share` and `git ls-remote` verifies that exact tip. Both author and committer are Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com.
+- All277 committed source/dependency blobs and14 configs match the frozen tested bytes. The465 tests,441 complete regression simulations,32 restored windows and99 real physical runs belong to those bytes. All270 non-anchor existing files, legacy behavior and historical evidence remain unchanged.
+- A documentation-only receipt commit follows, then final remote equality, both identities, source/config/archive Git blobs and clean checkout are verified. No secrets or repository-selection changes.
+
+- Final Git formatting review: the default check flags CRLF in the generated `all_human_trajectory_identity.csv`. These are valid CSV line endings, not altered data. All other files pass the standard check; the CSV passes with `core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol`. Its committed Git blob exactly matches the hashed/archived evidence (`3aa66334fab61d2eec2b2a8ace0b0900150690c3ccccf0ffd222975e062fea3c`). Preserve raw bytes; commands and result are included in the publication receipt. This needs no simulation rerun because source/config/data bytes are unchanged.

@@ -4315,3 +4315,10 @@ and will be committed locally before the actual push attempt is recorded.
 - Archive coverage and prepublication checks pass: all285 source/dependency files, five new examples, all20 actual root configurations, raw records, runtime, report/figure hashes, canonical restores, documentation links and protected historical references verify. All276 other previous source files and prior evidence remain unchanged.
 - Complete archive: 29591 verified logical files, 11 parts, 363458506 bytes; SHA256 `f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9`. Each member/part was read back, and every recorded full/focused/superseded/window/current/historical input/output/source path has exact restorable coverage.
 - After exact part reconstruction and prepublication verification, release only the redundant logical gzip cache to reserve Git object/push space. All numbered parts, original raw/source/input paths and bytes remain. `cache_release.json` records size/SHA, exact restore command and verifier source; previous archives and unique data remain untouched.
+
+
+### Publish and verify GitHub
+
+- Implementation `ba8e2647004489e9047e41e7b9482d67637906f3` is pushed to `project-completion-audit`. `git ls-remote` verifies that exact tip. Both author and committer are Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com.
+- All285 committed Python/dependency blobs and five supplied example configs match the frozen tested bytes. The485 tests,509 regression simulations,32 restored windows,68 focused simulations and57 fresh demonstration records belong to those bytes. The72 historical records retain their own simulation sources.
+- A documentation-only receipt commit follows. Final remote equality, both identities, source/config/archive Git blobs and a clean checkout are verified afterward. No forced push, secrets or repository-selection changes.

@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "branch": "project-completion-audit",
+  "implementation_commit": "ba8e2647004489e9047e41e7b9482d67637906f3",
+  "verified_remote_implementation_tip": "ba8e2647004489e9047e41e7b9482d67637906f3",
+  "verified_utc": "2026-10-28T07:50:12.350022+00:00",
+  "author": {
+    "name": "Xiaoyu Su",
+    "email": "209944670+xiaoyu-su@users.noreply.github.com"
+  },
+  "committer": {
+    "name": "Xiaoyu Su",
+    "email": "209944670+xiaoyu-su@users.noreply.github.com"
+  },
+  "source_digest": "7cdb1f6cd12b9a1fa0b9c951ed4aa7779d13e61cc65d1b6d37b4eca6c0ed7418",
+  "source_files": 285,
+  "committed_source_and_five_configurations_match_frozen_snapshot": true,
+  "all_used_root_configuration_blobs_verified": 20,
+  "pytest_passed": 485,
+  "regression_full_simulations": 509,
+  "restored_windows": 32,
+  "focused_full_simulations": 68,
+  "fresh_demonstration_physical_records": 57,
+  "fresh_unique_conditions": 42,
+  "reference_replays": 15,
+  "historical_records_readonly": 72,
+  "historical_full_cases": 441,
+  "archive_sha256": "f1c90b5f2f6b8c51608ed1ecf76c4538a388b3c5c88f28ef5982b1be946a98e9",
+  "validation_json_sha256": "b7b8f3dd92031e2fda5275a48a9bc938e0152b5b20c6654e739c62c0fb9f9e18",
+  "scope": "Project/proposal completion audit and sealed policy/KPI workflow; matching/AV algorithms unchanged, empirical calibration limits retained",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; final receipt push/remote equality/identities/clean checkout checked next"
+}

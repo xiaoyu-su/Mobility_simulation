@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "35666eb97f694de7de795fa3e762973b83972897bbfec6647acd20351748c3ed",
+  "author": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "branch": "phase-15-opt-in-robustness",
+  "committed_source_and_eleven_configurations_match_frozen_snapshot": true,
+  "committer": {
+    "email": "209944670+xiaoyu-su@users.noreply.github.com",
+    "name": "Xiaoyu Su"
+  },
+  "historical_full_cases": 360,
+  "historical_real_controls": 27,
+  "implementation_commit": "57efd353884ce47161560fa7deda5d383126f8aa",
+  "note": "Implementation pushed and remote-verified before this documentation-only receipt; final receipt push, remote equality, identities and clean checkout checked next.",
+  "pytest_passed": 452,
+  "real_policy_runs": 90,
+  "regression_full_simulations": 396,
+  "repository": "https://github.com/xiaoyu-su/Mobility_simulation",
+  "restored_windows": 32,
+  "scope": "Nested rider opt-in robustness and fixed-group spillovers; unchanged dispatch policy, no empirically estimated adoption or dynamic rider choice",
+  "source_digest": "34413610b2a4764f0a8dce01f65de5edece6bce01e292a723f819433ba1b88fe",
+  "source_files": 273,
+  "unique_conditions": 81,
+  "validation_json_sha256": "4857ceaa54a618340e0bba1b199eca13f8c4e910f93c3ca3e81d9f76eb55e66f",
+  "verified_remote_implementation_tip": "57efd353884ce47161560fa7deda5d383126f8aa",
+  "verified_utc": "2026-10-28T00:57:42.901645+00:00"
+}

@@ -3928,3 +3928,20 @@ and will be committed locally before the actual push attempt is recorded.
 - `.venv/bin/python /workspace/.setup/phase15/prepublish.py` passes complete source/configuration/runtime/raw/report/archive/restore/figure/link readback. All273 source blobs and11 configurations match the tested snapshots; every old269 source file, historical evidence directory and baseline remains unchanged. All90 physical records,81 unique settings, nine replays,27 historical controls and fixed-group/boundary checks verify again.
 - The final archive has18,600 members in10 upload parts,315,930,718 logical bytes, SHA256 `35666eb97f694de7de795fa3e762973b83972897bbfec6647acd20351748c3ed`. Each member/part is byte-verified and each uploaded file is below GitHub's100MB limit. Main figures and original/derived report hashes remain unchanged.
 - Only the new phase source/tests/configurations, guide, validation/evidence and project/work logs are staged. Commit and push use Xiaoyu Su as BOTH author and committer. A successful earlier dry run establishes access; actual push and remote-tip verification are recorded separately after publication. No force push, secret changes or repository-selection changes.
+
+
+### Step 10: publish as Xiaoyu Su and verify GitHub
+
+- Implementation **`57efd353884ce47161560fa7deda5d383126f8aa`** contains Phase15 opt-in strata/fixed-group
+  diagnostics, tracked assumptions, tests, measured gains/regressions and
+  complete raw/source evidence. Native `git push -u origin phase-15-opt-in-robustness` succeeds;
+  `git ls-remote` returns that exact implementation tip. Both author and
+  committer verify as Xiaoyu Su /209944670+xiaoyu-su@users.noreply.github.com.
+- All273 committed Python/dependency blobs and11 configurations match frozen
+  tested bytes. The452 tests,396 full regression simulations,32 windows and90
+  real physical runs belong to these bytes. All269 previous source files,
+  default policy behavior and historical evidence remain unchanged.
+- Publication receipt binds source/configuration/remote/identity proof. A
+  documentation-only receipt commit follows, with final remote equality,
+  both identities and clean checkout verified after its push. No secrets or
+  saved repository selections are changed.

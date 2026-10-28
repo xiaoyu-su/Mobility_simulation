@@ -1,0 +1,31 @@
+{
+  "source_digest": "e3e70ac0eb6d716b90491ece20701abad3afb61da924464a427a5e952a29dc5c",
+  "verified_utc": "2026-10-28T02:29:39.415483+00:00",
+  "original_and_derived_hashes_verified": true,
+  "files_sha256": {
+    "all_human_trajectory_identity.csv": "3aa66334fab61d2eec2b2a8ace0b0900150690c3ccccf0ffd222975e062fea3c",
+    "fleet_share_sensitivity.png": "c204d492eb8d79f6de2b5dcf34af24b732cd4b0764a1f748f24ba01c2f25491b",
+    "fixed_group_spillovers.csv": "ed2faad2aaa3d02240aa48a946feb04237fd63f55eb5d8f36b6ca40fc41a92d1",
+    "configuration_summary.csv": "ed64419552f09bd79a72beef9e705f87fd38e0c0edad58e8f14921e3226f54d0",
+    "seed_results.csv": "e1fc4bafb08b1d63fae77b23ef24f9e5d488f4806ef7443c573ceb44853b5e94",
+    "manifest.json": "3cf8eb26fcc5a645549df96664aea6f884dbbe315d6694b30943e7fd016bde3b",
+    "independent_seed_checks.csv": "845edf18aa2993ef91ce894e2a20f5ffe6a9f41d5827275057d62ff1604f7ff1",
+    "independent_fixed_group_checks.csv": "8c8dc965a95dd33fb20a020a9e12195410b127913da1fa0368dda084e541d5a7",
+    "fixed_group_results.csv": "56f95b0327e70927873625e99f9528181c1d28bce0f92e3c0c963a0a77626583",
+    "robustness_manifest.json": "6d9923709eded2295659cad4e34bb1df46293d172fbd02efb64a22f1b1c2b07e",
+    "common_rider_effects.csv": "2c22fbf2a50883fcb302473d11484363ec335b2a7f3bd0eec5435903d095eb69",
+    "policy_effects_by_fleet_share.csv": "b5e937f8c9cec262a1441654fbb2bfcb757e9eb8508e4933f11aff1273d5d459",
+    "runtime_environment.json": "59387c7a86370c3021e1cf7ba514935962f7e621145b170f5fa904cd93a5a641",
+    "search_partition_checks.json": "3a344d79a204dfb5990fe536a1468e3c49e34915bf0ef9fccf573082b378c939",
+    "policy_stability_by_city.csv": "46a98c9b1efdd64dea058bfc857fbc90e74ba3ec2775e63eb35d31727ed275a6",
+    "independent_checks.json": "448cf3ba378f8c1c4e0815913e694bc3199f20077039e51222007c760c69d64b",
+    "fleet_share_sensitivity.pdf": "938e75f3c571356246c48ecb704f09ac6bdf6be0e58042a85b035a6e203949c4",
+    "fixed_group_effects.csv": "7f1d25e5f2046dea02f40e79a0d59de2efb444edcf0433b8878d93eb8a87f326",
+    "ROBUSTNESS.md": "faa4bcf119ed804ba4d2447982cc08a4393f4fde5ea1c81a2b3ece9877128e34",
+    "RESULTS.md": "5ea3d672df43ac9e3905d3d016f5e90eeddab646cb9cf2022ccf369057192c89",
+    "paired_effects.csv": "8d8a4059cae8b2a4e4df7914a4f94dd88668ed969a6ceac59ea451d07d88f5b6",
+    "placement_profile_bridge.csv": "cc9d644c17ebc107a1ba37e8f9e9858c405107b5d581d60391c6d84f716e62a9",
+    "late_pickup_records.csv": "a9358353c93f33f2f61afd71da0ed749b884bb10e608b820e47d4c292b637b7d",
+    "control_adjusted_share_effects.csv": "37427a6cd69659f745df9257d316b16c5f1ea584ba2d66e9c691f2b14db64490"
+  }
+}

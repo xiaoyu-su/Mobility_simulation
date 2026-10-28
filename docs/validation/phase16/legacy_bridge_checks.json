@@ -1,0 +1,703 @@
+{
+  "physical_runs": 9,
+  "unique_conditions": 9,
+  "historical_controls": 9,
+  "historical_byte_identical_files": 84,
+  "all_physical_contracts_pass": true,
+  "no_historical_source_retagged": true,
+  "checks": [
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "all_human",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "7d24f717a668f14fc65af025a97610ac538f5427c3a3afba8d17f950d7619ac7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "dc277aadbccc55984c660458a9f01d862963affc24606039936dc7877ce399b8"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "1031b5fccbdb4b14a61acca6a877fb582adb18f6fe3a4a89f1c07b94169dea67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7a600c4ef84d5f3102227ee2afc768457b38265c55cd7c41c16bce24ee680b28"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "f7dbec959bbb5f82f958a79af5354cc81f1487cc446c55fed9e1542a421bd80e"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "0c378ed8f62e750734cfcb6cbb1d9acb152606854c8f5d78cc3910e4bf9461e8"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 319.21461346909786,
+        "within_limit_completed": 585,
+        "within_480s_completed": 585,
+        "late_actual_pickups": 1,
+        "late_actual_pickup_rate": 0.0017064846416382253,
+        "late_actual_pickup_mean_s": 93.30944814330724,
+        "late_actual_pickup_max_s": 93.30944814330724,
+        "full_late_actual_pickups": 5,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/all_human",
+      "output_sha256": {
+        "2-0_op-stats.csv": "dc277aadbccc55984c660458a9f01d862963affc24606039936dc7877ce399b8",
+        "city_report.json": "0c378ed8f62e750734cfcb6cbb1d9acb152606854c8f5d78cc3910e4bf9461e8",
+        "3-0_op-dyn_atts.csv": "f202c97916f767adc516866cb2764ca2238e80bc99ed9f8cdef5cf2df139c10f",
+        "1_user-stats.csv": "7d24f717a668f14fc65af025a97610ac538f5427c3a3afba8d17f950d7619ac7",
+        "city_search_contract.json": "757b58d77b6d1c7de35c1db8747fa5e651f3bd4f3adc0afd0b06ae9b3c1d5dd1",
+        "completion_tail.json": "da197ec5e5a685f22646d5ea38e752fd664810bebf4ac026f01a621f8ee479e4",
+        "00_simulation.log": "8bed2cf4a505c161cbb09293f80239233fd7e6f7246f8e1051b7082600510ce7",
+        "2_vehicle_types.csv": "e0315f68568971941c7dacfe67344757bc9bfeefc9229ebe110d9788c8645dd3",
+        "00_config.json": "74a81aee2cc565b50441c57e920c4e6b4f73f6c89f3a3f2cad09b8e0e3fe192a",
+        "random_streams.json": "f7dbec959bbb5f82f958a79af5354cc81f1487cc446c55fed9e1542a421bd80e",
+        "standard_eval.csv": "1031b5fccbdb4b14a61acca6a877fb582adb18f6fe3a4a89f1c07b94169dea67",
+        "market_input_contract.json": "a5899fc07757ceced189cfeaab76ec7a8a11828f94d559269f8036a9ed7016f4",
+        "standard_mod-0.0_veh_eval.csv": "ce58dfe61e20362f2917997b9a10cc0a0318f92f06bfba38cead948de1e7271d",
+        "final_state.csv": "7a600c4ef84d5f3102227ee2afc768457b38265c55cd7c41c16bce24ee680b28",
+        "initial_placement.csv": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+      }
+    },
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "threshold_0",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "17e1e81d43b62e324ea8f42f6024f1e8f299a26774bb0fa553c61c1d35f59854"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c4befc7bf55a6fcc2e897eb39167daf0ab0faf08962373830167adf04d4a8efe"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "77479ca3fdfac44547f0085ad2a9c969cbc87136ae8c6b0e7dd00e1b528a821e"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e7163cf126d47a3660b5fbc799fb49a5ec174a868878548cd3128be700b9a203"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "d7b2995dad749df3e08e527fff922f83373a5ad9ccae60f57f6604d42977d232"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "066ee71bd5c164bd99ca95d3c36c0b5b99c846e409b5588c83cd7e441a8414ec"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "95da6cda9fbc4a3f6e7ea5c6e61d1e4a86f1761ee11b6ffd211a04c8ef57d56e"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 324.38356107380827,
+        "within_limit_completed": 557,
+        "within_480s_completed": 557,
+        "late_actual_pickups": 1,
+        "late_actual_pickup_rate": 0.0017921146953405018,
+        "late_actual_pickup_mean_s": 35.9854395748589,
+        "late_actual_pickup_max_s": 35.9854395748589,
+        "full_late_actual_pickups": 7,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/threshold_0",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "d7b2995dad749df3e08e527fff922f83373a5ad9ccae60f57f6604d42977d232",
+        "2-0_op-stats.csv": "c4befc7bf55a6fcc2e897eb39167daf0ab0faf08962373830167adf04d4a8efe",
+        "city_report.json": "95da6cda9fbc4a3f6e7ea5c6e61d1e4a86f1761ee11b6ffd211a04c8ef57d56e",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "58b52d36797270bc103e676109f811b0a78e6c32d797d7b9324fd37c67612032",
+        "1_user-stats.csv": "17e1e81d43b62e324ea8f42f6024f1e8f299a26774bb0fa553c61c1d35f59854",
+        "city_search_contract.json": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a",
+        "completion_tail.json": "bd43edf9a009dc00b92fc99da35959386374a53967de6b585b692cf5eb373e29",
+        "00_simulation.log": "47a4e34e41dd42169584501aa0de124b5134e9a9053703cdc4a6a3c66c7fa701",
+        "2_vehicle_types.csv": "1ddca49f1dec4252cf37c94f48afee3f4fa100ab17bf157e55608670733e973b",
+        "00_config.json": "33aa56afb1c07e02c30202bf336e5a83696563098223c27ecacc16f7ade05bbb",
+        "random_streams.json": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c",
+        "standard_eval.csv": "77479ca3fdfac44547f0085ad2a9c969cbc87136ae8c6b0e7dd00e1b528a821e",
+        "market_input_contract.json": "366c705f5222419e1ea8df766194479542c58f0a0791bcf4a93afcb2ac979b72",
+        "standard_mod-0.0_veh_eval.csv": "eea954cf0ef22ff92dbeb5cbdb09e2941b602a8f04fa3ed001bb499bb4e7c884",
+        "av_product_op_0.json": "066ee71bd5c164bd99ca95d3c36c0b5b99c846e409b5588c83cd7e441a8414ec",
+        "final_state.csv": "e7163cf126d47a3660b5fbc799fb49a5ec174a868878548cd3128be700b9a203",
+        "initial_placement.csv": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d",
+        "av_report.json": "5961f21364d5843159f822a88e2c2ce22b02d433a0eca983a5ecd331b788a597"
+      }
+    },
+    {
+      "city": "munich",
+      "seed": 0,
+      "arm": "threshold_240",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "500e9e12157c35c6c781f3e51f6d9769b2d866d754a9d63bcb955ea36ea025c1"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "c32ab1b75a5d0858be016feddc7079e9ad2740a5dca453f1d57358af766c6582"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "37344da772130294ac78cf42a46b2486dc86b92949debdda557f7cea68176ea3"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "7b7164fe770a73b074e497338eefc3c3772b0a5f7701e0582017384f0880e830"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "70f33fc8aa76f5e6c87f1916fcf4d7118ce9da85bcad9f7b67a86028f5b1742f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ce803f89b0448c1123cb39ba5395e5ceffde27e0af3ead26e83f9fb5e59364f2"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "bd8fe0948b42a3b38a695c152817dde815b76a58c11ee16e41da9027b36d1dee"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 331.34681453434763,
+        "within_limit_completed": 544,
+        "within_480s_completed": 544,
+        "late_actual_pickups": 0,
+        "late_actual_pickup_rate": 0.0,
+        "late_actual_pickup_mean_s": 0.0,
+        "late_actual_pickup_max_s": 0.0,
+        "full_late_actual_pickups": 6,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/munich/seed_0/threshold_240",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "70f33fc8aa76f5e6c87f1916fcf4d7118ce9da85bcad9f7b67a86028f5b1742f",
+        "2-0_op-stats.csv": "c32ab1b75a5d0858be016feddc7079e9ad2740a5dca453f1d57358af766c6582",
+        "city_report.json": "bd8fe0948b42a3b38a695c152817dde815b76a58c11ee16e41da9027b36d1dee",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "e0bdb6e2609db6d401f3a2d991b7111176b7749462e129ab74d438cdada1b811",
+        "1_user-stats.csv": "500e9e12157c35c6c781f3e51f6d9769b2d866d754a9d63bcb955ea36ea025c1",
+        "city_search_contract.json": "65c8eb577ff6e303102fdcd248b88999287e788534c20cb5c9b3618fdcd33f6a",
+        "completion_tail.json": "da197ec5e5a685f22646d5ea38e752fd664810bebf4ac026f01a621f8ee479e4",
+        "00_simulation.log": "bbbf7eee90973ec8a7bbe3326b9f3a188a11ccd617df761255f72b0381f6be84",
+        "2_vehicle_types.csv": "1ddca49f1dec4252cf37c94f48afee3f4fa100ab17bf157e55608670733e973b",
+        "00_config.json": "c0da8ceae76b72f9c8663706518b490a296f395ac8e7dac78bc2857602a4e8de",
+        "random_streams.json": "4c9f5e00e5de896c3a80e6b0afa9133a1698a554e276000da0006a7c4274977c",
+        "standard_eval.csv": "37344da772130294ac78cf42a46b2486dc86b92949debdda557f7cea68176ea3",
+        "market_input_contract.json": "6d15d9589aa289d4487fb10e669947420c55e7b8e8a2058f1518e093c0d59b05",
+        "standard_mod-0.0_veh_eval.csv": "3614d291c9b81f578606d2355fddebf21d1640b332da2d240284d8cebf207d11",
+        "av_product_op_0.json": "ce803f89b0448c1123cb39ba5395e5ceffde27e0af3ead26e83f9fb5e59364f2",
+        "final_state.csv": "7b7164fe770a73b074e497338eefc3c3772b0a5f7701e0582017384f0880e830",
+        "initial_placement.csv": "17b95631944fe322d6c83bb2220de2ed85c2b3010a1528ccc0b091d7e950e09d",
+        "av_report.json": "6a45918a68fa05bce571e730797b0d9a91de659ee0280d70c88ee15db94c1bde"
+      }
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "all_human",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "a44123cd833b0f12f2fc20d1d73973f1b86946a0648b68526d3bddc6dee31daf"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "d713f8738edb15742f32a740b6e71e28dfb8fb2155cc66ddc730993686376f73"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "d3421e7d9b7526bf225bbb07de297a06720d693fef86bc9e515146f214ff5ee8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "e2a04f752da59cf2440bcbe117d8a7f6ba7f1b61547a24449c699d43da4825e8"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "dcc5aae7a6bb98a5b862f48f32d4a3836c917764370c38b2c5fd59582c43b65a"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "109b6f9de9ef9faac19f8803a9341dd72a3a43c9e55762b49747bff6c0b2c190"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 320.632608935469,
+        "within_limit_completed": 528,
+        "within_480s_completed": 528,
+        "late_actual_pickups": 1,
+        "late_actual_pickup_rate": 0.001890359168241966,
+        "late_actual_pickup_mean_s": 2.4549941202349146,
+        "late_actual_pickup_max_s": 2.4549941202349146,
+        "full_late_actual_pickups": 8,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/all_human",
+      "output_sha256": {
+        "2-0_op-stats.csv": "d713f8738edb15742f32a740b6e71e28dfb8fb2155cc66ddc730993686376f73",
+        "city_report.json": "109b6f9de9ef9faac19f8803a9341dd72a3a43c9e55762b49747bff6c0b2c190",
+        "3-0_op-dyn_atts.csv": "a4e13417e863818a36751c0d7ef710db69ad36113895ddeb46b4ec25f4c6410a",
+        "1_user-stats.csv": "a44123cd833b0f12f2fc20d1d73973f1b86946a0648b68526d3bddc6dee31daf",
+        "city_search_contract.json": "9564a47040fac29f8db10bd40dbe7a199e099956074b77d2d4a63765f27a0243",
+        "completion_tail.json": "9fb6ea6e818af914d752727b258d25048be1ac7a9cc14df742ba2bbe839f3c19",
+        "00_simulation.log": "f49b6e1584cb6205020894900664d524a74d7cb1eae4b4348f3aab58127ffab7",
+        "2_vehicle_types.csv": "92432c4758ae4e9f012b9137bb68cbed68dc021dc966ba036a4d6aa35107b664",
+        "00_config.json": "b493e7ac87ce4d5f2a2c154abe77e43c3e99f76f5986a3c350184c13c51361b1",
+        "random_streams.json": "dcc5aae7a6bb98a5b862f48f32d4a3836c917764370c38b2c5fd59582c43b65a",
+        "standard_eval.csv": "d3421e7d9b7526bf225bbb07de297a06720d693fef86bc9e515146f214ff5ee8",
+        "market_input_contract.json": "da77aa8a242334529c1d7b2a9a0ca6658245d98e7609299147f6d066265128f3",
+        "standard_mod-0.0_veh_eval.csv": "ff5738798848aab497de2d8c427a30f8a466e65255fb546616a99257af374bd1",
+        "final_state.csv": "e2a04f752da59cf2440bcbe117d8a7f6ba7f1b61547a24449c699d43da4825e8",
+        "initial_placement.csv": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+      }
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "threshold_0",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "20e67d766dedc03a0366d403915ce1f34e10ce05438e35889a038442d1dc2bf9"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "4c99e395b22ab16d7d36b2977bad37373b20fea59a088ddedc7df8044eb3a191"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "cb558f9b7b3d870b838ced93ba71c919fd4a3751708994b45777d0eab3ad633a"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "6a076ad84c327b6a28d3d07f203f3bad1b852e765d115004f7d55d086e83c00c"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "0bc48e5e65aa6df33d4a1b6a974da66a07cf88cb0212c316a3b111306d6cd6cb"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "b3afb5e2df65185f6a9c53d98dcab7258063f31603cc9f3db626821797fada04"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "542eb4666c46958b84d033ff869350b8589a0aaf8f7436d60bef9d1477d5a190"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 316.66615755782095,
+        "within_limit_completed": 544,
+        "within_480s_completed": 544,
+        "late_actual_pickups": 2,
+        "late_actual_pickup_rate": 0.003663003663003663,
+        "late_actual_pickup_mean_s": 20.92963786026303,
+        "late_actual_pickup_max_s": 39.40428160029114,
+        "full_late_actual_pickups": 11,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/threshold_0",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "0bc48e5e65aa6df33d4a1b6a974da66a07cf88cb0212c316a3b111306d6cd6cb",
+        "2-0_op-stats.csv": "4c99e395b22ab16d7d36b2977bad37373b20fea59a088ddedc7df8044eb3a191",
+        "city_report.json": "542eb4666c46958b84d033ff869350b8589a0aaf8f7436d60bef9d1477d5a190",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "7670a452cc2761243eeb52c6045aa347566b712d152a6758b92d06f45597510c",
+        "1_user-stats.csv": "20e67d766dedc03a0366d403915ce1f34e10ce05438e35889a038442d1dc2bf9",
+        "city_search_contract.json": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55",
+        "completion_tail.json": "6e6ce14bda24306e34b6717b38d59298096ac06abb7e025a47223bd6bc3c3274",
+        "00_simulation.log": "5fb898a6dd998fcd67fbac313c67f7852c62e85606469a74b5cb91093cc89fa8",
+        "2_vehicle_types.csv": "40b2df0998bf2fc2b3d35aa07e15645fa3944b6fadd1f853e00b4095d63e01ee",
+        "00_config.json": "38492bc4ff215847792ddb29fbb8fad997c11e7a06c1eff44a4f6b2f3382650e",
+        "random_streams.json": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232",
+        "standard_eval.csv": "cb558f9b7b3d870b838ced93ba71c919fd4a3751708994b45777d0eab3ad633a",
+        "market_input_contract.json": "43edb408d5dde4da5054f824a2053fdfff57800ae454e1589e6211c5d310571c",
+        "standard_mod-0.0_veh_eval.csv": "3cd06b538bd4070f9c927e969131c5da9e9b12cc4dfd0d6f052a2c371f827838",
+        "av_product_op_0.json": "b3afb5e2df65185f6a9c53d98dcab7258063f31603cc9f3db626821797fada04",
+        "final_state.csv": "6a076ad84c327b6a28d3d07f203f3bad1b852e765d115004f7d55d086e83c00c",
+        "initial_placement.csv": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536",
+        "av_report.json": "464a1caa3095f0f201d0df0ea80c5012cbacc46196eb2f507f328c1c8909318d"
+      }
+    },
+    {
+      "city": "chicago",
+      "seed": 0,
+      "arm": "threshold_240",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "318dcb3fcca83717dc5ec1a584f372dd0319cc0b408666295a6499db45f349d7"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "837e8d329ff2c66faa66d04ca77c0542910eaf15330b3b3ddd8eeb11d4e94f7e"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "e09743ac027a0e65851ee4c1bb97d9b0c06e76053fa0087db85b2b9a71050c67"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "a8aaa8b92a268116d7c7f0e9af6b15c094d9c40212aa8bec072268f123aa2852"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "1e69f6aecaaf94fb833b978e75dc224d6066581e452718fdb7c5497eb65e7e7f"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "ae5fd1f34e938143ee2c4cf331fad8e61c12aa4e1fbfde6a60dcbcbeb406f29d"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "9396b316521f05f1f2e3b997c770363c83db6acbf8cf739ce3c676bae1a50dca"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 315.75958750953384,
+        "within_limit_completed": 551,
+        "within_480s_completed": 551,
+        "late_actual_pickups": 3,
+        "late_actual_pickup_rate": 0.005415162454873646,
+        "late_actual_pickup_mean_s": 30.51353331619369,
+        "late_actual_pickup_max_s": 35.278718943147396,
+        "full_late_actual_pickups": 15,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/chicago/seed_0/threshold_240",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "1e69f6aecaaf94fb833b978e75dc224d6066581e452718fdb7c5497eb65e7e7f",
+        "2-0_op-stats.csv": "837e8d329ff2c66faa66d04ca77c0542910eaf15330b3b3ddd8eeb11d4e94f7e",
+        "city_report.json": "9396b316521f05f1f2e3b997c770363c83db6acbf8cf739ce3c676bae1a50dca",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "bd20e20d663a83f8153ace274122a82e16d6ded8ad56a109468abe3427501f9f",
+        "1_user-stats.csv": "318dcb3fcca83717dc5ec1a584f372dd0319cc0b408666295a6499db45f349d7",
+        "city_search_contract.json": "1104302f7aeaa0c727d7939ca51504539ea503abb6c88794320de86acdd60e55",
+        "completion_tail.json": "2db9c4900c7a8a09ad0816854222af25890b4f1c30eeaaedb1bb285bcc6cdbdc",
+        "00_simulation.log": "16264f8d13eb7372531ccc5189a4039e7a2b2e6abe310e73784967a947a7daf8",
+        "2_vehicle_types.csv": "40b2df0998bf2fc2b3d35aa07e15645fa3944b6fadd1f853e00b4095d63e01ee",
+        "00_config.json": "1e6f137bae6a561ce6ee4d12307e05447d2e9b9f1fc8ef71606670551cec7a40",
+        "random_streams.json": "5406b12f2a33fbad3990d92a709d43c1c779bca03dab6b700f0d3e2d87f59232",
+        "standard_eval.csv": "e09743ac027a0e65851ee4c1bb97d9b0c06e76053fa0087db85b2b9a71050c67",
+        "market_input_contract.json": "cc7ef86a332c98974b065ddc6386189371a31b992bcac539273f02c592bd28d3",
+        "standard_mod-0.0_veh_eval.csv": "d041c76a4e4de8d31a8d8ca0cf93384abffb3b9dcb4c980fe21426dd1fdb52a6",
+        "av_product_op_0.json": "ae5fd1f34e938143ee2c4cf331fad8e61c12aa4e1fbfde6a60dcbcbeb406f29d",
+        "final_state.csv": "a8aaa8b92a268116d7c7f0e9af6b15c094d9c40212aa8bec072268f123aa2852",
+        "initial_placement.csv": "938a48175a2dc7198cc7349a293abf9f42a20807359de7abda0b2949eb666536",
+        "av_report.json": "9d8a50a0b85651f5232cfd25234f765485b2c364fc4c62f002750ca98ca973e1"
+      }
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "all_human",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "3a9b8853ead28f0bc8d2b9e41af374df5d6d95dd068332318ce843e96fec649c"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "30db1f80a31929e1bd5b74c05c2c928e4c3ae2fa1203270bb35dc94d644caed9"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "fdc0b6e2763bd3468890529c7f4757370d762961c65265ebee4e1c107a21c395"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "de2d71eedb738070b0f60c555287310d303bac193d9011f38990164b98193097"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "81594dc9404e78fded659a646e47ffe439b7c71604990621424f15194cc39242"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "72be662feed31273f2359b7c90ec21e9c0b941c90d3b9d60136da7d0f72205e2"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 245.8556306733431,
+        "within_limit_completed": 2447,
+        "within_480s_completed": 2447,
+        "late_actual_pickups": 17,
+        "late_actual_pickup_rate": 0.006899350649350649,
+        "late_actual_pickup_mean_s": 8.812352941176334,
+        "late_actual_pickup_max_s": 28.349999999998545,
+        "full_late_actual_pickups": 19,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/all_human",
+      "output_sha256": {
+        "2-0_op-stats.csv": "30db1f80a31929e1bd5b74c05c2c928e4c3ae2fa1203270bb35dc94d644caed9",
+        "city_report.json": "72be662feed31273f2359b7c90ec21e9c0b941c90d3b9d60136da7d0f72205e2",
+        "3-0_op-dyn_atts.csv": "6fe14842be5aeb50a83988deee62b9770d8a8f8939eb6c98b20f5145c460b994",
+        "1_user-stats.csv": "3a9b8853ead28f0bc8d2b9e41af374df5d6d95dd068332318ce843e96fec649c",
+        "city_search_contract.json": "92ceb0c9c3fbbba61effb756d39f41b986d880642ff1b302276c2c77006164a9",
+        "completion_tail.json": "631b787ed5c7499edcb223cf53a25bdb662c4ff48e7bc7b1eec1b085d33358a1",
+        "00_simulation.log": "d408d24d8b85de8c56bb98a01363167a1616cd678b3a2e45d8803b71ba0fa674",
+        "2_vehicle_types.csv": "ea1a2cba0faea25d055989caabbab2ba1b06eee4b7c9355ca78ff387bdaab187",
+        "00_config.json": "561673cc53453fb93812543d2fdcea5606a4a6c57daa7b7abb8c17817e0ad553",
+        "random_streams.json": "81594dc9404e78fded659a646e47ffe439b7c71604990621424f15194cc39242",
+        "standard_eval.csv": "fdc0b6e2763bd3468890529c7f4757370d762961c65265ebee4e1c107a21c395",
+        "market_input_contract.json": "a86d6d51455eee8b2a43eb0ad6d5c6f2fa040830d2d1b72e2248a68e9c67e72d",
+        "standard_mod-0.0_veh_eval.csv": "8de6cfcd7308a0e223d031d2d941306b4806b0ed7320bea91be3861f12212a01",
+        "final_state.csv": "de2d71eedb738070b0f60c555287310d303bac193d9011f38990164b98193097",
+        "initial_placement.csv": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+      }
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "threshold_0",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "18d02813b5cb1dd3a1ff12e401c0fe31c3d0822f530951480f4b7f83539e82ca"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "2e58e9bd536c5c640fd5cd5396bd80e3f5d833b0344eac6b1f4da753bae4eeac"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "450b3f2da5df1a08ef10b4c8a1a380f7b045accfbb07dcdb53cf894129c409b8"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "3fa83b6d90755c0c055826766efb588b8febc45a8a0b00090d0b6a49c6c7e311"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "cda9b03cadafc86dc2746e51deba68f73d1f07990c9624d9f06b99711910a7a0"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "937ccd7d8c5ac3c6f7ecdbd026e30df6ebf3d2a37138a040154ecfa00ba03a8d"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "fa5359c8cd9143d1b151cb574fb30d7c49fd89e76eb9f1f5129cb8a0f76fc202"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 251.94692771251002,
+        "within_limit_completed": 2402,
+        "within_480s_completed": 2402,
+        "late_actual_pickups": 22,
+        "late_actual_pickup_rate": 0.009075907590759076,
+        "late_actual_pickup_mean_s": 7.126363636363584,
+        "late_actual_pickup_max_s": 24.840000000000146,
+        "full_late_actual_pickups": 24,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_0",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "cda9b03cadafc86dc2746e51deba68f73d1f07990c9624d9f06b99711910a7a0",
+        "2-0_op-stats.csv": "2e58e9bd536c5c640fd5cd5396bd80e3f5d833b0344eac6b1f4da753bae4eeac",
+        "city_report.json": "fa5359c8cd9143d1b151cb574fb30d7c49fd89e76eb9f1f5129cb8a0f76fc202",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "e220dc8b3e85ac19c6d6921b830f99101d5e21b5c35b3936e12f38cdd84b4a9b",
+        "1_user-stats.csv": "18d02813b5cb1dd3a1ff12e401c0fe31c3d0822f530951480f4b7f83539e82ca",
+        "city_search_contract.json": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c",
+        "completion_tail.json": "631b787ed5c7499edcb223cf53a25bdb662c4ff48e7bc7b1eec1b085d33358a1",
+        "00_simulation.log": "5966a6435dfda41bf8d61c823e18a64f419ffe0ca2bc8953418ebcc40fd69cae",
+        "2_vehicle_types.csv": "a0993b21b12d1f63adda9dd7608121a5e00a71d19e2df3dafcff91853c667398",
+        "00_config.json": "5ed26de3648ecb87126f57b82f3088ed40d8da1ed8e62dc191c3b40fbb786f6e",
+        "random_streams.json": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c",
+        "standard_eval.csv": "450b3f2da5df1a08ef10b4c8a1a380f7b045accfbb07dcdb53cf894129c409b8",
+        "market_input_contract.json": "0e75667b05888a1aecaf1faeca47e7322464f3307bd86d3aec19a9dbb980fcba",
+        "standard_mod-0.0_veh_eval.csv": "b4d207794d21a6e79074ddc9a69a138b85329547c5a93ac9d36765306e64b778",
+        "av_product_op_0.json": "937ccd7d8c5ac3c6f7ecdbd026e30df6ebf3d2a37138a040154ecfa00ba03a8d",
+        "final_state.csv": "3fa83b6d90755c0c055826766efb588b8febc45a8a0b00090d0b6a49c6c7e311",
+        "initial_placement.csv": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a",
+        "av_report.json": "ad384f735a8466ef6447bade3495daf3c510577b3aede39564d99a196b20be54"
+      }
+    },
+    {
+      "city": "manhattan",
+      "seed": 0,
+      "arm": "threshold_240",
+      "all_physical_contracts_pass": true,
+      "files": [
+        {
+          "file": "1_user-stats.csv",
+          "sha256": "9702f7cebf307d8c5d64d96a1ed2e8e3bf0446dd8b10f6d361a523a4f1e5d354"
+        },
+        {
+          "file": "2-0_op-stats.csv",
+          "sha256": "5a4ce60638f48b7a5eb2dc6da106b10d7fbc644e14a6a4c7399311535549e91d"
+        },
+        {
+          "file": "standard_eval.csv",
+          "sha256": "5ca5092b0ff6de9217362fde463aa8d97ae7709eb097e895b89e31ac4ac76e21"
+        },
+        {
+          "file": "final_state.csv",
+          "sha256": "fbe3660c8881f332676961c225bdd2b4e0d83772fd87545f10a2fde28f49de86"
+        },
+        {
+          "file": "initial_placement.csv",
+          "sha256": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a"
+        },
+        {
+          "file": "random_streams.json",
+          "sha256": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c"
+        },
+        {
+          "file": "city_search_contract.json",
+          "sha256": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c"
+        },
+        {
+          "file": "av_dispatch_op_0.csv",
+          "sha256": "a5ea3eec46e3c14c70b4c3c467e228eefa90a6605f8582be50806166ad4bb07c"
+        },
+        {
+          "file": "av_product_op_0.json",
+          "sha256": "fa154955c8f3faef72a5f4a67474a0c276d8693060318eeac83f3f2d6e7edfac"
+        },
+        {
+          "file": "city_report.json",
+          "sha256": "abf1a8c7a327cdb1e739140c18ab6346d14329957536824f9519efe05218a3e8"
+        }
+      ],
+      "timing": {
+        "offered_wait_mean_s": 252.14966728369475,
+        "within_limit_completed": 2419,
+        "within_480s_completed": 2419,
+        "late_actual_pickups": 18,
+        "late_actual_pickup_rate": 0.007386130488305293,
+        "late_actual_pickup_mean_s": 7.889583333333373,
+        "late_actual_pickup_max_s": 22.709999999999127,
+        "full_late_actual_pickups": 20,
+        "accepted_offer_deadline_violations": 0
+      },
+      "output": "/workspace/market_results/phase16/legacy/runs/manhattan/seed_0/threshold_240",
+      "output_sha256": {
+        "av_dispatch_op_0.csv": "a5ea3eec46e3c14c70b4c3c467e228eefa90a6605f8582be50806166ad4bb07c",
+        "2-0_op-stats.csv": "5a4ce60638f48b7a5eb2dc6da106b10d7fbc644e14a6a4c7399311535549e91d",
+        "city_report.json": "abf1a8c7a327cdb1e739140c18ab6346d14329957536824f9519efe05218a3e8",
+        "vehicle_time_factors.json": "45565757726b09ff6a7e97ffdbbf99693354870312345ff3faf205f7d6eeca50",
+        "3-0_op-dyn_atts.csv": "fd517cd8d0eb9ed420fcd3f4fe6c187c2ee567c1c8c151e9c319e3dc683cb8c6",
+        "1_user-stats.csv": "9702f7cebf307d8c5d64d96a1ed2e8e3bf0446dd8b10f6d361a523a4f1e5d354",
+        "city_search_contract.json": "8f713249fc403aab2235c238ebdcd22a40e149f176c16e6cf0d1f4563378418c",
+        "completion_tail.json": "631b787ed5c7499edcb223cf53a25bdb662c4ff48e7bc7b1eec1b085d33358a1",
+        "00_simulation.log": "2f6ae9fdabe76d2408d4a485b4cb7faa4a6d32e579c126329559baeabacf8873",
+        "2_vehicle_types.csv": "a0993b21b12d1f63adda9dd7608121a5e00a71d19e2df3dafcff91853c667398",
+        "00_config.json": "dcfcc2cad2fc02d18325330146d616d1a59f5a7ad6ef6c36572cead98c279f61",
+        "random_streams.json": "08e22451544fbe17afdaa9f653aca3f89ff0124903b5503469738297d00df69c",
+        "standard_eval.csv": "5ca5092b0ff6de9217362fde463aa8d97ae7709eb097e895b89e31ac4ac76e21",
+        "market_input_contract.json": "3a400c885502e8dfa2048e4ac79e965cc67898e73bf9b70297bd0cc2dd945301",
+        "standard_mod-0.0_veh_eval.csv": "e10ecb61d75656c4410ef3b7c4bb8b3429818f7385f408fabf16705b53e4133d",
+        "av_product_op_0.json": "fa154955c8f3faef72a5f4a67474a0c276d8693060318eeac83f3f2d6e7edfac",
+        "final_state.csv": "fbe3660c8881f332676961c225bdd2b4e0d83772fd87545f10a2fde28f49de86",
+        "initial_placement.csv": "5854561f651decfda13162e7b4b3427466c82424d8f8c3b74f9a08b610511d4a",
+        "av_report.json": "93d6c341c4307cbbd9556b59709f77da1a9d96f0995391245df06224b28814d7"
+      }
+    }
+  ]
+}

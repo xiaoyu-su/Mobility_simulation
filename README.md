@@ -58,6 +58,10 @@ robustness, strict input-stratum checks, actual-lateness reporting and a fixed
 fixed-group allocation/spillovers and invariant all-human controls.
 **452 tests and90 real physical records** pass;
 [results](docs/validation/phase15/ROBUSTNESS.md) retain gains and regressions.
+[Phase 16](docs/PHASE_16.md) adds fixed-total-fleet5/10/20% AV-share sensitivity,
+optional common placement anchors, search-partition controls and fixed-driver
+activity metrics. **465 tests and99 real physical records** pass;
+[results](docs/validation/phase16/ROBUSTNESS.md) retain gains and regressions.
 See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md), [UPSTREAM_COMPARISON.md](UPSTREAM_COMPARISON.md),
 and [IMPROVEMENT_LOG.md](IMPROVEMENT_LOG.md) for scope, evidence, and changes.
 

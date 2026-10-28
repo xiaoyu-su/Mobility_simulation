@@ -1,0 +1,322 @@
+{
+  "only_after_full_test_process_completed": true,
+  "all_raw_bytes_preserved": true,
+  "shared_size_bytes": 365383854,
+  "checks": [
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co0/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co1/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/edges_all_infos.geojson",
+      "size_bytes": 4285402,
+      "sha256": "8e15b0c9b93cd0c0dbd11f98465913418daf276b954a0bf5cb02aa1f6bade474",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/base/nodes_all_infos.geojson",
+      "size_bytes": 1803980,
+      "sha256": "6740b2108b4871eb418ae8f81ce4018dfee4d421b951850b7cba00a1978d057e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/example_network/downloaded_map.tif",
+      "size_bytes": 8269197,
+      "sha256": "8172b5ad800ce494ee3738d784a3f06a5b4b55a65f8b5a8d725273ec5052aea4",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/osm_route_MVG_road/base/edges_all_infos.geojson",
+      "size_bytes": 5252772,
+      "sha256": "400107ef846a329b8dfd139379a3a4cda15c154b56db02a42b78dfedea6a83b9",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges.csv",
+      "size_bytes": 1346785,
+      "sha256": "1ef63d9dbc6928862aae0a76bbc5431e94817b51acb52d1cc5b1ad425cf61750",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/edges_all_infos.geojson",
+      "size_bytes": 8542748,
+      "sha256": "d6b56add62d97265832f54483d781585e4ed068248488fec2993e553fb2688c5",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/data/networks/sumo_example/base/nodes_all_infos.geojson",
+      "size_bytes": 3148709,
+      "sha256": "e91fd50988673ce5bd5e03b17073abf98fd67691276fd5f1d105a4c633906e1f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/src/routing/road/cpp_router/PyNetwork.cpython-310-x86_64-linux-gnu.so",
+      "size_bytes": 1294440,
+      "sha256": "6b326e9602cb451bd593267cb8f0d7c85ccf58e35a9f4293025ef017ee687e6f",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/edgeData.xml",
+      "size_bytes": 3655462,
+      "sha256": "70c9fe8aa43a06c2da19fa5f7579362e607d3d5c13b0d192c3a5cdb6f00d64de",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.net.xml.gz",
+      "size_bytes": 2500007,
+      "sha256": "d7898d393782e93392177030414b75971241d3ea9cfd2f92c699612b61598135",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example.poly.xml.gz",
+      "size_bytes": 4130098,
+      "sha256": "250e25dad18e387445c7b37b3c26cdfb864a51cb8d559d30f8da6e97b1b1f857",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/sumo_example_bbox.osm.xml.gz",
+      "size_bytes": 7846353,
+      "sha256": "125276b44cab78fc80a5d3382a35fb8945401673bddac78924ad5f55d1118356",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/fleetpy_sumo_coupling/sumo_example/tripinfos.xml",
+      "size_bytes": 3974901,
+      "sha256": "427cf9f6d0743304debd5f1867fd4e0691adf34856ea9f72e691826395b50ec3",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source/studies/paper_2025_applications/manhattan_case_study_tutorial.ipynb",
+      "size_bytes": 1538964,
+      "sha256": "28e1bfd13bfc783f6fa640f66212dd01a872c3f17afd7cc188b5bad8b3db993e",
+      "all_original_logical_paths_and_bytes_preserved": true
+    },
+    {
+      "path": "/workspace/.setup/phase16/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "immutable_canonical": "/workspace/.setup/phase15/full/runs/test_clean_archive_and_fork_co2/check/upstream-source.tar",
+      "size_bytes": 64204800,
+      "sha256": "29c135674af2027ad54e287fe0e0a7b9ffeb25104edf0d8aa0401e807e9e064a",
+      "all_original_logical_paths_and_bytes_preserved": true
+    }
+  ]
+}

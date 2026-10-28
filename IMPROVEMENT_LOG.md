@@ -650,3 +650,24 @@ outcomes. The real-data follow-up below does not change those historical results
 
 Exact commands, initial reporting failures/fixes, changes/benefits and complete
 source/input/output evidence are in [Phase15](docs/PHASE_15.md) and the work log.
+
+
+## Phase 16 — AV fleet-share robustness
+
+- **What changed:** optional fixed placement anchor and strict actual-slot audit;
+  explicit5/10/20% strata, actual rounded rosters, fixed human-driver ID metrics,
+  direct/within-share/control-adjusted effects and separate legacy bridge.
+- **Why/benefit:** legacy placement changes positions when replacement share
+  changes. Common anchored positions/SOC remove that geometry confound; matched
+  human-only shadow controls retain candidate-partition effects. Fixed driver
+  IDs prevent changing roster membership from masquerading as activity gains.
+- **Validation:**465 tests,441 complete regression simulations,32 windows and99
+  real physical records /90 distinct settings pass. All396 prior full cases
+  retain exact outputs; legacy10% bridges reproduce84 historical files.
+- **Measured results:** [results](docs/validation/phase16/ROBUSTNESS.md) retain all
+  cities, seeds, fixed groups, direct/adjusted effects and adverse outcomes.
+  Supply remains assumed, not observed or optimized; legacy defaults and
+  matching-policy source remain unchanged.
+
+[Phase16](docs/PHASE_16.md) and the work log retain exact reproduction,
+source/input/output/runtime evidence and the separate placement bridge.

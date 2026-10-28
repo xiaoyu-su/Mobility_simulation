@@ -1,0 +1,21 @@
+{
+  "all_recorded_counts_verified": true,
+  "checkpoints": [
+    {
+      "checkpoint": "checkpoint",
+      "full_physical_runs": 45,
+      "pytest": {
+        "errors": "0",
+        "failures": "0",
+        "hostname": "cd50c4623c22",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "13",
+        "time": "101.858",
+        "timestamp": "2026-10-28T01:55:50.164748+00:00"
+      },
+      "source_checkpoint": "checkpoint",
+      "source_digest": "e3e70ac0eb6d716b90491ece20701abad3afb61da924464a427a5e952a29dc5c"
+    }
+  ]
+}

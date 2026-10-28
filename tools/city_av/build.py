@@ -114,6 +114,10 @@ def build(config_path, data_root, output, fleet_multiplier=1):
     share,optin,fence=c.get('av_share',.1),c.get('opt_in_share',.3),c.get('fence_share',.3)
     if not 0<share<1 or not 0<=optin<=1 or not 0<fence<=1:raise ValueError('Invalid AV shares')
     av_count=min(fleet-1,max(1,int(round(fleet*share))));human_count=fleet-av_count
+    anchor=c.get('placement_av_share')
+    if anchor is not None and (not isinstance(anchor,(int,float)) or not math.isfinite(anchor) or not share<=anchor<1):
+        raise ValueError('Placement AV share must cover the replacement share and be below one')
+    anchor_count=min(fleet-1,max(1,int(round(fleet*anchor)))) if anchor is not None else None
     factor=travel_time_factor(c.get('travel_time_factor',1.25))
     controller=c.get('controller','PoolingIRSOnly')
     if controller not in {'PoolingIRSOnly','PoolingIRSAssignmentBatchOptimization'}:raise ValueError('City threshold harness requires an immediate insertion controller')
@@ -205,6 +209,7 @@ def build(config_path, data_root, output, fleet_multiplier=1):
     manifest['mapping_normalization'].update(affected_retained_requests=int(touches.sum()),
         affected_evaluation_requests=int((touches&observed.is_evaluation_request).sum()))
     if parent:manifest['parent_dataset']=dict(manifest_sha256=file_digest(data_root/'manifest.json'),source=parent['source'],data_kind=parent['data_kind'],changes='Rebuilt comparison: no execution noise, shared placement, constant benchmark patience/service; historical network factors and source consent retained')
+    if anchor_count is not None:manifest['placement_anchor_av_count']=anchor_count
     json_write(output/'manifest.json',manifest)
     try:
         manifest['network_sha256']=copy_network(network,output/'network',router,dynamics)

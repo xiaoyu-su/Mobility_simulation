@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "manifest.json": "3cf8eb26fcc5a645549df96664aea6f884dbbe315d6694b30943e7fd016bde3b",
+    "seed_results.csv": "e1fc4bafb08b1d63fae77b23ef24f9e5d488f4806ef7443c573ceb44853b5e94",
+    "common_rider_effects.csv": "2c22fbf2a50883fcb302473d11484363ec335b2a7f3bd0eec5435903d095eb69",
+    "fixed_group_results.csv": "56f95b0327e70927873625e99f9528181c1d28bce0f92e3c0c963a0a77626583",
+    "search_partition_checks.json": "3a344d79a204dfb5990fe536a1468e3c49e34915bf0ef9fccf573082b378c939"
+  },
+  "outputs": {
+    "policy_effects_by_fleet_share.csv": "b5e937f8c9cec262a1441654fbb2bfcb757e9eb8508e4933f11aff1273d5d459",
+    "policy_stability_by_city.csv": "46a98c9b1efdd64dea058bfc857fbc90e74ba3ec2775e63eb35d31727ed275a6",
+    "fixed_group_spillovers.csv": "ed2faad2aaa3d02240aa48a946feb04237fd63f55eb5d8f36b6ca40fc41a92d1",
+    "placement_profile_bridge.csv": "cc9d644c17ebc107a1ba37e8f9e9858c405107b5d581d60391c6d84f716e62a9",
+    "ROBUSTNESS.md": "faa4bcf119ed804ba4d2447982cc08a4393f4fde5ea1c81a2b3ece9877128e34",
+    "all_human_trajectory_identity.csv": "3aa66334fab61d2eec2b2a8ace0b0900150690c3ccccf0ffd222975e062fea3c"
+  },
+  "policy_fleet_share_contrasts": 27,
+  "fixed_group_spillover_contrasts": 54,
+  "all_seeds_matched": true,
+  "original_report_files_unchanged": true,
+  "legacy_bridge_checks_sha256": "c7f5b5c3c93e640e4adcdf281099592330b24a05129046eacddf7f4df88adc44"
+}

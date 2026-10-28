@@ -1,0 +1,295 @@
+{
+  "all_human_cross_share_checks": [
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "av_share": 0.1,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 0,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 1,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "munich",
+      "fleet_size": 50,
+      "seed": 2,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": true,
+        "2-0_op-stats.csv": true,
+        "standard_eval.csv": true,
+        "final_state.csv": true,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 0,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 1,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "chicago",
+      "fleet_size": 100,
+      "seed": 2,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 0,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 1,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    },
+    {
+      "city": "manhattan",
+      "fleet_size": 775,
+      "seed": 2,
+      "av_share": 0.2,
+      "physical_files_identical": {
+        "1_user-stats.csv": false,
+        "2-0_op-stats.csv": false,
+        "standard_eval.csv": false,
+        "final_state.csv": false,
+        "initial_placement.csv": true,
+        "random_streams.json": true,
+        "city_search_contract.json": false
+      },
+      "scope": "Search partition sensitivity at fixed geometry; different physical outcomes are retained"
+    }
+  ],
+  "independent_fixed_group_rows": 270,
+  "physical_geometry_fixed": true,
+  "search_partition_effects_retained": true
+}

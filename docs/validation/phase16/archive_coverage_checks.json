@@ -1,0 +1,16 @@
+{
+  "all_recorded_full_real_input_source_bytes_restorable": true,
+  "archive_sha256": "0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb",
+  "counts": {
+    "full_raw_files": 7045,
+    "window_files": 584,
+    "focused_raw_files": 831,
+    "study_manifests": 5,
+    "real_raw_files": 1839,
+    "input_files": 252,
+    "source_files": 554,
+    "configuration_files": 28
+  },
+  "verifier_source": "\"\"\"Verify that recorded raw/source/input hashes have restorable archive entries.\"\"\"\nfrom pathlib import Path\nimport hashlib,json\nW=Path('/workspace');R=W/'Mobility_simulation';P=W/'.setup/phase16';D=R/'docs/validation/phase16'\na=json.loads((D/'archive_index.json').read_text());files={r['path']:r for r in a['files']};omitted={r['path']:r for r in a['omitted_public_matrices']};counts={}\ndef check(path,digest,kind):\n name=str(path.relative_to(W));row=files.get(name) or omitted.get(name)\n assert row is not None and row['sha256']==digest,(name,'missing archive coverage or hash mismatch')\n counts[kind]=counts.get(kind,0)+1\nsuite=json.loads((P/'suite-integrity.json').read_text())\nfor row in suite['full_run_checks']:\n for name,h in row['output_sha256'].items():check(P/'full'/row['path']/name,h,'full_raw_files')\nfor row in suite['window_checks']:\n folder=P/'full'/row['path']\n for f in folder.iterdir():\n  if f.is_file():check(f,hashlib.sha256(f.read_bytes()).hexdigest(),'window_files')\nfocused=0\nfor marker in (P/'checkpoint/runs').rglob('standard_eval.csv'):\n folder=marker.parent\n if not (folder/'00_config.json').is_file() or not (folder/'final_state.csv').is_file():continue\n focused+=1\n for f in folder.iterdir():\n  if f.is_file():check(f,hashlib.sha256(f.read_bytes()).hexdigest(),'focused_raw_files')\nassert focused==45\nfor study in ['s5','s10','s20','pilot','legacy']:\n root=W/'market_results/phase16'/study;m=json.loads((root/'manifest.json').read_text());check(root/'manifest.json',hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),'study_manifests')\n for e in m['runs']:\n  for name,h in e['output_sha256'].items():check(Path(e['output'])/name,h,'real_raw_files')\nfor root in sorted((W/'market_inputs/phase16').iterdir()):\n m=json.loads((root/'manifest.json').read_text())\n for name,h in m['output_sha256'].items():check(root/name,h,'input_files')\nfor label in ['checkpoint','full']:\n root=P/label/'source';s=json.loads((root/'source_record.json').read_text())\n for name,h in s['code_files_sha256'].items():check(root/name,h,'source_files')\n for f in (root/'configs').glob('*.json'):check(f,hashlib.sha256(f.read_bytes()).hexdigest(),'configuration_files')\nrecord=dict(all_recorded_full_real_input_source_bytes_restorable=True,archive_sha256=a['sha256'],counts=counts,verifier_source=Path(__file__).read_text(),method='Each recorded file SHA must match a byte-readback-verified archive member or an exact canonical-matrix restore entry')\n(D/'archive_coverage_checks.json').write_text(json.dumps(record,indent=2)+'\\n');print(json.dumps(counts));print('All recorded raw/source/input/configuration files have exact verified archive coverage.')\n",
+  "method": "Each recorded file SHA must match a byte-readback-verified archive member or an exact canonical-matrix restore entry"
+}

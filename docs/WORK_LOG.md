@@ -3945,3 +3945,136 @@ and will be committed locally before the actual push attempt is recorded.
   documentation-only receipt commit follows, with final remote equality,
   both identities and clean checkout verified after its push. No secrets or
   saved repository selections are changed.
+
+
+## Phase 16: AV fleet-share robustness
+
+### Step 1: prespecify the next assumption and matched controls
+
+- Baseline `5368948979104213e75d31363635b073e9b64bb3`, new branch `phase-16-av-fleet-share`. Compare requested5/10/20% replacement at fixed total fleet across Munich/Chicago/Manhattan, seeds0/1/2, all-human/threshold0/threshold240, fixed opt-in0.3, cautious factor1.25 and480s booking cutoff. Integer AV counts are explicit; rounded targets need not equal exact percentages.
+- Existing placement fences only actual AV slots, so changing AV share also changes initial geometry. Add an OPTIONAL fixed20% placement anchor; all three profiles now use identical positions/SOC, with nested final vehicle IDs converted to AVs. Legacy placement is unchanged when omitted. Actual-type candidate-search partitions still change with share; per-share all-human shadow controls retain that effect, rather than asserting invariant all-human trajectories. Include direct and mixed-minus-human adjusted share contrasts, with their interpretation limits.
+- Main81 anchored conditions plus9 anchor pilot/replays, and9 separate legacy10% seed0 bridge conditions =99 physical runs /90 distinct settings. Legacy bridge records are independently audited, never pooled as anchored replications. Full regression and original-byte historical checks are required. No matching-policy source changes.
+
+### Step 2: preserve evidence and implement anchored placement
+
+- `storage.py` verifies published-part reconstruction before deleting the redundant Phase15 logical archive cache. Exact immutable old source/input/result duplicates may share storage after size/SHA verification; all logical paths and original bytes remain. Complete proof in `/workspace/.setup/phase16/storage_record.json`; no unique evidence is deleted.
+- Modify `tools/city_av/build.py`, `initialization.py`, `report.py`: validate optional anchor, apply one fixed fenced-slot geometry independent of replacement share, record actual anchor/AV slots and reject mismatched loaded placement. Legacy paths add no metadata/output fields. New `fleet_share.py`/plot report verifies fixed inputs/geometry, actual typed rosters, accepted completions and late execution; separates policy/share/search-partition effects. Fixed human-prefix activity metrics use identical driver IDs across all shares.
+- New unit/integration tests cover anchor boundaries, legacy omission, both matching controllers/Python/C++ routing, exact nested counts/placement/SOC/eligibility, actual AV service, read-only reports, incompatible-summary/tamper rejection and fresh-process replay. All commands/source/config snapshots and every failed/successful checkpoint are retained.
+
+
+### Step 3: full physical checkpoint and frozen validation
+
+- `.venv/bin/python /workspace/.setup/phase16/checkpoint.py checkpoint tests/unit/test_city_av_fleet_share.py tests/integration/test_city_av_fleet_share_examples.py`: **13 pass in101.86s**, no failures/errors/skips; **45 complete physical simulations** exercise both matching controllers and Python/C++ routing, legacy/default omission, three anchored shares and exact10% replay. No checkpoint failures.
+- Frozen277-file source digest `e3e70ac0eb6d716b90491ece20701abad3afb61da924464a427a5e952a29dc5c`,14 JSON configs. Exactly three existing files change (build, initialization, report);270 existing source/dependency files are byte-identical. Matching-policy source is unchanged. Source/dependencies/config/HEAD remain frozen while full/paired runs execute.
+- Full `.venv/bin/python -m pytest -q`, basetemp `/workspace/.setup/phase16/full/runs`, JUnit `full/junit.xml`, CPU3–4 and one OPENBLAS/OMP/MKL thread. `full/execution.json` retains exact command/source/wall/return code. Final physical/history counts are audited after completion.
+
+### Step 4: real input builds, legacy bridges and pilot gate
+
+- `prepare.py` builds12 fresh bundles (nine anchored, three legacy) from unchanged native public Munich/Chicago and immutable Manhattan parent inputs. Hash/size-identical public matrices share immutable storage only after verification. Config/source/command/return-code/wall/hash records are retained.
+- Before main comparisons: nine legacy10% seed0 bridge simulations must physically complete and reproduce84 historical critical files, including original reports; nine anchored10% seed0 pilots must pass the full fleet-share physical/typed-roster/actual-placement/consent/deadline report. Existing outputs are refused; no old source is retagged.
+
+- Independent `input_preflight.py` verifies all file hashes in12 fresh bundles, exact rounded counts and fixed anchor sizes. All three legacy bundles preserve the entire previous input-file hash dictionary under fresh source manifests. Nine legacy physical controls pass in159.09s and reproduce84 historical files (including original city reports) byte for byte. No default-policy regression is observed.
+
+- All nine anchored10% seed0 pilots pass the complete fleet-share report gate in161.66s, including actual rounded rosters, fixed geometry, physical consent/service/deadline/completion and fixed human-prefix activity. Their fresh-process replays will be compared with main seed0 records, not counted as extra independent settings.
+
+### Step 5: prespecified anchored fleet-share grid
+
+- `run_studies.py` launches s5/s10/s20 on CPUs0/1/2, one worker and one BLAS/OMP/MKL thread each. Three cities ×three seeds ×three policies =27 physical runs/profile,81 main settings in total; full regression stays on CPUs3–4. Every command/status/wall/seed/hash and raw trajectory is retained. Python/dependencies/config/HEAD remain frozen throughout.
+
+- The executed helper retains the unchanged Phase15 `docs/adoption/policies.json` path for its identical0/240 grid; `docs/fleet_share/policies.json` is byte-identical. Exact commands/policy hashes are recorded, both actual and new tracked paths are archived, and reproduction with either identical path gives the same policy bytes. No policy parameter changes or historical edits occur.
+
+
+### Step 6: independent physical audit and measured robustness
+
+- All81 main anchored settings complete: s5 **849.97s**, s10 **842.33s**,
+  s20 **836.42s**, each zero return code. Nine anchored pilots/replays and
+  nine separate legacy bridges yield99 physical records /90 distinct settings.
+- `analyze_real.py` independently checks all90 anchored raw/source/input/runtime
+  records, complete unique IDs, source-clock promises, actual typed rosters,
+  positions/SOC, nested rounded counts, anchor/fence/opt-in, service durations,
+  privacy/capacity, chronology and physical completion. Independent passenger
+  event sweeps through actual alighting END reconcile raw occupied/passenger
+  exposure. Reported AV utilization, AV throughput, wait means, empty distance
+  and fixed-human-prefix activity are independently recomputed and match.
+- All60 within-study and54 cross-share background comparisons pass; exactly
+  nine fresh-process pilot records replay byte-identically. Positions/SOC stay
+  fixed while the actual typed initialization hash changes with replacement;
+  every typed state is separately reconstructed and verified. All270 physical
+  fixed-request-group rows match independent calculations.
+- All18 all-human cross-share search-partition comparisons retain both equal
+  and different physical outcomes. They are controls for actual-type grouping,
+  not assumed invariant replications. `control_adjusted_share_effects.csv`
+  records direct changes in mixed-minus-matched-human responses; it does not
+  eliminate every search interaction or identify field effects.
+- Legacy9 source/runtime/physical/deadline audits repeat successfully;84 old
+  critical files, including original reports, remain exact. Their physical
+  trajectories are identical to previously independent-sweep-verified bytes.
+  The separate one-seed placement bridge is not pooled as three-seed evidence.
+- Every accepted promise fits480s and every accepted booking completes.
+  Main-grid counterfactual records retain **676
+  evaluation late pickups /1096 full-cohort
+  late pickups**. Summed study/policy/seed records are not unique observed people;
+  accepted riders are not silently cancelled to hide execution errors.
+- Threshold240,10%→20% AV replacement changes mean completion Munich **−40.33**,
+  Chicago **−29.33**, Manhattan **−34.67**, while AV trips increase **+18.33 /
+  +22.67 /+47.33**. Occupied AV utilization falls **38.78→33.75% /56.10→45.11%
+  /20.21→14.18%**. Fixed-human-prefix trips per online hour change **3.9083→
+  3.8722 /1.8875→1.8500 /1.1029→1.1808**, respectively. Keep these adverse
+  completion and driver effects alongside allocation, waits and distance.
+- Benefit: common placement removes a hidden geometry confound, matched search
+  controls expose partition effects, and fixed driver IDs prevent membership
+  shifts from masquerading as activity gains. These are experimental-control/
+  robustness improvements, not a new matching policy or a superior/calibrated
+  observed AV fleet. Three seeds condition on one source cohort per city.
+- Visually inspected all12 figure panels and pinned PNG/PDF hashes. Original
+  reports/raw files remain immutable. Supplementary27 policy contrasts,54 group
+  contrasts and separate placement bridge have their own exact input/output
+  manifest, including the legacy-proof hash.
+
+- `classify_partitions.py` distinguishes expected search-contract metadata changes from actual trajectory tables. Relative to5% shadow partitions,11/18 all-human comparisons change at least one of four trajectory tables (Munich0/6, Chicago5/6, Manhattan6/6); every placement and typed initial random audit stays identical. Exact CSV and supplementary hashes are retained. This is benchmark search sensitivity, not AV service or an extra independent seed. Original reports remain untouched; the final evidence hash manifest is refreshed after adding this derived classification.
+
+
+### Step 7: full regression and exact historical compatibility
+
+- Full `.venv/bin/python -m pytest -q` passes **465 tests**, no failures,
+  errors or skips, **2372.00s CLI /2371.985s JUnit**. Independent
+  audit counts **441 complete regression simulations and32 restored windows**.
+  Ten deliberately non-simulation negative fixtures are identified separately.
+- All396 previous full cases preserve **3074 checked
+  tables byte for byte**;128 restored-window tables retain exact values.
+  Missing original upstream promise columns are explicitly unavailable, while
+  picked-up bookings always require actual completion. No legacy matching or
+  scenario-output regressions are found.
+- Source277/config14 snapshots remain unchanged throughout full/paired runs.
+  Only the three optional-anchor tool files differ from the old source; all270
+  other existing files and matching-policy source remain unchanged.
+- After the full test process exits successfully, `postrun_storage.py` verifies
+ 45 exact immutable duplicate files against retained old outputs and shares
+ 365,383,854 bytes of duplicate storage. Every logical raw/source path and byte
+  remains. `postrun_storage_record.json` records source/target/size/SHA; no
+  unique output is removed.
+
+
+### Step 8: package complete reviewable records
+
+- `package_final.py` captures all source/checkpoint/full/window/raw/native/input/
+  runtime/config/helper/command records, including legacy bridges and exact
+  compatibility proofs. All16704 members are SHA-readback
+  verified;11 parts reconstruct exactly343071415 bytes,
+  SHA `0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb`. Every upload file is below100MB.
+- Only20 exact large canonical public matrix
+  duplicates are omitted, with size/SHA/restore paths. Private/nonidentical/
+  small inputs remain. Original public provenance/CC BY4.0 attribution and
+  immutable parent/native source/binary records are retained. Logical archive
+  and stdout stay outside the archived tree to prevent self-inclusion.
+- Inspected figure hashes and original/derived report manifests remain intact.
+  Final guide/README/project/improvement/work logs record measured benefits and
+  regressions, source277/config14 freeze, and interpretation limits.
+
+
+### Step 9: final publication and archive-completeness gate
+
+- `prepublish.py` passes source277/config14/raw/runtime/report/figure/archive/restore/link/protected-history checks. All270 old non-anchor source files and every older evidence/baseline directory remain unchanged. All99 real raw records and exact legacy/default proofs verify; original/derived artifacts retain exact hashes.
+- Final archive: **16704 members**, **11 parts**, **343071415 bytes**, SHA256 `0ef42a0ad9e932dd3fd747c642299d367119b886b2cd414209d5e716fb746aeb`. Member/part byte readback passes and every upload file is below100MB.
+- Additional `archive_coverage_checks.json` includes its verifier source and verifies exact restorable index coverage for every recorded full/focused/window/real output, all12 fresh inputs, both277-file source snapshots and both14-config snapshots: `{'full_raw_files': 7045, 'window_files': 584, 'focused_raw_files': 831, 'study_manifests': 5, 'real_raw_files': 1839, 'input_files': 252, 'source_files': 554, 'configuration_files': 28}`. No tested raw or source/configuration file is missing from the archive/explicit canonical restore entries.
+- Stage only the new source/tests/configs/phase guide/evidence and project/work logs. Commit/push uses Xiaoyu Su as BOTH author and committer. Actual push and remote-tip/Git-blob checks follow; no force push, secrets or repository-selection changes.

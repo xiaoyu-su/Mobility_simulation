@@ -75,6 +75,11 @@ def city_report(bundle, output):
     if placement.vehicle_id.duplicated().any() or set(placement.vehicle_id)!=set(roster.vehicle_id):raise RuntimeError('Invalid shared city placement')
     designated=placement.vehicle_id.ge(meta['av_product']['human_count'])
     if not placement.loc[designated,'node_index'].map(mapping).isin(fence).all():raise RuntimeError('Designated AV slots start outside fence')
+    if 'placement_anchor_av_count' in meta:
+        anchor=json.loads((output/'city_placement_anchor.json').read_text())
+        expected=list(range(meta['fleet_size']-meta['placement_anchor_av_count'],meta['fleet_size']))
+        if anchor['anchor_slots']!=expected or anchor['actual_av_slots']!=search['designated_slots'] or not placement.loc[placement.vehicle_id.isin(expected),'node_index'].map(mapping).isin(fence).all():
+            raise RuntimeError('Actual city placement anchor differs from the declared slots/fence')
     types=roster.set_index('vehicle_id').vehicle_type
     actual_initial=[[int(r.operator_id),int(r.vehicle_id),str((int(r.node_index),None,None)),float(r.soc),types.loc[r.vehicle_id]]
                     for r in placement.sort_values(['operator_id','vehicle_id']).itertuples()]

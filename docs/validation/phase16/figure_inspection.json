@@ -1,0 +1,16 @@
+{
+  "visually_inspected": true,
+  "visually_inspected_images": [
+    "fleet_share_sensitivity.png"
+  ],
+  "figures_sha256": {
+    "fleet_share_sensitivity.png": "c204d492eb8d79f6de2b5dcf34af24b732cd4b0764a1f748f24ba01c2f25491b",
+    "fleet_share_sensitivity.pdf": "938e75f3c571356246c48ecb704f09ac6bdf6be0e58042a85b035a6e203949c4"
+  },
+  "checks": [
+    "All12panels and policy legends/colors/units readable",
+    "Seed ranges are explicit, not population intervals",
+    "Positions/SOC fixed but actual-type search partitions vary, explicitly captioned",
+    "AV utilization, completion, fixed-human-ID activity and empty-distance adverse directions retained"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "av_share_targets": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "placement_av_share": 0.2,
+  "reference_av_share": 0.1,
+  "opt_in_share": 0.3,
+  "max_wait_seconds": 480,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "pilot_seeds": [
+    0
+  ],
+  "legacy_bridge_seeds": [
+    0
+  ],
+  "cities": [
+    "munich",
+    "chicago",
+    "manhattan"
+  ],
+  "anchored_unique_conditions": 81,
+  "anchor_pilot_replays": 9,
+  "legacy_bridge_conditions": 9,
+  "total_physical_runs": 99,
+  "scope": "Fixed-total-fleet anchored geometry; actual-type search partitions vary and have matched all-human controls"
+}
